@@ -57,8 +57,12 @@ def _load_firewall_terms():
         with open(p, encoding="utf-8") as f:
             return [ln.rstrip("\n") for ln in f if ln.strip() and not ln.lstrip().startswith("#")]
     except FileNotFoundError:
+        # stderr, not stdout: this module is imported by the backend (for the shared
+        # presentation constants and the bank->prefix map), so a diagnostic on stdout ends up
+        # inside any machine-readable output those callers produce. It corrupted a JSON payload
+        # exactly that way once.
         print("[firewall] .firewall-terms absent; skipping INV-1 term scan "
-              "(committed docs/ were pre-checked before publication).")
+              "(committed docs/ were pre-checked before publication).", file=sys.stderr)
         return []
 
 BANNED_WORDS = _load_firewall_terms()
@@ -1117,11 +1121,14 @@ def render_deposit():
     <label for="d-decls">Declaration name(s) <span class="req">required</span>
       <input id="d-decls" type="text" autocomplete="off" placeholder="my_theorem, my_lemma (comma-separated)">
     </label>
+    <label for="d-mathlib">Mathlib revision <span class="opt">optional; required to import Mathlib</span>
+      <input id="d-mathlib" type="text" autocomplete="off" placeholder="40-character git sha of a pinnable Mathlib revision">
+    </label>
     <label for="d-discharges">Discharges claim <span class="opt">optional, for results</span>
       <input id="d-discharges" type="text" autocomplete="off" placeholder="MTH.C-YYYY-NNNN">
     </label>
     <label for="d-source">Lean source <span class="req">required</span>
-      <textarea id="d-source" rows="10" spellcheck="false" placeholder="theorem my_theorem : ... := by ..."></textarea>
+      <textarea id="d-source" rows="10" spellcheck="false" placeholder="import Mathlib.Logic.Basic&#10;&#10;theorem my_theorem : ... := by ..."></textarea>
     </label>
     <label for="d-gloss">Description <span class="req">required</span>
       <textarea id="d-gloss" rows="4" placeholder="Plain-language description. Author-provided; not machine-checked."></textarea>

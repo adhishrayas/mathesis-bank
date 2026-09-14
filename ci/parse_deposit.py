@@ -10,10 +10,13 @@
 #
 # This script parses ONLY that header (it does not read the Lean body) and
 # prints one JSON object:
-#   {kind, title, module, decls:[...], pin, discharges|null, gloss}
+#   {kind, title, module, decls:[...], pin, mathlib|null, discharges|null,
+#    imports:[...], gloss}
 #
 # It FAILS CLOSED (nonzero exit, error on stderr) when:
-#   * the file has no leading /-! ... -/ block,
+#   * the file has no leading /-! ... -/ block (leading `import` lines may precede it),
+#   * an `import` appears BELOW the header, where Lean cannot accept it,
+#   * an import names something that is not a dotted Lean module name,
 #   * a required field is missing (@kind, @title, @decls, @pin),
 #   * @kind is not one of result|definition|claim,
 #   * @pin is not exactly leanprover/lean4:v4.31.0,
@@ -30,7 +33,7 @@ VALID_KINDS = ("result", "definition", "claim")
 
 # The @-fields the header may carry. Everything the gate keys on is here; an
 # unknown @-line is ignored (forward-compatible) rather than fatal.
-SCALAR_FIELDS = ("kind", "title", "module", "decls", "pin", "discharges")
+SCALAR_FIELDS = ("kind", "title", "module", "decls", "pin", "discharges", "mathlib")
 
 # A @decls entry is passed to the kernel gate as an argv item AND echoed into
 # the PR-comment markdown. Lean declaration names use ASCII letters/digits and
@@ -50,6 +53,57 @@ def decl_char_ok(c):
     # Non-ASCII (>= 0x80) is allowed: Lean identifiers may contain unicode
     # letters/subscripts. ASCII must be in the identifier allow-set.
     return ord(c) >= 0x80 or c in DECL_ASCII_OK
+
+
+# An `import` line, and the module-name grammar it may name.
+#
+# WHY IMPORTS LIVE ABOVE THE HEADER
+# ---------------------------------
+# `/-! ... -/` is a Lean *module docstring*, which is declaration-level syntax, and Lean requires
+# every `import` to precede all declarations. So a file shaped "header first, then source" can
+# never import anything:
+#
+#     /-! @kind: result ... -/
+#     import Mathlib.Logic.Basic     -> error: invalid 'import' command, it must be used in
+#                                       the beginning of the file
+#
+# That made the entire banked corpus's vocabulary unreachable to a form-raised deposit: Mathlib
+# is what the 512 accessions are built on, and no deposit could import it. The deposit form and
+# `backend/deposits.py:build_submission` therefore HOIST a leading run of `import` lines above
+# the header, and this parser accepts that shape. A deposit with no imports is assembled exactly
+# as before, byte for byte.
+IMPORT_RE = re.compile(r"^\s*import\s+(\S+)\s*$")
+
+# Conservative: dotted ASCII identifiers, which covers Init/Std/Lean and every `Mathlib.*`.
+# Lean permits more (guillemet-quoted and unicode module names), and this deliberately does not:
+# the module name is interpolated verbatim into the file the gate builds, so a name that cannot
+# be a module is a malformed deposit rather than something to pass through and find out later.
+MODULE_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*\Z")
+
+
+def split_leading_imports(text):
+    """(module names, the rest of the file).
+
+    Only a LEADING run of `import` lines counts, blank lines allowed between them. The first line
+    that is neither blank nor an import ends the run — normally the `/-!` that opens the header.
+    """
+    lines = text.splitlines(keepends=True)
+    imports = []
+    i = 0
+    while i < len(lines):
+        if not lines[i].strip():
+            i += 1
+            continue
+        m = IMPORT_RE.match(lines[i])
+        if m is None:
+            break
+        imports.append(m.group(1))
+        i += 1
+    if not imports:
+        # Return the text untouched when there is nothing to hoist, so the no-import path is
+        # provably identical to the pre-existing one.
+        return [], text
+    return imports, "".join(lines[i:])
 
 
 def die(msg):
@@ -129,9 +183,26 @@ def main(argv):
     except OSError as e:
         die("cannot read %s: %s" % (path, e))
 
-    block = extract_header_block(text)
+    imports, rest = split_leading_imports(text)
+    for mod in imports:
+        if not MODULE_RE.match(mod) or ".." in mod:
+            die("illegal import %r (must be a dotted Lean module name)" % mod)
+
+    block = extract_header_block(rest)
     if block is None:
         die("no leading /-! ... -/ metadata header block in %s" % path)
+
+    # An import BELOW the header is not a style problem, it is a file that cannot build. Saying
+    # so here costs nothing; letting it through spends a full container build to reach the same
+    # conclusion with a worse message.
+    close = rest.find("-/", rest.find("/-!") + 3)
+    for ln in rest[close + 2:].splitlines():
+        if re.match(r"^\s*import\b", ln):
+            die("import below the metadata header in %s: %r\n"
+                "  Lean requires every import to precede all declarations, and the `/-!` header "
+                "is a declaration.\n"
+                "  Put imports at the very top of your source and the form will hoist them above "
+                "the header." % (path, ln.strip()))
 
     fields = parse_header(block)
 
@@ -170,6 +241,30 @@ def main(argv):
     if discharges is not None and not re.fullmatch(r"MTH\.C-[0-9]{4}-[0-9]{4,}", discharges):
         die("invalid @discharges %r (must be a claims handle MTH.C-YYYY-NNNN)" % discharges)
 
+    # @mathlib (when present) pins the Mathlib revision the deposit is built against. Only the
+    # GRAMMAR is checked here: this parser is deliberately database-free because the gate runs
+    # it too, so whether a revision is one the bank actually has a cache and a trusted reference
+    # for is decided by the caller (the API at intake, and the gate before it builds). Absent
+    # means Lean-core only, which is every deposit before Phase 2b.
+    mathlib = fields.get("mathlib") or None
+    if mathlib is not None and not re.fullmatch(r"[0-9a-f]{40}", mathlib):
+        die("invalid @mathlib %r (must be a 40-character lowercase git sha)" % mathlib)
+
+    # Importing Mathlib without pinning a revision is a deposit that cannot build, and this is
+    # decidable from the header alone — no database needed, so it belongs here. `@mathlib` is what
+    # selects a Mathlib environment; without it the deposit resolves to Lean core, where Mathlib
+    # is not on LEAN_PATH and the build dies with Lean's own "unknown module prefix 'Mathlib'"
+    # after a full container build. Saying it now is the same verdict, minutes earlier, with a
+    # message the depositor can act on.
+    if mathlib is None:
+        unpinned = [m for m in imports if m == "Mathlib" or m.startswith("Mathlib.")]
+        if unpinned:
+            die("imports %s but sets no @mathlib in %s\n"
+                "  A Mathlib import needs @mathlib: <40-char revision> to select the build\n"
+                "  environment that carries it. Without one the deposit is built against Lean\n"
+                "  core, where Mathlib is not importable."
+                % (", ".join(repr(m) for m in unpinned[:3]), path))
+
     # Title is human-facing and flows into the PR-comment markdown. Collapse all
     # whitespace (including newlines) to single spaces and cap length, so a
     # title cannot forge a report line (e.g. a fake "verdict: admit").
@@ -181,7 +276,13 @@ def main(argv):
         "module": fields.get("module") or "Submission",
         "decls": decls,
         "pin": pin,
+        "mathlib": mathlib,
         "discharges": discharges,
+        # The hoisted imports, so a caller can see what the deposit asked for without
+        # re-parsing the file. What is actually IMPORTABLE is decided by LEAN_PATH, i.e. by the
+        # environment the deposit pinned — a core environment offers Init/Std/Lean and nothing
+        # more, so an unavailable import fails the build with Lean's own message.
+        "imports": imports,
         "gloss": fields.get("gloss", ""),
     }
     sys.stdout.write(json.dumps(out) + "\n")

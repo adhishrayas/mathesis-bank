@@ -7,7 +7,10 @@
 
   // Fallback repo slug for the seed file (before the first CI run fills it).
   // CI sets `repo` in verification.json from $GITHUB_REPOSITORY; that wins.
-  const REPO = "noumenal-ai/mathesis";
+  // Must be the PUBLIC bank repo. This string ships in published client-side JS, and it
+  // previously named a private repo, so the pre-first-run fallback linked somewhere no
+  // visitor could open. Keep private repo names out of this file entirely.
+  const REPO = "noumenal-ai/mathesis-bank";
 
   const $ = (s, r) => (r || document).querySelector(s);
   const esc = (t) => String(t == null ? "" : t).replace(/[&<>]/g, (c) =>
