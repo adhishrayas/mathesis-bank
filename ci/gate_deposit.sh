@@ -531,28 +531,88 @@ import json, sys
 d = json.load(open(sys.argv[1]))
 trivial = []
 rows = []
+redefs = []
 for t in (d.get("targets") or []):
     decl = t.get("decl", "?")
     audit = t.get("axiom_audit", "?")
     tier = t.get("kind", "?")
     illegal = t.get("illegal_axiom")
     triv = t.get("triviality")
-    cell = "pass" if audit == "pass" else ("**fail** (illegal axiom `%s`)" % illegal if illegal else "**fail**")
+    # NOTE: no APOSTROPHES anywhere in this heredoc, comments included. It is a quoted heredoc
+    # inside a $(...), where bash mis-parses a lone single-quote as opening a quote and fails
+    # with "unexpected EOF while looking for matching" — pointing at a line far below, which
+    # makes it a slow thing to diagnose. Backticks are fine.
+    #
+    # A redefinition is the OTHER way the axiom leg fails, and it used to render as a bare
+    # "**fail**": the exe knew which constant diverged and the report dropped it, so a
+    # depositor who collided with `Set` or `mul_one` had nothing to act on. `failure` is the
+    # raw text, rendered when neither structured field recognises the shape, so no failure
+    # mode is silently blank again.
+    redef = t.get("redefined_constant")
+    failure = t.get("failure")
+
+    def clean(s, n=160):
+        # These come from the candidate export, i.e. from the depositor. Lean permits
+        # «quoted» identifiers containing almost anything, so strip what would break out of
+        # an inline code span or forge a report row — same reasoning as the @title handling.
+        #
+        # chr(96) rather than a literal backtick: a LONE backtick on a line of this heredoc is
+        # read by the enclosing $(...) as opening a command substitution, so every line here
+        # must carry an even number of them. Writing it as a character code sidesteps that
+        # entirely rather than relying on someone keeping the count even.
+        s = " ".join(str(s).split())
+        return s.replace(chr(96), "").replace("|", "")[:n]
+
+    if audit == "pass":
+        cell = "pass"
+    elif illegal:
+        cell = "**fail** (illegal axiom `%s`)" % clean(illegal)
+    elif redef:
+        cell = ("**fail** (redefines `%s`, which the trusted reference defines differently)"
+                % clean(redef))
+        redefs.append(clean(redef))
+    elif failure:
+        cell = "**fail** (%s)" % clean(failure)
+    else:
+        cell = "**fail**"
     rows.append("| axioms `%s` (%s) | %s |" % (decl, tier, cell))
     if triv:
         trivial.append("%s: %s" % (decl, triv))
-# Print table rows first, then a sentinel + the trivial list.
+# Print table rows first, then a sentinel + the trivial list, then the redefinitions.
 for r in rows:
     print(r)
 print("@@TRIVIAL@@")
 for x in trivial:
     print(x)
+print("@@REDEF@@")
+for x in sorted(set(redefs)):
+    print(x)
 PY
 )"
-# Split rows from the trivial list on the sentinel.
+# Split rows from the trivial list and the redefinition list on the sentinels.
 ROWS="${TRIVIAL_FLAGGED%%@@TRIVIAL@@*}"
-TRIVIALS="${TRIVIAL_FLAGGED#*@@TRIVIAL@@}"
+REST="${TRIVIAL_FLAGGED#*@@TRIVIAL@@}"
+TRIVIALS="${REST%%@@REDEF@@*}"
+REDEFS="$(printf '%s' "${REST#*@@REDEF@@}" | sed '/^$/d')"
 printf '%s\n' "$ROWS" | sed '/^$/d' >> "$REPORT"
+
+# Name the collision and say what to do about it. A redefinition rejection is otherwise the
+# most opaque verdict the gate produces: the proof is valid, the axioms are clean, and the
+# deposit is refused for a reason that lives in a 12,683-constant reference the depositor
+# cannot see.
+if [ -n "$REDEFS" ]; then
+  md ""
+  md "- **redefines a constant the trusted reference already defines**, so the deposit could"
+  md "  state something true only of its own version of a name the bank means something"
+  md "  specific by:"
+  printf '%s\n' "$REDEFS" | while IFS= read -r rd; do
+    [ -n "$rd" ] && md "  - \`$rd\`"
+  done
+  md ""
+  md "  Put the declaration in your own namespace, or rename it. A deposit defining"
+  md "  \`Probe.Real\` rather than \`Real\` is admitted: the check is on the fully-qualified"
+  md "  name, so namespacing is enough."
+fi
 
 # Statement-identity leg is implicit in the exe's exit code under --reference:
 # a smuggle → nonzero + REJECTED. Render it explicitly for the discharge case.

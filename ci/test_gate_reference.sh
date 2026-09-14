@@ -126,7 +126,73 @@ RC="$(run_gate "$TMP/present.export" 12683)"
 check "a healthy reference still admits"           test "$RC" = "0"
 check "the deposit really was admitted"            grep -q "admit" "$TMP/report.md"
 
-# ---- 4. unset stays as documented ------------------------------------------------------------
+# ---- 4. a redefinition rejection names the constant ------------------------------------------
+# A redefinition is the OTHER way the axiom leg fails. The exe knows which constant diverged and
+# reports it in `redefined_constant`, but the gate used to render any non-illegal-axiom failure
+# as a bare "**fail**" — so a depositor colliding with `Set` or `mul_one` was refused with no
+# way to tell what they had hit, out of a 12,683-constant reference they cannot see.
+cat > "$BIN/adjudicate-redef" <<'EOF'
+#!/bin/sh
+echo "trusted init.export loaded: 12683 constants" >&2
+cat <<JSON
+{"replay":{"accepted":true,"detail":"ok"},"constants":10,"permitted":["propext"],
+ "statement_identity":"not-applicable",
+ "targets":[{"decl":"probe_ref","kind":"theorem","axiom_audit":"fail","illegal_axiom":null,
+             "redefined_constant":"Real",
+             "failure":"trusted constant redefined: <<Real>>","axioms_reached":[],
+             "triviality":null}],"verdict":"REJECTED"}
+JSON
+exit 1
+EOF
+# An unrecognised failure shape: neither illegal_axiom nor redefined_constant, only the raw text.
+cat > "$BIN/adjudicate-odd" <<'EOF'
+#!/bin/sh
+echo "trusted init.export loaded: 12683 constants" >&2
+cat <<JSON
+{"replay":{"accepted":true,"detail":"ok"},"constants":10,"permitted":["propext"],
+ "statement_identity":"not-applicable",
+ "targets":[{"decl":"probe_ref","kind":"theorem","axiom_audit":"fail","illegal_axiom":null,
+             "redefined_constant":null,
+             "failure":"some future failure mode","axioms_reached":[],"triviality":null}],
+ "verdict":"REJECTED"}
+JSON
+exit 1
+EOF
+chmod +x "$BIN/adjudicate-redef" "$BIN/adjudicate-odd"
+
+run_with() { # run_with <adjudicator> ; reference healthy throughout
+  rm -rf "$TMP/out"; mkdir -p "$TMP/out"
+  env MATHESIS_ADJUDICATE="$BIN/$1" \
+      MATHESIS_LEAN4EXPORT="$BIN/lean4export" \
+      MATHESIS_OUT_DIR="$TMP/out" \
+      MATHESIS_INIT_EXPORT="$TMP/present.export" \
+      PATH="$BIN:$PATH" \
+      bash "$ROOT/ci/gate_deposit.sh" "$TMP/dep" >"$TMP/report.md" 2>"$TMP/err"
+  echo $?
+}
+
+RC="$(run_with adjudicate-redef)"
+check "a redefinition still rejects"               test "$RC" = "2"
+check "the failing row names the constant"         grep -q 'redefines .Real.' "$TMP/report.md"
+check "the report explains what happened"          grep -q "redefines a constant the trusted reference" "$TMP/report.md"
+check "and tells the depositor how to fix it"      grep -q "namespacing is enough" "$TMP/report.md"
+# The guidance is only useful if it is true: the check is on the fully-qualified name, so a
+# namespaced declaration does not collide. Asserted for real against the live adjudicator in
+# the collision battery; here it just must not promise something the report never explains.
+check "the suggested fix is shown concretely"      grep -q "Probe.Real" "$TMP/report.md"
+
+RC="$(run_with adjudicate-odd)"
+check "an unrecognised failure still rejects"      test "$RC" = "2"
+check "and its raw reason is surfaced, not blank"  grep -q "some future failure mode" "$TMP/report.md"
+check "no redefinition guidance when not one"      bash -c \
+  "! grep -q 'namespacing is enough' '$TMP/report.md'"
+
+# A clean run must not acquire any of this.
+RC="$(run_gate "$TMP/present.export" 12683)"
+check "an admitted deposit gets no redefinition note" bash -c \
+  "! grep -q 'redefines a constant' '$TMP/report.md'"
+
+# ---- 5. unset stays as documented ------------------------------------------------------------
 # Deliberately unchanged: the exe reports the check is disabled and the gate proceeds. Tightening
 # this would break every Lean-core deployment that has no reference configured.
 RC="$(run_gate "" 59)"
