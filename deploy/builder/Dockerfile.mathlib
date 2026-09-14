@@ -129,6 +129,50 @@ RUN set -eux; \
 # capital X adds execute to directories only, never to olean files.
 
 
+# ── stage 1b: the pruned trees the RUNTIME images carry ──────────────────────────────────────
+# A separate stage, not a prune after the COPY. `COPY --from=<stage>` materialises that stage's
+# merged filesystem, so deleted files are simply absent; deleting after the COPY would write
+# whiteouts over a 6 GB lower layer that still ships, and a `chmod -R` there would copy up all
+# 94k files into a second full layer.
+#
+# `exporter` below stays FROM `fetch`, i.e. UNPRUNED. The trusted reference must be produced
+# from a complete environment, so pruning cannot weaken it even in principle.
+#
+# WHAT IS SAFE TO DROP, MEASURED
+# ------------------------------
+# Each was verified by exporting the same Mathlib deposit through the real gate and requiring a
+# BYTE-IDENTICAL candidate (lean4export confirmed deterministic first), with the spoof still
+# rejected:
+#
+#   .ilean            268 MB   language-server index; nothing at runtime opens it
+#   .trace / .hash      2 MB   lake build bookkeeping; there is no lake at runtime
+#   *.a               410 MB   static archives, used only to LINK a native executable. The
+#                              runtime does `lean -o …olean` and `lean4export` — no linking
+#   toolchains/*/src   34 MB   Lean source, for IDE hover
+#   toolchains/*/ilean 80 MB   as above
+#
+# Roughly 1.0 GB, and 64% of the inode count, which is per-job pull and extract time.
+#
+# WHAT IS NOT SAFE, ALSO MEASURED — DO NOT RETRY
+# ----------------------------------------------
+# `.olean.private` is 3,449 MB here plus 1,259 MB in the toolchain: by far the largest target,
+# and it CANNOT go. Lake describes a plain `import` as needing only `.olean`, `.olean.server`
+# and `.ir` (lake/Lake/Build/Module.lean:250-251), but that describes what LAKE tracks as a
+# build dependency, not what the runtime loader opens. Removing it fails at the very first
+# import, before any Mathlib module is even reached:
+#
+#     /work/Submission.lean:1:0: error: missing data file for module Init
+#
+# The 2:1 size ratio over `.olean` is not slack; it is where the module data lives.
+FROM fetch AS slim
+RUN set -eux; \
+    find /oleans \( -name "*.ilean" -o -name "*.trace" -o -name "*.hash" \) -delete; \
+    find /opt/elan \( -name "*.a" -o -name "*.ilean" \) -delete; \
+    rm -rf /opt/elan/toolchains/*/src /opt/elan/tmp; \
+    test -f /oleans/Mathlib.olean || { echo "FATAL: prune removed Mathlib.olean"; exit 1; }; \
+    echo "pruned trees:"; du -sh /oleans /opt/elan
+
+
 # ── stage 2: the exporter — TRUSTED side, never shipped to a deposit ──────────────────────────
 # Produces the `mathlib.export` that becomes `environments.mathlib_reference_sha256`. It lives
 # in this file so the reference and the image it is the reference FOR are pinned by the same
@@ -171,8 +215,8 @@ RUN set -eux; \
     apt-get install -y --no-install-recommends libgmp10 libstdc++6; \
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=fetch /opt/elan /opt/elan
-COPY --from=fetch /oleans /oleans
+COPY --from=slim /opt/elan /opt/elan
+COPY --from=slim /oleans /oleans
 
 # LEAN_PATH is how the deposit's `import Mathlib` resolves. `gate_deposit.sh` invokes
 # `lean --root=/work` with no LEAN_PATH of its own — by design, so the Lean-core image gives a
