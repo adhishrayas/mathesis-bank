@@ -71,6 +71,11 @@ PY="${PYTHON:-python3}"
 LEAN_VERSION="${LEAN_VERSION:-v4.31.0}"
 MATHLIB_REV="${MATHLIB_REV:-fabf563a7c95a166b8d7b6efca11c8b4dc9d911f}"
 MODULE="${MODULE:-Mathlib}"
+# The runner and Cloud Run are amd64. Nothing pinned a platform before, so a build on an Apple
+# Silicon Mac produced arm64 images that die on CI with `exec format error` — which surfaces
+# through gate_deposit.sh as "reject — submission.lean failed to build", blaming a depositor
+# whose proof was fine. Pin it, and let a genuinely arm64 host opt out explicitly.
+PLATFORM="${PLATFORM:-linux/amd64}"
 OUT_DIR="${OUT_DIR:-$ROOT/build/reference}"
 DECLS_FILE="${DECLS_FILE:-$ROOT/deploy/builder/mathlib-reference.decls}"
 
@@ -104,7 +109,7 @@ if [ -z "${REBUILD:-}" ] && docker image inspect "$EXPORTER_TAG" >/dev/null 2>&1
   echo "  reusing $EXPORTER_TAG (REBUILD=1 to force)"
 else
   echo "building the exporter stage (downloads Mathlib's olean cache; slow) ..."
-  if ! docker build --progress=plain \
+  if ! docker build --progress=plain --platform "$PLATFORM" \
         -f "$ROOT/deploy/builder/Dockerfile.mathlib" --target exporter \
         --build-arg "LEAN_VERSION=$LEAN_VERSION" \
         --build-arg "MATHLIB_REV=$MATHLIB_REV" \
@@ -174,7 +179,8 @@ build_stage() {  # build_stage <target-or-empty> <tag> <logname>
   if [ -z "${REBUILD:-}" ] && docker image inspect "$tag" >/dev/null 2>&1; then
     echo "  reusing $tag"; return 0
   fi
-  local args=(--progress=plain -f "$ROOT/deploy/builder/Dockerfile.mathlib"
+  local args=(--progress=plain --platform "$PLATFORM"
+              -f "$ROOT/deploy/builder/Dockerfile.mathlib"
               --build-arg "LEAN_VERSION=$LEAN_VERSION"
               --build-arg "MATHLIB_REV=$MATHLIB_REV" -t "$tag")
   [ -n "$target" ] && args+=(--target "$target")
@@ -187,10 +193,40 @@ build_stage() {  # build_stage <target-or-empty> <tag> <logname>
 }
 
 echo "building the two runtime images ..."
-# The deposit builder (default stage) and the export runtime, which is the builder plus
-# lean4export. They share the 6 GB olean layer, so the second costs one small layer.
+# The deposit builder first, then the export runtime FROM it — by tag, not as a sibling stage.
+# The two differ by one 246 MB binary and must share every layer beneath it. As sibling stages
+# built by two separate `docker build` calls they did NOT: measured 12.2 + 12.5 GB with only
+# 2.04 GB shared, i.e. 22.7 GB resident against ~14 GB of runner disk. Building the second FROM
+# the first makes the shared base structural rather than a cache outcome.
 build_stage "" "$BUILDER_TAG" builder-build.log || exit 1
-build_stage exportrt "$EXPORTRT_TAG" exportrt-build.log || exit 1
+
+# Dockerfile.exportrt COPYs the lean4export binary out of the exporter image and into the
+# builder image. If those two are different architectures the copied binary is silently broken —
+# it would pass the `ldd` guard on some hosts and then fail at run time as a gate error blamed on
+# a depositor. Refuse rather than produce that.
+B_ARCH="$(docker image inspect "$BUILDER_TAG" --format '{{.Architecture}}' 2>/dev/null)"
+E_ARCH="$(docker image inspect "$EXPORTER_TAG" --format '{{.Architecture}}' 2>/dev/null)"
+if [ -n "$B_ARCH" ] && [ -n "$E_ARCH" ] && [ "$B_ARCH" != "$E_ARCH" ]; then
+  echo "FATAL: builder is $B_ARCH but exporter is $E_ARCH."
+  echo "       The export runtime copies lean4export from the exporter into the builder, so the"
+  echo "       two must match. Rebuild both with the same PLATFORM (REBUILD=1)."
+  exit 1
+fi
+
+if [ -n "${REBUILD:-}" ] || ! docker image inspect "$EXPORTRT_TAG" >/dev/null 2>&1; then
+  if ! docker build --progress=plain --platform "$PLATFORM" \
+        -f "$ROOT/deploy/builder/Dockerfile.exportrt" \
+        --build-arg "BUILDER_IMAGE=$BUILDER_TAG" \
+        --build-arg "EXPORTER_IMAGE=$EXPORTER_TAG" \
+        -t "$EXPORTRT_TAG" "$ROOT/deploy/builder" >"$OUT_DIR/exportrt-build.log" 2>&1; then
+    echo "FATAL: $EXPORTRT_TAG build failed; see $OUT_DIR/exportrt-build.log"
+    tail -30 "$OUT_DIR/exportrt-build.log" | sed 's/^/    /'
+    exit 1
+  fi
+  echo "  ok  $EXPORTRT_TAG"
+else
+  echo "  reusing $EXPORTRT_TAG"
+fi
 
 echo
 echo "the DEPOSIT BUILDER must not carry the tools that made the reference:"
@@ -229,6 +265,28 @@ if docker run --rm --entrypoint sh "$EXPORTRT_TAG" -c \
 else
   echo "    FAIL  lean4export cannot resolve Mathlib in the export image"; rc=1
 fi
+# The two images must SHARE one base, not merely be similar. This is the assertion the old
+# sibling-stage layout would have failed silently: 12.2 and 12.5 GB with only 2.04 GB in common,
+# so both resident cost 22.7 GB against ~14 GB of runner disk, and nothing measured it. A size
+# check is too weak — identical sizes with DIFFERENT digests is exactly the failure mode. The
+# builder's layer list must be a strict PREFIX of the export image's.
+echo "the two images must share one base, not duplicate it:"
+b_layers="$(docker image inspect "$BUILDER_TAG"  --format '{{range .RootFS.Layers}}{{.}}
+{{end}}' | sed '/^$/d')"
+e_layers="$(docker image inspect "$EXPORTRT_TAG" --format '{{range .RootFS.Layers}}{{.}}
+{{end}}' | sed '/^$/d')"
+nb="$(printf '%s\n' "$b_layers" | wc -l | tr -d ' ')"
+ne="$(printf '%s\n' "$e_layers" | wc -l | tr -d ' ')"
+if [ "$(printf '%s\n' "$e_layers" | head -n "$nb")" = "$b_layers" ]; then
+  echo "    ok    export image extends the builder ($nb shared layers, $((ne - nb)) added)"
+else
+  ncommon="$(comm -12 <(printf '%s\n' "$b_layers" | sort) <(printf '%s\n' "$e_layers" | sort) \
+             | wc -l | tr -d ' ')"
+  echo "    FAIL  the images do not share a base — both would be pulled and stored in full"
+  echo "          builder $nb layers, export $ne layers, only $ncommon in common"
+  rc=1
+fi
+
 [ "$rc" -eq 0 ] || { echo "  refusing to report success with a broken image pair"; exit 1; }
 
 # ── 5. what to do with it ────────────────────────────────────────────────────────────────────

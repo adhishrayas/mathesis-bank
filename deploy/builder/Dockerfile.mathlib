@@ -200,38 +200,15 @@ RUN set -eux; \
 WORKDIR /work
 
 
-# ── stage 4: the EXPORT runtime — the builder image plus lean4export ─────────────────────────
-#
-#   docker build -f deploy/builder/Dockerfile.mathlib --target exportrt \
-#     -t mathesis/lean-exporter-rt:v4.31.0-mathlib-fabf563 deploy/builder
-#
-# `environments.export_image` names this, and `gate_deposit.sh` runs its export step here.
-# Containerizing the untrusted build moved the build's LEAN_PATH into the image while the host
-# kept none, so `lean4export Submission` on the host died with "unknown module prefix 'Mathlib'"
-# — every Mathlib deposit would have rejected at the export step. See migration 004.
-#
-# lean4export is deliberately NOT in the deposit builder below. `--read-only` already makes it
-# untamperable and the export is untrusted input to the adjudicator either way, so this is
-# defence in depth rather than a soundness boundary — but it costs one layer, and the builder
-# image's stated posture is to give the untrusted build nothing extra to reach.
-#
-# The binary's RPATH names /opt/elan, which runtime-base carries at the same path, so it
-# resolves here and would not have resolved had the host's binary been mounted in instead.
-FROM runtime-base AS exportrt
-COPY --from=exporter /l4e/.lake/build/bin/lean4export /usr/local/bin/lean4export
-RUN set -eux; \
-    test -x /usr/local/bin/lean4export; \
-    if ldd /usr/local/bin/lean4export 2>/dev/null | grep -q "not found"; then \
-      echo "FATAL: lean4export has unresolved shared libraries in this image"; \
-      ldd /usr/local/bin/lean4export; exit 1; \
-    fi
-USER builder
-WORKDIR /work
-
-
-# ── stage 5 (default): the deposit builder image ─────────────────────────────────────────────
+# ── stage 4 (default, last): the deposit builder image ───────────────────────────────────────
 # Last, so a bare `docker build -f Dockerfile.mathlib` produces the image that runs untrusted
-# code — the narrower of the two — rather than the one carrying the exporter.
+# code rather than one carrying extra tools.
+#
+# The EXPORT runtime used to be a sibling stage here (`FROM runtime-base AS exportrt`). It has
+# moved to deploy/builder/Dockerfile.exportrt, which builds FROM this image by tag. The two
+# differ by one 246 MB binary and must share every layer beneath it; as sibling stages built by
+# two separate `docker build` invocations they did not — measured at 22.7 GB resident for the
+# pair, against ~14 GB of runner disk. See that file for the full reasoning.
 FROM runtime-base
 USER builder
 WORKDIR /work
