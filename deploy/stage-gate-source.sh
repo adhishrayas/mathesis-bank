@@ -17,8 +17,29 @@ DST="$SITE/backend-gate"
 
 [ -f "$SRC/MathesisAdjudicate.lean" ] || { echo "FATAL: gate source not found at $SRC (set MATHESIS_BACKEND)"; exit 1; }
 
+# The trusted logical-core reference (init.export + its anchor + README) was added
+# to backend-gate/ AFTER this script was written and is NOT part of the vendored
+# set below, so a bare `rm -rf "$DST"` would silently delete the fake-connective
+# defense. Preserve the public copies across the wipe; if $SRC carries its own
+# (more canonical) copies, the vendor step below overwrites them.
+STASH=""
+if [ -f "$DST/init.export" ]; then
+  STASH="$(mktemp -d)"
+  for f in init.export init.export.anchor.lean init.export.README.md; do
+    [ -f "$DST/$f" ] && cp "$DST/$f" "$STASH/$f"
+  done
+fi
+
 rm -rf "$DST"
 mkdir -p "$DST/Mathesis/Primitive"
+
+if [ -n "$STASH" ]; then
+  for f in init.export init.export.anchor.lean init.export.README.md; do
+    [ -f "$STASH/$f" ] && cp "$STASH/$f" "$DST/$f"
+  done
+  rm -rf "$STASH"
+  echo "preserved the trusted init.export reference across the wipe."
+fi
 
 # The gate: root + verdict + the two primitives + manifest + orchestrator + the exe root.
 cp "$SRC/Mathesis.lean"                       "$DST/Mathesis.lean"
@@ -29,6 +50,23 @@ cp "$SRC/Mathesis/Primitive/CheckProof.lean"  "$DST/Mathesis/Primitive/CheckProo
 cp "$SRC/Mathesis/Primitive/RunWitness.lean"  "$DST/Mathesis/Primitive/RunWitness.lean"
 cp "$SRC/MathesisAdjudicate.lean"             "$DST/MathesisAdjudicate.lean"
 cp "$SRC/lean-toolchain"                      "$DST/lean-toolchain"
+
+# The trusted reference, when the private backend carries it (it is bank-owned and
+# may live only in the public repo — hence the preserve step above).
+for f in init.export init.export.anchor.lean init.export.README.md; do
+  [ -f "$SRC/$f" ] && cp "$SRC/$f" "$DST/$f"
+done
+
+# Fail loudly rather than staging a gate that cannot run its redefinition check:
+# both production workflows set MATHESIS_INIT_EXPORT to this path, and the gate
+# only prints a note (not an error) when the file is absent.
+[ -f "$DST/init.export" ] || {
+  echo "FATAL: no init.export in $DST after staging."
+  echo "  Both workflows point MATHESIS_INIT_EXPORT at it, and the gate DISABLES the"
+  echo "  trusted-redefinition check when it is missing. Regenerate it per"
+  echo "  backend-gate/init.export.README.md before committing."
+  exit 1
+}
 
 # Minimal lakefile — the Mathesis lib + the re-derivation exe only. Deliberately
 # excludes MathesisSelfTest (internal test fixtures declare a test axiom; not

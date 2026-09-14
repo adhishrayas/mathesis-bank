@@ -51,6 +51,15 @@ ensure_lean() {
 export MATHESIS_EXPORT_STORE="${MATHESIS_EXPORT_STORE:-gh:noumenal-ai/mathesis-bank@exports-v1}"
 export MATHESIS_EXPORTS_DIR="${MATHESIS_EXPORTS_DIR:-$ROOT/registry/_shared/exports}"
 
+# Trusted logical-core reference. Both CI workflows set this, and without it the
+# gate DISABLES its trusted-redefinition check (fake `Iff`/`Eq`/`False`) and only
+# prints a note — so a CLI run that omitted it was silently weaker than the CI run
+# it is meant to reproduce. Set only when the file is actually present: the gate
+# reads the path unconditionally, so a bogus one would crash it.
+if [ -z "${MATHESIS_INIT_EXPORT:-}" ] && [ -f "$ROOT/backend-gate/init.export" ]; then
+  export MATHESIS_INIT_EXPORT="$ROOT/backend-gate/init.export"
+fi
+
 usage() { sed -n '2,16p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
 
 manifest_for() {  # <ACCESSION> -> path or empty
@@ -91,15 +100,29 @@ check_one() {  # <ACCESSION> -> 0 admitted / 1 rejected / 2 error
     bash "$ROOT/ci/fetch_exports.sh" "$sha" >/dev/null || { echo "  ✗ $acc — could not fetch/verify the frozen export" >&2; return 2; }
   fi
 
-  local out
-  out="$("$EXE" "$blob" -- "${decls_arr[@]}" 2>/dev/null)" || true
+  # Keep the gate's stderr instead of discarding it: it carries both the
+  # "trusted-redefinition check DISABLED" warning and, on a non-ADMITTED
+  # verdict, the actual diagnosis. Silently dropping it made a weakened check
+  # and a real rejection look identical.
+  local out errf
+  errf="$(mktemp)"
+  out="$("$EXE" "$blob" -- "${decls_arr[@]}" 2>"$errf")" || true
+  if grep -q 'trusted-redefinition check DISABLED' "$errf" 2>/dev/null; then
+    echo "  ! $acc — trusted-redefinition check DISABLED (no backend-gate/init.export here);" >&2
+    echo "      this run is weaker than CI's. Axiom type-binding is still active." >&2
+  fi
   local verdict
   verdict="$("$PY" -c 'import json,sys;print(json.load(sys.stdin).get("verdict","?"))' <<<"$out" 2>/dev/null || echo '?')"
   if [ "$verdict" = "ADMITTED" ]; then
+    rm -f "$errf"
     echo "  ✓ $acc  ADMITTED  ($(printf '%s ' "${decls_arr[@]}")— kernel re-derived)"
     return 0
   fi
   echo "  ✗ $acc  $verdict"
+  if [ -s "$errf" ]; then
+    sed 's/^/      /' "$errf" >&2
+  fi
+  rm -f "$errf"
   return 1
 }
 

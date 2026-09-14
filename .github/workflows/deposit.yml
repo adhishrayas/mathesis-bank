@@ -118,6 +118,16 @@ jobs:
           echo "MATHESIS_LEAN4EXPORT=$L4E" >> "$GITHUB_ENV"
 
       # ── Which deposits changed in this PR ────────────────────────────────
+      # The untrusted build runs inside this image with --network none, one writable mount
+      # and no inherited environment. Before this, `landrun` was the intended confinement and
+      # nothing installed it, so every build took the bare path: cwd inside the checkout, with
+      # write access to the adjudicator binary, init.export, the exports dir and the claim
+      # manifests. A build that can rewrite the verifier defeats "trust is in the replay".
+      - name: Build the confined deposit builder image
+        run: |
+          docker build -t mathesis/lean-builder:pinned deploy/builder
+          docker run --rm mathesis/lean-builder:pinned lean --version
+
       - name: Determine changed deposits
         id: changed
         env:
@@ -151,6 +161,14 @@ jobs:
           # that redefines a trusted constant (fake Iff/Eq/False → derive False).
           # This is the untrusted path, where that attack actually matters.
           MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
+          # Confine the untrusted build. GH_TOKEN stays on the STEP because the trusted
+          # reference-R fetch needs it; the point is that the build container no longer
+          # inherits it, which ci/test_gate_isolation.sh asserts.
+          MATHESIS_BUILDER_IMAGE: mathesis/lean-builder:pinned
+          # Keep candidate.export and adj.json, which the gate otherwise deletes on exit.
+          # adj.json is the only machine-readable verdict: `admit` and `needs-review` are both
+          # exit code 0, so a caller cannot tell them apart from the exit status.
+          MATHESIS_OUT_DIR: ${{ github.workspace }}/gate-artifacts
           GH_TOKEN: ${{ github.token }}
         run: |
           chmod +x ci/gate_deposit.sh ci/parse_deposit.py ci/fetch_exports.sh
