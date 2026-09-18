@@ -1,8 +1,16 @@
 # Mathesis — site build + STRICT re-derivation verification (public repo)
 #
-# PLACEMENT: this file lives at .github/workflows/verify.yml. Pushing under
-# .github/workflows/ needs a token with `workflow` scope (known org gotcha —
-# push via the web editor or the workflow-scoped account if your token lacks it).
+# This file IS the workflow. There is no copy of it under ci/ any more.
+#
+# One lived there, with a header saying to copy it here, because pushing under
+# .github/workflows/ was believed to need a token with `workflow` scope. That
+# restriction applies to OAuth/HTTPS pushes; over SSH an ordinary key works.
+#
+# The copy was not free. It lost MATHESIS_INIT_EXPORT at 5415289 and stayed wrong
+# for several commits while this file was right, so following its own "copy me"
+# instruction would have switched off the redefinition check in the running
+# workflow — silently, since an unset reference disables that check and still
+# reports rederive_status=ran. ci/_verify_check.py now fails closed on it.
 #
 # Post-F6 hardening. The "Verify" check no longer re-reads the manifest's own
 # recorded verdict/axioms — it RE-DERIVES each result from its frozen export

@@ -401,8 +401,10 @@ def main():
         # this path notices: verify.sh only passes the environment through.
         #
         # Concretely reachable, not theoretical: this variable is supplied by the
-        # workflow file, and ci/verify.yml — the copy the PLACEMENT note says to
-        # install into .github/workflows/ — went 5415289..HEAD without it.
+        # workflow file, and the repo kept a second copy of that workflow under ci/
+        # which went 5415289..HEAD without it. The duplicate is gone now, but the
+        # guard is not about that one file — it is about the variable being absent
+        # for any reason at all, which is a condition nothing else reports.
         init_export = os.environ.get("MATHESIS_INIT_EXPORT", "").strip()
         if not init_export:
             strict_failures.append(

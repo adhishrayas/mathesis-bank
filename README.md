@@ -57,8 +57,18 @@ non-placeholder `verification.json` across the wipe, so the build order between 
 ## Language firewall
 
 None of a fixed list of internal-programme terms may appear anywhere in the built `docs/` output.
-`generate.py` greps its own output for this list and fails the build on any hit; `ci/verify.yml`
-runs an independent second check. The one documented exception: the bare character `γ` is allowed
+`generate.py` greps its own output for this list and fails the build on any hit.
+
+This check runs **locally, before publication, and nowhere else.** The term list is deliberately
+not committed — a published generator carrying the vocabulary would defeat the point — so it is
+absent in CI, and CI therefore does not scan for these terms at all. It says so in its log:
+`INV-1 firewall check: NOT RUN — no term list, docs/ were not scanned`. Whoever publishes is the
+only thing enforcing INV-1, and `MATHESIS_FIREWALL_STRICT=1` makes `generate.py` refuse to build
+without the list rather than build and report nothing scanned.
+
+(This paragraph previously said the CI workflow ran an independent second check. It never has.)
+
+The one documented exception: the bare character `γ` is allowed
 strictly inside `<pre>`/`<code>` spans, because two accessions in the registry (`MTH.R/C-2026-1041`)
 legitimately use `γ` as an ordinary Lean bound type-variable name in their pretty-printed statement,
 unrelated content that only collides on the bare character; byte-faithful rendering means the
@@ -70,9 +80,10 @@ generator must not rewrite a manifest's own statement text to dodge the collisio
 Pages serves from `main` / `docs/`. Enable it in the repo's Settings &rarr; Pages once the repo
 exists on GitHub.
 
-**Note:** pushing files under `.github/workflows/` requires a token with the `workflow`
-scope. If your push account lacks it, add `.github/workflows/verify.yml` (copied from
-`ci/verify.yml`) through GitHub's web editor instead.
+**Note:** pushing files under `.github/workflows/` requires a token with the `workflow` scope —
+but only over HTTPS. An SSH remote pushes workflow files with an ordinary key, which is usually
+the simpler answer than the web editor. There is no second copy of the workflow to install: it
+lives at `.github/workflows/verify.yml` and nowhere else.
 
 ## What this site is not
 
