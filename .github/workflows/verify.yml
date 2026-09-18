@@ -131,7 +131,16 @@ jobs:
             echo "INV-2 lint: clean."
           fi
 
+      # Publication is main-only. Everything above this point is a CHECK and is safe to run on any
+      # ref; everything from here down WRITES — to the repository, and to the live public site.
+      #
+      # `workflow_dispatch: {}` accepts any ref, so without this condition dispatching verify on a
+      # branch to see whether it passes would commit that branch's docs/ and deploy it to Pages.
+      # The branch would be published before review, and before the INV-1 firewall scan, which is
+      # not run in CI at all — the term list is local and uncommitted, so a branch reaching the
+      # live site this way would never have been scanned by anything.
       - name: Commit refreshed docs/
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name  "verify-bot"
           git config user.email "verify-bot@users.noreply.github.com"
@@ -155,6 +164,9 @@ jobs:
 
   deploy:
     needs: build-and-verify
+    # Same reason as the commit step above. A dispatch on a branch should tell you whether the
+    # branch verifies, not replace the published bank with it.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
