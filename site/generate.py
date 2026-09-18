@@ -1460,7 +1460,21 @@ def main():
         for path, word in hits[:50]:
             print(f"  {path}: {word!r}", file=sys.stderr)
         sys.exit(1)
-    print("INV-1 firewall check: clean.")
+    # An empty term list scans for nothing and finds nothing, so `hits` is falsy
+    # whether the docs are clean or were never examined. Saying "clean" for both
+    # is how a build that checked nothing gets read as a build that passed — and
+    # this line prints two lines below the "skipping INV-1 term scan" warning,
+    # far enough apart to miss. Report which of the two actually happened.
+    if BANNED_WORDS:
+        print(f"INV-1 firewall check: clean ({len(BANNED_WORDS)} terms scanned).")
+    else:
+        print("INV-1 firewall check: NOT RUN — no term list, docs/ were not scanned.")
+        if os.environ.get("MATHESIS_FIREWALL_STRICT", "").strip().lower() not in ("", "0", "false", "no"):
+            # For the operator who is about to publish and does hold the list:
+            # turns "silently unchecked" into a build failure.
+            print("FATAL: MATHESIS_FIREWALL_STRICT is set and .firewall-terms is absent.",
+                  file=sys.stderr)
+            sys.exit(1)
 
     print("Build complete.")
 
