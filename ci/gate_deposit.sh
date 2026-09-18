@@ -311,6 +311,31 @@ BUILDER_IMAGE="${MATHESIS_BUILDER_IMAGE:-}"
 if [ -n "$BUILDER_IMAGE" ] && command -v docker >/dev/null 2>&1; then
   md "- containerized build (\`--network none\`, scratch-only mount): \`$BUILDER_IMAGE\`."
   cp "$SUBMISSION" "$WORK/Submission.lean"
+
+  # The builder image runs as uid 10001 by design. `mktemp -d` makes $WORK 0700 owned by whoever
+  # invoked this script, so on Linux uid 10001 cannot traverse it, cannot read Submission.lean,
+  # and cannot write Submission.olean. The build then fails with
+  #
+  #     permission denied (error code: 4294967283)
+  #       file: /work/Submission.lean
+  #
+  # which the block below reports as "reject — submission.lean failed to build": an
+  # infrastructure fault recorded permanently against a depositor whose proof was fine. Every
+  # Mathlib deposit would have hit it.
+  #
+  # This passed throughout development because Docker Desktop on macOS presents bind-mounted
+  # files as owned by the container's user whatever the host says. On a Linux runner the uid
+  # mapping is literal, so the bug only appears in the one place it matters. deposit-e2e.yml
+  # exists to run this there, and found it on its first complete attempt.
+  #
+  # 0777 rather than a chown, which needs root on the host, or --user "$(id -u):$(id -g)", which
+  # would discard the image's own unprivileged uid and its writable HOME. What is exposed is a
+  # world-writable scratch directory for the duration of one build, holding the depositor's own
+  # submission and an olean that is afterwards replayed through the trusted kernel — so tampering
+  # with either buys nothing that writing the submission did not already buy.
+  chmod 0777 "$WORK"
+  chmod 0644 "$WORK/Submission.lean"
+
   docker run --rm \
     --network none \
     --read-only \
