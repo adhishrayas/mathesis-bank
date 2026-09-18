@@ -212,6 +212,19 @@ def extractIllegalAxiom (msg : String) : Option String :=
   | [pre, name, _] => if pre == "illegal axiom reached: " then some name else none
   | _ => none
 
+/-- Extract the redefined constant's name from a `checkAxioms` error, if the failure was a trusted
+redefinition. Produced by `CheckProof.Axioms.loop.validateConst` as
+`s!"trusted constant redefined: '{n}' (candidate's declaration differs ...)"`.
+
+Note the `pre :: name :: _` pattern rather than `extractIllegalAxiom`'s exact three-element match:
+the suffix here contains an apostrophe ("candidate's"), so splitting on `'` yields FOUR pieces.
+A three-element pattern would silently never match, which is the shape of bug this whole field
+exists to fix. -/
+def extractRedefined (msg : String) : Option String :=
+  match msg.splitOn "'" with
+  | pre :: name :: _ => if pre == "trusted constant redefined: " then some name else none
+  | _ => none
+
 /-! ### JSON assembly -/
 
 def targetAuditToJson (t : TargetAudit) : Json :=
@@ -223,6 +236,20 @@ def targetAuditToJson (t : TargetAudit) : Json :=
       match t.illegalAxiom.bind extractIllegalAxiom with
       | some ax => Json.str ax
       | none => Json.null),
+    -- The constant whose definition diverged from the trusted reference. A redefinition is the
+    -- OTHER way `axiom_audit` fails, and it was previously reported as a bare "fail": the exe
+    -- knew the name, `extractIllegalAxiom` did not recognise the message, and the diagnosis was
+    -- dropped on the floor here. A depositor colliding with `Set` or `mul_one` had nothing to
+    -- act on.
+    ("redefined_constant",
+      match t.illegalAxiom.bind extractRedefined with
+      | some n => Json.str n
+      | none => Json.null),
+    -- The raw failure text, whatever its shape. `illegal_axiom` and `redefined_constant` are
+    -- convenience parses of it; this is here so a failure mode neither of them recognises is
+    -- still surfaced rather than silently discarded — which is exactly what happened to
+    -- redefinitions until now.
+    ("failure", match t.illegalAxiom with | some e => Json.str e | none => Json.null),
     ("axioms_reached", Json.arr (t.axiomsReached.map (Json.str ·.toString))),
     ("triviality", match t.triviality with | some r => Json.str r | none => Json.null)
   ]

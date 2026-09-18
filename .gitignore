@@ -7,3 +7,17 @@ __pycache__/
 .lake/
 # frozen export blobs live in object storage, never in git (>100 MB)
 registry/_shared/exports/*.export
+
+# Generated reference artifacts: deploy/builder/make-mathlib-export.sh writes a multi-hundred-MB
+# mathlib.export here. Like the blobs above it belongs in object storage, pinned by the sha256
+# recorded in `environments.mathlib_reference_sha256` — never in git.
+# (backend-gate/init.export is the exception and stays tracked: it is 50 KB and the gate's
+# fallback resolution path reads it straight out of the checkout.)
+build/
+
+# The serving database is a PROJECTION of this tree, never a source of truth — rebuild it with
+# `python3 backend/reproject.py --db <path>`. Committing one would invite reading it as the
+# record, which is the whole thing the projection design refuses.
+*.sqlite
+*.sqlite-journal
+mathesis.sqlite

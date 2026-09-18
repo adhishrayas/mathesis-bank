@@ -1,0 +1,104 @@
+# Regenerate the trusted Mathlib reference export, from the PUBLISHED runtime image.
+#
+#   gcloud builds submit deploy/builder \
+#     --config deploy/builder/cloudbuild.reference.yaml
+#
+# WHY THIS EXISTS SEPARATELY FROM cloudbuild.yaml
+# ----------------------------------------------
+# cloudbuild.yaml's `reference-sha` step PRINTS the hash and throws the blob away. That was the
+# right shape for a check, and the wrong shape for an artifact: the reference is 47.8 MB that the
+# gate must actually read as MATHESIS_INIT_EXPORT, and after that build finished the only surviving
+# record of it was a hash in a log. This build keeps the bytes.
+#
+# WHY FROM lean-exporter-rt RATHER THAN THE exporter STAGE
+# -------------------------------------------------------
+# cloudbuild.yaml produces the reference inside the `exporter` stage, which carries the UNPRUNED
+# olean tree. Rebuilding that stage costs ~515s and pushes nothing, so the image is gone once the
+# build ends.
+#
+# lean-exporter-rt is already published, is 2.64 GB compressed rather than ~23 GB, and carries the
+# PRUNED tree — `slim` drops .ilean/.trace/.hash/.a/src. So running the reference here is not just
+# cheaper, it tests something the prune commit asserted but never measured end to end: that
+# removing those files does not change a single byte lean4export emits. If the hash below matches,
+# that claim is now evidence. If it does not, the prune changed the trusted reference and this
+# build fails rather than quietly publishing a different one.
+#
+# It also matches the conditions a deposit is actually adjudicated under. The gate runs its export
+# step in THIS image, as this uid, against this olean tree — so a reference produced here was
+# produced the same way as the candidates it will be compared against.
+
+timeout: 1800s
+
+options:
+  machineType: E2_HIGHCPU_8
+  diskSizeGb: 200          # the image unpacks to ~11.3 GB
+  logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _REGION: us-central1
+  _REPO: mathesis-environments
+  _TAG: v4.31.0-mathlib-fabf563
+  # The value recorded as environments.mathlib_reference_sha256, produced on arm64 and confirmed
+  # identical on amd64 by cloudbuild.yaml's reference-sha step. Asserted, not just printed: this
+  # build publishes a blob, and a blob that is not this one must never reach the store.
+  _EXPECT_SHA: c53c878debde809ec5c83717b3f5a2591197f008d6167141eb1aaa6f11476155
+  _BUCKET: gs://noumenalai_cloudbuild/mathesis-reference
+
+steps:
+  - id: reference
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -euo pipefail
+        IMG="${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/lean-exporter-rt:${_TAG}"
+        docker pull "$$IMG"
+
+        # The image runs as the unprivileged `builder` uid, deliberately — it is the uid the gate
+        # exports under. So the output directory has to be writable by it rather than by root.
+        mkdir -p /workspace/out && chmod 777 /workspace/out
+
+        # Same normalisation as cloudbuild.yaml: strip comments, collapse whitespace to single
+        # spaces, so the decls list is one flat argument vector.
+        DECLS=$$(sed 's/#.*//' /workspace/mathlib-reference.decls | tr -s '[:space:]' '\n' \
+                 | sed '/^$$/d' | tr '\n' ' ')
+        echo "declarations requested: $$(printf '%s' "$$DECLS" | wc -w)"
+
+        docker run --rm -e DECLS="$$DECLS" -v /workspace/out:/out --entrypoint sh "$$IMG" -c '
+          LEAN_PATH=/oleans lean4export Mathlib -- $$DECLS > /out/mathlib-reference.export 2>/out/ref.err
+          # lean4export can PANIC, write a short or empty file, and still exit 0. That happened
+          # during development and very nearly got read as a real result, so the exit code is not
+          # trusted on its own.
+          if grep -Eiq "panic|internal error|stack overflow" /out/ref.err; then
+            echo "FATAL: lean4export panicked"; tail -20 /out/ref.err; exit 1
+          fi'
+
+        SHA=$$(sha256sum /workspace/out/mathlib-reference.export | cut -d" " -f1)
+        BYTES=$$(wc -c < /workspace/out/mathlib-reference.export)
+        CONSTS=$$(grep -c "" /workspace/out/mathlib-reference.export || true)
+        echo "sha256 : $$SHA"
+        echo "bytes  : $$BYTES"
+        echo "lines  : $$CONSTS"
+
+        if [ "$$SHA" != "${_EXPECT_SHA}" ]; then
+          echo
+          echo "FATAL: this is not the recorded reference."
+          echo "  expected ${_EXPECT_SHA}"
+          echo "  got      $$SHA"
+          echo
+          echo "Either the prune changed what lean4export emits, or the recorded value is stale."
+          echo "Do NOT publish this blob or edit environments.mathlib_reference_sha256 until the"
+          echo "difference is explained — that column is what decides whether a deposit redefining"
+          echo "a Mathlib constant is caught."
+          exit 1
+        fi
+        echo
+        echo "ok: byte-identical to the recorded reference, from the PRUNED olean tree"
+        rm -f /workspace/out/ref.err
+
+artifacts:
+  objects:
+    location: ${_BUCKET}
+    paths:
+      - /workspace/out/mathlib-reference.export

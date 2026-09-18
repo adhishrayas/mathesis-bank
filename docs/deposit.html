@@ -92,11 +92,14 @@
     <label for="d-decls">Declaration name(s) <span class="req">required</span>
       <input id="d-decls" type="text" autocomplete="off" placeholder="my_theorem, my_lemma (comma-separated)">
     </label>
+    <label for="d-mathlib">Mathlib revision <span class="opt">optional; required to import Mathlib</span>
+      <input id="d-mathlib" type="text" autocomplete="off" placeholder="40-character git sha of a pinnable Mathlib revision">
+    </label>
     <label for="d-discharges">Discharges claim <span class="opt">optional, for results</span>
       <input id="d-discharges" type="text" autocomplete="off" placeholder="MTH.C-YYYY-NNNN">
     </label>
     <label for="d-source">Lean source <span class="req">required</span>
-      <textarea id="d-source" rows="10" spellcheck="false" placeholder="theorem my_theorem : ... := by ..."></textarea>
+      <textarea id="d-source" rows="10" spellcheck="false" placeholder="import Mathlib.Logic.Basic&#10;&#10;theorem my_theorem : ... := by ..."></textarea>
     </label>
     <label for="d-gloss">Description <span class="req">required</span>
       <textarea id="d-gloss" rows="4" placeholder="Plain-language description. Author-provided; not machine-checked."></textarea>

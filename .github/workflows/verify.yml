@@ -1,8 +1,16 @@
 # Mathesis — site build + STRICT re-derivation verification (public repo)
 #
-# PLACEMENT: this file lives at .github/workflows/verify.yml. Pushing under
-# .github/workflows/ needs a token with `workflow` scope (known org gotcha —
-# push via the web editor or the workflow-scoped account if your token lacks it).
+# This file IS the workflow. There is no copy of it under ci/ any more.
+#
+# One lived there, with a header saying to copy it here, because pushing under
+# .github/workflows/ was believed to need a token with `workflow` scope. That
+# restriction applies to OAuth/HTTPS pushes; over SSH an ordinary key works.
+#
+# The copy was not free. It lost MATHESIS_INIT_EXPORT at 5415289 and stayed wrong
+# for several commits while this file was right, so following its own "copy me"
+# instruction would have switched off the redefinition check in the running
+# workflow — silently, since an unset reference disables that check and still
+# reports rederive_status=ran. ci/_verify_check.py now fails closed on it.
 #
 # Post-F6 hardening. The "Verify" check no longer re-reads the manifest's own
 # recorded verdict/axioms — it RE-DERIVES each result from its frozen export
@@ -131,7 +139,16 @@ jobs:
             echo "INV-2 lint: clean."
           fi
 
+      # Publication is main-only. Everything above this point is a CHECK and is safe to run on any
+      # ref; everything from here down WRITES — to the repository, and to the live public site.
+      #
+      # `workflow_dispatch: {}` accepts any ref, so without this condition dispatching verify on a
+      # branch to see whether it passes would commit that branch's docs/ and deploy it to Pages.
+      # The branch would be published before review, and before the INV-1 firewall scan, which is
+      # not run in CI at all — the term list is local and uncommitted, so a branch reaching the
+      # live site this way would never have been scanned by anything.
       - name: Commit refreshed docs/
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name  "verify-bot"
           git config user.email "verify-bot@users.noreply.github.com"
@@ -155,6 +172,9 @@ jobs:
 
   deploy:
     needs: build-and-verify
+    # Same reason as the commit step above. A dispatch on a branch should tell you whether the
+    # branch verifies, not replace the published bank with it.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

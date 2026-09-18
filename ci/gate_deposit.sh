@@ -72,9 +72,46 @@ SUBMISSION="$DEP_DIR/submission.lean"
 ADJUDICATE_BIN="${MATHESIS_ADJUDICATE:?set MATHESIS_ADJUDICATE to the built mathesis-adjudicate exe}"
 LEAN4EXPORT_BIN="${MATHESIS_LEAN4EXPORT:-lean4export}"
 
+# `timeout` prefix builder. Neither lean4export nor mathesis-adjudicate was bounded before:
+# lean4export parses an untrusted .olean and the adjudicator parses an untrusted .export, so a
+# crafted input could hang either one indefinitely and wedge the job.
+tmo() {  # tmo <seconds> -- builds a prefix array in TMO_PREFIX
+  TMO_PREFIX=()
+  if command -v timeout >/dev/null 2>&1; then TMO_PREFIX=(timeout "$1")
+  elif command -v gtimeout >/dev/null 2>&1; then TMO_PREFIX=(gtimeout "$1")
+  fi
+}
+
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/mth-gate-$SLUG.XXXXXX")"
 CAND_EXPORT="$WORK/candidate.export"
-trap 'rm -rf "$WORK"' EXIT
+
+# MATHESIS_OUT_DIR: where to KEEP the two artifacts a caller needs. Without it, the EXIT trap
+# below deletes `candidate.export` — the blob that becomes the accession — and `adj.json`, the
+# gate exe's structured report. The report is not optional: `admit` and `needs-review` are both
+# exit code 0 (see the contract above), so a caller keying on `$?` cannot tell them apart, and
+# the markdown is prose meant for a human rather than a machine.
+OUT_DIR="${MATHESIS_OUT_DIR:-}"
+if [ -n "$OUT_DIR" ]; then
+  mkdir -p "$OUT_DIR" || { echo "FATAL: cannot create MATHESIS_OUT_DIR=$OUT_DIR" >&2; exit 2; }
+fi
+
+keep_artifacts() {
+  [ -n "$OUT_DIR" ] || return 0
+  [ -s "$CAND_EXPORT" ] && cp "$CAND_EXPORT" "$OUT_DIR/candidate.export" 2>/dev/null
+  [ -s "$WORK/adj.json" ] && cp "$WORK/adj.json" "$OUT_DIR/adj.json" 2>/dev/null
+  [ -s "$REPORT" ] && cp "$REPORT" "$OUT_DIR/report.md" 2>/dev/null
+  # Record the sha256 the caller must publish the blob under; content-addressing is the trust
+  # boundary, so the name has to come from the content.
+  if [ -s "$CAND_EXPORT" ]; then
+    if command -v sha256sum >/dev/null 2>&1; then
+      sha256sum "$CAND_EXPORT" | cut -d' ' -f1 > "$OUT_DIR/candidate.sha256"
+    else
+      shasum -a 256 "$CAND_EXPORT" | cut -d' ' -f1 > "$OUT_DIR/candidate.sha256"
+    fi
+  fi
+  return 0
+}
+trap 'keep_artifacts; rm -rf "$WORK"' EXIT
 
 # Markdown verdict accumulates in this file; printed to stdout at the end.
 REPORT="$WORK/report.md"
@@ -254,8 +291,43 @@ LEAN_CMD=("${TIMEOUT_PREFIX[@]}" lean --root="$WORK" -o "$WORK/Submission.olean"
 # the residual-risk follow-on. Network-egress confinement is NOT provided by
 # either path here — it is the documented follow-on. Trust is in the replay,
 # not the build (see header).
-if command -v landrun >/dev/null 2>&1; then
-  md "- landrun present → FS-confined build (Landlock)."
+# PREFERRED: a container with no network and one writable mount.
+#
+# This closes four gaps the landrun path never did, and the landrun path never ran anyway —
+# nothing installs it, so control always fell to the bare `else` below.
+#
+#   1. `--network none` is the egress denial named as a follow-on in three places.
+#   2. Only $WORK is writable and nothing else is mounted, so the CHECKOUT IS UNREACHABLE.
+#      That matters more than it sounds: the adjudicator binary, init.export, the exports dir
+#      and the claim manifest whose sha256 this script re-verifies all live in the checkout.
+#      A build that can rewrite them defeats the "trust is in the replay" argument entirely,
+#      because it can rewrite the replay.
+#   3. No inherited environment, so GH_TOKEN is no longer in scope during elaboration.
+#   4. cwd is /work, not the repo.
+#
+# A container still shares the host kernel, and Lean elaboration is arbitrary code execution,
+# so this shrinks the blast radius rather than closing it. Hardware isolation is the next phase.
+BUILDER_IMAGE="${MATHESIS_BUILDER_IMAGE:-}"
+if [ -n "$BUILDER_IMAGE" ] && command -v docker >/dev/null 2>&1; then
+  md "- containerized build (\`--network none\`, scratch-only mount): \`$BUILDER_IMAGE\`."
+  cp "$SUBMISSION" "$WORK/Submission.lean"
+  docker run --rm \
+    --network none \
+    --read-only \
+    --tmpfs /tmp \
+    -v "$WORK":/work \
+    --memory "${MATHESIS_BUILD_MEMORY:-6g}" \
+    --cpus "${MATHESIS_BUILD_CPUS:-2}" \
+    --pids-limit "${MATHESIS_BUILD_PIDS:-512}" \
+    -e HOME=/work \
+    -w /work \
+    "$BUILDER_IMAGE" \
+    timeout "${MATHESIS_BUILD_TIMEOUT:-300}" \
+      lean --root=/work -o /work/Submission.olean /work/Submission.lean \
+    >"$BUILD_LOG" 2>&1
+  BUILD_RC=$?
+elif command -v landrun >/dev/null 2>&1; then
+  md "- landrun present → FS-confined build (Landlock). NOTE: no egress confinement."
   # Read: toolchain + deposit dir. Write: scratch out-dir only.
   landrun \
     --ro "${LEAN_SYSROOT:-$(lean --print-prefix 2>/dev/null)}" \
@@ -264,12 +336,11 @@ if command -v landrun >/dev/null 2>&1; then
     -- "${LEAN_CMD[@]}" >"$BUILD_LOG" 2>&1
   BUILD_RC=$?
 else
-  md "- landrun NOT present → build runs BARE."
-  md "  - Network-egress confinement is a documented FOLLOW-ON (landrun is the"
-  md "    intended tool, Linux-only). The read-only PR token remains the primary"
-  md "    isolation, and admission is decided by the trusted kernel REPLAY of the"
-  md "    produced export, not by this build — a hostile build cannot forge"
-  md "    admission, only misbehave within the (here weaker) sandbox."
+  md "- **build runs BARE** — neither \`MATHESIS_BUILDER_IMAGE\` nor \`landrun\` is available."
+  md "  - No egress confinement and no filesystem confinement. The untrusted build can reach"
+  md "    the checkout, which holds the adjudicator binary and \`init.export\`, so the"
+  md "    \"trust is in the replay\" argument does NOT hold on this path."
+  md "  - Set \`MATHESIS_BUILDER_IMAGE\` to a Lean builder image to close that."
   "${LEAN_CMD[@]}" >"$BUILD_LOG" 2>&1
   BUILD_RC=$?
 fi
@@ -292,12 +363,62 @@ md "- build ok."
 md ""
 md "#### export (lean4export)"
 EXPORT_LOG="$WORK/export.log"
-# Make the just-built olean importable: prepend the scratch dir to LEAN_PATH.
-export LEAN_PATH="$WORK${LEAN_PATH:+:$LEAN_PATH}"
 # The build compiled the source as the fixed module `Submission` (see above);
 # export that module's decl closure. @module is informational only. Decls are
 # passed as a QUOTED array (no word-split/glob).
-if ! "$LEAN4EXPORT_BIN" Submission -- "${DECLS_ARR[@]}" >"$CAND_EXPORT" 2>"$EXPORT_LOG"; then
+tmo "${MATHESIS_EXPORT_TIMEOUT:-900}"
+EXPORT_IMAGE="${MATHESIS_EXPORT_IMAGE:-}"
+if [ -n "$EXPORT_IMAGE" ] && command -v docker >/dev/null 2>&1; then
+  # CONTAINERIZED EXPORT — required for any environment whose imports live in an image.
+  #
+  # Containerizing the build broke this step for Mathlib deposits: the build's LEAN_PATH moved
+  # into the image, and the host has no Mathlib at all, so `lean4export Submission` here died
+  # with "unknown module prefix 'Mathlib'" and every Mathlib deposit rejected at the export
+  # step for a reason unrelated to its proof. Measured: build ok (4528-byte olean), export on
+  # the host exit 1 / 0 bytes, export with the image's oleans exit 0 / 7350 bytes.
+  #
+  # Mounting the host's lean4export into the builder image is not a general fix — it is a
+  # lake-built dynamic executable whose RPATH names the host's Lean sysroot, and ubuntu-latest
+  # and debian bookworm do not share a glibc. So the binary comes from an image built on the
+  # same base: $MATHESIS_EXPORT_IMAGE is the builder image plus lean4export.
+  #
+  # This is NOT a trust boundary. `candidate.export` is untrusted input either way — the
+  # adjudicator replays it through the trusted kernel and requires every target to be present,
+  # so a doctored export fails there, not here. Confinement bounds a hang and a fail-open
+  # panic. (`importModules` does not re-run the deposit's `initialize` blocks: Lean requires
+  # `enableInitializersExecution`, which lean4export does not opt into.)
+  md "- containerized export (\`--network none\`, scratch mounted read-only): \`$EXPORT_IMAGE\`."
+  # $WORK read-only: lean4export reads Submission.olean and writes only to stdout, which is
+  # captured on the host. LEAN_PATH is assembled INSIDE the container so the image's own olean
+  # path is used rather than a layout this script would have to hard-code.
+  docker run --rm \
+    --network none \
+    --read-only \
+    --tmpfs /tmp \
+    -v "$WORK":/work:ro \
+    --memory "${MATHESIS_BUILD_MEMORY:-6g}" \
+    --cpus "${MATHESIS_BUILD_CPUS:-2}" \
+    --pids-limit "${MATHESIS_BUILD_PIDS:-512}" \
+    -e HOME=/tmp \
+    -w /tmp \
+    --entrypoint sh "$EXPORT_IMAGE" -c '
+      T="$1"; shift
+      M="$1"; shift
+      LEAN_PATH="/work${LEAN_PATH:+:$LEAN_PATH}"; export LEAN_PATH
+      exec timeout "$T" lean4export "$M" -- "$@"
+    ' sh "${MATHESIS_EXPORT_TIMEOUT:-900}" Submission "${DECLS_ARR[@]}" \
+    >"$CAND_EXPORT" 2>"$EXPORT_LOG"
+  EXPORT_RC=$?
+else
+  # Host export: the toolchain resolves Init/Std/Lean on its own, which is why the Lean-core
+  # path has always worked here. Prepend the scratch dir so the fresh Submission.olean is
+  # importable.
+  export LEAN_PATH="$WORK${LEAN_PATH:+:$LEAN_PATH}"
+  "${TMO_PREFIX[@]}" "$LEAN4EXPORT_BIN" Submission -- "${DECLS_ARR[@]}" \
+    >"$CAND_EXPORT" 2>"$EXPORT_LOG"
+  EXPORT_RC=$?
+fi
+if [ "$EXPORT_RC" -ne 0 ]; then
   md "- **reject** — lean4export failed on module \`Submission\` (decls: $DECLS):"
   md ""
   tail -n 30 "$EXPORT_LOG" | embed_log >> "$REPORT"
@@ -331,16 +452,55 @@ md "#### adjudicate"
 ADJ_OUT="$WORK/adj.json"
 ADJ_ERR="$WORK/adj.err"
 
+# A CONFIGURED reference that loads to nothing silently disables the redefinition check, and
+# the deposit is then ADMITTED. Measured against the real adjudicator with the same spoofing
+# candidate (a deposit defining its own `Real := Unit` and proving "every two reals are equal"):
+#
+#   MATHESIS_INIT_EXPORT=mathlib.export  -> "loaded: 12683 constants"  exit 1  REJECTED
+#   MATHESIS_INIT_EXPORT=<empty file>    -> "loaded: 0 constants"      exit 0  ADMITTED
+#   MATHESIS_INIT_EXPORT=<garbage>       -> loader throws              exit 1  (fails closed)
+#   MATHESIS_INIT_EXPORT unset           -> check DISABLED             exit 0  ADMITTED
+#
+# Unset is documented and deliberate. Garbage fails closed on its own. The dangerous case is the
+# middle one: a zero-byte or truncated file looks configured, announces "0 constants", and
+# admits the spoof — reachable from an interrupted download, a half-written upload, or a fetch
+# that left an empty file behind. `ci/run_deposit_job.sh` already refuses an empty or
+# hash-mismatched reference, but the gate must not depend on its caller for that.
+if [ -n "${MATHESIS_INIT_EXPORT:-}" ] && [ ! -s "$MATHESIS_INIT_EXPORT" ]; then
+  md "- **reject** — \`MATHESIS_INIT_EXPORT\` is set but empty or missing:"
+  md "  \`$MATHESIS_INIT_EXPORT\`"
+  md "  An empty reference loads as 0 constants and silently disables the"
+  md "  trusted-redefinition check, so refusing is the only safe reading."
+  emit_and_exit 2
+fi
+
 if [ -n "$REF_EXPORT" ]; then
   md "- mode: **discharge** (\`--reference\` statement-identity vs frozen R for \`$DISCHARGES\`)."
-  "$ADJUDICATE_BIN" --reference "$REF_EXPORT" "$CAND_EXPORT" -- "${TARGET_DECLS_ARR[@]}" \
+  tmo "${MATHESIS_ADJUDICATE_TIMEOUT:-1800}"
+  "${TMO_PREFIX[@]}" "$ADJUDICATE_BIN" --reference "$REF_EXPORT" "$CAND_EXPORT" -- "${TARGET_DECLS_ARR[@]}" \
     >"$ADJ_OUT" 2>"$ADJ_ERR"
   ADJ_RC=$?
 else
   md "- mode: **self-audit** (no \`@discharges\`; replay + axioms + triviality)."
-  "$ADJUDICATE_BIN" "$CAND_EXPORT" -- "${TARGET_DECLS_ARR[@]}" \
+  tmo "${MATHESIS_ADJUDICATE_TIMEOUT:-1800}"
+  "${TMO_PREFIX[@]}" "$ADJUDICATE_BIN" "$CAND_EXPORT" -- "${TARGET_DECLS_ARR[@]}" \
     >"$ADJ_OUT" 2>"$ADJ_ERR"
   ADJ_RC=$?
+fi
+
+# Non-empty is necessary but not sufficient: a well-formed file whose records the loader skips
+# would also yield an empty trusted environment. The exe reports what it actually loaded
+# ("trusted init.export loaded: N constants"), so key on that rather than on the file. This is
+# the check that would have caught the measured ADMIT above regardless of cause.
+if [ -n "${MATHESIS_INIT_EXPORT:-}" ] && grep -q "loaded: 0 constants" "$ADJ_ERR" 2>/dev/null; then
+  md "- **reject** — the trusted reference loaded **0 constants**:"
+  md "  \`$MATHESIS_INIT_EXPORT\`"
+  md "  The redefinition check was therefore inactive, and a deposit redefining a"
+  md "  reference constant would have been admitted. Refusing rather than trusting"
+  md "  this verdict."
+  md ""
+  tail -n 10 "$ADJ_ERR" | embed_log >> "$REPORT"
+  emit_and_exit 2
 fi
 
 # The exe ALWAYS emits a complete JSON report on stdout, even when it exits
@@ -371,28 +531,88 @@ import json, sys
 d = json.load(open(sys.argv[1]))
 trivial = []
 rows = []
+redefs = []
 for t in (d.get("targets") or []):
     decl = t.get("decl", "?")
     audit = t.get("axiom_audit", "?")
     tier = t.get("kind", "?")
     illegal = t.get("illegal_axiom")
     triv = t.get("triviality")
-    cell = "pass" if audit == "pass" else ("**fail** (illegal axiom `%s`)" % illegal if illegal else "**fail**")
+    # NOTE: no APOSTROPHES anywhere in this heredoc, comments included. It is a quoted heredoc
+    # inside a $(...), where bash mis-parses a lone single-quote as opening a quote and fails
+    # with "unexpected EOF while looking for matching" — pointing at a line far below, which
+    # makes it a slow thing to diagnose. Backticks are fine.
+    #
+    # A redefinition is the OTHER way the axiom leg fails, and it used to render as a bare
+    # "**fail**": the exe knew which constant diverged and the report dropped it, so a
+    # depositor who collided with `Set` or `mul_one` had nothing to act on. `failure` is the
+    # raw text, rendered when neither structured field recognises the shape, so no failure
+    # mode is silently blank again.
+    redef = t.get("redefined_constant")
+    failure = t.get("failure")
+
+    def clean(s, n=160):
+        # These come from the candidate export, i.e. from the depositor. Lean permits
+        # «quoted» identifiers containing almost anything, so strip what would break out of
+        # an inline code span or forge a report row — same reasoning as the @title handling.
+        #
+        # chr(96) rather than a literal backtick: a LONE backtick on a line of this heredoc is
+        # read by the enclosing $(...) as opening a command substitution, so every line here
+        # must carry an even number of them. Writing it as a character code sidesteps that
+        # entirely rather than relying on someone keeping the count even.
+        s = " ".join(str(s).split())
+        return s.replace(chr(96), "").replace("|", "")[:n]
+
+    if audit == "pass":
+        cell = "pass"
+    elif illegal:
+        cell = "**fail** (illegal axiom `%s`)" % clean(illegal)
+    elif redef:
+        cell = ("**fail** (redefines `%s`, which the trusted reference defines differently)"
+                % clean(redef))
+        redefs.append(clean(redef))
+    elif failure:
+        cell = "**fail** (%s)" % clean(failure)
+    else:
+        cell = "**fail**"
     rows.append("| axioms `%s` (%s) | %s |" % (decl, tier, cell))
     if triv:
         trivial.append("%s: %s" % (decl, triv))
-# Print table rows first, then a sentinel + the trivial list.
+# Print table rows first, then a sentinel + the trivial list, then the redefinitions.
 for r in rows:
     print(r)
 print("@@TRIVIAL@@")
 for x in trivial:
     print(x)
+print("@@REDEF@@")
+for x in sorted(set(redefs)):
+    print(x)
 PY
 )"
-# Split rows from the trivial list on the sentinel.
+# Split rows from the trivial list and the redefinition list on the sentinels.
 ROWS="${TRIVIAL_FLAGGED%%@@TRIVIAL@@*}"
-TRIVIALS="${TRIVIAL_FLAGGED#*@@TRIVIAL@@}"
+REST="${TRIVIAL_FLAGGED#*@@TRIVIAL@@}"
+TRIVIALS="${REST%%@@REDEF@@*}"
+REDEFS="$(printf '%s' "${REST#*@@REDEF@@}" | sed '/^$/d')"
 printf '%s\n' "$ROWS" | sed '/^$/d' >> "$REPORT"
+
+# Name the collision and say what to do about it. A redefinition rejection is otherwise the
+# most opaque verdict the gate produces: the proof is valid, the axioms are clean, and the
+# deposit is refused for a reason that lives in a 12,683-constant reference the depositor
+# cannot see.
+if [ -n "$REDEFS" ]; then
+  md ""
+  md "- **redefines a constant the trusted reference already defines**, so the deposit could"
+  md "  state something true only of its own version of a name the bank means something"
+  md "  specific by:"
+  printf '%s\n' "$REDEFS" | while IFS= read -r rd; do
+    [ -n "$rd" ] && md "  - \`$rd\`"
+  done
+  md ""
+  md "  Put the declaration in your own namespace, or rename it. A deposit defining"
+  md "  \`Probe.Real\` rather than \`Real\` is admitted: the check is on the fully-qualified"
+  md "  name, so namespacing is enough."
+fi
 
 # Statement-identity leg is implicit in the exe's exit code under --reference:
 # a smuggle → nonzero + REJECTED. Render it explicitly for the discharge case.

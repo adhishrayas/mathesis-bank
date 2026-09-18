@@ -25,6 +25,10 @@
       title: $("d-title").value.trim(),
       module: ($("d-module").value.trim() || "Submission"),
       decls: $("d-decls").value.trim(),
+      // Without this a form deposit that imports Mathlib resolves to a Lean-core environment,
+      // where Mathlib is not on LEAN_PATH, and the build fails with "unknown module prefix
+      // 'Mathlib'". Hoisting imports without offering the pin would just move the trap.
+      mathlib: $("d-mathlib").value.trim(),
       discharges: $("d-discharges").value.trim(),
       source: $("d-source").value.replace(/\s+$/, ""),
       gloss: $("d-gloss").value.trim()
@@ -36,17 +40,48 @@
   // The single-file deposit format: a Mathesis metadata header (parsed by the gate)
   // followed by the Lean source. Keeps the whole deposit in one file so the
   // create-new-file URL can carry it and one click opens one PR.
+  // Mirrors ci/parse_deposit.py:split_leading_imports — that parser is the authority, and a
+  // shape it rejects is a deposit this form should never have produced.
+  //
+  // `/-!` is a Lean module docstring, which is declaration-level syntax, and Lean requires every
+  // import to precede all declarations. So "header first, then source" cannot import anything,
+  // which shut form-raised deposits out of Mathlib entirely — the vocabulary the whole banked
+  // corpus is written in. Leading imports are therefore hoisted above the header.
+  function splitLeadingImports(source) {
+    var lines = source.split("\n");
+    var imports = [];
+    var i = 0;
+    while (i < lines.length) {
+      if (lines[i].trim() === "") { i++; continue; }
+      var m = /^\s*import\s+(\S+)\s*$/.exec(lines[i]);
+      if (!m) break;
+      imports.push(m[1]);
+      i++;
+    }
+    // Nothing to hoist: return the source untouched, so a deposit without imports is assembled
+    // byte for byte as it was before this existed.
+    if (imports.length === 0) return { imports: [], body: source };
+    return { imports: imports, body: lines.slice(i).join("\n") };
+  }
+
   function buildFile(v) {
-    var lines = ["/-!", "# Mathesis deposit", "",
+    var split = splitLeadingImports(v.source);
+    var lines = [];
+    if (split.imports.length) {
+      split.imports.forEach(function (m) { lines.push("import " + m); });
+      lines.push("");
+    }
+    lines = lines.concat(["/-!", "# Mathesis deposit", "",
       "@kind: " + v.kind,
       "@title: " + v.title,
       "@module: " + v.module,
       "@decls: " + v.decls,
-      "@pin: " + PIN];
+      "@pin: " + PIN]);
+    if (v.mathlib) lines.push("@mathlib: " + v.mathlib);
     if (v.discharges) lines.push("@discharges: " + v.discharges);
     lines.push("", "@gloss:");
     v.gloss.split("\n").forEach(function (g) { lines.push("  " + g); });
-    lines.push("-/", "", v.source, "");
+    lines.push("-/", "", split.body, "");
     return lines.join("\n");
   }
 

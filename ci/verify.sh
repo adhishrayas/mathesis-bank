@@ -141,4 +141,17 @@ echo "  human_review : $needs_human_review_count flagged"
 echo "  python ok    : $py_ok"
 echo "  status       : $overall"
 echo "  wrote        : $OUT"
+
+# The six lines above are reconstructed from counts and can all read "pass" while
+# `ok` is false: a STRICT failure means the run checked LESS than it should have,
+# which no per-check count expresses. Printing them is the difference between a
+# CI log that names the missing reference and one that just exits 1.
+if [ "$py_ok" != "True" ]; then
+  "$PY" - "$RESULT_JSON" <<'PY' >&2
+import json, sys
+for f in json.loads(sys.argv[1]).get("strict_failures", []):
+    print(f"  STRICT       : {f}")
+PY
+fi
+
 [ "$overall" = pass ] && exit 0 || exit 1
