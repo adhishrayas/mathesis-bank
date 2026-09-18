@@ -153,6 +153,13 @@ RUN set -eux; \
 #
 # Roughly 1.0 GB, and 64% of the inode count, which is per-job pull and extract time.
 #
+# Since confirmed against the one artifact where a difference would matter most. The trusted
+# reference is produced here from the UNPRUNED `exporter`; regenerating it from the PRUNED
+# runtime image gives the same 47,779,522 bytes and the same sha256
+# c53c878debde809ec5c83717b3f5a2591197f008d6167141eb1aaa6f11476155
+# (cloudbuild.reference.yaml, build 5a9b704b, 160s). So the prune does not change a single byte
+# lean4export emits across 12,683 constants — it is not merely "safe for the deposits tried".
+#
 # WHAT IS NOT SAFE, ALSO MEASURED — DO NOT RETRY
 # ----------------------------------------------
 # `.olean.private` is 3,449 MB here plus 1,259 MB in the toolchain: by far the largest target,
