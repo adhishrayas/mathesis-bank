@@ -112,6 +112,17 @@ jobs:
         env:
           MATHESIS_STRICT: '1'
           MATHESIS_EXPORTS_DIR: ${{ github.workspace }}/registry/_shared/exports
+          # Trusted logical-core reference: the gate rejects any candidate that
+          # redefines a trusted constant (fake Iff/Eq/False). Bundled + auditable.
+          #
+          # NOT optional, and its absence is SILENT: verify.sh never reads this
+          # variable, it only passes the environment through, and the adjudicator
+          # treats "unset" as "redefinition check disabled" and exits 0. So a copy
+          # of this file without these lines still goes green while checking less.
+          # That is not hypothetical — this file spent 5415289..HEAD missing them
+          # while .github/workflows/verify.yml had them, and installing it per the
+          # PLACEMENT note above would have regressed the live workflow.
+          MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
         run: |
           chmod +x ci/verify.sh
           ci/verify.sh docs/verification.json

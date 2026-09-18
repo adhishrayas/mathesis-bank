@@ -393,6 +393,25 @@ def main():
             strict_failures.append(
                 f"only {len(rederive_verified)}/{len(auditable_with_export)} deposits (results+definitions) were re-derived from their frozen export"
             )
+        # Same principle, second reference. The adjudicator's redefinition check —
+        # the one that rejects a candidate redefining Iff/Eq/False — is DISABLED
+        # when MATHESIS_INIT_EXPORT is unset, and it exits 0 while disabled. So a
+        # run without it re-derives every deposit, reports "ran", and goes green
+        # having checked strictly less than the run that set it. Nothing else in
+        # this path notices: verify.sh only passes the environment through.
+        #
+        # Concretely reachable, not theoretical: this variable is supplied by the
+        # workflow file, and ci/verify.yml — the copy the PLACEMENT note says to
+        # install into .github/workflows/ — went 5415289..HEAD without it.
+        init_export = os.environ.get("MATHESIS_INIT_EXPORT", "").strip()
+        if not init_export:
+            strict_failures.append(
+                "MATHESIS_INIT_EXPORT is unset, so the redefinition check was disabled"
+            )
+        elif not os.path.isfile(init_export) or os.path.getsize(init_export) == 0:
+            strict_failures.append(
+                f"MATHESIS_INIT_EXPORT is set but empty or missing: {init_export}"
+            )
         if strict_failures:
             ok = False
 
