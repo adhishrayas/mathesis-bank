@@ -15,6 +15,7 @@ export const SHAPES = new Set([
   "decl",
   "label",
   "login",
+  "name",
   "integer",
   "timestamp",
   "sha256-prefix",
@@ -115,6 +116,10 @@ export function shapeViolation(shape, text) {
       return /^[^\s]+$/.test(text) ? null : "decl";
     case "login":
       return /^[^\s]+$/.test(text) ? null : "login";
+    case "name":
+      // A person's or an agent's name as it is cited: one to four words of
+      // letters in any script, with apostrophes, hyphens and initials.
+      return /^[\p{L}\p{M}][\p{L}\p{M}'’.-]*(?: [\p{L}\p{M}][\p{L}\p{M}'’.-]*){0,3}$/u.test(text) ? null : "name";
     case "integer":
       return /^\d+$/.test(text) ? null : "integer";
     case "timestamp":

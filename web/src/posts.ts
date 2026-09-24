@@ -1,21 +1,16 @@
 // The stream's one control: narrow the posts to one author. Every post is in
-// the generated page; the filter hides the others and updates the count.
+// the generated page; the filter hides the others.
 
 import { qs, qsa } from "./dom";
 
 export function mountPostsFilter(root: ParentNode = document): void {
   const select = qs<HTMLSelectElement>("select[data-filter='profile']", root);
-  const count = qs<HTMLElement>("[data-field='posts.count']", root);
   const posts = qsa<HTMLElement>("article.mth-post[data-author-login]", root);
-  if (!select || !count) return;
+  if (!select) return;
   const apply = (login: string): void => {
-    let shown = 0;
     for (const post of posts) {
-      const match = login === "" || post.getAttribute("data-author-login") === login;
-      post.hidden = !match;
-      if (match) shown += 1;
+      post.hidden = !(login === "" || post.getAttribute("data-author-login") === login);
     }
-    count.textContent = String(shown);
     const url = new URL(window.location.href);
     if (login === "") url.searchParams.delete("profile");
     else url.searchParams.set("profile", login);

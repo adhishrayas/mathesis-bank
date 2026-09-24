@@ -7,11 +7,11 @@
 //! further input class is the profile identity rows, which is why a rename
 //! enqueues a regeneration (SPEC.md §10).
 
+use crate::model::{Argument, Claim, Dictionary, EdgeRow, NodeRow, Person, Post, Profile};
 use crate::{GenError, GenOpts};
 use accession::Accession;
-use std::collections::{BTreeMap, BTreeSet};
-use crate::model::{Argument, Claim, Dictionary, EdgeRow, NodeRow, Post, Profile};
 use serde::Deserialize;
+use std::collections::{BTreeMap, BTreeSet};
 use std::path::Path;
 use uuid::Uuid;
 
@@ -32,6 +32,8 @@ pub struct Redirect {
 pub struct Snapshot {
     pub dictionary: Dictionary,
     pub profiles: Vec<Profile>,
+    /// The people arguments cite who are not profiles here, by cited name.
+    pub people: Vec<Person>,
     pub claims: Vec<Claim>,
     pub arguments: Vec<ArgumentView>,
     pub posts: Vec<Post>,
@@ -43,7 +45,10 @@ pub struct Snapshot {
 }
 
 fn invalid(file: &str, pointer: String) -> GenError {
-    GenError::RegistryInvalid { file: file.to_string(), pointer }
+    GenError::RegistryInvalid {
+        file: file.to_string(),
+        pointer,
+    }
 }
 
 impl Snapshot {
@@ -83,9 +88,20 @@ impl Snapshot {
             Ok(v)
         }
 
-        let DictionaryFile { dictionary, blueprint_labels } = read(&bank.join("dictionary.json"))?;
+        let DictionaryFile {
+            dictionary,
+            blueprint_labels,
+        } = read(&bank.join("dictionary.json"))?;
         let mut profiles: Vec<Profile> = read(&bank.join("profiles.json"))?;
         profiles.sort_by(|a, b| a.login.cmp(&b.login));
+        // A bank that cites nobody has no people file.
+        let people_path = bank.join("people.json");
+        let mut people: Vec<Person> = if people_path.exists() {
+            read(&people_path)?
+        } else {
+            Vec::new()
+        };
+        people.sort_by(|a, b| a.name.cmp(&b.name));
 
         let mut claims: Vec<Claim> = Vec::new();
         for p in each(&bank.join("claims"))? {
@@ -95,10 +111,18 @@ impl Snapshot {
 
         let mut arguments = Vec::new();
         for p in each(&bank.join("arguments"))? {
-            let ArgumentFile { argument, mut nodes, mut edges } = read(&p)?;
+            let ArgumentFile {
+                argument,
+                mut nodes,
+                mut edges,
+            } = read(&p)?;
             nodes.sort_by(|x, y| x.topo.cmp(&y.topo).then(x.decl_name.cmp(&y.decl_name)));
             edges.sort_by(|x, y| (&x.used_by, &x.uses).cmp(&(&y.used_by, &y.uses)));
-            arguments.push(ArgumentView { argument, nodes, edges });
+            arguments.push(ArgumentView {
+                argument,
+                nodes,
+                edges,
+            });
         }
         arguments.sort_by(|a, b| a.argument.accession.cmp(&b.argument.accession));
 
@@ -110,6 +134,7 @@ impl Snapshot {
         let s = Snapshot {
             dictionary,
             profiles,
+            people,
             claims,
             arguments,
             posts,
@@ -128,8 +153,10 @@ impl Snapshot {
     pub fn validate(&self) -> Result<(), GenError> {
         let logins: BTreeSet<Uuid> = self.profiles.iter().map(|p| p.id).collect();
         for c in &self.claims {
-            let acc: Accession =
-                c.accession.parse().map_err(|_| invalid("claim", format!("/{}/accession", c.accession)))?;
+            let acc: Accession = c
+                .accession
+                .parse()
+                .map_err(|_| invalid("claim", format!("/{}/accession", c.accession)))?;
             if acc.kind != accession::Kind::Claim {
                 return Err(invalid("claim", format!("/{}/accession", c.accession)));
             }
@@ -140,7 +167,9 @@ impl Snapshot {
         let claim_set: BTreeSet<&str> = self.claims.iter().map(|c| c.accession.as_str()).collect();
         for a in &self.arguments {
             let acc = &a.argument.accession;
-            let parsed: Accession = acc.parse().map_err(|_| invalid("argument", format!("/{acc}/accession")))?;
+            let parsed: Accession = acc
+                .parse()
+                .map_err(|_| invalid("argument", format!("/{acc}/accession")))?;
             if parsed.kind != accession::Kind::Argument {
                 return Err(invalid("argument", format!("/{acc}/accession")));
             }
@@ -166,20 +195,33 @@ impl Snapshot {
             let names: BTreeSet<&str> = a.nodes.iter().map(|n| n.decl_name.as_str()).collect();
             for e in &a.edges {
                 if !names.contains(e.used_by.as_str()) {
-                    return Err(invalid("argument_edge", format!("/{acc}/{}/used_by", e.used_by)));
+                    return Err(invalid(
+                        "argument_edge",
+                        format!("/{acc}/{}/used_by", e.used_by),
+                    ));
                 }
                 if !names.contains(e.uses.as_str()) {
                     return Err(invalid("argument_edge", format!("/{acc}/{}/uses", e.uses)));
                 }
             }
         }
-        let arg_set: BTreeSet<&str> = self.arguments.iter().map(|a| a.argument.accession.as_str()).collect();
+        let arg_set: BTreeSet<&str> = self
+            .arguments
+            .iter()
+            .map(|a| a.argument.accession.as_str())
+            .collect();
         for p in &self.posts {
             if !arg_set.contains(p.argument_accession.as_str()) {
-                return Err(invalid("post", format!("/{}/argument_accession", p.post_number)));
+                return Err(invalid(
+                    "post",
+                    format!("/{}/argument_accession", p.post_number),
+                ));
             }
             if !claim_set.contains(p.claim_accession.as_str()) {
-                return Err(invalid("post", format!("/{}/claim_accession", p.post_number)));
+                return Err(invalid(
+                    "post",
+                    format!("/{}/claim_accession", p.post_number),
+                ));
             }
         }
         Ok(())
@@ -197,12 +239,20 @@ impl Snapshot {
         self.arguments.iter().find(|a| a.argument.accession == acc)
     }
 
+    /// The cited person a name refers to, when the bank records one.
+    pub fn person(&self, name: &str) -> Option<&Person> {
+        self.people.iter().find(|p| p.name == name)
+    }
+
     pub fn profile(&self, id: Uuid) -> Option<&Profile> {
         self.profiles.iter().find(|p| p.id == id)
     }
 
     pub fn arguments_of(&self, claim: &str) -> Vec<&ArgumentView> {
-        self.arguments.iter().filter(|a| a.argument.claim_accession == claim).collect()
+        self.arguments
+            .iter()
+            .filter(|a| a.argument.claim_accession == claim)
+            .collect()
     }
 
     /// The union of the axiom manifests of a claim's arguments. A claim with no
@@ -221,12 +271,17 @@ impl Snapshot {
 
     /// The blueprint anchor of a curated definition, when the blueprint carries one.
     pub fn blueprint_anchor(&self, name: &str) -> Option<String> {
-        self.blueprint_labels.get(name).map(|l| format!("{}#{}", self.dictionary.blueprint_url, l))
+        self.blueprint_labels
+            .get(name)
+            .map(|l| format!("{}#{}", self.dictionary.blueprint_url, l))
     }
 
     /// The dictionary leaves of one argument, deduplicated across its nodes:
     /// `|⋃ᵥ dictionary_leaves(v)|` is the count the DAG renders.
     pub fn dictionary_leaves(&self, a: &ArgumentView) -> BTreeSet<String> {
-        a.nodes.iter().flat_map(|n| n.dictionary_leaves.iter().cloned()).collect()
+        a.nodes
+            .iter()
+            .flat_map(|n| n.dictionary_leaves.iter().cloned())
+            .collect()
     }
 }

@@ -30,13 +30,8 @@ export const LABELS = {
   doi: "DOI",
   dois: "DOIs",
   author: "Author",
-  nodes: "Nodes",
-  edges: "Edges",
-  depth: "Depth",
   uses: "Uses",
   usedBy: "Used by",
-  constants: "Constants",
-  rows: "Rows",
 
   // the three Kind columns, deliberately three distinct labels
   profileKind: "Profile kind",
@@ -54,15 +49,14 @@ export const LABELS = {
   frozenExport: "Frozen export",
   verified: "Verified",
   firstVerified: "First verified",
-  submitted: "Submitted",
   joined: "Joined",
+  date: "Date",
 
   // controls
   search: "Search",
   go: "Go",
   from: "From",
   to: "To",
-  min: "Min",
   sort: "Sort",
   newest: "Newest",
   oldest: "Oldest",
@@ -77,15 +71,12 @@ export const LABELS = {
   layout: "Layout",
   graph: "Graph",
   list: "List",
-  open: "Open",
   cite: "Cite",
   copy: "Copy",
   copyBibtex: "Copy BibTeX",
   cites: "Cites",
-  source: "Source",
 
   // sections and terms rendered as headings
-  dictionaryLeaves: "Dictionary leaves",
 
   // submit and verification progress
   submit: "Submit",

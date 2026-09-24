@@ -1,7 +1,39 @@
 [
   {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Claim"
+  },
+  {
     "field": "claim.accession",
     "value": "MTH.C-2026-6032"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6032"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -14,22 +46,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -168,6 +184,10 @@
     "value": "pow_le_vcDim_imp_le_vcDim_dualClass"
   },
   {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6032"
+  },
+  {
     "field": "replay_accepted",
     "value": "accepted"
   },
@@ -202,21 +222,5 @@
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "profile.citation_name",
-    "value": "Dhruv Gupta"
-  },
-  {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6032"
   }
 ]

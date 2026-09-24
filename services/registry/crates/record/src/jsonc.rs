@@ -39,7 +39,10 @@ mod tests {
 
     #[test]
     fn struct_fields_are_sorted_not_declaration_ordered() {
-        assert_eq!(canonical(&Unsorted { zeta: 1, alpha: 2 }).unwrap(), "{\n  \"alpha\": 2,\n  \"zeta\": 1\n}\n");
+        assert_eq!(
+            canonical(&Unsorted { zeta: 1, alpha: 2 }).unwrap(),
+            "{\n  \"alpha\": 2,\n  \"zeta\": 1\n}\n"
+        );
     }
 
     #[test]

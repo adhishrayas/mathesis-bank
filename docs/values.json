@@ -4,12 +4,40 @@
     "value": "Zetetic-Dhruv"
   },
   {
-    "field": "posts.count",
-    "value": "32"
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6001"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6001"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -22,22 +50,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "21"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
   },
   {
     "field": "argument_node.decl_name",
@@ -664,60 +676,40 @@
     "value": "finite_image_inter_of_finite_splitPoints"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "5a0bbcf25324"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6001"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6002"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6002"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -730,22 +722,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "35"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "39"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "10"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
   },
   {
     "field": "argument_node.decl_name",
@@ -1896,60 +1872,40 @@
     "value": "HasVCDimLE.ncard_le_of_shatters"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "600ed63e389a"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6002"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6003"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6003"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -1962,22 +1918,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "26"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "30"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -2852,60 +2792,40 @@
     "value": "finite_image_inter_of_finite_splitPoints"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "237913c4336a"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6003"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6004"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6004"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -2918,22 +2838,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "4"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "2"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -3068,60 +2972,36 @@
     "value": "countable_setOf_shatters_range_cut"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "ace4eebd4529"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6004"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6005"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6005"
   },
   {
     "field": "claim.decl_name",
@@ -3134,22 +3014,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "28"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "47"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -4300,56 +4164,36 @@
     "value": "pairSupport_singCube"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "fd764e365885"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6005"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6006"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6006"
   },
   {
     "field": "claim.decl_name",
@@ -4362,22 +4206,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "8"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "7"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "9"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -4680,56 +4508,40 @@
     "value": "sixCycle_dsShatters"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "acba08a11007"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6006"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6007"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6007"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -4742,22 +4554,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "41"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "60"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "13"
-  },
-  {
-    "field": "argument.depth",
-    "value": "11"
   },
   {
     "field": "argument_node.decl_name",
@@ -6404,60 +6200,40 @@
     "value": "cutCode_injective"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "7f14a7125689"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6007"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6008"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6008"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -6470,22 +6246,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "32"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "13"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -7640,60 +7400,40 @@
     "value": "dedSet'_le"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "6089d733e525"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6008"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6009"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6009"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -7706,22 +7446,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "67"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "80"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "56"
-  },
-  {
-    "field": "argument.depth",
-    "value": "8"
   },
   {
     "field": "argument_node.decl_name",
@@ -10972,60 +10696,36 @@
     "value": "compression_with_info_imp_vcdim_finite"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "621b434c4018"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6009"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6010"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6010"
   },
   {
     "field": "claim.decl_name",
@@ -11038,22 +10738,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "23"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "18"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -12056,56 +11740,36 @@
     "value": "backward_direction"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "69dce90c769f"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6010"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6011"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6011"
   },
   {
     "field": "claim.decl_name",
@@ -12118,22 +11782,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "26"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "19"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -13200,56 +12848,36 @@
     "value": "optimal_mistake_bound_eq_ldim"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "5fe03070080b"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6011"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6012"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6012"
   },
   {
     "field": "claim.decl_name",
@@ -13262,22 +12890,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "22"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "12"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
   },
   {
     "field": "argument_node.decl_name",
@@ -14028,56 +13640,36 @@
     "value": "universal_imp_pac"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "ba68a04fbf8b"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6012"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6013"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6013"
   },
   {
     "field": "claim.decl_name",
@@ -14090,22 +13682,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "42"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "42"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "32"
-  },
-  {
-    "field": "argument.depth",
-    "value": "11"
   },
   {
     "field": "argument_node.decl_name",
@@ -15676,56 +15252,36 @@
     "value": "MeasureTheory.continuous_embedBaireReal"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "142a3e7672c2"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6013"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6014"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6014"
   },
   {
     "field": "claim.decl_name",
@@ -15738,22 +15294,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "61"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "117"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "51"
-  },
-  {
-    "field": "argument.depth",
-    "value": "7"
   },
   {
     "field": "argument_node.decl_name",
@@ -19512,56 +19052,36 @@
     "value": "KWLock.ambainis_towerHyp"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "d7bd4a249109"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6014"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6015"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6015"
   },
   {
     "field": "claim.decl_name",
@@ -19574,22 +19094,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "8"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "7"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "10"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
   },
   {
     "field": "argument_node.decl_name",
@@ -19968,56 +19472,36 @@
     "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "823e9d21e1d7"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6015"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6016"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6016"
   },
   {
     "field": "claim.decl_name",
@@ -20030,22 +19514,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "5"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "4"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "8"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -20268,56 +19736,36 @@
     "value": "AuditCP.learner_blackwellBelow_publicOnly_iff_auditSealed"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "304b019f2077"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6016"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6017"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6017"
   },
   {
     "field": "claim.decl_name",
@@ -20330,22 +19778,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "6"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "5"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "5"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
   },
   {
     "field": "argument_node.decl_name",
@@ -20552,56 +19984,36 @@
     "value": "AuditCP.equalPriorBayesError_eq_half_one_sub_tv"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "2b5c97530787"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6017"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6018"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6018"
   },
   {
     "field": "claim.decl_name",
@@ -20614,22 +20026,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "4"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -21076,56 +20472,36 @@
     "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "ca3c5a9d0ba4"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6018"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6019"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6019"
   },
   {
     "field": "claim.decl_name",
@@ -21138,22 +20514,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "91"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "149"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "43"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -25328,56 +24688,36 @@
     "value": "HiddenChannelCapacity.grahamN_of_ripCover"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "787331969522"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6019"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6020"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6020"
   },
   {
     "field": "claim.decl_name",
@@ -25390,22 +24730,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "21"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "33"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
   },
   {
     "field": "argument_node.decl_name",
@@ -26240,56 +25564,40 @@
     "value": "HiddenChannelCapacity.sep_clique_step"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "20e38a6b8d2b"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6020"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6021"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6021"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Alex Meiburg"
   },
   {
     "field": "claim.decl_name",
@@ -26302,22 +25610,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "53"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "16"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -27800,60 +27092,36 @@
     "value": "HermitianMat.trace_single_conj"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "90f091ee8510"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Alex Meiburg"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6021"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6022"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6022"
   },
   {
     "field": "claim.decl_name",
@@ -27866,22 +27134,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "54"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "4"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
   },
   {
     "field": "argument_node.decl_name",
@@ -29140,56 +28392,36 @@
     "value": "ProbabilityTheory.posDef_whitened"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "40c078c5fc77"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6022"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6023"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6023"
   },
   {
     "field": "claim.decl_name",
@@ -29202,22 +28434,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "10"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "9"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "3"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
   },
   {
     "field": "argument_node.decl_name",
@@ -29532,56 +28748,36 @@
     "value": "MeasureTheory.continuous_embedBaireReal"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "17a477359fda"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6023"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6024"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6024"
   },
   {
     "field": "claim.decl_name",
@@ -29594,22 +28790,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "3"
-  },
-  {
-    "field": "argument.depth",
-    "value": "7"
   },
   {
     "field": "argument_node.decl_name",
@@ -30624,56 +29804,36 @@
     "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "6e4db0a56fec"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6024"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6025"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6025"
   },
   {
     "field": "claim.decl_name",
@@ -30686,22 +29846,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "17"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "11"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
   },
   {
     "field": "argument_node.decl_name",
@@ -31288,56 +30432,40 @@
     "value": "StructuralIgnorance.SetShatters.of_twistClass"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "1641f3634b64"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6025"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6026"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6026"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -31350,22 +30478,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "118"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "161"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "71"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -37212,60 +36324,40 @@
     "value": "MeasurableConceptClass.hWB"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "1595fb15a896"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6026"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6027"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6027"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -37278,22 +36370,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "47"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "49"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "22"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -39316,60 +38392,40 @@
     "value": "vcdim_finite_imp_uc'"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "2ee3cd939923"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6027"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6028"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6028"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -39382,22 +38438,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "44"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "46"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "36"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
   },
   {
     "field": "argument_node.decl_name",
@@ -41500,60 +40540,36 @@
     "value": "MeasurableConceptClass.hWB"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "5835f1632641"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6028"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6029"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6029"
   },
   {
     "field": "claim.decl_name",
@@ -41566,22 +40582,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "12"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "11"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "17"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -42088,56 +41088,40 @@
     "value": "advice_elimination"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "d4155a9f1007"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6029"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6030"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6030"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -42150,22 +41134,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "14"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "9"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
   },
   {
     "field": "argument_node.decl_name",
@@ -42684,60 +41652,40 @@
     "value": "FLT.Halfspace.card_basisPoints"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "e70dfad48239"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6030"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6031"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6031"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -42750,22 +41698,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -42900,60 +41832,40 @@
     "value": "dualClass_shatters_imp_shatters"
   },
   {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "33eab9fb36ea"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
   {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
   },
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
   {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6031"
+    "field": "accession.kind",
+    "value": "Claim"
   },
   {
     "field": "claim.accession",
     "value": "MTH.C-2026-6032"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6032"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
   },
   {
     "field": "claim.decl_name",
@@ -42966,22 +41878,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -43118,57 +42014,5 @@
   {
     "field": "argument_node.decl_name",
     "value": "pow_le_vcDim_imp_le_vcDim_dualClass"
-  },
-  {
-    "field": "replay_accepted",
-    "value": "accepted"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Classical.choice"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "Quot.sound"
-  },
-  {
-    "field": "axiom_manifest",
-    "value": "propext"
-  },
-  {
-    "field": "statement_identity",
-    "value": "not-applicable"
-  },
-  {
-    "field": "substrate",
-    "value": "Lean 4 kernel v4.31.0"
-  },
-  {
-    "field": "dictionary.label",
-    "value": "design-lab@5802df4 · initial"
-  },
-  {
-    "field": "argument.export_sha256",
-    "value": "1bf2ca644dcd"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "profile.citation_name",
-    "value": "Dhruv Gupta"
-  },
-  {
-    "field": "argument.cites",
-    "value": "Yaël Dillies"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6032"
   }
 ]

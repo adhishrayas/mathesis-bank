@@ -110,11 +110,11 @@ Rules that make this buildable and keep the two renderers identical:
 
 ## 2. Typography
 
-**Faces** (self-hosted woff2, subsetted, `font-display: swap`).
+**Faces.** Text is set in the system's Times; code is self-hosted woff2, subsetted, `font-display: swap`.
 
 | Role | Family | Files | Why |
 |---|---|---|---|
-| UI sans | **Inter** variable | `inter-var.woff2` (wght 400–700) | Tabular figures, tight metrics at 11–14px, clean at hairline density |
+| Text | **Times New Roman**, then Times, Liberation Serif, Nimbus Roman, TeX Gyre Termes, Tinos, `serif` (`--font-serif`) | none: a system face | The record reads as a book of arguments, not a console; the stack's later faces are Times's metric twins, so a machine without Times New Roman sets the same line lengths |
 | Code / Lean | **JuliaMono** | `julia-mono-400-latin.woff2`, `julia-mono-400-math.woff2`, `julia-mono-700-latin.woff2` | The only widely available mono with real coverage of Lean's operator/blackboard/script glyphs (`∀ ℕ ↔ ⊢ ≤ 𝓕 ⟨⟩ ↦ ⁻¹ ε`); no tofu, no mid-line metric change |
 
 G1 split (two `@font-face` blocks per weight):
@@ -125,23 +125,22 @@ G1 split (two `@font-face` blocks per weight):
 
 Bold JuliaMono ships latin only; no rendered statement uses bold (weight is never a semantic in a statement).
 
-Base features on `body`: `font-feature-settings: "cv05" 1, "ss03" 1, "tnum" 1, "zero" 1` (slashed zero and tabular
-figures everywhere — counts, hashes, dates and table numerals must align).
+Base features on `body`: none; Times New Roman's figures are already tabular, so dates and hashes align.
 Mono kills ligatures: `font-variant-ligatures: none; font-feature-settings: "calt" 0` — `->`, `<->`, `:=` must render
 as the characters Lean emitted.
 
-**UI scale** (Tailwind names redefined; density is the point).
+**UI scale** (Tailwind names redefined; about 1.2× the old sans scale, because Times's x-height is smaller).
 
 | Token | px / line-height | Use |
 |---|---|---|
-| `text-2xs` | 11 / 16 | facet chips, DAG node kind, table micro-meta, gutter numbers |
-| `text-xs` | 12 / 18 | control labels, `<dt>` terms, table headers |
-| `text-sm` | 13 / 20 | **UI default**: body, table cells, buttons, inputs, values |
-| `text-base` | 14 / 22 | `<dd>` values in the verification block, metric numbers |
-| `text-lg` | 16 / 24 | `<h2>` (`Note`, `DOIs`, `Arguments`), landing-page decl |
-| `text-xl` | 18 / 26 | profile login, section heads |
-| `text-2xl` | 22 / 28 | `<h1>` (`About`, `Claims`, `Arguments`, `Posts`, `Sign in`, `Not found`) |
-| `text-3xl` | 28 / 34 | reserved; unused in v0 |
+| `text-2xs` | 13 / 20 | facet chips, DAG node kind, table micro-meta, gutter numbers |
+| `text-xs` | 14 / 20 | control labels, `<dt>` terms, table headers |
+| `text-sm` | 16 / 24 | **UI default**: body, table cells, buttons, inputs, values |
+| `text-base` | 17 / 26 | `<dd>` values in the verification block, metric numbers |
+| `text-lg` | 19 / 28 | `<h2>` (`Note`, `DOIs`, `Arguments`), landing-page decl |
+| `text-xl` | 22 / 30 | profile login, section heads |
+| `text-2xl` | 27 / 34 | `<h1>` (`About`, `Claims`, `Arguments`, `Posts`, `Sign in`, `Not found`) |
+| `text-3xl` | 34 / 40 | reserved; unused in v0 |
 
 **Mono scale** (separate, because Lean glyphs are tall).
 
@@ -153,7 +152,7 @@ as the characters Lean emitted.
 | `text-code-lg` | 14 / 1.6 | claim statement on a landing page (region 1, unclamped) |
 
 Weights: 400 body, 500 labels/`<dt>`/table headers, 600 headings and the wordmark, 700 only inside `.record-prose`
-`<strong>`. Letter-spacing: `-0.011em` ≥16px, `0` at 13–14px, `+0.01em` at 11–12px, `+0.02em` on sha256 prefixes.
+`<strong>`. Letter-spacing: `0` for text, `+0.06em` on the uppercase terms, `+0.02em` on sha256 prefixes.
 
 ---
 
@@ -256,17 +255,18 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
 
 @theme {
   /* ---------- type ---------- */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
+    "TeX Gyre Termes", Tinos, serif;
   --font-mono: "JuliaMono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --text-2xs: 0.6875rem;      --text-2xs--line-height: 1rem;
-  --text-xs: 0.75rem;         --text-xs--line-height: 1.125rem;
-  --text-sm: 0.8125rem;       --text-sm--line-height: 1.25rem;
-  --text-base: 0.875rem;      --text-base--line-height: 1.375rem;
-  --text-lg: 1rem;            --text-lg--line-height: 1.5rem;
-  --text-xl: 1.125rem;        --text-xl--line-height: 1.625rem;
-  --text-2xl: 1.375rem;       --text-2xl--line-height: 1.75rem;
-  --text-3xl: 1.75rem;        --text-3xl--line-height: 2.125rem;
+  --text-2xs: 0.8125rem;      --text-2xs--line-height: 1.25rem;
+  --text-xs: 0.875rem;        --text-xs--line-height: 1.25rem;
+  --text-sm: 1rem;            --text-sm--line-height: 1.5rem;
+  --text-base: 1.0625rem;     --text-base--line-height: 1.625rem;
+  --text-lg: 1.1875rem;       --text-lg--line-height: 1.75rem;
+  --text-xl: 1.375rem;        --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.6875rem;      --text-2xl--line-height: 2.125rem;
+  --text-3xl: 2.125rem;       --text-3xl--line-height: 2.5rem;
 
   --text-code-xs: 0.6875rem;  --text-code-xs--line-height: 1.5;
   --text-code-sm: 0.75rem;    --text-code-sm--line-height: 1.5;
@@ -380,8 +380,6 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
 
 @layer base {
   /* G1: JuliaMono split so a statement's first paint is not blocked by the math block */
-  @font-face { font-family:"Inter"; src:url("/assets/fonts/inter-var.woff2") format("woff2");
-    font-weight:400 700; font-style:normal; font-display:swap; }
 
   @font-face { font-family:"JuliaMono"; src:url("/assets/fonts/julia-mono-400-latin.woff2") format("woff2");
     font-weight:400; font-display:swap;
@@ -398,8 +396,7 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
   html { -webkit-text-size-adjust:100%; }
   body {
     margin:0; background:var(--color-bg); color:var(--color-text);
-    font-family:var(--font-sans); font-size:var(--text-sm); line-height:var(--text-sm--line-height);
-    font-feature-settings:"cv05" 1,"ss03" 1,"tnum" 1,"zero" 1;
+    font-family:var(--font-serif); font-size:var(--text-sm); line-height:var(--text-sm--line-height);
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   ::selection { background:var(--color-selection); }
@@ -410,7 +407,7 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
     box-shadow:0 0 0 2px var(--color-surface),0 0 0 4px var(--color-ring);
     border-radius:var(--radius-sm);
   }
-  h1,h2,h3 { margin:0; font-weight:600; color:var(--color-ink-800); letter-spacing:-.011em; }
+  h1,h2,h3 { margin:0; font-weight:600; color:var(--color-ink-800); }
   h1 { font-size:var(--text-2xl); line-height:var(--text-2xl--line-height); }
   h2 { font-size:var(--text-lg);  line-height:var(--text-lg--line-height); }
   h3 { font-size:var(--text-sm);  line-height:var(--text-sm--line-height); }
@@ -450,18 +447,18 @@ export default {
         "border-control":"var(--color-border-control)", link:"var(--color-link)",
       },
       fontFamily: {
-        sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+        serif: ['Times New Roman','Times','Liberation Serif','Nimbus Roman','Nimbus Roman No9 L','TeX Gyre Termes','Tinos','serif'],
         mono: ['JuliaMono','JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','Consolas','monospace'],
       },
       fontSize: {
-        "2xs":["0.6875rem",{lineHeight:"1rem"}],
-        xs:["0.75rem",{lineHeight:"1.125rem"}],
-        sm:["0.8125rem",{lineHeight:"1.25rem"}],
-        base:["0.875rem",{lineHeight:"1.375rem"}],
-        lg:["1rem",{lineHeight:"1.5rem"}],
-        xl:["1.125rem",{lineHeight:"1.625rem"}],
-        "2xl":["1.375rem",{lineHeight:"1.75rem"}],
-        "3xl":["1.75rem",{lineHeight:"2.125rem"}],
+        "2xs":["0.8125rem",{lineHeight:"1.25rem"}],
+        xs:["0.875rem",{lineHeight:"1.25rem"}],
+        sm:["1rem",{lineHeight:"1.5rem"}],
+        base:["1.0625rem",{lineHeight:"1.625rem"}],
+        lg:["1.1875rem",{lineHeight:"1.75rem"}],
+        xl:["1.375rem",{lineHeight:"1.875rem"}],
+        "2xl":["1.6875rem",{lineHeight:"2.125rem"}],
+        "3xl":["2.125rem",{lineHeight:"2.5rem"}],
         "code-xs":["0.6875rem",{lineHeight:"1.5"}],
         "code-sm":["0.75rem",{lineHeight:"1.5"}],
         code:["0.8125rem",{lineHeight:"1.55"}],
@@ -639,10 +636,16 @@ States: default · `[data-focused]` (roving focus in the stream: `inset 2px 0 0 
 ### 7.7 `.mth-avatar`, editor chrome
 
 ```
-.mth-avatar   w-12 h-12 rounded-md border border-border object-cover bg-ink-100
+.mth-avatar   rounded-md border border-border object-cover bg-ink-100
+              --lg 64px (profile) · --sm 48px (a post's author) · --xs 24px (an author in a table)
               alt carries data-attr-value="alt" data-field="profile.citation_name"
-              src = /api/v1/avatar/{id}     (proxied, SPEC §11 — img-src 'self')
-              absent avatar → NO <img> at all; the identity grid collapses and reserves no gap
+              src = /avatars/{login}.{ext}, the record's own copy — no request leaves the site
+.mth-person   inline-flex gap-2: a photo (or glyph) and a name, one link — to /u/{login}/ for a
+              member, to https://github.com/{login} for a cited person who is not one
+.mth-glyph    the abstract avatar of a person the record holds no photo of: a 5×5 grid mirrored
+              left to right, from an FNV-1a hash of the GitHub login, in one of four tints
+              (--0 accent-500, --1 accent-800, --2 ink-600, --3 accent-300); aria-hidden, since
+              the name always stands beside it · --sm 20px · --xs 24px
 .mth-editor          border border-border rounded-lg overflow-hidden bg-surface
 .mth-editor__head    h-control-lg px-2.5 flex items-center justify-between border-b border-border bg-ink-50
 .mth-editor__mount   height: var(--h-editor)
@@ -664,11 +667,11 @@ statement read as the same object; only diagnostics carry colour.
 .mth-dl          grid grid-cols-[minmax(120px,160px)_minmax(0,1fr)] gap-x-4 gap-y-1.5 items-baseline
 .mth-dl > dt     .mth-term, pt-px
 .mth-dl > dd     m-0 .mth-value, min-w-0 break-words
-.mth-dl--2up     ≥1024: grid-cols-[term 1fr term 1fr]            (G6 — two pairs per row, stream only)
+.mth-dl--2up     ≥1024: grid-cols-[term 1fr term 1fr]            (G6 — unused since verification left the stream)
 @media (max-width:640px) { .mth-dl, .mth-dl--2up { grid-cols-1 } ; dd { mb-2 } }
 ```
 
-The Verification block is always seven `<dt>/<dd>` pairs (SPEC §8.5 region 3). `--2up` changes only how the same seven
+The Verification block is always seven `<dt>/<dd>` pairs, on an argument's own page only. `--2up` changes only how the same seven
 pairs wrap; it never merges a term into its value.
 
 ### 7.9 `.mth-table`
@@ -682,16 +685,16 @@ pairs wrap; it never merges a term into its value.
 .mth-table tbody tr[data-focused]  bg-accent-50 + 2px inset accent-500 left rail + 1px accent-300 outline
 .mth-table--tall tbody td          h-row-tall py-2 align-top        (Collection claims, 3-line statement)
 .mth-th-sort           full-cell button, gap-1, + 10px decorative caret; <th aria-sort="…">
-.mth-td-num            text-right tabular-nums font-medium
 .mth-td-mono           font-mono text-code text-ink-800; truncation via text-overflow only (G10)
 .mth-table-scroll      overflow-x-auto; first column (DOI) position:sticky left-0 bg-surface,
                        right hairline via box-shadow 1px 0 0 var(--color-border)
-.mth-count             .mth-metric, ml-auto                          (Rows N)
 ```
 
+No table carries a count, and no page shows one: a count is commentary on the record, not part of it.
+
 States: default · hover · roving `[data-focused]` · sorted (`aria-sort` + caret) · **empty** (empty `<tbody>`,
-`Rows 0`, no sentence, no illustration) · **loading** (the §7.5 page rule; rows are simply absent) · **error**
-(`.mth-error` directly above the table, `<tbody>` cleared, `Rows 0`).
+no count, no sentence, no illustration) · **loading** (the §7.5 page rule; rows are simply absent) · **error**
+(`.mth-error` directly above the table, `<tbody>` cleared).
 No zebra striping — hairline row rules only. A link that fills a whole cell is not underlined (the column header
 supplies the affordance); links inside running text are underlined.
 
@@ -827,8 +830,9 @@ ties by decl byte order) and the geometry lives in `--dag-*` tokens so CSS and g
 States: `Graph` · `List` · per-node collapsed/expanded · `Expand all` / `Collapse all` · node focused
 (inspector updates, incident edges hot) · **oversized** (`nodes > 400 || edges > 4000`: the `Graph` option renders
 `aria-disabled="true"` with its label unchanged and `List` is active) · **no-JS** (`List`, server-rendered, the
-authoritative form). Below `lg` `List` is forced. In the stream `List` is the default with node statements clamped to
-3 lines; on a landing page `Graph` is the default whenever it is offered.
+authoritative form). With scripts, `Graph` is the default wherever it is offered — in the stream, on a landing page
+and at every width, a narrow screen scrolling the graph in its viewport; `List` clamps node statements to 3 lines in the
+stream.
 Keyboard: `←`/`→` by depth, `↑`/`↓` by order, `Enter` moves focus to the inspector, `Esc` returns to the viewport.
 
 ### 7.14 `.mth-cite`, `.mth-copy`
@@ -903,7 +907,7 @@ uncatalogued `aria-label` and is therefore unbuildable.
   style as well as colour (G7); in-prose links are underlined.
 * **Reduced motion** disables the page rule's animation and all transitions.
 * **No-JS:** every generated page renders its record fully without scripts — claim statement, every DAG node decl,
-  all seven verification rows, attribution and the DOI (`no_javascript_required`, SPEC §13). Disclosure, clamping and
+  the author, the ⋯ menu, and on a record page the DOI and all verification rows (`no_javascript_required`, SPEC §13). Disclosure, clamping and
   the login link all work without JS; only `Expand all`/`Collapse all`, the DAG `Graph` layout, search, paging and
   the IDE require it.
 
@@ -938,8 +942,8 @@ attribution, the DOI and the citation.
 |---|---|---|---|---|
 | Nav | 4 links, horizontally scrollable, 16px gutter | inline | inline | inline |
 | Posts | 1 col, card padding 12px, claim clamp 12 | 1 col | 1 col, `max-w-stream` | `max-w-stream` |
-| Post DAG | `List` forced, nodes clamped | `List` forced | `List` default in stream / `Graph` default on landing when eligible | same |
-| Verification `<dl>` | 1 col | 2 col | 2 col (`--2up` in the stream) | `--2up` |
+| Post DAG | `Graph` default, scrolled in its viewport | `Graph` default | `Graph` default wherever offered; `List` is the no-JS form | same |
+| Verification `<dl>` (record pages only) | 1 col | 2 col | 2 col | 2 col |
 | Collection | table scrolls-x with sticky `DOI`; filters stack 1-col | filters 2-col | filters inline row | `max-w-shell`, `Statement` widens |
 | Profile DOIs | scrolls-x (or `--stacked`) | scrolls-x | full | full |
 | Submit | editor 45vh over infoview 30vh, stacked | stacked | split 60/40 | split 62/38, `max-w-shell` |
@@ -961,7 +965,10 @@ Shared chrome on **every** page, generated and SPA alike, byte-identical, no con
 ```
 <nav class="mth-nav">
   «Mathesis»                                → /posts       (wordmark + 16px decorative mark)
-  «Posts» «Profile» «Collection» «About»    → /posts /profile /collection/claims /about
+  «Posts» «Profile» «Collection» «About»    → / /u/{owner.login}/ /collection/claims /about
+                                             Posts is the landing page. Until sign-in exists, «Profile»
+                                             opens the profile the record is published under (the owner);
+                                             with sign-in it opens the signed-in user's own.
 </nav>                                        aria-current="page" on the active item
 <main class="mth-main" tabindex="-1"> … </main>
 ```
@@ -977,8 +984,7 @@ No footer. No `Sign in` in the nav. No session-dependent bytes anywhere in the n
     ├ .mth-field  «Profile»  <select class="mth-select mth-input--w-lg">
     │                          option[0] «All», then {profile.citation_name} per option
     │                          (source: generated profiles.json; state round-trips through ?profile=)
-    ├ «Clear»     .mth-btn--quiet
-    └ .mth-count  {posts.total}                              ml-auto, .mth-value, tabular-nums
+    └ «Clear»     .mth-btn--quiet
 
   STREAM  <ol> gap-6, roving tabindex, j/k move focus, Enter → /a/{argument.accession}
     └ POST CARD  .mth-card  ×20, newest first — the five regions below, in order
@@ -987,25 +993,44 @@ No footer. No `Sign in` in the nav. No session-dependent bytes anywhere in the n
 </main>
 ```
 
-#### The post card — five regions (shared by `/posts` and `/a/{MTH.R-…}`)
+#### The post card — the author, the claim, the argument (shared by `/`, `/u/{login}` and `/a/{MTH.R-…}`)
+
+A post opens with its author, as a social feed does:
+
+```
+AUTHOR  <header class="mth-post__author">   bottom hairline
+  <a class="mth-author" href="/u/{login}/">
+    <img class="mth-avatar mth-avatar--sm">  48px; alt is the value profile.citation_name;
+                                             src is the record's own copy, /avatars/{login}.{ext};
+                                             absent avatar → no <img>
+    {profile.citation_name}  600 weight      {profile.login}  muted, "@" by CSS
+  </a>
+  ml-auto: {profile.kind} .mth-status--neutral · {argument.created_at} tabular-nums, muted
+  ⋯  <details class="mth-more">              the post's one way to its records; opens without JS,
+       <summary aria-label="«DOIs»">          the client closes it on an outside click or Escape
+       .mth-more__menu  {Claim} {claim.accession} → /a/{claim.accession}
+                        {Argument} {argument.accession} → /a/{argument.accession}
+                                             (the two kind words are accession.kind values)
+  «Cites» .mth-person per cited person:      full-width row, only when the argument cites premises
+          .mth-glyph + {argument.cites} → https://github.com/{people.github}
+                                             written by other authors
+</header>
+```
+
+Verification is the baseline every post meets, so a post never states it: no verification block, no DOI,
+no accession chip. The ⋯ menu leads to the claim's and the argument's pages (§12.4), where the DOI, the
+citation and a small verification section live. Two regions follow the header:
 
 ```
 REGION 1  .mth-card__region — Claim
-  head  flex items-center gap-2
-        «Claim»  .mth-term
-        <a class="mth-doi" href="/a/{claim.accession}">{claim.accession}</a>
-        «Copy»  .mth-copy   ml-auto   → {clipboard.state} = Copied for 2s
   meta  .mth-metric  «Decl» {claim.decl_name}    .mth-value--mono, CSS-truncated (G10)
+        «Copy»  .mth-copy   → {clipboard.state} = Copied for 2s
   body  stream:  .mth-lean-clamp--12 wrapper + <pre .mth-lean--claim data-field="claim.pretty">
                  + sibling .mth-lean-toggle  («Expand»/«Collapse»)        [§7.11]
         landing: no wrapper, no toggle, .mth-lean--lg
 
 REGION 2  .mth-card__region — Argument DAG
-  head  flex flex-wrap items-center gap-x-5 gap-y-2
-    .mth-metric-row
-      «Nodes» {argument.node_count} · «Edges» {argument.edge_count}
-      · «Dictionary leaves» {argument.dictionary_leaves_count} · «Depth» {argument.depth}
-    ml-auto:
+  head  flex flex-wrap items-center gap-x-5 gap-y-2        no counts of nodes, edges or depth
       <fieldset class="mth-segmented"><legend class="mth-label">«Layout»</legend>
         «Graph»   aria-checked; aria-disabled="true" when nodes>400 || edges>4000 || vw<1024
         «List»
@@ -1035,38 +1060,16 @@ REGION 2  .mth-card__region — Argument DAG
         </div>
         <aside class="mth-dag-inspector mth-panel">  the focused node's List fields, nothing new
 
-REGION 3  .mth-card__region — Verification
-  <h3 class="mth-term">«Verification»</h3>
-  <dl class="mth-dl mth-dl--2up">        exactly SEVEN pairs, never compounded
-    «Replay»              {replay_accepted}          → .mth-status--ok   (accepted)
-    «Axioms»              {axiom_manifest}           → .mth-value--mono names, or «free» .mth-status--ok
-    «Statement identity»  {statement_identity}       → pass .mth-status--ok | not-applicable --neutral
-    «Substrate»           {substrate}                → .mth-value--mono
-    «Dictionary pin»      {dictionary.label}         → .mth-value--mono
-    «Frozen export»       {frozen_export.sha256_12}  → .mth-value--sha + «Copy»
-    «Verified»            {argument.created_at}      → .mth-value, tabular-nums
-  </dl>
-
-REGION 4  .mth-card__region — Attribution   (no avatar, no login, no Profile kind — SPEC §8.5 R17)
-  .mth-metric-row
-    «Author»    <a href="/p/{profile_id}">{profile.citation_name}</a>
-    «Submitted» {argument.created_at}
-
-REGION 5  .mth-card__region — DOI
-  flex items-center gap-2 flex-wrap
-    «DOI»  <span class="mth-doi mth-doi--lg">{argument.accession}</span>
-    ml-auto: «Open» .mth-btn--primary → /a/{argument.accession}
-             <details class="mth-cite"><summary>«Cite»</summary>
-               .mth-cite__text [data-citation-text] · hidden [data-citation-bibtex]
-               «Copy» · «Copy BibTeX»
-             </details>
 ```
 
+The verification block and the DOI with its citation moved to the record pages (§12.4); the attribution
+region was replaced by the author header.
+
 **States.** Loading (SPA paging) → the 2px page rule under the nav; no skeleton text (F3).
-Empty stream → empty `<ol>` and `{posts.total}` = `0`; no empty-state sentence, no illustration.
+Empty stream → empty `<ol>`; no count, no empty-state sentence, no illustration.
 Degraded → `.mth-degraded` inside the region that made the request, and nowhere else.
 
-### 12.2 PROFILE — `/u/{login}` (login-gated, generated)
+### 12.2 PROFILE — `/u/{login}` (generated; public until sign-in exists, then login-gated)
 
 ```
 <main class="mth-shell">    py-6, flex flex-col gap-6
@@ -1079,8 +1082,7 @@ Degraded → `.mth-degraded` inside the region that made the request, and nowher
         .mth-metric-row
           «Profile kind» {profile.kind}  .mth-status--neutral    ← CURRENT kind only, never a history
           «Joined»       {profile.created_at}
-        .mth-metric-row  mt-2 border-t border-border pt-2
-          «Claims» {counts.claims} · «Arguments» {counts.arguments} · «Posts» {counts.posts}
+                                  no tallies of claims, arguments or posts
 
   OWNER TOOLS  <section id="owner-tools" hidden>   SPA-rendered, own profile only, exactly 3 controls
     .mth-panel bg-surface-2  flex flex-wrap items-end gap-4
@@ -1092,13 +1094,14 @@ Degraded → `.mth-degraded` inside the region that made the request, and nowher
       └ «Sign out» .mth-btn--quiet  ml-auto  → POST /api/v1/logout
 
   DOIS  <section>
-    .mth-section-head  <h2 id="dois-h">«DOIs»</h2>  .mth-count {counts.dois}
+    .mth-section-head  <h2 id="dois-h">«DOIs»</h2>
     <div class="mth-table-scroll"><table class="mth-table" aria-labelledby="dois-h">   (G8)
       th: «DOI» --col-doi sticky · «Decl» 1fr/min --col-decl · «Accession kind» --col-kind
-          «Axioms» --col-axioms · «Arguments» --col-num (num) · «Verified» --col-date
-      each th = .mth-th-sort button + caret + aria-sort; default «Verified» desc
+          «Date» --col-date
+      default «Date» desc (newest first), ties by accession
       td: .mth-doi | .mth-td-mono truncated | «Claim»/«Argument» .mth-status--neutral
-          | names | «free» | «—» | .mth-td-num | tabular date
+          | tabular date
+      no verification column: a profile is a social surface
       row → /a/{accession}; roving tabindex, j/k/Enter
     </table></div>
 
@@ -1175,20 +1178,22 @@ All nine `Status` states, both verdict shapes and every `renderReason` template 
 
   <article class="landing" data-accession="{accession}" data-owner-profile-id="{…}">
 
-    <section data-region="verified" id="record" class="mth-card">     generated · immutable
-      • argument accession → the full post renderer, regions 1–5, unclamped, Graph default
-      • claim accession →
-          REGION 1  «Claim» chip · «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg
-          REGION 2  <dl class="mth-dl">
-                      «Library»           {claim.module}
-                      «Statement digest»  {statement_digest_12}  .mth-value--sha + «Copy»
-                      «First verified»    {claim.created_at}
-                      «Arguments»         {arguments_count}
-          REGION 3  <h2 id="args-h">«Arguments»</h2> + .mth-table aria-labelledby="args-h"
-                    th: «DOI» «Author» «Axioms» «Nodes» «Verified»
-                    OMITTED ENTIRELY when «Arguments» is 0 — which is how an open seed claim renders
-          REGION 4  Attribution: «Author» → /p/{profile_id} · «First verified»
-          REGION 5  «DOI» + «Open» + «Cite» / «Copy» / «Copy BibTeX»    (baked)
+    <section data-region="verified" id="record" class="mth-landing__record">   generated · immutable
+      • argument accession → the post card (author with ⋯, claim unclamped, DAG with Graph default)
+      • claim accession → a card:
+          AUTHOR    the author header, no ⋯ · the date is {claim.created_at}
+          REGION 1  «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg · «Copy»
+          REGION 2  <h2>«Arguments»</h2> + .mth-table
+                    th: «DOI» «Author» «Date» — the author as .mth-person (24px photo, → /u/{login}/)
+                    OMITTED ENTIRELY when there are no arguments — which is how an open seed claim renders
+      then, below the card and outside it, <div class="mth-record">:
+          «DOI» {accession} · «Cite» «Copy» «Copy BibTeX»    (baked)
+          <section class="mth-verification">   small: 2xs uppercase title, 2xs rows, muted, top hairline
+            argument: the seven pairs — «Replay» «Axioms» «Statement identity» «Substrate»
+                      «Dictionary pin» «Frozen export» «Verified»
+            claim:    «Library» {claim.module} · «Statement digest» {statement_digest_12}
+                      · «First verified» {claim.created_at}
+          </section>
     </section>
 
     <section data-region="author" id="authored"
@@ -1239,15 +1244,12 @@ Two documents, not a filter (SPEC §8.3). Same skeleton, different `<h1>`, colum
     .mth-field «Axiom manifest»  <select class="mth-select mth-input--w-sm">  «All» · «free» · names
     .mth-field «From»            <input type="date" class="mth-input mth-input--w-sm">
     .mth-field «To»              <input type="date" class="mth-input mth-input--w-sm">
-    .mth-field «Min»             <input type="number" class="mth-input mth-input--w-xs">  CLAIMS BANK ONLY
     .mth-field «Sort»            <select class="mth-select mth-input--w-sm">  «Newest» · «Oldest»
     «Clear» .mth-btn--quiet   «Reset» .mth-btn--quiet
     No placeholder attribute on any input; every control is visibly labelled.
 
   FACETS  flex flex-wrap gap-2   .mth-chip-facet per active filter
           {facet.value} + 24×24 remove button, aria-label=«Clear»
-
-  COUNT   ml-auto  .mth-metric  «Rows» {search.total}   aria-live="polite"
 
   TABLE   .mth-table-scroll > table.mth-table[.mth-table--tall] aria-labelledby="bank-h"     (G8)
     CLAIMS columns
@@ -1258,20 +1260,18 @@ Two documents, not a filter (SPEC §8.3). Same skeleton, different `<h1>`, colum
       «Decl» --col-decl             → .mth-td-mono, CSS-truncated
       «Library» --col-lib           → .mth-value
       «Axioms» --col-axioms         → names | «free» | «—»
-      «Arguments» --col-num         → .mth-td-num
       «First verified» --col-date   → tabular date
     ARGUMENTS columns
-      «DOI» sticky · «Claim» (.mth-doi) · «Decl» · «Author» · «Axioms»
-      · «Constants» (num) · «Nodes» (num) · «Verified»
+      «DOI» sticky · «Claim» (.mth-doi) · «Decl» · «Author» · «Axioms» · «Verified»
     Sticky thead below the nav; hairline rules; no zebra; row focus = accent left rail + accent-50.
-    Empty result → empty <tbody>, «Rows» {0}. No empty-state sentence, no illustration.
+    Empty result → empty <tbody>. No count, no empty-state sentence, no illustration.
 
   «More»  .mth-btn--default .mth-btn--block    (value-based cursor paging)
 </main>
 ```
 
 **States.** `422 invalid_filter` → `<p data-role="error">` with the API `message` directly above the table, `<tbody>`
-cleared, `«Rows» 0`, and the offending `.mth-field` marked `aria-invalid="true"`.
+cleared, and the offending `.mth-field` marked `aria-invalid="true"`.
 A registry outage does **not** affect this page (search is served from Tantivy via `mathesisd`, never through the
 gateway — SPEC §8, §11.4). Loading → the 2px page rule; rows are absent, never faked.
 

@@ -1,7 +1,7 @@
 // Column sorting over a generated table (DESIGN.md §12.2, §7.9).
 //
 // The profile's `DOIs` table is generated complete — every accession the
-// profile holds, in `Verified` descending order — so sorting is a reordering of
+// profile holds, newest first — so sorting is a reordering of
 // rows already in the document and needs no request. That is also why it works
 // during a registry outage and why it cannot show a row the record does not
 // carry.
@@ -12,8 +12,8 @@
 // `content:` on that attribute, so no text node is ever written.
 //
 // The sort key's TYPE comes from the field catalogue rather than from the
-// text: a timestamp, an integer and a decl compare three different ways, and
-// guessing from the characters is how `10` sorts before `9`.
+// text: a timestamp sorts newest first on its first click, a name or an
+// accession sorts A to Z. No column carries a count.
 //
 // The selector is `.mth-profile__dois table` and deliberately not `table`. A
 // landing page's arguments table sits inside the immutable region, and
@@ -49,14 +49,9 @@ function cellField(row: HTMLTableRowElement, index: number): string | null {
   return valued?.getAttribute("data-field") ?? null;
 }
 
-/** The comparator a shape implies. `timestamp` is RFC 3339 UTC at second
- * precision, so its lexicographic order IS its chronological order. */
-function compareBy(shape: Shape | undefined): (a: string, b: string) => number {
-  if (shape === "integer") {
-    return (a, b) => (Number(a) || 0) - (Number(b) || 0);
-  }
-  return byteOrder;
-}
+/** The comparator. `timestamp` is RFC 3339 UTC at second precision, so its
+ * byte order IS its chronological order, and every other column is text. */
+const compare = byteOrder;
 
 /** A column with no value in any row sorts as text and is still sortable; a
  * column whose rows all carry the same field takes that field's shape. */
@@ -105,7 +100,7 @@ export function mountTableSort(root: ParentNode = document): void {
             ? state.direction === "ascending"
               ? "descending"
               : "ascending"
-            : shape === "timestamp" || shape === "integer"
+            : shape === "timestamp"
               ? "descending"
               : "ascending";
         state.column = index;
@@ -114,7 +109,6 @@ export function mountTableSort(root: ParentNode = document): void {
         for (const other of Array.from(headRow.cells)) other.removeAttribute("aria-sort");
         th.setAttribute("aria-sort", next);
 
-        const compare = compareBy(shape);
         const sign = next === "ascending" ? 1 : -1;
         const ordered = rows()
           .map((row, position) => ({ row, position }))

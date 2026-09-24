@@ -15,6 +15,7 @@ export type Shape =
   | "sha256-prefix"
   | "decl"
   | "login"
+  | "name"
   | "label"
   | "em-dash"
   | "lean-statement"
@@ -32,16 +33,10 @@ export const FIELDS: Field[] = [
   { field: "claim.pretty", shape: "lean-statement", source: "manifest" },
   { field: "claim.module", shape: "label", source: "manifest" },
   { field: "claim.statement_digest", shape: "sha256-prefix", source: "manifest" },
-  { field: "claim.arguments_count", shape: "integer", source: "manifest" },
   { field: "claim.first_verified", shape: "timestamp", source: "manifest" },
   { field: "argument.accession", shape: "accession", source: "manifest" },
   { field: "argument.root_decl_name", shape: "decl", source: "manifest" },
   { field: "argument.export_sha256", shape: "sha256-prefix", source: "manifest" },
-  { field: "argument.export_constants", shape: "integer", source: "manifest" },
-  { field: "argument.node_count", shape: "integer", source: "manifest" },
-  { field: "argument.edge_count", shape: "integer", source: "manifest" },
-  { field: "argument.depth", shape: "integer", source: "manifest" },
-  { field: "argument.dictionary_leaves", shape: "integer", source: "manifest" },
   { field: "argument.created_at", shape: "timestamp", source: "manifest" },
   { field: "argument.libraries_used", shape: "label", source: "manifest" },
   { field: "argument_node.decl_name", shape: "decl", source: "manifest" },
@@ -58,19 +53,14 @@ export const FIELDS: Field[] = [
   { field: "dictionary.label", shape: "label", source: "manifest" },
   { field: "dictionary.curation", shape: "enum", source: "manifest" },
   { field: "profile.login", shape: "login", source: "manifest" },
-  { field: "profile.citation_name", shape: "login", source: "manifest" },
-  { field: "argument.cites", shape: "login", source: "manifest" },
+  { field: "profile.citation_name", shape: "name", source: "manifest" },
+  { field: "argument.cites", shape: "name", source: "manifest" },
   { field: "profile.kind", shape: "enum", source: "manifest" },
   { field: "profile.created_at", shape: "timestamp", source: "manifest" },
-  { field: "profile.claims_count", shape: "integer", source: "manifest" },
-  { field: "profile.arguments_count", shape: "integer", source: "manifest" },
-  { field: "profile.posts_count", shape: "integer", source: "manifest" },
   { field: "accession.kind", shape: "enum", source: "manifest" },
   { field: "citation.text", shape: "citation", source: "manifest" },
   { field: "citation.bibtex", shape: "citation", source: "manifest" },
-  { field: "rows.count", shape: "integer", source: "manifest" },
   { field: "facet.value", shape: "label", source: "api" },
-  { field: "posts.count", shape: "integer", source: "manifest" },
   { field: "null", shape: "em-dash", source: "manifest" },
   { field: "verification.state", shape: "enum", source: "api" },
   { field: "verification.reason_code", shape: "enum", source: "api" },

@@ -11,7 +11,7 @@
 //! the leaves a node stands on; Mathlib is the substrate and appears nowhere.
 
 use chrono::{DateTime, Utc};
-use record::model::{Argument, Claim, EdgeRow, NodeRow, Post, Profile};
+use record::model::{Argument, Claim, EdgeRow, NodeRow, Person, Post, Profile};
 use serde::Deserialize;
 use serde_json::json;
 use sha2::{Digest, Sha256};
@@ -28,6 +28,10 @@ struct Curation {
     dictionary: DictionaryIn,
     substrate: String,
     premise_authors: Vec<PremiseAuthor>,
+    /// Every person an argument cites, with the public profile their name links
+    /// to. A cited name without an entry here is refused.
+    #[serde(default)]
+    people: Vec<Person>,
     posts: Vec<PostIn>,
 }
 
@@ -137,7 +141,12 @@ fn argument_dag(
 ) -> (Vec<NodeRow>, Vec<EdgeRow>, BTreeSet<String>) {
     let by_name: BTreeMap<&str, &GNode> = g.nodes.iter().map(|n| (n.decl.as_str(), n)).collect();
     let is_node = |n: &GNode| n.kind == "theorem" && premise_of(n).is_none();
-    let leaf_kind = |n: &GNode| !matches!(n.kind.as_str(), "constructor" | "recursor" | "quot" | "axiom");
+    let leaf_kind = |n: &GNode| {
+        !matches!(
+            n.kind.as_str(),
+            "constructor" | "recursor" | "quot" | "axiom"
+        )
+    };
 
     // reachability from the root over theorem nodes only
     let mut keep: BTreeSet<&str> = BTreeSet::new();
@@ -165,9 +174,15 @@ fn argument_dag(
         let gn = by_name[n];
         let mut leaves: BTreeSet<String> = BTreeSet::new();
         for u in &gn.uses {
-            let Some(un) = by_name.get(u.as_str()) else { continue };
+            let Some(un) = by_name.get(u.as_str()) else {
+                continue;
+            };
             if keep.contains(u.as_str()) {
-                edges.push(EdgeRow { used_by: n.to_string(), uses: u.clone(), via: "direct".into() });
+                edges.push(EdgeRow {
+                    used_by: n.to_string(),
+                    uses: u.clone(),
+                    via: "direct".into(),
+                });
                 succ.entry(n).or_default().push(u.as_str());
             } else if leaf_kind(un) && (un.kind != "theorem" || premise_of(un).is_some()) {
                 if let Some(author) = premise_of(un) {
@@ -183,7 +198,12 @@ fn argument_dag(
     let mut depth: BTreeMap<&str, i32> = keep.iter().map(|&n| (n, 0)).collect();
     let mut order: Vec<&str> = Vec::new();
     let mut state: BTreeMap<&str, u8> = BTreeMap::new();
-    fn visit<'a>(n: &'a str, succ: &BTreeMap<&'a str, Vec<&'a str>>, state: &mut BTreeMap<&'a str, u8>, out: &mut Vec<&'a str>) {
+    fn visit<'a>(
+        n: &'a str,
+        succ: &BTreeMap<&'a str, Vec<&'a str>>,
+        state: &mut BTreeMap<&'a str, u8>,
+        out: &mut Vec<&'a str>,
+    ) {
         if state.get(n).copied().unwrap_or(0) != 0 {
             return;
         }
@@ -206,7 +226,11 @@ fn argument_dag(
             }
         }
     }
-    let topo: BTreeMap<&str, i32> = order.iter().enumerate().map(|(i, &n)| (n, i as i32)).collect();
+    let topo: BTreeMap<&str, i32> = order
+        .iter()
+        .enumerate()
+        .map(|(i, &n)| (n, i as i32))
+        .collect();
 
     let nodes: Vec<NodeRow> = order
         .iter()
@@ -229,16 +253,34 @@ fn argument_dag(
     (nodes, edges, cites)
 }
 
+/// The committed avatar of a profile (`bank/avatars/<login>.<ext>`), as the
+/// record-relative path the pages reference.
+fn avatar_of(bank: &Path, login: &str) -> Option<String> {
+    ["jpg", "png", "gif", "webp"]
+        .iter()
+        .map(|ext| format!("avatars/{login}.{ext}"))
+        .find(|rel| bank.join(rel).is_file())
+        .map(|rel| format!("/{rel}"))
+}
+
 fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<(), String> {
     let c: Curation = read_json(curation)?;
     let ns = Uuid::NAMESPACE_URL;
-    let profile_id = Uuid::new_v5(&ns, format!("mathesis:profile:{}", c.profile.login).as_bytes());
-    let dictionary_id = Uuid::new_v5(&ns, format!("mathesis:dictionary:{}", c.dictionary.label).as_bytes());
+    let profile_id = Uuid::new_v5(
+        &ns,
+        format!("mathesis:profile:{}", c.profile.login).as_bytes(),
+    );
+    let dictionary_id = Uuid::new_v5(
+        &ns,
+        format!("mathesis:dictionary:{}", c.dictionary.label).as_bytes(),
+    );
 
     let premise_of = |n: &GNode| -> Option<String> {
         c.premise_authors
             .iter()
-            .find(|p| p.modules.iter().any(|m| m == &n.module) || p.decls.iter().any(|d| d == &n.decl))
+            .find(|p| {
+                p.modules.iter().any(|m| m == &n.module) || p.decls.iter().any(|d| d == &n.decl)
+            })
             .map(|p| p.author.clone())
     };
 
@@ -252,6 +294,7 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         kind: Some(c.profile.kind.clone()),
         is_owner: true,
         created_at: c.published_at,
+        avatar: avatar_of(out, &c.profile.login),
     };
     write_json(&out.join("profiles.json"), &json!([profile]))?;
 
@@ -292,7 +335,11 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         let arg_acc = format!("MTH.R-{}-{serial:04}", c.year);
         let g: Graph = read_json(&graphs.join(format!("{decl}.json")))?;
         let v: Verdict = read_json(&verdicts.join(format!("{decl}.verdict.json")))?;
-        let t = v.targets.iter().find(|t| &t.decl == decl).ok_or(format!("{decl}: verdict names no such target"))?;
+        let t = v
+            .targets
+            .iter()
+            .find(|t| &t.decl == decl)
+            .ok_or(format!("{decl}: verdict names no such target"))?;
         if v.verdict != "ADMITTED" || !v.replay.accepted || t.triviality.is_some() {
             return Err(format!("{decl}: the gate did not admit it ({})", v.verdict));
         }
@@ -310,12 +357,20 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         let mut kernel_axioms = g.axioms.clone();
         kernel_axioms.sort();
         if axioms != kernel_axioms {
-            return Err(format!("{decl}: gate axioms {axioms:?} differ from the environment's {kernel_axioms:?}"));
+            return Err(format!(
+                "{decl}: gate axioms {axioms:?} differ from the environment's {kernel_axioms:?}"
+            ));
         }
 
         let (nodes, edges, mut cites) = argument_dag(&g, &premise_of);
         cites.extend(post.cites.iter().cloned());
-        let root = nodes.iter().find(|n| n.is_root).ok_or(format!("{decl}: no root"))?;
+        if let Some(name) = cites.iter().find(|n| !c.people.iter().any(|p| &p.name == *n)) {
+            return Err(format!("{decl}: cites {name}, who has no entry in `people`"));
+        }
+        let root = nodes
+            .iter()
+            .find(|n| n.is_root)
+            .ok_or(format!("{decl}: no root"))?;
         let mut libraries: BTreeSet<String> = BTreeSet::new();
         for n in &g.nodes {
             if premise_of(n).is_none() {
@@ -353,7 +408,11 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
             statement_identity: v.statement_identity.clone(),
             substrate: c.substrate.clone(),
             libraries_used: libraries.into_iter().collect(),
-            private_helpers: nodes.iter().filter(|n| !n.citable).map(|n| n.decl_name.clone()).collect(),
+            private_helpers: nodes
+                .iter()
+                .filter(|n| !n.citable)
+                .map(|n| n.decl_name.clone())
+                .collect(),
             root_decl_name: decl.clone(),
             root_pretty: root.pretty.clone(),
             root_module: g.root_module.clone(),
@@ -365,7 +424,10 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
             cites: cites.into_iter().collect(),
             source_url: None,
         };
-        write_json(&out.join("claims").join(format!("{claim_acc}.json")), &json!(claim))?;
+        write_json(
+            &out.join("claims").join(format!("{claim_acc}.json")),
+            &json!(claim),
+        )?;
         write_json(
             &out.join("arguments").join(format!("{arg_acc}.json")),
             &json!({ "argument": argument, "nodes": nodes, "edges": edges }),
@@ -377,9 +439,15 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
             profile_id,
             published_at: c.published_at,
         });
-        println!("bankgen: {decl}: {} nodes, {} edges", argument.node_count, argument.edge_count);
+        println!(
+            "bankgen: {decl}: {} nodes, {} edges",
+            argument.node_count, argument.edge_count
+        );
     }
     write_json(&out.join("posts.json"), &json!(posts))?;
+    let mut people = c.people.clone();
+    people.sort_by(|a, b| a.name.cmp(&b.name));
+    write_json(&out.join("people.json"), &json!(people))?;
     Ok(())
 }
 
@@ -398,8 +466,12 @@ fn main() -> ExitCode {
         }
     }
     let get = |k: &str| a.get(k).cloned();
-    let (Some(c), Some(g), Some(v), Some(o)) = (get("--curation"), get("--graphs"), get("--verdicts"), get("--out"))
-    else {
+    let (Some(c), Some(g), Some(v), Some(o)) = (
+        get("--curation"),
+        get("--graphs"),
+        get("--verdicts"),
+        get("--out"),
+    ) else {
         eprintln!("usage: bankgen --curation FILE --graphs DIR --verdicts DIR --out DIR");
         return ExitCode::from(2);
     };

@@ -5,7 +5,7 @@
 // served by `mathesisd` through `webd`, never through the gateway, so a registry
 // outage does not reach this page.
 //
-// An empty result is an empty `<tbody>` and `Rows 0` — no empty-state sentence
+// An empty result is an empty `<tbody>` — no empty-state sentence, no count
 // and no illustration. A parameter that does not apply to the bank is refused by
 // the API with `422 invalid_filter` and is rendered as that refusal, never
 // silently ignored.
@@ -77,7 +77,6 @@ function claimRow(row: SearchRow): HTMLElement {
   tr.append(cell("claim.decl_name", row.decl_name, "mth-td-mono"));
   tr.append(cell("claim.module", row.module));
   tr.append(axiomCell(row, row.arguments === 0));
-  tr.append(cell("claim.arguments_count", String(row.arguments), "mth-td-num"));
   tr.append(cell("claim.first_verified", row.created_at));
   return tr;
 }
@@ -89,8 +88,6 @@ function argumentRow(row: SearchRow): HTMLElement {
   tr.append(cell("argument.root_decl_name", row.decl_name, "mth-td-mono"));
   tr.append(cell("profile.citation_name", row.author));
   tr.append(axiomCell(row, false));
-  tr.append(cell("argument.export_constants", String(row.constants), "mth-td-num"));
-  tr.append(cell("argument.node_count", String(row.nodes), "mth-td-num"));
   tr.append(cell("argument.created_at", row.created_at));
   return tr;
 }
@@ -132,10 +129,8 @@ export function mountCollection(root: ParentNode): void {
   const bank = (main.getAttribute("data-bank") ?? "claims") as Bank;
   const form = qs<HTMLFormElement>("form[data-facets]", main);
   const tbody = qs<HTMLElement>("tbody[data-rows]", main);
-  const rowsCount = qs<HTMLElement>("[data-field='rows.count']", main);
-  if (!form || !tbody || !rowsCount) return;
+  if (!form || !tbody) return;
 
-  rowsCount.setAttribute("aria-live", "polite");
   const table = tbody.closest("table");
   const facets = el("div", { class: "mth-facets" });
   table?.parentElement?.insertBefore(facets, table);
@@ -175,12 +170,11 @@ export function mountCollection(root: ParentNode): void {
       window.location.assign(withBase(target));
       return;
     }
-    const found = localSearch(await loadAll(), filters, bank);
+    const found = localSearch(await loadAll(), filters);
     clear(tbody);
     for (const row of found) {
       tbody.append(bank === "claims" ? claimRow(row) : argumentRow(row));
     }
-    rowsCount.textContent = String(found.length);
     mountExpanders(tbody);
   };
   const apply = (filters: Filters, push: boolean): void => {

@@ -65,6 +65,16 @@
    ]
   }
  ],
+ "people": [
+  {
+   "name": "Alex Meiburg",
+   "github": "Timeroot"
+  },
+  {
+   "name": "Yaël Dillies",
+   "github": "YaelDillies"
+  }
+ ],
  "posts": [
   {
    "decl": "encard_image_inter_le_encard_shatters",

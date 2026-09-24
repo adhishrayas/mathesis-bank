@@ -45,7 +45,10 @@ fn legacy_band(text: &str) -> Option<Hit> {
             && rest[12..15].iter().all(u8::is_ascii_digit)
             && rest.get(15).is_none_or(|c| !c.is_ascii_digit())
         {
-            return Some(Hit { offset: s, term: String::from_utf8_lossy(&rest[..15]).into_owned() });
+            return Some(Hit {
+                offset: s,
+                term: String::from_utf8_lossy(&rest[..15]).into_owned(),
+            });
         }
         i = s + 4;
     }
@@ -58,7 +61,9 @@ fn legacy_band(text: &str) -> Option<Hit> {
 /// legitimately contain any character a Lean identifier may contain.
 pub fn local_terms(repo: &Path) -> Vec<String> {
     let p = repo.join(".firewall-terms");
-    let Ok(text) = std::fs::read_to_string(p) else { return Vec::new() };
+    let Ok(text) = std::fs::read_to_string(p) else {
+        return Vec::new();
+    };
     text.lines()
         .map(str::trim)
         .filter(|l| !l.is_empty() && !l.starts_with('#'))
@@ -96,7 +101,10 @@ fn inside(spans: &[(usize, usize)], at: usize) -> bool {
 pub fn scan(text: &str, local: &[String], html: bool) -> Option<Hit> {
     for term in INTERNAL_TERMS {
         if let Some(p) = text.find(term) {
-            return Some(Hit { offset: p, term: (*term).to_string() });
+            return Some(Hit {
+                offset: p,
+                term: (*term).to_string(),
+            });
         }
     }
     if let Some(h) = legacy_band(text) {
@@ -109,7 +117,10 @@ pub fn scan(text: &str, local: &[String], html: bool) -> Option<Hit> {
             while let Some(p) = text[i..].find(term.as_str()) {
                 let at = i + p;
                 if !inside(&spans, at) {
-                    return Some(Hit { offset: at, term: term.clone() });
+                    return Some(Hit {
+                        offset: at,
+                        term: term.clone(),
+                    });
                 }
                 i = at + term.len();
             }
@@ -140,7 +151,10 @@ pub fn scan_banned(text: &str) -> Option<Hit> {
         if let Some(p) = folded.find(t) {
             let offset = offsets.get(p).copied().unwrap_or(p);
             if best.as_ref().is_none_or(|h| offset < h.offset) {
-                best = Some(Hit { offset, term: (*t).to_string() });
+                best = Some(Hit {
+                    offset,
+                    term: (*t).to_string(),
+                });
             }
         }
     }
@@ -180,7 +194,10 @@ pub struct Allowed {
 
 pub fn allowed(allowlist_json: &str, profile: &str) -> Result<Allowed, String> {
     let a: Allowlist = serde_json::from_str(allowlist_json).map_err(|e| e.to_string())?;
-    let p = a.profiles.get(profile).ok_or_else(|| format!("no allowlist profile `{profile}`"))?;
+    let p = a
+        .profiles
+        .get(profile)
+        .ok_or_else(|| format!("no allowlist profile `{profile}`"))?;
     let mut elements: BTreeSet<String> = a.base.elements.iter().cloned().collect();
     for e in &p.adds {
         elements.insert(e.clone());
@@ -340,8 +357,14 @@ mod tests {
 
     #[test]
     fn the_scan_finds_the_internal_vocabulary_and_the_legacy_band() {
-        assert_eq!(scan("ok WMSpec.fiber_saturated", &[], true).unwrap().term, "WMSpec");
-        assert_eq!(scan("see MTH.C-2026-1067 there", &[], true).unwrap().term, "MTH.C-2026-1067");
+        assert_eq!(
+            scan("ok WMSpec.fiber_saturated", &[], true).unwrap().term,
+            "WMSpec"
+        );
+        assert_eq!(
+            scan("see MTH.C-2026-1067 there", &[], true).unwrap().term,
+            "MTH.C-2026-1067"
+        );
         assert!(scan("MTH.C-2026-5007", &[], true).is_none());
         assert!(scan("MTH.R-2026-51067", &[], true).is_none());
     }
@@ -349,7 +372,14 @@ mod tests {
     #[test]
     fn a_local_term_inside_a_pre_is_the_documented_carve_out() {
         let local = vec!["γ".to_string()];
-        assert!(scan("<pre data-role=\"lean-statement\">∀ γ, γ = γ</pre>", &local, true).is_none());
+        assert!(
+            scan(
+                "<pre data-role=\"lean-statement\">∀ γ, γ = γ</pre>",
+                &local,
+                true
+            )
+            .is_none()
+        );
         assert_eq!(scan("<p>γ</p>", &local, true).unwrap().term, "γ");
         assert!(scan("{\"value\":\"γ\"}", &local, false).is_none());
     }

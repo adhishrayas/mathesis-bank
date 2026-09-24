@@ -26,7 +26,8 @@ pub struct Reasons {
 pub fn table() -> &'static Reasons {
     static R: OnceLock<Reasons> = OnceLock::new();
     R.get_or_init(|| {
-        serde_json::from_str(include_str!("../../../../../shared/reasons.v1.json")).expect("reasons.v1.json")
+        serde_json::from_str(include_str!("../../../../../shared/reasons.v1.json"))
+            .expect("reasons.v1.json")
     })
 }
 
@@ -41,7 +42,9 @@ pub fn codes() -> Vec<&'static str> {
 /// Render a deterministic reason. Reason messages are error messages and are the
 /// one class of visible string outside the label catalogue.
 pub fn message(code: &str, params: &serde_json::Map<String, serde_json::Value>) -> String {
-    let Some(r) = reason(code) else { return code.to_string() };
+    let Some(r) = reason(code) else {
+        return code.to_string();
+    };
     let mut out = String::with_capacity(r.message_template.len());
     let mut rest = r.message_template.as_str();
     while let Some(i) = rest.find('{') {
@@ -50,7 +53,10 @@ pub fn message(code: &str, params: &serde_json::Map<String, serde_json::Value>) 
         match rest.find('}') {
             Some(j) => {
                 let key = &rest[..j];
-                let v = params.get(key).map(render_param).unwrap_or_else(|| "—".to_string());
+                let v = params
+                    .get(key)
+                    .map(render_param)
+                    .unwrap_or_else(|| "—".to_string());
                 out.push_str(&v);
                 rest = &rest[j + 1..];
             }
@@ -74,12 +80,20 @@ fn render_param(v: &serde_json::Value) -> String {
 
 /// Precedence, fixed so the same input always yields the same code
 /// (`infra > replay > axioms > statement > triviality > closure > assemble`).
-pub fn worst<'a>(codes: &'a [(&'a str, serde_json::Map<String, serde_json::Value>)]) -> Option<&'a (&'a str, serde_json::Map<String, serde_json::Value>)> {
-    let order: BTreeMap<&str, usize> =
-        table().precedence.iter().enumerate().map(|(i, s)| (s.as_str(), i)).collect();
-    codes
+pub fn worst<'a>(
+    codes: &'a [(&'a str, serde_json::Map<String, serde_json::Value>)],
+) -> Option<&'a (&'a str, serde_json::Map<String, serde_json::Value>)> {
+    let order: BTreeMap<&str, usize> = table()
+        .precedence
         .iter()
-        .min_by_key(|(c, _)| reason(c).and_then(|r| order.get(r.stage.as_str()).copied()).unwrap_or(usize::MAX))
+        .enumerate()
+        .map(|(i, s)| (s.as_str(), i))
+        .collect();
+    codes.iter().min_by_key(|(c, _)| {
+        reason(c)
+            .and_then(|r| order.get(r.stage.as_str()).copied())
+            .unwrap_or(usize::MAX)
+    })
 }
 
 #[cfg(test)]
@@ -89,7 +103,12 @@ mod tests {
     #[test]
     fn every_code_has_a_stage_a_producer_and_a_template() {
         for r in &table().reasons {
-            assert!(table().stages.contains(&r.stage), "{} has stage {}", r.code, r.stage);
+            assert!(
+                table().stages.contains(&r.stage),
+                "{} has stage {}",
+                r.code,
+                r.stage
+            );
             assert!(!r.message_template.is_empty(), "{} has no template", r.code);
             if r.stage != "degraded" {
                 assert!(r.producer.is_some(), "{} has no producer", r.code);
@@ -99,7 +118,9 @@ mod tests {
 
     #[test]
     fn templates_obey_the_reason_lint() {
-        let banned = ["this", "here", "we", "our", "you", "your", "welcome", "platform"];
+        let banned = [
+            "this", "here", "we", "our", "you", "your", "welcome", "platform",
+        ];
         for r in &table().reasons {
             let t = &r.message_template;
             assert!(t.len() <= 120, "{} template is {} chars", r.code, t.len());
@@ -112,7 +133,11 @@ mod tests {
                 assert!(!bad, "{} uses the banned token `{}`", r.code, w);
             }
             if !r.params.is_empty() {
-                assert!(r.params.iter().any(|p| t.contains(&format!("{{{p}}}"))), "{} names no param", r.code);
+                assert!(
+                    r.params.iter().any(|p| t.contains(&format!("{{{p}}}"))),
+                    "{} names no param",
+                    r.code
+                );
             }
         }
     }
@@ -131,6 +156,9 @@ mod tests {
         let mut p = serde_json::Map::new();
         p.insert("axiom".into(), serde_json::Value::String("sorryAx".into()));
         assert!(message("ILLEGAL_AXIOM", &p).contains("sorryAx"));
-        assert_eq!(message("REGISTRY_UNAVAILABLE", &serde_json::Map::new()), "The registry did not answer.");
+        assert_eq!(
+            message("REGISTRY_UNAVAILABLE", &serde_json::Map::new()),
+            "The registry did not answer."
+        );
     }
 }

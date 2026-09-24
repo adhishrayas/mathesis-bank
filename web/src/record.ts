@@ -63,10 +63,12 @@ export function mountClipboard(root: ParentNode = document): void {
 
 // ------------------------------------------------------------------- the DAG
 
-/** `Graph` and `List` over one record. The `Graph` option is rendered
- * `disabled` by the generator when the DAG is oversized (`nodes > 400 ||
- * edges > 4000`) with its label unchanged (R46), so this never re-enables it,
- * and below `lg` `List` is forced by the stylesheet rather than by script. */
+/** `Graph` and `List` over one record, `Graph` first wherever it is offered, at
+ * every width: a narrow screen scrolls the graph in its own viewport. The
+ * `Graph` option is rendered `disabled` by the generator when the DAG is
+ * oversized (`nodes > 400 || edges > 4000`) with its label unchanged (R46), so
+ * this never re-enables it; `List` is also the form a reader without scripts
+ * gets. */
 export function mountDag(root: ParentNode = document): void {
   for (const dag of qsa<HTMLElement>(".mth-dag", root)) {
     if (dag.getAttribute("data-dag-bound") === "true") continue;
@@ -74,10 +76,8 @@ export function mountDag(root: ParentNode = document): void {
 
     const buttons = qsa<HTMLButtonElement>("button[data-layout]", dag);
     const graph = qs(".mth-dag__graph", dag);
-    // `List` below the large breakpoint, where a scrolled graph is unusable.
-    const wide = window.matchMedia("(min-width: 1024px)").matches;
     const offered = graph !== null && !buttons.find((b) => b.dataset.layout === "graph")?.disabled;
-    const initial = offered && wide ? "graph" : "list";
+    const initial = offered ? "graph" : "list";
     const setLayout = (next: string): void => {
       dag.setAttribute("data-layout", next);
       for (const b of buttons) b.setAttribute("aria-pressed", String(b.dataset.layout === next));
@@ -103,6 +103,28 @@ export function mountDag(root: ParentNode = document): void {
       });
     }
   }
+}
+
+// ------------------------------------------------------------- the ⋯ menu
+
+/** A post's ⋯ menu is a `<details>`, so it opens without this. Here, opening
+ * one closes the others, and a click outside it or Escape closes it. */
+export function mountMenus(root: Document = document): void {
+  const menus = (): HTMLDetailsElement[] => qsa<HTMLDetailsElement>("details.mth-more", root);
+  root.addEventListener("click", (ev) => {
+    const target = ev.target instanceof Node ? ev.target : null;
+    for (const menu of menus()) {
+      if (menu.open && !(target && menu.contains(target))) menu.open = false;
+    }
+  });
+  root.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Escape") return;
+    for (const menu of menus()) {
+      if (!menu.open) continue;
+      menu.open = false;
+      qs<HTMLElement>("summary", menu)?.focus();
+    }
+  });
 }
 
 // ---------------------------------------------------------------- the clamp

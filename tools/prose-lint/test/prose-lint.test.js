@@ -19,7 +19,7 @@ test("the real catalogue, field table, allowlist and About body pass their own r
 test("a generated tree that obeys Rule 1 is clean", () => {
   const r = lint([join(fixtures, "tree-clean")]);
   assert.deepEqual(r.violations, []);
-  assert.equal(r.checked_files, 3);
+  assert.equal(r.checked_files, 4);
 });
 
 test("`This page shows…` is not a string a page may render", () => {
@@ -197,4 +197,14 @@ test("the report has the shape the release gate reads", () => {
     "violations",
   ]);
   assert.equal(typeof r.checked_files, "number");
+});
+
+test("a name is one to four words of letters in any script", async () => {
+  const { shapeViolation } = await import("../src/catalogue.js");
+  for (const ok of ["Dhruv Gupta", "Yaël Dillies", "Alex Meiburg", "J. R. R. Tolkien", "O’Brien", "Jean-Luc"]) {
+    assert.equal(shapeViolation("name", ok), null, ok);
+  }
+  for (const bad of ["", " Dhruv", "this page shows the record", "<b>Dhruv</b>", "Dhruv  Gupta", "zetetic_dhruv"]) {
+    assert.equal(shapeViolation("name", bad), "name", bad);
+  }
 });

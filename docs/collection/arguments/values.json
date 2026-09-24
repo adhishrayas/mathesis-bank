@@ -1,9 +1,5 @@
 [
   {
-    "field": "rows.count",
-    "value": "32"
-  },
-  {
     "field": "argument.accession",
     "value": "MTH.R-2026-6001"
   },
@@ -30,14 +26,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "7552"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
   },
   {
     "field": "argument.created_at",
@@ -72,14 +60,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "16516"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "35"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -110,14 +90,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "8816"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "26"
   },
   {
     "field": "argument.created_at",
@@ -152,14 +124,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "16667"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "4"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -190,14 +154,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "7420"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "28"
   },
   {
     "field": "argument.created_at",
@@ -232,14 +188,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "7436"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "8"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -270,14 +218,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "9228"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "41"
   },
   {
     "field": "argument.created_at",
@@ -312,14 +252,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "14357"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -350,14 +282,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "49488"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "67"
   },
   {
     "field": "argument.created_at",
@@ -392,14 +316,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "2887"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -430,14 +346,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "3110"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
   },
   {
     "field": "argument.created_at",
@@ -472,14 +380,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "36240"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -510,14 +410,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "23370"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "42"
   },
   {
     "field": "argument.created_at",
@@ -552,14 +444,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "3756"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "61"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -590,14 +474,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "48828"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "8"
   },
   {
     "field": "argument.created_at",
@@ -632,14 +508,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "13529"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "5"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -670,14 +538,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "13582"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "6"
   },
   {
     "field": "argument.created_at",
@@ -712,14 +572,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "14176"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "13"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -750,14 +602,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "8159"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "91"
   },
   {
     "field": "argument.created_at",
@@ -792,14 +636,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "4547"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "21"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -830,14 +666,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "67068"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "38"
   },
   {
     "field": "argument.created_at",
@@ -872,14 +700,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "60261"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -910,14 +730,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "18566"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "10"
   },
   {
     "field": "argument.created_at",
@@ -952,14 +764,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "39105"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -990,14 +794,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "3266"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "15"
   },
   {
     "field": "argument.created_at",
@@ -1032,14 +828,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "49727"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "118"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1070,14 +858,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "49285"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "47"
   },
   {
     "field": "argument.created_at",
@@ -1112,14 +892,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "49284"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "44"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1150,14 +922,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "48927"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "12"
   },
   {
     "field": "argument.created_at",
@@ -1192,14 +956,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "19304"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "14"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1232,14 +988,6 @@
     "value": "propext"
   },
   {
-    "field": "argument.export_constants",
-    "value": "5366"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1270,14 +1018,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "argument.export_constants",
-    "value": "5564"
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
   },
   {
     "field": "argument.created_at",

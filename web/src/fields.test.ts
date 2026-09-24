@@ -18,7 +18,8 @@ import { REPO_DIR } from "./sources";
 
 const SHAPES: Shape[] = [
   "enum", "accession", "timestamp", "integer", "sha256-prefix", "decl",
-  "login", "label", "em-dash", "lean-statement", "citation",
+  "login",
+  "name", "label", "em-dash", "lean-statement", "citation",
 ];
 
 const EXPORTED = join(REPO_DIR, "services", "registry", "crates", "record", "fields.json");
@@ -47,18 +48,19 @@ describe("the field catalogue", () => {
     expect(readFileSync(EXPORTED, "utf8")).toBe(JSON.stringify(FIELDS, null, 2) + "\n");
   });
 
-  it("carries a field for every value the post renderer emits", () => {
-    // The five regions of SPEC.md §8.5, enumerated so a renamed field in
-    // `post.tsx` fails here rather than in `prose-lint` over a built tree.
+  it("carries a field for every value a post and its argument's page emit", () => {
+    // The author, the ⋯ menu, the claim and the DAG, then the page's DOI,
+    // citation and verification rows — enumerated so a renamed field fails here
+    // rather than in `prose-lint` over a built tree.
     const names = new Set(FIELDS.map((f) => f.field));
     for (const field of [
-      "claim.accession", "claim.decl_name", "claim.pretty", "clipboard.state",
-      "argument.node_count", "argument.edge_count", "argument.dictionary_leaves",
-      "argument.depth", "argument_node.decl_name", "argument_node.kind",
-      "argument_node.pretty", "replay_accepted", "axiom_manifest",
+      "profile.citation_name", "profile.login", "profile.kind", "argument.cites",
+      "accession.kind", "claim.accession", "argument.accession",
+      "claim.decl_name", "claim.pretty", "clipboard.state",
+      "argument_node.decl_name", "argument_node.kind", "argument_node.pretty",
+      "dictionary_constant.name", "replay_accepted", "axiom_manifest",
       "statement_identity", "substrate", "dictionary.label",
-      "argument.export_sha256", "argument.created_at", "profile.citation_name",
-      "argument.accession", "citation.text", "citation.bibtex",
+      "argument.export_sha256", "argument.created_at", "citation.text", "citation.bibtex",
     ]) {
       expect(names, field).toContain(field);
     }

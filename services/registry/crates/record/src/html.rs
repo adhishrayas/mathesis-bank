@@ -34,7 +34,11 @@ pub fn fields() -> &'static Vec<FieldDef> {
 /// A catalogue label, by its authored key. An unknown key is a build failure:
 /// a visible string cannot reach a page without an entry.
 pub fn label(key: &str) -> &'static str {
-    catalogue().labels.get(key).map(String::as_str).unwrap_or_else(|| panic!("no catalogue label `{key}`"))
+    catalogue()
+        .labels
+        .get(key)
+        .map(String::as_str)
+        .unwrap_or_else(|| panic!("no catalogue label `{key}`"))
 }
 
 pub fn label_keys() -> Vec<&'static str> {
@@ -67,7 +71,10 @@ pub struct B {
 
 impl B {
     pub fn new() -> B {
-        B { s: String::with_capacity(8192), values: Vec::new() }
+        B {
+            s: String::with_capacity(8192),
+            values: Vec::new(),
+        }
     }
 
     pub fn raw(&mut self, s: &str) -> &mut B {
@@ -101,7 +108,10 @@ impl B {
     /// a page the release gate rejects. Failing here names the field; failing in
     /// the linter names a byte offset in generated HTML.
     pub fn val(&mut self, tag: &str, field: &str, v: &str, extra: &str) -> &mut B {
-        assert!(fields().iter().any(|f| f.field == field), "no catalogue field `{field}`");
+        assert!(
+            fields().iter().any(|f| f.field == field),
+            "no catalogue field `{field}`"
+        );
         self.values.push((field.to_string(), v.to_string()));
         self.s.push('<');
         self.s.push_str(tag);
@@ -129,9 +139,16 @@ impl B {
         // explanatory-vocabulary rules, and the exemption is granted by the
         // shape rather than by the tag, so a statement rendered under any other
         // field would be linted as ordinary prose (SPEC.md §8).
-        assert_eq!(def.shape, "lean-statement", "field `{field}` is not of shape lean-statement");
+        assert_eq!(
+            def.shape, "lean-statement",
+            "field `{field}` is not of shape lean-statement"
+        );
         self.values.push((field.to_string(), pretty.to_string()));
-        let class = if class.is_empty() { String::new() } else { format!(" {class}") };
+        let class = if class.is_empty() {
+            String::new()
+        } else {
+            format!(" {class}")
+        };
         self.s.push_str(&format!(
             "<pre class=\"mth-lean{class}\" data-role=\"lean-statement\" data-value=\"true\" data-field=\"{field}\">"
         ));
