@@ -70,9 +70,10 @@ export interface ApiResult<T> {
   etag: string | null;
 }
 
-/** The path the record is served under, read from the generated `<body>`. */
+/** The path the record is served under: the build's `--base`, a constant
+ * compiled into the bundle, so no URL the client composes reads the DOM. */
 export function basePath(): string {
-  const b = document.body?.getAttribute("data-base-href") ?? "/";
+  const b = import.meta.env.BASE_URL;
   return b.endsWith("/") ? b.slice(0, -1) : b;
 }
 
