@@ -4,7 +4,7 @@
     "value": "FLT-v0@2026.09.1 · initial"
   },
   {
-    "field": "rows.count",
-    "value": "3"
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
   }
 ]

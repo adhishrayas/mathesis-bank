@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "22"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "12"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "universal_imp_pac"
   },

@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "log₂_vcDim_le_vcDim_dualC…"
   },

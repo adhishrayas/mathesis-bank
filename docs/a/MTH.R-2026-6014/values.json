@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "61"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "117"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "51"
-  },
-  {
-    "field": "argument.depth",
-    "value": "7"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "ambainis_tower_locked"
   },

@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "35"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "39"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "10"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "vcGrowth_le_exp"
   },

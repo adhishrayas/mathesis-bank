@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "54"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "4"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "klDivReal_multivariateGau…"
   },

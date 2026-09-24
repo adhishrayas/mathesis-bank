@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "118"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "161"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "71"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "fundamental_theorem"
   },

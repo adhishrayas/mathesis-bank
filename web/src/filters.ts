@@ -5,9 +5,9 @@
 // `/collection/arguments` are two documents, and `bank` enters the search query
 // because the API needs it, never because the surface toggles it.
 //
-// `min_arguments` applies to the claims bank alone. The client does not silently
-// drop an inapplicable parameter — it never sends one, and the API refuses one
-// with `422 invalid_filter` if anything else does (SPEC.md §9).
+// Every parameter applies to both banks. `APPLIES_TO` is where one that did not
+// would be declared: the client never sends an inapplicable parameter, and the
+// API refuses one with `422 invalid_filter` if anything else does (SPEC.md §9).
 
 export type Bank = "claims" | "arguments";
 
@@ -19,7 +19,6 @@ export const FILTER_PARAMETERS = [
   "axioms",
   "from",
   "to",
-  "min_arguments",
   "sort",
 ] as const;
 
@@ -34,7 +33,6 @@ export const APPLIES_TO: Record<FilterParameter, Bank[]> = {
   axioms: ["claims", "arguments"],
   from: ["claims", "arguments"],
   to: ["claims", "arguments"],
-  min_arguments: ["claims"],
   sort: ["claims", "arguments"],
 };
 
@@ -76,7 +74,7 @@ export function toQuery(filters: Filters, bank: Bank): string {
  * matches every whitespace-separated term, case-insensitively, against the
  * decl name, the statement and the module; `axioms=free` keeps axiom-free rows;
  * dates bound `created_at` inclusively by calendar day. */
-export function localSearch<R extends BankRowLike>(rows: R[], filters: Filters, bank: Bank): R[] {
+export function localSearch<R extends BankRowLike>(rows: R[], filters: Filters): R[] {
   const terms = (filters.q ?? "").toLowerCase().split(/\s+/).filter((t) => t !== "");
   const day = (ts: string): string => ts.slice(0, 10);
   const out = rows.filter((r) => {
@@ -93,10 +91,6 @@ export function localSearch<R extends BankRowLike>(rows: R[], filters: Filters, 
     }
     if (filters.from && day(r.created_at) < filters.from) return false;
     if (filters.to && day(r.created_at) > filters.to) return false;
-    if (bank === "claims" && filters.min_arguments) {
-      const min = Number.parseInt(filters.min_arguments, 10);
-      if (Number.isFinite(min) && r.arguments < min) return false;
-    }
     return true;
   });
   const dir = filters.sort === "oldest" ? 1 : -1;
@@ -114,7 +108,6 @@ export interface BankRowLike {
   author_login: string;
   axioms: string[];
   axiom_free: boolean;
-  arguments: number;
   created_at: string;
 }
 

@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "10"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "9"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "3"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "exists_analyticSet_not_me…"
   },

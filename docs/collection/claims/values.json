@@ -1,9 +1,5 @@
 [
   {
-    "field": "rows.count",
-    "value": "32"
-  },
-  {
     "field": "claim.accession",
     "value": "MTH.C-2026-6001"
   },
@@ -30,10 +26,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -68,10 +60,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -102,10 +90,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -140,10 +124,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -174,10 +154,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -212,10 +188,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -246,10 +218,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -284,10 +252,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -318,10 +282,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -356,10 +316,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -390,10 +346,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -428,10 +380,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -462,10 +410,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -500,10 +444,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -534,10 +474,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -572,10 +508,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -606,10 +538,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -644,10 +572,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -678,10 +602,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -716,10 +636,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -750,10 +666,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -788,10 +700,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -822,10 +730,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -860,10 +764,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -894,10 +794,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -932,10 +828,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -966,10 +858,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -1004,10 +892,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1038,10 +922,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",
@@ -1076,10 +956,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1112,10 +988,6 @@
     "value": "propext"
   },
   {
-    "field": "claim.arguments_count",
-    "value": "1"
-  },
-  {
     "field": "claim.first_verified",
     "value": "2026-09-24T00:00:00Z"
   },
@@ -1146,10 +1018,6 @@
   {
     "field": "axiom_manifest",
     "value": "propext"
-  },
-  {
-    "field": "claim.arguments_count",
-    "value": "1"
   },
   {
     "field": "claim.first_verified",

@@ -108,40 +108,7 @@ fn region_claim(b: &mut B, claim: &Claim, clamp: bool) {
 /// form; the graph is emitted beside it with the fixed lattice geometry, so the
 /// same record always yields the same SVG.
 fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
-    let leaves: std::collections::BTreeSet<&str> = a
-        .nodes
-        .iter()
-        .flat_map(|n| n.dictionary_leaves.iter().map(String::as_str))
-        .collect();
-    let depth = a.nodes.iter().map(|n| n.depth).max().unwrap_or(0);
-
     b.open("section", "class=\"mth-dag\" data-region=\"dag\"");
-    b.open("div", "class=\"mth-dag__counts\"");
-    b.lab("span", "mth-kv__k", "nodes");
-    b.val(
-        "span",
-        "argument.node_count",
-        &a.argument.node_count.to_string(),
-        "",
-    );
-    b.lab("span", "mth-kv__k", "edges");
-    b.val(
-        "span",
-        "argument.edge_count",
-        &a.argument.edge_count.to_string(),
-        "",
-    );
-    b.lab("span", "mth-kv__k", "dictionaryLeaves");
-    b.val(
-        "span",
-        "argument.dictionary_leaves",
-        &leaves.len().to_string(),
-        "",
-    );
-    b.lab("span", "mth-kv__k", "depth");
-    b.val("span", "argument.depth", &depth.to_string(), "");
-    b.close("div");
-
     let oversized = a.argument.node_count > 400 || a.argument.edge_count > 4000;
     b.open("div", "class=\"mth-dag__toolbar\"");
     b.lab("span", "mth-kv__k", "layout");
@@ -668,8 +635,6 @@ pub fn posts_page(input: &Snapshot) -> B {
     );
     b.text(label("clear"));
     b.close("button");
-    b.lab("span", "mth-kv__k", "posts");
-    b.val("span", "posts.count", &input.posts.len().to_string(), "");
     b.close("div");
     b.open("div", "class=\"mth-stream__list\" data-stream=\"posts\"");
     for p in &input.posts {
@@ -724,15 +689,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
         );
         b.close("label");
     }
-    if bank == "claims" {
-        b.open("label", "class=\"mth-field mth-field--xs\"");
-        b.text(label("min"));
-        b.open(
-            "input",
-            "class=\"mth-input\" type=\"number\" name=\"min_arguments\" min=\"0\"",
-        );
-        b.close("label");
-    }
     b.open("label", "class=\"mth-field mth-field--sm\"");
     b.text(label("sort"));
     b.open("select", "class=\"mth-select\" name=\"sort\"");
@@ -752,16 +708,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
     b.close("button");
     b.close("form");
 
-    b.open("div", "class=\"mth-kv\"");
-    b.lab("span", "mth-kv__k", "rows");
-    let n = if bank == "claims" {
-        input.claims.len()
-    } else {
-        input.arguments.len()
-    };
-    b.val("span", "rows.count", &n.to_string(), "");
-    b.close("div");
-
     b.open("div", "class=\"mth-table-scroll\"");
     b.open("table", "class=\"mth-table\"");
     b.open("thead", "");
@@ -773,7 +719,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
             "decl",
             "library",
             "axioms",
-            "arguments",
             "firstVerified",
         ]
     } else {
@@ -783,8 +728,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
             "decl",
             "author",
             "axioms",
-            "constants",
-            "nodes",
             "verified",
         ]
     };
@@ -833,14 +776,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
             }
             b.close("td");
             b.open("td", "");
-            b.val(
-                "span",
-                "claim.arguments_count",
-                &c.arguments_count.to_string(),
-                "",
-            );
-            b.close("td");
-            b.open("td", "");
             b.val("span", "claim.first_verified", &ts(&c.created_at), "");
             b.close("td");
             b.close("tr");
@@ -878,22 +813,6 @@ pub fn collection_page(input: &Snapshot, bank: &str) -> B {
                     b.val("span", "axiom_manifest", ax, "class=\"mth-mono\"");
                 }
             }
-            b.close("td");
-            b.open("td", "");
-            b.val(
-                "span",
-                "argument.export_constants",
-                &a.argument.export_constants.to_string(),
-                "",
-            );
-            b.close("td");
-            b.open("td", "");
-            b.val(
-                "span",
-                "argument.node_count",
-                &a.argument.node_count.to_string(),
-                "",
-            );
             b.close("td");
             b.open("td", "");
             b.val(
@@ -1068,7 +987,6 @@ struct DoiRow {
     /// The `Accession kind` value, `Claim` or `Argument` — the third of the
     /// three deliberately distinct `Kind` columns (SPEC.md §8).
     kind: &'static str,
-    arguments: i32,
     date: String,
 }
 
@@ -1120,24 +1038,6 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     b.row("joined", "profile.created_at", &ts(&p.created_at));
     b.close("dl");
     b.close("div");
-    b.open("div", "class=\"mth-kv\"");
-    b.lab("span", "mth-kv__k", "claims");
-    b.val(
-        "span",
-        "profile.claims_count",
-        &claims.len().to_string(),
-        "",
-    );
-    b.lab("span", "mth-kv__k", "arguments");
-    b.val(
-        "span",
-        "profile.arguments_count",
-        &args.len().to_string(),
-        "",
-    );
-    b.lab("span", "mth-kv__k", "posts");
-    b.val("span", "profile.posts_count", &args.len().to_string(), "");
-    b.close("div");
     b.close("section");
 
     b.open("section", "class=\"mth-profile__dois\"");
@@ -1146,7 +1046,7 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     b.open("table", "class=\"mth-table\"");
     b.open("thead", "");
     b.open("tr", "");
-    for c in ["doi", "decl", "accessionKind", "arguments", "date"] {
+    for c in ["doi", "decl", "accessionKind", "date"] {
         b.lab("th", "", c);
     }
     b.close("tr");
@@ -1158,7 +1058,6 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
             accession: c.accession.clone(),
             decl: c.decl_name.clone(),
             kind: "Claim",
-            arguments: c.arguments_count,
             date: ts(&c.created_at),
         });
     }
@@ -1167,7 +1066,6 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
             accession: a.argument.accession.clone(),
             decl: a.argument.root_decl_name.clone(),
             kind: "Argument",
-            arguments: 1,
             date: ts(&a.argument.created_at),
         });
     }
@@ -1198,14 +1096,6 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
         b.close("td");
         b.open("td", "");
         b.val("span", "accession.kind", r.kind, "");
-        b.close("td");
-        b.open("td", "");
-        b.val(
-            "span",
-            "claim.arguments_count",
-            &r.arguments.to_string(),
-            "",
-        );
         b.close("td");
         b.open("td", "");
         b.val("span", "argument.created_at", &r.date, "");
@@ -1298,7 +1188,7 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
                 b.open("table", "class=\"mth-table\"");
                 b.open("thead", "");
                 b.open("tr", "");
-                for k in ["doi", "author", "nodes", "date"] {
+                for k in ["doi", "author", "date"] {
                     b.lab("th", "", k);
                 }
                 b.close("tr");
@@ -1318,14 +1208,6 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
                         "span",
                         "profile.citation_name",
                         &arg.argument.citation_name,
-                        "",
-                    );
-                    b.close("td");
-                    b.open("td", "");
-                    b.val(
-                        "span",
-                        "argument.node_count",
-                        &arg.argument.node_count.to_string(),
                         "",
                     );
                     b.close("td");

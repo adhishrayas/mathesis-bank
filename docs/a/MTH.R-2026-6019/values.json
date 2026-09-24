@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "91"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "149"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "43"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "acyclic_iff_forall_consis…"
   },

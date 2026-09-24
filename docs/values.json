@@ -4,10 +4,6 @@
     "value": "Zetetic-Dhruv"
   },
   {
-    "field": "posts.count",
-    "value": "32"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
@@ -54,22 +50,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "21"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
   },
   {
     "field": "argument_node.decl_name",
@@ -742,22 +722,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "35"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "39"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "10"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
   },
   {
     "field": "argument_node.decl_name",
@@ -1956,22 +1920,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "26"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "30"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "mk_determined_le_mk_shatt…"
   },
@@ -2892,22 +2840,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "4"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "2"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "not_mk_image_inter_le_mk_…"
   },
@@ -3082,22 +3014,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "28"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "47"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -4292,22 +4208,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "8"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "7"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "9"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "exists_hasNatarajanDimLE_…"
   },
@@ -4654,22 +4554,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "41"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "60"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "13"
-  },
-  {
-    "field": "argument.depth",
-    "value": "11"
   },
   {
     "field": "argument_node.decl_name",
@@ -6364,22 +6248,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "32"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "13"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "no_smaller_bound"
   },
@@ -7578,22 +7446,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "67"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "80"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "56"
-  },
-  {
-    "field": "argument.depth",
-    "value": "8"
   },
   {
     "field": "argument_node.decl_name",
@@ -10888,22 +10740,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "23"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "18"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "littlestone_characterizat…"
   },
@@ -11946,22 +11782,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "26"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "19"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -13072,22 +12892,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "22"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "12"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "universal_imp_pac"
   },
@@ -13878,22 +13682,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "42"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "42"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "32"
-  },
-  {
-    "field": "argument.depth",
-    "value": "11"
   },
   {
     "field": "argument_node.decl_name",
@@ -15506,22 +15294,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "61"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "117"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "51"
-  },
-  {
-    "field": "argument.depth",
-    "value": "7"
   },
   {
     "field": "argument_node.decl_name",
@@ -19324,22 +19096,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "8"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "7"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "10"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "auditBlind_finiteTrajecto…"
   },
@@ -19760,22 +19516,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "5"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "4"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "8"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "blackwellEquivalent_publi…"
   },
@@ -20040,22 +19780,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "6"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "5"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "5"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "auditSealed_iff_no_binary…"
   },
@@ -20302,22 +20026,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "4"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
@@ -20806,22 +20514,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "91"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "149"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "43"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -25040,22 +24732,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "21"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "33"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "dirac_strong"
   },
@@ -25934,22 +25610,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "53"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "16"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
   },
   {
     "field": "argument_node.decl_name",
@@ -27476,22 +27136,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "54"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "4"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "klDivReal_multivariateGau…"
   },
@@ -28792,22 +28436,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "10"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "9"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "3"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "exists_analyticSet_not_me…"
   },
@@ -29162,22 +28790,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "31"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "38"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "3"
-  },
-  {
-    "field": "argument.depth",
-    "value": "7"
   },
   {
     "field": "argument_node.decl_name",
@@ -30236,22 +29848,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "17"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "11"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "hasKernelScheme_one_of_vc…"
   },
@@ -30882,22 +30478,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "118"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "161"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "71"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
   },
   {
     "field": "argument_node.decl_name",
@@ -36792,22 +36372,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "47"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "49"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "22"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "vcDim_fundamental_theorem"
   },
@@ -38874,22 +38438,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "44"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "46"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "36"
-  },
-  {
-    "field": "argument.depth",
-    "value": "9"
   },
   {
     "field": "argument_node.decl_name",
@@ -41036,22 +40584,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "12"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "11"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "17"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "advice_elimination"
   },
@@ -41602,22 +41134,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "14"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "9"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
   },
   {
     "field": "argument_node.decl_name",
@@ -42184,22 +41700,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "vcDim_dualClass_le"
   },
@@ -42378,22 +41878,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "6"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",

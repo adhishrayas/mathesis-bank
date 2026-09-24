@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "15"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "17"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "11"
-  },
-  {
-    "field": "argument.depth",
-    "value": "3"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "hasKernelScheme_one_of_vc…"
   },

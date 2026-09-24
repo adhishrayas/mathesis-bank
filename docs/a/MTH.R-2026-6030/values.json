@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "14"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "13"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "9"
-  },
-  {
-    "field": "argument.depth",
-    "value": "4"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "vcDim_halfspace_eq"
   },

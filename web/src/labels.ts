@@ -30,13 +30,8 @@ export const LABELS = {
   doi: "DOI",
   dois: "DOIs",
   author: "Author",
-  nodes: "Nodes",
-  edges: "Edges",
-  depth: "Depth",
   uses: "Uses",
   usedBy: "Used by",
-  constants: "Constants",
-  rows: "Rows",
 
   // the three Kind columns, deliberately three distinct labels
   profileKind: "Profile kind",
@@ -62,7 +57,6 @@ export const LABELS = {
   go: "Go",
   from: "From",
   to: "To",
-  min: "Min",
   sort: "Sort",
   newest: "Newest",
   oldest: "Oldest",
@@ -83,7 +77,6 @@ export const LABELS = {
   cites: "Cites",
 
   // sections and terms rendered as headings
-  dictionaryLeaves: "Dictionary leaves",
 
   // submit and verification progress
   submit: "Submit",

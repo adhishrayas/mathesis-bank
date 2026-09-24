@@ -44,22 +44,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "19"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "26"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "19"
-  },
-  {
-    "field": "argument.depth",
-    "value": "6"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "optimal_mistake_bound_eq_…"
   },

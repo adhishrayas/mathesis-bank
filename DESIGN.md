@@ -682,16 +682,16 @@ pairs wrap; it never merges a term into its value.
 .mth-table tbody tr[data-focused]  bg-accent-50 + 2px inset accent-500 left rail + 1px accent-300 outline
 .mth-table--tall tbody td          h-row-tall py-2 align-top        (Collection claims, 3-line statement)
 .mth-th-sort           full-cell button, gap-1, + 10px decorative caret; <th aria-sort="…">
-.mth-td-num            text-right tabular-nums font-medium
 .mth-td-mono           font-mono text-code text-ink-800; truncation via text-overflow only (G10)
 .mth-table-scroll      overflow-x-auto; first column (DOI) position:sticky left-0 bg-surface,
                        right hairline via box-shadow 1px 0 0 var(--color-border)
-.mth-count             .mth-metric, ml-auto                          (Rows N)
 ```
 
+No table carries a count, and no page shows one: a count is commentary on the record, not part of it.
+
 States: default · hover · roving `[data-focused]` · sorted (`aria-sort` + caret) · **empty** (empty `<tbody>`,
-`Rows 0`, no sentence, no illustration) · **loading** (the §7.5 page rule; rows are simply absent) · **error**
-(`.mth-error` directly above the table, `<tbody>` cleared, `Rows 0`).
+no count, no sentence, no illustration) · **loading** (the §7.5 page rule; rows are simply absent) · **error**
+(`.mth-error` directly above the table, `<tbody>` cleared).
 No zebra striping — hairline row rules only. A link that fills a whole cell is not underlined (the column header
 supplies the affordance); links inside running text are underlined.
 
@@ -980,8 +980,7 @@ No footer. No `Sign in` in the nav. No session-dependent bytes anywhere in the n
     ├ .mth-field  «Profile»  <select class="mth-select mth-input--w-lg">
     │                          option[0] «All», then {profile.citation_name} per option
     │                          (source: generated profiles.json; state round-trips through ?profile=)
-    ├ «Clear»     .mth-btn--quiet
-    └ .mth-count  {posts.total}                              ml-auto, .mth-value, tabular-nums
+    └ «Clear»     .mth-btn--quiet
 
   STREAM  <ol> gap-6, roving tabindex, j/k move focus, Enter → /a/{argument.accession}
     └ POST CARD  .mth-card  ×20, newest first — the five regions below, in order
@@ -1026,11 +1025,7 @@ REGION 1  .mth-card__region — Claim
         landing: no wrapper, no toggle, .mth-lean--lg
 
 REGION 2  .mth-card__region — Argument DAG
-  head  flex flex-wrap items-center gap-x-5 gap-y-2
-    .mth-metric-row
-      «Nodes» {argument.node_count} · «Edges» {argument.edge_count}
-      · «Dictionary leaves» {argument.dictionary_leaves_count} · «Depth» {argument.depth}
-    ml-auto:
+  head  flex flex-wrap items-center gap-x-5 gap-y-2        no counts of nodes, edges or depth
       <fieldset class="mth-segmented"><legend class="mth-label">«Layout»</legend>
         «Graph»   aria-checked; aria-disabled="true" when nodes>400 || edges>4000 || vw<1024
         «List»
@@ -1066,7 +1061,7 @@ The verification block and the DOI with its citation moved to the record pages (
 region was replaced by the author header.
 
 **States.** Loading (SPA paging) → the 2px page rule under the nav; no skeleton text (F3).
-Empty stream → empty `<ol>` and `{posts.total}` = `0`; no empty-state sentence, no illustration.
+Empty stream → empty `<ol>`; no count, no empty-state sentence, no illustration.
 Degraded → `.mth-degraded` inside the region that made the request, and nowhere else.
 
 ### 12.2 PROFILE — `/u/{login}` (generated; public until sign-in exists, then login-gated)
@@ -1082,8 +1077,7 @@ Degraded → `.mth-degraded` inside the region that made the request, and nowher
         .mth-metric-row
           «Profile kind» {profile.kind}  .mth-status--neutral    ← CURRENT kind only, never a history
           «Joined»       {profile.created_at}
-        .mth-metric-row  mt-2 border-t border-border pt-2
-          «Claims» {counts.claims} · «Arguments» {counts.arguments} · «Posts» {counts.posts}
+                                  no tallies of claims, arguments or posts
 
   OWNER TOOLS  <section id="owner-tools" hidden>   SPA-rendered, own profile only, exactly 3 controls
     .mth-panel bg-surface-2  flex flex-wrap items-end gap-4
@@ -1095,13 +1089,13 @@ Degraded → `.mth-degraded` inside the region that made the request, and nowher
       └ «Sign out» .mth-btn--quiet  ml-auto  → POST /api/v1/logout
 
   DOIS  <section>
-    .mth-section-head  <h2 id="dois-h">«DOIs»</h2>  .mth-count {counts.dois}
+    .mth-section-head  <h2 id="dois-h">«DOIs»</h2>
     <div class="mth-table-scroll"><table class="mth-table" aria-labelledby="dois-h">   (G8)
       th: «DOI» --col-doi sticky · «Decl» 1fr/min --col-decl · «Accession kind» --col-kind
-          «Arguments» --col-num (num) · «Date» --col-date
+          «Date» --col-date
       default «Date» desc (newest first), ties by accession
       td: .mth-doi | .mth-td-mono truncated | «Claim»/«Argument» .mth-status--neutral
-          | .mth-td-num | tabular date
+          | tabular date
       no verification column: a profile is a social surface
       row → /a/{accession}; roving tabindex, j/k/Enter
     </table></div>
@@ -1185,7 +1179,7 @@ All nine `Status` states, both verdict shapes and every `renderReason` template 
           AUTHOR    the author header, no ⋯ · the date is {claim.created_at}
           REGION 1  «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg · «Copy»
           REGION 2  <h2>«Arguments»</h2> + .mth-table
-                    th: «DOI» «Author» «Nodes» «Date»
+                    th: «DOI» «Author» «Date»
                     OMITTED ENTIRELY when there are no arguments — which is how an open seed claim renders
       then, below the card and outside it, <div class="mth-record">:
           «DOI» {accession} · «Cite» «Copy» «Copy BibTeX»    (baked)
@@ -1245,15 +1239,12 @@ Two documents, not a filter (SPEC §8.3). Same skeleton, different `<h1>`, colum
     .mth-field «Axiom manifest»  <select class="mth-select mth-input--w-sm">  «All» · «free» · names
     .mth-field «From»            <input type="date" class="mth-input mth-input--w-sm">
     .mth-field «To»              <input type="date" class="mth-input mth-input--w-sm">
-    .mth-field «Min»             <input type="number" class="mth-input mth-input--w-xs">  CLAIMS BANK ONLY
     .mth-field «Sort»            <select class="mth-select mth-input--w-sm">  «Newest» · «Oldest»
     «Clear» .mth-btn--quiet   «Reset» .mth-btn--quiet
     No placeholder attribute on any input; every control is visibly labelled.
 
   FACETS  flex flex-wrap gap-2   .mth-chip-facet per active filter
           {facet.value} + 24×24 remove button, aria-label=«Clear»
-
-  COUNT   ml-auto  .mth-metric  «Rows» {search.total}   aria-live="polite"
 
   TABLE   .mth-table-scroll > table.mth-table[.mth-table--tall] aria-labelledby="bank-h"     (G8)
     CLAIMS columns
@@ -1264,20 +1255,18 @@ Two documents, not a filter (SPEC §8.3). Same skeleton, different `<h1>`, colum
       «Decl» --col-decl             → .mth-td-mono, CSS-truncated
       «Library» --col-lib           → .mth-value
       «Axioms» --col-axioms         → names | «free» | «—»
-      «Arguments» --col-num         → .mth-td-num
       «First verified» --col-date   → tabular date
     ARGUMENTS columns
-      «DOI» sticky · «Claim» (.mth-doi) · «Decl» · «Author» · «Axioms»
-      · «Constants» (num) · «Nodes» (num) · «Verified»
+      «DOI» sticky · «Claim» (.mth-doi) · «Decl» · «Author» · «Axioms» · «Verified»
     Sticky thead below the nav; hairline rules; no zebra; row focus = accent left rail + accent-50.
-    Empty result → empty <tbody>, «Rows» {0}. No empty-state sentence, no illustration.
+    Empty result → empty <tbody>. No count, no empty-state sentence, no illustration.
 
   «More»  .mth-btn--default .mth-btn--block    (value-based cursor paging)
 </main>
 ```
 
 **States.** `422 invalid_filter` → `<p data-role="error">` with the API `message` directly above the table, `<tbody>`
-cleared, `«Rows» 0`, and the offending `.mth-field` marked `aria-invalid="true"`.
+cleared, and the offending `.mth-field` marked `aria-invalid="true"`.
 A registry outage does **not** affect this page (search is served from Tantivy via `mathesisd`, never through the
 gateway — SPEC §8, §11.4). Loading → the 2px page rule; rows are absent, never faked.
 

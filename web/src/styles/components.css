@@ -97,7 +97,6 @@
     font-family: inherit;
     width: var(--field-w-md);
   }
-  .mth-field--xs .mth-input { width: var(--field-w-xs); }
   .mth-field--sm .mth-input, .mth-field--sm .mth-select { width: var(--field-w-sm); }
   .mth-field--lg .mth-input, .mth-field--lg .mth-select { width: var(--field-w-lg); }
   .mth-field--xl .mth-select { width: var(--field-w-xl); }
@@ -232,7 +231,6 @@
   .mth-chip, .mth-dag-list__item .mth-mono { max-width: 100%; overflow-wrap: anywhere; }
   .mth-lean { max-width: 100%; }
   .mth-dag { padding: var(--spacing-3) var(--spacing-4); }
-  .mth-dag__counts { display: flex; gap: var(--spacing-4); flex-wrap: wrap; }
   .mth-dag__toolbar { display: flex; gap: var(--spacing-2); margin-block: var(--spacing-2); flex-wrap: wrap; }
   /* The graph is never downscaled: text below ~11px is unreadable, so the
      viewport scrolls and the SVG keeps its intrinsic size. */
@@ -558,7 +556,6 @@
   .mth-error-host { display: grid; gap: var(--spacing-2); margin-block: var(--spacing-2); }
 
   /* ------------------------------------------------------------ table cells */
-  .mth-td-num { text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
   .mth-td-mono {
     font-family: var(--font-mono);
     font-size: var(--text-code-sm);

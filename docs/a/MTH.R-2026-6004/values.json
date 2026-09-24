@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "4"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "2"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "not_mk_image_inter_le_mk_…"
   },

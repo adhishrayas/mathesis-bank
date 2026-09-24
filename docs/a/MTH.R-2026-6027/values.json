@@ -48,22 +48,6 @@
     "value": ""
   },
   {
-    "field": "argument.node_count",
-    "value": "47"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "49"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "22"
-  },
-  {
-    "field": "argument.depth",
-    "value": "10"
-  },
-  {
     "field": "argument_node.decl_name",
     "value": "vcDim_fundamental_theorem"
   },

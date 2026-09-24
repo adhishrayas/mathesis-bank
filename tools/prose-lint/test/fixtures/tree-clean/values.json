@@ -4,10 +4,6 @@
     "value": "Zetetic-Dhruv"
   },
   {
-    "field": "posts.count",
-    "value": "1"
-  },
-  {
     "field": "profile.citation_name",
     "value": "Dhruv Gupta"
   },
@@ -54,22 +50,6 @@
   {
     "field": "clipboard.state",
     "value": ""
-  },
-  {
-    "field": "argument.node_count",
-    "value": "3"
-  },
-  {
-    "field": "argument.edge_count",
-    "value": "2"
-  },
-  {
-    "field": "argument.dictionary_leaves",
-    "value": "7"
-  },
-  {
-    "field": "argument.depth",
-    "value": "2"
   },
   {
     "field": "argument_node.decl_name",
