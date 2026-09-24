@@ -50,6 +50,13 @@
           "VCDim",
           "dualClass"
         ],
+        "doc": "**Assouad's dual VC bound.** If `VCDim X C ≤ d`, then `VCDim(dualClass C) ≤ 2^(d+1) − 1`.",
+        "hypotheses": [
+          {
+            "name": "hd",
+            "pretty": "VCDim X C ≤ ↑d"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C ≤ ↑d → VCDim (↑C) (dualClass C) ≤ ↑(2 ^ (d + 1) - 1)",
@@ -68,6 +75,17 @@
           "cubeEmbedding",
           "dualClass"
         ],
+        "doc": "**Assouad's coding lemma.** If the dual class shatters a set `S` of concepts with\n`2^(d+1) ≤ S.card`, then `C` shatters some set of `d + 1` points.\n\nIndex `2^(d+1)` of the shattered concepts by bitstrings; for each coordinate `k`, dual shattering\nrealizes the labelling \"is this codeword in the `k`-th bit slice\", which supplies a point `x k`\nreading off exactly that bit. These `d + 1` points are then shattered by `C`.",
+        "hypotheses": [
+          {
+            "name": "hS",
+            "pretty": "Shatters (↑C) (dualClass C) S"
+          },
+          {
+            "name": "hcard",
+            "pretty": "2 ^ (d + 1) ≤ S.card"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ} (S : Finset ↑C),\n  Shatters (↑C) (dualClass C) S → 2 ^ (d + 1) ≤ S.card → ∃ T, T.card = d + 1 ∧ Shatters X C T",
@@ -83,6 +101,7 @@
           "FLT.Concept",
           "cubeBitSlice"
         ],
+        "doc": "Codeword `(cube b).val` is in `cubeBitSlice cube k` iff `b k = true`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {n : ℕ} {S : Finset ↑C} (cube : (Fin n → Bool) ↪ ↥S) (b : Fin n → Bool)\n  (k : Fin n), ↑(cube b) ∈ cubeBitSlice✝ cube k ↔ b k = true",

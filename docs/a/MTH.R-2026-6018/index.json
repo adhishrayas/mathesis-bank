@@ -100,6 +100,17 @@
           "Cyl",
           "MeasureTheory.IsChoquetCapacity"
         ],
+        "doc": "**Choquet capacitability.** For analytic sets, capacity equals the\nsupremum over compact subsets (Kechris 30.13).",
+        "hypotheses": [
+          {
+            "name": "hcap",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap →\n    ∀ {s : Set α}, MeasureTheory.AnalyticSet s → cap s = ⨆ K, ⨆ (_ : IsCompact K), ⨆ (_ : K ⊆ s), cap K",
@@ -128,6 +139,13 @@
           "Cyl",
           "choquetTruncate"
         ],
+        "doc": "The intersection of closures of cylinder images equals the compact image.\nKey lemma for the capacitability proof: uses truncation and sequential\ncompactness.",
+        "hypotheses": [
+          {
+            "name": "hf",
+            "pretty": "Continuous f"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [PolishSpace α] {f : (ℕ → ℕ) → α},\n  Continuous f → ∀ (N : ℕ → ℕ), ⋂ n, closure (f '' Cyl N n) = f '' Bnd N",
@@ -155,6 +173,16 @@
         "dictionary_leaves": [
           "Cyl",
           "choquetTruncate"
+        ],
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "g ∈ Cyl N n"
+          },
+          {
+            "name": "a",
+            "pretty": "i ≤ n"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -222,6 +250,12 @@
         "dictionary_leaves": [
           "Cyl"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ i ≤ n, N i = N' i"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (N N' : ℕ → ℕ) (n : ℕ), (∀ i ≤ n, N i = N' i) → Cyl N n = Cyl N' n",
@@ -234,6 +268,16 @@
         "depth": 1,
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "s ⊆ t"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -248,6 +292,16 @@
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "Monotone f"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap → ∀ (f : ℕ → Set α), Monotone f → cap (⋃ n, f n) = ⨆ n, cap (f n)",
@@ -260,6 +314,20 @@
         "depth": 1,
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "Antitone f"
+          },
+          {
+            "name": "a",
+            "pretty": "∀ (n : ℕ), IsClosed (f n)"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

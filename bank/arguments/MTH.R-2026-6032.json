@@ -46,6 +46,51 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "decl_name": "ConceptClass",
+      "doc": "A concept class is a set of concepts. Used by every paradigm, complexity\nmeasure, and criterion.\n\nPrimary definition: Set of functions. Used for PAC/agnostic PAC where\nconcept classes are sets over which VC dimension, Rademacher complexity,\ncovering numbers, etc. are measured. Alternative definitions below for\ncontexts requiring decidability, enumerability, or measurability.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max v u)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Concept",
+      "doc": "A concept is a function from domain to label. This is the atomic unit that\nconcept classes collect and learners try to approximate.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max u v)",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters",
+      "doc": "A set S ⊆ X is shattered by concept class C if every labeling of S\nis realized by some concept in C.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → Finset X → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "VCDim",
+      "doc": "VC dimension of a concept class: the size of the largest shattered set.\nReturns ℕ∞ = WithTop ℕ.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → WithTop ℕ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "dualClass",
+      "doc": "The **dual concept class**: each point `x : X` gives the evaluation concept `c ↦ c x` on the new\ndomain `↥C`. The dual class collects these over all points.",
+      "kind": "def",
+      "pretty": "{X : Type u} → (C : ConceptClass X Bool) → ConceptClass (↑C) Bool",
+      "role": "definition"
+    },
+    {
+      "decl_name": "evalConcept",
+      "doc": "The evaluation concept at a point `x`: the map `c ↦ c x` on `↥C`.",
+      "kind": "def",
+      "pretty": "{X : Type u} → (C : ConceptClass X Bool) → X → ↑C → Bool",
+      "role": "definition"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -57,6 +102,17 @@
         "Shatters",
         "VCDim",
         "dualClass"
+      ],
+      "doc": "**Assouad's lower bound.** For a finite-VC class,\n`⌊log₂ VCDim⌋ ≤ VCDim(dualClass)`: the exponential blow-up under dualization is *necessary*, not\nmerely permitted. Together with the proven upper bound `vcDim_dualClass_le`\n(`VCDim(dual) ≤ 2^(VCDim+1) − 1`) this sandwiches the dual VC dimension between `⌊log₂ d⌋` and\n`2^(d+1) − 1`.\n\nStated with `d := VCDim C` extracted as a natural number (finite by hypothesis). The proof picks a\nshattered set `T` with `2^(log₂ d) ≤ |T|` (which exists because `2^(log₂ d) ≤ d ≤ |T|` for the\nsupremal shattered set) and applies `pow_le_vcDim_imp_le_vcDim_dualClass`.",
+      "hypotheses": [
+        {
+          "name": "hd",
+          "pretty": "VCDim X C = ↑d"
+        },
+        {
+          "name": "hd0",
+          "pretty": "0 < d"
+        }
       ],
       "is_root": true,
       "kind": "theorem",
@@ -76,6 +132,17 @@
         "dualClass",
         "evalConcept"
       ],
+      "doc": "**Assouad's lower construction.** If `C` shatters a set `T` of at least `2^k` points, then\n`dualClass C` shatters a set of `k` evaluation concepts, so `k ≤ VCDim(dualClass C)`.\n\nBitstrings index a `2^k`-subset of `T`; coordinate `j` is realized by a concept `c_j ∈ C` reading\noff the `j`-th bit, and the dual class shatters `{c_j}` because the evaluation point indexed by a\nbitstring `σ` realizes exactly the labelling `σ` of the `c_j`.",
+      "hypotheses": [
+        {
+          "name": "hT",
+          "pretty": "Shatters X C T"
+        },
+        {
+          "name": "hcard",
+          "pretty": "2 ^ k ≤ T.card"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {k : ℕ} (T : Finset X),\n  Shatters X C T → 2 ^ k ≤ T.card → ↑k ≤ VCDim (↑C) (dualClass C)",
@@ -92,6 +159,7 @@
         "dualClass",
         "evalConcept"
       ],
+      "doc": "Each evaluation concept belongs to the dual class.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (x : X), evalConcept C x ∈ dualClass C",

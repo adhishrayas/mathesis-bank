@@ -1,12 +1,13 @@
-//! Every generated page. A post shows its author, the claim and its DAG, and
-//! nothing else: no description, gloss, comment, tag, score or reaction
-//! (SPEC.md §8.5). Verification is the baseline every post meets, so a post
+//! Every generated page. A post shows its author, the claim and its DAG, in the
+//! author's own words where the source has them (docstrings, attributed), and
+//! nothing of the platform's: no description, comment, tag, score or reaction
+//! (SPEC.md §8.5). Discussion lives on the forum, never on the record. Verification is the baseline every post meets, so a post
 //! never states it; its ⋯ menu leads to the claim's and the argument's pages,
 //! where the DOI, the citation and a small verification section live.
 
 use crate::html::{B, EM_DASH, escape, label};
 use crate::jsonc::ts;
-use crate::model::{Claim, NodeRow, Profile};
+use crate::model::{Claim, Profile};
 use crate::snapshot::{ArgumentView, Snapshot};
 use accession::{Accession, citation};
 
@@ -80,6 +81,11 @@ fn chip(b: &mut B, acc: &str, field: &str) {
 /// Region 1 — the claim.
 fn region_claim(b: &mut B, claim: &Claim, clamp: bool) {
     b.open("section", "class=\"mth-post__claim\"");
+    // The author's own words open the claim: attributed, above the statement
+    // the kernel checked.
+    if let Some(doc) = words(&claim.doc) {
+        b.doc("claim.doc", doc, "mth-docstring--thesis");
+    }
     b.open("div", "class=\"mth-kv\"");
     b.lab("span", "mth-kv__k", "decl");
     b.val(
@@ -145,6 +151,34 @@ fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
     b.close("button");
     b.close("div");
 
+    // The legend: one entry per role this argument has, in its colours.
+    let root = a.nodes.iter().find(|n| n.is_root);
+    b.open("div", "class=\"mth-dag__legend\"");
+    for (role, key, present) in [
+        ("thesis", "thesis", true),
+        ("step", "step", a.nodes.len() > 1),
+        (
+            "hypothesis",
+            "hypothesis",
+            root.is_some_and(|r| !r.hypotheses.is_empty()),
+        ),
+        (
+            "definition",
+            "definition",
+            a.leaves.iter().any(|l| l.role != "cited"),
+        ),
+        (
+            "cited",
+            "citedResult",
+            a.leaves.iter().any(|l| l.role == "cited"),
+        ),
+    ] {
+        if present {
+            b.lab("span", &format!("mth-role mth-role--{role}"), key);
+        }
+    }
+    b.close("div");
+
     if !oversized {
         dag_svg(b, a, in_stream);
     }
@@ -154,7 +188,8 @@ fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
         b.open(
             "li",
             &format!(
-                "class=\"mth-dag-list__item\" id=\"{}\" data-citable=\"{}\" data-decl=\"{}\"",
+                "class=\"mth-dag-list__item mth-dag-list__item--{}\" id=\"{}\" data-citable=\"{}\" data-decl=\"{}\"",
+                if n.is_root { "thesis" } else { "step" },
                 node_anchor(&a.argument.accession, &n.decl_name),
                 n.citable,
                 escape(&n.decl_name)
@@ -171,6 +206,12 @@ fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
         b.lab("span", "mth-kv__k", "declarationKind");
         b.val("span", "argument_node.kind", &n.kind, "");
         b.close("div");
+        // The thesis's own words open the post; a step's open its item.
+        if !n.is_root {
+            if let Some(doc) = words(&n.doc) {
+                b.doc("argument_node.doc", doc, "");
+            }
+        }
         b.statement("argument_node.pretty", &n.pretty, "mth-lean--sm");
         if !n.dictionary_leaves.is_empty() {
             b.open("div", "class=\"mth-dag-list__leaves\"");
@@ -191,10 +232,13 @@ fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
                     }
                     None => {
                         b.val(
-                            "span",
+                            "a",
                             "dictionary_constant.name",
                             l,
-                            "class=\"mth-chip mth-chip--dict\"",
+                            &format!(
+                                "class=\"mth-chip mth-chip--dict\" href=\"#{}\"",
+                                node_anchor(&a.argument.accession, l)
+                            ),
                         );
                     }
                 }
@@ -235,26 +279,160 @@ fn region_dag(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool) {
         }
         b.close("li");
     }
+    if let Some(root) = root {
+        for (i, h) in root.hypotheses.iter().enumerate() {
+            b.open(
+                "li",
+                &format!(
+                    "class=\"mth-dag-list__item mth-dag-list__item--hypothesis\" id=\"{}\"",
+                    hypothesis_anchor(&a.argument.accession, i)
+                ),
+            );
+            b.open("div", "class=\"mth-kv\"");
+            b.lab("span", "mth-role mth-role--hypothesis", "hypothesis");
+            b.val(
+                "span",
+                "argument_hypothesis.name",
+                &h.name,
+                "class=\"mth-mono\"",
+            );
+            b.close("div");
+            b.statement("argument_hypothesis.pretty", &h.pretty, "mth-lean--sm");
+            b.close("li");
+        }
+    }
+    for l in &a.leaves {
+        let (role, key) = if l.role == "cited" {
+            ("cited", "citedResult")
+        } else {
+            ("definition", "definition")
+        };
+        b.open(
+            "li",
+            &format!(
+                "class=\"mth-dag-list__item mth-dag-list__item--{role}\" id=\"{}\" data-decl=\"{}\"",
+                node_anchor(&a.argument.accession, &l.decl_name),
+                escape(&l.decl_name)
+            ),
+        );
+        b.open("div", "class=\"mth-kv\"");
+        b.lab("span", &format!("mth-role mth-role--{role}"), key);
+        b.val(
+            "span",
+            "dictionary_constant.name",
+            &l.decl_name,
+            "class=\"mth-mono\"",
+        );
+        b.val("span", "dictionary_constant.kind", &l.kind, "");
+        if let Some(author) = &l.author {
+            cited_person(b, input, author);
+        }
+        b.close("div");
+        if let Some(doc) = words(&l.doc) {
+            b.doc("dictionary_constant.doc", doc, "");
+        }
+        b.statement("dictionary_constant.pretty", &l.pretty, "mth-lean--sm");
+        b.close("li");
+    }
     b.close("ol");
     b.close("section");
 }
 
+/// A docstring worth rendering: present and not blank.
+fn words(doc: &Option<String>) -> Option<&str> {
+    doc.as_deref().filter(|d| !d.trim().is_empty())
+}
+
+fn hypothesis_anchor(argument: &str, i: usize) -> String {
+    format!("h-{}-{i}", argument.replace('.', "-"))
+}
+
+/// One vertex of the drawn graph: a step of the argument (the thesis is its
+/// root), a hypothesis of the thesis, or a definition or cited result the
+/// argument rests on. `title` and `sub` are the two lines of its box, each a
+/// catalogued field and its text.
+struct Vertex<'a> {
+    id: String,
+    role: &'static str,
+    depth: i32,
+    rank: i32,
+    title: (&'static str, String),
+    sub: (&'static str, &'a str),
+}
+
 /// `x = 24 + depth·260`, `y = 24 + order·112`, one down and one up barycenter
-/// pass with ties broken by decl byte order (SPEC.md §8.5).
+/// pass with ties broken by id byte order (SPEC.md §8.5). A hypothesis sits one
+/// column right of the thesis; a definition or cited result one column right of
+/// the deepest step that uses it.
 fn dag_svg(b: &mut B, a: &ArgumentView, in_stream: bool) {
-    use std::collections::HashMap;
-    let max_depth = a.nodes.iter().map(|n| n.depth).max().unwrap_or(0);
-    let mut columns: Vec<Vec<&NodeRow>> = vec![Vec::new(); (max_depth + 1) as usize];
+    use std::collections::{HashMap, HashSet};
+    let mut verts: Vec<Vertex> = Vec::new();
+    let mut edges: Vec<(String, String)> = a
+        .edges
+        .iter()
+        .map(|e| (e.used_by.clone(), e.uses.clone()))
+        .collect();
+    let mut leaf_depth: HashMap<&str, i32> = HashMap::new();
     for n in &a.nodes {
-        columns[n.depth as usize].push(n);
+        verts.push(Vertex {
+            id: n.decl_name.clone(),
+            role: if n.is_root { "thesis" } else { "step" },
+            depth: n.depth,
+            rank: n.topo,
+            title: ("argument_node.decl_name", short(&n.decl_name)),
+            sub: ("argument_node.kind", &n.kind),
+        });
+        for l in &n.dictionary_leaves {
+            let d = leaf_depth.entry(l.as_str()).or_insert(0);
+            *d = (*d).max(n.depth + 1);
+            edges.push((n.decl_name.clone(), l.clone()));
+        }
+        if n.is_root {
+            for (i, h) in n.hypotheses.iter().enumerate() {
+                let id = format!("hypothesis {i}");
+                edges.push((n.decl_name.clone(), id.clone()));
+                verts.push(Vertex {
+                    id,
+                    role: "hypothesis",
+                    depth: 1,
+                    rank: i as i32 - n.hypotheses.len() as i32,
+                    title: ("argument_hypothesis.label", short_term(&h.pretty)),
+                    sub: ("argument_hypothesis.name", &h.name),
+                });
+            }
+        }
+    }
+    let base = a.nodes.len() as i32;
+    for (i, l) in a.leaves.iter().enumerate() {
+        let Some(&depth) = leaf_depth.get(l.decl_name.as_str()) else {
+            continue;
+        };
+        verts.push(Vertex {
+            id: l.decl_name.clone(),
+            role: if l.role == "cited" { "cited" } else { "definition" },
+            depth,
+            rank: base + i as i32,
+            title: ("dictionary_constant.name", short(&l.decl_name)),
+            sub: ("dictionary_constant.kind", &l.kind),
+        });
+    }
+    let ids: HashSet<&str> = verts.iter().map(|v| v.id.as_str()).collect();
+    edges.retain(|(u, v)| ids.contains(u.as_str()) && ids.contains(v.as_str()));
+    edges.sort();
+    edges.dedup();
+
+    let max_depth = verts.iter().map(|v| v.depth).max().unwrap_or(0);
+    let mut columns: Vec<Vec<&Vertex>> = vec![Vec::new(); (max_depth + 1) as usize];
+    for v in &verts {
+        columns[v.depth as usize].push(v);
     }
     for c in columns.iter_mut() {
-        c.sort_by(|x, y| x.topo.cmp(&y.topo).then(x.decl_name.cmp(&y.decl_name)));
+        c.sort_by(|x, y| x.rank.cmp(&y.rank).then(x.id.cmp(&y.id)));
     }
     let mut order: HashMap<&str, f64> = HashMap::new();
     for c in columns.iter() {
-        for (i, n) in c.iter().enumerate() {
-            order.insert(n.decl_name.as_str(), i as f64);
+        for (i, v) in c.iter().enumerate() {
+            order.insert(v.id.as_str(), i as f64);
         }
     }
     for pass in 0..2 {
@@ -264,38 +442,37 @@ fn dag_svg(b: &mut B, a: &ArgumentView, in_stream: bool) {
             (0..columns.len().saturating_sub(1)).rev().collect()
         };
         for ci in range {
-            let mut scored: Vec<(f64, &NodeRow)> = columns[ci]
+            let mut scored: Vec<(f64, &Vertex)> = columns[ci]
                 .iter()
-                .map(|n| {
-                    let neighbours: Vec<f64> = a
-                        .edges
+                .map(|v| {
+                    let neighbours: Vec<f64> = edges
                         .iter()
-                        .filter_map(|e| {
-                            if pass == 0 && e.uses == n.decl_name {
-                                order.get(e.used_by.as_str()).copied()
-                            } else if pass == 1 && e.used_by == n.decl_name {
-                                order.get(e.uses.as_str()).copied()
+                        .filter_map(|(used_by, uses)| {
+                            if pass == 0 && *uses == v.id {
+                                order.get(used_by.as_str()).copied()
+                            } else if pass == 1 && *used_by == v.id {
+                                order.get(uses.as_str()).copied()
                             } else {
                                 None
                             }
                         })
                         .collect();
-                    let b = if neighbours.is_empty() {
-                        order.get(n.decl_name.as_str()).copied().unwrap_or(0.0)
+                    let score = if neighbours.is_empty() {
+                        order.get(v.id.as_str()).copied().unwrap_or(0.0)
                     } else {
                         neighbours.iter().sum::<f64>() / neighbours.len() as f64
                     };
-                    (b, *n)
+                    (score, *v)
                 })
                 .collect();
             scored.sort_by(|x, y| {
                 x.0.partial_cmp(&y.0)
                     .unwrap_or(std::cmp::Ordering::Equal)
-                    .then(x.1.decl_name.cmp(&y.1.decl_name))
+                    .then(x.1.id.cmp(&y.1.id))
             });
-            columns[ci] = scored.iter().map(|(_, n)| *n).collect();
-            for (i, n) in columns[ci].iter().enumerate() {
-                order.insert(n.decl_name.as_str(), i as f64);
+            columns[ci] = scored.iter().map(|(_, v)| *v).collect();
+            for (i, v) in columns[ci].iter().enumerate() {
+                order.insert(v.id.as_str(), i as f64);
             }
         }
     }
@@ -303,11 +480,8 @@ fn dag_svg(b: &mut B, a: &ArgumentView, in_stream: bool) {
     let mut max_rows = 0usize;
     for (d, c) in columns.iter().enumerate() {
         max_rows = max_rows.max(c.len());
-        for (i, n) in c.iter().enumerate() {
-            pos.insert(
-                n.decl_name.as_str(),
-                (24 + d as i32 * 260, 24 + i as i32 * 112),
-            );
+        for (i, v) in c.iter().enumerate() {
+            pos.insert(v.id.as_str(), (24 + d as i32 * 260, 24 + i as i32 * 112));
         }
     }
     let w = 24 + (max_depth + 1) * 260;
@@ -324,11 +498,9 @@ fn dag_svg(b: &mut B, a: &ArgumentView, in_stream: bool) {
         "<svg class=\"mth-dag__graph\" data-layout=\"graph\" viewBox=\"0 0 {w} {h}\" \
          width=\"{w}\" height=\"{h}\" role=\"presentation\">"
     ));
-    let mut edges: Vec<&crate::model::EdgeRow> = a.edges.iter().collect();
-    edges.sort_by(|x, y| (&x.used_by, &x.uses).cmp(&(&y.used_by, &y.uses)));
-    for e in edges {
+    for (used_by, uses) in &edges {
         let (Some(&(x1, y1)), Some(&(x2, y2))) =
-            (pos.get(e.used_by.as_str()), pos.get(e.uses.as_str()))
+            (pos.get(used_by.as_str()), pos.get(uses.as_str()))
         else {
             continue;
         };
@@ -344,29 +516,37 @@ fn dag_svg(b: &mut B, a: &ArgumentView, in_stream: bool) {
             y2 + 44
         ));
     }
-    for n in &a.nodes {
-        let Some(&(x, y)) = pos.get(n.decl_name.as_str()) else {
+    for v in &verts {
+        let Some(&(x, y)) = pos.get(v.id.as_str()) else {
             continue;
         };
         b.raw(&format!(
-            "<g class=\"mth-dag__node\" transform=\"translate({x},{y})\"><rect width=\"220\" height=\"88\" rx=\"4\"/>"
+            "<g class=\"mth-dag__node mth-dag__node--{}\" transform=\"translate({x},{y})\">\
+             <rect width=\"220\" height=\"88\" rx=\"4\"/>",
+            v.role
         ));
+        b.val("text", v.title.0, &v.title.1, "x=\"12\" y=\"24\"");
         b.val(
             "text",
-            "argument_node.decl_name",
-            &short(&n.decl_name),
-            "x=\"12\" y=\"24\"",
-        );
-        b.val(
-            "text",
-            "argument_node.kind",
-            &n.kind,
+            v.sub.0,
+            v.sub.1,
             "x=\"12\" y=\"44\" class=\"mth-dag__kind\"",
         );
         b.raw("</g>");
     }
     b.raw("</svg>");
     b.raw("</div>");
+}
+
+/// A Lean expression shortened to fit a box: whitespace runs collapsed, then
+/// cut at 26 characters like a decl name.
+fn short_term(pretty: &str) -> String {
+    let one: String = pretty.split_whitespace().collect::<Vec<_>>().join(" ");
+    if one.chars().count() > 26 {
+        one.chars().take(25).collect::<String>() + "…"
+    } else {
+        one
+    }
 }
 
 fn short(decl: &str) -> String {
@@ -424,6 +604,28 @@ fn region_verification(b: &mut B, a: &ArgumentView, input: &Snapshot) {
     );
     b.close("dl");
     b.close("section");
+}
+
+/// A cited person: their glyph and their name, linking to their GitHub profile
+/// when the record holds one for them; the name alone otherwise.
+fn cited_person(b: &mut B, input: &Snapshot, name: &str) {
+    match input.person(name) {
+        Some(person) => {
+            b.open(
+                "a",
+                &format!(
+                    "class=\"mth-person\" href=\"https://github.com/{}\"",
+                    escape(&person.github)
+                ),
+            );
+            b.raw(&glyph(&person.github, "mth-glyph--sm"));
+            b.val("span", "argument.cites", name, "");
+            b.close("a");
+        }
+        None => {
+            b.val("span", "argument.cites", name, "");
+        }
+    }
 }
 
 /// A member as their photo and their name, linking to their profile; the name
@@ -539,23 +741,7 @@ fn region_author(
         b.open("span", "class=\"mth-author__cites\"");
         b.lab("span", "mth-kv__k", "cites");
         for name in cites {
-            match input.person(name) {
-                Some(person) => {
-                    b.open(
-                        "a",
-                        &format!(
-                            "class=\"mth-person\" href=\"https://github.com/{}\"",
-                            escape(&person.github)
-                        ),
-                    );
-                    b.raw(&glyph(&person.github, "mth-glyph--sm"));
-                    b.val("span", "argument.cites", name, "");
-                    b.close("a");
-                }
-                None => {
-                    b.val("span", "argument.cites", name, "");
-                }
-            }
+            cited_person(b, input, name);
         }
         b.close("span");
     }

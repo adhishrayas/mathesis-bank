@@ -11,7 +11,7 @@
 //! the leaves a node stands on; Mathlib is the substrate and appears nowhere.
 
 use chrono::{DateTime, Utc};
-use record::model::{Argument, Claim, EdgeRow, NodeRow, Person, Post, Profile};
+use record::model::{Argument, Claim, EdgeRow, Hypothesis, LeafRow, NodeRow, Person, Post, Profile};
 use serde::Deserialize;
 use serde_json::json;
 use sha2::{Digest, Sha256};
@@ -90,6 +90,12 @@ struct GNode {
     module: String,
     pretty: String,
     uses: Vec<String>,
+    /// The author's docstring, when the source has one.
+    #[serde(default)]
+    doc: Option<String>,
+    /// The statement's Prop-typed binders.
+    #[serde(default)]
+    hypotheses: Vec<Hypothesis>,
 }
 
 #[derive(Deserialize)]
@@ -138,7 +144,7 @@ fn write_json(p: &Path, v: &serde_json::Value) -> Result<(), String> {
 fn argument_dag(
     g: &Graph,
     premise_of: &dyn Fn(&GNode) -> Option<String>,
-) -> (Vec<NodeRow>, Vec<EdgeRow>, BTreeSet<String>) {
+) -> (Vec<NodeRow>, Vec<EdgeRow>, Vec<LeafRow>, BTreeSet<String>) {
     let by_name: BTreeMap<&str, &GNode> = g.nodes.iter().map(|n| (n.decl.as_str(), n)).collect();
     let is_node = |n: &GNode| n.kind == "theorem" && premise_of(n).is_none();
     let leaf_kind = |n: &GNode| {
@@ -246,11 +252,31 @@ fn argument_dag(
                 depth: depth[n],
                 topo: topo[n],
                 dictionary_leaves: leaves_of.get(n).cloned().unwrap_or_default(),
+                doc: gn.doc.clone(),
+                hypotheses: gn.hypotheses.clone(),
             }
         })
         .collect();
     edges.sort_by(|x, y| (&x.used_by, &x.uses).cmp(&(&y.used_by, &y.uses)));
-    (nodes, edges, cites)
+
+    // Every leaf a node names, once: a definition, or a result by another author.
+    let leaf_names: BTreeSet<&str> = leaves_of
+        .values()
+        .flat_map(|v| v.iter().map(String::as_str))
+        .collect();
+    let leaves: Vec<LeafRow> = leaf_names
+        .into_iter()
+        .filter_map(|l| by_name.get(l))
+        .map(|gn| LeafRow {
+            decl_name: gn.decl.clone(),
+            kind: gn.kind.clone(),
+            role: if gn.kind == "theorem" { "cited" } else { "definition" }.into(),
+            pretty: gn.pretty.clone(),
+            doc: gn.doc.clone(),
+            author: premise_of(gn),
+        })
+        .collect();
+    (nodes, edges, leaves, cites)
 }
 
 /// The committed avatar of a profile (`bank/avatars/<login>.<ext>`), as the
@@ -362,7 +388,7 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
             ));
         }
 
-        let (nodes, edges, mut cites) = argument_dag(&g, &premise_of);
+        let (nodes, edges, leaves, mut cites) = argument_dag(&g, &premise_of);
         cites.extend(post.cites.iter().cloned());
         if let Some(name) = cites.iter().find(|n| !c.people.iter().any(|p| &p.name == *n)) {
             return Err(format!("{decl}: cites {name}, who has no entry in `people`"));
@@ -392,6 +418,7 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
             citation_name: c.profile.citation_name.clone(),
             login: c.profile.login.clone(),
             arguments_count: 1,
+            doc: root.doc.clone(),
         };
         let argument = Argument {
             accession: arg_acc.clone(),
@@ -430,7 +457,7 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         )?;
         write_json(
             &out.join("arguments").join(format!("{arg_acc}.json")),
-            &json!({ "argument": argument, "nodes": nodes, "edges": edges }),
+            &json!({ "argument": argument, "nodes": nodes, "edges": edges, "leaves": leaves }),
         )?;
         posts.push(Post {
             post_number: total - i as i64,

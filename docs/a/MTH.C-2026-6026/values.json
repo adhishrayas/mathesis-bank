@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Fundamental theorem of statistical learning (5-way equivalence, BP₅)."
+  },
+  {
     "field": "claim.decl_name",
     "value": "fundamental_theorem"
   },

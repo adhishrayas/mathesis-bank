@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6005"
   },
   {
+    "field": "claim.doc",
+    "value": "Pajor's inequality for multiclass concept classes, with no hypotheses on the domain, the label type or the family: the traces of 𝒞 on S are at most as many as the pair-cubes of 𝒞 supported inside S.The count runs on a split of the family at a point where two traces differ, taking one branch per realised value with no residual bucket. A cube of a branch never constrains the split point, so a cube pair-shattered by μ branches is counted μ times on the left and supplies 1 + μ.choose 2 cubes on the right, which closes the accounting because μ ≤ 1 + μ.choose 2 for μ ≥ 1, with equality exactly at μ ∈ {1, 2}. An infinite trace family forces infinitely many one-point cubes and both sides are ⊤.At Y = Bool this specialises to encard_image_inter_le_encard_shatters, which is encard_image_inter_le_encard_shatters_of_multiclass below. The pair-cube is Natarajan's shattering witness for spaces of functions, from p. 81 of On learning sets and functions; see the module docstring."
+  },
+  {
     "field": "claim.decl_name",
     "value": "encard_image_restrict_le_encard_pairCubes"
   },
@@ -268,6 +272,62 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "encard_image_restrict_le_encard_pairCubes"
   },
@@ -298,6 +358,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Infinitely many traces force infinitely many cubes. Either the family disagrees at infinitely many points of S, each of which carries a one-point cube, or it realises infinitely many labels at one point, which carries infinitely many one-point cubes. The proof runs the contrapositive: finitely many cubes bound both the disagreement set and, above each of its points, the set of realised labels, and a trace is determined by its values on the disagreement set, so the traces embed in a finite product. This is what makes the multiclass inequality hypothesis-free, as infinite_setOf_shatters does in the binary case."
   },
   {
     "field": "argument_node.pretty",
@@ -476,6 +540,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The whole accounting, as one injection from traces to cubes.At a point where two traces differ, every realised value gets its own branch, and a trace is routed by the value it takes there. The branch injections supplied by the induction hypothesis land in cubes that avoid that point, and a cube pair-shattered by μ branches carries μ traces into μ of the 1 + μ.choose 2 cubes available above it: the cube itself for the branch selected as the anchor, and one graft for each of the other μ - 1. Injectivity is read off the graft, since pairOf u · is injective and the pattern below the new point is recovered by evaluating away from it."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u_1} {Y : Type u_2} (S : Set X) (N : ℕ) (𝒞 : Set (X → Y)),\n  (S.restrict '' 𝒞).Finite →\n    (S.restrict '' 𝒞).ncard ≤ N → ∃ φ, Set.MapsTo φ (S.restrict '' 𝒞) (pairCubes 𝒞 S) ∧ Set.InjOn φ (S.restrict '' 𝒞)"
   },
@@ -568,6 +636,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Splitting off one realised value at a point of S where the family is not constant strictly lowers the number of traces, because a second value survives outside the branch."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {x : X} {u : Y},\n  x ∈ S →\n    ∀ {c : X → Y},\n      c ∈ 𝒞 → c x ≠ u → (S.restrict '' 𝒞).Finite → (S.restrict '' {d | d ∈ 𝒞 ∧ d x = u}).ncard < (S.restrict '' 𝒞).ncard"
   },
@@ -586,6 +658,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Two branches at one point of S cut disjoint families of traces."
   },
   {
     "field": "argument_node.pretty",
@@ -710,6 +786,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The graft. A pattern pair-shattered by the branch at a and by the branch at b extends by one unconstrained point carrying the pair {a, b} there to a pattern pair-shattered by the whole family. The selection at the new point names the branch that realises it. This is the multiclass exchange step, and it mirrors Shatters.insert.The two labels are not required to differ. Distinctness is what makes the result a pair pattern, and it enters at mem_pairCubes_graft_pairOf, not here."
   },
   {
     "field": "argument_node.pretty",
@@ -1064,6 +1144,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The single-point case: an admissible label at x extends to a selection taking it there."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y} {x : X} {u : Y},\n  u ∈ P x → ∃ τ, τ x = u ∧ ∀ ⦃z : X⦄, z ∈ pairSupport P → τ z ∈ P z"
   },
@@ -1090,6 +1174,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A choice of admissible labels prescribed on part of the domain extends to a selection for the whole pattern. The prescribed values arrive as a total function, so off the support there is always a label to copy and no hypothesis on Y is needed."
   },
   {
     "field": "argument_node.pretty",
@@ -1134,6 +1222,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The unconstrained pattern is a cube of every nonempty family. It is the multiclass reading of shatters_bot."
   },
   {
     "field": "argument_node.pretty",
@@ -1190,6 +1282,118 @@
   {
     "field": "argument_node.decl_name",
     "value": "pairSupport_singCube"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A pattern is a pair pattern when it offers either no constraint or exactly two labels at each point. The two labels are recorded as a set, so their order carries no information."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → (X → Set Y) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A family pair-shatters a pattern when every choice of one admissible label per constrained point is realised by some member."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → Set (X → Y) → (X → Set Y) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Overwrite a pattern at one point. Stated without a decidable equality on X, since the two branches are separated by a hypothesis rather than by a test."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → (X → Set Y) → X → Set Y → X → Set Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The pair-cubes of 𝒞 over S: pair patterns supported inside S and pair-shattered by 𝒞."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → Set (X → Y) → Set X → Set (X → Set Y)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The unordered pair {u, v}, degenerating to the empty set when u = v. Carrying the degenerate case inside the pair lets one formula cover both branches of the injection."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{Y : Type u_2} → Y → Y → Set Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The points at which a pattern constrains a concept."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → (X → Set Y) → Set X"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The cube supported at the single point z, offering the labels u and v there."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u_1} → {Y : Type u_2} → X → Y → Y → X → Set Y"
   },
   {
     "field": "argument.accession",

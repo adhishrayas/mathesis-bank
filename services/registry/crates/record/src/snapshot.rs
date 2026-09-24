@@ -7,7 +7,7 @@
 //! further input class is the profile identity rows, which is why a rename
 //! enqueues a regeneration (SPEC.md §10).
 
-use crate::model::{Argument, Claim, Dictionary, EdgeRow, NodeRow, Person, Post, Profile};
+use crate::model::{Argument, Claim, Dictionary, EdgeRow, LeafRow, NodeRow, Person, Post, Profile};
 use crate::{GenError, GenOpts};
 use accession::Accession;
 use serde::Deserialize;
@@ -19,6 +19,8 @@ pub struct ArgumentView {
     pub argument: Argument,
     pub nodes: Vec<NodeRow>,
     pub edges: Vec<EdgeRow>,
+    /// The definitions and cited results the argument rests on, by name.
+    pub leaves: Vec<LeafRow>,
 }
 
 /// A login this record used to serve, and what it serves now.
@@ -67,6 +69,8 @@ impl Snapshot {
             argument: Argument,
             nodes: Vec<NodeRow>,
             edges: Vec<EdgeRow>,
+            #[serde(default)]
+            leaves: Vec<LeafRow>,
         }
         fn read<T: for<'de> Deserialize<'de>>(p: &Path) -> Result<T, GenError> {
             let bytes = std::fs::read(p)?;
@@ -115,13 +119,16 @@ impl Snapshot {
                 argument,
                 mut nodes,
                 mut edges,
+                mut leaves,
             } = read(&p)?;
             nodes.sort_by(|x, y| x.topo.cmp(&y.topo).then(x.decl_name.cmp(&y.decl_name)));
             edges.sort_by(|x, y| (&x.used_by, &x.uses).cmp(&(&y.used_by, &y.uses)));
+            leaves.sort_by(|x, y| x.decl_name.cmp(&y.decl_name));
             arguments.push(ArgumentView {
                 argument,
                 nodes,
                 edges,
+                leaves,
             });
         }
         arguments.sort_by(|a, b| a.argument.accession.cmp(&b.argument.accession));

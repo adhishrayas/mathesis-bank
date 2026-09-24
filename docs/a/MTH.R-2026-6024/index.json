@@ -223,6 +223,17 @@
           "InformationTheory.klDivReal",
           "MeasureTheory.tvDistReal"
         ],
+        "doc": "**Pinsker's inequality** with the sharp constant.\n`tvDistReal P Q ≤ sqrt(klDivReal P Q / 2)` for probability measures `P ≪ Q` with\nfinite KL divergence.",
+        "hypotheses": [
+          {
+            "name": "hac",
+            "pretty": "P.AbsolutelyContinuous Q"
+          },
+          {
+            "name": "h_int",
+            "pretty": "MeasureTheory.Integrable (MeasureTheory.llr P Q) P"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)",
@@ -248,6 +259,21 @@
           "InformationTheory.klBin",
           "InformationTheory.klDivReal"
         ],
+        "doc": "**Per-set squared bound.** `2 (P(A) − Q(A))² ≤ klDivReal P Q` for any measurable\nset `A`, given `P ≪ Q` and finite KL.",
+        "hypotheses": [
+          {
+            "name": "hac",
+            "pretty": "P.AbsolutelyContinuous Q"
+          },
+          {
+            "name": "h_int",
+            "pretty": "MeasureTheory.Integrable (MeasureTheory.llr P Q) P"
+          },
+          {
+            "name": "hA",
+            "pretty": "MeasurableSet A"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      ∀ (A : Set α), MeasurableSet A → 2 * (P.real A - Q.real A) ^ 2 ≤ InformationTheory.klDivReal P Q",
@@ -262,6 +288,21 @@
           "InformationTheory.klBin",
           "InformationTheory.klDivReal"
         ],
+        "doc": "**Data processing inequality for indicators.** For probability measures `P ≪ Q`\nwith finite KL divergence and any measurable set `A`, the binary KL between the\nmarginals on `(A, Aᶜ)` is bounded by the full KL:\n`klBin(P(A), Q(A)) ≤ klDivReal P Q`.",
+        "hypotheses": [
+          {
+            "name": "hac",
+            "pretty": "P.AbsolutelyContinuous Q"
+          },
+          {
+            "name": "h_int",
+            "pretty": "MeasureTheory.Integrable (MeasureTheory.llr P Q) P"
+          },
+          {
+            "name": "hA",
+            "pretty": "MeasurableSet A"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      ∀ (A : Set α), MeasurableSet A → InformationTheory.klBin (P.real A) (Q.real A) ≤ InformationTheory.klDivReal P Q",
@@ -273,6 +314,25 @@
         "decl_name": "InformationTheory.klFun_integral_ge_of_measurableSet",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "**Jensen on a subset.** For a finite measure `Q` and a measurable set `A` with\npositive mass, if `f` and `klFun ∘ f` are integrable and `f ≥ 0` almost everywhere,\nthen `Q(A) · klFun((1/Q(A)) · ∫_A f dQ) ≤ ∫_A klFun(f) dQ`.",
+        "hypotheses": [
+          {
+            "name": "hf_int",
+            "pretty": "MeasureTheory.Integrable f Q"
+          },
+          {
+            "name": "hf_int_kl",
+            "pretty": "MeasureTheory.Integrable (fun x => InformationTheory.klFun (f x)) Q"
+          },
+          {
+            "name": "hf_nn",
+            "pretty": "∀ᵐ (x : α) ∂Q, 0 ≤ f x"
+          },
+          {
+            "name": "hQA_pos",
+            "pretty": "0 < Q.real A"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] {Q : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure Q] (f : α → ℝ),\n  MeasureTheory.Integrable f Q →\n    MeasureTheory.Integrable (fun x => InformationTheory.klFun (f x)) Q →\n      (∀ᵐ (x : α) ∂Q, 0 ≤ f x) →\n        ∀ {A : Set α},\n          0 < Q.real A →\n            Q.real A * InformationTheory.klFun ((Q.real A)⁻¹ * ∫ (x : α) in A, f x ∂Q) ≤\n              ∫ (x : α) in A, InformationTheory.klFun (f x) ∂Q",
@@ -285,6 +345,17 @@
         "depth": 3,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "**Algebraic identity.** The binary KL factors through `klFun`:\n`klBin p q = q · klFun(p/q) + (1 − q) · klFun((1 − p)/(1 − q))`.",
+        "hypotheses": [
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -299,6 +370,25 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "**Binary Pinsker inequality.** `2 (p − q)² ≤ klBin p q` for `p ∈ [0, 1]`,\n`q ∈ (0, 1)`. Sharp constant `2`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 ≤ p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p ≤ 1"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ), 0 ≤ p → p ≤ 1 → 0 < q → q < 1 → 2 * (p - q) ^ 2 ≤ InformationTheory.klBin p q",
@@ -310,6 +400,17 @@
         "decl_name": "InformationTheory.two_sq_le_neg_log",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "`2 (1 - q)² ≤ -log q` for `q ∈ (0, 1]`. Substitute `r = 1 - q` into the previous.",
+        "hypotheses": [
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q ≤ 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (q : ℝ), 0 < q → q ≤ 1 → 2 * (1 - q) ^ 2 ≤ -Real.log q",
@@ -321,6 +422,17 @@
         "decl_name": "InformationTheory.two_sq_le_neg_log_one_sub",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "`2 q² ≤ -log(1 - q)` for `q ∈ [0, 1)`.",
+        "hypotheses": [
+          {
+            "name": "hq₀",
+            "pretty": "0 ≤ q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (q : ℝ), 0 ≤ q → q < 1 → 2 * q ^ 2 ≤ -Real.log (1 - q)",
@@ -332,6 +444,7 @@
         "decl_name": "InformationTheory.monotoneOn_h_zero",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "`h(q) = -log(1-q) - 2 q²` is monotone on `[0, 1)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "MonotoneOn (fun q => -Real.log (1 - q) - 2 * q ^ 2) (Set.Ico 0 1)",
@@ -343,6 +456,13 @@
         "decl_name": "InformationTheory.hasDerivAt_h_zero",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "Derivative of `h(q) = -log(1-q) - 2 q²` at `q < 1`.",
+        "hypotheses": [
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ q < 1, HasDerivAt (fun q => -Real.log (1 - q) - 2 * q ^ 2) ((2 * q - 1) ^ 2 / (1 - q)) q",
@@ -356,6 +476,17 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "`g(q) = klBin p q − 2 (p − q)²` is monotone on `[p, 1)`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p : ℝ), 0 < p → p < 1 → MonotoneOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ico p 1)",
@@ -367,6 +498,21 @@
         "decl_name": "InformationTheory.deriv_g_nonneg_of_ge",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "On `[p, 1)`: derivative of `g` is nonnegative.",
+        "hypotheses": [
+          {
+            "name": "hpq",
+            "pretty": "p ≤ q"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ), p ≤ q → 0 < q → q < 1 → 0 ≤ (q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))",
@@ -379,6 +525,17 @@
         "depth": 4,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "Continuity of `g` on `Ico p 1`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -393,6 +550,17 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "Continuity of `klBin p ·` on `Ico p 1`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q) (Set.Ico p 1)",
@@ -406,6 +574,7 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "Boundary case: `klBin 0 q = -log(1 - q)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (q : ℝ), InformationTheory.klBin 0 q = -Real.log (1 - q)",
@@ -418,6 +587,17 @@
         "depth": 3,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "`klBin p p = 0` for `p ∈ (0, 1)`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -432,6 +612,7 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "Boundary case: `klBin 1 q = -log q`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (q : ℝ), InformationTheory.klBin 1 q = -Real.log q",
@@ -444,6 +625,17 @@
         "depth": 3,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "`g(q) = klBin p q − 2 (p − q)²` is antitone on `(0, p]`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -458,6 +650,25 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "**Factored derivative identity.** Derivative of `g(q) := klBin(p, q) − 2 (p − q)²`\nhas the factored form `(q − p) · (1 − 2q)² / (q · (1 − q))`, reducing the sign of\nthe derivative to `sign(q − p)`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ),\n  0 < p →\n    p < 1 →\n      0 < q →\n        q < 1 →\n          HasDerivAt (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2)\n            ((q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))) q",
@@ -469,6 +680,7 @@
         "decl_name": "InformationTheory.hasDerivAt_sub_sq",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Derivative of `(p − q)²` with respect to `q`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ), HasDerivAt (fun q => (p - q) ^ 2) (-2 * (p - q)) q",
@@ -480,6 +692,21 @@
         "decl_name": "InformationTheory.deriv_g_nonpos_of_le",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "On `(0, p]`: derivative of `g` is nonpositive.",
+        "hypotheses": [
+          {
+            "name": "hqp",
+            "pretty": "q ≤ p"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ), q ≤ p → 0 < q → q < 1 → (q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q)) ≤ 0",
@@ -491,6 +718,17 @@
         "decl_name": "InformationTheory.deriv_factor_nonneg",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "The derivative factor `(1 − 2q)² / (q (1 − q))` is nonnegative on `(0, 1)`.",
+        "hypotheses": [
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (q : ℝ), 0 < q → q < 1 → 0 ≤ (1 - 2 * q) ^ 2 / (q * (1 - q))",
@@ -504,6 +742,17 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "Continuity of `g` on `Ioc 0 p`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ioc 0 p)",
@@ -515,6 +764,7 @@
         "decl_name": "InformationTheory.continuousOn_sub_sq",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Continuity of `fun q => (p - q)²` on any set.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p : ℝ) (s : Set ℝ), ContinuousOn (fun q => (p - q) ^ 2) s",
@@ -527,6 +777,17 @@
         "depth": 5,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "Continuity of `klBin p ·` on `Ioc 0 p`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -541,6 +802,25 @@
         "dictionary_leaves": [
           "InformationTheory.klBin"
         ],
+        "doc": "Derivative of `klBin p ·` at a point `q ∈ (0, 1)` with `p ∈ (0, 1)`.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (p q : ℝ),\n  0 < p → p < 1 → 0 < q → q < 1 → HasDerivAt (fun q => InformationTheory.klBin p q) ((q - p) / (q * (1 - q))) q",
@@ -553,6 +833,25 @@
         "depth": 7,
         "dictionary_leaves": [
           "InformationTheory.klBin"
+        ],
+        "doc": "Expanded form: split into constants and `q`-dependent pieces. Used to compute the\nderivative via `HasDerivAt` in the next shard.",
+        "hypotheses": [
+          {
+            "name": "hp₀",
+            "pretty": "0 < p"
+          },
+          {
+            "name": "hp₁",
+            "pretty": "p < 1"
+          },
+          {
+            "name": "hq₀",
+            "pretty": "0 < q"
+          },
+          {
+            "name": "hq₁",
+            "pretty": "q < 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -567,6 +866,7 @@
         "dictionary_leaves": [
           "InformationTheory.klDivReal"
         ],
+        "doc": "ℝ-valued KL is nonnegative for probability measures.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q], 0 ≤ InformationTheory.klDivReal P Q",
@@ -580,6 +880,13 @@
         "dictionary_leaves": [
           "InformationTheory.klDivReal"
         ],
+        "doc": "For probability measures with `P ≪ Q`, the ℝ-valued KL equals\n`(Mathlib.klDiv P Q).toReal`. Both measures have total mass 1, so the\nMathlib correction term vanishes.",
+        "hypotheses": [
+          {
+            "name": "hac",
+            "pretty": "P.AbsolutelyContinuous Q"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q → InformationTheory.klDivReal P Q = (InformationTheory.klDiv P Q).toReal",
@@ -591,6 +898,7 @@
         "decl_name": "InformationTheory.integrand_eq_llr",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "The integrand `log ((P.rnDeriv Q x).toReal)` is definitionally Mathlib's\nlog-likelihood ratio `llr P Q x`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α),\n  (fun x => Real.log (P.rnDeriv Q x).toReal) = MeasureTheory.llr P Q",

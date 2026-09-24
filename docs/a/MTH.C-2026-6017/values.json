@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "F3 — AuditSealed K ↔ ∀ s a a', equalPriorBayesError (K (s, a)) (K (s, a')) = 1/2."
+  },
+  {
     "field": "claim.decl_name",
     "value": "AuditCP.auditSealed_iff_no_binary_decision_advantage"
   },

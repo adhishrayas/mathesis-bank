@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The cardinal Pajor inequality for determined traces: the traces of 𝒜 on A that are determined by finitely many points inject into the shattered subsets, with no hypotheses. Unlike the ℕ∞-valued encard_determined_le_encard_shatters, this bounds genuine cardinalities; the full trace family cannot replace the determined traces (not_mk_image_inter_le_mk_shatters)."
+  },
+  {
     "field": "claim.decl_name",
     "value": "mk_determined_le_mk_shatters"
   },

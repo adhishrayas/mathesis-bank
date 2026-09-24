@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Choquet capacitability. For analytic sets, capacity equals the supremum over compact subsets (Kechris 30.13)."
+  },
+  {
     "field": "claim.decl_name",
     "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
   },

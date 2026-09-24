@@ -8,8 +8,10 @@ and run with `lake env lean <file>` in the environment that builds the result.
 The first argument is the scope: the modules whose declarations are the argument's
 own. Everything outside it (Mathlib, Init, other libraries) is substrate and is
 counted, not listed. The JSON carries every in-scope declaration reachable from the
-root, its kind, module, source line, kernel-pretty-printed type and the in-scope
-declarations it uses, plus the root's axioms (`collectAxioms`).
+root, its kind, module, source line, kernel-pretty-printed type, its docstring (the
+author's own words, when written), its hypotheses (the Prop-typed binders of its
+statement, instance arguments excluded) and the in-scope declarations it uses, plus
+the root's axioms (`collectAxioms`).
 -/
 open Lean Elab Command Meta
 
@@ -88,6 +90,23 @@ def ppType (n : Name) : MetaM String := do
     PrettyPrinter.ppExpr ci.type
   return toString fmt
 
+/-- The hypotheses of a statement: its Prop-typed binders, in order, as each binder's
+    name and pretty-printed type. Instance arguments are not hypotheses. -/
+def hypothesesOf (n : Name) : MetaM (Array Json) := do
+  let some ci := (← getEnv).find? n | return #[]
+  forallTelescope ci.type fun xs _ => do
+    let mut out : Array Json := #[]
+    for x in xs do
+      let d ← x.fvarId!.getDecl
+      if d.binderInfo.isInstImplicit then continue
+      if ← isProp d.type then
+        let fmt ← withOptions (fun o => (o.setBool `pp.proofs false).set `format.width (100 : Nat)) <|
+          PrettyPrinter.ppExpr d.type
+        out := out.push <| Json.mkObj [
+          ("name", Json.str d.userName.eraseMacroScopes.toString),
+          ("pretty", Json.str (toString fmt))]
+    return out
+
 end GraphExport
 
 open GraphExport in
@@ -113,6 +132,8 @@ def exportGraph (pfx : Array Name) (root : Name) (outPath : String) : CommandEla
     let some ci := env.find? n | continue
     let (vis, lib) := visibleUses env pfx n
     let pretty ← liftTermElabM (ppType n)
+    let hyps ← liftTermElabM (hypothesesOf n)
+    let doc ← liftCoreM (findDocString? env n)
     let ranges ← liftCoreM (findDeclarationRanges? n)
     let line := match ranges with | some r => r.range.pos.line | none => 0
     let mut usesArr : Array Json := #[]
@@ -125,6 +146,8 @@ def exportGraph (pfx : Array Name) (root : Name) (outPath : String) : CommandEla
       ("module", Json.str ((modOf env n).getD `none).toString),
       ("line", Json.num line),
       ("pretty", Json.str pretty),
+      ("doc", match doc with | some d => Json.str d.trim | none => Json.null),
+      ("hypotheses", Json.arr hyps),
       ("uses", Json.arr usesArr),
       ("library_uses", Json.num lib.size)]
   let doc := Json.mkObj [

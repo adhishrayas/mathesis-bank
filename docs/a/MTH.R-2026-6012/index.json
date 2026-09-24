@@ -158,6 +158,17 @@
           "PACLearnable",
           "UniversalLearnable"
         ],
+        "doc": "Universal learnable → PAC learnable.\nProof sketch: UniversalLearnable gives learner L with rate → 0 and Pr[error ≤ rate(m)] ≥ 2/3.\nTwo components:\n1. Event containment: rate(m) < ε ⟹ {error ≤ rate(m)} ⊆ {error ≤ ε} (monotonicity).\n2. Confidence boosting: 2/3 → 1-δ via median-of-means (Γ₆₇, sorry'd in boost_two_thirds_to_pac).\nRoutes through boost_two_thirds_to_pac which encapsulates the Chernoff-based boosting.",
+        "hypotheses": [
+          {
+            "name": "hL_meas",
+            "pretty": "∀ (L : BatchLearner X Bool), LearnEvalMeasurable L"
+          },
+          {
+            "name": "hul",
+            "pretty": "UniversalLearnable X C"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C],\n  (∀ (L : BatchLearner X Bool), LearnEvalMeasurable L) → UniversalLearnable X C → PACLearnable X C",
@@ -181,6 +192,17 @@
           "boosted_majority",
           "goodBlockEvent"
         ],
+        "doc": "Boosting lemma: given a learner with success probability ≥ 2/3 under D^m,\nconstruct a boosted learner with success probability ≥ 1-δ for any δ > 0.\nStandard technique: run L independently k times on independent samples of\nsize m₀, take majority vote.\n\nConstruction:\n- kmin = ⌈9/δ⌉ + 2 (enough blocks for Chebyshev concentration)\n- m₀ from hrate(ε/kmin) so that rate(m₀) < ε/kmin\n- n = max m₀ (kmin - 1). Then k = n + 1 ≥ kmin.\n- Total samples: (n + 1) * n, with Nat.sqrt((n+1)*n) = n.\n- At sample size m = (n+1)*n, L' recovers k = n+1 blocks of size n.\n- Event containment: when > k/2 blocks have D-error ≤ rate(n) < ε/kmin,\n  majority D-error ≤ k · rate(n) < k/kmin · ε ≤ ε via union bound.\n\nΓ₆₇: sorry — the full measure-theoretic proof requires:\n(a) block_extract : (Fin (k*n) → X) → Fin k → (Fin n → X)\n(b) iIndepFun for block extractions under product measure D^(k*n)\n(c) chebyshev_majority_bound for i.i.d. Bernoulli(≥2/3) events\n(d) block extraction marginal = D^n\n(e) majority vote D-error analysis via union bound\n\nNone of this infrastructure currently exists in the codebase.\nThe sorry is A4-compliant (the conclusion PACLearnable X C is non-trivially-true:\nit requires genuine concentration + majority analysis) and A5-compliant\n(the proof strategy is structurally complete, only infrastructure is missing).",
+        "hypotheses": [
+          {
+            "name": "hrate",
+            "pretty": "∀ ε > 0, ∃ m₀, ∀ m ≥ m₀, rate m < ε"
+          },
+          {
+            "name": "huniv",
+            "pretty": "∀ (D : MeasureTheory.Measure X),\n  MeasureTheory.IsProbabilityMeasure D →\n    ∀ c ∈ C,\n      ∀ (m : ℕ),\n        (MeasureTheory.Measure.pi fun x => D)\n            {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n          ENNReal.ofReal (2 / 3)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (L : BatchLearner X Bool)\n  [MeasurableBatchLearner X L] (rate : ℕ → ℝ),\n  (∀ ε > 0, ∃ m₀, ∀ m ≥ m₀, rate m < ε) →\n    (∀ (D : MeasureTheory.Measure X),\n        MeasureTheory.IsProbabilityMeasure D →\n          ∀ c ∈ C,\n            ∀ (m : ℕ),\n              (MeasureTheory.Measure.pi fun x => D)\n                  {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n                ENNReal.ofReal (2 / 3)) →\n      PACLearnable X C",
@@ -199,6 +221,13 @@
           "block_extract",
           "goodBlockEvent"
         ],
+        "doc": "T5: The goodBlockEvents are independent under the product measure.",
+        "hypotheses": [
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (k n : ℕ),\n      ProbabilityTheory.iIndepSet (goodBlockEvent✝ L D c rate k n) (MeasureTheory.Measure.pi fun x => D)",
@@ -212,6 +241,7 @@
         "dictionary_leaves": [
           "block_extract"
         ],
+        "doc": "Block extractions are independent under the product measure.\nKey infrastructure for boosting (D4) and probability amplification.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D],\n  ProbabilityTheory.iIndepFun (fun j ω => block_extract k m ω j) (MeasureTheory.Measure.pi fun x => D)",
@@ -232,6 +262,21 @@
           "block_extract",
           "goodBlockEvent"
         ],
+        "doc": "T4: Each block's good event has probability ≥ 2/3, transported from the base learner guarantee.",
+        "hypotheses": [
+          {
+            "name": "huniv",
+            "pretty": "∀ (D : MeasureTheory.Measure X),\n  MeasureTheory.IsProbabilityMeasure D →\n    ∀ c ∈ C,\n      ∀ (m : ℕ),\n        (MeasureTheory.Measure.pi fun x => D)\n            {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n          ENNReal.ofReal (2 / 3)"
+          },
+          {
+            "name": "hcC",
+            "pretty": "c ∈ C"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) (L : BatchLearner X Bool)\n  [MeasurableBatchLearner X L] (rate : ℕ → ℝ),\n  (∀ (D : MeasureTheory.Measure X),\n      MeasureTheory.IsProbabilityMeasure D →\n        ∀ c ∈ C,\n          ∀ (m : ℕ),\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n              ENNReal.ofReal (2 / 3)) →\n    ∀ (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n      ∀ c ∈ C,\n        Measurable c →\n          ∀ (k n : ℕ) (j : Fin k),\n            (MeasureTheory.Measure.pi fun x => D) (goodBlockEvent✝ L D c rate k n j) ≥ ENNReal.ofReal (2 / 3)",
@@ -249,6 +294,13 @@
           "LearnEvalMeasurable",
           "MeasurableBatchLearner"
         ],
+        "doc": "T0: Shared helper — measurability of the \"good training set\" event for a single block.",
+        "hypotheses": [
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (n : ℕ),\n      MeasurableSet {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate n)}",
@@ -262,6 +314,7 @@
         "dictionary_leaves": [
           "block_extract"
         ],
+        "doc": "T3: Block extraction pushforward of product measure equals product measure.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (k n : ℕ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (j : Fin k),\n  MeasureTheory.Measure.map (fun ω => block_extract k n ω j) (MeasureTheory.Measure.pi fun x => D) =\n    MeasureTheory.Measure.pi fun x => D",
@@ -281,6 +334,13 @@
           "block_extract",
           "goodBlockEvent"
         ],
+        "doc": "T2: goodBlockEvent is measurable for each block index j.",
+        "hypotheses": [
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c → ∀ (rate : ℕ → ℝ) (k n : ℕ) (j : Fin k), MeasurableSet (goodBlockEvent✝ L D c rate k n j)",
@@ -294,6 +354,7 @@
         "dictionary_leaves": [
           "block_extract"
         ],
+        "doc": "Block extraction is measurable: extracting block j from a pi-type is measurable.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (j : Fin k), Measurable fun ω => block_extract k m ω j",
@@ -305,6 +366,29 @@
         "decl_name": "chebyshev_seven_twelfths_bound",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "T6: Chebyshev concentration for 7/12 threshold — when k ≥ 36/δ independent events\neach have probability ≥ 2/3, the fraction exceeding 7/12 is ≥ 1-δ.",
+        "hypotheses": [
+          {
+            "name": "h_delta_pos",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hk",
+            "pretty": "36 / δ ≤ ↑k"
+          },
+          {
+            "name": "hevents_meas",
+            "pretty": "∀ (j : Fin k), MeasurableSet (events j)"
+          },
+          {
+            "name": "hindep",
+            "pretty": "ProbabilityTheory.iIndepSet (fun j => events j) μ"
+          },
+          {
+            "name": "hprob",
+            "pretty": "∀ (j : Fin k), μ (events j) ≥ ENNReal.ofReal (2 / 3)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure μ] {k : ℕ}\n  {δ : ℝ},\n  0 < δ →\n    36 / δ ≤ ↑k →\n      ∀ (events : Fin k → Set Ω),\n        (∀ (j : Fin k), MeasurableSet (events j)) →\n          ProbabilityTheory.iIndepSet (fun j => events j) μ →\n            (∀ (j : Fin k), μ (events j) ≥ ENNReal.ofReal (2 / 3)) →\n              μ {ω | 7 * k ≤ 12 * {j | ω ∈ events j}.card} ≥ ENNReal.ofReal (1 - δ)",
@@ -325,6 +409,21 @@
           "boosted_majority",
           "goodBlockEvent"
         ],
+        "doc": "T8: If ≥ 7/12 of blocks are good, the boosted hypothesis has D-error ≤ 7·max(rate(n),0).",
+        "hypotheses": [
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hk_pos",
+            "pretty": "0 < k"
+          },
+          {
+            "name": "hgoodfrac",
+            "pretty": "7 * k ≤ 12 * {j | ω ∈ goodBlockEvent✝ L D c rate k n j}.card"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (c : Concept X Bool),\n  Measurable c →\n    ∀ (L : BatchLearner X Bool) [MeasurableBatchLearner X L] (rate : ℕ → ℝ) (k n : ℕ) (ω : Fin (k * n) → X),\n      0 < k →\n        7 * k ≤ 12 * {j | ω ∈ goodBlockEvent✝ L D c rate k n j}.card →\n          D\n              {x |\n                (boosted_majority✝ k fun j =>\n                    L.learn (fun i => (block_extract k n ω j i, c (block_extract k n ω j i))) x) ≠\n                  c x} ≤\n            ENNReal.ofReal (7 * max (rate n) 0)",
@@ -338,6 +437,33 @@
         "dictionary_leaves": [
           "FLT.Concept",
           "boosted_majority"
+        ],
+        "doc": "T7: If ≥ 7/12 of the hypotheses have D-error ≤ ρ, majority vote has D-error ≤ 7ρ.",
+        "hypotheses": [
+          {
+            "name": "hk_pos",
+            "pretty": "0 < k"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hhs_meas",
+            "pretty": "∀ (j : Fin k), Measurable (hs j)"
+          },
+          {
+            "name": "hgoodfrac",
+            "pretty": "7 * k ≤ 12 * good.card"
+          },
+          {
+            "name": "hρ",
+            "pretty": "0 ≤ ρ"
+          },
+          {
+            "name": "hgooderr",
+            "pretty": "∀ j ∈ good, D {x | hs j x ≠ c x} ≤ ENNReal.ofReal ρ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -355,6 +481,7 @@
           "LearnEvalMeasurable",
           "MeasurableBatchLearner"
         ],
+        "doc": "T1: A learner with joint measurability gives measurable hypotheses for fixed training data.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L] {m : ℕ}\n  (S : Fin m → X × Bool), Measurable (L.learn S)",
@@ -370,6 +497,7 @@
           "BatchLearner.learn",
           "MeasurableBatchLearner"
         ],
+        "doc": "Joint measurability of the evaluation map",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {inst : MeasurableSpace X} {L : BatchLearner X Bool} [self : MeasurableBatchLearner X L] (m : ℕ),\n  Measurable fun p => L.learn p.1 p.2",
@@ -384,6 +512,12 @@
           "ConceptClass",
           "FLT.Concept",
           "MeasurableHypotheses"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "h ∈ C"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

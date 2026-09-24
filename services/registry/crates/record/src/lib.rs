@@ -10,6 +10,7 @@
 //! on an ordinary note edit.
 
 pub mod about;
+pub mod doc;
 pub mod html;
 pub mod jsonc;
 pub mod leak;

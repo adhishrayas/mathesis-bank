@@ -19,6 +19,8 @@ export type Shape =
   | "label"
   | "em-dash"
   | "lean-statement"
+  | "lean-term"
+  | "docstring"
   | "citation";
 
 export interface Field {
@@ -31,6 +33,7 @@ export const FIELDS: Field[] = [
   { field: "claim.accession", shape: "accession", source: "manifest" },
   { field: "claim.decl_name", shape: "decl", source: "manifest" },
   { field: "claim.pretty", shape: "lean-statement", source: "manifest" },
+  { field: "claim.doc", shape: "docstring", source: "manifest" },
   { field: "claim.module", shape: "label", source: "manifest" },
   { field: "claim.statement_digest", shape: "sha256-prefix", source: "manifest" },
   { field: "claim.first_verified", shape: "timestamp", source: "manifest" },
@@ -42,10 +45,17 @@ export const FIELDS: Field[] = [
   { field: "argument_node.decl_name", shape: "decl", source: "manifest" },
   { field: "argument_node.kind", shape: "enum", source: "manifest" },
   { field: "argument_node.pretty", shape: "lean-statement", source: "manifest" },
+  { field: "argument_node.doc", shape: "docstring", source: "manifest" },
+  { field: "argument_hypothesis.name", shape: "decl", source: "manifest" },
+  { field: "argument_hypothesis.pretty", shape: "lean-statement", source: "manifest" },
+  { field: "argument_hypothesis.label", shape: "lean-term", source: "manifest" },
   // The DAG's dictionary chips: a curated entry occurring in a node, which is
   // the one value the generated record renders that is neither the node's own
   // declaration nor a count.
   { field: "dictionary_constant.name", shape: "decl", source: "manifest" },
+  { field: "dictionary_constant.kind", shape: "enum", source: "manifest" },
+  { field: "dictionary_constant.pretty", shape: "lean-statement", source: "manifest" },
+  { field: "dictionary_constant.doc", shape: "docstring", source: "manifest" },
   { field: "replay_accepted", shape: "enum", source: "manifest" },
   { field: "axiom_manifest", shape: "enum", source: "manifest" },
   { field: "statement_identity", shape: "enum", source: "manifest" },

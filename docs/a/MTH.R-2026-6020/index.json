@@ -206,6 +206,13 @@
           "HiddenChannelCapacity.SimpIn",
           "HiddenChannelCapacity.instDecidableAdj"
         ],
+        "doc": "**Dirac's lemma, strong form**: in a chordless-cycle-free adjacency structure, every\nvertex set is a clique or contains two nonadjacent simplicial vertices.",
+        "hypotheses": [
+          {
+            "name": "hchord",
+            "pretty": "¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w",
@@ -221,6 +228,85 @@
           "HiddenChannelCapacity.IsChordlessCycle",
           "HiddenChannelCapacity.cyclePairs"
         ],
+        "doc": "**The assembled-cycle contradiction**: two length-minimal x-y connectors through\ndisjoint, mutually non-adjacent sides cannot coexist with chordless-cycle-freeness when\nx and y are non-adjacent.",
+        "hypotheses": [
+          {
+            "name": "hchord",
+            "pretty": "¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          },
+          {
+            "name": "hxy",
+            "pretty": "x ≠ y"
+          },
+          {
+            "name": "hnadj",
+            "pretty": "¬HiddenChannelCapacity.Adj 𝒞 x y"
+          },
+          {
+            "name": "hQBx",
+            "pretty": "¬QB x"
+          },
+          {
+            "name": "hQBy",
+            "pretty": "¬QB y"
+          },
+          {
+            "name": "hABdisj",
+            "pretty": "∀ (v : ι), QA v → QB v → False"
+          },
+          {
+            "name": "hABnadj",
+            "pretty": "∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v"
+          },
+          {
+            "name": "hchA",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA"
+          },
+          {
+            "name": "hndA",
+            "pretty": "pA.Nodup"
+          },
+          {
+            "name": "hxA",
+            "pretty": "pA.head? = some x"
+          },
+          {
+            "name": "hyA",
+            "pretty": "pA.getLast? = some y"
+          },
+          {
+            "name": "hvA",
+            "pretty": "∀ v ∈ pA, v = x ∨ v = y ∨ QA v"
+          },
+          {
+            "name": "hminA",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n    pA.length ≤ q.length"
+          },
+          {
+            "name": "hchB",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB"
+          },
+          {
+            "name": "hndB",
+            "pretty": "pB.Nodup"
+          },
+          {
+            "name": "hxB",
+            "pretty": "pB.head? = some x"
+          },
+          {
+            "name": "hyB",
+            "pretty": "pB.getLast? = some y"
+          },
+          {
+            "name": "hvB",
+            "pretty": "∀ v ∈ pB, v = x ∨ v = y ∨ QB v"
+          },
+          {
+            "name": "hminB",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n    pB.length ≤ q.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ {QA QB : ι → Prop} {x y : ι},\n      x ≠ y →\n        ¬HiddenChannelCapacity.Adj 𝒞 x y →\n          ¬QB x →\n            ¬QB y →\n              (∀ (v : ι), QA v → QB v → False) →\n                (∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v) →\n                  ∀ (pA : List ι),\n                    List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA →\n                      pA.Nodup →\n                        pA.head? = some x →\n                          pA.getLast? = some y →\n                            (∀ v ∈ pA, v = x ∨ v = y ∨ QA v) →\n                              (∀ (q : List ι),\n                                  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                      q.Nodup ∧\n                                        q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n                                    pA.length ≤ q.length) →\n                                ∀ (pB : List ι),\n                                  List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB →\n                                    pB.Nodup →\n                                      pB.head? = some x →\n                                        pB.getLast? = some y →\n                                          (∀ v ∈ pB, v = x ∨ v = y ∨ QB v) →\n                                            (∀ (q : List ι),\n                                                (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                                    q.Nodup ∧\n                                                      q.head? = some x ∧\n                                                        q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n                                                  pB.length ≤ q.length) →\n                                              False",
@@ -234,6 +320,45 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.Adj"
         ],
+        "doc": "**Minimality kills chords**: a length-minimal constrained x-y path has no adjacency\nbetween positions at distance ≥ 2.",
+        "hypotheses": [
+          {
+            "name": "hch",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) p"
+          },
+          {
+            "name": "hx",
+            "pretty": "p.head? = some x"
+          },
+          {
+            "name": "hy",
+            "pretty": "p.getLast? = some y"
+          },
+          {
+            "name": "hvert",
+            "pretty": "∀ v ∈ p, v = x ∨ v = y ∨ Q v"
+          },
+          {
+            "name": "hmin",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n    p.length ≤ q.length"
+          },
+          {
+            "name": "hnd",
+            "pretty": "p.Nodup"
+          },
+          {
+            "name": "hi",
+            "pretty": "i < p.length"
+          },
+          {
+            "name": "hj",
+            "pretty": "j < p.length"
+          },
+          {
+            "name": "hij",
+            "pretty": "i + 2 ≤ j"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y : ι} {p : List ι},\n  List.IsChain (HiddenChannelCapacity.Adj 𝒞) p →\n    p.head? = some x →\n      p.getLast? = some y →\n        (∀ v ∈ p, v = x ∨ v = y ∨ Q v) →\n          (∀ (q : List ι),\n              (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                  q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n                p.length ≤ q.length) →\n            p.Nodup →\n              ∀ {i j : ℕ} (hi : i < p.length) (hj : j < p.length), i + 2 ≤ j → ¬HiddenChannelCapacity.Adj 𝒞 p[i] p[j]",
@@ -245,6 +370,12 @@
         "decl_name": "HiddenChannelCapacity.mod_succ_cases",
         "depth": 2,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hi",
+            "pretty": "i < n"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (n i : ℕ), i < n → (i + 1) % n = i + 1 ∧ i + 1 < n ∨ (i + 1) % n = 0 ∧ i + 1 = n",
@@ -256,6 +387,16 @@
         "decl_name": "HiddenChannelCapacity.getLast_getElem",
         "depth": 2,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "p.getLast? = some y"
+          },
+          {
+            "name": "h0",
+            "pretty": "0 < p.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {p : List ι} {y : ι}, p.getLast? = some y → ∀ (h0 : 0 < p.length), p[p.length - 1] = y",
@@ -268,6 +409,16 @@
         "depth": 2,
         "dictionary_leaves": [
           "HiddenChannelCapacity.cyclePairs"
+        ],
+        "hypotheses": [
+          {
+            "name": "h0",
+            "pretty": "0 < l.length"
+          },
+          {
+            "name": "h",
+            "pretty": "i < (HiddenChannelCapacity.cyclePairs l).length"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -297,6 +448,16 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          },
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P v w"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v w → HiddenChannelCapacity.ReachOn 𝒞 P u w",
@@ -311,6 +472,12 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -327,6 +494,12 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "hypotheses": [
+          {
+            "name": "hu",
+            "pretty": "P u"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u : ι}, P u → HiddenChannelCapacity.ReachOn 𝒞 P u u",
@@ -341,6 +514,21 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "doc": "Every vertex on a walk is reachable from its head.",
+        "hypotheses": [
+          {
+            "name": "hwk",
+            "pretty": "HiddenChannelCapacity.IsWalkOn 𝒞 P p"
+          },
+          {
+            "name": "hu",
+            "pretty": "p.head? = some u"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ p"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -357,6 +545,20 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          },
+          {
+            "name": "hadj",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 v w"
+          },
+          {
+            "name": "hw",
+            "pretty": "P w"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.Adj 𝒞 v w → P w → HiddenChannelCapacity.ReachOn 𝒞 P u w",
@@ -368,6 +570,12 @@
         "decl_name": "HiddenChannelCapacity.exists_min_path",
         "depth": 1,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∃ p, Q p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {Q : List ι → Prop}, (∃ p, Q p) → ∃ p, Q p ∧ ∀ (q : List ι), Q q → p.length ≤ q.length",
@@ -382,6 +590,33 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "doc": "A connector: an x-y path with interior inside `Q`, from adjacent entry points and\ninterior reachability.",
+        "hypotheses": [
+          {
+            "name": "hxy",
+            "pretty": "x ≠ y"
+          },
+          {
+            "name": "hxu",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 x u₁"
+          },
+          {
+            "name": "hyu",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 y u₂"
+          },
+          {
+            "name": "hreach",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 Q u₁ u₂"
+          },
+          {
+            "name": "hQx",
+            "pretty": "¬Q x"
+          },
+          {
+            "name": "hQy",
+            "pretty": "¬Q y"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -398,6 +633,21 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "doc": "If `x` has no neighbor reachable from `a` off the separator, then erasing `x` still\nseparates: the first `x`-occurrence on any violating path has its predecessor reachable\nfrom `a` and adjacent to `x`.",
+        "hypotheses": [
+          {
+            "name": "hxa",
+            "pretty": "x ≠ a"
+          },
+          {
+            "name": "hno",
+            "pretty": "∀ (u : ι), u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u"
+          },
+          {
+            "name": "hsep",
+            "pretty": "¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {S Sep : Finset ι} {a b x : ι},\n  x ≠ a →\n    (∀ (u : ι),\n        u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u) →\n      ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b →\n        ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep.erase x) a b",
@@ -413,6 +663,21 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "doc": "Every chained walk contains a duplicate-free path with the same endpoints and vertices.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.IsWalkOn 𝒞 P p"
+          },
+          {
+            "name": "a",
+            "pretty": "p.head? = some u"
+          },
+          {
+            "name": "a",
+            "pretty": "p.getLast? = some v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} (p : List ι),\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p →\n    ∀ {u v : ι}, p.head? = some u → p.getLast? = some v → HiddenChannelCapacity.ReachOn 𝒞 P u v",
@@ -424,6 +689,12 @@
         "decl_name": "HiddenChannelCapacity.isChain_drop",
         "depth": 3,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "List.IsChain R p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.drop n p)",
@@ -435,6 +706,12 @@
         "decl_name": "HiddenChannelCapacity.isChain_take",
         "depth": 3,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "List.IsChain R p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.take n p)",
@@ -446,6 +723,17 @@
         "decl_name": "HiddenChannelCapacity.head_getElem",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "Positional form of the head.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "p.head? = some x"
+          },
+          {
+            "name": "h0",
+            "pretty": "0 < p.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {p : List ι} {x : ι}, p.head? = some x → ∀ (h0 : 0 < p.length), p[0] = x",
@@ -457,6 +745,20 @@
         "decl_name": "HiddenChannelCapacity.gcast_list",
         "depth": 2,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "s < l.length"
+          },
+          {
+            "name": "ht",
+            "pretty": "t < l.length"
+          },
+          {
+            "name": "h",
+            "pretty": "s = t"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} (l : List ι) {s t : ℕ} (hs : s < l.length) (ht : t < l.length), s = t → l[s] = l[t]",
@@ -469,6 +771,12 @@
         "depth": 2,
         "dictionary_leaves": [
           "HiddenChannelCapacity.Adj"
+        ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 u v"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

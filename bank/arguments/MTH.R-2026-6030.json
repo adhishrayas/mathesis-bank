@@ -101,6 +101,72 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "decl_name": "ConceptClass",
+      "doc": "A concept class is a set of concepts. Used by every paradigm, complexity\nmeasure, and criterion.\n\nPrimary definition: Set of functions. Used for PAC/agnostic PAC where\nconcept classes are sets over which VC dimension, Rademacher complexity,\ncovering numbers, etc. are measured. Alternative definitions below for\ncontexts requiring decidability, enumerability, or measurability.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max v u)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Concept",
+      "doc": "A concept is a function from domain to label. This is the atomic unit that\nconcept classes collect and learners try to approximate.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max u v)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Halfspace.basisPoints",
+      "doc": "The `n` standard basis points `{Pi.single i 1 | i : Fin n}` of `ℝⁿ`. These are the witnesses\nfor the VC-dimension lower bound.",
+      "kind": "def",
+      "pretty": "(n : ℕ) → Finset (Fin n → ℝ)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Halfspace.coord",
+      "doc": "The `i`-th coordinate functional `x ↦ x i` on `Fin n → ℝ`, viewed as an element of the function\nspace `(Fin n → ℝ) → ℝ`.",
+      "kind": "def",
+      "pretty": "(n : ℕ) → Fin n → (Fin n → ℝ) → ℝ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Halfspace.coordSpace",
+      "doc": "The **coordinate space**: the span of the `n` coordinate functionals `(fun x => x i)` inside\n`(Fin n → ℝ) → ℝ`. This is the (dual) space of homogeneous linear functionals on `ℝⁿ`; its sign\nclass is exactly the family of homogeneous linear halfspaces.",
+      "kind": "def",
+      "pretty": "(n : ℕ) → Submodule ℝ ((Fin n → ℝ) → ℝ)",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters",
+      "doc": "A set S ⊆ X is shattered by concept class C if every labeling of S\nis realized by some concept in C.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → Finset X → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "VCDim",
+      "doc": "VC dimension of a concept class: the size of the largest shattered set.\nReturns ℕ∞ = WithTop ℕ.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → WithTop ℕ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "evalAt",
+      "doc": "Evaluation at a point `x : X` as a linear functional on `V`: `g ↦ (g : X → ℝ) x`.",
+      "kind": "def",
+      "pretty": "{X : Type u} → (V : Submodule ℝ (X → ℝ)) → X → ↥V →ₗ[ℝ] ℝ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "signClass",
+      "doc": "The sign-pattern concept class of a subspace `V ≤ (X → ℝ)`: all concepts of the form\n`x ↦ decide (0 < g x)` for some `g ∈ V`.",
+      "kind": "def",
+      "pretty": "{X : Type u} → Submodule ℝ (X → ℝ) → ConceptClass X Bool",
+      "role": "definition"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -111,6 +177,7 @@
         "VCDim",
         "signClass"
       ],
+      "doc": "**VC dimension of homogeneous linear halfspaces is exactly `n`** (Cover 1965;\nVapnik–Chervonenkis). The class `signClass (coordSpace n)` of homogeneous linear halfspaces of `ℝⁿ`\nhas VC dimension equal to the ambient dimension `n`: the Dudley bound gives `≤ n`, and the `n`\nstandard basis points are shattered, giving `≥ n`.",
       "is_root": true,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n",
@@ -126,6 +193,7 @@
         "VCDim",
         "signClass"
       ],
+      "doc": "**VC dimension of homogeneous linear halfspaces: the Dudley upper bound.**\n\nThe class of homogeneous linear halfspaces `x ↦ (0 < ⟨w, x⟩)` in `ℝⁿ` has VC dimension at most `n`.\nThis is the canonical instance of Dudley's bound (`vcDim_signClass_le`): the underlying function\nspace is `coordSpace n`, of dimension `n`. (Cover 1965; Vapnik–Chervonenkis.)",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) ≤ ↑n",
@@ -144,6 +212,7 @@
         "evalAt",
         "signClass"
       ],
+      "doc": "**Dudley's bound.** The VC dimension of the linear sign class of a finite-dimensional subspace\n`V ≤ (X → ℝ)` is at most `dim V`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {X : Type u} (V : Submodule ℝ (X → ℝ)) [FiniteDimensional ℝ ↥V], VCDim X (signClass V) ≤ ↑(Module.finrank ℝ ↥V)",
@@ -158,6 +227,7 @@
         "FLT.Halfspace.coord",
         "FLT.Halfspace.coordSpace"
       ],
+      "doc": "**The dimension of the coordinate space is `n`.** The coordinate functionals form the dual\nbasis of `ℝⁿ`, so their span has dimension `n`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), Module.finrank ℝ ↥(FLT.Halfspace.coordSpace n) = n",
@@ -171,6 +241,7 @@
       "dictionary_leaves": [
         "FLT.Halfspace.coord"
       ],
+      "doc": "**The coordinate functionals are linearly independent.** They are the dual basis of the\nstandard basis; concretely, evaluating a vanishing combination at each standard basis point\n`Pi.single j 1` isolates the `j`-th coefficient.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), LinearIndependent ℝ (FLT.Halfspace.coord n)",
@@ -184,6 +255,7 @@
       "dictionary_leaves": [
         "FLT.Halfspace.coord"
       ],
+      "doc": "Evaluating the `i`-th coordinate functional at the `j`-th standard basis point gives the\nidentity matrix: `coord n i (Pi.single j 1) = if i = j then 1 else 0`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ) (i j : Fin n), FLT.Halfspace.coord n i (Pi.single j 1) = if i = j then 1 else 0",
@@ -198,6 +270,7 @@
         "FLT.Halfspace.coord",
         "FLT.Halfspace.coordSpace"
       ],
+      "doc": "The coordinate space is finite-dimensional (it is the span of a finite family).",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), FiniteDimensional ℝ ↥(FLT.Halfspace.coordSpace n)",
@@ -215,6 +288,7 @@
         "VCDim",
         "signClass"
       ],
+      "doc": "**VC dimension of homogeneous linear halfspaces: the lower bound.** The `n` standard basis\npoints are shattered, so the VC dimension is at least `n`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), ↑n ≤ VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n))",
@@ -233,6 +307,7 @@
         "Shatters",
         "signClass"
       ],
+      "doc": "**The standard basis points are shattered by homogeneous halfspaces.** Given any labelling, the\n`±1`-weighted functional `g x = ∑ i, w i * x i` with `w i = ±1` selected by the label realises it:\n`g (Pi.single j 1) = w j`, and `0 < w j` iff the label is `true`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), Shatters (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) (FLT.Halfspace.basisPoints n)",
@@ -244,6 +319,7 @@
       "decl_name": "FLT.Halfspace.weighted_single",
       "depth": 3,
       "dictionary_leaves": [],
+      "doc": "A weighted functional evaluated at a standard basis point returns that point's weight:\n`(∑ i, w i * (Pi.single j 1) i) = w j`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ) (w : Fin n → ℝ) (j : Fin n), ∑ i, w i * Pi.single j 1 i = w j",
@@ -258,6 +334,7 @@
         "FLT.Halfspace.coord",
         "FLT.Halfspace.coordSpace"
       ],
+      "doc": "A `±1`-weighted coordinate functional belongs to the coordinate space. Concretely, for any\nweights `w : Fin n → ℝ`, the functional `x ↦ ∑ i, w i * x i` is a member of `coordSpace n`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ) (w : Fin n → ℝ), (fun x => ∑ i, w i * x i) ∈ FLT.Halfspace.coordSpace n",
@@ -271,6 +348,7 @@
       "dictionary_leaves": [
         "FLT.Halfspace.basisPoints"
       ],
+      "doc": "Each standard basis point lies in `basisPoints n`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ) (i : Fin n), Pi.single i 1 ∈ FLT.Halfspace.basisPoints n",
@@ -284,6 +362,7 @@
       "dictionary_leaves": [
         "FLT.Halfspace.basisPoints"
       ],
+      "doc": "There are exactly `n` standard basis points.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), (FLT.Halfspace.basisPoints n).card = n",
@@ -295,6 +374,7 @@
       "decl_name": "FLT.Halfspace.single_injective",
       "depth": 3,
       "dictionary_leaves": [],
+      "doc": "The map `i ↦ Pi.single i 1` is injective (the basis points are distinct).",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (n : ℕ), Function.Injective fun i => Pi.single i 1",

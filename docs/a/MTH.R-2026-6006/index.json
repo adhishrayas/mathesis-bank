@@ -75,6 +75,7 @@
           "HasNatarajanDimLE",
           "sixCycle"
         ],
+        "doc": "**`HasDSDimLE.hasNatarajanDimLE` has no converse.** The six-cycle on a two-point domain has\nNatarajan dimension `1`, a Natarajan witness on both points being a four-cycle, while its whole\ntrace family is a two-dimensional pseudo-cube, so its DS dimension is at least `2`.\n\nThis is the hexagon Brukhim, Carmon, Dinur, Moran and Yehudayoff record after their Definition 6,\nand the four-cycle test the proof turns on is their Example 7. Their Theorem 2 pushes the\nseparation to a class of Natarajan dimension `1` and infinite DS dimension; that construction\nrests on hyperbolic pseudo-manifolds and is cited in the module docstring rather than formalised\nhere.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∃ 𝒞, HasNatarajanDimLE 1 𝒞 ∧ ¬HasDSDimLE 1 𝒞",
@@ -108,6 +109,24 @@
           "sixCycle",
           "sixCycleEdge"
         ],
+        "hypotheses": [
+          {
+            "name": "hsh",
+            "pretty": "PairShatters sixCycle✝ P"
+          },
+          {
+            "name": "hsupp",
+            "pretty": "pairSupport P = Set.univ"
+          },
+          {
+            "name": "h0",
+            "pretty": "y₀ ∈ P 0"
+          },
+          {
+            "name": "h1",
+            "pretty": "y₁ ∈ P 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {P : Fin 2 → Set (Fin 6)},\n  PairShatters sixCycle✝ P →\n    pairSupport P = Set.univ → ∀ {y₀ y₁ : Fin 6}, y₀ ∈ P 0 → y₁ ∈ P 1 → sixCycleEdge✝ y₀ y₁ = true",
@@ -120,6 +139,24 @@
         "depth": 2,
         "dictionary_leaves": [
           "sixCycleEdge"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "sixCycleEdge✝ a c = true"
+          },
+          {
+            "name": "a",
+            "pretty": "sixCycleEdge✝ a d = true"
+          },
+          {
+            "name": "a",
+            "pretty": "sixCycleEdge✝ b c = true"
+          },
+          {
+            "name": "a",
+            "pretty": "sixCycleEdge✝ b d = true"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -163,6 +200,12 @@
         "dictionary_leaves": [
           "sixCycleEdge"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "sixCycleEdge✝ (c 0) (c 1) = true"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (c : Fin 2 → Fin 6),\n  sixCycleEdge✝ (c 0) (c 1) = true →\n    ∀ (i : Fin 2), ∃ c', sixCycleEdge✝ (c' 0) (c' 1) = true ∧ c' i ≠ c i ∧ ∀ (j : Fin 2), j ≠ i → c' j = c j",
@@ -176,6 +219,21 @@
         "dictionary_leaves": [
           "DSShatters",
           "IsPseudoCube"
+        ],
+        "doc": "A family whose members each have, in every direction, a neighbour in the family is\nDS-shattered on the whole domain.",
+        "hypotheses": [
+          {
+            "name": "hne",
+            "pretty": "𝒞.Nonempty"
+          },
+          {
+            "name": "hfin",
+            "pretty": "(Set.univ.restrict '' 𝒞).Finite"
+          },
+          {
+            "name": "hnbr",
+            "pretty": "∀ c ∈ 𝒞, ∀ (i : X), ∃ c' ∈ 𝒞, c' i ≠ c i ∧ ∀ (j : X), j ≠ i → c' j = c j"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

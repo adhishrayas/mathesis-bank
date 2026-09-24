@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "An analytic non-Borel subset of ℝ: the image of the Baire-space witness under the continuous injection. Analyticity transfers along the continuous image; non-Borelness transfers back along the injective preimage."
+  },
+  {
     "field": "claim.decl_name",
     "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
   },

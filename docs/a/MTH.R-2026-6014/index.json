@@ -676,6 +676,7 @@
           "KWLock.towerP",
           "KWLock.zerosOf"
         ],
+        "doc": "**The Ambainis composition lock, at every depth**: the product partition of the\n(d+1)-fold Ambainis iterate — the construction giving the multiplicative upper bound\non the partition number — is not the leaf partition of any deterministic protocol, for\nevery depth d. Index 0 is the base partition itself (a kernel-checked eight-rectangle\nmonochromatic partition of the base game); index 1 is the 64-rectangle object of the\ndepth-two frontier.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ (d : ℕ),\n  ¬∃ t,\n      KWLock.Realizes (KWLock.onesOf (KWLock.Fd 4 KWLock.fA (d + 1))) (KWLock.zerosOf (KWLock.Fd 4 KWLock.fA (d + 1)))\n        (KWLock.towerP 4 KWLock.fA KWLock.pA d) t",
@@ -704,6 +705,13 @@
           "KWLock.towerP",
           "KWLock.vval",
           "KWLock.zerosOf"
+        ],
+        "doc": "**The composition lock.** Under the base hypotheses, the product partition of the\n(d+1)-fold iterate is not the leaf partition of any deterministic protocol, for every\ndepth.",
+        "hypotheses": [
+          {
+            "name": "H",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -734,6 +742,13 @@
           "KWLock.vval",
           "KWLock.zerosOf"
         ],
+        "doc": "**Everything transfers up the tower**: at every depth the product partition is a\nvalid, monochromatic partition of the iterate's game, with both overlap graphs\nconnected and two distinct members.",
+        "hypotheses": [
+          {
+            "name": "H",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (k : ℕ) (f : (Fin k → Bool) → Bool) (P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))),\n  KWLock.TowerHyp k f P₀ →\n    ∀ (d : ℕ),\n      KWLock.IsPartition (KWLock.onesOf (KWLock.Fd k f (d + 1))) (KWLock.zerosOf (KWLock.Fd k f (d + 1)))\n          (KWLock.towerP k f P₀ d) ∧\n        KWLock.MonoValid (KWLock.vval k d) (KWLock.vval k d) (KWLock.towerP k f P₀ d) ∧\n          KWLock.RowConnected (KWLock.towerP k f P₀ d) ∧\n            KWLock.ColConnected (KWLock.towerP k f P₀ d) ∧\n              ∃ r ∈ KWLock.towerP k f P₀ d, ∃ s ∈ KWLock.towerP k f P₀ d, r ≠ s",
@@ -747,6 +762,13 @@
         "dictionary_leaves": [
           "KWLock.zerosOf"
         ],
+        "doc": "Pointwise-equal Boolean functions have equal zeros.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ (x : α), h₁ x = h₂ x"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type} [inst : Fintype α] {h₁ h₂ : α → Bool}, (∀ (x : α), h₁ x = h₂ x) → KWLock.zerosOf h₁ = KWLock.zerosOf h₂",
@@ -759,6 +781,13 @@
         "depth": 3,
         "dictionary_leaves": [
           "KWLock.onesOf"
+        ],
+        "doc": "Pointwise-equal Boolean functions have equal ones.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ (x : α), h₁ x = h₂ x"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -784,6 +813,37 @@
           "KWLock.onesOf",
           "KWLock.zerosOf"
         ],
+        "doc": "**The connectivity transfer, rows.** Outer connectivity plus block connectivity\n(both graphs of every block partition) yields row connectivity of the product.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "houter",
+            "pretty": "KWLock.RowConnected Po"
+          },
+          {
+            "name": "hrowQ",
+            "pretty": "∀ (i : Fin k), KWLock.RowConnected (Q i)"
+          },
+          {
+            "name": "hcolQ",
+            "pretty": "∀ (i : Fin k), KWLock.ColConnected (Q i)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          KWLock.RowConnected Po →\n            (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n              (∀ (i : Fin k), KWLock.ColConnected (Q i)) → KWLock.RowConnected (KWLock.compPartition g Po Q)",
@@ -808,6 +868,41 @@
           "KWLock.onesOf",
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
+        ],
+        "doc": "**The hop.** Outer rectangles sharing a row yield touching composed rectangles:\ndirectly across distinct blocks, and through a common block rectangle when the blocks\ncoincide (in which case the shared pattern forces equal orientations).",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hg2",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hSo",
+            "pretty": "So ∈ Po"
+          },
+          {
+            "name": "htouch",
+            "pretty": "KWLock.RowTouch Ro So"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -838,6 +933,45 @@
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
         ],
+        "doc": "Within one outer rectangle, composed rectangles over linked block rectangles are\nlinked: the cluster inherits the block partition's row graph in the standard\norientation and its column graph in the reversed one.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hrowQ",
+            "pretty": "∀ (i : Fin k), KWLock.RowConnected (Q i)"
+          },
+          {
+            "name": "hcolQ",
+            "pretty": "∀ (i : Fin k), KWLock.ColConnected (Q i)"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          },
+          {
+            "name": "hq'",
+            "pretty": "q' ∈ Q Ro.label"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n            (∀ (i : Fin k), KWLock.ColConnected (Q i)) →\n              ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n                Ro ∈ Po →\n                  ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label →\n                      q' ∈ Q Ro.label →\n                        Relation.ReflTransGen (KWLock.TStep KWLock.RowTouch (KWLock.compPartition g Po Q))\n                          (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')",
@@ -863,6 +997,41 @@
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
         ],
+        "doc": "Same-outer composed rectangles sharing a side value share a row.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hune",
+            "pretty": "Ro.rows.Nonempty"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          },
+          {
+            "name": "hv",
+            "pretty": "v₀ ∈ KWLock.rowSideSel Ro.orient q"
+          },
+          {
+            "name": "hv'",
+            "pretty": "v₀ ∈ KWLock.rowSideSel Ro.orient q'"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n          Ro ∈ Po →\n            Ro.rows.Nonempty →\n              ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                q ∈ Q Ro.label →\n                  ∀ {v₀ : V Ro.label},\n                    v₀ ∈ KWLock.rowSideSel Ro.orient q →\n                      v₀ ∈ KWLock.rowSideSel Ro.orient q' →\n                        KWLock.RowTouch (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')",
@@ -885,6 +1054,13 @@
           "KWLock.compPartition",
           "KWLock.compRect",
           "KWLock.rowSideSel"
+        ],
+        "doc": "**Labels transfer.** The composed partition is monochromatic at its physical\ncoordinates, under the composed valuation.",
+        "hypotheses": [
+          {
+            "name": "hQM",
+            "pretty": "∀ (i : Fin k), KWLock.MonoValid (vκ i) (vκ i) (Q i)"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -914,6 +1090,29 @@
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
         ],
+        "doc": "Distinctness transfers: children of two distinct outer rectangles are distinct,\nbecause their cells are nonempty and outer-disjoint.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hdist",
+            "pretty": "∃ r ∈ Po, ∃ s ∈ Po, r ≠ s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          (∃ r ∈ Po, ∃ s ∈ Po, r ≠ s) → ∃ r ∈ KWLock.compPartition g Po Q, ∃ s ∈ KWLock.compPartition g Po Q, r ≠ s",
@@ -927,6 +1126,25 @@
         "dictionary_leaves": [
           "KWLock.KRect",
           "KWLock.KRect.Cell"
+        ],
+        "doc": "Extract pairwise cell-disjointness for two distinct members.",
+        "hypotheses": [
+          {
+            "name": "hdisj",
+            "pretty": "List.Pairwise (fun r s => ∀ (x : X) (y : Y), ¬(r.Cell x y ∧ s.Cell x y)) P"
+          },
+          {
+            "name": "hr",
+            "pretty": "r ∈ P"
+          },
+          {
+            "name": "hs",
+            "pretty": "s ∈ P"
+          },
+          {
+            "name": "hne",
+            "pretty": "r ≠ s"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -956,6 +1174,25 @@
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
         ],
+        "doc": "**Validity transfers.** The product of a valid labeled outer partition with valid\nblock partitions is a valid partition of the composed game.",
+        "hypotheses": [
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n          KWLock.IsPartition (KWLock.onesOf (KWLock.compFun g f)) (KWLock.zerosOf (KWLock.compFun g f))\n            (KWLock.compPartition g Po Q)",
@@ -974,6 +1211,21 @@
           "KWLock.rowSideSel",
           "KWLock.zerosOf"
         ],
+        "doc": "A value on the row side of a block rectangle evaluates, under the block function,\nto the orientation — provided the block partition is contained in its game.",
+        "hypotheses": [
+          {
+            "name": "hr",
+            "pretty": "q.rows ⊆ KWLock.onesOf (g a)"
+          },
+          {
+            "name": "hc",
+            "pretty": "q.cols ⊆ KWLock.zerosOf (g a)"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ KWLock.rowSideSel o q"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → Fintype (V i)] {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool)\n  {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows ⊆ KWLock.onesOf (g a) →\n    q.cols ⊆ KWLock.zerosOf (g a) → ∀ (o : Bool) {v : V a}, v ∈ KWLock.rowSideSel o q → g a v = o",
@@ -989,6 +1241,13 @@
           "KWLock.KRect.cols",
           "KWLock.KRect.rows",
           "KWLock.rowSideSel"
+        ],
+        "doc": "Row sides of members of a valid block partition are nonempty.",
+        "hypotheses": [
+          {
+            "name": "hq",
+            "pretty": "q.rows.Nonempty ∧ q.cols.Nonempty"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1012,6 +1271,17 @@
           "KWLock.compPartition",
           "KWLock.compRect",
           "KWLock.rowSideSel"
+        ],
+        "doc": "Pairwise cell-disjointness transfers to the product: a shared composed cell\nprojects to a shared outer cell (across outer rectangles) or a shared block cell in the\norientation's order (within one outer rectangle).",
+        "hypotheses": [
+          {
+            "name": "houter",
+            "pretty": "List.Pairwise (fun r s => ∀ (x y : Fin k → Bool), ¬(r.Cell x y ∧ s.Cell x y)) Po"
+          },
+          {
+            "name": "hinner",
+            "pretty": "∀ (i : Fin k), List.Pairwise (fun r s => ∀ (x y : V i), ¬(r.Cell x y ∧ s.Cell x y)) (Q i)"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1047,6 +1317,12 @@
           "KWLock.KRect",
           "KWLock.KRect.Cell"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.IsPartition RX CY P"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → List.Pairwise (fun r s => ∀ (x : X) (y : Y), ¬(r.Cell x y ∧ s.Cell x y)) P",
@@ -1070,6 +1346,37 @@
           "KWLock.compRect",
           "KWLock.onesOf",
           "KWLock.zerosOf"
+        ],
+        "doc": "**The connectivity transfer, columns.**",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "houter",
+            "pretty": "KWLock.ColConnected Po"
+          },
+          {
+            "name": "hrowQ",
+            "pretty": "∀ (i : Fin k), KWLock.RowConnected (Q i)"
+          },
+          {
+            "name": "hcolQ",
+            "pretty": "∀ (i : Fin k), KWLock.ColConnected (Q i)"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1096,6 +1403,41 @@
           "KWLock.onesOf",
           "KWLock.zerosOf"
         ],
+        "doc": "The column mirror of `cross_step_row`.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hg2",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hSo",
+            "pretty": "So ∈ Po"
+          },
+          {
+            "name": "htouch",
+            "pretty": "KWLock.ColTouch Ro So"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n          ∀ {Ro So : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n            Ro ∈ Po →\n              So ∈ Po →\n                KWLock.ColTouch Ro So →\n                  ∀ {q : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label → ∃ p ∈ Q So.label, KWLock.ColTouch (KWLock.compRect g Ro q) (KWLock.compRect g So p)",
@@ -1108,6 +1450,25 @@
         "depth": 5,
         "dictionary_leaves": [
           "KWLock.blockPat"
+        ],
+        "doc": "Build a composed point with a prescribed block pattern and prescribed values at two\ndistinct blocks.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hne",
+            "pretty": "a₁ ≠ a₂"
+          },
+          {
+            "name": "h1",
+            "pretty": "g a₁ v₁ = u a₁"
+          },
+          {
+            "name": "h2",
+            "pretty": "g a₂ v₂ = u a₂"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1125,6 +1486,13 @@
           "KWLock.KRect.rows",
           "KWLock.colSideSel"
         ],
+        "doc": "Column sides of members of a valid block partition are nonempty.",
+        "hypotheses": [
+          {
+            "name": "hq",
+            "pretty": "q.rows.Nonempty ∧ q.cols.Nonempty"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V κ : Fin k → Type} {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows.Nonempty ∧ q.cols.Nonempty → ∀ (o : Bool), (KWLock.colSideSel o q).Nonempty",
@@ -1141,6 +1509,17 @@
           "KWLock.onesOf",
           "KWLock.zerosOf"
         ],
+        "doc": "Block partitions of a game with a surjective block function are nonempty lists.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → Fintype (V i)] {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool)\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) → ∀ (i : Fin k), Q i ≠ []",
@@ -1156,6 +1535,21 @@
           "KWLock.KRect",
           "KWLock.KRect.Cell"
         ],
+        "doc": "A valid nonempty-sided partition of a nonempty product is a nonempty list.",
+        "hypotheses": [
+          {
+            "name": "hP",
+            "pretty": "KWLock.IsPartition RX CY P"
+          },
+          {
+            "name": "hR",
+            "pretty": "RX.Nonempty"
+          },
+          {
+            "name": "hC",
+            "pretty": "CY.Nonempty"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → RX.Nonempty → CY.Nonempty → P ≠ []",
@@ -1170,6 +1564,20 @@
           "KWLock.IsPartition",
           "KWLock.KRect",
           "KWLock.KRect.Cell"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.IsPartition RX CY P"
+          },
+          {
+            "name": "a",
+            "pretty": "x ∈ RX"
+          },
+          {
+            "name": "a",
+            "pretty": "y ∈ CY"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1199,6 +1607,45 @@
           "KWLock.compRect",
           "KWLock.onesOf",
           "KWLock.zerosOf"
+        ],
+        "doc": "The column mirror of `cluster_linked_row`.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPo",
+            "pretty": "KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hrowQ",
+            "pretty": "∀ (i : Fin k), KWLock.RowConnected (Q i)"
+          },
+          {
+            "name": "hcolQ",
+            "pretty": "∀ (i : Fin k), KWLock.ColConnected (Q i)"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          },
+          {
+            "name": "hq'",
+            "pretty": "q' ∈ Q Ro.label"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1230,6 +1677,17 @@
           "KWLock.KRect",
           "KWLock.TStep"
         ],
+        "doc": "Along linkage from a member, every node is a member.",
+        "hypotheses": [
+          {
+            "name": "hr",
+            "pretty": "r ∈ P"
+          },
+          {
+            "name": "h",
+            "pretty": "Relation.ReflTransGen (KWLock.TStep T P) r s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop) {P : List (KWLock.KRect X Y ι)}\n  {r s : KWLock.KRect X Y ι}, r ∈ P → Relation.ReflTransGen (KWLock.TStep T P) r s → s ∈ P",
@@ -1254,6 +1712,41 @@
           "KWLock.compRect",
           "KWLock.onesOf",
           "KWLock.zerosOf"
+        ],
+        "doc": "Same-outer composed rectangles sharing a side value share a column.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hPoM",
+            "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po"
+          },
+          {
+            "name": "hQ",
+            "pretty": "∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)"
+          },
+          {
+            "name": "hRo",
+            "pretty": "Ro ∈ Po"
+          },
+          {
+            "name": "hune",
+            "pretty": "Ro.cols.Nonempty"
+          },
+          {
+            "name": "hq",
+            "pretty": "q ∈ Q Ro.label"
+          },
+          {
+            "name": "hv",
+            "pretty": "v₀ ∈ KWLock.colSideSel Ro.orient q"
+          },
+          {
+            "name": "hv'",
+            "pretty": "v₀ ∈ KWLock.colSideSel Ro.orient q'"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1287,6 +1780,17 @@
         "dictionary_leaves": [
           "KWLock.blockPat"
         ],
+        "doc": "Build a composed point with a prescribed block pattern and a prescribed value at\none block, from surjectivity of the block functions.",
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          },
+          {
+            "name": "hva",
+            "pretty": "g a v = u a"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {V : Fin k → Type} (g : (i : Fin k) → V i → Bool),\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    ∀ (u : Fin k → Bool) (a : Fin k) (v : V a), g a v = u a → ∃ w, KWLock.blockPat g w = u ∧ w a = v",
@@ -1304,6 +1808,21 @@
           "KWLock.colSideSel",
           "KWLock.onesOf",
           "KWLock.zerosOf"
+        ],
+        "doc": "A value on the column side of a block rectangle evaluates to the negated\norientation.",
+        "hypotheses": [
+          {
+            "name": "hr",
+            "pretty": "q.rows ⊆ KWLock.onesOf (g a)"
+          },
+          {
+            "name": "hc",
+            "pretty": "q.cols ⊆ KWLock.zerosOf (g a)"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ KWLock.colSideSel o q"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1347,6 +1866,16 @@
           "KWLock.KRect.cols",
           "KWLock.KRect.rows"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.IsPartition RX CY P"
+          },
+          {
+            "name": "a",
+            "pretty": "r ∈ P"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → ∀ r ∈ P, r.rows ⊆ RX ∧ r.cols ⊆ CY",
@@ -1361,6 +1890,12 @@
           "KWLock.KRect",
           "KWLock.RowConnected",
           "KWLock.TowerHyp"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1379,6 +1914,12 @@
           "KWLock.onesOf",
           "KWLock.zerosOf"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) P₀",
@@ -1392,6 +1933,12 @@
         "dictionary_leaves": [
           "KWLock.KRect",
           "KWLock.TowerHyp"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1408,6 +1955,12 @@
           "KWLock.MonoValid",
           "KWLock.TowerHyp"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.MonoValid (fun u i => u i) (fun u i => u i) P₀",
@@ -1421,6 +1974,12 @@
         "dictionary_leaves": [
           "KWLock.KRect",
           "KWLock.TowerHyp"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1437,6 +1996,12 @@
           "KWLock.KRect",
           "KWLock.TowerHyp"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.TowerHyp k f P₀"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.ColConnected P₀",
@@ -1451,6 +2016,13 @@
           "KWLock.Fd",
           "KWLock.Sp"
         ],
+        "doc": "The iterate is surjective at every level.",
+        "hypotheses": [
+          {
+            "name": "hf",
+            "pretty": "∀ (b : Bool), ∃ u, f u = b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (k : ℕ) (f : (Fin k → Bool) → Bool),\n  (∀ (b : Bool), ∃ u, f u = b) → ∀ (d : ℕ) (b : Bool), ∃ w, KWLock.Fd k f (d + 1) w = b",
@@ -1464,6 +2036,17 @@
         "dictionary_leaves": [
           "KWLock.blockPat",
           "KWLock.compFun"
+        ],
+        "doc": "Surjectivity composes.",
+        "hypotheses": [
+          {
+            "name": "hf",
+            "pretty": "∀ (b : Bool), ∃ u, f u = b"
+          },
+          {
+            "name": "hg",
+            "pretty": "∀ (i : Fin k) (b : Bool), ∃ v, g i v = b"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1486,6 +2069,25 @@
           "KWLock.Realizes",
           "KWLock.RowConnected"
         ],
+        "doc": "**The atomicity obstruction.** Any list of nonempty-sided rectangles with two\ndistinct members whose row-overlap graph and column-overlap graph are both connected\nis not the leaf list of any deterministic protocol — full partition validity is not\nneeded. At the root split, every leaf's live side lies within one half; sharing a row\n(column) forces the same half; connectivity drags every rectangle to one half; yet\nboth subtrees own a leaf.",
+        "hypotheses": [
+          {
+            "name": "hpne",
+            "pretty": "∀ r ∈ P, r.rows.Nonempty ∧ r.cols.Nonempty"
+          },
+          {
+            "name": "hrow",
+            "pretty": "KWLock.RowConnected P"
+          },
+          {
+            "name": "hcol",
+            "pretty": "KWLock.ColConnected P"
+          },
+          {
+            "name": "hdist",
+            "pretty": "∃ r ∈ P, ∃ s ∈ P, r ≠ s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} [inst : DecidableEq X] [inst_1 : DecidableEq Y] {RX : Finset X} {CY : Finset Y}\n  {P : List (KWLock.KRect X Y ι)},\n  (∀ r ∈ P, r.rows.Nonempty ∧ r.cols.Nonempty) →\n    KWLock.RowConnected P → KWLock.ColConnected P → (∃ r ∈ P, ∃ s ∈ P, r ≠ s) → ¬∃ t, KWLock.Realizes RX CY P t",
@@ -1502,6 +2104,21 @@
           "KWLock.RowTouch",
           "KWLock.TStep"
         ],
+        "doc": "Lying inside a fixed half of a row split is invariant along the row-overlap graph,\nprovided every member of `P` lies inside one half or the other: a shared row cannot be\non both sides.",
+        "hypotheses": [
+          {
+            "name": "hside",
+            "pretty": "∀ p ∈ P, p.rows ⊆ RX ∩ A ∨ p.rows ⊆ RX \\ A"
+          },
+          {
+            "name": "a",
+            "pretty": "Relation.ReflTransGen (KWLock.TStep KWLock.RowTouch P) p q"
+          },
+          {
+            "name": "a",
+            "pretty": "p.rows ⊆ RX ∩ A"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} [inst : DecidableEq X] {P : List (KWLock.KRect X Y ι)} {RX A : Finset X},\n  (∀ p ∈ P, p.rows ⊆ RX ∩ A ∨ p.rows ⊆ RX \\ A) →\n    ∀ {p q : KWLock.KRect X Y ι},\n      Relation.ReflTransGen (KWLock.TStep KWLock.RowTouch P) p q → p.rows ⊆ RX ∩ A → q.rows ⊆ RX ∩ A",
@@ -1517,6 +2134,21 @@
           "KWLock.KRect",
           "KWLock.KRect.cols",
           "KWLock.TStep"
+        ],
+        "doc": "The column mirror of `row_side_invariant`.",
+        "hypotheses": [
+          {
+            "name": "hside",
+            "pretty": "∀ p ∈ P, p.cols ⊆ CY ∩ B ∨ p.cols ⊆ CY \\ B"
+          },
+          {
+            "name": "a",
+            "pretty": "Relation.ReflTransGen (KWLock.TStep KWLock.ColTouch P) p q"
+          },
+          {
+            "name": "a",
+            "pretty": "p.cols ⊆ CY ∩ B"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1553,6 +2185,17 @@
           "KWLock.Protocol.brecOn.go",
           "KWLock.Protocol.leaves"
         ],
+        "doc": "Every leaf of a following protocol sits inside the current rectangle.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "KWLock.Protocol.Follows RX CY t"
+          },
+          {
+            "name": "a",
+            "pretty": "r ∈ t.leaves"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} [inst : DecidableEq X] [inst_1 : DecidableEq Y] {RX : Finset X} {CY : Finset Y}\n  (t : KWLock.Protocol X Y ι), KWLock.Protocol.Follows RX CY t → ∀ r ∈ t.leaves, r.rows ⊆ RX ∧ r.cols ⊆ CY",
@@ -1569,6 +2212,16 @@
           "KWLock.KRect.cols",
           "KWLock.KRect.rows"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "KWLock.IsPartition RX CY P"
+          },
+          {
+            "name": "a",
+            "pretty": "r ∈ P"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → ∀ r ∈ P, r.rows.Nonempty ∧ r.cols.Nonempty",
@@ -1584,6 +2237,7 @@
           "KWLock.fA",
           "KWLock.pA"
         ],
+        "doc": "The Ambainis base satisfies every tower hypothesis.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "KWLock.TowerHyp 4 KWLock.fA KWLock.pA",
@@ -1612,6 +2266,7 @@
           "KWLock.rA7",
           "KWLock.rA8"
         ],
+        "doc": "The row-overlap graph is connected: an explicit spanning walk.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "KWLock.RowConnected KWLock.pA",
@@ -1626,6 +2281,12 @@
           "KWLock.KRect",
           "KWLock.KRect.rows",
           "KWLock.RowTouch"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "KWLock.RowTouch r s"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1646,6 +2307,7 @@
           "KWLock.MonoValid",
           "KWLock.pA"
         ],
+        "doc": "Kernel re-check: every rectangle is monochromatic at its label, in its\norientation.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) KWLock.pA",
@@ -1668,6 +2330,7 @@
           "KWLock.pA",
           "KWLock.zerosOf"
         ],
+        "doc": "Kernel re-check: the eight rectangles form a valid partition of the Ambainis\ngame.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "KWLock.IsPartition (KWLock.onesOf KWLock.fA) (KWLock.zerosOf KWLock.fA) KWLock.pA",
@@ -1683,6 +2346,7 @@
           "KWLock.instDecidableEqKRect",
           "KWLock.pA"
         ],
+        "doc": "Two distinct members.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∃ r ∈ KWLock.pA, ∃ s ∈ KWLock.pA, r ≠ s",
@@ -1711,6 +2375,7 @@
           "KWLock.rA7",
           "KWLock.rA8"
         ],
+        "doc": "The column-overlap graph is connected: an explicit spanning walk.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "KWLock.ColConnected KWLock.pA",
@@ -1727,6 +2392,29 @@
           "KWLock.KRect",
           "KWLock.TStep"
         ],
+        "doc": "A spanning walk — inside `P`, visiting every member — yields connectivity.",
+        "hypotheses": [
+          {
+            "name": "hsymm",
+            "pretty": "∀ {r s : KWLock.KRect X Y ι}, T r s → T s r"
+          },
+          {
+            "name": "hne",
+            "pretty": "w ≠ []"
+          },
+          {
+            "name": "hwalk",
+            "pretty": "KWLock.IsWalk T w"
+          },
+          {
+            "name": "hin",
+            "pretty": "∀ r ∈ w, r ∈ P"
+          },
+          {
+            "name": "hcov",
+            "pretty": "∀ r ∈ P, r ∈ w"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop),\n  (∀ {r s : KWLock.KRect X Y ι}, T r s → T s r) →\n    ∀ {P w : List (KWLock.KRect X Y ι)},\n      w ≠ [] → KWLock.IsWalk T w → (∀ r ∈ w, r ∈ P) → (∀ r ∈ P, r ∈ w) → KWLock.ConnectedVia T P",
@@ -1742,6 +2430,21 @@
           "KWLock.KRect",
           "KWLock.TStep"
         ],
+        "doc": "The head of a walk inside `P` links to every element of the walk.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "KWLock.IsWalk T (a :: l)"
+          },
+          {
+            "name": "a",
+            "pretty": "∀ r ∈ a :: l, r ∈ P"
+          },
+          {
+            "name": "a",
+            "pretty": "b ∈ a :: l"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop) {P : List (KWLock.KRect X Y ι)}\n  {a : KWLock.KRect X Y ι} {l : List (KWLock.KRect X Y ι)},\n  KWLock.IsWalk T (a :: l) → (∀ r ∈ a :: l, r ∈ P) → ∀ b ∈ a :: l, Relation.ReflTransGen (KWLock.TStep T P) a b",
@@ -1755,6 +2458,21 @@
         "dictionary_leaves": [
           "KWLock.KRect",
           "KWLock.TStep"
+        ],
+        "doc": "From a member of `P`, every linked rectangle is a member, and the linkage reverses\nwhen the touch relation is symmetric.",
+        "hypotheses": [
+          {
+            "name": "hsymm",
+            "pretty": "∀ {r s : KWLock.KRect X Y ι}, T r s → T s r"
+          },
+          {
+            "name": "hr",
+            "pretty": "r ∈ P"
+          },
+          {
+            "name": "h",
+            "pretty": "Relation.ReflTransGen (KWLock.TStep T P) r s"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1771,6 +2489,12 @@
           "KWLock.KRect",
           "KWLock.KRect.cols"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "KWLock.ColTouch r s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X Y ι : Type} {r s : KWLock.KRect X Y ι}, KWLock.ColTouch r s → KWLock.ColTouch s r",
@@ -1784,6 +2508,7 @@
         "dictionary_leaves": [
           "KWLock.fA"
         ],
+        "doc": "The base function is surjective.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (b : Bool), ∃ u, KWLock.fA u = b",

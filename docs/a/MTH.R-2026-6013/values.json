@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6013"
   },
   {
+    "field": "claim.doc",
+    "value": "The Krapp–Wirth measurable-target separation holds unconditionally: the analytic non-Borel witness discharges the hypothesis of analytic_nonborel_set_gives_measTarget_separation."
+  },
+  {
     "field": "claim.decl_name",
     "value": "krappWirthSeparationMeasTarget_holds"
   },
@@ -380,6 +384,262 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairMeasure"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthSeparationMeasT…"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthV"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthWellBehaved"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsChoquetCapacity"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "baireMarkers"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "compactCap"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVCMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empErrGrid"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapGrid"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapSup"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "oneSidedGhostGap"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramBadEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramWitnessSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "planarWitnessEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "samplePair1ToPlane"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonBadEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonClassOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonConcept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroConcept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "krappWirthSeparationMeasTarget_holds"
   },
@@ -410,6 +670,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Main separation theorem. Given any analytic non-Borel set A ⊆ ℝ, the concept class obtained by parameterising singletonConcept (plus zeroConcept) over A is a concrete witness that WellBehavedVCMeasTarget is strictly weaker than the Krapp-Wirth Borel condition. The class is constructed as Set.range e for an evaluation map e : Bool × β → Concept ℝ Bool built from a Polish parameterisation of A; post-construction, Set.range e equals singletonClassOn (Set.range g) where g realises A.The class satisfies:MeasurableHypotheses: every individual hypothesis is Borel (singletonClassOn_measurable).WellBehavedVCMeasTarget: the bad event is analytic (planarWitnessEvent_analytic lifted via singleton_badEvent_eq_preimage_planar), hence NullMeasurableSet by the Choquet bridge.NOT KrappWirthWellBehaved: the bad event is not Borel (singleton_badEvent_not_measurable).The separation is realised by passing through the standard Borel space ℝ as the parameter space; the construction reuses no problem-specific fact beyond the existence of an analytic non-Borel subset of ℝ (Souslin's classical result), supplied in exists_measTarget_separation. The witness shows that the measurable-target variant proved in this kernel is a genuine improvement over the existing literature, not a restatement."
   },
   {
     "field": "argument_node.pretty",
@@ -504,6 +768,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "For A non-Borel, the singleton bad event is non-Borel. Combine singleton_badEvent_eq_preimage_planar with planarWitnessEvent_not_measurable: the preimage of a non-Borel set under a measurable surjection cannot itself be Borel."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (A : Set ℝ), ¬MeasurableSet A → ¬MeasurableSet (singletonBadEvent A)"
   },
@@ -542,6 +810,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The singleton bad event equals samplePair1ToPlane ⁻¹' planarWitnessEvent. The set equality that transports both analyticity and non-Borelness from the planar witness to the learning-theoretic bad event."
   },
   {
     "field": "argument_node.pretty",
@@ -594,6 +866,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "For A non-Borel, planarWitnessEvent A is non-Borel. The proof picks some a ∉ A and shows the vertical section y ↦ (a, y) pulls the planar event back to A itself: if the planar event were Borel, its preimage under this measurable map would be Borel too, contradicting the hypothesis on A."
   },
   {
     "field": "argument_node.pretty",
@@ -692,6 +968,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Class-level corollary: every Borel-parameterized concept class with a measurable evaluation map satisfies WellBehavedVCMeasTarget. Composes borel_param_nullMeasurableSet_bad_event over all measurable targets c. The measurable-target variant of WellBehavedVC is what the kernel actually proves; the unrestricted variant remains open and is the subject of the Borel-analytic separation witness in Theorem/BorelAnalyticSeparation.lean."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) → WellBehavedVCMeasTarget X (Set.range e)"
   },
@@ -740,6 +1020,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Positive bridge. If a concept class is parameterized by a Borel measurable map Θ → Concept X from a standard Borel space Θ, then the symmetrization bad event is analytic, hence NullMeasurableSet. The bad event is a Suslin projection of a Borel witness set (the projection along Θ of {(θ, p) | gap(eval θ, p) ≥ ε / 2}), and projections of Borel sets are analytic by definition. This is the entry point through which Borel parameterization implies the regularity required by the fundamental theorem."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool),\n      Measurable c →\n        ∀ (m : ℕ) (ε : ℝ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n          MeasureTheory.NullMeasurableSet (paramBadEvent e c m ε) (GhostPairMeasure D m)"
   },
@@ -780,6 +1064,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The bad event (projection of witness set) is analytic. Projection of a Borel set from a StandardBorelSpace is analytic (Suslin). This is the key step: existential quantification over parameters produces an analytic (Σ₁¹) set, which may not be Borel."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : TopologicalSpace X] [inst_1 : MeasurableSpace X] [BorelSpace X] [PolishSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool), Measurable c → ∀ (m : ℕ) (ε : ℝ), MeasureTheory.AnalyticSet (paramBadEvent e c m ε)"
   },
@@ -814,6 +1102,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The witness set {(θ, p) | ghost-gap ≥ ε/2} is MeasurableSet when the evaluation map e and target c are measurable. This is the Borel half of the Borel-analytic bridge."
   },
   {
     "field": "argument_node.pretty",
@@ -852,6 +1144,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Analytic subsets of the ghost sample space (Fin m → X) × (Fin m → X) are NullMeasurableSet under the product probability measure. A specialisation of analyticSet_nullMeasurableSet from PureMath/AnalyticMeasurability.lean to the type the symmetrization argument actually consumes."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : TopologicalSpace X] [inst_1 : MeasurableSpace X] [BorelSpace X] [PolishSpace X] {m : ℕ}\n  {s : Set ((Fin m → X) × (Fin m → X))},\n  MeasureTheory.AnalyticSet s →\n    ∀ (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n      MeasureTheory.NullMeasurableSet s (GhostPairMeasure D m)"
   },
@@ -876,6 +1172,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Analytic sets are null-measurable for finite Borel measures on Polish spaces. FLT-facing alias of the ZPM-canonical MeasureTheory.AnalyticSet.nullMeasurableSet."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ"
   },
@@ -896,6 +1196,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Analytic sets are null-measurable. For any finite Borel measure on a Polish space, every analytic set is NullMeasurableSet. Proof inner- approximates the analytic set by compacts, takes the union of approximators (a Borel set), and shows the difference is contained in a Borel null set.This is the abstract bridge that the entire Borel-analytic measurability layer of downstream learning-theory kernels rests on."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ"
   },
@@ -914,6 +1218,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Inner regularity for analytic sets: any analytic subset of a Polish space can be approximated from inside by a compact subset in measure, by any slack ε > 0. Specialisation of Choquet capacitability (Kechris 30.13) to the measure-as-capacity instance."
   },
   {
     "field": "argument_node.pretty",
@@ -938,6 +1246,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "For analytic sets, compact capacity equals measure."
   },
   {
     "field": "argument_node.pretty",
@@ -992,6 +1304,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Every finite Borel measure on a Polish space is a Choquet capacity."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  (μ : MeasureTheory.Measure α) [MeasureTheory.IsFiniteMeasure μ], MeasureTheory.IsChoquetCapacity fun s => μ s"
   },
@@ -1010,6 +1326,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Choquet capacitability. For analytic sets, capacity equals the supremum over compact subsets (Kechris 30.13)."
   },
   {
     "field": "argument_node.pretty",
@@ -1094,6 +1414,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The intersection of closures of cylinder images equals the compact image. Key lemma for the capacitability proof: uses truncation and sequential compactness."
   },
   {
     "field": "argument_node.pretty",
@@ -1384,6 +1708,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "An analytic non-Borel subset of ℝ: the image of the Baire-space witness under the continuous injection. Analyticity transfers along the continuous image; non-Borelness transfers back along the injective preimage."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
   },
@@ -1416,6 +1744,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "An analytic non-Borel subset of Baire space: the projection of the diagonal witness."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
   },
@@ -1436,6 +1768,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A closed set with a non-Borel projection. Diagonalize the universal closed set of (ℕ → ℕ) × (ℕ → ℕ): were the projection Borel, its complement would be analytic, hence the projection of a closed set, hence a section of the universal set — and evaluating that section at its own parameter is contradictory."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}"
   },
@@ -1454,6 +1790,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A universal closed set. Every second-countable space X carries a closed subset of X × (ℕ → ℕ) whose sections run through all closed subsets of X: enumerate a countable basis together with ∅, and let the parameter select which basis elements to exclude."
   },
   {
     "field": "argument_node.pretty",
@@ -1610,6 +1950,498 @@
   {
     "field": "argument_node.decl_name",
     "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Bounded functions set: {g : ℕ → ℕ | ∀ i, g i ≤ N i}."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → Set (ℕ → ℕ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept class is a set of concepts. Used by every paradigm, complexity measure, and criterion.Primary definition: Set of functions. Used for PAC/agnostic PAC where concept classes are sets over which VC dimension, Rademacher complexity, covering numbers, etc. are measured. Alternative definitions below for contexts requiring decidability, enumerability, or measurability."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max v u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Cylinder set: {g : ℕ → ℕ | ∀ i ≤ n, g i ≤ N i}."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → Set (ℕ → ℕ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Empirical error: average loss on a finite sample."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → (Y : Type v) → Concept X Y → {m : ℕ} → (Fin m → X × Y) → LossFunction Y → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept is a function from domain to label. This is the atomic unit that concept classes collect and learners try to approximate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairMeasure"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} →\n  [inst : MeasurableSpace X] → MeasureTheory.Measure X → (m : ℕ) → MeasureTheory.Measure ((Fin m → X) × (Fin m → X))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Ghost sample pairs: two independent samples of size m."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → ℕ → Type u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The ghost sample space at sample size m = 1: (Fin 1 → ℝ) × (Fin 1 → ℝ). The smallest sample size at which the singleton-class obstruction is already visible."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "OPEN QUESTION (measurable-target version): Does WellBehavedVCMeasTarget separate from KrappWirthWellBehaved? The Borel-analytic bridge (BorelAnalyticBridge.lean) closes this."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthV"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "V-measurability (one-sided): the ghost gap sup map is measurable."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthWellBehaved"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Krapp-Wirth well-behavedness: measurable hypotheses + V + U. Extends MeasurableHypotheses (L1). Strictly stronger than MeasurableConceptClass (our condition)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Every concept in C is a measurable function. Krapp-Wirth precondition: Γ(h) ∈ Σ_Z for all h ∈ H."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Bundled record of the three Choquet capacity axioms: monotonicity, sequential continuity from below along increasing unions, and sequential continuity from above along decreasing intersections of closed sets. The third axiom distinguishes a capacity from a general outer measure."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [TopologicalSpace α] → (Set α → ENNReal) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The marker bits: the indicator stream of the marker set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The marker sequence of x : ℕ → ℕ: the strictly increasing sequence n + 1 + ∑_{k ≤ n} x k, whose successive gaps encode x."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.compactCap"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Compact capacity of a set s relative to a measure μ: the supremum of μ K over compact subsets K ⊆ s. The inner-regularity functional whose equality with μ s characterises measurability for analytic sets."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [TopologicalSpace α] → [inst : MeasurableSpace α] → MeasureTheory.Measure α → Set α → ENNReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The embedding of Baire space into ℝ: marker bits into the base-3 expansion."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVCMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "WellBehavedVC restricted to measurable targets. This is the correct target for the Borel-analytic positive bridge: Borel parameterization ⇒ analytic bad event ⇒ NullMeasurableSet, but only when c is measurable (so the ghost-gap map is measurable)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Truncation: replace g i by min (g i) (N i) to bring any g into the bounded set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → (ℕ → ℕ) → ℕ → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empErrGrid"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℕ → Finset ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapGrid"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℕ → Finset ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapSup"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [MeasurableSpace X] → ConceptClass X Bool → Concept X Bool → (m : ℕ) → (Fin m → X) × (Fin m → X) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "oneSidedGhostGap"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [MeasurableSpace X] → Concept X Bool → Concept X Bool → (m : ℕ) → (Fin m → X) × (Fin m → X) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramBadEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The bad event in sample space: projection of the witness set. Existential over the parameter: {p | ∃ θ, gap(θ, p) ≥ ε/2}. This is analytic when the witness set is Borel (Theorem B)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} →\n  [MeasurableSpace X] →\n    {Θ : Type u_1} → [MeasurableSpace Θ] → (Θ → Concept X Bool) → Concept X Bool → (m : ℕ) → ℝ → Set (GhostPairs X m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramWitnessSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The witness set in parameter × sample space: {(θ, p) | EmpErr(h_θ, ghost, c) - EmpErr(h_θ, train, c) ≥ ε/2}. This is Borel when e and c are measurable (Theorem A)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} →\n  [MeasurableSpace X] →\n    {Θ : Type u_1} →\n      [MeasurableSpace Θ] → (Θ → Concept X Bool) → Concept X Bool → (m : ℕ) → ℝ → Set (Θ × GhostPairs X m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "planarWitnessEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The planar witness {(x, y) ∈ ℝ × ℝ | y ∈ A ∧ x ≠ y}. For A analytic non-Borel, this set is itself analytic non-Borel. The geometric core of the separation: the learning-theoretic bad event below is a measurable preimage of this planar set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Set ℝ → Set (ℝ × ℝ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "samplePair1ToPlane"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The projection GhostPairs1 → ℝ × ℝ, p ↦ (p.1 0, p.2 0). Surjective and measurable; non-Borelness of a target set transfers to non-Borelness of its preimage under a measurable surjection."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "GhostPairs1 → ℝ × ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonBadEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The symmetrization bad event for the singleton class at sample size m = 1, target concept zeroConcept, and threshold 1/2. Equals the preimage of planarWitnessEvent under samplePair1ToPlane (see singleton_badEvent_eq_preimage_planar), and inherits both analyticity and non-Borelness from the planar set when A is analytic non-Borel."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Set ℝ → Set GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonClassOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The singleton class over A ⊆ ℝ: {zeroConcept} ∪ {singletonConcept a | a ∈ A}. The zeroConcept disjunct is the target concept against which the symmetrization bad event is measured. For A analytic non-Borel, this is the witness used to separate WellBehavedVCMeasTarget from the Krapp-Wirth Borel condition."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Set ℝ → ConceptClass ℝ Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonConcept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The point indicator singletonConcept a x = (x = a). Each singletonConcept a is itself Borel measurable; non-Borelness in the singleton-class witness comes from quantifying over a ∈ A for A analytic non-Borel, not from any individual concept."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℝ → Concept ℝ Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroConcept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The constantly false concept. The base hypothesis of the singleton class, serving both as the target concept and as the zeroConcept disjunct of singletonClassOn."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Concept ℝ Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The 0-1 loss for classification."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(Y : Type v) → [DecidableEq Y] → LossFunction Y"
   },
   {
     "field": "argument.accession",

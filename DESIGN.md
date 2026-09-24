@@ -110,11 +110,12 @@ Rules that make this buildable and keep the two renderers identical:
 
 ## 2. Typography
 
-**Faces.** Text is set in the system's Times; code is self-hosted woff2, subsetted, `font-display: swap`.
+**Faces.** Text is set in the system's Times, falling back to self-hosted Tinos; code is self-hosted JuliaMono. Every
+self-hosted face is woff2, subsetted, `font-display: swap`.
 
 | Role | Family | Files | Why |
 |---|---|---|---|
-| Text | **Times New Roman**, then Times, Liberation Serif, Nimbus Roman, TeX Gyre Termes, Tinos, `serif` (`--font-serif`) | none: a system face | The record reads as a book of arguments, not a console; the stack's later faces are Times's metric twins, so a machine without Times New Roman sets the same line lengths |
+| Text | **Times New Roman**, then Times, then **Tinos** (self-hosted), Liberation Serif, Nimbus Roman, TeX Gyre Termes, `serif` (`--font-serif`) | `tinos-400-latin.woff2`, `tinos-700-latin.woff2` (SIL OFL 1.1, `TINOS-LICENSE.txt` beside them) | The record reads as a book of arguments, not a console. Tinos has Times New Roman's metrics, so a machine without Times sets the same line lengths; a machine with it never fetches Tinos |
 | Code / Lean | **JuliaMono** | `julia-mono-400-latin.woff2`, `julia-mono-400-math.woff2`, `julia-mono-700-latin.woff2` | The only widely available mono with real coverage of Lean's operator/blackboard/script glyphs (`∀ ℕ ↔ ⊢ ≤ 𝓕 ⟨⟩ ↦ ⁻¹ ε`); no tofu, no mid-line metric change |
 
 G1 split (two `@font-face` blocks per weight):
@@ -150,6 +151,7 @@ as the characters Lean emitted.
 | `text-code-sm` | 12 / 1.5 | `pre[data-role=log]`, `pre[data-role=report]`, DAG list-node statements |
 | `text-code` | 13 / **1.55** | `pre[data-role=lean-statement]`, Monaco, infoview |
 | `text-code-lg` | 14 / 1.6 | claim statement on a landing page (region 1, unclamped) |
+| `text-code-inline` | 0.85em | code inside a docstring: follows the prose it sits in |
 
 Weights: 400 body, 500 labels/`<dt>`/table headers, 600 headings and the wordmark, 700 only inside `.record-prose`
 `<strong>`. Letter-spacing: `0` for text, `+0.06em` on the uppercase terms, `+0.02em` on sha256 prefixes.
@@ -255,8 +257,8 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
 
 @theme {
   /* ---------- type ---------- */
-  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
-    "TeX Gyre Termes", Tinos, serif;
+  --font-serif: "Times New Roman", Times, Tinos, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
+    "TeX Gyre Termes", serif;
   --font-mono: "JuliaMono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --text-2xs: 0.8125rem;      --text-2xs--line-height: 1.25rem;
@@ -447,7 +449,7 @@ export default {
         "border-control":"var(--color-border-control)", link:"var(--color-link)",
       },
       fontFamily: {
-        serif: ['Times New Roman','Times','Liberation Serif','Nimbus Roman','Nimbus Roman No9 L','TeX Gyre Termes','Tinos','serif'],
+        serif: ['Times New Roman','Times','Tinos','Liberation Serif','Nimbus Roman','Nimbus Roman No9 L','TeX Gyre Termes','serif'],
         mono: ['JuliaMono','JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','Consolas','monospace'],
       },
       fontSize: {
@@ -487,7 +489,11 @@ Three kinds of visible string exist and no fourth (SPEC §8):
 
 1. a catalogue entry from `labels.ts` / `crates/record/labels.json`;
 2. a data value inside `[data-value="true"][data-field="<field>"]`, matching the page's sibling `values.json`
-   byte for byte (generated tree) or the field's declared shape (DOM snapshots);
+   byte for byte (generated tree) or the field's declared shape (DOM snapshots). A **docstring** is such a
+   value: the author's own words from the verified source (`claim.doc`, `argument_node.doc`,
+   `dictionary_constant.doc`, shape `docstring`), attributed to them, rendered from a closed Markdown subset
+   (paragraphs, lists, code, strong, emphasis, http(s) links; everything else escaped) and, like a Lean
+   statement, exempt from the four-word and vocabulary rules — they are not the platform's prose;
 3. a reason message inside `<p data-role="error">`, rendered by `renderReason(code, params)`.
 
 Design consequences, all load-bearing:
@@ -821,11 +827,29 @@ non-terminal) · terminal.
 .mth-dag-inspector  .mth-panel beside/below the viewport; renders exactly the List row's fields for the
                     focused node — no new field, no new string
 .mth-dag-list       <ol> topological; each <li> = .mth-panel with decl · Declaration kind ·
+                    the step's docstring (not the thesis's: it opens the post) ·
                     .mth-lean--node (clamp-3 in the stream) · Uses / Used by <details> · leaf chips
+                    (a chip with no blueprint anchor links to its leaf's item); after the steps, one item
+                    per hypothesis of the thesis and one per definition or cited result, each with its
+                    role chip, docstring, statement and — for a cited result — its author (.mth-person)
 ```
 
+**Roles.** The graph draws every part of the argument, not only its steps:
+
+| Role | Vertex | Placed | Colour (`--color-role-*`) |
+|---|---|---|---|
+| «Thesis» | the root | depth 0 | thesis: accent ground, accent border, 1.5px |
+| «Step» | every other theorem the argument proves | its depth | neutral |
+| «Hypothesis» | each Prop-typed binder of the thesis (`argument_hypothesis.*`) | depth 1, edge from the thesis | amber |
+| «Definition» | a definition a step uses | one column right of the deepest step using it | teal |
+| «Cited result» | a result by another author a step uses | one column right of the deepest step using it | violet |
+
+A legend (`.mth-dag__legend`, `.mth-role`) names the roles the argument has; the list's items carry the same
+colours as a 3px rail. A hypothesis box shows its type cut to 26 characters (`argument_hypothesis.label`, shape
+`lean-term`) over its binder name; the list carries the full type.
+
 Layout is deterministic (SPEC §8.5: `x = 24 + depth·260`, `y = 24 + order·112`, one down and one up barycenter pass,
-ties by decl byte order) and the geometry lives in `--dag-*` tokens so CSS and generator cannot drift.
+ties by vertex id byte order) and the geometry lives in `--dag-*` tokens so CSS and generator cannot drift.
 
 States: `Graph` · `List` · per-node collapsed/expanded · `Expand all` / `Collapse all` · node focused
 (inspector updates, incident edges hot) · **oversized** (`nodes > 400 || edges > 4000`: the `Graph` option renders
@@ -1023,6 +1047,8 @@ citation and a small verification section live. Two regions follow the header:
 
 ```
 REGION 1  .mth-card__region — Claim
+  words .mth-docstring--thesis  {claim.doc}      the author's docstring, text-lg; a second paragraph
+                                                 (lineage, departures) text-sm muted; absent → nothing
   meta  .mth-metric  «Decl» {claim.decl_name}    .mth-value--mono, CSS-truncated (G10)
         «Copy»  .mth-copy   → {clipboard.state} = Copied for 2s
   body  stream:  .mth-lean-clamp--12 wrapper + <pre .mth-lean--claim data-field="claim.pretty">

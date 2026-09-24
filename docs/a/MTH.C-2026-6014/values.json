@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The Ambainis composition lock, at every depth: the product partition of the (d+1)-fold Ambainis iterate — the construction giving the multiplicative upper bound on the partition number — is not the leaf partition of any deterministic protocol, for every depth d. Index 0 is the base partition itself (a kernel-checked eight-rectangle monochromatic partition of the base game); index 1 is the 64-rectangle object of the depth-two frontier."
+  },
+  {
     "field": "claim.decl_name",
     "value": "KWLock.ambainis_tower_locked"
   },

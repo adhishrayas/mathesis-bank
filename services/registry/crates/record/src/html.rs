@@ -157,6 +157,33 @@ impl B {
         self
     }
 
+    /// A docstring: the author's own words, rendered by `doc::render`. Its field
+    /// must be of shape `docstring` — exempt from the prose rules because the
+    /// words are the author's, attributed to them, not the platform's.
+    pub fn doc(&mut self, field: &str, md: &str, class: &str) -> &mut B {
+        let def = fields()
+            .iter()
+            .find(|f| f.field == field)
+            .unwrap_or_else(|| panic!("no catalogue field `{field}`"));
+        assert_eq!(
+            def.shape, "docstring",
+            "field `{field}` is not of shape docstring"
+        );
+        let (html, text) = crate::doc::render(md);
+        self.values.push((field.to_string(), text));
+        let class = if class.is_empty() {
+            String::new()
+        } else {
+            format!(" {class}")
+        };
+        self.s.push_str(&format!(
+            "<div class=\"mth-docstring{class}\" data-value=\"true\" data-field=\"{field}\">"
+        ));
+        self.s.push_str(&html);
+        self.s.push_str("</div>");
+        self
+    }
+
     /// A `<dt>` label with a `<dd>` value: the shape every verification row has,
     /// so no compound string is ever a single label.
     pub fn row(&mut self, key: &str, field: &str, v: &str) -> &mut B {

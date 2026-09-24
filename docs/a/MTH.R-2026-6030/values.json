@@ -36,6 +36,10 @@
     "value": "Yaël Dillies"
   },
   {
+    "field": "claim.doc",
+    "value": "VC dimension of homogeneous linear halfspaces is exactly n (Cover 1965; Vapnik–Chervonenkis). The class signClass (coordSpace n) of homogeneous linear halfspaces of ℝⁿ has VC dimension equal to the ambient dimension n: the Dudley bound gives ≤ n, and the n standard basis points are shattered, giving ≥ n."
+  },
+  {
     "field": "claim.decl_name",
     "value": "FLT.Halfspace.vcDim_halfspace_eq"
   },
@@ -160,6 +164,78 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "basisPoints"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "coord"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "coordSpace"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "evalAt"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "FLT.Halfspace.vcDim_halfspace_eq"
   },
@@ -198,6 +274,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "VC dimension of homogeneous linear halfspaces: the Dudley upper bound.The class of homogeneous linear halfspaces x ↦ (0 < ⟨w, x⟩) in ℝⁿ has VC dimension at most n. This is the canonical instance of Dudley's bound (vcDim_signClass_le): the underlying function space is coordSpace n, of dimension n. (Cover 1965; Vapnik–Chervonenkis.)"
   },
   {
     "field": "argument_node.pretty",
@@ -240,6 +320,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Dudley's bound. The VC dimension of the linear sign class of a finite-dimensional subspace V ≤ (X → ℝ) is at most dim V."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} (V : Submodule ℝ (X → ℝ)) [FiniteDimensional ℝ ↥V], VCDim X (signClass V) ≤ ↑(Module.finrank ℝ ↥V)"
   },
@@ -280,6 +364,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The dimension of the coordinate space is n. The coordinate functionals form the dual basis of ℝⁿ, so their span has dimension n."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ), Module.finrank ℝ ↥(FLT.Halfspace.coordSpace n) = n"
   },
@@ -308,6 +396,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The coordinate functionals are linearly independent. They are the dual basis of the standard basis; concretely, evaluating a vanishing combination at each standard basis point Pi.single j 1 isolates the j-th coefficient."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ), LinearIndependent ℝ (FLT.Halfspace.coord n)"
   },
@@ -332,6 +424,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Evaluating the i-th coordinate functional at the j-th standard basis point gives the identity matrix: coord n i (Pi.single j 1) = if i = j then 1 else 0."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ) (i j : Fin n), FLT.Halfspace.coord n i (Pi.single j 1) = if i = j then 1 else 0"
   },
@@ -350,6 +446,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The coordinate space is finite-dimensional (it is the span of a finite family)."
   },
   {
     "field": "argument_node.pretty",
@@ -374,6 +474,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "VC dimension of homogeneous linear halfspaces: the lower bound. The n standard basis points are shattered, so the VC dimension is at least n."
   },
   {
     "field": "argument_node.pretty",
@@ -418,6 +522,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The standard basis points are shattered by homogeneous halfspaces. Given any labelling, the ±1-weighted functional g x = ∑ i, w i * x i with w i = ±1 selected by the label realises it: g (Pi.single j 1) = w j, and 0 < w j iff the label is true."
   },
   {
     "field": "argument_node.pretty",
@@ -472,6 +580,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A weighted functional evaluated at a standard basis point returns that point's weight: (∑ i, w i * (Pi.single j 1) i) = w j."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ) (w : Fin n → ℝ) (j : Fin n), ∑ i, w i * Pi.single j 1 i = w j"
   },
@@ -486,6 +598,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A ±1-weighted coordinate functional belongs to the coordinate space. Concretely, for any weights w : Fin n → ℝ, the functional x ↦ ∑ i, w i * x i is a member of coordSpace n."
   },
   {
     "field": "argument_node.pretty",
@@ -512,6 +628,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Each standard basis point lies in basisPoints n."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ) (i : Fin n), Pi.single i 1 ∈ FLT.Halfspace.basisPoints n"
   },
@@ -530,6 +650,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "There are exactly n standard basis points."
   },
   {
     "field": "argument_node.pretty",
@@ -556,12 +680,164 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The map i ↦ Pi.single i 1 is injective (the basis points are distinct)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (n : ℕ), Function.Injective fun i => Pi.single i 1"
   },
   {
     "field": "argument_node.decl_name",
     "value": "FLT.Halfspace.card_basisPoints"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept class is a set of concepts. Used by every paradigm, complexity measure, and criterion.Primary definition: Set of functions. Used for PAC/agnostic PAC where concept classes are sets over which VC dimension, Rademacher complexity, covering numbers, etc. are measured. Alternative definitions below for contexts requiring decidability, enumerability, or measurability."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max v u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept is a function from domain to label. This is the atomic unit that concept classes collect and learners try to approximate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.basisPoints"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The n standard basis points {Pi.single i 1 | i : Fin n} of ℝⁿ. These are the witnesses for the VC-dimension lower bound."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(n : ℕ) → Finset (Fin n → ℝ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The i-th coordinate functional x ↦ x i on Fin n → ℝ, viewed as an element of the function space (Fin n → ℝ) → ℝ."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(n : ℕ) → Fin n → (Fin n → ℝ) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The coordinate space: the span of the n coordinate functionals (fun x => x i) inside (Fin n → ℝ) → ℝ. This is the (dual) space of homogeneous linear functionals on ℝⁿ; its sign class is exactly the family of homogeneous linear halfspaces."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(n : ℕ) → Submodule ℝ ((Fin n → ℝ) → ℝ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set S ⊆ X is shattered by concept class C if every labeling of S is realized by some concept in C."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → ConceptClass X Bool → Finset X → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "VC dimension of a concept class: the size of the largest shattered set. Returns ℕ∞ = WithTop ℕ."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → ConceptClass X Bool → WithTop ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "evalAt"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Evaluation at a point x : X as a linear functional on V: g ↦ (g : X → ℝ) x."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → (V : Submodule ℝ (X → ℝ)) → X → ↥V →ₗ[ℝ] ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The sign-pattern concept class of a subspace V ≤ (X → ℝ): all concepts of the form x ↦ decide (0 < g x) for some g ∈ V."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → Submodule ℝ (X → ℝ) → ConceptClass X Bool"
   },
   {
     "field": "argument.accession",

@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6025"
   },
   {
+    "field": "claim.doc",
+    "value": "d = 1 universality: every VC-1 class compresses at kernel size one, with no side information. No finiteness, no distinguished member, no chain hypothesis. Twist the class by any member to place ∅ in it; there the VC bound makes co-member points comparable in the membership order, so every label set is a finite chain; anchor at its maximum, reconstruct with interConvention, and transport the scheme back with the same kernels."
+  },
+  {
     "field": "claim.decl_name",
     "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
   },
@@ -50,6 +54,14 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "StructuralIgnorance.vcBou…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h"
   },
   {
     "field": "argument_node.decl_name",
@@ -164,6 +176,94 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "Convention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasKernelScheme"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsKernel"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsSample"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SetShatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "baseLabels"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "interConvention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "memOrder"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "twistClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "twistConvention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "vcBounded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
   },
@@ -240,6 +340,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "VC bounds are twist-invariant (the direction needed for normalization)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)} {d : ℕ},\n  StructuralIgnorance.vcBounded 𝒜 d →\n    ∀ (S₀ : Set α), StructuralIgnorance.vcBounded (StructuralIgnorance.twistClass 𝒜 S₀) d"
   },
@@ -270,6 +374,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Shattering transports from the twisted class back to the original: the witnesses untwist, and the patterns correspond through the involution C ↦ C ∆ (B ∩ S₀)."
   },
   {
     "field": "argument_node.pretty",
@@ -304,6 +412,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "With the empty set in the class, a VC bound of one makes any two points of a common member comparable in the membership order: otherwise the four assembled patterns shatter the pair."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 →\n    ∅ ∈ 𝒜 →\n      ∀ {a b : α}, (∃ S ∈ 𝒜, a ∈ S ∧ b ∈ S) → StructuralIgnorance.memOrder 𝒜 a b ∨ StructuralIgnorance.memOrder 𝒜 b a"
   },
@@ -334,6 +446,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The anchor leg of the intersection convention: a maximum of the label set in the membership order is a size-1 kernel. The upper inclusion comes from the realizing member, the lower from maximality."
   },
   {
     "field": "argument_node.pretty",
@@ -372,6 +488,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Realizable label patterns are supported inside their window."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A T : Finset α}, StructuralIgnorance.IsSample 𝒜 A T → T ⊆ A"
   },
@@ -390,6 +510,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A finite nonempty set on which the membership order is total has a maximum."
   },
   {
     "field": "argument_node.pretty",
@@ -464,6 +588,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Twisting by a member places the empty set in the class."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {S₀ : Set α}, S₀ ∈ 𝒜 → ∅ ∈ StructuralIgnorance.twistClass 𝒜 S₀"
   },
@@ -482,6 +610,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Kernel schemes transport back through a twist, with the same kernels."
   },
   {
     "field": "argument_node.pretty",
@@ -576,6 +708,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Realizability transports through the twist, with the label set twisted inside the window."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)} {A T : Finset α},\n  StructuralIgnorance.IsSample 𝒜 A T →\n    ∀ (S₀ : Set α),\n      StructuralIgnorance.IsSample (StructuralIgnorance.twistClass 𝒜 S₀) A\n        (symmDiff T (StructuralIgnorance.baseLabels S₀ A))"
   },
@@ -626,6 +762,190 @@
   {
     "field": "argument_node.decl_name",
     "value": "StructuralIgnorance.SetShatters.of_twistClass"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "StructuralIgnorance.vcBounded 𝒜 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.Convention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A reconstruction rule: from a kept labeled pair — kernel points and their 1-labeled part — to a total hypothesis. Total by convention; only values on realizable pairs matter."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u_2 → Type u_2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.HasKernelScheme"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A kernel scheme of size k with no side information: one reconstruction rule under which every realizable sample contains a generating kernel of at most k points (Littlestone–Warmuth 1986, in compression-map-free form)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [DecidableEq α] → Set (Set α) → ℕ → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsKernel"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ρ regenerates the sample (A, T) from the kernel Z: the kernel is kept inside the sample, has at most k points, and the reconstructed hypothesis meets A in exactly T."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [DecidableEq α] → StructuralIgnorance.Convention α → ℕ → Finset α → Finset α → Finset α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The labeled window (A, T) is realizable in 𝒜: some member meets A in exactly T. Points of T are labeled 1, points of A \\ T are labeled 0 (Littlestone–Warmuth 1986, realizable samples)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → Finset α → Finset α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.SetShatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The class 𝒜 shatters the finite set B: every sub-pattern of B is realized by a member. Set-grammar port of Finset.Shatters (Mathlib Combinatorics.SetFamily.Shatter)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → Finset α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.baseLabels"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The part of a finite window lying in the base set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set α → Finset α → Finset α"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.interConvention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Reconstruction by intersection: the hypothesis is the intersection of all members containing the kernel's 1-labeled part. Improper — the output need not be a member — which is what dense chains require; the kernel's point set is not consulted beyond its labels."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → StructuralIgnorance.Convention α"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The membership order of a class: a lies below b when every member containing b contains a."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → α → α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The class relabeled by symmetric difference with a base set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → Set α → Set (Set α)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistConvention"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The conjugated convention: untwist the kernel's labels, reconstruct in the twisted class, twist the hypothesis back."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [DecidableEq α] → Set α → StructuralIgnorance.Convention α → StructuralIgnorance.Convention α"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.vcBounded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "VC bound in Set grammar: no shattered set exceeds d points (the port of Finset.vcDim ≤ d, Mathlib Combinatorics.SetFamily.Shatter)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → Set (Set α) → ℕ → Prop"
   },
   {
     "field": "argument.accession",

@@ -36,6 +36,10 @@
     "value": "Yaël Dillies"
   },
   {
+    "field": "claim.doc",
+    "value": "No cardinal function strictly smaller than ded bounds the traces of a family of finite VC dimension. For every infinite κ and every lam < ded κ there is a family of VC dimension 1 on a ground set of size exactly κ tracing more than lam sets. Together with HasVCDimLE.mk_image_inter_le_ded, which caps those traces at ded #A, this places ded at the exact strength of the bound.The conclusion cannot be strengthened to a family tracing exactly ded κ sets. Chernikov and Shelah, On the number of Dedekind cuts and two-cardinal models of dependent theories, note after their definition of ded κ that \"in general the supremum need not be attained\", so at such a κ no family attains it and quantifying below the supremum is the available form. At κ = ℵ₀ the supremum is attained, by mk_image_inter_range_cut_eq_ded."
+  },
+  {
     "field": "claim.decl_name",
     "value": "no_smaller_bound"
   },
@@ -54,6 +58,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "Cardinal.aleph0 ≤ κ"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hκ"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "lam < ded κ"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h"
   },
   {
     "field": "argument_node.decl_name",
@@ -296,6 +316,110 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padCuts"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padGround"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "no_smaller_bound"
   },
@@ -396,6 +520,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The witness attached to a strictly dense subset: a family of VC dimension 1 on a ground set of size exactly κ whose traces are at least as many as the points of J."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ →\n    Cardinal.mk ↑E ≤ κ →\n      IsStrictlyDenseIn E →\n        ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ Cardinal.mk J ≤ Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)"
   },
@@ -484,6 +612,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A point of E strictly between j and j' separates the two traces: it lies in the trace at j' and, being above j, not in the trace at j."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {J P : Type u} [inst : LinearOrder J] {E : Set J} {j j' e : J},\n  e ∈ E → j < e → e < j' → padGround✝ E ∩ Sum.inl '' {a | a < j} ≠ padGround✝ E ∩ Sum.inl '' {a | a < j'}"
   },
@@ -502,6 +634,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A family linearly ordered by inclusion has VC dimension at most 1. Shattering a two point set asks for a member meeting it in the first point alone and a member meeting it in the second point alone; whichever of the two members is contained in the other already contains its own point, so it meets the set in both. This is why the extremal families for ded are families of cuts: the number of cuts is exactly what a chain in a linear order can achieve."
   },
   {
     "field": "argument_node.pretty",
@@ -526,6 +662,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The convention question is empty at infinite cardinals: ded and ded' agree there. It is not empty in general, by ded'_one_lt_ded_one."
   },
   {
     "field": "argument_node.pretty",
@@ -558,6 +698,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The two readings of \"dense subset\" define the same cardinal function at every infinite cardinal. Every bracketing witness is turned into a strict witness of at least its size by mk_le_ded'_of_isDenseIn, at the cost of a countable factor in the dense subset, which an infinite κ absorbs."
   },
   {
     "field": "argument_node.pretty",
@@ -686,6 +830,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The defining property of ded': a linear order with a strictly dense subset of size at most κ has at most ded' κ points."
   },
   {
     "field": "argument_node.pretty",
@@ -868,6 +1016,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The heart of the comparison: in the blow-up, every pair is separated strictly by a point lying over E. The three cases of the bracketing witness d are a < d < b, where the fibre over d supplies the point; d = a, where the point is taken higher in the fibre over a; and d = b, where it is taken lower in the fibre over b."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J},\n  IsDenseIn E →\n    ∀ {u v : Lex (J × ℚ)}, u ∈ fatten✝ E → v ∈ fatten✝ E → u < v → ∃ z ∈ E, ∃ r, u < toLex (z, r) ∧ toLex (z, r) < v"
   },
@@ -916,6 +1068,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The elimination rule for ded."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ c) → ded κ ≤ c"
   },
@@ -942,6 +1098,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Strict density is the stronger condition on the subset, so fewer orders are witnesses and the supremum is no larger. This holds at every cardinal."
   },
   {
     "field": "argument_node.pretty",
@@ -982,6 +1142,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The defining property of ded, in the form used downstream: a linear order with a dense subset of size at most κ has at most ded κ points."
   },
   {
     "field": "argument_node.pretty",
@@ -1072,6 +1236,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A linear order with a dense subset D has at most 2 ^ #D * 2 ^ #D points, since a point is determined by the pair of cuts it induces on D."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → Cardinal.mk J ≤ 2 ^ Cardinal.mk ↑E * 2 ^ Cardinal.mk ↑E"
   },
@@ -1152,6 +1320,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The elimination rule for ded'."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ c) →\n    ded' κ ≤ c"
   },
@@ -1198,6 +1370,238 @@
   {
     "field": "argument_node.decl_name",
     "value": "dedSet'_le"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hκ"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "Cardinal.aleph0 ≤ κ"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "lam < ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set family 𝒜 has VC dimension at most d if all the sets it shatters have size at most d."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → ℕ → Set (Set α) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "D is dense in a preorder I when every pair a < b brackets a point of D, that is, when there is d ∈ D with a ≤ d ≤ b. On a linear order without jumps this agrees with strict betweenness; on an order with jumps it is strictly weaker, and it is the form under which ded bounds the size of the order."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{I : Type u_1} → [Preorder I] → Set I → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "D is strictly dense in a preorder I when every pair a < b has a point of D strictly between them. This is the second of the two readings of \"dense subset\" that the definition of ded in the literature leaves open; the first is IsDenseIn. Where the order has no jumps the two agree, and a linear order with a jump whose two endpoints lie in D satisfies IsDenseIn only. The literature on ded does not say which reading is meant; ded'_eq_ded shows the question does not affect the value of ded at an infinite cardinal."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{I : Type u_1} → [Preorder I] → Set I → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set family 𝒜 shatters a set A if all subsets of A can be obtained as the intersection of A with some element of the set family. We also say that A is traced by 𝒜."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [SemilatticeInf α] → Set α → α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The pair of cuts a point of I induces on D."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{I : Type u_1} → [Preorder I] → (D : Set I) → I → Set ↑D × Set ↑D"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ded κ is the supremum of the cardinalities of the linear orders that admit a dense subset of size at most κ. The supremum is taken over a set of cardinals bounded above by 2 ^ (κ + κ), so it is not a junk value. Carriers are restricted to Type u, which does not move the supremum, every witness having size at most 2 ^ (κ + κ)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ded' κ is the supremum of the cardinalities of the linear orders that admit a strictly dense subset of size at most κ. It is the same construction as ded, with strict betweenness in place of bracketing, and is bounded above by the same 2 ^ (κ + κ)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The set of cardinalities of linear orders with a dense subset of size at most κ."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Set Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The set of cardinalities of linear orders with a strictly dense subset of size at most κ."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Set Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The blow-up of J along E: the lexicographic product J ×ₗ ℚ with the fibre over each point outside E collapsed to the single rational 0."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{J : Type u} → Set J → Set (Lex (J × ℚ))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The part of the blow-up lying over E, that is, the union of the full ℚ fibres."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{J : Type u} → (E : Set J) → Set ↑(fatten✝ E)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padCuts"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The witness family: the down sets of J, carried into the padded ground type."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(J P : Type u) → [LinearOrder J] → Set (Set (J ⊕ P))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padGround"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The ground set of the witness: a subset E of J together with a disjoint copy of P, whose points no member of the family below meets."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{J P : Type u} → Set J → Set (J ⊕ P)"
   },
   {
     "field": "argument.accession",

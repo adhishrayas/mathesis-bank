@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Assouad's dual VC bound. If VCDim X C ≤ d, then VCDim(dualClass C) ≤ 2^(d+1) − 1."
+  },
+  {
     "field": "claim.decl_name",
     "value": "vcDim_dualClass_le"
   },

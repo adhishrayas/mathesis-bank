@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6012"
   },
   {
+    "field": "claim.doc",
+    "value": "Universal learnable → PAC learnable. Proof sketch: UniversalLearnable gives learner L with rate → 0 and Pr[error ≤ rate(m)] ≥ 2/3. Two components: 1. Event containment: rate(m) < ε ⟹ {error ≤ rate(m)} ⊆ {error ≤ ε} (monotonicity). 2. Confidence boosting: 2/3 → 1-δ via median-of-means (Γ₆₇, sorry'd in boost_two_thirds_to_pac). Routes through boost_two_thirds_to_pac which encapsulates the Chernoff-based boosting."
+  },
+  {
     "field": "claim.decl_name",
     "value": "universal_imp_pac"
   },
@@ -50,6 +54,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "∀ (L : BatchLearner X Boo…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hL_meas"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "UniversalLearnable X C"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hul"
   },
   {
     "field": "argument_node.decl_name",
@@ -164,6 +184,102 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "learn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "UniversalLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boosted_majority"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "universal_imp_pac"
   },
@@ -222,6 +338,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Boosting lemma: given a learner with success probability ≥ 2/3 under D^m, construct a boosted learner with success probability ≥ 1-δ for any δ > 0. Standard technique: run L independently k times on independent samples of size m₀, take majority vote.Construction:kmin = ⌈9/δ⌉ + 2 (enough blocks for Chebyshev concentration)m₀ from hrate(ε/kmin) so that rate(m₀) < ε/kminn = max m₀ (kmin - 1). Then k = n + 1 ≥ kmin.Total samples: (n + 1) * n, with Nat.sqrt((n+1)*n) = n.At sample size m = (n+1)*n, L' recovers k = n+1 blocks of size n.Event containment: when > k/2 blocks have D-error ≤ rate(n) < ε/kmin, majority D-error ≤ k · rate(n) < k/kmin · ε ≤ ε via union bound.Γ₆₇: sorry — the full measure-theoretic proof requires: (a) block_extract : (Fin (kn) → X) → Fin k → (Fin n → X) (b) iIndepFun for block extractions under product measure D^(kn) (c) chebyshev_majority_bound for i.i.d. Bernoulli(≥2/3) events (d) block extraction marginal = D^n (e) majority vote D-error analysis via union boundNone of this infrastructure currently exists in the codebase. The sorry is A4-compliant (the conclusion PACLearnable X C is non-trivially-true: it requires genuine concentration + majority analysis) and A5-compliant (the proof strategy is structurally complete, only infrastructure is missing)."
   },
   {
     "field": "argument_node.pretty",
@@ -312,6 +432,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "T5: The goodBlockEvents are independent under the product measure."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (k n : ℕ),\n      ProbabilityTheory.iIndepSet (goodBlockEvent✝ L D c rate k n) (MeasureTheory.Measure.pi fun x => D)"
   },
@@ -360,6 +484,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Block extractions are independent under the product measure. Key infrastructure for boosting (D4) and probability amplification."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D],\n  ProbabilityTheory.iIndepFun (fun j ω => block_extract k m ω j) (MeasureTheory.Measure.pi fun x => D)"
   },
@@ -378,6 +506,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "T4: Each block's good event has probability ≥ 2/3, transported from the base learner guarantee."
   },
   {
     "field": "argument_node.pretty",
@@ -444,6 +576,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "T0: Shared helper — measurability of the \"good training set\" event for a single block."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (n : ℕ),\n      MeasurableSet {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate n)}"
   },
@@ -488,6 +624,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "T3: Block extraction pushforward of product measure equals product measure."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (k n : ℕ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (j : Fin k),\n  MeasureTheory.Measure.map (fun ω => block_extract k n ω j) (MeasureTheory.Measure.pi fun x => D) =\n    MeasureTheory.Measure.pi fun x => D"
   },
@@ -506,6 +646,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "T2: goodBlockEvent is measurable for each block index j."
   },
   {
     "field": "argument_node.pretty",
@@ -560,6 +704,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Block extraction is measurable: extracting block j from a pi-type is measurable."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (j : Fin k), Measurable fun ω => block_extract k m ω j"
   },
@@ -584,6 +732,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "T6: Chebyshev concentration for 7/12 threshold — when k ≥ 36/δ independent events each have probability ≥ 2/3, the fraction exceeding 7/12 is ≥ 1-δ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure μ] {k : ℕ}\n  {δ : ℝ},\n  0 < δ →\n    36 / δ ≤ ↑k →\n      ∀ (events : Fin k → Set Ω),\n        (∀ (j : Fin k), MeasurableSet (events j)) →\n          ProbabilityTheory.iIndepSet (fun j => events j) μ →\n            (∀ (j : Fin k), μ (events j) ≥ ENNReal.ofReal (2 / 3)) →\n              μ {ω | 7 * k ≤ 12 * {j | ω ∈ events j}.card} ≥ ENNReal.ofReal (1 - δ)"
   },
@@ -598,6 +750,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "T8: If ≥ 7/12 of blocks are good, the boosted hypothesis has D-error ≤ 7·max(rate(n),0)."
   },
   {
     "field": "argument_node.pretty",
@@ -660,6 +816,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "T7: If ≥ 7/12 of the hypotheses have D-error ≤ ρ, majority vote has D-error ≤ 7ρ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] {k : ℕ},\n  0 < k →\n    ∀ (c : Concept X Bool),\n      Measurable c →\n        ∀ (hs : Fin k → Concept X Bool),\n          (∀ (j : Fin k), Measurable (hs j)) →\n            ∀ (good : Finset (Fin k)),\n              7 * k ≤ 12 * good.card →\n                ∀ (ρ : ℝ),\n                  0 ≤ ρ →\n                    (∀ j ∈ good, D {x | hs j x ≠ c x} ≤ ENNReal.ofReal ρ) →\n                      D {x | (boosted_majority✝ k fun j => hs j x) ≠ c x} ≤ ENNReal.ofReal (7 * ρ)"
   },
@@ -682,6 +842,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "T1: A learner with joint measurability gives measurable hypotheses for fixed training data."
   },
   {
     "field": "argument_node.pretty",
@@ -718,6 +882,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Joint measurability of the evaluation map"
   },
   {
     "field": "argument_node.pretty",
@@ -790,6 +958,214 @@
   {
     "field": "argument_node.decl_name",
     "value": "universal_imp_pac"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hL_meas"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "∀ (L : BatchLearner X Bool), LearnEvalMeasurable L"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hul"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "UniversalLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A batch learner (PAC paradigm): takes a finite sample, returns a hypothesis."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The learning algorithm: given a sample, produce a hypothesis"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → BatchLearner X Y → {m : ℕ} → (Fin m → X × Y) → Concept X Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept class is a set of concepts. Used by every paradigm, complexity measure, and criterion.Primary definition: Set of functions. Used for PAC/agnostic PAC where concept classes are sets over which VC dimension, Rademacher complexity, covering numbers, etc. are measured. Alternative definitions below for contexts requiring decidability, enumerability, or measurability."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max v u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept is a function from domain to label. This is the atomic unit that concept classes collect and learners try to approximate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Joint measurability of a batch learner's evaluation map."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [MeasurableSpace X] → BatchLearner X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A batch learner whose evaluation map is jointly measurable.The condition: for each sample size m, the map (S, x) ↦ L.learn S x from (Fin m → X × Bool) × X to Bool is Measurable.This is the minimal regularity that makes the PAC success event {S | D{x | L.learn(S)(x) ≠ c(x)} ≤ ε} a MeasurableSet (via measurable_measure_prod_mk_left).Equivalent to LearnEvalMeasurable (Separation.lean) and AdviceEvalMeasurable (Extended.lean) for the non-advice case."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → BatchLearner X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Every concept in C is a measurable function. Krapp-Wirth precondition: Γ(h) ∈ Σ_Z for all h ∈ H."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "PAC (Probably Approximately Correct) learning. The central definition of computational learning theory.Sample space: Fin m → X with i.i.d. product measure D^m. Labels: derived deterministically from target concept c (realizable case). Error: D-probability of disagreement between learner output and c."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "UniversalLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Universal learning: distribution-free convergence rates. Strictly stronger than PAC.Sample space: Fin m → X with i.i.d. product measure D^m (matching PACLearnable). Labels: derived deterministically from target concept c (realizable case). The rate function converges to 0, and for every m, with probability ≥ 2/3 over D^m, the learner's error is at most rate(m).Γ₄₈ fix: changed from existential Dm to Measure.pi (CNA₁₁ definition repair)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Extract block j from a flat array of k*m elements, using finProdFinEquiv."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → (k m : ℕ) → (Fin (k * m) → α) → Fin k → Fin m → α"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boosted_majority"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Majority vote: returns true iff strictly more than half the votes are true."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(k : ℕ) → (Fin k → Bool) → Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The event that block j produces a hypothesis with D-error ≤ rate(n)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} →\n  [inst : MeasurableSpace X] →\n    BatchLearner X Bool → MeasureTheory.Measure X → Concept X Bool → (ℕ → ℝ) → (k n : ℕ) → Fin k → Set (Fin (k * n) → X)"
   },
   {
     "field": "argument.accession",

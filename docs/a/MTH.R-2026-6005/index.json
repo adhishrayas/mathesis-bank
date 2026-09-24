@@ -271,6 +271,7 @@
         "dictionary_leaves": [
           "pairCubes"
         ],
+        "doc": "**Pajor's inequality for multiclass concept classes**, with no hypotheses on the domain, the\nlabel type or the family: the traces of `𝒞` on `S` are at most as many as the pair-cubes of `𝒞`\nsupported inside `S`.\n\nThe count runs on a split of the family at a point where two traces differ, taking one branch\nper realised value with no residual bucket. A cube of a branch never constrains the split point,\nso a cube pair-shattered by `μ` branches is counted `μ` times on the left and supplies\n`1 + μ.choose 2` cubes on the right, which closes the accounting because `μ ≤ 1 + μ.choose 2`\nfor `μ ≥ 1`, with equality exactly at `μ ∈ {1, 2}`. An infinite trace family forces infinitely\nmany one-point cubes and both sides are `⊤`.\n\nAt `Y = Bool` this specialises to `encard_image_inter_le_encard_shatters`, which is\n`encard_image_inter_le_encard_shatters_of_multiclass` below. The pair-cube is Natarajan's\nshattering witness for spaces of functions, from p. 81 of *On learning sets and functions*; see\nthe module docstring.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} (𝒞 : Set (X → Y)) (S : Set X), (S.restrict '' 𝒞).encard ≤ (pairCubes 𝒞 S).encard",
@@ -285,6 +286,13 @@
           "pairCubes",
           "pairSupport",
           "singCube"
+        ],
+        "doc": "**Infinitely many traces force infinitely many cubes.** Either the family disagrees at\ninfinitely many points of `S`, each of which carries a one-point cube, or it realises infinitely\nmany labels at one point, which carries infinitely many one-point cubes. The proof runs the\ncontrapositive: finitely many cubes bound both the disagreement set and, above each of its\npoints, the set of realised labels, and a trace is determined by its values on the disagreement\nset, so the traces embed in a finite product. This is what makes the multiclass inequality\nhypothesis-free, as `infinite_setOf_shatters` does in the binary case.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "(S.restrict '' 𝒞).Infinite"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -328,6 +336,20 @@
           "pairCubes",
           "singCube"
         ],
+        "hypotheses": [
+          {
+            "name": "hzS",
+            "pretty": "z ∈ S"
+          },
+          {
+            "name": "hu",
+            "pretty": "∃ c ∈ 𝒞, c z = u"
+          },
+          {
+            "name": "hv",
+            "pretty": "∃ c ∈ 𝒞, c z = v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {u v : Y} {z : X},\n  z ∈ S → (∃ c ∈ 𝒞, c z = u) → (∃ c ∈ 𝒞, c z = v) → singCube✝ z u v ∈ pairCubes 𝒞 S",
@@ -343,6 +365,12 @@
           "pairOf",
           "pairSupport",
           "singCube"
+        ],
+        "hypotheses": [
+          {
+            "name": "huv",
+            "pretty": "u ≠ v"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -361,6 +389,17 @@
           "pairCubes",
           "pairOf",
           "pairSupport"
+        ],
+        "doc": "The whole accounting, as one injection from traces to cubes.\n\nAt a point where two traces differ, every realised value gets its own branch, and a trace is\nrouted by the value it takes there. The branch injections supplied by the induction hypothesis\nland in cubes that avoid that point, and a cube pair-shattered by `μ` branches carries `μ`\ntraces into `μ` of the `1 + μ.choose 2` cubes available above it: the cube itself for the\nbranch selected as the anchor, and one graft for each of the other `μ - 1`. Injectivity is read\noff the graft, since `pairOf u ·` is injective and the pattern below the new point is recovered\nby evaluating away from it.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "(S.restrict '' 𝒞).Finite"
+          },
+          {
+            "name": "a",
+            "pretty": "(S.restrict '' 𝒞).ncard ≤ N"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -386,6 +425,25 @@
         "decl_name": "ncard_image_restrict_sep_lt",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "Splitting off one realised value at a point of `S` where the family is not constant\nstrictly lowers the number of traces, because a second value survives outside the branch.",
+        "hypotheses": [
+          {
+            "name": "hxS",
+            "pretty": "x ∈ S"
+          },
+          {
+            "name": "hc",
+            "pretty": "c ∈ 𝒞"
+          },
+          {
+            "name": "hcu",
+            "pretty": "c x ≠ u"
+          },
+          {
+            "name": "hfin",
+            "pretty": "(S.restrict '' 𝒞).Finite"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {x : X} {u : Y},\n  x ∈ S →\n    ∀ {c : X → Y},\n      c ∈ 𝒞 → c x ≠ u → (S.restrict '' 𝒞).Finite → (S.restrict '' {d | d ∈ 𝒞 ∧ d x = u}).ncard < (S.restrict '' 𝒞).ncard",
@@ -397,6 +455,17 @@
         "decl_name": "disjoint_image_restrict_sep",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "Two branches at one point of `S` cut disjoint families of traces.",
+        "hypotheses": [
+          {
+            "name": "hxS",
+            "pretty": "x ∈ S"
+          },
+          {
+            "name": "huv",
+            "pretty": "u ≠ v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {x : X} {u v : Y},\n  x ∈ S → u ≠ v → Disjoint (S.restrict '' {d | d ∈ 𝒞 ∧ d x = u}) (S.restrict '' {d | d ∈ 𝒞 ∧ d x = v})",
@@ -415,6 +484,20 @@
           "pairOf",
           "pairSupport"
         ],
+        "hypotheses": [
+          {
+            "name": "hxS",
+            "pretty": "x ∈ S"
+          },
+          {
+            "name": "hu",
+            "pretty": "P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = u} S"
+          },
+          {
+            "name": "hv",
+            "pretty": "P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = v} S"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {P : X → Set Y} {x : X} {u v : Y},\n  x ∈ S →\n    P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = u} S →\n      P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = v} S → graft P x (pairOf✝ u v) ∈ pairCubes 𝒞 S",
@@ -428,6 +511,16 @@
         "dictionary_leaves": [
           "graft",
           "pairSupport"
+        ],
+        "hypotheses": [
+          {
+            "name": "hxS",
+            "pretty": "x ∈ S"
+          },
+          {
+            "name": "hP",
+            "pretty": "pairSupport P ⊆ S"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -444,6 +537,21 @@
           "graft",
           "pairSupport"
         ],
+        "doc": "**The graft.** A pattern pair-shattered by the branch at `a` and by the branch at `b`\nextends by one unconstrained point carrying the pair `{a, b}` there to a pattern pair-shattered\nby the whole family. The selection at the new point names the branch that realises it. This is\nthe multiclass exchange step, and it mirrors `Shatters.insert`.\n\nThe two labels are not required to differ. Distinctness is what makes the result a pair\npattern, and it enters at `mem_pairCubes_graft_pairOf`, not here.",
+        "hypotheses": [
+          {
+            "name": "hPx",
+            "pretty": "P x = ∅"
+          },
+          {
+            "name": "ha",
+            "pretty": "PairShatters {c | c ∈ 𝒞 ∧ c x = a} P"
+          },
+          {
+            "name": "hb",
+            "pretty": "PairShatters {c | c ∈ 𝒞 ∧ c x = b} P"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {P : X → Set Y} {x : X} {a b : Y},\n  P x = ∅ →\n    PairShatters {c | c ∈ 𝒞 ∧ c x = a} P → PairShatters {c | c ∈ 𝒞 ∧ c x = b} P → PairShatters 𝒞 (graft P x {a, b})",
@@ -457,6 +565,12 @@
         "dictionary_leaves": [
           "graft",
           "pairSupport"
+        ],
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "s.Nonempty"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -484,6 +598,12 @@
         "dictionary_leaves": [
           "pairOf"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "u = v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Y : Type u_2} {u v : Y}, u = v → pairOf✝ u v = ∅",
@@ -496,6 +616,12 @@
         "depth": 5,
         "dictionary_leaves": [
           "pairOf"
+        ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "u ≠ v"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -511,6 +637,16 @@
           "IsPairPattern",
           "graft"
         ],
+        "hypotheses": [
+          {
+            "name": "hP",
+            "pretty": "IsPairPattern P"
+          },
+          {
+            "name": "hs",
+            "pretty": "s = ∅ ∨ s.encard = 2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y},\n  IsPairPattern P → ∀ (x : X) {s : Set Y}, s = ∅ ∨ s.encard = 2 → IsPairPattern (graft P x s)",
@@ -523,6 +659,12 @@
         "depth": 4,
         "dictionary_leaves": [
           "graft"
+        ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "P x = ∅"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -538,6 +680,16 @@
           "PairShatters",
           "pairSupport"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "𝒞 ⊆ 𝒟"
+          },
+          {
+            "name": "hP",
+            "pretty": "PairShatters 𝒞 P"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 𝒟 : Set (X → Y)} {P : X → Set Y}, 𝒞 ⊆ 𝒟 → PairShatters 𝒞 P → PairShatters 𝒟 P",
@@ -550,6 +702,20 @@
         "depth": 2,
         "dictionary_leaves": [
           "graft"
+        ],
+        "hypotheses": [
+          {
+            "name": "hP",
+            "pretty": "P x = ∅"
+          },
+          {
+            "name": "hP'",
+            "pretty": "P' x = ∅"
+          },
+          {
+            "name": "h",
+            "pretty": "graft P x s = graft P' x s'"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -577,6 +743,12 @@
         "dictionary_leaves": [
           "graft"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "z ≠ x"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {x z : X} (P : X → Set Y) (s : Set Y), z ≠ x → graft P x s z = P z",
@@ -589,6 +761,13 @@
         "depth": 4,
         "dictionary_leaves": [
           "pairSupport"
+        ],
+        "doc": "The single-point case: an admissible label at `x` extends to a selection taking it there.",
+        "hypotheses": [
+          {
+            "name": "ha",
+            "pretty": "u ∈ P x"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -603,6 +782,13 @@
         "dictionary_leaves": [
           "pairSupport"
         ],
+        "doc": "A choice of admissible labels prescribed on part of the domain extends to a selection for\nthe whole pattern. The prescribed values arrive as a total function, so off the support there is\nalways a label to copy and no hypothesis on `Y` is needed.",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "∀ ⦃z : X⦄, z ∈ B → z ∈ pairSupport P → σ z ∈ P z"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y} {B : Set X} {σ : X → Y},\n  (∀ ⦃z : X⦄, z ∈ B → z ∈ pairSupport P → σ z ∈ P z) → ∃ τ, (∀ ⦃z : X⦄, z ∈ pairSupport P → τ z ∈ P z) ∧ Set.EqOn τ σ B",
@@ -615,6 +801,12 @@
         "depth": 2,
         "dictionary_leaves": [
           "pairCubes"
+        ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "(S.restrict '' 𝒞).Subsingleton"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -631,6 +823,13 @@
           "PairShatters",
           "pairCubes",
           "pairSupport"
+        ],
+        "doc": "The unconstrained pattern is a cube of every nonempty family. It is the multiclass reading\nof `shatters_bot`.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "𝒞.Nonempty"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

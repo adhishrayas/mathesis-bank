@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "F2 — given A nonempty, BlackwellEquivalent (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K (blackwell1953)."
+  },
+  {
     "field": "claim.decl_name",
     "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
   },

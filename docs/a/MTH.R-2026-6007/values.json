@@ -36,6 +36,10 @@
     "value": "Yaël Dillies"
   },
   {
+    "field": "claim.doc",
+    "value": "Shelah's ded bound on the traces of a family of finite VC dimension. On an infinite ground set a family of finite VC dimension traces at most ded #A sets, and by mk_image_inter_range_cut_eq_ded the bound is attained. The infiniteness of A is not decorative: see exists_finite_ground_hasVCDimLE_not_mk_image_inter_le_ded."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HasVCDimLE.mk_image_inter_le_ded"
   },
@@ -54,6 +58,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "HasVCDimLE d 𝒜"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h𝒜"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "A.Infinite"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hA"
   },
   {
     "field": "argument_node.decl_name",
@@ -376,6 +396,110 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "HasVCDimLE.mk_image_inter_le_ded"
   },
@@ -410,6 +534,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Shelah's theorem. A family that traces more than ded #A sets on an infinite ground set A shatters finite subsets of A of every size. The proof takes a subset B ⊆ A of least cardinality on which the family still traces more than ded #A sets, enumerates B by an initial ordinal so that every proper initial segment is smaller than B and therefore carries at most ded #A traces, prunes the tree of traces along that enumeration to the nodes at least (ded #A)⁺ members pass through, and walks down the pruned tree collecting one point per step.The conclusion cannot be strengthened to an infinite shattered set: the finite subsets of ℕ shatter every finite set and no infinite one.The statement is due to Shelah. Both expositions used here, Adler, Introduction to theories without the independence property, Theorem 23, and Simon, A Guide to NIP Theories, Proposition 2.69, state it for the space of complete φ-types over a parameter set rather than for a set family, and the reading under which a complete φ-type over A is a trace on A and the independence property is the shattering of arbitrarily large finite sets is the standard translation of that statement, not a form either source asserts."
   },
   {
     "field": "argument_node.pretty",
@@ -470,6 +598,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Shelah's argument in the tree language: an enumeration of a ground set of size μ all of whose initial segments carry at most θ traces, with ded μ ≤ θ and more than θ traces on the whole set, yields for each n a set of n indices on which 𝒜 cuts out every pattern. The ceiling θ⁺ is regular, so the pruning of mk_sdiff_core_lt applies and the core keeps the whole width."
   },
   {
     "field": "argument_node.pretty",
@@ -584,6 +716,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The level-w nodes of the tree of codes are the traces on the initial segment e '' Iic w."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {W : Type u} {e : W → α} [inst : LinearOrder W] (w : W),\n  Cardinal.mk ↑(truncate w '' enc✝ e '' 𝒜) = Cardinal.mk ↑((fun x => e '' Set.Iic w ∩ x) '' 𝒜)"
   },
@@ -652,6 +788,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Pruning to the core costs fewer than lam members: a member outside the core has a narrow truncation, the narrow nodes at one level are fewer than lam and carry fewer than lam members each, and there are fewer than lam levels. Regularity of lam closes both sums."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam : Cardinal.{u}},\n  lam.IsRegular →\n    Cardinal.mk W < lam → (∀ (w : W), Cardinal.mk ↑(truncate w '' F) < lam) → Cardinal.mk ↑(F \\ core✝ lam F) < lam"
   },
@@ -684,6 +824,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The traces on the range of e are at most as many as the codes along e, two members with the same code agreeing at every index."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {W : Type u} {e : W → α},\n  Cardinal.mk ↑((fun x => Set.range e ∩ x) '' 𝒜) ≤ Cardinal.mk ↑(enc✝ e '' 𝒜)"
   },
@@ -714,6 +858,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "If g separates at most as much as f does on s, then f '' s is no larger than g '' s."
   },
   {
     "field": "argument_node.pretty",
@@ -820,6 +968,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The induction that produces the shattered points. In a two-valued tree whose core is wide, every wide node carries, for each n, a set of n indices above its own level on which the members of F below it realise every pattern. The step spends the wide node: lt_mk_big_fiber gives more than μ wide nodes below it, exists_level concentrates them on one level, the pigeonhole on finite index sets returns two of them with a common tuple, and the index where the two disagree is the new point. Its position, strictly above the old level and at or below the new one, is what keeps the points distinct. This is the combinatorial form of the claim proved by induction in Adler, Theorem 23, and in Simon, Proposition 2.69."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] [WellFoundedLT W] {F : Set (Lex (W → WithBot (ULift.{u, 0} Bool)))}\n  {μ lam : Cardinal.{u}},\n  Cardinal.aleph0 ≤ μ →\n    Cardinal.mk W = μ →\n      lam.IsRegular →\n        Cardinal.mk ↑(F \\ core✝ lam F) < lam →\n          ded μ < lam →\n            (∀ g ∈ F, ∀ (x : W), ofLex g x = valIn✝ ∨ ofLex g x = valOut✝) →\n              ∀ (n : ℕ) (w : W),\n                ∀ p ∈ bigAt✝ lam F w,\n                  ∃ S,\n                    S.Finite ∧\n                      S.ncard = n ∧\n                        (∀ x ∈ S, w < x) ∧\n                          ∀ (σ : Set W), ∃ g ∈ F, truncate w g = p ∧ ∀ x ∈ S, ofLex g x = valIn✝ ↔ x ∈ σ"
   },
@@ -896,6 +1048,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A node inherits two-valuedness from the members it truncates."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] {F : Set (Lex (W → WithBot (ULift.{u, 0} Bool)))}\n  {q : Lex (W → WithBot (ULift.{u, 0} Bool))} {x v : W},\n  (∀ g ∈ F, ∀ (y : W), ofLex g y = valIn✝ ∨ ofLex g y = valOut✝) →\n    q ∈ truncate v '' F → x ≤ v → ofLex q x = valIn✝ ∨ ofLex q x = valOut✝"
   },
@@ -928,6 +1084,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Below the level of truncation the sequence is unchanged."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] {v : W}\n  {g : Lex (W → β)} {x : W}, x ≤ v → ofLex (truncate v g) x = ofLex g x"
   },
@@ -956,6 +1116,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The finite subsets of an infinite W of a prescribed size are at most #W many. This is the pigeonhole that forces two nodes at one level to carry the same tuple."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u}, Cardinal.aleph0 ≤ Cardinal.mk W → ∀ (n : ℕ), Cardinal.mk ↑{S | S.Finite ∧ S.ncard = n} ≤ Cardinal.mk W"
   },
@@ -970,6 +1134,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The level found by exists_level lies strictly above the node's own level: at or below it the fibre is a single node, hence too small."
   },
   {
     "field": "argument_node.pretty",
@@ -998,6 +1166,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The step at which ded enters the argument. Below a wide node p, the core members extending p are at least lam many, and they form a set of branches whose nodes are the wide nodes extending p together with the truncations of p itself. The tree bound therefore caps them by ded of that node set, so if the wide nodes extending p were at most μ the count would be at most ded (μ + #W), which is below lam."
   },
   {
     "field": "argument_node.pretty",
@@ -1076,6 +1248,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The tree bound: a set 𝒮 of sequences all of whose truncations lie in 𝒟 has at most ded #𝒟 elements. Equivalently, a tree with at most κ nodes has at most ded κ branches. The order is taken on 𝒮 ∪ 𝒟 with 𝒟 as the dense subset: given f < g there, either g lies in 𝒟 and brackets the pair by itself, or g lies in 𝒮 and the truncation of g at the first index where f and g differ lies between them."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] [WellFoundedLT W]\n  {𝒮 𝒟 : Set (Lex (W → β))} {κ : Cardinal.{u}},\n  (∀ f ∈ 𝒮, ∀ (w : W), truncate w f ∈ 𝒟) → Cardinal.mk ↑𝒟 ≤ κ → Cardinal.mk ↑𝒮 ≤ ded κ"
   },
@@ -1142,6 +1318,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The defining property of ded, in the form used downstream: a linear order with a dense subset of size at most κ has at most ded κ points."
   },
   {
     "field": "argument_node.pretty",
@@ -1264,6 +1444,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A wide node stays wide inside the core, the pruning having removed fewer than lam members."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam : Cardinal.{u}} {w : W} {p : Lex (W → β)},\n  lam.IsRegular →\n    Cardinal.mk ↑(F \\ core✝ lam F) < lam →\n      p ∈ bigAt✝ lam F w → lam ≤ Cardinal.mk ↑{g | g ∈ core✝ lam F ∧ truncate w g = p}"
   },
@@ -1290,6 +1474,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The wide nodes below a fixed node spread over the levels, so if they are more than μ in total and the levels are at most μ, one level already carries more than μ of them."
   },
   {
     "field": "argument_node.pretty",
@@ -1456,6 +1644,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The reduction that makes the tree small. Among the subsets of A whose trace family outruns θ there is one of least cardinality, Cardinal being well-ordered. Along an enumeration of that subset every proper initial segment carries at most θ traces, which is what the tree bound needs and what a well-order of A itself does not supply."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α} {θ : Cardinal.{u}},\n  θ < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) →\n    ∃ B ⊆ A,\n      θ < Cardinal.mk ↑((fun x => B ∩ x) '' 𝒜) ∧\n        ∀ B' ⊆ A, Cardinal.mk ↑B' < Cardinal.mk ↑B → Cardinal.mk ↑((fun x => B' ∩ x) '' 𝒜) ≤ θ"
   },
@@ -1620,6 +1812,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A linear order with a dense subset D has at most 2 ^ #D * 2 ^ #D points, since a point is determined by the pair of cuts it induces on D."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → Cardinal.mk J ≤ 2 ^ Cardinal.mk ↑E * 2 ^ Cardinal.mk ↑E"
   },
@@ -1690,6 +1886,234 @@
   {
     "field": "argument_node.decl_name",
     "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h𝒜"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "HasVCDimLE d 𝒜"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hA"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "A.Infinite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set family 𝒜 has VC dimension at most d if all the sets it shatters have size at most d."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → ℕ → Set (Set α) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "D is dense in a preorder I when every pair a < b brackets a point of D, that is, when there is d ∈ D with a ≤ d ≤ b. On a linear order without jumps this agrees with strict betweenness; on an order with jumps it is strictly weaker, and it is the form under which ded bounds the size of the order."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{I : Type u_1} → [Preorder I] → Set I → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set family 𝒜 shatters a set A if all subsets of A can be obtained as the intersection of A with some element of the set family. We also say that A is traced by 𝒜."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [SemilatticeInf α] → Set α → α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The wide nodes of the tree of truncations of F, at all levels."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{W : Type u} →\n  [LinearOrder W] →\n    {β : Type u} → [inst : LinearOrder β] → [OrderBot β] → Cardinal.{u} → Set (Lex (W → β)) → Set (Lex (W → β))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The level-w truncations of F that at least lam members of F extend."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{W : Type u} →\n  [LinearOrder W] →\n    {β : Type u} → [inst : LinearOrder β] → [OrderBot β] → Cardinal.{u} → Set (Lex (W → β)) → W → Set (Lex (W → β))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The members of F all of whose truncations are wide."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{W : Type u} →\n  [LinearOrder W] →\n    {β : Type u} → [inst : LinearOrder β] → [OrderBot β] → Cardinal.{u} → Set (Lex (W → β)) → Set (Lex (W → β))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The pair of cuts a point of I induces on D."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{I : Type u_1} → [Preorder I] → (D : Set I) → I → Set ↑D × Set ↑D"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ded κ is the supremum of the cardinalities of the linear orders that admit a dense subset of size at most κ. The supremum is taken over a set of cardinals bounded above by 2 ^ (κ + κ), so it is not a junk value. Carriers are restricted to Type u, which does not move the supremum, every witness having size at most 2 ^ (κ + κ)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The set of cardinalities of linear orders with a dense subset of size at most κ."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Cardinal.{u} → Set Cardinal.{u}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The code of C along an indexing e of the ground set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α W : Type u} → (W → α) → Set α → Lex (W → WithBot (ULift.{u, 0} Bool))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The sequence agreeing with b up to w and equal to ⊥ above it."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{W : Type u} → [LinearOrder W] → {β : Type u} → [inst : LinearOrder β] → [OrderBot β] → W → Lex (W → β) → Lex (W → β)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The two defined values of the alphabet coding a partial trace; ⊥ marks the positions where the trace is undefined."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "WithBot (ULift.{u, 0} Bool)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "WithBot (ULift.{u, 0} Bool)"
   },
   {
     "field": "argument.accession",

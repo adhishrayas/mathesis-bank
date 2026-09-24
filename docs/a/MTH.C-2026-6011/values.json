@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The optimal mistake bound equals the Littlestone dimension (for nonempty C). Path B: OptimalMistakeBound : WithTop ℕ, LittlestoneDim : WithBot (WithTop ℕ). For nonempty C, LittlestoneDim ≥ 0, so the coercion ↑(OptimalMistakeBound) works."
+  },
+  {
     "field": "claim.decl_name",
     "value": "optimal_mistake_bound_eq_ldim"
   },

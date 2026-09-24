@@ -312,6 +312,21 @@
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
         ],
+        "doc": "**The two-clique quantum junction tree theorem** (Lauritzen–Zwiernik,\narXiv:2605.19453, Theorem 3.1): over the acyclic two-clique base, the base's compatibility\ndatum decides base-side reconstruction. For strictly positive consistent marginals, a\nquantum Markov completion exists iff `Tr T(R) = 1`; the completion is then unique and equals\nthe normalized logarithmic candidate `σ(R) = T(R)/Tr T(R)`. Together with\n`trC_le_one` (the trace bound) this is the full theorem.",
+        "hypotheses": [
+          {
+            "name": "hAC",
+            "pretty": "ρAC.m.PosDef"
+          },
+          {
+            "name": "hCB",
+            "pretty": "ρCB.m.PosDef"
+          },
+          {
+            "name": "hcons",
+            "pretty": "ρAC.traceLeft = ρCB.traceRight"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        (HiddenChannelCapacity.trC ρAC ρCB = 1 ↔ ∃ ω, HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω) ∧\n          ∀ (ω : MState (a × c × b)),\n            HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω → ω = HiddenChannelCapacity.sigT ρAC ρCB",
@@ -331,6 +346,25 @@
           "HiddenChannelCapacity.qDivR",
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
+        ],
+        "doc": "**LZ Theorem 3.1, existence direction**: if `Tr T(R) = 1` then the normalized\ncandidate IS a quantum Markov completion (extraction of `Δ_R = 0` via DPI and the\nfaithfulness of relative entropy, in the order recorded in the QJT_URS front-load).",
+        "hypotheses": [
+          {
+            "name": "hAC",
+            "pretty": "ρAC.m.PosDef"
+          },
+          {
+            "name": "hCB",
+            "pretty": "ρCB.m.PosDef"
+          },
+          {
+            "name": "hcons",
+            "pretty": "ρAC.traceLeft = ρCB.traceRight"
+          },
+          {
+            "name": "h1",
+            "pretty": "HiddenChannelCapacity.trC ρAC ρCB = 1"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -352,6 +386,25 @@
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
         ],
+        "doc": "**LZ Theorem 3.1, uniqueness direction**: any quantum Markov completion forces\n`Tr T(R) = 1` and equals the normalized candidate `σ(R)`.",
+        "hypotheses": [
+          {
+            "name": "hAC",
+            "pretty": "ρAC.m.PosDef"
+          },
+          {
+            "name": "hCB",
+            "pretty": "ρCB.m.PosDef"
+          },
+          {
+            "name": "hcons",
+            "pretty": "ρAC.traceLeft = ρCB.traceRight"
+          },
+          {
+            "name": "hω",
+            "pretty": "HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        ∀ (ω : MState (a × c × b)),\n          HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω →\n            HiddenChannelCapacity.trC ρAC ρCB = 1 ∧ ω = HiddenChannelCapacity.sigT ρAC ρCB",
@@ -370,6 +423,17 @@
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
         ],
+        "doc": "**LZ Theorem 3.1, the trace bound**: `Tr T(R) ≤ 1`. Proved WITHOUT Lieb's\nthree-matrix inequality, by the eq. 13 route specialized to two cliques (Lemma 3.2 at\n`ω = σ(R)` plus SSA and DPI); see the QJT_URS L2a front-load.",
+        "hypotheses": [
+          {
+            "name": "hAC",
+            "pretty": "ρAC.m.PosDef"
+          },
+          {
+            "name": "hCB",
+            "pretty": "ρCB.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b] [Nonempty b]\n  {ρAC : MState (a × c)} {ρCB : MState (c × b)}, ρAC.m.PosDef → ρCB.m.PosDef → HiddenChannelCapacity.trC ρAC ρCB ≤ 1",
@@ -386,6 +450,17 @@
           "HiddenChannelCapacity.margCB",
           "HiddenChannelCapacity.qDivR"
         ],
+        "doc": "`Δ_R(ω) ≥ 0`: one DPI application plus Klein nonnegativity (LZ Lem 3.2's\nnonnegativity clause, via Prop A.7 imported through the vendored channel DPI).",
+        "hypotheses": [
+          {
+            "name": "hAC",
+            "pretty": "ρAC.m.PosDef"
+          },
+          {
+            "name": "hCB",
+            "pretty": "ρCB.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Fintype b] [inst_6 : DecidableEq b] {ρAC : MState (a × c)}\n  {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ∀ (ω : MState (a × c × b)),\n        0 ≤\n          HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margAC ω) ρAC +\n              HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margCB ω) ρCB -\n            HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margC ω) ρAC.traceLeft",
@@ -398,6 +473,17 @@
         "depth": 4,
         "dictionary_leaves": [
           "HiddenChannelCapacity.qDivR"
+        ],
+        "doc": "**DPI for the real divergence under the left partial trace** (monotonicity of\nrelative entropy, LZ Prop A.7; imported from the vendored channel DPI\n`sandwichedRenyiEntropy_DPI_eq_one` at the partial-trace channel).",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          },
+          {
+            "name": "hσL",
+            "pretty": "σ.traceLeft.m.PosDef"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -412,6 +498,13 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.qDivR"
         ],
+        "doc": "The single ENNReal-to-ℝ seam: `qDivR` equals the vendored relative entropy.\n(LZ p. 5; vendored `qRelativeEnt_rank`.)",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d},\n  σ.m.PosDef → HiddenChannelCapacity.qDivR ρ σ = 𝐃(ρ‖σ).toReal",
@@ -423,6 +516,16 @@
         "decl_name": "HiddenChannelCapacity.toReal_bridge",
         "depth": 6,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hx",
+            "pretty": "x ≠ ⊤"
+          },
+          {
+            "name": "h",
+            "pretty": "↑x = ↑r"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {x : ENNReal} {r : ℝ}, x ≠ ⊤ → ↑x = ↑r → x.toReal = r",
@@ -434,6 +537,13 @@
         "decl_name": "HiddenChannelCapacity.posDef_traceLeft",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "The partial trace of a strictly positive state is strictly positive (marginals of\nelements of `S₁⁺` stay in `S₁⁺`, LZ p. 4).",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d₁ : Type u_1} {d₂ : Type u_2} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [Nonempty d₁] [inst_3 : Fintype d₂]\n  [inst_4 : DecidableEq d₂] {σ : MState (d₁ × d₂)}, σ.m.PosDef → σ.traceLeft.m.PosDef",
@@ -476,6 +586,13 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.qDivR"
         ],
+        "doc": "Klein nonnegativity in real form (vendored core: `inner_log_sub_log_nonneg`).",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d},\n  σ.m.PosDef → 0 ≤ HiddenChannelCapacity.qDivR ρ σ",
@@ -487,6 +604,12 @@
         "decl_name": "HiddenChannelCapacity.ker_le_of_posDef",
         "depth": 5,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d}, σ.m.PosDef → (↑σ).ker ≤ (↑ρ).ker",
@@ -509,6 +632,7 @@
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
         ],
+        "doc": "**LZ Lemma 3.2, normalized form**: for EVERY state `ω`,\n`D(ω‖σ(R)) − log Tr T(R) = I(A:B|C)_ω + Δ_R(ω)` with\n`Δ_R(ω) := D(ω_AC‖ρ_AC) + D(ω_CB‖ρ_CB) − D(ω_C‖ρ_C)`. This is the paper's divergence\nidentity (p. 8) restated against the NORMALIZED candidate via\n`log T(R) = log Tr T(R) + log σ(R)` (the presentation variant recorded in QJT_URS;\npure real algebra over the duality, no positivity hypotheses).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)) (ω : MState (a × c × b)),\n  HiddenChannelCapacity.qDivR ω (HiddenChannelCapacity.sigT ρAC ρCB) - Real.log (HiddenChannelCapacity.trC ρAC ρCB) =\n    qcmi ω +\n      (HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margAC ω) ρAC +\n          HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margCB ω) ρCB -\n        HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margC ω) ρAC.traceLeft)",
@@ -525,6 +649,7 @@
           "HiddenChannelCapacity.sigT",
           "HiddenChannelCapacity.trC"
         ],
+        "doc": "The log of the normalized candidate splits into the trace constant and the\nembedded-log sum (`log T(R) = log Tr T(R) + log σ(R)`, the normalization step of the\nLZ eq. 13 route).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)),\n  (↑(HiddenChannelCapacity.sigT ρAC ρCB)).log =\n    Real.log (HiddenChannelCapacity.trC ρAC ρCB)⁻¹ • 1 + HiddenChannelCapacity.Tmat ρAC ρCB",
@@ -551,6 +676,7 @@
         "decl_name": "HiddenChannelCapacity.exp_log_id",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "`exp` then `log` is the identity on Hermitian matrices (unconditionally: both are\n`cfc` transports and `Real.log ∘ Real.exp = id`).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.exp.log = A",
@@ -567,6 +693,7 @@
           "HiddenChannelCapacity.margC",
           "HiddenChannelCapacity.margCB"
         ],
+        "doc": "Duality for the `C`-embedding (two-step pull-out; uses the marginal coherence\n`margC_eq_CBright`, LZ Lem 2.2).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat c ℂ), inner ℝ (↑ω) (HiddenChannelCapacity.embedC L) = inner ℝ (↑(HiddenChannelCapacity.margC ω)) L",
@@ -582,6 +709,7 @@
           "HiddenChannelCapacity.margC",
           "HiddenChannelCapacity.margCB"
         ],
+        "doc": "Coherence of the two separator-marginal routes (iterated marginalization, LZ\nLem 2.2): tracing `a` then `b` is tracing `b` then `a`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  HiddenChannelCapacity.margC ω = (HiddenChannelCapacity.margCB ω).traceRight",
@@ -593,6 +721,7 @@
         "decl_name": "HiddenChannelCapacity.inner_kron_one",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Duality for a right-identity Kronecker factor on any bipartite carrier.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d₁ : Type u_4} {d₂ : Type u_5} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [inst_2 : Fintype d₂]\n  [inst_3 : DecidableEq d₂] (X : MState (d₁ × d₂)) (L : HermitianMat d₁ ℂ),\n  inner ℝ (↑X) (L.kronecker 1) = inner ℝ (↑X.traceRight) L",
@@ -604,6 +733,7 @@
         "decl_name": "Matrix.traceRight_mul_kron_one",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "Pull-out for the right partial trace, right-multiplication form:\n`Tr_B(ρ (M ⊗ 1_B)) = Tr_B(ρ) · M`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d₁ × d) (d₂ × d) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceRight (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1) = ρ.traceRight * M",
@@ -618,6 +748,7 @@
           "HiddenChannelCapacity.embedCB",
           "HiddenChannelCapacity.margCB"
         ],
+        "doc": "Duality for the `C∪B`-embedding: testing the state against an embedded observable\nis testing the marginal (LZ eq. 2).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat (c × b) ℂ),\n  inner ℝ (↑ω) (HiddenChannelCapacity.embedCB L) = inner ℝ (↑(HiddenChannelCapacity.margCB ω)) L",
@@ -629,6 +760,7 @@
         "decl_name": "Matrix.traceLeft_mul_one_kron",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "Pull-out, right-multiplication form: `Tr_A(ρ (1_A ⊗ M)) = Tr_A(ρ) · M`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d × d₁) (d × d₂) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceLeft (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) 1 M) = ρ.traceLeft * M",
@@ -645,6 +777,7 @@
           "MState.traceAlong",
           "Matrix.embedAlong"
         ],
+        "doc": "Duality for the `A∪C`-embedding (via the L0 primitive `traceAlong_duality`).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat (a × c) ℂ),\n  inner ℝ (↑ω) (HiddenChannelCapacity.embedAC L) = inner ℝ (↑(HiddenChannelCapacity.margAC ω)) L",
@@ -659,6 +792,7 @@
           "MState.traceAlong",
           "Matrix.embedAlong"
         ],
+        "doc": "**The partial-trace duality** (LZ eq (2), the defining property of the partial\ntrace, split-indexed): testing the marginal against an observable is testing the\nstate against the embedded observable,\n`Tr(embedAlong e M · ρ) = Tr(M · traceAlong e ρ)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_1} {a : Type u_2} {b : Type u_3} [inst : Fintype d] [inst_1 : DecidableEq d] [inst_2 : Fintype a]\n  [inst_3 : DecidableEq a] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ρ : MState d) (e : d ≃ a × b)\n  (M : Matrix a a ℂ), (Matrix.embedAlong e M * ρ.m).trace = (M * (ρ.traceAlong e).m).trace",
@@ -670,6 +804,7 @@
         "decl_name": "Matrix.trace_submatrix_equiv",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "The trace is invariant under simultaneous reindexing by an equivalence.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {n : Type u_6} {m : Type u_7} [inst_1 : Fintype n] [inst_2 : Fintype m]\n  (A : Matrix m m R) (e : n ≃ m), (A.submatrix ⇑e ⇑e).trace = A.trace",
@@ -681,6 +816,7 @@
         "decl_name": "Matrix.traceRight_kron_one_mul",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "Pull-out for the right partial trace, left-multiplication form:\n`Tr_B((M ⊗ 1_B) ρ) = M · Tr_B(ρ)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (M : Matrix d₁ d₂ R)\n  (ρ : Matrix (d₂ × d) (d₃ × d) R),\n  Matrix.traceRight (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1 * ρ) = M * ρ.traceRight",
@@ -695,6 +831,7 @@
           "HiddenChannelCapacity.margAC",
           "MState.traceAlong"
         ],
+        "doc": "The `AC`-marginal in `traceAlong` form (the L0 primitive).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  HiddenChannelCapacity.margAC ω = ω.traceAlong (Equiv.prodAssoc a c b).symm",
@@ -706,6 +843,7 @@
         "decl_name": "HiddenChannelCapacity.assoc'_eq_relabel",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "The vendored associator is the plain `prodAssoc` relabel.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  ω.assoc' = ω.relabel (Equiv.prodAssoc a c b)",
@@ -718,6 +856,17 @@
         "depth": 2,
         "dictionary_leaves": [
           "HiddenChannelCapacity.kleinTerm"
+        ],
+        "doc": "**Faithfulness of quantum relative entropy** (the equality case of Klein's\ninequality, LZ p. 5, Ruskai 2002 Thm 3; not present in the vendored corpus): for a\nstate `ρ` and a STRICTLY POSITIVE state `σ`, `Tr[ρ(log ρ − log σ)] = 0` forces\n`ρ = σ`.",
+        "hypotheses": [
+          {
+            "name": "hσ",
+            "pretty": "σ.m.PosDef"
+          },
+          {
+            "name": "h0",
+            "pretty": "inner ℝ (↑ρ) ((↑ρ).log - (↑σ).log) = 0"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -732,6 +881,16 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.kleinTerm"
         ],
+        "hypotheses": [
+          {
+            "name": "hx",
+            "pretty": "0 ≤ x"
+          },
+          {
+            "name": "hy",
+            "pretty": "0 < y"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {x y : ℝ}, 0 ≤ x → 0 < y → 0 ≤ HiddenChannelCapacity.kleinTerm x y",
@@ -745,6 +904,16 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.kleinTerm"
         ],
+        "hypotheses": [
+          {
+            "name": "hx",
+            "pretty": "0 ≤ x"
+          },
+          {
+            "name": "hy",
+            "pretty": "0 < y"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {x y : ℝ}, 0 ≤ x → 0 < y → (HiddenChannelCapacity.kleinTerm x y = 0 ↔ x = y)",
@@ -756,6 +925,7 @@
         "decl_name": "HermitianMat.overlap_row_sum",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "Rows of the shared-basis kernel sum to one (`C` is unitary).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (i : d),\n  ∑ j, ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2 = 1",
@@ -767,6 +937,7 @@
         "decl_name": "HermitianMat.overlap_col_sum",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "Columns of the shared-basis kernel sum to one.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (j : d),\n  ∑ i, ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2 = 1",
@@ -778,6 +949,7 @@
         "decl_name": "HermitianMat.log_eq_cfc",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "`A.log` is `cfc` at `Real.log`, definitionally (QuantumInfo LogExp.lean).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.log = A.cfc Real.log",
@@ -789,6 +961,7 @@
         "decl_name": "HermitianMat.inner_cfc_cfc",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "**The shared-basis double sum** (generalizing the vendored\n`inner_eq_doubly_stochastic_sum` from `(A, B)` to `(A.cfc f, B.cfc g)` with the SAME\noverlap kernel): the inner product of two matrix functions expands over the pair of\neigenbases with weights `‖C i j‖²`, `C = U_A† U_B`. All four divergence pairings of the\nfaithfulness argument are instances of this one lemma at a single shared kernel.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (f g : ℝ → ℝ),\n  inner ℝ (A.cfc f) (B.cfc g) =\n    ∑ i,\n      ∑ j,\n        f (⋯.eigenvalues i) * g (⋯.eigenvalues j) *\n          ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2",

@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6023"
   },
   {
+    "field": "claim.doc",
+    "value": "An analytic non-Borel subset of ℝ: the image of the Baire-space witness under the continuous injection. Analyticity transfers along the continuous image; non-Borelness transfers back along the injective preimage."
+  },
+  {
     "field": "claim.decl_name",
     "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
   },
@@ -124,6 +128,30 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "baireMarkers"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
   },
@@ -160,6 +188,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "An analytic non-Borel subset of Baire space: the projection of the diagonal witness."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
   },
@@ -180,6 +212,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A closed set with a non-Borel projection. Diagonalize the universal closed set of (ℕ → ℕ) × (ℕ → ℕ): were the projection Borel, its complement would be analytic, hence the projection of a closed set, hence a section of the universal set — and evaluating that section at its own parameter is contradictory."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}"
   },
@@ -198,6 +234,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "A universal closed set. Every second-countable space X carries a closed subset of X × (ℕ → ℕ) whose sections run through all closed subsets of X: enumerate a countable basis together with ∅, and let the parameter select which basis elements to exclude."
   },
   {
     "field": "argument_node.pretty",
@@ -354,6 +394,54 @@
   {
     "field": "argument_node.decl_name",
     "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The marker bits: the indicator stream of the marker set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The marker sequence of x : ℕ → ℕ: the strictly increasing sequence n + 1 + ∑_{k ≤ n} x k, whose successive gaps encode x."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The embedding of Baire space into ℝ: marker bits into the base-3 expansion."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℝ"
   },
   {
     "field": "argument.accession",

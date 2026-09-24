@@ -36,6 +36,10 @@
     "value": "Alex Meiburg"
   },
   {
+    "field": "claim.doc",
+    "value": "The two-clique quantum junction tree theorem (Lauritzen–Zwiernik, arXiv:2605.19453, Theorem 3.1): over the acyclic two-clique base, the base's compatibility datum decides base-side reconstruction. For strictly positive consistent marginals, a quantum Markov completion exists iff Tr T(R) = 1; the completion is then unique and equals the normalized logarithmic candidate σ(R) = T(R)/Tr T(R). Together with trC_le_one (the trace bound) this is the full theorem."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HiddenChannelCapacity.lz_theorem_3_1"
   },
@@ -54,6 +58,30 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "ρAC.m.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hAC"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "ρCB.m.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hCB"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "ρAC.traceLeft = ρCB.trace…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hcons"
   },
   {
     "field": "argument_node.decl_name",
@@ -352,6 +380,134 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "IsCompletion"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsMarkovCompletion"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TR"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Tmat"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedAC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedCB"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "kleinTerm"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "margAC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "margC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "margCB"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "qDivR"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sigT"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "trC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "traceAlong"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "embedAlong"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "HiddenChannelCapacity.lz_theorem_3_1"
   },
@@ -390,6 +546,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "LZ Theorem 3.1, existence direction: if Tr T(R) = 1 then the normalized candidate IS a quantum Markov completion (extraction of Δ_R = 0 via DPI and the faithfulness of relative entropy, in the order recorded in the QJT_URS front-load)."
   },
   {
     "field": "argument_node.pretty",
@@ -472,6 +632,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "LZ Theorem 3.1, uniqueness direction: any quantum Markov completion forces Tr T(R) = 1 and equals the normalized candidate σ(R)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        ∀ (ω : MState (a × c × b)),\n          HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω →\n            HiddenChannelCapacity.trC ρAC ρCB = 1 ∧ ω = HiddenChannelCapacity.sigT ρAC ρCB"
   },
@@ -552,6 +716,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "LZ Theorem 3.1, the trace bound: Tr T(R) ≤ 1. Proved WITHOUT Lieb's three-matrix inequality, by the eq. 13 route specialized to two cliques (Lemma 3.2 at ω = σ(R) plus SSA and DPI); see the QJT_URS L2a front-load."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b] [Nonempty b]\n  {ρAC : MState (a × c)} {ρCB : MState (c × b)}, ρAC.m.PosDef → ρCB.m.PosDef → HiddenChannelCapacity.trC ρAC ρCB ≤ 1"
   },
@@ -604,6 +772,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Δ_R(ω) ≥ 0: one DPI application plus Klein nonnegativity (LZ Lem 3.2's nonnegativity clause, via Prop A.7 imported through the vendored channel DPI)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Fintype b] [inst_6 : DecidableEq b] {ρAC : MState (a × c)}\n  {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ∀ (ω : MState (a × c × b)),\n        0 ≤\n          HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margAC ω) ρAC +\n              HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margCB ω) ρCB -\n            HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margC ω) ρAC.traceLeft"
   },
@@ -652,6 +824,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "DPI for the real divergence under the left partial trace (monotonicity of relative entropy, LZ Prop A.7; imported from the vendored channel DPI sandwichedRenyiEntropy_DPI_eq_one at the partial-trace channel)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d₁ : Type u_5} {d₂ : Type u_6} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [inst_2 : Fintype d₂]\n  [inst_3 : DecidableEq d₂] (ρ σ : MState (d₁ × d₂)),\n  σ.m.PosDef →\n    σ.traceLeft.m.PosDef → HiddenChannelCapacity.qDivR ρ.traceLeft σ.traceLeft ≤ HiddenChannelCapacity.qDivR ρ σ"
   },
@@ -678,6 +854,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The single ENNReal-to-ℝ seam: qDivR equals the vendored relative entropy. (LZ p. 5; vendored qRelativeEnt_rank.)"
   },
   {
     "field": "argument_node.pretty",
@@ -718,6 +898,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The partial trace of a strictly positive state is strictly positive (marginals of elements of S₁⁺ stay in S₁⁺, LZ p. 4)."
   },
   {
     "field": "argument_node.pretty",
@@ -804,6 +988,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Klein nonnegativity in real form (vendored core: inner_log_sub_log_nonneg)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d},\n  σ.m.PosDef → 0 ≤ HiddenChannelCapacity.qDivR ρ σ"
   },
@@ -850,6 +1038,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "LZ Lemma 3.2, normalized form: for EVERY state ω, D(ω‖σ(R)) − log Tr T(R) = I(A:B|C)_ω + Δ_R(ω) with Δ_R(ω) := D(ω_AC‖ρ_AC) + D(ω_CB‖ρ_CB) − D(ω_C‖ρ_C). This is the paper's divergence identity (p. 8) restated against the NORMALIZED candidate via log T(R) = log Tr T(R) + log σ(R) (the presentation variant recorded in QJT_URS; pure real algebra over the duality, no positivity hypotheses)."
   },
   {
     "field": "argument_node.pretty",
@@ -932,6 +1124,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The log of the normalized candidate splits into the trace constant and the embedded-log sum (log T(R) = log Tr T(R) + log σ(R), the normalization step of the LZ eq. 13 route)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)),\n  (↑(HiddenChannelCapacity.sigT ρAC ρCB)).log =\n    Real.log (HiddenChannelCapacity.trC ρAC ρCB)⁻¹ • 1 + HiddenChannelCapacity.Tmat ρAC ρCB"
   },
@@ -1008,6 +1204,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "exp then log is the identity on Hermitian matrices (unconditionally: both are cfc transports and Real.log ∘ Real.exp = id)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.exp.log = A"
   },
@@ -1022,6 +1222,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Duality for the C-embedding (two-step pull-out; uses the marginal coherence margC_eq_CBright, LZ Lem 2.2)."
   },
   {
     "field": "argument_node.pretty",
@@ -1068,6 +1272,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Coherence of the two separator-marginal routes (iterated marginalization, LZ Lem 2.2): tracing a then b is tracing b then a."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  HiddenChannelCapacity.margC ω = (HiddenChannelCapacity.margCB ω).traceRight"
   },
@@ -1108,6 +1316,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Duality for a right-identity Kronecker factor on any bipartite carrier."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d₁ : Type u_4} {d₂ : Type u_5} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [inst_2 : Fintype d₂]\n  [inst_3 : DecidableEq d₂] (X : MState (d₁ × d₂)) (L : HermitianMat d₁ ℂ),\n  inner ℝ (↑X) (L.kronecker 1) = inner ℝ (↑X.traceRight) L"
   },
@@ -1128,6 +1340,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Pull-out for the right partial trace, right-multiplication form: Tr_B(ρ (M ⊗ 1_B)) = Tr_B(ρ) · M."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d₁ × d) (d₂ × d) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceRight (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1) = ρ.traceRight * M"
   },
@@ -1142,6 +1358,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Duality for the C∪B-embedding: testing the state against an embedded observable is testing the marginal (LZ eq. 2)."
   },
   {
     "field": "argument_node.pretty",
@@ -1176,6 +1396,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Pull-out, right-multiplication form: Tr_A(ρ (1_A ⊗ M)) = Tr_A(ρ) · M."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d × d₁) (d × d₂) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceLeft (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) 1 M) = ρ.traceLeft * M"
   },
@@ -1190,6 +1414,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Duality for the A∪C-embedding (via the L0 primitive traceAlong_duality)."
   },
   {
     "field": "argument_node.pretty",
@@ -1232,6 +1460,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The partial-trace duality (LZ eq (2), the defining property of the partial trace, split-indexed): testing the marginal against an observable is testing the state against the embedded observable, Tr(embedAlong e M · ρ) = Tr(M · traceAlong e ρ)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d : Type u_1} {a : Type u_2} {b : Type u_3} [inst : Fintype d] [inst_1 : DecidableEq d] [inst_2 : Fintype a]\n  [inst_3 : DecidableEq a] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ρ : MState d) (e : d ≃ a × b)\n  (M : Matrix a a ℂ), (Matrix.embedAlong e M * ρ.m).trace = (M * (ρ.traceAlong e).m).trace"
   },
@@ -1264,6 +1496,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The trace is invariant under simultaneous reindexing by an equivalence."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {n : Type u_6} {m : Type u_7} [inst_1 : Fintype n] [inst_2 : Fintype m]\n  (A : Matrix m m R) (e : n ≃ m), (A.submatrix ⇑e ⇑e).trace = A.trace"
   },
@@ -1280,6 +1516,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Pull-out for the right partial trace, left-multiplication form: Tr_B((M ⊗ 1_B) ρ) = M · Tr_B(ρ)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (M : Matrix d₁ d₂ R)\n  (ρ : Matrix (d₂ × d) (d₃ × d) R),\n  Matrix.traceRight (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1 * ρ) = M * ρ.traceRight"
   },
@@ -1294,6 +1534,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The AC-marginal in traceAlong form (the L0 primitive)."
   },
   {
     "field": "argument_node.pretty",
@@ -1324,6 +1568,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The vendored associator is the plain prodAssoc relabel."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  ω.assoc' = ω.relabel (Equiv.prodAssoc a c b)"
   },
@@ -1342,6 +1590,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Faithfulness of quantum relative entropy (the equality case of Klein's inequality, LZ p. 5, Ruskai 2002 Thm 3; not present in the vendored corpus): for a state ρ and a STRICTLY POSITIVE state σ, Tr[ρ(log ρ − log σ)] = 0 forces ρ = σ."
   },
   {
     "field": "argument_node.pretty",
@@ -1432,6 +1684,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Rows of the shared-basis kernel sum to one (C is unitary)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (i : d),\n  ∑ j, ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2 = 1"
   },
@@ -1446,6 +1702,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Columns of the shared-basis kernel sum to one."
   },
   {
     "field": "argument_node.pretty",
@@ -1464,6 +1724,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A.log is cfc at Real.log, definitionally (QuantumInfo LogExp.lean)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.log = A.cfc Real.log"
   },
@@ -1478,6 +1742,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The shared-basis double sum (generalizing the vendored inner_eq_doubly_stochastic_sum from (A, B) to (A.cfc f, B.cfc g) with the SAME overlap kernel): the inner product of two matrix functions expands over the pair of eigenbases with weights ‖C i j‖², C = U_A† U_B. All four divergence pairings of the faithfulness argument are instances of this one lemma at a single shared kernel."
   },
   {
     "field": "argument_node.pretty",
@@ -1526,6 +1794,286 @@
   {
     "field": "argument_node.decl_name",
     "value": "HermitianMat.trace_single_conj"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hAC"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "ρAC.m.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hCB"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "ρCB.m.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hcons"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "ρAC.traceLeft = ρCB.traceRight"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsCompletion"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A completion: a global state with the prescribed marginals (LZ M(R), p. 7)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] →\n                [inst_5 : DecidableEq b] → MState (a × c) → MState (c × b) → MState (a × c × b) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsMarkovCompletion"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A quantum Markov completion: a completion with I(A:B|C) = 0 (LZ Def 2.4 quantum conditional independence + the Markov completion of p. 7)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] →\n                [inst_5 : DecidableEq b] → MState (a × c) → MState (c × b) → MState (a × c × b) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.TR"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The logarithmic candidate T(R) = exp(log ρ_{AC} + log ρ_{CB} − log ρ_C) (LZ eq. 5). A Hermitian matrix, NOT a priori a state: its trace deficit is the subject of the theorem."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] →\n                [inst_5 : DecidableEq b] → MState (a × c) → MState (c × b) → HermitianMat (a × c × b) ℂ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Tmat"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The Hermitian exponent of the logarithmic candidate: the sum of the embedded logarithms of the marginals (log ρ_{AC} + log ρ_{CB} − log ρ_C, every operator embedded BEFORE exp; LZ eq. 5 with the p. 23 embedding convention; the separator marginal is taken from the AC side)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] →\n                [inst_5 : DecidableEq b] → MState (a × c) → MState (c × b) → HermitianMat (a × c × b) ℂ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedAC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Embed an A∪C-local operator into the global system."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} → {c : Type u_2} → {b : Type u_3} → [DecidableEq b] → HermitianMat (a × c) ℂ → HermitianMat (a × c × b) ℂ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Embed a C-local operator into the global system."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} → {b : Type u_3} → [DecidableEq a] → [DecidableEq b] → HermitianMat c ℂ → HermitianMat (a × c × b) ℂ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedCB"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Embed a C∪B-local operator into the global system (tensoring with the identity, LZ p. 23)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} → {c : Type u_2} → {b : Type u_3} → [DecidableEq a] → HermitianMat (c × b) ℂ → HermitianMat (a × c × b) ℂ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.kleinTerm"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The scalar Klein term x log x − x log y − x + y (the integrand of Klein's inequality, LZ p. 5 / Ruskai 2002 Thm 3)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℝ → ℝ → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The A∪C-marginal of a global state (LZ p. 4: reduced density operator)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] → [inst_5 : DecidableEq b] → MState (a × c × b) → MState (a × c)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The C-marginal (the separator marginal), as the vendor composite the qcmi definition consumes."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] → [inst_4 : Fintype b] → [inst_5 : DecidableEq b] → MState (a × c × b) → MState c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The C∪B-marginal of a global state."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] → [inst_5 : DecidableEq b] → MState (a × c × b) → MState (c × b)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The quantum relative entropy in real form, Tr[ρ (log ρ − log σ)] (LZ eq. 4 on density operators; equals the vendored qRelativeEnt by qRelativeEnt_rank when σ is nonsingular)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{d : Type u_4} → [inst : Fintype d] → [inst_1 : DecidableEq d] → MState d → MState d → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The normalized candidate σ(R) = T(R)/Tr T(R): the state the equivalences of LZ Thm 3.1 are about."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [Nonempty a] →\n            [inst_3 : Fintype c] →\n              [inst_4 : DecidableEq c] →\n                [Nonempty c] →\n                  [inst_6 : Fintype b] →\n                    [inst_7 : DecidableEq b] → [Nonempty b] → MState (a × c) → MState (c × b) → MState (a × c × b)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The trace of the logarithmic candidate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{a : Type u_1} →\n  {c : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype a] →\n        [inst_1 : DecidableEq a] →\n          [inst_2 : Fintype c] →\n            [inst_3 : DecidableEq c] →\n              [inst_4 : Fintype b] → [inst_5 : DecidableEq b] → MState (a × c) → MState (c × b) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MState.traceAlong"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Trace out the second block of a coordinate split: the abstract partial-trace primitive of the L0 layer."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{d : Type u_1} →\n  {a : Type u_2} →\n    {b : Type u_3} →\n      [inst : Fintype d] →\n        [inst_1 : DecidableEq d] →\n          [inst_2 : Fintype a] →\n            [inst_3 : DecidableEq a] → [Fintype b] → [DecidableEq b] → MState d → d ≃ a × b → MState a"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Matrix.embedAlong"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Embed an operator on one block of a coordinate split into the whole space (tensor with the identity, transported along the split): the dual of MState.traceAlong, and the paper's embedding convention (\"tensoring with identities BEFORE logs\") as a named primitive."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{R : Type u_1} →\n  [NonAssocSemiring R] →\n    {d : Type u_2} → {a : Type u_6} → {b : Type u_7} → [DecidableEq b] → d ≃ a × b → Matrix a a R → Matrix d d R"
   },
   {
     "field": "argument.accession",

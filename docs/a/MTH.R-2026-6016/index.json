@@ -62,6 +62,7 @@
           "AuditCP.learnerExperiment",
           "AuditCP.publicOnlyExperiment"
         ],
+        "doc": "F2 — given `A` nonempty,\n`BlackwellEquivalent (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K` (blackwell1953).",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K",
@@ -79,6 +80,7 @@
           "AuditCP.learnerExperiment",
           "AuditCP.publicOnlyExperiment"
         ],
+        "doc": "F2a — public information is Blackwell-below the complete learner view:\n`BlackwellBelow publicOnlyExperiment (learnerExperiment K)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow AuditCP.publicOnlyExperiment (AuditCP.learnerExperiment K)",
@@ -98,6 +100,7 @@
           "AuditCP.learnerExperiment",
           "AuditCP.publicOnlyExperiment"
         ],
+        "doc": "F2b — given `A` nonempty,\n`BlackwellBelow (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K` (blackwell1953).",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K",
@@ -109,6 +112,7 @@
         "decl_name": "AuditCP.pmf_map_publicTag_injective",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "Pushing a PMF on `Y` through the tag `y ↦ (s, y)` is injective.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {Y : Type uY} (s : S), Function.Injective fun p => PMF.map (fun y => (s, y)) p",
@@ -125,6 +129,7 @@
           "AuditCP.AuditSealed",
           "AuditCP.FactorsThroughPublic"
         ],
+        "doc": "F1 — given `A` nonempty, `AuditSealed K ↔ FactorsThroughPublic K`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ AuditCP.FactorsThroughPublic K",

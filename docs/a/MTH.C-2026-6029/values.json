@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Advice elimination (Ben-David & Dichterman 1998): If C is PAC-learnable with concept-dependent advice from a FINITE set A (with measurability regularity), then C is PAC-learnable without advice.Proof strategy: run the advice-augmented learner with each a ∈ A on a training portion of the sample, producing |A| candidate hypotheses. Use a validation portion to select the candidate with lowest empirical error. Union bound over |A| advice values + Hoeffding on validation controls total failure probability. Sample complexity: O(m_orig(ε/2, δ/(2|A|)) + log(|A|/δ)/ε²).The [Fintype A] constraint is essential: for infinite A, the theorem is false (no finite union bound). [Nonempty A] ensures the advice space is inhabited."
+  },
+  {
     "field": "claim.decl_name",
     "value": "advice_elimination"
   },

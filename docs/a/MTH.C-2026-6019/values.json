@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The discrete Vorob'ev theorem: a cover's base structure is acyclic exactly when local pairwise consistency always forces a global structure, i.e. every pairwise-consistent family of nonempty local relations on it glues."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues"
   },

@@ -164,6 +164,7 @@
           "LittlestoneDim",
           "OnlineLearnable"
         ],
+        "doc": "Littlestone characterization: C is online-learnable iff LittlestoneDim(C) < ∞.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ (X : Type) (C : ConceptClass X Bool), OnlineLearnable X Bool C ↔ LittlestoneDim X C < ⊤",
@@ -187,6 +188,13 @@
           "OnlineLearner.mistakes",
           "OnlineLearner.mistakesFrom"
         ],
+        "doc": "Forward direction: OnlineLearnable → LittlestoneDim < ⊤",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "OnlineLearnable X Bool C"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type) (C : ConceptClass X Bool), OnlineLearnable X Bool C → LittlestoneDim X C < ⊤",
@@ -207,6 +215,17 @@
           "OnlineLearner.mistakesFrom",
           "OnlineLearner.predict",
           "OnlineLearner.update"
+        ],
+        "doc": "Core adversary lemma.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "LTree.isShattered C T"
+          },
+          {
+            "name": "hne",
+            "pretty": "Set.Nonempty C"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -232,6 +251,13 @@
           "SOA",
           "versionSpace"
         ],
+        "doc": "Backward direction: LittlestoneDim < ⊤ → OnlineLearnable.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "LittlestoneDim X C < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type) (C : ConceptClass X Bool), LittlestoneDim X C < ⊤ → OnlineLearnable X Bool C",
@@ -253,6 +279,25 @@
           "SOA",
           "versionSpace"
         ],
+        "doc": "SOA mistakes from a given state are bounded by the Ldim of the version space.\nThis is the core M-Potential argument.",
+        "hypotheses": [
+          {
+            "name": "hcC",
+            "pretty": "c ∈ C"
+          },
+          {
+            "name": "hcons",
+            "pretty": "∀ p ∈ history, c p.1 = p.2"
+          },
+          {
+            "name": "hd",
+            "pretty": "LittlestoneDim X (versionSpace C history) ≤ ↑↑d"
+          },
+          {
+            "name": "hfin",
+            "pretty": "LittlestoneDim X (versionSpace C history) < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool},\n  ∀ c ∈ C,\n    ∀ (history : List (X × Bool)),\n      (∀ p ∈ history, c p.1 = p.2) →\n        ∀ (d : ℕ),\n          LittlestoneDim X (versionSpace C history) ≤ ↑↑d →\n            LittlestoneDim X (versionSpace C history) < ⊤ → ∀ (seq : List X), (SOA X C).mistakesFrom history c seq ≤ d",
@@ -268,6 +313,7 @@
           "FLT.Concept",
           "versionSpace"
         ],
+        "doc": "Extending history restricts the version space.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool} {history : List (X × Bool)} {x : X} {y : Bool},\n  versionSpace C (history ++ [(x, y)]) ⊆ versionSpace C history",
@@ -282,6 +328,17 @@
           "ConceptClass",
           "FLT.Concept",
           "versionSpace"
+        ],
+        "doc": "Target stays in version space.",
+        "hypotheses": [
+          {
+            "name": "hcC",
+            "pretty": "c ∈ C"
+          },
+          {
+            "name": "hcons",
+            "pretty": "∀ p ∈ history, c p.1 = p.2"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -303,6 +360,21 @@
           "SOA",
           "versionSpace"
         ],
+        "doc": "On an SOA mistake, the Ldim of the version space strictly decreases.",
+        "hypotheses": [
+          {
+            "name": "hc_vs",
+            "pretty": "c ∈ versionSpace C history"
+          },
+          {
+            "name": "hpred",
+            "pretty": "(SOA X C).predict history x ≠ c x"
+          },
+          {
+            "name": "hfin",
+            "pretty": "LittlestoneDim X (versionSpace C history) < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool} {history : List (X × Bool)} {x : X} {c : X → Bool},\n  c ∈ versionSpace C history →\n    (SOA X C).predict history x ≠ c x →\n      LittlestoneDim X (versionSpace C history) < ⊤ →\n        LittlestoneDim X (versionSpace C (history ++ [(x, c x)])) < LittlestoneDim X (versionSpace C history)",
@@ -321,6 +393,7 @@
           "SOA",
           "versionSpace"
         ],
+        "doc": "SOA predicts the label whose side has higher Ldim.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} (C : ConceptClass X Bool) (history : List (X × Bool)) (x : X),\n  have V := versionSpace C history;\n  have b := (SOA X C).predict history x;\n  LittlestoneDim X {c | c ∈ V ∧ c x = b} ≥ LittlestoneDim X {c | c ∈ V ∧ c x = !b}",
@@ -338,6 +411,25 @@
           "LTree.isShattered",
           "LittlestoneDim"
         ],
+        "doc": "When Ldim(V) = 0 (↑↑0), all concepts in V agree on every point.\nKey lemma for M-VersionSpaceCollapse.",
+        "hypotheses": [
+          {
+            "name": "hd",
+            "pretty": "LittlestoneDim X V = ↑0"
+          },
+          {
+            "name": "_hne",
+            "pretty": "Set.Nonempty V"
+          },
+          {
+            "name": "hc₁",
+            "pretty": "c₁ ∈ V"
+          },
+          {
+            "name": "hc₂",
+            "pretty": "c₂ ∈ V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {V : ConceptClass X Bool},\n  LittlestoneDim X V = ↑0 → Set.Nonempty V → ∀ (x : X) (c₁ c₂ : X → Bool), c₁ ∈ V → c₂ ∈ V → c₁ x = c₂ x",
@@ -354,6 +446,25 @@
           "LTree",
           "LTree.isShattered",
           "LittlestoneDim"
+        ],
+        "doc": "Build a tree of depth k+1 from shattered subtrees on both sides.\nParametrized over b : Bool so we don't need to case-split in the caller.",
+        "hypotheses": [
+          {
+            "name": "hb",
+            "pretty": "∃ Tb, LTree.isShattered {c | c ∈ V ∧ c x = b} Tb"
+          },
+          {
+            "name": "hnb",
+            "pretty": "∃ Tnb, LTree.isShattered {c | c ∈ V ∧ c x = !b} Tnb"
+          },
+          {
+            "name": "hwb",
+            "pretty": "∃ c ∈ V, c x = b"
+          },
+          {
+            "name": "hwnb",
+            "pretty": "∃ c ∈ V, c x = !b"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -373,6 +484,13 @@
           "LTree.truncate",
           "LittlestoneDim"
         ],
+        "doc": "From Ldim ≥ d, extract a shattered tree of depth exactly d.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "LittlestoneDim X C ≥ ↑↑d"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool} {d : ℕ}, LittlestoneDim X C ≥ ↑↑d → ∃ T, LTree.isShattered C T",
@@ -390,6 +508,17 @@
           "LTree.isShattered",
           "LTree.truncate"
         ],
+        "doc": "A truncated tree is shattered if the original is.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "LTree.isShattered C T"
+          },
+          {
+            "name": "h",
+            "pretty": "n ≤ m"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool} {m : ℕ} (T : LTree X m),\n  LTree.isShattered C T → ∀ {n : ℕ} (h : n ≤ m), LTree.isShattered C (LTree.truncate h T)",
@@ -406,6 +535,13 @@
           "LTree",
           "LTree.isShattered"
         ],
+        "doc": "Helper: shattering implies the concept class is nonempty.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "LTree.isShattered C T"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n), LTree.isShattered C T → Set.Nonempty C",
@@ -417,6 +553,13 @@
         "decl_name": "WithBot_WithTop_lt_succ_le",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "In `WithBot (WithTop ℕ)`, `a < ↑↑(n+1) → a ≤ ↑↑n`. Reusable lattice fact.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "a < ↑↑(n + 1)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {a : WithBot (WithTop ℕ)} {n : ℕ}, a < ↑↑(n + 1) → a ≤ ↑↑n",
@@ -433,6 +576,7 @@
           "OnlineLearner.predict",
           "SOA"
         ],
+        "doc": "SOA mistakesFrom cons: unfold one step using the interface.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type) (C : ConceptClass X Bool) (history : List (X × Bool)) (c : X → Bool) (x : X) (xs : List X),\n  (SOA X C).mistakesFrom history c (x :: xs) =\n    (if (SOA X C).predict history x ≠ c x then 1 else 0) + (SOA X C).mistakesFrom (history ++ [(x, c x)]) c xs",
@@ -448,6 +592,17 @@
           "FLT.Concept",
           "LTree",
           "LTree.isShattered"
+        ],
+        "doc": "Shattering is upward-monotone in the concept class.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "C ⊆ C'"
+          },
+          {
+            "name": "a",
+            "pretty": "LTree.isShattered C T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -469,6 +624,7 @@
           "OnlineLearner.predict",
           "OnlineLearner.update"
         ],
+        "doc": "Relate mistakesFrom to the original mistakes function.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type} (L : OnlineLearner X Bool) (c : X → Bool) (seq : List X), L.mistakesFrom L.init c seq = L.mistakes c seq",
@@ -485,6 +641,7 @@
           "OnlineLearner.init",
           "SOA"
         ],
+        "doc": "SOA init state is empty history.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type) (C : ConceptClass X Bool), (SOA X C).init = []",

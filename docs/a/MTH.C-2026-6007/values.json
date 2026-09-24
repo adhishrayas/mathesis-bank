@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Shelah's ded bound on the traces of a family of finite VC dimension. On an infinite ground set a family of finite VC dimension traces at most ded #A sets, and by mk_image_inter_range_cut_eq_ded the bound is attained. The infiniteness of A is not decorative: see exists_finite_ground_hasVCDimLE_not_mk_image_inter_le_ded."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HasVCDimLE.mk_image_inter_le_ded"
   },

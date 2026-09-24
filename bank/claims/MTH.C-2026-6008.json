@@ -5,6 +5,7 @@
   "created_at": "2026-09-24T00:00:00Z",
   "decl_name": "no_smaller_bound",
   "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+  "doc": "**No cardinal function strictly smaller than `ded` bounds the traces of a family of finite\nVC dimension.** For every infinite `κ` and every `lam < ded κ` there is a family of VC dimension\n`1` on a ground set of size exactly `κ` tracing more than `lam` sets. Together with\n`HasVCDimLE.mk_image_inter_le_ded`, which caps those traces at `ded #A`, this places `ded` at\nthe exact strength of the bound.\n\nThe conclusion cannot be strengthened to a family tracing exactly `ded κ` sets. Chernikov and\nShelah, *On the number of Dedekind cuts and two-cardinal models of dependent theories*, note\nafter their definition of `ded κ` that \"in general the supremum need not be attained\", so at\nsuch a `κ` no family attains it and quantifying below the supremum is the available form. At\n`κ = ℵ₀` the supremum is attained, by `mk_image_inter_range_cut_eq_ded`.",
   "login": "Zetetic-Dhruv",
   "module": "FLT_Proofs.VCDimGeneralized.VCDimDed",
   "origin": "curated",

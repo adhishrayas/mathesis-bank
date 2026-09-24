@@ -823,6 +823,7 @@
           "HiddenChannelCapacity.LocalStruct.team",
           "HiddenChannelCapacity.decidableAcyclic"
         ],
+        "doc": "**The discrete Vorob'ev theorem**: a cover's base structure is acyclic exactly when local\npairwise consistency always forces a global structure, i.e. every pairwise-consistent family of\nnonempty local relations on it glues.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.Acyclic 𝒞 ↔\n    ∀ (fam : List (HiddenChannelCapacity.LocalStruct ι fun x => ZMod 2)),\n      List.map (fun x => x.team) fam = 𝒞.toList →\n        HiddenChannelCapacity.Consistent fam → (∀ L ∈ fam, L.rel.Nonempty) → HiddenChannelCapacity.Glues fam",
@@ -842,6 +843,21 @@
           "HiddenChannelCapacity.RIP",
           "HiddenChannelCapacity.RIPCover"
         ],
+        "doc": "**The order-free amalgamation theorem**: an acyclic cover forces every pairwise-consistent\nfamily with duplicate-free teams to glue. The base structure, acyclicity, is decidable, so the\nsufficiency is machine-checkable.",
+        "hypotheses": [
+          {
+            "name": "hcons",
+            "pretty": "HiddenChannelCapacity.Consistent fam"
+          },
+          {
+            "name": "hnd",
+            "pretty": "(List.map (fun x => x.team) fam).Nodup"
+          },
+          {
+            "name": "hacyc",
+            "pretty": "HiddenChannelCapacity.Acyclic (List.map (fun x => x.team) fam).toFinset"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [(i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.Consistent fam →\n    (List.map (fun x => x.team) fam).Nodup →\n      HiddenChannelCapacity.Acyclic (List.map (fun x => x.team) fam).toFinset → HiddenChannelCapacity.Glues fam",
@@ -860,6 +876,7 @@
           "HiddenChannelCapacity.famCover",
           "HiddenChannelCapacity.listCover"
         ],
+        "doc": "The family-level running intersection property reads only the teams.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam ↔ HiddenChannelCapacity.RIPCover (List.map (fun x => x.team) fam)",
@@ -896,6 +913,17 @@
           "HiddenChannelCapacity.joinFam",
           "HiddenChannelCapacity.projS"
         ],
+        "doc": "**The amalgamation leg**: over a running-intersection cover, a pairwise-consistent family\nglues: the base geometry forces the global structure.",
+        "hypotheses": [
+          {
+            "name": "hrip",
+            "pretty": "HiddenChannelCapacity.RIP fam"
+          },
+          {
+            "name": "hcons",
+            "pretty": "HiddenChannelCapacity.Consistent fam"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [(i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam → HiddenChannelCapacity.Consistent fam → HiddenChannelCapacity.Glues fam",
@@ -917,6 +945,21 @@
           "HiddenChannelCapacity.joinFam",
           "HiddenChannelCapacity.projS"
         ],
+        "doc": "**The amalgamation theorem** (positive Vorob'ev, certificate form): once the cover carries\nthe running intersection property, the natural join of any pairwise-consistent family realizes\nevery member exactly, so the base geometry licenses the global structure.",
+        "hypotheses": [
+          {
+            "name": "hrip",
+            "pretty": "HiddenChannelCapacity.RIP fam"
+          },
+          {
+            "name": "hcons",
+            "pretty": "HiddenChannelCapacity.Consistent fam"
+          },
+          {
+            "name": "a",
+            "pretty": "L ∈ fam"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [inst_3 : (i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam →\n    HiddenChannelCapacity.Consistent fam →\n      ∀ L ∈ fam, HiddenChannelCapacity.projS (HiddenChannelCapacity.joinFam fam) L.team = L.rel",
@@ -932,6 +975,12 @@
           "HiddenChannelCapacity.LocalStruct.team",
           "HiddenChannelCapacity.famCover"
         ],
+        "hypotheses": [
+          {
+            "name": "hL",
+            "pretty": "L ∈ fam"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} {fam : List (HiddenChannelCapacity.LocalStruct ι X)}\n  {L : HiddenChannelCapacity.LocalStruct ι X}, L ∈ fam → L.team ⊆ HiddenChannelCapacity.famCover fam",
@@ -944,6 +993,13 @@
         "depth": 4,
         "dictionary_leaves": [
           "HiddenChannelCapacity.projS"
+        ],
+        "doc": "**The presheaf law**: the restriction map carries the `T`-marginal onto the `S`-marginal.\nThis is the compatibility any Čech-type complex over the marginal family consumes.",
+        "hypotheses": [
+          {
+            "name": "hST",
+            "pretty": "S ⊆ T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -972,6 +1028,7 @@
         "decl_name": "HiddenChannelCapacity.exists_restrict_eq",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "Any local configuration extends to a global one, on nonempty parts.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {X : ι → Type u_2} [∀ (i : ι), Nonempty (X i)] (T : Finset ι) (g : (i : ↥T) → X ↑i),\n  ∃ f, T.restrict f = g",
@@ -987,6 +1044,17 @@
           "HiddenChannelCapacity.LocalStruct.imarg",
           "HiddenChannelCapacity.LocalStruct.rel",
           "HiddenChannelCapacity.LocalStruct.team"
+        ],
+        "doc": "Sub-marginalizing an interface marginal composes.",
+        "hypotheses": [
+          {
+            "name": "hS",
+            "pretty": "S ⊆ T"
+          },
+          {
+            "name": "hT",
+            "pretty": "T ⊆ L.team"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1005,6 +1073,17 @@
           "HiddenChannelCapacity.LocalStruct.team",
           "HiddenChannelCapacity.projS"
         ],
+        "doc": "Gluing is permutation-invariant.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "fam'.Perm fam"
+          },
+          {
+            "name": "hg",
+            "pretty": "HiddenChannelCapacity.Glues fam'"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {X : ι → Type u_2} [inst : (i : ι) → DecidableEq (X i)] [inst_1 : Fintype ι] [(i : ι) → Fintype (X i)]\n  {fam fam' : List (HiddenChannelCapacity.LocalStruct ι X)},\n  fam'.Perm fam → HiddenChannelCapacity.Glues fam' → HiddenChannelCapacity.Glues fam",
@@ -1016,6 +1095,13 @@
         "decl_name": "HiddenChannelCapacity.exists_perm_map_eq",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "A permutation of a mapped list lifts along the map.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "σ.Perm (List.map g l)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_3} {β : Type u_4} {g : α → β} {σ : List β} {l : List α},\n  σ.Perm (List.map g l) → ∃ l', l'.Perm l ∧ List.map g l' = σ",
@@ -1029,6 +1115,17 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.Consistent",
           "HiddenChannelCapacity.LocalStruct"
+        ],
+        "doc": "Pairwise consistency is permutation-invariant.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "fam'.Perm fam"
+          },
+          {
+            "name": "hc",
+            "pretty": "HiddenChannelCapacity.Consistent fam"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1050,6 +1147,13 @@
           "HiddenChannelCapacity.LocalStruct.rel",
           "HiddenChannelCapacity.LocalStruct.team"
         ],
+        "doc": "**The CAPSTONE**: a non-acyclic cover hosts a pairwise-consistent family of nonempty\nlocal relations that no global structure realizes: the base structure carries what local\nconsistency cannot.",
+        "hypotheses": [
+          {
+            "name": "hna",
+            "pretty": "¬HiddenChannelCapacity.Acyclic 𝒞"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  ¬HiddenChannelCapacity.Acyclic 𝒞 →\n    ∃ fam,\n      List.map (fun x => x.team) fam = 𝒞.toList ∧\n        HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam",
@@ -1069,6 +1173,13 @@
           "HiddenChannelCapacity.SimpIn",
           "HiddenChannelCapacity.shared"
         ],
+        "doc": "**The ear-free dichotomy**: an ear-free cover is non-conformal or contains a chordless\ncycle. Dirac's lemma on the shared vertices produces a simplicial shared vertex, and the\none-step GYO collapse turns it into an ear.",
+        "hypotheses": [
+          {
+            "name": "hef",
+            "pretty": "HiddenChannelCapacity.EarFree 𝒞"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.EarFree 𝒞 → ¬HiddenChannelCapacity.Conformal 𝒞 ∨ ∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l",
@@ -1084,6 +1195,13 @@
           "HiddenChannelCapacity.IsEarOf",
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.shared"
+        ],
+        "doc": "An ear-free cover has a shared vertex: every team has nonempty boundary.",
+        "hypotheses": [
+          {
+            "name": "hef",
+            "pretty": "HiddenChannelCapacity.EarFree 𝒞"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1105,6 +1223,21 @@
           "HiddenChannelCapacity.instDecidableAdj",
           "HiddenChannelCapacity.shared"
         ],
+        "doc": "**The one-step GYO collapse**: in a conformal cover, a simplicial shared vertex yields an\near — every team containing it has boundary inside the team covering its closed shared\nneighborhood.",
+        "hypotheses": [
+          {
+            "name": "hconf",
+            "pretty": "HiddenChannelCapacity.Conformal 𝒞"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ HiddenChannelCapacity.shared 𝒞"
+          },
+          {
+            "name": "hsimp",
+            "pretty": "∀ x ∈ HiddenChannelCapacity.shared 𝒞,\n  ∀ y ∈ HiddenChannelCapacity.shared 𝒞,\n    HiddenChannelCapacity.Adj 𝒞 v x → HiddenChannelCapacity.Adj 𝒞 v y → x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  HiddenChannelCapacity.Conformal 𝒞 →\n    ∀ {v : ι},\n      v ∈ HiddenChannelCapacity.shared 𝒞 →\n        (∀ x ∈ HiddenChannelCapacity.shared 𝒞,\n            ∀ y ∈ HiddenChannelCapacity.shared 𝒞,\n              HiddenChannelCapacity.Adj 𝒞 v x →\n                HiddenChannelCapacity.Adj 𝒞 v y → x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) →\n          ∃ T ∈ 𝒞, HiddenChannelCapacity.IsEarOf 𝒞 T",
@@ -1118,6 +1251,13 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.shared"
+        ],
+        "doc": "A team's boundary is its shared part.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "T ∈ 𝒞"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1151,6 +1291,13 @@
           "HiddenChannelCapacity.SimpIn",
           "HiddenChannelCapacity.instDecidableAdj"
         ],
+        "doc": "**Dirac's lemma, strong form**: in a chordless-cycle-free adjacency structure, every\nvertex set is a clique or contains two nonadjacent simplicial vertices.",
+        "hypotheses": [
+          {
+            "name": "hchord",
+            "pretty": "¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w",
@@ -1166,6 +1313,85 @@
           "HiddenChannelCapacity.IsChordlessCycle",
           "HiddenChannelCapacity.cyclePairs"
         ],
+        "doc": "**The assembled-cycle contradiction**: two length-minimal x-y connectors through\ndisjoint, mutually non-adjacent sides cannot coexist with chordless-cycle-freeness when\nx and y are non-adjacent.",
+        "hypotheses": [
+          {
+            "name": "hchord",
+            "pretty": "¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          },
+          {
+            "name": "hxy",
+            "pretty": "x ≠ y"
+          },
+          {
+            "name": "hnadj",
+            "pretty": "¬HiddenChannelCapacity.Adj 𝒞 x y"
+          },
+          {
+            "name": "hQBx",
+            "pretty": "¬QB x"
+          },
+          {
+            "name": "hQBy",
+            "pretty": "¬QB y"
+          },
+          {
+            "name": "hABdisj",
+            "pretty": "∀ (v : ι), QA v → QB v → False"
+          },
+          {
+            "name": "hABnadj",
+            "pretty": "∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v"
+          },
+          {
+            "name": "hchA",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA"
+          },
+          {
+            "name": "hndA",
+            "pretty": "pA.Nodup"
+          },
+          {
+            "name": "hxA",
+            "pretty": "pA.head? = some x"
+          },
+          {
+            "name": "hyA",
+            "pretty": "pA.getLast? = some y"
+          },
+          {
+            "name": "hvA",
+            "pretty": "∀ v ∈ pA, v = x ∨ v = y ∨ QA v"
+          },
+          {
+            "name": "hminA",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n    pA.length ≤ q.length"
+          },
+          {
+            "name": "hchB",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB"
+          },
+          {
+            "name": "hndB",
+            "pretty": "pB.Nodup"
+          },
+          {
+            "name": "hxB",
+            "pretty": "pB.head? = some x"
+          },
+          {
+            "name": "hyB",
+            "pretty": "pB.getLast? = some y"
+          },
+          {
+            "name": "hvB",
+            "pretty": "∀ v ∈ pB, v = x ∨ v = y ∨ QB v"
+          },
+          {
+            "name": "hminB",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n    pB.length ≤ q.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ {QA QB : ι → Prop} {x y : ι},\n      x ≠ y →\n        ¬HiddenChannelCapacity.Adj 𝒞 x y →\n          ¬QB x →\n            ¬QB y →\n              (∀ (v : ι), QA v → QB v → False) →\n                (∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v) →\n                  ∀ (pA : List ι),\n                    List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA →\n                      pA.Nodup →\n                        pA.head? = some x →\n                          pA.getLast? = some y →\n                            (∀ v ∈ pA, v = x ∨ v = y ∨ QA v) →\n                              (∀ (q : List ι),\n                                  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                      q.Nodup ∧\n                                        q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n                                    pA.length ≤ q.length) →\n                                ∀ (pB : List ι),\n                                  List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB →\n                                    pB.Nodup →\n                                      pB.head? = some x →\n                                        pB.getLast? = some y →\n                                          (∀ v ∈ pB, v = x ∨ v = y ∨ QB v) →\n                                            (∀ (q : List ι),\n                                                (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                                    q.Nodup ∧\n                                                      q.head? = some x ∧\n                                                        q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n                                                  pB.length ≤ q.length) →\n                                              False",
@@ -1179,6 +1405,45 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.Adj"
         ],
+        "doc": "**Minimality kills chords**: a length-minimal constrained x-y path has no adjacency\nbetween positions at distance ≥ 2.",
+        "hypotheses": [
+          {
+            "name": "hch",
+            "pretty": "List.IsChain (HiddenChannelCapacity.Adj 𝒞) p"
+          },
+          {
+            "name": "hx",
+            "pretty": "p.head? = some x"
+          },
+          {
+            "name": "hy",
+            "pretty": "p.getLast? = some y"
+          },
+          {
+            "name": "hvert",
+            "pretty": "∀ v ∈ p, v = x ∨ v = y ∨ Q v"
+          },
+          {
+            "name": "hmin",
+            "pretty": "∀ (q : List ι),\n  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n      q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n    p.length ≤ q.length"
+          },
+          {
+            "name": "hnd",
+            "pretty": "p.Nodup"
+          },
+          {
+            "name": "hi",
+            "pretty": "i < p.length"
+          },
+          {
+            "name": "hj",
+            "pretty": "j < p.length"
+          },
+          {
+            "name": "hij",
+            "pretty": "i + 2 ≤ j"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y : ι} {p : List ι},\n  List.IsChain (HiddenChannelCapacity.Adj 𝒞) p →\n    p.head? = some x →\n      p.getLast? = some y →\n        (∀ v ∈ p, v = x ∨ v = y ∨ Q v) →\n          (∀ (q : List ι),\n              (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                  q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n                p.length ≤ q.length) →\n            p.Nodup →\n              ∀ {i j : ℕ} (hi : i < p.length) (hj : j < p.length), i + 2 ≤ j → ¬HiddenChannelCapacity.Adj 𝒞 p[i] p[j]",
@@ -1190,6 +1455,16 @@
         "decl_name": "HiddenChannelCapacity.getLast_getElem",
         "depth": 5,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "p.getLast? = some y"
+          },
+          {
+            "name": "h0",
+            "pretty": "0 < p.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {p : List ι} {y : ι}, p.getLast? = some y → ∀ (h0 : 0 < p.length), p[p.length - 1] = y",
@@ -1204,6 +1479,16 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          },
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P v w"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1220,6 +1505,12 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v u",
@@ -1234,6 +1525,12 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "hypotheses": [
+          {
+            "name": "hu",
+            "pretty": "P u"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1250,6 +1547,21 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "doc": "Every vertex on a walk is reachable from its head.",
+        "hypotheses": [
+          {
+            "name": "hwk",
+            "pretty": "HiddenChannelCapacity.IsWalkOn 𝒞 P p"
+          },
+          {
+            "name": "hu",
+            "pretty": "p.head? = some u"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι} {p : List ι},\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p → p.head? = some u → v ∈ p → HiddenChannelCapacity.ReachOn 𝒞 P u v",
@@ -1265,6 +1577,20 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 P u v"
+          },
+          {
+            "name": "hadj",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 v w"
+          },
+          {
+            "name": "hw",
+            "pretty": "P w"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.Adj 𝒞 v w → P w → HiddenChannelCapacity.ReachOn 𝒞 P u w",
@@ -1276,6 +1602,12 @@
         "decl_name": "HiddenChannelCapacity.exists_min_path",
         "depth": 4,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∃ p, Q p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {Q : List ι → Prop}, (∃ p, Q p) → ∃ p, Q p ∧ ∀ (q : List ι), Q q → p.length ≤ q.length",
@@ -1290,6 +1622,33 @@
           "HiddenChannelCapacity.Adj",
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
+        ],
+        "doc": "A connector: an x-y path with interior inside `Q`, from adjacent entry points and\ninterior reachability.",
+        "hypotheses": [
+          {
+            "name": "hxy",
+            "pretty": "x ≠ y"
+          },
+          {
+            "name": "hxu",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 x u₁"
+          },
+          {
+            "name": "hyu",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 y u₂"
+          },
+          {
+            "name": "hreach",
+            "pretty": "HiddenChannelCapacity.ReachOn 𝒞 Q u₁ u₂"
+          },
+          {
+            "name": "hQx",
+            "pretty": "¬Q x"
+          },
+          {
+            "name": "hQy",
+            "pretty": "¬Q y"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1306,6 +1665,21 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "doc": "If `x` has no neighbor reachable from `a` off the separator, then erasing `x` still\nseparates: the first `x`-occurrence on any violating path has its predecessor reachable\nfrom `a` and adjacent to `x`.",
+        "hypotheses": [
+          {
+            "name": "hxa",
+            "pretty": "x ≠ a"
+          },
+          {
+            "name": "hno",
+            "pretty": "∀ (u : ι), u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u"
+          },
+          {
+            "name": "hsep",
+            "pretty": "¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {S Sep : Finset ι} {a b x : ι},\n  x ≠ a →\n    (∀ (u : ι),\n        u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u) →\n      ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b →\n        ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep.erase x) a b",
@@ -1321,6 +1695,21 @@
           "HiddenChannelCapacity.IsWalkOn",
           "HiddenChannelCapacity.ReachOn"
         ],
+        "doc": "Every chained walk contains a duplicate-free path with the same endpoints and vertices.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.IsWalkOn 𝒞 P p"
+          },
+          {
+            "name": "a",
+            "pretty": "p.head? = some u"
+          },
+          {
+            "name": "a",
+            "pretty": "p.getLast? = some v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} (p : List ι),\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p →\n    ∀ {u v : ι}, p.head? = some u → p.getLast? = some v → HiddenChannelCapacity.ReachOn 𝒞 P u v",
@@ -1332,6 +1721,12 @@
         "decl_name": "HiddenChannelCapacity.isChain_drop",
         "depth": 6,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "List.IsChain R p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.drop n p)",
@@ -1343,6 +1738,12 @@
         "decl_name": "HiddenChannelCapacity.isChain_take",
         "depth": 6,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "List.IsChain R p"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.take n p)",
@@ -1354,6 +1755,17 @@
         "decl_name": "HiddenChannelCapacity.head_getElem",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Positional form of the head.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "p.head? = some x"
+          },
+          {
+            "name": "h0",
+            "pretty": "0 < p.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {p : List ι} {x : ι}, p.head? = some x → ∀ (h0 : 0 < p.length), p[0] = x",
@@ -1365,6 +1777,20 @@
         "decl_name": "HiddenChannelCapacity.gcast_list",
         "depth": 5,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "s < l.length"
+          },
+          {
+            "name": "ht",
+            "pretty": "t < l.length"
+          },
+          {
+            "name": "h",
+            "pretty": "s = t"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} (l : List ι) {s t : ℕ} (hs : s < l.length) (ht : t < l.length), s = t → l[s] = l[t]",
@@ -1377,6 +1803,12 @@
         "depth": 5,
         "dictionary_leaves": [
           "HiddenChannelCapacity.Adj"
+        ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.Adj 𝒞 u v"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1402,6 +1834,17 @@
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.xorSum"
         ],
+        "doc": "**The capstone, modulo the dichotomy**: once every ear-free core is non-conformal or has\na chordless cycle (the Dirac edge, URS D26 L6), every non-Graham-reducible cover hosts the base\nstructure that licenses the verdict: a pairwise-consistent family of nonempty local relations\nthat no global structure realizes.",
+        "hypotheses": [
+          {
+            "name": "hng",
+            "pretty": "¬HiddenChannelCapacity.GrahamReducible 𝒞"
+          },
+          {
+            "name": "hdi",
+            "pretty": "∀ 𝒞' ⊆ 𝒞,\n  HiddenChannelCapacity.EarFree 𝒞' →\n    ¬HiddenChannelCapacity.Conformal 𝒞' ∨ ∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞' l"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  ¬HiddenChannelCapacity.GrahamReducible 𝒞 →\n    (∀ 𝒞' ⊆ 𝒞,\n        HiddenChannelCapacity.EarFree 𝒞' →\n          ¬HiddenChannelCapacity.Conformal 𝒞' ∨ ∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞' l) →\n      ∃ fam,\n        List.map (fun x => x.team) fam = 𝒞.toList ∧\n          HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam",
@@ -1419,6 +1862,13 @@
           "HiddenChannelCapacity.IsEarOf",
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.decidableIsEarOf"
+        ],
+        "doc": "**Chain extraction**: a non-Graham-reducible cover has an ear-free core such that any\nvertex set inside the core's cover hosted anywhere in the cover is hosted inside the core.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "¬HiddenChannelCapacity.GrahamReducible 𝒞"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1441,6 +1891,17 @@
           "HiddenChannelCapacity.xorSum",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "**The clique datum**: a cardinality-minimal non-covered clique yields a clean system.\nMinimality covers the erase-sets; non-coveredness is cleanliness; parity closes by counting.",
+        "hypotheses": [
+          {
+            "name": "hne",
+            "pretty": "𝒞.Nonempty"
+          },
+          {
+            "name": "hnc",
+            "pretty": "¬HiddenChannelCapacity.Conformal 𝒞"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  𝒞.Nonempty →\n    ¬HiddenChannelCapacity.Conformal 𝒞 →\n      ∃ 𝒲,\n        𝒲.Nonempty ∧\n          (∀ w ∈ 𝒲, w ≠ ∅) ∧\n            (∀ w ∈ 𝒲, ∃ T ∈ 𝒞, w ⊆ T) ∧\n              (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) ∧ HiddenChannelCapacity.xorSum 𝒲 = ∅",
@@ -1454,6 +1915,7 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSum"
         ],
+        "doc": "An F2 sum vanishes iff every incidence count is even.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {D : Finset (Finset ι)},\n  HiddenChannelCapacity.xorSum D = ∅ ↔ ∀ (i : ι), ¬Odd {x ∈ D | i ∈ x}.card",
@@ -1467,6 +1929,7 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSum"
         ],
+        "doc": "Membership in an F2 sum is odd incidence.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {D : Finset (Finset ι)} {i : ι},\n  i ∈ HiddenChannelCapacity.xorSum D ↔ Odd {x ∈ D | i ∈ x}.card",
@@ -1478,6 +1941,12 @@
         "decl_name": "HiddenChannelCapacity.erase_union_erase",
         "depth": 4,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hij",
+            "pretty": "i ≠ j"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {K : Finset ι} {i j : ι}, i ≠ j → K.erase i ∪ K.erase j = K",
@@ -1493,6 +1962,25 @@
           "HiddenChannelCapacity.Covered",
           "HiddenChannelCapacity.IsClique",
           "HiddenChannelCapacity.coverU"
+        ],
+        "doc": "Small cliques are covered: the empty set (nonempty cover), singletons, edges.",
+        "hypotheses": [
+          {
+            "name": "hne",
+            "pretty": "𝒞.Nonempty"
+          },
+          {
+            "name": "hKsub",
+            "pretty": "K ⊆ HiddenChannelCapacity.coverU 𝒞"
+          },
+          {
+            "name": "hK",
+            "pretty": "HiddenChannelCapacity.IsClique 𝒞 K"
+          },
+          {
+            "name": "hcard",
+            "pretty": "K.card ≤ 2"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1524,6 +2012,13 @@
           "HiddenChannelCapacity.xorSum",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "The clean system of a chordless cycle, in finder form.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {l : List ι},\n  HiddenChannelCapacity.IsChordlessCycle 𝒞 l →\n    ∃ 𝒲,\n      𝒲.Nonempty ∧\n        (∀ w ∈ 𝒲, w ≠ ∅) ∧\n          (∀ w ∈ 𝒲, ∃ T ∈ 𝒞, w ⊆ T) ∧\n            (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) ∧ HiddenChannelCapacity.xorSum 𝒲 = ∅",
@@ -1538,6 +2033,17 @@
           "HiddenChannelCapacity.cyclePairs",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "**The cycle sum telescopes**: consecutive pairs of a duplicate-free cyclic list sum to\n`∅` over F2 — every vertex lies in exactly two pairs.",
+        "hypotheses": [
+          {
+            "name": "hl",
+            "pretty": "l.Nodup"
+          },
+          {
+            "name": "h2",
+            "pretty": "2 ≤ l.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι),\n  l.Nodup → 2 ≤ l.length → HiddenChannelCapacity.xorSumL (HiddenChannelCapacity.cyclePairs l) = ∅",
@@ -1550,6 +2056,12 @@
         "depth": 5,
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSumL"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "l₁.length = l₂.length"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1564,6 +2076,12 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSumL"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "l₁.Perm l₂"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {l₁ l₂ : List (Finset ι)},\n  l₁.Perm l₂ → HiddenChannelCapacity.xorSumL l₁ = HiddenChannelCapacity.xorSumL l₂",
@@ -1575,6 +2093,12 @@
         "decl_name": "HiddenChannelCapacity.pair_eq_symmDiff",
         "depth": 5,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "a ≠ b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {a b : ι}, a ≠ b → {a, b} = symmDiff {a} {b}",
@@ -1586,6 +2110,20 @@
         "decl_name": "HiddenChannelCapacity.getElem_ne_next",
         "depth": 5,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hl",
+            "pretty": "l.Nodup"
+          },
+          {
+            "name": "h2",
+            "pretty": "2 ≤ l.length"
+          },
+          {
+            "name": "hi",
+            "pretty": "i < l.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} (l : List ι), l.Nodup → ∀ (h2 : 2 ≤ l.length) (i : ℕ) (hi : i < l.length), l[i] ≠ l[(i + 1) % l.length]",
@@ -1599,6 +2137,17 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.cyclePairs"
         ],
+        "doc": "Distinct positions carry distinct pairs: the pair list is duplicate-free.",
+        "hypotheses": [
+          {
+            "name": "hl",
+            "pretty": "l.Nodup"
+          },
+          {
+            "name": "h3",
+            "pretty": "3 ≤ l.length"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι),\n  l.Nodup → 3 ≤ l.length → (HiddenChannelCapacity.cyclePairs l).Nodup",
@@ -1611,6 +2160,17 @@
         "depth": 4,
         "dictionary_leaves": [
           "HiddenChannelCapacity.cyclePairs"
+        ],
+        "doc": "Members of the cycle-pair list are nonempty.",
+        "hypotheses": [
+          {
+            "name": "h0",
+            "pretty": "0 < l.length"
+          },
+          {
+            "name": "hw",
+            "pretty": "w ∈ HiddenChannelCapacity.cyclePairs l"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1627,6 +2187,33 @@
           "HiddenChannelCapacity.IsChordlessCycle",
           "HiddenChannelCapacity.cyclePairs"
         ],
+        "doc": "**Chordlessness is cleanliness**: no team hosts two distinct pairs of a chordless cycle.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+          },
+          {
+            "name": "a",
+            "pretty": "V ∈ 𝒞"
+          },
+          {
+            "name": "a",
+            "pretty": "w₁ ∈ HiddenChannelCapacity.cyclePairs l"
+          },
+          {
+            "name": "a",
+            "pretty": "w₂ ∈ HiddenChannelCapacity.cyclePairs l"
+          },
+          {
+            "name": "a",
+            "pretty": "w₁ ⊆ V"
+          },
+          {
+            "name": "a",
+            "pretty": "w₂ ⊆ V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {l : List ι},\n  HiddenChannelCapacity.IsChordlessCycle 𝒞 l →\n    ∀ V ∈ 𝒞,\n      ∀ w₁ ∈ HiddenChannelCapacity.cyclePairs l, ∀ w₂ ∈ HiddenChannelCapacity.cyclePairs l, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂",
@@ -1638,6 +2225,12 @@
         "decl_name": "HiddenChannelCapacity.mod_succ_cases",
         "depth": 6,
         "dictionary_leaves": [],
+        "hypotheses": [
+          {
+            "name": "hi",
+            "pretty": "i < n"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (n i : ℕ), i < n → (i + 1) % n = i + 1 ∧ i + 1 < n ∨ (i + 1) % n = 0 ∧ i + 1 = n",
@@ -1650,6 +2243,16 @@
         "depth": 5,
         "dictionary_leaves": [
           "HiddenChannelCapacity.cyclePairs"
+        ],
+        "hypotheses": [
+          {
+            "name": "h0",
+            "pretty": "0 < l.length"
+          },
+          {
+            "name": "h",
+            "pretty": "i < (HiddenChannelCapacity.cyclePairs l).length"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1677,6 +2280,21 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.Adj"
         ],
+        "doc": "Co-hosted vertices are adjacent or equal.",
+        "hypotheses": [
+          {
+            "name": "hV",
+            "pretty": "V ∈ 𝒞"
+          },
+          {
+            "name": "hu",
+            "pretty": "u ∈ V"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [DecidableEq ι] {𝒞 : Finset (Finset ι)} {V : Finset ι},\n  V ∈ 𝒞 → ∀ {u v : ι}, u ∈ V → v ∈ V → HiddenChannelCapacity.Adj 𝒞 u v ∨ u = v",
@@ -1695,6 +2313,37 @@
           "HiddenChannelCapacity.LocalStruct.team",
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.xorSum"
+        ],
+        "doc": "**The transfer**: a clean system on a chained ear-free core is a clean system on the full\ncover — any team hosting two members routes them into a single core team.",
+        "hypotheses": [
+          {
+            "name": "hsub",
+            "pretty": "𝒞' ⊆ 𝒞"
+          },
+          {
+            "name": "hchain",
+            "pretty": "∀ w ⊆ HiddenChannelCapacity.coverU 𝒞', (∃ V ∈ 𝒞, w ⊆ V) → ∃ W ∈ 𝒞', w ⊆ W"
+          },
+          {
+            "name": "hne𝒲",
+            "pretty": "𝒲.Nonempty"
+          },
+          {
+            "name": "hmem",
+            "pretty": "∀ w ∈ 𝒲, w ≠ ∅"
+          },
+          {
+            "name": "hhost",
+            "pretty": "∀ w ∈ 𝒲, ∃ T ∈ 𝒞', w ⊆ T"
+          },
+          {
+            "name": "hclean",
+            "pretty": "∀ V ∈ 𝒞', ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂"
+          },
+          {
+            "name": "hΔ",
+            "pretty": "HiddenChannelCapacity.xorSum 𝒲 = ∅"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1718,6 +2367,29 @@
           "HiddenChannelCapacity.affLocal",
           "HiddenChannelCapacity.xorSum"
         ],
+        "doc": "**The clean-system obstruction**, the unified consumption theorem of C-ENGINE: a base-side\nclean system (a nonempty hosted family of distinct nonempty supports with vanishing F2 sum, no\nteam hosting two) licenses a verdict on local measurement, a pairwise-consistent family of\nnonempty local relations over the whole cover that no global structure realizes. Every witness\nrung (chordless cycles, even boundary data, landings, the `H_k` clique parities) differs only as\na FINDER of such a base system.",
+        "hypotheses": [
+          {
+            "name": "hne𝒲",
+            "pretty": "𝒲.Nonempty"
+          },
+          {
+            "name": "hmem",
+            "pretty": "∀ w ∈ 𝒲, w ≠ ∅"
+          },
+          {
+            "name": "hhost",
+            "pretty": "∀ w ∈ 𝒲, ∃ V ∈ 𝒞, w ⊆ V"
+          },
+          {
+            "name": "hclean",
+            "pretty": "∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂"
+          },
+          {
+            "name": "hΔ",
+            "pretty": "HiddenChannelCapacity.xorSum 𝒲 = ∅"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 𝒲 : Finset (Finset ι)),\n  𝒲.Nonempty →\n    (∀ w ∈ 𝒲, w ≠ ∅) →\n      (∀ w ∈ 𝒲, ∃ V ∈ 𝒞, w ⊆ V) →\n        (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) →\n          HiddenChannelCapacity.xorSum 𝒲 = ∅ →\n            ∃ fam,\n              List.map (fun x => x.team) fam = 𝒞.toList ∧\n                HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam",
@@ -1739,6 +2411,37 @@
           "HiddenChannelCapacity.affFam",
           "HiddenChannelCapacity.affLocal",
           "HiddenChannelCapacity.xorSum"
+        ],
+        "doc": "**The affine obstruction engine, packaged**: from a base-side hosted odd dependency (over a\nclosed coherent system) follows a verdict on local measurement, a family of nonempty local\nrelations that is pairwise consistent yet realizes no global structure.",
+        "hypotheses": [
+          {
+            "name": "hne",
+            "pretty": "teams ≠ []"
+          },
+          {
+            "name": "hcl",
+            "pretty": "∀ V ∈ teams, HiddenChannelCapacity.ClosedAt 𝒲 V"
+          },
+          {
+            "name": "hco",
+            "pretty": "∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          },
+          {
+            "name": "hD",
+            "pretty": "D ⊆ 𝒲"
+          },
+          {
+            "name": "hΔ",
+            "pretty": "HiddenChannelCapacity.xorSum D = ∅"
+          },
+          {
+            "name": "hodd",
+            "pretty": "∑ w ∈ D, c w = 1"
+          },
+          {
+            "name": "hhost",
+            "pretty": "∀ w ∈ D, ∃ V ∈ teams, w ⊆ V"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1762,6 +2465,33 @@
           "HiddenChannelCapacity.projS",
           "HiddenChannelCapacity.wsum",
           "HiddenChannelCapacity.xorSum"
+        ],
+        "doc": "**The obstruction theorem**: a hosted odd dependency (a base-side witness) forecloses every\nglobal structure; any global realizing all the local relations would satisfy every hosted\nconstraint, and the dependency sums those satisfactions to `0 = 1`.",
+        "hypotheses": [
+          {
+            "name": "hne",
+            "pretty": "teams ≠ []"
+          },
+          {
+            "name": "hco",
+            "pretty": "∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          },
+          {
+            "name": "hD",
+            "pretty": "D ⊆ 𝒲"
+          },
+          {
+            "name": "hΔ",
+            "pretty": "HiddenChannelCapacity.xorSum D = ∅"
+          },
+          {
+            "name": "hodd",
+            "pretty": "∑ w ∈ D, c w = 1"
+          },
+          {
+            "name": "hhost",
+            "pretty": "∀ w ∈ D, ∃ V ∈ teams, w ⊆ V"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1798,6 +2528,17 @@
           "HiddenChannelCapacity.affFam",
           "HiddenChannelCapacity.affLocal"
         ],
+        "doc": "Closed coherent affine families are pairwise consistent: both interface marginals ARE the\ninterface's visible system.",
+        "hypotheses": [
+          {
+            "name": "hcl",
+            "pretty": "∀ V ∈ teams, HiddenChannelCapacity.ClosedAt 𝒲 V"
+          },
+          {
+            "name": "hco",
+            "pretty": "∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {teams : List (Finset ι)} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  (∀ V ∈ teams, HiddenChannelCapacity.ClosedAt 𝒲 V) →\n    (∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V) →\n      HiddenChannelCapacity.Consistent (HiddenChannelCapacity.affFam teams 𝒲 c)",
@@ -1819,6 +2560,21 @@
           "HiddenChannelCapacity.parityOn",
           "HiddenChannelCapacity.wsum"
         ],
+        "doc": "**The exact marginal computation**: the interface marginal of a closed coherent local\nstructure is exactly the local structure of the interface — the interface sees precisely the\nvisible constraints.",
+        "hypotheses": [
+          {
+            "name": "hS",
+            "pretty": "S ⊆ V"
+          },
+          {
+            "name": "hcl",
+            "pretty": "HiddenChannelCapacity.ClosedAt 𝒲 V"
+          },
+          {
+            "name": "hco",
+            "pretty": "HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V S : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2} (hS : S ⊆ V),\n  HiddenChannelCapacity.ClosedAt 𝒲 V →\n    HiddenChannelCapacity.CoherentAt 𝒲 c V →\n      (HiddenChannelCapacity.affLocal V 𝒲 c).imarg hS = (HiddenChannelCapacity.affLocal S 𝒲 c).rel",
@@ -1832,6 +2588,17 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.parityOn",
           "HiddenChannelCapacity.wsum"
+        ],
+        "doc": "Transport of team parities along nested restriction: the value only reads the support.",
+        "hypotheses": [
+          {
+            "name": "hS",
+            "pretty": "S ⊆ V"
+          },
+          {
+            "name": "hw",
+            "pretty": "w ⊆ S"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1852,6 +2619,21 @@
           "HiddenChannelCapacity.xorSum",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "The pinned system: hosted constraints of `V` plus a singleton pin at every `S`-coordinate\nof a visible-constraint-satisfying trace. Coherent, by closedness.",
+        "hypotheses": [
+          {
+            "name": "hcl",
+            "pretty": "HiddenChannelCapacity.ClosedAt 𝒲 V"
+          },
+          {
+            "name": "hco",
+            "pretty": "HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          },
+          {
+            "name": "hg",
+            "pretty": "∀ w ∈ 𝒲, w ⊆ S → HiddenChannelCapacity.parityOn w g₀ = c w"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V S : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.ClosedAt 𝒲 V →\n    HiddenChannelCapacity.CoherentAt 𝒲 c V →\n      ∀ (g₀ : ι → ZMod 2),\n        (∀ w ∈ 𝒲, w ⊆ S → HiddenChannelCapacity.parityOn w g₀ = c w) →\n          HiddenChannelCapacity.SysCoherent\n            (HiddenChannelCapacity.hostedList✝ V 𝒲 c ++ List.map (fun i => ({i}, g₀ i)) S.toList)",
@@ -1865,6 +2647,12 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSum"
         ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "D ⊆ {x ∈ 𝒲 | x ⊆ V}"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 D : Finset (Finset ι)},\n  D ⊆ {x ∈ 𝒲 | x ⊆ V} → HiddenChannelCapacity.xorSum D ⊆ V",
@@ -1877,6 +2665,12 @@
         "depth": 9,
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSumL"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "l.Nodup"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1945,6 +2739,13 @@
           "HiddenChannelCapacity.parityOn",
           "HiddenChannelCapacity.wsum"
         ],
+        "doc": "Every local relation of a coherent system is nonempty.",
+        "hypotheses": [
+          {
+            "name": "hco",
+            "pretty": "HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.CoherentAt 𝒲 c V → (HiddenChannelCapacity.affLocal V 𝒲 c).rel.Nonempty",
@@ -1958,6 +2759,12 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.parityOn",
           "HiddenChannelCapacity.wsum"
+        ],
+        "hypotheses": [
+          {
+            "name": "hw",
+            "pretty": "w ⊆ V"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1976,6 +2783,12 @@
           "HiddenChannelCapacity.xorSum",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "hypotheses": [
+          {
+            "name": "hco",
+            "pretty": "HiddenChannelCapacity.CoherentAt 𝒲 c V"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.CoherentAt 𝒲 c V → HiddenChannelCapacity.SysCoherent (HiddenChannelCapacity.hostedList✝ V 𝒲 c)",
@@ -1989,6 +2802,12 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSum",
           "HiddenChannelCapacity.xorSumL"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "l.Nodup"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -2043,6 +2862,13 @@
           "HiddenChannelCapacity.parityOn",
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "**The solvability core**: a coherent list-presented parity system has a solution.\nElementary Gaussian elimination, by induction on the list.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.SysCoherent L"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (L : List (Finset ι × ZMod 2)),\n  HiddenChannelCapacity.SysCoherent L → ∃ f, ∀ p ∈ L, HiddenChannelCapacity.parityOn p.1 f = p.2",
@@ -2069,6 +2895,7 @@
         "dictionary_leaves": [
           "HiddenChannelCapacity.xorSumL"
         ],
+        "doc": "The Gaussian transform bookkeeping: transforming the x-containing entries by `∆ w₀`\nshifts the F2 sum by `w₀` per transformed entry, and the constants by `c₀` likewise.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (x : ι) (w₀ : Finset ι) (c₀ : ZMod 2) (sub : List (Finset ι × ZMod 2)),\n  HiddenChannelCapacity.xorSumL\n        (List.map Prod.fst (List.map (fun p => if x ∈ p.1 then (symmDiff p.1 w₀, p.2 + c₀) else p) sub)) =\n      symmDiff (HiddenChannelCapacity.xorSumL (List.map Prod.fst sub))\n        (if List.countP (fun p => decide (x ∈ p.1)) sub % 2 = 1 then w₀ else ∅) ∧\n    (List.map Prod.snd (List.map (fun p => if x ∈ p.1 then (symmDiff p.1 w₀, p.2 + c₀) else p) sub)).sum =\n      (List.map Prod.snd sub).sum + if List.countP (fun p => decide (x ∈ p.1)) sub % 2 = 1 then c₀ else 0",
@@ -2120,6 +2947,7 @@
           "HiddenChannelCapacity.GrahamReducible",
           "HiddenChannelCapacity.RIPCover"
         ],
+        "doc": "**The Graham bridge**: acyclicity is exactly Graham reducibility.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.Acyclic 𝒞 ↔ HiddenChannelCapacity.GrahamReducible 𝒞",
@@ -2137,6 +2965,17 @@
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.listCover"
         ],
+        "doc": "An RIP order eliminates from the front: its head is an ear and the tail remains RIP.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "order.Nodup"
+          },
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.RIPCover order"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (order : List (Finset ι)),\n  order.Nodup → HiddenChannelCapacity.RIPCover order → HiddenChannelCapacity.GrahamN order.length order.toFinset",
@@ -2153,6 +2992,13 @@
           "HiddenChannelCapacity.RIPCover",
           "HiddenChannelCapacity.coverU",
           "HiddenChannelCapacity.listCover"
+        ],
+        "doc": "An elimination run is a running-intersection order read forward.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "HiddenChannelCapacity.GrahamN n 𝒞"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

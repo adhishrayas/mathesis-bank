@@ -82,6 +82,41 @@
           "AuditCP.empiricalLoss",
           "AuditCP.populationLoss"
         ],
+        "doc": "If every candidate's loss is measurable and a.e. valued in `[a, b]` under `Q`, every\ntraining-generated trajectory is admissible for `F`, and the resulting uniform-deviation failure\nevent is measurable, then on an i.i.d. panel of size `n` drawn from `Q`, measured cumulative\nempirical-loss progress exceeds population-loss progress by more than\n`2 · deltaFiniteExperts (card ι) n (b - a) δ` with probability at most `ENNReal.ofReal δ`.",
+        "hypotheses": [
+          {
+            "name": "hn",
+            "pretty": "0 < n"
+          },
+          {
+            "name": "hab",
+            "pretty": "a < b"
+          },
+          {
+            "name": "hδ0",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hδ1",
+            "pretty": "δ ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "∀ (i : ι), Measurable (loss i)"
+          },
+          {
+            "name": "hbdd",
+            "pretty": "∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b"
+          },
+          {
+            "name": "hadm",
+            "pretty": "∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)"
+          },
+          {
+            "name": "hBad",
+            "pretty": "MeasurableSet\n  {p |\n    ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2) (fun i => AuditCP.populationLoss Q loss i)\n        (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)}"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {Ωtrain : Type u_1} {Z : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain] [inst_1 : MeasurableSpace Z]\n  [inst_2 : Fintype ι] [Nonempty ι] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    ∀ (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι),\n                      (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n                        MeasurableSet\n                            {p |\n                              ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2)\n                                  (fun i => AuditCP.populationLoss Q loss i)\n                                  (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} →\n                          ∀ (T : ℕ),\n                            (MeasureTheory.Measure.prod μtrain (MeasureTheory.Measure.pi fun x => Q))\n                                {p |\n                                  AuditCP.cumCP (fun i => AuditCP.empiricalLoss loss i p.2) (g p.1) T >\n                                    AuditCP.cumCP (fun i => AuditCP.populationLoss Q loss i) (g p.1) T +\n                                      2 * AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ} ≤\n                              ENNReal.ofReal δ",
@@ -98,6 +133,33 @@
           "AuditCP.deltaFiniteExperts",
           "AuditCP.empiricalLoss",
           "AuditCP.populationLoss"
+        ],
+        "doc": "Under the hypotheses of `finite_experts_iid_uniformDev`, the `ENNReal`-valued probability that\nthe panel fails uniform deviation is at most `ENNReal.ofReal δ`.",
+        "hypotheses": [
+          {
+            "name": "hn",
+            "pretty": "0 < n"
+          },
+          {
+            "name": "hab",
+            "pretty": "a < b"
+          },
+          {
+            "name": "hδ0",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hδ1",
+            "pretty": "δ ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "∀ (i : ι), Measurable (loss i)"
+          },
+          {
+            "name": "hbdd",
+            "pretty": "∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -116,6 +178,33 @@
           "AuditCP.empiricalLoss",
           "AuditCP.populationLoss"
         ],
+        "doc": "If every candidate's loss is measurable and a.e. valued in `[a, b]` under `Q`, then on an\ni.i.d. panel of size `n` drawn from `Q`, with probability at least `1 − δ` the empirical loss\n`empiricalLoss loss i panel` and the population loss `populationLoss Q loss i` agree within\n`deltaFiniteExperts (card ι) n (b - a) δ` for every candidate `i` (hoeffding1963; cesabianchi2006).",
+        "hypotheses": [
+          {
+            "name": "hn",
+            "pretty": "0 < n"
+          },
+          {
+            "name": "hab",
+            "pretty": "a < b"
+          },
+          {
+            "name": "hδ0",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hδ1",
+            "pretty": "δ ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "∀ (i : ι), Measurable (loss i)"
+          },
+          {
+            "name": "hbdd",
+            "pretty": "∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Z : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Z] [inst_1 : Fintype ι] [Nonempty ι]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    1 - δ ≤\n                      (MeasureTheory.Measure.pi fun x => Q).real\n                        {panel |\n                          AuditCP.UniformDev Set.univ (fun i => AuditCP.empiricalLoss loss i panel)\n                            (fun i => AuditCP.populationLoss Q loss i)\n                            (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)}",
@@ -130,6 +219,33 @@
           "AuditCP.AuditSampleLaw",
           "AuditCP.UniformDev",
           "AuditCP.deltaFiniteExperts"
+        ],
+        "doc": "If each `Y i j` is `μ`-sub-Gaussian with proxy `(L/2)²` and, for each candidate `i`,\nindependent across panel positions `j`, then with probability at least `1 − δ` the panel means\n`(∑ⱼ Y i j) / n` all lie within `deltaFiniteExperts (card ι) n L δ` of `0` (hoeffding1963).",
+        "hypotheses": [
+          {
+            "name": "hn",
+            "pretty": "0 < n"
+          },
+          {
+            "name": "hL",
+            "pretty": "0 < L"
+          },
+          {
+            "name": "hδ0",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hδ1",
+            "pretty": "δ ≤ 1"
+          },
+          {
+            "name": "hsub",
+            "pretty": "∀ (i : ι) (j : Fin n), ProbabilityTheory.HasSubgaussianMGF (Y i j) ((‖L‖₊ / 2) ^ 2) μ"
+          },
+          {
+            "name": "hindep",
+            "pretty": "∀ (i : ι), ProbabilityTheory.iIndepFun (Y i) μ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -150,6 +266,21 @@
           "AuditCP.UniformDev",
           "AuditCP.cumCP"
         ],
+        "doc": "If every training-generated trajectory `g t` is admissible for `F t`, the uniform-deviation\nfailure event is measurable, and its audit fiber has probability at most `δ` for `μtrain`-almost\nevery training history, then measured cumulative compression progress exceeds true progress by\nmore than `2Δ` with probability at most `δ` under `μtrain.prod μaudit`.",
+        "hypotheses": [
+          {
+            "name": "hadm",
+            "pretty": "∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)"
+          },
+          {
+            "name": "hBad",
+            "pretty": "MeasurableSet {p | ¬AuditCP.UniformDev (F p.1) (Ehat p.2) E Δ}"
+          },
+          {
+            "name": "hfiber",
+            "pretty": "∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | ¬AuditCP.UniformDev (F t) (Ehat a) E Δ} ≤ δ"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Ωtrain : Type u_1} {Ωaudit : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain]\n  [inst_1 : MeasurableSpace Ωaudit] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (μaudit : AuditCP.AuditSampleLaw Ωaudit) [MeasureTheory.IsProbabilityMeasure μaudit]\n  (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι)\n  (Ehat : Ωaudit → AuditCP.AuditPotential ι) (E : AuditCP.AuditPotential ι) (Δ : ℝ) (δ : ENNReal),\n  (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n    MeasurableSet {p | ¬AuditCP.UniformDev (F p.1) (Ehat p.2) E Δ} →\n      (∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | ¬AuditCP.UniformDev (F t) (Ehat a) E Δ} ≤ δ) →\n        ∀ (T : ℕ),\n          (MeasureTheory.Measure.prod μtrain μaudit)\n              {p | AuditCP.cumCP (Ehat p.2) (g p.1) T > AuditCP.cumCP E (g p.1) T + 2 * Δ} ≤\n            δ",
@@ -168,6 +299,17 @@
           "AuditCP.UniformDev",
           "AuditCP.cumCP"
         ],
+        "doc": "Under `UniformDev F Ehat E Δ` and `Admissible g F`, empirical cumulative compression progress\nis bounded by true cumulative progress plus `2Δ` at every horizon `T`:\n`cumCP Ehat g T ≤ cumCP E g T + 2Δ`.",
+        "hypotheses": [
+          {
+            "name": "hUD",
+            "pretty": "AuditCP.UniformDev F Ehat E Δ"
+          },
+          {
+            "name": "hg",
+            "pretty": "AuditCP.Admissible g F"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} {F : AuditCP.AuditEnvelope ι} {Ehat E : AuditCP.AuditPotential ι} {Δ : ℝ},\n  AuditCP.UniformDev F Ehat E Δ →\n    ∀ {g : AuditCP.AuditTrajectory ι},\n      AuditCP.Admissible g F → ∀ (T : ℕ), AuditCP.cumCP Ehat g T ≤ AuditCP.cumCP E g T + 2 * Δ",
@@ -183,6 +325,7 @@
           "AuditCP.AuditTrajectory",
           "AuditCP.cumCP"
         ],
+        "doc": "Cumulative signed compression progress telescopes: `cumCP E g T = E (g 0) - E (g T)`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} (E : AuditCP.AuditPotential ι) (g : AuditCP.AuditTrajectory ι) (T : ℕ),\n  AuditCP.cumCP E g T = E (g 0) - E (g T)",
@@ -196,6 +339,17 @@
         "dictionary_leaves": [
           "AuditCP.AuditEnvelope",
           "AuditCP.AuditSampleLaw"
+        ],
+        "doc": "If the event `{p | Bad (Γ p.1) p.2}` is measurable and its audit fiber `{a | Bad (Γ t) a}` has\n`μaudit`-probability at most `δ` for `μtrain`-almost every training history `t`, then its\nprobability under the product law `μtrain.prod μaudit` is at most `δ`.",
+        "hypotheses": [
+          {
+            "name": "hBad",
+            "pretty": "MeasurableSet {p | Bad (Γ p.1) p.2}"
+          },
+          {
+            "name": "hfiber",
+            "pretty": "∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | Bad (Γ t) a} ≤ δ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

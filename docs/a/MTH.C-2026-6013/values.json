@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The Krapp–Wirth measurable-target separation holds unconditionally: the analytic non-Borel witness discharges the hypothesis of analytic_nonborel_set_gives_measTarget_separation."
+  },
+  {
     "field": "claim.decl_name",
     "value": "krappWirthSeparationMeasTarget_holds"
   },

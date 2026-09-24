@@ -28,8 +28,8 @@
    trace. */
 @theme static {
   /* ---------- type ---------- */
-  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
-    "TeX Gyre Termes", Tinos, serif;
+  --font-serif: "Times New Roman", Times, Tinos, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
+    "TeX Gyre Termes", serif;
   --font-mono: "JuliaMono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --text-2xs: 0.8125rem;      --text-2xs--line-height: 1.25rem;
@@ -45,6 +45,9 @@
   --text-code-sm: 0.75rem;    --text-code-sm--line-height: 1.5;
   --text-code: 0.8125rem;     --text-code--line-height: 1.55;
   --text-code-lg: 0.875rem;   --text-code-lg--line-height: 1.6;
+  /* Code inside prose follows the prose's size: JuliaMono's x-height is Times's
+     at about 0.85 of the size. */
+  --text-code-inline: 0.85em;
 
   /* ---------- neutral ---------- */
   --color-ink-0:  #FFFFFF;  --color-ink-25: #FCFCFD; --color-ink-50: #F7F8FA;
@@ -62,6 +65,11 @@
   /* ---------- status ---------- */
   --color-ok-fg:#0F7A4A;   --color-ok-bg:#E6F4EC;   --color-ok-bd:#A9D9C0;
   --color-warn-fg:#8A5A00; --color-warn-bg:#FCF3E2; --color-warn-bd:#EBD5A6;
+  /* An argument's roles, one colour each in the graph and on the list's rails. */
+  --color-role-thesis-bg:#EAF0FC; --color-role-thesis-bd:#3566D4;
+  --color-role-hyp-bg:#FCF3E2;    --color-role-hyp-bd:#C08A1E;
+  --color-role-def-bg:#E4F4F1;    --color-role-def-bd:#1D8A74;
+  --color-role-cite-bg:#EFECFB;   --color-role-cite-bd:#6B5BD6;
   --color-err-fg:#B3261E;  --color-err-bg:#FDECEA;  --color-err-bd:#F2BDB8;
 
   /* ---------- semantic aliases (what components actually reference) ---------- */
@@ -176,6 +184,10 @@
     --color-accent-500:#7BA3EE; --color-accent-600:#2E5AC4; --color-accent-700:#A9C4F4;
     --color-ok-fg:#4ADE9B;  --color-ok-bg:#0E2A1E;  --color-ok-bd:#1D5238;
     --color-warn-fg:#E8B455;--color-warn-bg:#2C2413;--color-warn-bd:#54421C;
+    --color-role-thesis-bg:#161F33; --color-role-thesis-bd:#7BA3EE;
+    --color-role-hyp-bg:#2C2413;    --color-role-hyp-bd:#E8B455;
+    --color-role-def-bg:#10261F;    --color-role-def-bd:#4CC7A8;
+    --color-role-cite-bg:#1E1A33;   --color-role-cite-bd:#A99CF0;
     --color-err-fg:#FF9A90; --color-err-bg:#2C1512; --color-err-bd:#5A2521;
   }
 }
@@ -191,10 +203,25 @@
   --color-accent-500:#7BA3EE; --color-accent-600:#2E5AC4; --color-accent-700:#A9C4F4;
   --color-ok-fg:#4ADE9B;  --color-ok-bg:#0E2A1E;  --color-ok-bd:#1D5238;
   --color-warn-fg:#E8B455;--color-warn-bg:#2C2413;--color-warn-bd:#54421C;
+  --color-role-thesis-bg:#161F33; --color-role-thesis-bd:#7BA3EE;
+  --color-role-hyp-bg:#2C2413;    --color-role-hyp-bd:#E8B455;
+  --color-role-def-bg:#10261F;    --color-role-def-bd:#4CC7A8;
+  --color-role-cite-bg:#1E1A33;   --color-role-cite-bd:#A99CF0;
   --color-err-fg:#FF9A90; --color-err-bg:#2C1512; --color-err-bd:#5A2521;
 }
 
 @layer base {
+  /* Tinos: Times New Roman's metrics under the SIL OFL 1.1 (TINOS-LICENSE.txt beside
+     it). A machine with Times New Roman or Times never fetches it. */
+  @font-face { font-family:"Tinos"; src:url("/assets/fonts/tinos-400-latin.woff2") format("woff2");
+    font-weight:400; font-style:normal; font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,
+                  U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  @font-face { font-family:"Tinos"; src:url("/assets/fonts/tinos-700-latin.woff2") format("woff2");
+    font-weight:700; font-style:normal; font-display:swap;
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,
+                  U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
   /* G1: JuliaMono split so a statement's first paint is not blocked by the math block */
   @font-face { font-family:"JuliaMono"; src:url("/assets/fonts/julia-mono-400-latin.woff2") format("woff2");
     font-weight:400; font-display:swap;

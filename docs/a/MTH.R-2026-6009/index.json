@@ -510,6 +510,13 @@
           "ProperFiniteSupportLearner.sampleBound",
           "VCDim"
         ],
+        "doc": "The forward direction of the Moran-Yehudayoff theorem:\nfinite VC dimension implies existence of a compression scheme\nwith finite side information.\n\nThe construction:\n1. Build a proper finite-support learner L from VC + Sauer-Shelah\n2. For sample S: extract c, Y = pointSupport S, HY = hypothesis envelope\n3. Apply approximate minimax on the agreement game → distribution p on HY\n4. Apply VC ε-approximation on agreement tests → T representative hypotheses\n5. Kernel = union of witness subsets for T hypotheses\n6. Side info = incidence: which hypothesis's witness contains each kernel point\n7. Reconstruct by majority vote over T hypotheses",
+        "hypotheses": [
+          {
+            "name": "hC",
+            "pretty": "VCDim X C < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) (C : ConceptClass X Bool), VCDim X C < ⊤ → ∃ k cs, CompressionSchemeWithInfo.size cs = k",
@@ -533,6 +540,17 @@
           "labeledSampleOfFinset",
           "supportError"
         ],
+        "doc": "Finite VC dimension implies existence of a proper finite-support learner.\nThe construction uses ERM + finite_support_vc_approx on the disagreement family.",
+        "hypotheses": [
+          {
+            "name": "hCne",
+            "pretty": "Set.Nonempty C"
+          },
+          {
+            "name": "hC",
+            "pretty": "VCDim X C < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) (C : ConceptClass X Bool), Set.Nonempty C → VCDim X C < ⊤ → ∃ _L, True",
@@ -549,6 +567,7 @@
           "boolTestExpectation",
           "supportError"
         ],
+        "doc": "supportError expressed in terms of boolTestExpectation of a disagreement test.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} (Y : Finset X) (q : FinitePMF ↥Y) (h c : X → Bool),\n  supportError Y q h c = boolTestExpectation q fun y => decide (h ↑y ≠ c ↑y)",
@@ -567,6 +586,13 @@
           "VCDim",
           "boolFamilyToFinsetFamily",
           "disagreementFamily"
+        ],
+        "doc": "VC dimension of the disagreement family is bounded by VCDim(C).\nRestriction to Y and xor with c do not increase shattering dimension.",
+        "hypotheses": [
+          {
+            "name": "hvc",
+            "pretty": "VCDim X C ≤ ↑d"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -605,6 +631,17 @@
           "pointSupport",
           "uniformPMF"
         ],
+        "doc": "The Moran-Yehudayoff forward construction. Uses `finalizeIncidenceScheme`\nto package the majority-vote scheme with universe-correct Info type.\n\nThe agent must provide: `compressCore`, `blockHyp`, `rowHyp`,\n`hsmall`, `hsub`, `hagree`, `hmajor`. These are the MY wiring.",
+        "hypotheses": [
+          {
+            "name": "_hne",
+            "pretty": "Set.Nonempty C"
+          },
+          {
+            "name": "hC",
+            "pretty": "VCDim X C < ⊤"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) (C : ConceptClass X Bool),\n  Set.Nonempty C →\n    ∀ (L : ProperFiniteSupportLearner X C), VCDim X C < ⊤ → ∀ (_K : ℕ), ∃ k cs, CompressionSchemeWithInfo.size cs = k",
@@ -621,6 +658,25 @@
           "encodeWitnessInfo",
           "labeledSampleOfFinset"
         ],
+        "doc": "Generic roundtrip theorem for the `hround` sorry.\n\nIf:\n* `encodeWitnessInfo` is used in `compressCore`,\n* `decodeWitnessXCoords` and `decodeWitnessLabel` are used in `blockHyp`, and\n* the kernel contains the witness pairs with the correct labels,\n\nthen the decoded block hypothesis is exactly the representative hypothesis.",
+        "hypotheses": [
+          {
+            "name": "hK",
+            "pretty": "kernel.card ≤ K"
+          },
+          {
+            "name": "hWker",
+            "pretty": "∀ x ∈ W, (x, c x) ∈ kernel"
+          },
+          {
+            "name": "hlabels",
+            "pretty": "∀ p ∈ kernel, p.2 = c p.1"
+          },
+          {
+            "name": "hrep",
+            "pretty": "learn (labeledSampleOfFinset c W) = h"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : DecidableEq X] (learn : {m : ℕ} → (Fin m → X × Bool) → X → Bool) (kernel : Finset (X × Bool))\n  (c : X → Bool) (K : ℕ) (W : Finset X) (h : X → Bool),\n  kernel.card ≤ K →\n    (∀ x ∈ W, (x, c x) ∈ kernel) →\n      (∀ p ∈ kernel, p.2 = c p.1) →\n        learn (labeledSampleOfFinset c W) = h →\n          ∀ (x : X),\n            have info := encodeWitnessInfo kernel c K W;\n            have blockXCoords := decodeWitnessXCoords kernel info;\n            have blockLabel := decodeWitnessLabel kernel;\n            learn (labeledSampleOfFinset blockLabel blockXCoords) x = h x",
@@ -633,6 +689,13 @@
         "depth": 4,
         "dictionary_leaves": [
           "labeledSampleOfFinset"
+        ],
+        "doc": "If two label functions agree on all points of `Z`, then the labeled samples they\ninduce on `Z.equivFin` are equal.",
+        "hypotheses": [
+          {
+            "name": "hℓ",
+            "pretty": "∀ x ∈ Z, ℓ₁ x = ℓ₂ x"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -648,6 +711,17 @@
           "decodeWitnessXCoords",
           "encodeWitnessInfo"
         ],
+        "doc": "If every `(x, c x)` with `x ∈ W` lies in `kernel`, and `kernel.card ≤ K`, then\ndecoding the encoded witness positions gives back exactly `W`.",
+        "hypotheses": [
+          {
+            "name": "hK",
+            "pretty": "kernel.card ≤ K"
+          },
+          {
+            "name": "hWker",
+            "pretty": "∀ x ∈ W, (x, c x) ∈ kernel"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : DecidableEq X] (kernel : Finset (X × Bool)) (c : X → Bool) {K : ℕ} (W : Finset X),\n  kernel.card ≤ K → (∀ x ∈ W, (x, c x) ∈ kernel) → decodeWitnessXCoords kernel (encodeWitnessInfo kernel c K W) = W",
@@ -660,6 +734,21 @@
         "depth": 4,
         "dictionary_leaves": [
           "decodeWitnessLabel"
+        ],
+        "doc": "On the encoded witness support, the decoded label function agrees with the true\nlabel function `c`, provided every pair in the kernel has the correct second coordinate.",
+        "hypotheses": [
+          {
+            "name": "hWker",
+            "pretty": "∀ x ∈ W, (x, c x) ∈ kernel"
+          },
+          {
+            "name": "hlabels",
+            "pretty": "∀ p ∈ kernel, p.2 = c p.1"
+          },
+          {
+            "name": "a",
+            "pretty": "x ∈ W"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -683,6 +772,17 @@
           "mwuRows",
           "uniformPMF"
         ],
+        "doc": "**Genuine approximate minimax via MWU regret extraction.**\nIf every column mixture admits a pure row with expected payoff ≥ v,\nthen there is a row mixture with payoff ≥ v - ε against every column.",
+        "hypotheses": [
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [Nonempty R] [Nonempty C] [DecidableEq R]\n  [DecidableEq C] (M : R → C → Bool) (v ε : ℝ),\n  0 < ε →\n    (∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) →\n      ∃ p, ∀ (c : C), v - ε ≤ boolGamePayoff M p c",
@@ -698,6 +798,7 @@
           "MWUConfig.potential",
           "MWUConfig.weights"
         ],
+        "doc": "A single weight is bounded by the potential.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {C : Type u_1} [inst : Fintype C] (cfg : MWUConfig C) (c : C), cfg.weights c ≤ cfg.potential",
@@ -719,6 +820,17 @@
           "mwuRun",
           "mwuUpdateWeights"
         ],
+        "doc": "Exact individual-weight tracking: the weight of column `c` after `T` rounds is\n`(1-η)` to the number of rounds in which `c` was hit.",
+        "hypotheses": [
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool) (η : ℝ)\n  (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) (T : ℕ)\n  (c : C), (mwuConfig M η hη1 v hrow T).weights c = (1 - η) ^ mwuHitCount✝ M η hη1 v hrow T c",
@@ -731,6 +843,16 @@
         "depth": 5,
         "dictionary_leaves": [
           "MWUConfig"
+        ],
+        "hypotheses": [
+          {
+            "name": "e_weights",
+            "pretty": "weights✝ = weights"
+          },
+          {
+            "name": "weights_pos",
+            "pretty": "∀ (c : C), 0 < weights✝ c"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -752,6 +874,21 @@
           "mwuRun",
           "mwuUpdateWeights"
         ],
+        "doc": "**Potential bound after T steps**: Φ_T ≤ |C| · (1 - ηv)^T.\n\nThis is the core MWU guarantee. Combined with individual weight lower\nbounds (w_T(c) = (1-η)^{losses(c)}), it yields the regret bound.",
+        "hypotheses": [
+          {
+            "name": "hη",
+            "pretty": "0 ≤ η"
+          },
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool)\n  (η : ℝ),\n  0 ≤ η →\n    ∀ (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0)\n      (T : ℕ), (mwuConfig M η hη1 v hrow T).potential ≤ ↑(Fintype.card C) * (1 - η * v) ^ T",
@@ -771,6 +908,21 @@
           "MWUConfig.weights",
           "mwuUpdateWeights"
         ],
+        "doc": "Potential bound after one step: Φ' ≤ Φ · (1 - η·v).",
+        "hypotheses": [
+          {
+            "name": "hη",
+            "pretty": "0 ≤ η"
+          },
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [Fintype R] [inst : Fintype C] [inst_1 : Nonempty C] (M : R → C → Bool) (η : ℝ),\n  0 ≤ η →\n    ∀ (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0)\n      (cfg : MWUConfig C), (mwuUpdateWeights M η hη1 cfg ⋯.choose).potential ≤ cfg.potential * (1 - η * v)",
@@ -788,6 +940,13 @@
           "MWUConfig.potential",
           "MWUConfig.toPMF",
           "MWUConfig.weights"
+        ],
+        "doc": "Best response payoff ≥ v · Φ in terms of weights.",
+        "hypotheses": [
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -832,6 +991,28 @@
           "MWUConfig",
           "mwuUpdateWeights"
         ],
+        "hypotheses": [
+          {
+            "name": "e_M",
+            "pretty": "M✝ = M"
+          },
+          {
+            "name": "e_η",
+            "pretty": "η✝ = η"
+          },
+          {
+            "name": "hη1",
+            "pretty": "η✝ < 1"
+          },
+          {
+            "name": "e_cfg",
+            "pretty": "cfg✝ = cfg"
+          },
+          {
+            "name": "e_r",
+            "pretty": "r✝ = r"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {C : Type u_1} [inst : Fintype C] {R : Type u_2} (M M_1 : R → C → Bool),\n  M = M_1 →\n    ∀ (η η_1 : ℝ) (e_η : η = η_1) (hη1 : η < 1) (cfg cfg_1 : MWUConfig C),\n      cfg = cfg_1 → ∀ (r r_1 : R), r = r_1 → mwuUpdateWeights M η hη1 cfg r = mwuUpdateWeights M_1 η_1 ⋯ cfg_1 r_1",
@@ -862,6 +1043,13 @@
           "FinitePMF.prob",
           "uniformPMF"
         ],
+        "doc": "The minimax value of a Boolean game is at most 1.",
+        "hypotheses": [
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [Fintype R] [inst : Fintype C] [Nonempty C] (M : R → C → Bool) (v : ℝ),\n  (∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) → v ≤ 1",
@@ -873,6 +1061,41 @@
         "decl_name": "hitRate_from_potential",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "Arithmetic core: from the potential bound and sufficiently small η /\nlarge T, deduce a per-column hit-rate lower bound.\nUses Real.log — exactly 4 Mathlib lemmas.",
+        "hypotheses": [
+          {
+            "name": "hNpos",
+            "pretty": "0 < ↑N"
+          },
+          {
+            "name": "hη",
+            "pretty": "0 < η"
+          },
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hv1",
+            "pretty": "v ≤ 1"
+          },
+          {
+            "name": "hTpos",
+            "pretty": "0 < T"
+          },
+          {
+            "name": "hpot",
+            "pretty": "(1 - η) ^ H ≤ ↑N * (1 - η * v) ^ T"
+          },
+          {
+            "name": "hηsmall",
+            "pretty": "η ≤ ε / 4"
+          },
+          {
+            "name": "hlargeT",
+            "pretty": "Real.log ↑N / (η * ↑T) ≤ ε / 4"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {N H T : ℕ} {η v ε : ℝ},\n  0 < ↑N →\n    0 < η →\n      η < 1 →\n        v ≤ 1 →\n          0 < T → (1 - η) ^ H ≤ ↑N * (1 - η * v) ^ T → η ≤ ε / 4 → Real.log ↑N / (η * ↑T) ≤ ε / 4 → v - ε ≤ ↑H / ↑T",
@@ -906,6 +1129,21 @@
           "mwuHitCount",
           "mwuRows"
         ],
+        "doc": "Empirical payoff of the MWU row sequence equals the normalized hit count.",
+        "hypotheses": [
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          },
+          {
+            "name": "hT",
+            "pretty": "0 < T"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] [inst_3 : DecidableEq R]\n  (M : R → C → Bool) (η : ℝ) (hη1 : η < 1) (v : ℝ)\n  (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) {T : ℕ} (hT : 0 < T) (c : C),\n  boolGamePayoff M (empiricalPMF hT (mwuRows M η hη1 v hrow T)) c = ↑(mwuHitCount✝ M η hη1 v hrow T c) / ↑T",
@@ -926,6 +1164,17 @@
           "mwuRows",
           "mwuRun"
         ],
+        "doc": "The recursive hit counter agrees with the sum of Boolean indicators over the\nemitted row sequence.",
+        "hypotheses": [
+          {
+            "name": "hη1",
+            "pretty": "η < 1"
+          },
+          {
+            "name": "hrow",
+            "pretty": "∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool) (η : ℝ)\n  (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) (T : ℕ)\n  (c : C), ↑(mwuHitCount✝ M η hη1 v hrow T c) = ∑ t, if M (mwuRows M η hη1 v hrow T t) c = true then 1 else 0",
@@ -940,6 +1189,13 @@
           "FinitePMF.prob",
           "boolGamePayoff",
           "empiricalPMF"
+        ],
+        "doc": "Specialized empirical-payoff identity for ApproxMinimax\n(avoids cyclic import with FiniteVCApprox).",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "0 < T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -960,6 +1216,13 @@
           "boundedSubsamples",
           "hypothesisEnvelope",
           "labeledSampleOfFinset"
+        ],
+        "doc": "Every hypothesis in the envelope is in C.",
+        "hypotheses": [
+          {
+            "name": "hh",
+            "pretty": "h ∈ hypothesisEnvelope L c Y"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1000,6 +1263,17 @@
           "labeledSampleOfFinset",
           "supportError"
         ],
+        "doc": "For each C-realizable sample, the proper learner provides a row-response\nfor the minimax game on the hypothesis envelope.",
+        "hypotheses": [
+          {
+            "name": "hc",
+            "pretty": "c ∈ C"
+          },
+          {
+            "name": "hHY",
+            "pretty": "HY = hypothesisEnvelope L c Y"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} (L : ProperFiniteSupportLearner X C),\n  ∀ c ∈ C,\n    ∀ (Y : Finset X) [Nonempty ↥Y] (HY : Finset (X → Bool)),\n      HY = hypothesisEnvelope L c Y →\n        ∀ (q : FinitePMF ↥Y), ∃ h, 2 / 3 ≤ ∑ y, q.prob y * if decide (↑h ↑y = c ↑y) = true then 1 else 0",
@@ -1015,6 +1289,7 @@
           "FinitePMF.prob",
           "supportError"
         ],
+        "doc": "Weighted agreement = 1 - supportError.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} (Y : Finset X) (q : FinitePMF ↥Y) (h c : X → Bool),\n  (∑ y, q.prob y * if h ↑y = c ↑y then 1 else 0) = 1 - supportError Y q h c",
@@ -1034,6 +1309,12 @@
           "ProperFiniteSupportLearner.sampleBound",
           "labeledSampleOfFinset",
           "supportError"
+        ],
+        "hypotheses": [
+          {
+            "name": "x",
+            "pretty": "c ∈ C"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1063,6 +1344,13 @@
           "extendBool",
           "liftClass",
           "zeroOneLoss"
+        ],
+        "doc": "Finite-support distributions uniformly approximate any distribution on a VC class.\nFor a class of VC dimension at most `d` and any `ε > 0`, there exists\n`T = T(d, ε)` such that every finitely supported distribution `μ` is within `ε`\n(uniformly over the class) of some empirical distribution on `T` points. A\ndensity-style reduction that lets the approximate minimax / MWU machinery, which lives\nin finite support, apply to general distributions.",
+        "hypotheses": [
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1101,6 +1389,33 @@
           "TrueErrorReal",
           "zeroOneLoss"
         ],
+        "doc": "The symmetrization uniform convergence bound: two-sided version.\nP[∃h∈C: |TrueErr-EmpErr| ≥ ε] ≤ 4·GF(C,2m)·exp(-mε²/8).\n\n**Proof strategy (4 steps):**\n\n1. **Decompose absolute value:**\n   |TrueErr - EmpErr| ≥ ε ↔ (TrueErr - EmpErr ≥ ε) ∨ (EmpErr - TrueErr ≥ ε)\n\n   ```\n   have abs_decomp : ∀ (a b : ℝ),\n     |a - b| ≥ ε ↔ a - b ≥ ε ∨ b - a ≥ ε := by\n     intro a b; constructor\n     · intro h; by_cases h' : a - b ≥ ε\n       · exact Or.inl h'\n       · exact Or.inr (by linarith [abs_sub_comm a b, le_abs_self (a - b)])\n     · intro h; cases h with\n       | inl h => exact le_trans (le_of_eq (abs_of_nonneg (by linarith))) (by linarith)\n       | inr h => exact le_trans (le_of_eq (abs_of_nonpos (by linarith) ▸ ...)) ...\n   ```\n\n2. **Upper tail:** P[∃h∈C: TrueErr-EmpErr ≥ ε] ≤ 2·GF(C,2m)·exp(-mε²/8)\n   - Direct application of `symmetrization_step` + `double_sample_pattern_bound`.\n\n3. **Lower tail:** P[∃h∈C: EmpErr-TrueErr ≥ ε] ≤ 2·GF(C,2m)·exp(-mε²/8)\n   - Apply the symmetric argument: swap roles of S and S' in the double sample.\n   - Equivalently, apply `symmetrization_step` to the event EmpErr-TrueErr ≥ ε\n     and bound the double-sample event {EmpErr_S - EmpErr_{S'} ≥ ε/2}.\n   - The bound is symmetric because D^m ⊗ D^m is symmetric under swapping factors.\n   ```\n   have swap_symmetry :\n     DoubleSampleMeasure D m {p | ∃ h ∈ C, EmpErr(S) - EmpErr(S') ≥ ε/2}\n     = DoubleSampleMeasure D m {p | ∃ h ∈ C, EmpErr(S') - EmpErr(S) ≥ ε/2} :=\n     Measure.prod_swap ...\n   ```\n\n4. **Union bound:**\n   P[|gap| ≥ ε] ≤ P[gap ≥ ε] + P[gap ≤ -ε]\n                 ≤ 2·GF·exp(...) + 2·GF·exp(...)\n                 = 4·GF(C,2m)·exp(-mε²/8)\n   ```\n   -- Uses: MeasureTheory.measure_union_le for the union of two events\n   -- CAST: 2 * X + 2 * X = 4 * X in ENNReal (need ENNReal.add_mul or similar)\n   ```\n\n**References:** SSBD Theorem 6.7, Kakade-Tewari Lecture 19",
+        "hypotheses": [
+          {
+            "name": "hmeas_C",
+            "pretty": "∀ h ∈ C, Measurable h"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hm_large",
+            "pretty": "2 * Real.log 2 ≤ ↑m * ε ^ 2"
+          },
+          {
+            "name": "hE_nullmeas",
+            "pretty": "MeasureTheory.NullMeasurableSet\n  {p |\n    ∃ h ∈ C,\n      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n        ε / 2}\n  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                MeasureTheory.NullMeasurableSet\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2}\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ h ∈ C,\n                          |TrueErrorReal X h c D -\n                                EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            ε} ≤\n                    ENNReal.ofReal (4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))",
@@ -1118,6 +1433,29 @@
           "TrueErrorReal",
           "zeroOneLoss"
         ],
+        "doc": "Symmetrization step for the lower tail: P[∃h: EmpErr-TrueErr ≥ ε] ≤ 2·P_{double}[∃h: EmpErr_S-EmpErr_{S'} ≥ ε/2].\n\nMirror of `symmetrization_step` for the opposite direction.\nUses `hoeffding_one_sided_upper` instead of `hoeffding_one_sided`.",
+        "hypotheses": [
+          {
+            "name": "hmeas_C",
+            "pretty": "∀ h ∈ C, Measurable h"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hm_large",
+            "pretty": "2 * Real.log 2 ≤ ↑m * ε ^ 2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) - TrueErrorReal X h c D ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}",
@@ -1133,6 +1471,25 @@
           "FLT.Concept",
           "TrueErrorReal",
           "zeroOneLoss"
+        ],
+        "doc": "Upper-tail Hoeffding: for iid Bernoulli(p) draws, the empirical average\novershoots the mean by ≥ t with probability ≤ exp(-2mt²).\n\nThis is the mirror of `hoeffding_one_sided` (which bounds the lower tail).\nThe proof uses the same sub-Gaussian machinery with Z_i = indicator(x_i) - p\n(instead of p - indicator(x_i)).",
+        "hypotheses": [
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "ht",
+            "pretty": "0 < t"
+          },
+          {
+            "name": "_ht1",
+            "pretty": "t ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "MeasurableSet {x | h x ≠ c x}"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1151,6 +1508,29 @@
           "TrueErrorReal",
           "zeroOneLoss"
         ],
+        "doc": "Symmetrization: the probability of a large gap TrueErr-EmpErr\nis at most twice the probability of a large gap EmpErr'-EmpErr\non the double sample.\n\n**Proof strategy (6 steps):**\n\n1. **Witness selection:** For S in the bad event, ∃h* ∈ C with\n   TrueErr(h*) - EmpErr_S(h*) ≥ ε.\n   ```\n   -- In the bad event set, extract h* by classical choice\n   have h_witness : ∀ xs ∈ bad_event, ∃ h* ∈ C,\n     TrueErrorReal X h* c D - EmpiricalError X Bool h* (sample xs) (zeroOneLoss Bool) ≥ ε\n   ```\n\n2. **Ghost sample mean:** E_{S'}[EmpErr_{S'}(h*)] = TrueErr(h*) ≥ EmpErr_S(h*) + ε.\n   - Uses: `MeasureTheory.integral_pi` to compute E[EmpErr] over product measure.\n   - KEY LEMMA: For fixed h, E_{D^m}[EmpiricalError(h,S)] = TrueErrorReal(h,c,D).\n     This is because EmpErr = (1/m)∑ indicator(x_i), and E[indicator(x_i)] = TrueErrorReal.\n   ```\n   have expected_emp_err : ∀ h* : Concept X Bool,\n     ∫ xs, EmpiricalError X Bool h* (sample xs) (zeroOneLoss Bool)\n       ∂(Measure.pi (fun _ : Fin m => D))\n     = TrueErrorReal X h* c D := by ...\n   ```\n\n3. **Hoeffding on ghost sample:** P_{S'}[EmpErr_{S'}(h*) < TrueErr(h*) - ε/2] ≤ exp(-mε²/2).\n   - Apply `hoeffding_one_sided` with t = ε/2.\n   - The `hm_large` hypothesis ensures exp(-mε²/2) < 1/2:\n     2·ln2 ≤ mε² ⟹ mε²/2 ≥ ln2 ⟹ exp(-mε²/2) ≤ 1/2.\n   ```\n   have hoeffding_ghost : ∀ h* ∈ C,\n     Measure.pi (fun _ : Fin m => D)\n       {xs' | EmpiricalError X Bool h* (sample xs') (zeroOneLoss Bool)\n         < TrueErrorReal X h* c D - ε/2}\n     ≤ ENNReal.ofReal (Real.exp (-m * (ε/2)^2 * 2)) := by\n       intro h* _; exact hoeffding_one_sided D h* c m hm (ε/2) (by linarith) (by ...) (by ...)\n   ```\n\n4. **Complementary probability:** P_{S'}[EmpErr_{S'}(h*) - EmpErr_S(h*) ≥ ε/2] ≥ 1/2.\n   - From step 2: TrueErr(h*) ≥ EmpErr_S(h*) + ε\n   - From step 3: P[EmpErr_{S'} ≥ TrueErr - ε/2] ≥ 1/2\n   - Chain: EmpErr_{S'} ≥ TrueErr - ε/2 ≥ EmpErr_S + ε - ε/2 = EmpErr_S + ε/2\n\n5. **Conditional to unconditional:** The witness h* from step 1 also witnesses the\n   double-sample event ∃h∈C: EmpErr'-EmpErr ≥ ε/2. So:\n   P_{S'}[double event | S bad] ≥ 1/2.\n   ```\n   have conditional_bound : ∀ xs ∈ bad_event,\n     Measure.pi (fun _ : Fin m => D)\n       {xs' | ∃ h ∈ C, EmpiricalError ... xs' - EmpiricalError ... xs ≥ ε/2}\n     ≥ ENNReal.ofReal (1/2) := by ...\n   ```\n\n6. **Fubini integration:** By Measure.prod_apply and Fubini:\n   P_{S,S'}[double event] = ∫_S P_{S'}[double event | S] ≥ (1/2) · P_S[bad event]\n   ⟹ P_S[bad event] ≤ 2 · P_{S,S'}[double event].\n   ```\n   -- Uses: MeasureTheory.Measure.prod_apply or lintegral_prod\n   -- MEASURABILITY: the double-sample event is measurable as a finite union\n   -- of sets of the form {(xs,xs') | EmpErr'(h) - EmpErr(h) ≥ ε/2} for h ∈ C.\n   -- Since C may be infinite, measurability requires care: the sup over h\n   -- must be shown to be measurable. For finite restriction patterns (≤ 2^m\n   -- on Fin m → Bool), this is a finite union.\n   ```\n\n**MEASURABILITY CONCERNS:**\n- `{xs | ∃ h ∈ C, ...}` is NOT obviously measurable for infinite C.\n  Strategy: decompose via restriction patterns. On any fixed xs, the set of\n  labelings {(h(xs 0), ..., h(xs(m-1))) | h ∈ C} has at most GF(C,m) ≤ 2^m\n  elements. So the ∃h event is a finite union of measurable sets.\n- `EmpiricalError` is a finite sum of measurable functions, hence measurable.\n- The product σ-algebra on (Fin m → X) × (Fin m → X) is generated by\n  cylinder sets, and our events are in this σ-algebra.\n\n**References:** SSBD Lemma 4.5, Kakade-Tewari Lecture 19 Lemma 1",
+        "hypotheses": [
+          {
+            "name": "hmeas_C",
+            "pretty": "∀ h ∈ C, Measurable h"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hm_large",
+            "pretty": "2 * Real.log 2 ≤ ↑m * ε ^ 2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        TrueErrorReal X h c D - EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}",
@@ -1166,6 +1546,25 @@
           "FLT.Concept",
           "TrueErrorReal",
           "zeroOneLoss"
+        ],
+        "doc": "One-sided Hoeffding: for iid Bernoulli(p) draws, the empirical average\nundershoots the mean by ≥ t with probability ≤ exp(-2mt²).\n\n**Proof strategy (3 steps):**\n\n1. **MGF bound (Hoeffding's lemma):** For X ∈ [0,1] with E[X] = p,\n   E[exp(s(X-p))] ≤ exp(s²/8).\n   - Adapt from `cosh_le_exp_sq_half` infrastructure in Rademacher.lean.\n   - Key: convexity of exp on [0,1] gives E[exp(sX)] ≤ p·exp(s) + (1-p)·exp(0),\n     then the s²/8 bound follows from ln(1 + x) ≤ x and Taylor expansion.\n   ```\n   have mgf_bound : ∀ (s : ℝ),\n     ∫ x, Real.exp (s * (indicator x - p)) ∂D ≤ Real.exp (s^2 / 8) := by ...\n   ```\n\n2. **Product independence:** E[exp(s·∑(X_i-p))] = ∏ E[exp(s(X_i-p))] ≤ exp(ms²/8).\n   - Uses `MeasureTheory.Measure.pi` independence structure.\n   - Needs: `Measure.pi` integral factorization for product of functions.\n   - MEASURABILITY: `fun xs => Real.exp (s * ∑ i, f (xs i))` is measurable\n     (composition of measurable functions).\n   ```\n   have product_bound : ∀ (s : ℝ),\n     ∫ xs, Real.exp (s * ∑ i, (indicator (xs i) - p)) ∂Measure.pi (fun _ => D)\n     ≤ Real.exp (m * s^2 / 8) := by ...\n   ```\n\n3. **Exponential Markov + optimize:** P[∑(X_i-p) ≤ -mt]\n   = P[exp(-s·∑(X_i-p)) ≥ exp(smt)] ≤ exp(-smt + ms²/8).\n   Optimize over s: set s = 4t to get ≤ exp(-2mt²).\n   - Uses Markov's inequality in ENNReal form.\n   - CAST ISSUE: Markov gives ENNReal bound, need to convert exp(-2mt²) between\n     ENNReal.ofReal and the measure value.\n   ```\n   have markov_step : ∀ (s : ℝ) (hs : 0 < s),\n     Measure.pi (fun _ => D) {xs | ∑ i, (indicator (xs i) - p) ≤ -(m : ℝ) * t}\n     ≤ ENNReal.ofReal (Real.exp (-(s * m * t) + m * s^2 / 8)) := by ...\n   have optimize : Real.exp (-(4*t * m * t) + m * (4*t)^2 / 8)\n     = Real.exp (-2 * m * t^2) := by ring_nf\n   ```\n\n**CAST ISSUES to watch:**\n- `m : ℕ` needs cast to `ℝ` in the exponent: `(m : ℝ)`\n- `EmpiricalError` returns `ℝ`, `TrueErrorReal` returns `ℝ`, good — no ENNReal gap\n- The measure value is `ENNReal`, the bound `exp(-2mt²)` is `ℝ≥0∞` via `ENNReal.ofReal`\n\n**References:** SSBD Lemma B.3, Hoeffding (1963)",
+        "hypotheses": [
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "ht",
+            "pretty": "0 < t"
+          },
+          {
+            "name": "_ht1",
+            "pretty": "t ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "MeasurableSet {x | h x ≠ c x}"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1183,6 +1582,29 @@
           "FLT.Concept",
           "GrowthFunction",
           "zeroOneLoss"
+        ],
+        "doc": "On the double sample, the probability that any hypothesis has\nEmpErr' - EmpErr ≥ ε/2 is bounded by GF(C,2m) · exp(-mε²/8).\n\n**Proof strategy (Approach A — standard exchangeability, 5 steps):**\n\n1. **EXCHANGEABILITY:** Under D^m ⊗ D^m, the 2m draws z₁,...,z_{2m} are iid from D.\n   The joint distribution is invariant under permutations of {1,...,2m}.\n\n   Key lemma: P_{D^m⊗D^m}[event(S,S')] = E_z[P_{split}[event | z]]\n   where z = merged sample and the split is uniformly random among all\n   C(2m,m) ways to partition z into two groups of m.\n\n   ```\n   -- Measure.pi permutation invariance\n   have pi_perm_invariant : ∀ (σ : Equiv.Perm (Fin (2*m))),\n     (Measure.pi (fun _ : Fin (2*m) => D)).map (fun z i => z (σ i))\n     = Measure.pi (fun _ : Fin (2*m) => D) := by ...\n   -- Consequence: the event probability equals the split-averaged probability\n   have exchangeability :\n     DoubleSampleMeasure D m {p | ∃ h ∈ C, gap(p) ≥ ε/2}\n     = ∫ z, SplitMeasure m {vs | ∃ h ∈ C, gap(split z vs) ≥ ε/2}\n       ∂(Measure.pi (fun _ : Fin (2*m) => D)) := by ...\n   ```\n\n2. **CONDITIONING:** For fixed merged sample z of 2m points:\n   - C restricts to at most GF(C,2m) distinct labeling patterns on z (deterministic).\n   - For each pattern p, define:\n     diff(p, split) = EmpErr_{S'}(p) - EmpErr_S(p)\n     = (1/m) ∑_{i∈S'} a_i - (1/m) ∑_{i∈S} a_i\n     where a_i = 1[pattern(z_i) ≠ c(z_i)] ∈ {0,1}.\n\n   ```\n   -- Number of distinct patterns\n   have num_patterns : ∀ (z : MergedSample X m),\n     Set.ncard {p : Fin (2*m) → Bool | ∃ h ∈ C, ∀ i, p i = (h (z i) ≠ c (z i))}\n     ≤ GrowthFunction X C (2*m) := by ...\n   ```\n\n3. **PER-PATTERN HOEFFDING ON SPLITS:** For fixed z and fixed pattern p:\n   Under uniformly random split (S,S') of z into two groups of m:\n   diff(p, split) = (1/m) ∑_{i∈S'} a_i - (1/m) ∑_{i∈S} a_i\n\n   This is a function of the random partition. By Hoeffding's inequality for\n   sampling without replacement (Serfling 1974):\n   P_split[diff ≥ ε/2] ≤ exp(-mε²/8)\n\n   Alternative derivation: Hoeffding without replacement from Hoeffding with\n   replacement (iid signs) via coupling. The without-replacement bound is\n   actually TIGHTER (variance reduction), but the with-replacement bound suffices.\n\n   ```\n   -- Per-pattern concentration\n   have per_pattern_bound : ∀ (z : MergedSample X m) (a : Fin (2*m) → ℝ)\n     (ha : ∀ i, a i ∈ Set.Icc 0 1),\n     SplitMeasure m {vs | (1/m) * ∑ i ∈ second_group vs, a i\n       - (1/m) * ∑ i ∈ first_group vs, a i ≥ ε/2}\n     ≤ ENNReal.ofReal (Real.exp (-(m : ℝ) * (ε/2)^2 / 2)) := by ...\n   -- Note: m*(ε/2)^2/2 = mε²/8\n   ```\n\n4. **UNION BOUND:** P_split[∃ pattern: diff ≥ ε/2 | z]\n   ≤ (number of patterns) · max_pattern P_split[diff ≥ ε/2]\n   ≤ GF(C,2m) · exp(-mε²/8)\n\n   ```\n   have union_bound : ∀ (z : MergedSample X m),\n     SplitMeasure m {vs | ∃ h ∈ C, gap(split z vs, h) ≥ ε/2}\n     ≤ ENNReal.ofReal (GrowthFunction X C (2*m) * Real.exp (-(m : ℝ) * ε^2 / 8))\n     := by ...\n   ```\n\n5. **INTEGRATE:** P_{D^m⊗D^m}[event]\n   = E_z[P_split[event|z]]                      (by step 1)\n   ≤ E_z[GF(C,2m) · exp(-mε²/8)]               (by step 4, pointwise)\n   = GF(C,2m) · exp(-mε²/8)                     (bound is independent of z)\n\n   ```\n   -- The bound is a constant, so integrating gives the same constant\n   -- (using IsProbabilityMeasure for the 2m-fold product)\n   ```\n\n**Infrastructure needed:**\n- `Fin.sumFinEquiv : Fin m ⊕ Fin n ≃ Fin (m + n)` (available in Mathlib)\n- `mergeSamples` / `splitMergedSample` (defined above)\n- `SplitMeasure` and `ValidSplit` (defined above)\n- `Measure.pi` permutation invariance (to be proved or imported)\n- Hoeffding for sampling without replacement\n- `GrowthFunction` on 2m points + `sauer_shelah_exp_bound` from Rademacher.lean\n\n**MEASURABILITY CONCERNS:**\n- The merged sample z ↦ P_split[event|z] must be measurable as a function of z.\n  Since the event is a finite union over patterns, and each pattern's indicator\n  is a measurable function of z (finite evaluation), this follows.\n- `GrowthFunction X C (2*m)` is a natural number (deterministic), no measurability issue.\n\n**References:** SSBD Theorem 6.7, Hoeffding (1963), Serfling (1974)",
+        "hypotheses": [
+          {
+            "name": "hmeas_C",
+            "pretty": "∀ h ∈ C, Measurable h"
+          },
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hE_nullmeas",
+            "pretty": "MeasureTheory.NullMeasurableSet\n  {p |\n    ∃ h ∈ C,\n      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n        ε / 2}\n  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1203,6 +1625,36 @@
           "boolToSign",
           "zeroOneLoss"
         ],
+        "hypotheses": [
+          {
+            "name": "_hmeas_C",
+            "pretty": "∀ h ∈ C, Measurable h"
+          },
+          {
+            "name": "_hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "_hε2",
+            "pretty": "ε ≤ 2"
+          },
+          {
+            "name": "hC",
+            "pretty": "Set.Nonempty C"
+          },
+          {
+            "name": "hE_nullmeas",
+            "pretty": "MeasureTheory.NullMeasurableSet\n  {p |\n    ∃ h ∈ C,\n      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n        ε / 2}\n  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              ε ≤ 2 →\n                Set.Nonempty C →\n                  MeasureTheory.NullMeasurableSet\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}\n                      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                    have μ := MeasureTheory.Measure.pi fun x => D;\n                    (μ.prod μ)\n                        {p |\n                          ∃ h ∈ C,\n                            EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                              ε / 2} ≤\n                      ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))",
@@ -1215,6 +1667,16 @@
         "depth": 7,
         "dictionary_leaves": [
           "zeroOneLoss"
+        ],
+        "hypotheses": [
+          {
+            "name": "e_a",
+            "pretty": "a✝³ = a✝²"
+          },
+          {
+            "name": "e_a",
+            "pretty": "a✝¹ = a✝"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1231,6 +1693,7 @@
           "FLT.Concept",
           "GrowthFunction"
         ],
+        "doc": "The number of distinct restriction patterns of C on any n points is at most GF(C,n).\nFor z : Fin n → X, define patterns(z) = {p : Fin n → Bool | ∃ h ∈ C, ∀ i, p i = (h(z i) ≠ c(z i))}.\nThen patterns(z).ncard ≤ GrowthFunction X C n by definition of GrowthFunction.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [MeasurableSpace X] [Infinite X] (C : ConceptClass X Bool) (c : Concept X Bool) (n : ℕ) (z : Fin n → X),\n  {p | ∃ h ∈ C, ∀ (i : Fin n), p i = decide (h (z i) ≠ c (z i))}.ncard ≤ GrowthFunction X C n",
@@ -1245,6 +1708,25 @@
           "SignVector",
           "boolToSign"
         ],
+        "doc": "Rademacher MGF bound.",
+        "hypotheses": [
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "_hc",
+            "pretty": "0 ≤ c"
+          },
+          {
+            "name": "ha",
+            "pretty": "∀ (i : Fin m), |a i| ≤ c"
+          },
+          {
+            "name": "_ht",
+            "pretty": "0 ≤ t"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {m : ℕ},\n  0 < m →\n    ∀ (a : Fin m → ℝ) (c : ℝ),\n      0 ≤ c →\n        (∀ (i : Fin m), |a i| ≤ c) →\n          ∀ (t : ℝ),\n            0 ≤ t →\n              1 / ↑(Fintype.card (SignVector m)) * ∑ σ, Real.exp (t * (1 / ↑m * ∑ i, a i * boolToSign (σ i))) ≤\n                Real.exp (t ^ 2 * c ^ 2 / (2 * ↑m))",
@@ -1256,6 +1738,7 @@
         "decl_name": "cosh_le_exp_sq_half",
         "depth": 8,
         "dictionary_leaves": [],
+        "doc": "cosh(x) ≤ exp(x²/2). Standard sub-Gaussian bound.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (x : ℝ), Real.cosh x ≤ Real.exp (x ^ 2 / 2)",
@@ -1267,6 +1750,21 @@
         "decl_name": "finite_exchangeability_bound",
         "depth": 7,
         "dictionary_leaves": [],
+        "doc": "Generic finite exchangeability bound. Given a measure-preserving family of\ntransformations on a probability space, a NullMeasurableSet S, and a pointwise\nbound on the sum of preimage indicators, conclude ν(S) ≤ B.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "∀ (g : G), MeasureTheory.MeasurePreserving (T g) ν ν"
+          },
+          {
+            "name": "hS0",
+            "pretty": "MeasureTheory.NullMeasurableSet S ν"
+          },
+          {
+            "name": "hpointwise",
+            "pretty": "∀ (z : Ω), ∑ g, (T g ⁻¹' S).indicator 1 z ≤ B * ↑(Fintype.card G)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Ω : Type u_1} {G : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype G] [Nonempty G]\n  {ν : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure ν] (T : G → Ω → Ω) (S : Set Ω),\n  (∀ (g : G), MeasureTheory.MeasurePreserving (T g) ν ν) →\n    MeasureTheory.NullMeasurableSet S ν →\n      ∀ (B : ENNReal), (∀ (z : Ω), ∑ g, (T g ⁻¹' S).indicator 1 z ≤ B * ↑(Fintype.card G)) → ν S ≤ B",
@@ -1281,6 +1779,36 @@
           "ConceptClass",
           "GrowthFunction"
         ],
+        "hypotheses": [
+          {
+            "name": "hv",
+            "pretty": "0 < v"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hε",
+            "pretty": "0 < ε"
+          },
+          {
+            "name": "hδ",
+            "pretty": "0 < δ"
+          },
+          {
+            "name": "hδ1",
+            "pretty": "δ < 1"
+          },
+          {
+            "name": "hv_bound",
+            "pretty": "∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i"
+          },
+          {
+            "name": "hm_bound",
+            "pretty": "(16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [MeasurableSpace X] (C : ConceptClass X Bool) (v : ℕ),\n  0 < v →\n    ∀ (m : ℕ),\n      0 < m →\n        ∀ (ε δ : ℝ),\n          0 < ε →\n            0 < δ →\n              δ < 1 →\n                (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                  (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                    4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)) ≤ δ ∧ 2 * Real.log 2 ≤ ↑m * ε ^ 2",
@@ -1292,6 +1820,17 @@
         "decl_name": "sum_choose_le_exp_pow",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Pure combinatorial inequality: ∑_{i=0}^d C(m,i) ≤ (em/d)^d for d ≤ m, d ≥ 1.",
+        "hypotheses": [
+          {
+            "name": "hd",
+            "pretty": "0 < d"
+          },
+          {
+            "name": "hdm",
+            "pretty": "d ≤ m"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 * ↑m / ↑d) ^ d",
@@ -1303,6 +1842,13 @@
         "decl_name": "pow_mul_exp_neg_le_factorial_div",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Key arithmetic lemma for PAC bound: for t > 0, t^d * exp(-t) ≤ (d+1)!/t.\nFollows from exp(t) ≥ t^(d+1)/(d+1)! (partial sum of Taylor series).",
+        "hypotheses": [
+          {
+            "name": "ht",
+            "pretty": "0 < t"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {d : ℕ} {t : ℝ}, 0 < t → t ^ d * Real.exp (-t) ≤ ↑(d + 1).factorial / t",
@@ -1318,6 +1864,7 @@
           "FLT.Concept",
           "GrowthFunction"
         ],
+        "doc": "Trivial bound: GrowthFunction ≤ 2^n for all concept classes.\nEach restriction to an n-element set yields a function in S → Bool,\nand there are at most 2^n such functions.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (n : ℕ), GrowthFunction X C n ≤ 2 ^ n",
@@ -1333,6 +1880,7 @@
           "FinitePMF.prob",
           "boolTestExpectation"
         ],
+        "doc": "A convex combination of values in `{0, 1}` is nonnegative.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {H : Type u_1} [inst : Fintype H] (μ : FinitePMF H) (f : H → Bool), 0 ≤ boolTestExpectation μ f",
@@ -1348,6 +1896,7 @@
           "FinitePMF.prob",
           "boolTestExpectation"
         ],
+        "doc": "A convex combination of values in `{0, 1}` is at most `1`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {H : Type u_1} [inst : Fintype H] (μ : FinitePMF H) (f : H → Bool), boolTestExpectation μ f ≤ 1",
@@ -1394,6 +1943,29 @@
           "IncidenceInfo",
           "mkIncidenceSchemeOfMajority"
         ],
+        "doc": "Final existential wrapper: closes the theorem in the exact form expected.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "0 < T"
+          },
+          {
+            "name": "hsmall",
+            "pretty": "∀ {m : ℕ} (S : Fin m → X × Bool), (compressCore S).1.card ≤ K"
+          },
+          {
+            "name": "hsub",
+            "pretty": "∀ {m : ℕ} (S : Fin m → X × Bool), ↑(compressCore S).1 ⊆ Set.range S"
+          },
+          {
+            "name": "hagree",
+            "pretty": "∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m) (t : Fin T),\n  blockHyp (compressCore S).1 (compressCore S).2 t (S i).1 = rowHyp S hreal t (S i).1"
+          },
+          {
+            "name": "hmajor",
+            "pretty": "∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m),\n  (∑ t, if rowHyp S hreal t (S i).1 = (S i).2 then 1 else 0) / ↑T > 1 / 2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} (T K : ℕ)\n  (compressCore : {m : ℕ} → (Fin m → X × Bool) → Finset (X × Bool) × IncidenceInfo T K)\n  (blockHyp : Finset (X × Bool) → IncidenceInfo T K → Fin T → X → Bool)\n  (rowHyp : {m : ℕ} → (S : Fin m → X × Bool) → (∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) → Fin T → X → Bool),\n  0 < T →\n    (∀ {m : ℕ} (S : Fin m → X × Bool), (compressCore S).1.card ≤ K) →\n      (∀ {m : ℕ} (S : Fin m → X × Bool), ↑(compressCore S).1 ⊆ Set.range S) →\n        (∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m) (t : Fin T),\n            blockHyp (compressCore S).1 (compressCore S).2 t (S i).1 = rowHyp S hreal t (S i).1) →\n          (∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m),\n              (∑ t, if rowHyp S hreal t (S i).1 = (S i).2 then 1 else 0) / ↑T > 1 / 2) →\n            ∃ k cs, CompressionSchemeWithInfo.size cs = k",
@@ -1406,6 +1978,20 @@
         "depth": 3,
         "dictionary_leaves": [
           "encodeWitnessInfo"
+        ],
+        "hypotheses": [
+          {
+            "name": "e_kernel",
+            "pretty": "kernel✝ = kernel"
+          },
+          {
+            "name": "e_c",
+            "pretty": "c✝ = c"
+          },
+          {
+            "name": "e_W",
+            "pretty": "W✝ = W"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1421,6 +2007,13 @@
           "FinitePMF.prob",
           "boolTestExpectation",
           "empiricalPMF"
+        ],
+        "doc": "Bridges the `FinitePMF` view and the sample-average view: the expectation of a\n`Bool`-valued test under the empirical PMF of a sample equals the sample average\n`(1/T) ∑_t f (s_t)`. This lets the MWU updates and the approximation transfer\nprinciple live in the same distributional framework.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "0 < T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1438,6 +2031,7 @@
           "boolGamePayoff",
           "boolTestExpectation"
         ],
+        "doc": "Identifies the game-theoretic payoff (a row distribution against a fixed column in\nthe Bool game) with the corresponding test expectation. The translation that lets the\nMWU regret bound be applied directly to the compression problem.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {R : Type u_1} [inst : Fintype R] [DecidableEq R] {C : Type u_2} (M : R → C → Bool) (p : FinitePMF R) (c : C),\n  boolGamePayoff M p c = boolTestExpectation p fun r => M r c",
@@ -1457,6 +2051,17 @@
           "agreeTest",
           "agreeTests",
           "boolFamilyToFinsetFamily"
+        ],
+        "doc": "VC dimension of the agreement-test family is bounded by `2^(d+1) - 1`,\nwhere `d` bounds the VC dimension of the concept class `C`.\nUses Assouad's coding argument directly: if a shattered set `T` in `↥HY` has\n`|T| ≥ 2^(d+1)`, embed bitstrings into `T`, extract `d+1` distinct points from `Y`\nvia shattering, and show these points are shattered by `C` (using the XOR trick\nwhere `b(j) = decide(g(x_j) = c(x_j))` absorbs the agree/disagree flip).",
+        "hypotheses": [
+          {
+            "name": "hHY",
+            "pretty": "∀ h ∈ HY, h ∈ C"
+          },
+          {
+            "name": "hvc",
+            "pretty": "VCDim X C ≤ ↑d"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -1480,6 +2085,13 @@
           "Shatters",
           "VCDim"
         ],
+        "doc": "Compression with side info implies finite VC dimension.\nProof by pigeonhole: compress is injective on C-realizable labelings\n(by correctness), but compressed outputs form a bounded set.",
+        "hypotheses": [
+          {
+            "name": "hcomp",
+            "pretty": "∃ k cs, cs.size = k"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) (C : ConceptClass X Bool), (∃ k cs, cs.size = k) → VCDim X C < ⊤",
@@ -1495,6 +2107,16 @@
           "FLT.Concept",
           "Shatters"
         ],
+        "hypotheses": [
+          {
+            "name": "hST",
+            "pretty": "T ⊆ S"
+          },
+          {
+            "name": "hS",
+            "pretty": "Shatters X C S"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {S T : Finset X}, T ⊆ S → Shatters X C S → Shatters X C T",
@@ -1506,6 +2128,7 @@
         "decl_name": "exp_beats_poly_compression",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "Exponential beats polynomial for the compression pigeonhole argument.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (s : ℕ), (s + 1) ^ 2 * (4 * (s + 1) ^ 2) ^ s < 2 ^ (2 * (s + 1) * (s + 1))",
@@ -1535,6 +2158,25 @@
           "ConceptClass",
           "FLT.Concept"
         ],
+        "doc": "Pigeonhole core: if two C-realizable samples over the same points with\ndifferent labelings produce the same (kernel, info) pair, correctness\nforces the labelings to agree.",
+        "hypotheses": [
+          {
+            "name": "_hpts",
+            "pretty": "Function.Injective pts"
+          },
+          {
+            "name": "hf_real",
+            "pretty": "∃ c ∈ C, ∀ (i : Fin n), c (pts i) = f i"
+          },
+          {
+            "name": "hg_real",
+            "pretty": "∃ c ∈ C, ∀ (i : Fin n), c (pts i) = g i"
+          },
+          {
+            "name": "hfg",
+            "pretty": "(cs.compress fun i => (pts i, f i)) = cs.compress fun i => (pts i, g i)"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {n : ℕ} {C : ConceptClass X Bool} (cs : CompressionSchemeWithInfo X Bool C) (pts : Fin n → X),\n  Function.Injective pts →\n    ∀ (f g : Fin n → Bool),\n      (∃ c ∈ C, ∀ (i : Fin n), c (pts i) = f i) →\n        (∃ c ∈ C, ∀ (i : Fin n), c (pts i) = g i) →\n          ((cs.compress fun i => (pts i, f i)) = cs.compress fun i => (pts i, g i)) → f = g",
@@ -1553,6 +2195,13 @@
           "ConceptClass",
           "FLT.Concept"
         ],
+        "doc": "Correctness: reconstructed hypothesis agrees with every sample point,\nwhen the sample is C-realizable",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  (∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) →\n    ∀ (i : Fin m), self.reconstruct (self.compress S).1 (self.compress S).2 (S i).1 = (S i).2",
@@ -1569,6 +2218,7 @@
           "CompressionSchemeWithInfo.compress",
           "ConceptClass"
         ],
+        "doc": "Compressed set is a subset of the sample",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  ↑(self.compress S).1 ⊆ Set.range S",
@@ -1586,6 +2236,7 @@
           "CompressionSchemeWithInfo.kernelSize",
           "ConceptClass"
         ],
+        "doc": "Compressed set is small",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  (self.compress S).1.card ≤ self.kernelSize",

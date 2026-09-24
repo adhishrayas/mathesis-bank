@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6020"
   },
   {
+    "field": "claim.doc",
+    "value": "Dirac's lemma, strong form: in a chordless-cycle-free adjacency structure, every vertex set is a clique or contains two nonadjacent simplicial vertices."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HiddenChannelCapacity.dirac_strong"
   },
@@ -50,6 +54,14 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "¬∃ l, HiddenChannelCapaci…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hchord"
   },
   {
     "field": "argument_node.decl_name",
@@ -212,6 +224,62 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "Adj"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ReachOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SimpIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cyclePairs"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "instDecidableAdj"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "HiddenChannelCapacity.dirac_strong"
   },
@@ -296,6 +364,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The assembled-cycle contradiction: two length-minimal x-y connectors through disjoint, mutually non-adjacent sides cannot coexist with chordless-cycle-freeness when x and y are non-adjacent."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ {QA QB : ι → Prop} {x y : ι},\n      x ≠ y →\n        ¬HiddenChannelCapacity.Adj 𝒞 x y →\n          ¬QB x →\n            ¬QB y →\n              (∀ (v : ι), QA v → QB v → False) →\n                (∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v) →\n                  ∀ (pA : List ι),\n                    List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA →\n                      pA.Nodup →\n                        pA.head? = some x →\n                          pA.getLast? = some y →\n                            (∀ v ∈ pA, v = x ∨ v = y ∨ QA v) →\n                              (∀ (q : List ι),\n                                  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                      q.Nodup ∧\n                                        q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n                                    pA.length ≤ q.length) →\n                                ∀ (pB : List ι),\n                                  List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB →\n                                    pB.Nodup →\n                                      pB.head? = some x →\n                                        pB.getLast? = some y →\n                                          (∀ v ∈ pB, v = x ∨ v = y ∨ QB v) →\n                                            (∀ (q : List ι),\n                                                (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                                    q.Nodup ∧\n                                                      q.head? = some x ∧\n                                                        q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n                                                  pB.length ≤ q.length) →\n                                              False"
   },
@@ -350,6 +422,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Minimality kills chords: a length-minimal constrained x-y path has no adjacency between positions at distance ≥ 2."
   },
   {
     "field": "argument_node.pretty",
@@ -552,6 +628,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Every vertex on a walk is reachable from its head."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι} {p : List ι},\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p → p.head? = some u → v ∈ p → HiddenChannelCapacity.ReachOn 𝒞 P u v"
   },
@@ -636,6 +716,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A connector: an x-y path with interior inside Q, from adjacent entry points and interior reachability."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y u₁ u₂ : ι},\n  x ≠ y →\n    HiddenChannelCapacity.Adj 𝒞 x u₁ →\n      HiddenChannelCapacity.Adj 𝒞 y u₂ →\n        HiddenChannelCapacity.ReachOn 𝒞 Q u₁ u₂ →\n          ¬Q x →\n            ¬Q y →\n              ∃ p,\n                List.IsChain (HiddenChannelCapacity.Adj 𝒞) p ∧\n                  p.Nodup ∧ p.head? = some x ∧ p.getLast? = some y ∧ ∀ v ∈ p, v = x ∨ v = y ∨ Q v"
   },
@@ -666,6 +750,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "If x has no neighbor reachable from a off the separator, then erasing x still separates: the first x-occurrence on any violating path has its predecessor reachable from a and adjacent to x."
   },
   {
     "field": "argument_node.pretty",
@@ -714,6 +802,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Every chained walk contains a duplicate-free path with the same endpoints and vertices."
   },
   {
     "field": "argument_node.pretty",
@@ -816,6 +908,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Positional form of the head."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} {p : List ι} {x : ι}, p.head? = some x → ∀ (h0 : 0 < p.length), p[0] = x"
   },
@@ -874,6 +970,122 @@
   {
     "field": "argument_node.decl_name",
     "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hchord"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Primal adjacency: distinct co-hosted vertices."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → Finset (Finset ι) → ι → ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A chordless cycle: duplicate-free, length ≥ 4, consecutive pairs hosted, and the only adjacencies among its vertices are the cyclically consecutive ones."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → [DecidableEq ι] → Finset (Finset ι) → List ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A walk constrained to P: chained adjacencies, every vertex satisfies P."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → Finset (Finset ι) → (ι → Prop) → List ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Reachability within P: a duplicate-free walk with the given endpoints."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → Finset (Finset ι) → (ι → Prop) → ι → ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SimpIn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "v is simplicial within the vertex set S: it lies in S and its 𝒞-neighbors inside S are pairwise adjacent."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → Finset (Finset ι) → Finset ι → ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The consecutive-pair supports of a cyclic vertex list."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → [DecidableEq ι] → List ι → List (Finset ι)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableAdj"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → [DecidableEq ι] → (𝒞 : Finset (Finset ι)) → (u v : ι) → Decidable (HiddenChannelCapacity.Adj 𝒞 u v)"
   },
   {
     "field": "argument.accession",

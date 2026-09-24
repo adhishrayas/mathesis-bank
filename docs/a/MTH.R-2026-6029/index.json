@@ -117,6 +117,13 @@
           "usedPrefix",
           "zeroOneLoss"
         ],
+        "doc": "Advice elimination (Ben-David & Dichterman 1998):\nIf C is PAC-learnable with concept-dependent advice from a FINITE set A\n(with measurability regularity), then C is PAC-learnable without advice.\n\nProof strategy: run the advice-augmented learner with each a ∈ A on a\ntraining portion of the sample, producing |A| candidate hypotheses. Use a\nvalidation portion to select the candidate with lowest empirical error.\nUnion bound over |A| advice values + Hoeffding on validation controls total\nfailure probability. Sample complexity: O(m_orig(ε/2, δ/(2|A|)) + log(|A|/δ)/ε²).\n\nThe [Fintype A] constraint is essential: for infinite A, the theorem is false\n(no finite union bound). [Nonempty A] ensures the advice space is inhabited.",
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "PACLearnableWithAdviceRegular X C A"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C",
@@ -129,6 +136,13 @@
         "depth": 1,
         "dictionary_leaves": [
           "splitUsedEquiv"
+        ],
+        "doc": "Split D^{m₁+m₂} into D^{m₁} × D^{m₂} via splitUsedEquiv.",
+        "hypotheses": [
+          {
+            "name": "_hS",
+            "pretty": "MeasurableSet Success"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -147,6 +161,20 @@
           "bestAdvice",
           "zeroOneLoss"
         ],
+        "hypotheses": [
+          {
+            "name": "_hη",
+            "pretty": "0 ≤ η"
+          },
+          {
+            "name": "hclose",
+            "pretty": "∀ (a : A), |TrueErrorReal X (cand a) c D - EmpiricalError X Bool (cand a) Sval (zeroOneLoss Bool)| ≤ η"
+          },
+          {
+            "name": "hstar",
+            "pretty": "TrueErrorReal X (cand aStar) c D ≤ τ"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] [inst_2 : Nonempty A]\n  (cand : A → Concept X Bool) (c : Concept X Bool) (D : MeasureTheory.Measure X) {m : ℕ} (Sval : Fin m → X × Bool)\n  (η τ : ℝ),\n  0 ≤ η →\n    (∀ (a : A), |TrueErrorReal X (cand a) c D - EmpiricalError X Bool (cand a) Sval (zeroOneLoss Bool)| ≤ η) →\n      ∀ (aStar : A),\n        TrueErrorReal X (cand aStar) c D ≤ τ → TrueErrorReal X (cand (bestAdvice cand Sval)) c D ≤ τ + 2 * η",
@@ -158,6 +186,13 @@
         "decl_name": "prob_ge_one_sub_compl",
         "depth": 1,
         "dictionary_leaves": [],
+        "doc": "For a probability measure, μ(S) ≥ 1 - μ(Sᶜ), and hence μ(S) ≥ 1 - δ if μ(Sᶜ) ≤ δ.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "μ Sᶜ ≤ δ"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ]\n  (S : Set Ω) (δ : ENNReal), μ Sᶜ ≤ δ → μ S ≥ 1 - δ",
@@ -171,6 +206,13 @@
         "dictionary_leaves": [
           "usedPrefix"
         ],
+        "doc": "Sampling Nat.pair m₁ m₂ coordinates and taking the first m₁+m₂ gives the\nsame measure as sampling m₁+m₂ coordinates directly. The extra junk\ncoordinates integrate out via pi_cylinder_set_eq.",
+        "hypotheses": [
+          {
+            "name": "hSuccess",
+            "pretty": "MeasurableSet Success"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  [MeasureTheory.SigmaFinite D] (m₁ m₂ : ℕ) (Success : Set (Fin (m₁ + m₂) → X)),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (usedPrefix✝ m₁ m₂ ⁻¹' Success) =\n      (MeasureTheory.Measure.pi fun x => D) Success",
@@ -182,6 +224,13 @@
         "decl_name": "pi_cylinder_set_eq",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "Cylinder set measure on product: if an event depends only on the first coordinates\n(those satisfying predicate p), then its measure under D^ι equals D^{p}(event).\nUses piEquivPiSubtypeProd: D^ι ≃ D^{p} × D^{¬p}, and\n(D^{p} × D^{¬p})(A × univ) = D^{p}(A) · D^{¬p}(univ) = D^{p}(A).",
+        "hypotheses": [
+          {
+            "name": "_hS",
+            "pretty": "MeasurableSet S"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {ι : Type u_1} [inst : Fintype ι] [DecidableEq ι] {X : Type u} [inst_2 : MeasurableSpace X]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] [MeasureTheory.SigmaFinite D] (p : ι → Prop)\n  [inst_5 : DecidablePred p] (S : Set ({ i // p i } → X)),\n  MeasurableSet S →\n    (MeasureTheory.Measure.pi fun x => D) {xs | (fun i => xs ↑i) ∈ S} = (MeasureTheory.Measure.pi fun x => D) S",
@@ -196,6 +245,12 @@
           "AdviceEvalMeasurable",
           "LearnerWithAdvice",
           "LearnerWithAdvice.learnWithAdvice"
+        ],
+        "hypotheses": [
+          {
+            "name": "h_eval",
+            "pretty": "AdviceEvalMeasurable LA"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -213,6 +268,28 @@
           "TrueErrorReal",
           "zeroOneLoss"
         ],
+        "hypotheses": [
+          {
+            "name": "hc_meas",
+            "pretty": "Measurable c"
+          },
+          {
+            "name": "h_cand_meas",
+            "pretty": "∀ (a : A), Measurable (cand a)"
+          },
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "hη",
+            "pretty": "0 < η"
+          },
+          {
+            "name": "hη1",
+            "pretty": "η ≤ 1"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (cand : A → Concept X Bool),\n      (∀ (a : A), Measurable (cand a)) →\n        ∀ (m : ℕ),\n          0 < m →\n            ∀ (η : ℝ),\n              0 < η →\n                η ≤ 1 →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ a,\n                          |TrueErrorReal X (cand a) c D -\n                                EmpiricalError X Bool (cand a) (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            η} ≤\n                    ENNReal.ofReal (↑(Fintype.card A) * 2 * Real.exp (-2 * ↑m * η ^ 2))",
@@ -228,6 +305,25 @@
           "FLT.Concept",
           "TrueErrorReal",
           "zeroOneLoss"
+        ],
+        "doc": "Upper-tail Hoeffding: for iid Bernoulli(p) draws, the empirical average\novershoots the mean by ≥ t with probability ≤ exp(-2mt²).\n\nThis is the mirror of `hoeffding_one_sided` (which bounds the lower tail).\nThe proof uses the same sub-Gaussian machinery with Z_i = indicator(x_i) - p\n(instead of p - indicator(x_i)).",
+        "hypotheses": [
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "ht",
+            "pretty": "0 < t"
+          },
+          {
+            "name": "_ht1",
+            "pretty": "t ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "MeasurableSet {x | h x ≠ c x}"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -245,6 +341,25 @@
           "TrueErrorReal",
           "zeroOneLoss"
         ],
+        "doc": "One-sided Hoeffding: for iid Bernoulli(p) draws, the empirical average\nundershoots the mean by ≥ t with probability ≤ exp(-2mt²).\n\n**Proof strategy (3 steps):**\n\n1. **MGF bound (Hoeffding's lemma):** For X ∈ [0,1] with E[X] = p,\n   E[exp(s(X-p))] ≤ exp(s²/8).\n   - Adapt from `cosh_le_exp_sq_half` infrastructure in Rademacher.lean.\n   - Key: convexity of exp on [0,1] gives E[exp(sX)] ≤ p·exp(s) + (1-p)·exp(0),\n     then the s²/8 bound follows from ln(1 + x) ≤ x and Taylor expansion.\n   ```\n   have mgf_bound : ∀ (s : ℝ),\n     ∫ x, Real.exp (s * (indicator x - p)) ∂D ≤ Real.exp (s^2 / 8) := by ...\n   ```\n\n2. **Product independence:** E[exp(s·∑(X_i-p))] = ∏ E[exp(s(X_i-p))] ≤ exp(ms²/8).\n   - Uses `MeasureTheory.Measure.pi` independence structure.\n   - Needs: `Measure.pi` integral factorization for product of functions.\n   - MEASURABILITY: `fun xs => Real.exp (s * ∑ i, f (xs i))` is measurable\n     (composition of measurable functions).\n   ```\n   have product_bound : ∀ (s : ℝ),\n     ∫ xs, Real.exp (s * ∑ i, (indicator (xs i) - p)) ∂Measure.pi (fun _ => D)\n     ≤ Real.exp (m * s^2 / 8) := by ...\n   ```\n\n3. **Exponential Markov + optimize:** P[∑(X_i-p) ≤ -mt]\n   = P[exp(-s·∑(X_i-p)) ≥ exp(smt)] ≤ exp(-smt + ms²/8).\n   Optimize over s: set s = 4t to get ≤ exp(-2mt²).\n   - Uses Markov's inequality in ENNReal form.\n   - CAST ISSUE: Markov gives ENNReal bound, need to convert exp(-2mt²) between\n     ENNReal.ofReal and the measure value.\n   ```\n   have markov_step : ∀ (s : ℝ) (hs : 0 < s),\n     Measure.pi (fun _ => D) {xs | ∑ i, (indicator (xs i) - p) ≤ -(m : ℝ) * t}\n     ≤ ENNReal.ofReal (Real.exp (-(s * m * t) + m * s^2 / 8)) := by ...\n   have optimize : Real.exp (-(4*t * m * t) + m * (4*t)^2 / 8)\n     = Real.exp (-2 * m * t^2) := by ring_nf\n   ```\n\n**CAST ISSUES to watch:**\n- `m : ℕ` needs cast to `ℝ` in the exponent: `(m : ℝ)`\n- `EmpiricalError` returns `ℝ`, `TrueErrorReal` returns `ℝ`, good — no ENNReal gap\n- The measure value is `ENNReal`, the bound `exp(-2mt²)` is `ℝ≥0∞` via `ENNReal.ofReal`\n\n**References:** SSBD Lemma B.3, Hoeffding (1963)",
+        "hypotheses": [
+          {
+            "name": "hm",
+            "pretty": "0 < m"
+          },
+          {
+            "name": "ht",
+            "pretty": "0 < t"
+          },
+          {
+            "name": "_ht1",
+            "pretty": "t ≤ 1"
+          },
+          {
+            "name": "hmeas",
+            "pretty": "MeasurableSet {x | h x ≠ c x}"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))",
@@ -258,6 +373,16 @@
         "dictionary_leaves": [
           "FLT.Concept",
           "bestAdvice"
+        ],
+        "hypotheses": [
+          {
+            "name": "e_cand",
+            "pretty": "cand✝ = cand"
+          },
+          {
+            "name": "e_Sval",
+            "pretty": "Sval✝ = Sval"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -273,6 +398,12 @@
           "ConceptClass",
           "FLT.Concept",
           "MeasurableHypotheses"
+        ],
+        "hypotheses": [
+          {
+            "name": "a",
+            "pretty": "h ∈ C"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

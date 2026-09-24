@@ -255,6 +255,43 @@
     font-size: var(--text-code-xs);
   }
   .mth-dag__kind { fill: var(--color-text-muted); }
+
+  /* An argument's roles: the thesis, its steps, the thesis's hypotheses, the
+     definitions and the cited results it rests on — one colour each, in the
+     graph's boxes, on the list's rails and in the legend. */
+  .mth-dag__node--thesis rect { fill: var(--color-role-thesis-bg); stroke: var(--color-role-thesis-bd); stroke-width: 1.5; }
+  .mth-dag__node--hypothesis rect { fill: var(--color-role-hyp-bg); stroke: var(--color-role-hyp-bd); }
+  .mth-dag__node--definition rect { fill: var(--color-role-def-bg); stroke: var(--color-role-def-bd); }
+  .mth-dag__node--cited rect { fill: var(--color-role-cite-bg); stroke: var(--color-role-cite-bd); }
+  .mth-dag__legend { display: flex; flex-wrap: wrap; gap: var(--spacing-2) var(--spacing-4); margin-block: var(--spacing-2); }
+  .mth-role {
+    display: inline-flex; align-items: center; gap: var(--spacing-2);
+    font-size: var(--text-xs); color: var(--color-text-muted);
+  }
+  .mth-role::before {
+    content: ""; flex: none; width: var(--spacing-3); height: var(--spacing-3);
+    border: 1px solid var(--color-border-strong); border-radius: var(--radius-xs);
+    background: var(--color-surface-2);
+  }
+  .mth-role--thesis::before { background: var(--color-role-thesis-bg); border-color: var(--color-role-thesis-bd); }
+  .mth-role--hypothesis::before { background: var(--color-role-hyp-bg); border-color: var(--color-role-hyp-bd); }
+  .mth-role--definition::before { background: var(--color-role-def-bg); border-color: var(--color-role-def-bd); }
+  .mth-role--cited::before { background: var(--color-role-cite-bg); border-color: var(--color-role-cite-bd); }
+  .mth-dag-list__item--thesis { border-inline-start: 3px solid var(--color-role-thesis-bd); }
+  .mth-dag-list__item--hypothesis { border-inline-start: 3px solid var(--color-role-hyp-bd); }
+  .mth-dag-list__item--definition { border-inline-start: 3px solid var(--color-role-def-bd); }
+  .mth-dag-list__item--cited { border-inline-start: 3px solid var(--color-role-cite-bd); }
+
+  /* A docstring: the author's own words, set as prose above the statement the
+     kernel checked. */
+  .mth-docstring { display: grid; gap: var(--spacing-2); line-height: 1.55; max-width: var(--container-doc); }
+  .mth-docstring p, .mth-docstring ul { margin: 0; }
+  .mth-docstring ul { padding-inline-start: var(--spacing-5); }
+  .mth-docstring code { font-family: var(--font-mono); font-size: var(--text-code-inline); }
+  .mth-docstring--thesis { font-size: var(--text-lg); line-height: var(--text-lg--line-height); }
+  .mth-docstring--thesis > p:first-child { color: var(--color-heading); }
+  .mth-docstring--thesis > p + p { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .mth-docstring__code { margin: 0; padding: var(--spacing-2); background: var(--color-code-bg); border-radius: var(--radius-md); overflow-x: auto; white-space: pre; }
   .mth-dag-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--spacing-3); }
   .mth-dag-list__item {
     padding: var(--spacing-3);
