@@ -27,13 +27,14 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**An analytic non-Borel subset of `ℝ`**: the image of the Baire-space witness under the\ncontinuous injection. Analyticity transfers along the continuous image; non-Borelness\ntransfers back along the injective preimage.",
   "doi": "MTH.C-2026-6023",
   "is_open": false,
   "kind": "claim",
   "module": "ZPM.MeasureTheory.AnalyticMeasurability.NonBorelWitness",
   "origin": "curated",
   "post_number": null,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "MeasureTheory.exists_analyticSet_not_measurableSet_real"

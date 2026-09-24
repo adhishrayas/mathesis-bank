@@ -917,6 +917,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**Pinsker's inequality** with the sharp constant.\n`tvDistReal P Q ≤ sqrt(klDivReal P Q / 2)` for probability measures `P ≪ Q` with\nfinite KL divergence.",
   "doi": "MTH.R-2026-6024",
   "frozen_export": {
     "bytes": 221623694,
@@ -928,7 +929,7 @@
   "kind": "argument",
   "module": "ZPM.InformationTheory.Pinsker.General",
   "post_number": 9,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "InformationTheory.pinsker_proof",

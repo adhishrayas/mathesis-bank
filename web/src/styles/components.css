@@ -453,6 +453,12 @@
   .mth-more__kind { min-width: var(--spacing-16); }
   .mth-more__item > .mth-mono { color: var(--color-text-muted); }
 
+  /* The way out to the forum, where talk about the argument happens: the post
+     closes on it, right-aligned. The arrow marks it as leaving the record. */
+  .mth-post__footer { display: flex; justify-content: flex-end; padding-top: var(--spacing-3); border-top: 1px solid var(--color-border); }
+  .mth-discuss { font-size: var(--text-sm); }
+  .mth-discuss::after { content: " ↗"; }
+
   /* A record page: the post, then — quiet, below it and never inside it — the
      DOI, the citation and a small verification section. */
   .mth-landing__record { display: grid; gap: var(--spacing-4); }

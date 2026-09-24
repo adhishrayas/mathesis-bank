@@ -857,6 +857,22 @@ pub fn post_card(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool)
     );
     region_claim(b, claim, in_stream);
     region_dag(b, a, input, in_stream);
+    // Talk about the argument happens on the forum, one page per post; the
+    // record carries only the way out.
+    if let Some(forum) = &input.forum_base {
+        b.open("footer", "class=\"mth-post__footer\"");
+        b.open(
+            "a",
+            &format!(
+                "class=\"mth-discuss\" href=\"{}/p/{}/\"",
+                escape(forum.trim_end_matches('/')),
+                a.argument.accession
+            ),
+        );
+        b.text(label("discuss"));
+        b.close("a");
+        b.close("footer");
+    }
     b.close("article");
 }
 

@@ -27,13 +27,14 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The cardinal Pajor inequality for determined traces**: the traces of `𝒜` on `A` that are\ndetermined by finitely many points inject into the shattered subsets, with no hypotheses.\nUnlike the `ℕ∞`-valued `encard_determined_le_encard_shatters`, this bounds genuine\ncardinalities; the full trace family cannot replace the determined traces\n(`not_mk_image_inter_le_mk_shatters`).",
   "doi": "MTH.C-2026-6003",
   "is_open": false,
   "kind": "claim",
   "module": "FLT_Proofs.VCDimGeneralized.VCDimCardinal",
   "origin": "curated",
   "post_number": null,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "mk_determined_le_mk_shatters"

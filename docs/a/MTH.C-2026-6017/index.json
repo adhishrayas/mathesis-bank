@@ -27,13 +27,14 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "F3 — `AuditSealed K ↔ ∀ s a a', equalPriorBayesError (K (s, a)) (K (s, a')) = 1/2`.",
   "doi": "MTH.C-2026-6017",
   "is_open": false,
   "kind": "claim",
   "module": "AuditCP.FiniteBlackwellDecision",
   "origin": "curated",
   "post_number": null,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "AuditCP.auditSealed_iff_no_binary_decision_advantage"

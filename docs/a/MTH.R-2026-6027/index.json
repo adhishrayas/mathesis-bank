@@ -1504,6 +1504,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The fundamental theorem of statistical learning.** For a measurable concept class, finite VC\ndimension, eventually polynomial growth, and PAC learnability are mutually equivalent.",
   "doi": "MTH.R-2026-6027",
   "frozen_export": {
     "bytes": 317802589,
@@ -1515,7 +1516,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Complexity.IndependentVC.FundamentalTheorem",
   "post_number": 6,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "vcDim_fundamental_theorem",

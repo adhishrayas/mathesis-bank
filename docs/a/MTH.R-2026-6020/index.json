@@ -796,6 +796,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**Dirac's lemma, strong form**: in a chordless-cycle-free adjacency structure, every\nvertex set is a clique or contains two nonadjacent simplicial vertices.",
   "doi": "MTH.R-2026-6020",
   "frozen_export": {
     "bytes": 20790682,
@@ -807,7 +808,7 @@
   "kind": "argument",
   "module": "ZPM.Measurements.HC.Dirac",
   "post_number": 13,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "HiddenChannelCapacity.dirac_strong",

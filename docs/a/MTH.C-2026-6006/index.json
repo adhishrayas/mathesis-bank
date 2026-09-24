@@ -27,13 +27,14 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**`HasDSDimLE.hasNatarajanDimLE` has no converse.** The six-cycle on a two-point domain has\nNatarajan dimension `1`, a Natarajan witness on both points being a four-cycle, while its whole\ntrace family is a two-dimensional pseudo-cube, so its DS dimension is at least `2`.\n\nThis is the hexagon Brukhim, Carmon, Dinur, Moran and Yehudayoff record after their Definition 6,\nand the four-cycle test the proof turns on is their Example 7. Their Theorem 2 pushes the\nseparation to a class of Natarajan dimension `1` and infinite DS dimension; that construction\nrests on hyperbolic pseudo-manifolds and is cited in the module docstring rather than formalised\nhere.",
   "doi": "MTH.C-2026-6006",
   "is_open": false,
   "kind": "claim",
   "module": "FLT_Proofs.VCDimGeneralized.VCDimMulticlass",
   "origin": "curated",
   "post_number": null,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "exists_hasNatarajanDimLE_not_hasDSDimLE"

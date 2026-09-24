@@ -1051,6 +1051,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The Krapp–Wirth measurable-target separation holds unconditionally**: the analytic\nnon-Borel witness discharges the hypothesis of\n`analytic_nonborel_set_gives_measTarget_separation`.",
   "doi": "MTH.R-2026-6013",
   "frozen_export": {
     "bytes": 103660228,
@@ -1062,7 +1063,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Theorem.BorelAnalyticSeparationWitness",
   "post_number": 20,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "krappWirthSeparationMeasTarget_holds",

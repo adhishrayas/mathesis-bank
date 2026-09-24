@@ -2527,6 +2527,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The Ambainis composition lock, at every depth**: the product partition of the\n(d+1)-fold Ambainis iterate — the construction giving the multiplicative upper bound\non the partition number — is not the leaf partition of any deterministic protocol, for\nevery depth d. Index 0 is the base partition itself (a kernel-checked eight-rectangle\nmonochromatic partition of the base game); index 1 is the 64-rectangle object of the\ndepth-two frontier.",
   "doi": "MTH.R-2026-6014",
   "frozen_export": {
     "bytes": 14041349,
@@ -2538,7 +2539,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Complexity.KWCompositionLock",
   "post_number": 19,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "KWLock.ambainis_tower_locked",

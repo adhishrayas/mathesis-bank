@@ -148,6 +148,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "F2 — given `A` nonempty,\n`BlackwellEquivalent (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K` (blackwell1953).",
   "doi": "MTH.R-2026-6016",
   "frozen_export": {
     "bytes": 53687555,
@@ -159,7 +160,7 @@
   "kind": "argument",
   "module": "AuditCP.FiniteBlackwell",
   "post_number": 17,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed",

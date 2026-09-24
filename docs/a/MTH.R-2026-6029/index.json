@@ -423,6 +423,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "Advice elimination (Ben-David & Dichterman 1998):\nIf C is PAC-learnable with concept-dependent advice from a FINITE set A\n(with measurability regularity), then C is PAC-learnable without advice.\n\nProof strategy: run the advice-augmented learner with each a ∈ A on a\ntraining portion of the sample, producing |A| candidate hypotheses. Use a\nvalidation portion to select the candidate with lowest empirical error.\nUnion bound over |A| advice values + Hoeffding on validation controls total\nfailure probability. Sample complexity: O(m_orig(ε/2, δ/(2|A|)) + log(|A|/δ)/ε²).\n\nThe [Fintype A] constraint is essential: for infinite A, the theorem is false\n(no finite union bound). [Nonempty A] ensures the advice space is inhabited.",
   "doi": "MTH.R-2026-6029",
   "frozen_export": {
     "bytes": 310975763,
@@ -434,7 +435,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Theorem.Extended",
   "post_number": 4,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "advice_elimination",

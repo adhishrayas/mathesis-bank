@@ -3032,6 +3032,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The discrete Vorob'ev theorem**: a cover's base structure is acyclic exactly when local\npairwise consistency always forces a global structure, i.e. every pairwise-consistent family of\nnonempty local relations on it glues.",
   "doi": "MTH.R-2026-6019",
   "frozen_export": {
     "bytes": 40613020,
@@ -3043,7 +3044,7 @@
   "kind": "argument",
   "module": "ZPM.Measurements.HC.Dirac",
   "post_number": 14,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues",

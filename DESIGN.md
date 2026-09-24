@@ -1041,6 +1041,10 @@ AUTHOR  <header class="mth-post__author">   bottom hairline
 </header>
 ```
 
+The post closes on `.mth-post__footer`: one link, «Discuss» ↗ → `{forum_base}/p/{argument.accession}/`, the post's
+page on the forum (a separate site, `noumenal-ai/mathesis-forum`). Mathesis takes only verified arguments; talk about
+them happens there, never on the record.
+
 Verification is the baseline every post meets, so a post never states it: no verification block, no DOI,
 no accession chip. The ⋯ menu leads to the claim's and the argument's pages (§12.4), where the DOI, the
 citation and a small verification section live. Two regions follow the header:

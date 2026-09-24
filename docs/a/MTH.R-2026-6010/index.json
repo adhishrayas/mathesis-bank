@@ -660,6 +660,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "Littlestone characterization: C is online-learnable iff LittlestoneDim(C) < ∞.",
   "doi": "MTH.R-2026-6010",
   "frozen_export": {
     "bytes": 8639993,
@@ -671,7 +672,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Theorem.Online",
   "post_number": 23,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "littlestone_characterization",

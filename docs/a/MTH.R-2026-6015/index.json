@@ -369,6 +369,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "If every candidate's loss is measurable and a.e. valued in `[a, b]` under `Q`, every\ntraining-generated trajectory is admissible for `F`, and the resulting uniform-deviation failure\nevent is measurable, then on an i.i.d. panel of size `n` drawn from `Q`, measured cumulative\nempirical-loss progress exceeds population-loss progress by more than\n`2 · deltaFiniteExperts (card ι) n (b - a) δ` with probability at most `ENNReal.ofReal δ`.",
   "doi": "MTH.R-2026-6015",
   "frozen_export": {
     "bytes": 308940609,
@@ -380,7 +381,7 @@
   "kind": "argument",
   "module": "AuditCP.StructuralAudit",
   "post_number": 18,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "AuditCP.auditBlind_finiteTrajectory_goodhart",

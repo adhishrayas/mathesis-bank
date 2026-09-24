@@ -445,6 +445,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**d = 1 universality: every VC-1 class compresses at kernel size one, with\nno side information.** No finiteness, no distinguished member, no chain\nhypothesis. Twist the class by any member to place `∅` in it; there the VC\nbound makes co-member points comparable in the membership order, so every label\nset is a finite chain; anchor at its maximum, reconstruct with\n`interConvention`, and transport the scheme back with the same kernels.",
   "doi": "MTH.R-2026-6025",
   "frozen_export": {
     "bytes": 10229439,
@@ -456,7 +457,7 @@
   "kind": "argument",
   "module": "ZPM.Measurements.SI.DefectTwist.VCOne",
   "post_number": 8,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one",
