@@ -5,6 +5,7 @@
   "created_at": "2026-09-24T00:00:00Z",
   "decl_name": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues",
   "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+  "doc": "**The discrete Vorob'ev theorem**: a cover's base structure is acyclic exactly when local\npairwise consistency always forces a global structure, i.e. every pairwise-consistent family of\nnonempty local relations on it glues.",
   "login": "Zetetic-Dhruv",
   "module": "ZPM.Measurements.HC.Dirac",
   "origin": "curated",

@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "d = 1 universality: every VC-1 class compresses at kernel size one, with no side information. No finiteness, no distinguished member, no chain hypothesis. Twist the class by any member to place ∅ in it; there the VC bound makes co-member points comparable in the membership order, so every label set is a finite chain; anchor at its maximum, reconstruct with interConvention, and transport the scheme back with the same kernels."
+  },
+  {
     "field": "claim.decl_name",
     "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
   },

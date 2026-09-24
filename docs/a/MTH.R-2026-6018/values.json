@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6018"
   },
   {
+    "field": "claim.doc",
+    "value": "Choquet capacitability. For analytic sets, capacity equals the supremum over compact subsets (Kechris 30.13)."
+  },
+  {
     "field": "claim.decl_name",
     "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
   },
@@ -50,6 +54,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "MeasureTheory.IsChoquetCa…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hcap"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "MeasureTheory.AnalyticSet…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hs"
   },
   {
     "field": "argument_node.decl_name",
@@ -148,6 +168,38 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsChoquetCapacity"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
   },
@@ -234,6 +286,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The intersection of closures of cylinder images equals the compact image. Key lemma for the capacitability proof: uses truncation and sequential compactness."
   },
   {
     "field": "argument_node.pretty",
@@ -486,6 +542,86 @@
   {
     "field": "argument_node.decl_name",
     "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hcap"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "MeasureTheory.IsChoquetCapacity cap"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hs"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "MeasureTheory.AnalyticSet s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Bounded functions set: {g : ℕ → ℕ | ∀ i, g i ≤ N i}."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → Set (ℕ → ℕ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Cylinder set: {g : ℕ → ℕ | ∀ i ≤ n, g i ≤ N i}."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → ℕ → Set (ℕ → ℕ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Bundled record of the three Choquet capacity axioms: monotonicity, sequential continuity from below along increasing unions, and sequential continuity from above along decreasing intersections of closed sets. The third axiom distinguishes a capacity from a general outer measure."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [TopologicalSpace α] → (Set α → ENNReal) → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Truncation: replace g i by min (g i) (N i) to bring any g into the bounded set."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(ℕ → ℕ) → (ℕ → ℕ) → ℕ → ℕ"
   },
   {
     "field": "argument.accession",

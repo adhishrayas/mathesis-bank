@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Universal learnable → PAC learnable. Proof sketch: UniversalLearnable gives learner L with rate → 0 and Pr[error ≤ rate(m)] ≥ 2/3. Two components: 1. Event containment: rate(m) < ε ⟹ {error ≤ rate(m)} ⊆ {error ≤ ε} (monotonicity). 2. Confidence boosting: 2/3 → 1-δ via median-of-means (Γ₆₇, sorry'd in boost_two_thirds_to_pac). Routes through boost_two_thirds_to_pac which encapsulates the Chernoff-based boosting."
+  },
+  {
     "field": "claim.decl_name",
     "value": "universal_imp_pac"
   },

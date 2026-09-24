@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The fundamental theorem of statistical learning. For a measurable concept class, finite VC dimension, eventually polynomial growth, and PAC learnability are mutually equivalent."
+  },
+  {
     "field": "claim.decl_name",
     "value": "vcDim_fundamental_theorem"
   },

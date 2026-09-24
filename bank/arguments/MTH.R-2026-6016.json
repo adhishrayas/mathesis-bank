@@ -54,6 +54,64 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "decl_name": "AuditCP.AuditChannel",
+      "doc": "B6 — `AuditChannel S A Y` is `AuditExperiment (S × A) Y`, an experiment whose parameter is\nsplit into a public coordinate `S` and an audit coordinate `A`.",
+      "kind": "def",
+      "pretty": "AuditCP.AuditIndex → AuditCP.AuditIndex → AuditCP.AuditIndex → Type (max u v w)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.AuditExperiment",
+      "doc": "B5 — `AuditExperiment Θ X` is the type of parameter-indexed discrete observation laws\n`Θ → PMF X`.",
+      "kind": "def",
+      "pretty": "AuditCP.AuditIndex → AuditCP.AuditIndex → Type (max u v)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.AuditSealed",
+      "doc": "The channel `K` is audit-sealed: its output law at fixed public state `s` does not depend on\nthe audit state `a`.",
+      "kind": "def",
+      "pretty": "{S : Type uS} → {A : Type uA} → {Y : Type uY} → AuditCP.AuditChannel S A Y → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.BlackwellBelow",
+      "doc": "`E₀` is Blackwell-below `E₁` when some garbling `G` of `E₁`'s output reproduces `E₀`:\n`∃ G, ∀ θ, E₀ θ = (E₁ θ).bind G` (blackwell1953).",
+      "kind": "def",
+      "pretty": "{Θ : Type uΘ} → {X₀ : Type uX₀} → {X₁ : Type uX₁} → AuditCP.AuditExperiment Θ X₀ → AuditCP.AuditExperiment Θ X₁ → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.BlackwellEquivalent",
+      "doc": "`E₀` and `E₁` are Blackwell-equivalent when each is Blackwell-below the other (blackwell1953).",
+      "kind": "def",
+      "pretty": "{Θ : Type uΘ} → {X₀ : Type uX₀} → {X₁ : Type uX₁} → AuditCP.AuditExperiment Θ X₀ → AuditCP.AuditExperiment Θ X₁ → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.FactorsThroughPublic",
+      "doc": "The channel `K` factors through the public coordinate: `∃ H, ∀ s a, K (s, a) = H s`.",
+      "kind": "def",
+      "pretty": "{S : Type uS} → {A : Type uA} → {Y : Type uY} → AuditCP.AuditChannel S A Y → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.learnerExperiment",
+      "doc": "The channel revealing the public state together with `K`'s output,\n`fun sa => (K sa).map (fun y => (sa.1, y))`.",
+      "kind": "def",
+      "pretty": "{S : Type uS} → {A : Type uA} → {Y : Type uY} → AuditCP.AuditChannel S A Y → AuditCP.AuditChannel S A (S × Y)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "AuditCP.publicOnlyExperiment",
+      "doc": "The channel revealing exactly the public state `s` and nothing else,\n`fun (s, a) => PMF.pure s`.",
+      "kind": "def",
+      "pretty": "{S : Type uS} → {A : Type uA} → AuditCP.AuditChannel S A S",
+      "role": "definition"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -67,6 +125,7 @@
         "AuditCP.learnerExperiment",
         "AuditCP.publicOnlyExperiment"
       ],
+      "doc": "F2 — given `A` nonempty,\n`BlackwellEquivalent (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K` (blackwell1953).",
       "is_root": true,
       "kind": "theorem",
       "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K",
@@ -84,6 +143,7 @@
         "AuditCP.learnerExperiment",
         "AuditCP.publicOnlyExperiment"
       ],
+      "doc": "F2a — public information is Blackwell-below the complete learner view:\n`BlackwellBelow publicOnlyExperiment (learnerExperiment K)`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow AuditCP.publicOnlyExperiment (AuditCP.learnerExperiment K)",
@@ -103,6 +163,7 @@
         "AuditCP.learnerExperiment",
         "AuditCP.publicOnlyExperiment"
       ],
+      "doc": "F2b — given `A` nonempty,\n`BlackwellBelow (learnerExperiment K) publicOnlyExperiment ↔ AuditSealed K` (blackwell1953).",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K",
@@ -114,6 +175,7 @@
       "decl_name": "AuditCP.pmf_map_publicTag_injective",
       "depth": 2,
       "dictionary_leaves": [],
+      "doc": "Pushing a PMF on `Y` through the tag `y ↦ (s, y)` is injective.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {S : Type uS} {Y : Type uY} (s : S), Function.Injective fun p => PMF.map (fun y => (s, y)) p",
@@ -130,6 +192,7 @@
         "AuditCP.AuditSealed",
         "AuditCP.FactorsThroughPublic"
       ],
+      "doc": "F1 — given `A` nonempty, `AuditSealed K ↔ FactorsThroughPublic K`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ AuditCP.FactorsThroughPublic K",

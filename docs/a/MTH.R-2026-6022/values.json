@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6022"
   },
   {
+    "field": "claim.doc",
+    "value": "Closed form of the multivariate Gaussian KL divergence (M3b). For positive-definite covariances S₁, S₂, KL(N(m₁,S₁) ‖ N(m₂,S₂)) = ½ ( log(det S₂ / det S₁) + tr(S₂⁻¹ S₁) + ⟪m₁-m₂, S₂⁻¹(m₁-m₂)⟫ - d ).The whitening reduction (klDivReal_multivariateGaussian_whiten) sends the pair to a KL against the standard Gaussian (klDivReal_multivariateGaussian_stdGaussian); the three scalar invariants of the whitened covariance (det_whitened, trace_whitened, normSq_cfcSqrt_inv_apply) then identify the arguments."
+  },
+  {
     "field": "claim.decl_name",
     "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
   },
@@ -50,6 +54,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "S₁.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hS₁"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "S₂.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hS₂"
   },
   {
     "field": "argument_node.decl_name",
@@ -348,6 +368,38 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "klDivReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "gaussianAffineEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "toEuclideanCLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "toLpMeasurableEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
   },
@@ -396,6 +448,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "tr C(S₁,S₂) = tr(S₂⁻¹ S₁)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).trace = (S₂⁻¹ * S₁).trace"
   },
@@ -424,6 +480,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The whitened covariance (√S₂⁻¹ √S₁)(√S₂⁻¹ √S₁)ᴴ is positive-definite (its factor is invertible)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef → S₂.PosDef → ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).PosDef"
   },
@@ -442,6 +502,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The whitening map preserves the quadratic form: ‖√S₂⁻¹ v‖² = ⟪v, S₂⁻¹ v⟫."
   },
   {
     "field": "argument_node.pretty",
@@ -472,6 +536,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The inverse of a functional-calculus square root is self-adjoint."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ),\n  (CFC.sqrt S)⁻¹.conjTranspose = (CFC.sqrt S)⁻¹"
   },
@@ -496,6 +564,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The functional-calculus square root of a matrix is self-adjoint."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ), (CFC.sqrt S).conjTranspose = CFC.sqrt S"
   },
@@ -516,6 +588,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "(√S)⁻¹ (√S)⁻¹ = S⁻¹ for positive-definite S."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S : Matrix ι ι ℝ},\n  S.PosDef → (CFC.sqrt S)⁻¹ * (CFC.sqrt S)⁻¹ = S⁻¹"
   },
@@ -534,6 +610,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Whitening reduction of the multivariate Gaussian KL. For positive-definite S₂, pushing both measures through the whitening equivalence (gaussianAffineEquiv m₂ hS₂).symm reduces the KL divergence of two multivariate Gaussians to a KL against the standard Gaussian, with whitened mean √S₂⁻¹ (m₁ − m₂) and covariance (√S₂⁻¹ √S₁)(√S₂⁻¹ √S₁)ᴴ."
   },
   {
     "field": "argument_node.pretty",
@@ -576,6 +656,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "multivariateGaussian m S is the pushforward of the standard Gaussian by the affine equivalence gaussianAffineEquiv m hS."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m : EuclideanSpace ℝ ι) {S : Matrix ι ι ℝ}\n  (hS : S.PosDef),\n  ProbabilityTheory.multivariateGaussian m S =\n    MeasureTheory.Measure.map (⇑(ProbabilityTheory.gaussianAffineEquiv m hS))\n      (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι))"
   },
@@ -598,6 +682,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "gaussianAffineEquiv m hS is the affine map z ↦ m + √S z."
   },
   {
     "field": "argument_node.pretty",
@@ -628,6 +716,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The whitening map: the inverse of gaussianAffineEquiv m hS is z ↦ √S⁻¹ (z - m)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m : EuclideanSpace ℝ ι) {S : Matrix ι ι ℝ} (hS : S.PosDef)\n  (z : EuclideanSpace ℝ ι),\n  (ProbabilityTheory.gaussianAffineEquiv m hS).symm z = (Matrix.toEuclideanCLM (CFC.sqrt S)⁻¹) (z - m)"
   },
@@ -654,6 +746,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Closed form of the multivariate Gaussian KL against the standard Gaussian. For a positive-definite covariance C, klDivReal (N(w, C)) (stdGaussian) = ½ ( -log det C + tr C + ‖w‖² - d )."
   },
   {
     "field": "argument_node.pretty",
@@ -696,6 +792,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "An orthogonal change of variables preserves the Euclidean norm: if Mᴴ M = 1 then ‖toEuclideanCLM M w‖² = ‖w‖²."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {M : Matrix ι ι ℝ},\n  M.conjTranspose * M = 1 → ∀ (w : EuclideanSpace ℝ ι), ‖(Matrix.toEuclideanCLM M) w‖ ^ 2 = ‖w‖ ^ 2"
   },
@@ -716,6 +816,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "General affine image of a multivariate Gaussian. For positive-semidefinite covariance S, the affine pushforward x ↦ a + B x of multivariateGaussian μ S is the multivariate Gaussian with transported mean a + B μ and congruent covariance B * S * Bᴴ. This is the covariance- transport engine of the diagonalization step: an orthogonal B = Uᵀ sends the whitened covariance to its eigenvalue diagonal Uᵀ S U. Proved by composing the two affine maps and reducing to the standard-Gaussian image map_stdGaussian_affine, using √S · √Sᴴ = √S · √S = S."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (a μ : EuclideanSpace ℝ ι) (B S : Matrix ι ι ℝ),\n  S.PosSemidef →\n    MeasureTheory.Measure.map (fun x => a + (Matrix.toEuclideanCLM B) x) (ProbabilityTheory.multivariateGaussian μ S) =\n      ProbabilityTheory.multivariateGaussian (a + (Matrix.toEuclideanCLM B) μ) (B * S * B.conjTranspose)"
   },
@@ -734,6 +838,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "KL of a diagonal multivariate Gaussian against the standard Gaussian, tensorized. For strictly positive diagonal covariance d > 0, klDivReal (mvG μ (diagonal d)) stdGaussian = ∑ᵢ ½(-log dᵢ + dᵢ + μᵢ² - 1), the coordinatewise sum of the scalar Gaussian-Gaussian KL closed forms. This is the diagonalized-and-tensorized leg of the multivariate Gaussian KL closed form."
   },
   {
     "field": "argument_node.pretty",
@@ -780,6 +888,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A diagonal multivariate Gaussian is a pushed-forward product of scalar Gaussians. For d ≥ 0, multivariateGaussian μ (diagonal d) is the image under toLp 2 of the product measure ∏ᵢ gaussianReal μᵢ dᵢ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (μ : EuclideanSpace ℝ ι) (d : ι → ℝ),\n  (∀ (i : ι), 0 ≤ d i) →\n    ProbabilityTheory.multivariateGaussian μ (Matrix.diagonal d) =\n      MeasureTheory.Measure.map (WithLp.toLp 2)\n        (MeasureTheory.Measure.pi fun i => ProbabilityTheory.gaussianReal (μ.ofLp i) (d i).toNNReal)"
   },
@@ -798,6 +910,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The affine image z ↦ a + B z of the standard Gaussian on EuclideanSpace ℝ ι is the multivariate Gaussian with mean a and covariance B * Bᴴ."
   },
   {
     "field": "argument_node.pretty",
@@ -828,6 +944,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The real inner product of the two adjoint images (toEuclideanCLM B)ᴴ x and (toEuclideanCLM B)ᴴ y equals the quadratic form x ⬝ᵥ (B * Bᴴ) *ᵥ y."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (B : Matrix ι ι ℝ) (x y : EuclideanSpace ℝ ι),\n  inner ℝ ((ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM B)) x)\n      ((ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM B)) y) =\n    x.ofLp ⬝ᵥ (B * B.conjTranspose).mulVec y.ofLp"
   },
@@ -846,6 +966,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "The adjoint of toEuclideanCLM B is toEuclideanCLM Bᴴ: toEuclideanCLM is a star algebra equivalence, so it carries the matrix conjugate transpose to the operator adjoint."
   },
   {
     "field": "argument_node.pretty",
@@ -872,6 +996,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Finiteness of the one-dimensional Gaussian-Gaussian KL divergence. For variance parameters v₁ ≠ 0, v₂ ≠ 0, the ℝ≥0∞-valued klDiv (N(m₁, v₁)) (N(m₂, v₂)) is finite. This is the integrability side-condition that klDivReal_pi requires per coordinate: the log-likelihood ratio is P-a.e. an explicit quadratic, whose square-integrability against P = N(m₁, v₁) is the finiteness of the second moment."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {m₁ m₂ : ℝ} {v₁ v₂ : NNReal},\n  v₁ ≠ 0 →\n    v₂ ≠ 0 → InformationTheory.klDiv (ProbabilityTheory.gaussianReal m₁ v₁) (ProbabilityTheory.gaussianReal m₂ v₂) ≠ ⊤"
   },
@@ -894,6 +1022,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "KL tensorization for klDivReal over an arbitrary finite product (general Fintype index): the real-valued analogue of klDiv_pi'."
   },
   {
     "field": "argument_node.pretty",
@@ -924,6 +1056,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "KL tensorization over an arbitrary finite product (general Fintype index). Reduces to the Fin-indexed klDiv_pi by reindexing through ι ≃ Fin (card ι)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_3} [inst : Fintype ι] {X : ι → Type u_4} {mX : (i : ι) → MeasurableSpace (X i)}\n  (P Q : (i : ι) → MeasureTheory.Measure (X i)) [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (P i)]\n  [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (Q i)],\n  InformationTheory.klDiv (MeasureTheory.Measure.pi P) (MeasureTheory.Measure.pi Q) =\n    ∑ i, InformationTheory.klDiv (P i) (Q i)"
   },
@@ -946,6 +1082,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "KL tensorization over a finite product, indexed by Fin (n+1): klDiv (Measure.pi P) (Measure.pi Q) = ∑ i, klDiv (P i) (Q i)."
   },
   {
     "field": "argument_node.pretty",
@@ -972,6 +1112,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Binary KL tensorization. For probability measures, klDiv (μ.prod ν) (μ'.prod ν') = klDiv μ μ' + klDiv ν ν'."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} {β : Type u_2} {mα : MeasurableSpace α} {mβ : MeasurableSpace β} (μ μ' : MeasureTheory.Measure α)\n  (ν ν' : MeasureTheory.Measure β) [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsProbabilityMeasure μ']\n  [MeasureTheory.IsProbabilityMeasure ν] [MeasureTheory.IsProbabilityMeasure ν'],\n  InformationTheory.klDiv (μ.prod ν) (μ'.prod ν') = InformationTheory.klDiv μ μ' + InformationTheory.klDiv ν ν'"
   },
@@ -992,6 +1136,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Two products sharing the same first marginal reduce to the second-coordinate KL: klDiv (μ.prod ν) (μ.prod ν') = klDiv ν ν'."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} {β : Type u_2} {mα : MeasurableSpace α} {mβ : MeasurableSpace β} (μ : MeasureTheory.Measure α)\n  (ν ν' : MeasureTheory.Measure β) [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsFiniteMeasure ν]\n  [MeasureTheory.IsFiniteMeasure ν'], InformationTheory.klDiv (μ.prod ν) (μ.prod ν') = InformationTheory.klDiv ν ν'"
   },
@@ -1010,6 +1158,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "KL invariance under a measurable equivalence (ℝ≥0∞-valued). For finite measures μ, ν and a measurable equivalence e : α ≃ᵐ β, klDiv (μ.map e) (ν.map e) = klDiv μ ν."
   },
   {
     "field": "argument_node.pretty",
@@ -1040,6 +1192,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The log-likelihood ratio is invariant (a.e.) under pushforward by a measurable equivalence: llr (μ.map e) (ν.map e) (e x) =ᵐ[ν] llr μ ν x."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} {β : Type u_2} [inst : MeasurableSpace α] [inst_1 : MeasurableSpace β] (e : α ≃ᵐ β)\n  (μ ν : MeasureTheory.Measure α) [MeasureTheory.SigmaFinite μ] [MeasureTheory.SigmaFinite ν],\n  (fun x => MeasureTheory.llr (MeasureTheory.Measure.map (⇑e) μ) (MeasureTheory.Measure.map (⇑e) ν) (e x)) =ᵐ[ν]\n    MeasureTheory.llr μ ν"
   },
@@ -1054,6 +1210,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "For probability measures with P ≪ Q, the ℝ-valued KL equals (Mathlib.klDiv P Q).toReal. Both measures have total mass 1, so the Mathlib correction term vanishes."
   },
   {
     "field": "argument_node.pretty",
@@ -1080,6 +1240,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The integrand log ((P.rnDeriv Q x).toReal) is definitionally Mathlib's log-likelihood ratio llr P Q x."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α),\n  (fun x => Real.log (P.rnDeriv Q x).toReal) = MeasureTheory.llr P Q"
   },
@@ -1094,6 +1258,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Closed form of the 1-D Gaussian-Gaussian KL divergence. For variance parameters v₁ ≠ 0, v₂ ≠ 0, KL( N(m₁, v₁) ‖ N(m₂, v₂) ) = ½ ( log(v₂/v₁) + (v₁ + (m₁-m₂)²)/v₂ - 1 )."
   },
   {
     "field": "argument_node.pretty",
@@ -1132,6 +1300,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The Radon-Nikodym derivative of one real Gaussian w.r.t. another is, volume-a.e., the ratio of their densities."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {m₁ m₂ : ℝ} {v₁ v₂ : NNReal},\n  v₁ ≠ 0 →\n    v₂ ≠ 0 →\n      (ProbabilityTheory.gaussianReal m₁ v₁).rnDeriv (ProbabilityTheory.gaussianReal m₂ v₂) =ᵐ[MeasureTheory.volume]\n        fun x => ProbabilityTheory.gaussianPDF m₁ v₁ x / ProbabilityTheory.gaussianPDF m₂ v₂ x"
   },
@@ -1152,6 +1324,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "log (gaussianPDFReal m v x) = -½ log(2πv) - (x - m)²/(2v) for v ≠ 0."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {m₁ : ℝ} {v₁ : NNReal},\n  v₁ ≠ 0 →\n    ∀ (x : ℝ),\n      Real.log (ProbabilityTheory.gaussianPDFReal m₁ v₁ x) =\n        -(1 / 2) * Real.log (2 * Real.pi * ↑v₁) - (x - m₁) ^ 2 / (2 * ↑v₁)"
   },
@@ -1170,6 +1346,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "∫ (x - m₂)² ∂gaussianReal m₁ v₁ = v₁ + (m₁ - m₂)² (bias-variance split)."
   },
   {
     "field": "argument_node.pretty",
@@ -1196,6 +1376,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "∫ (x - m₁) ∂gaussianReal m₁ v₁ = 0."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {m₁ : ℝ} {v₁ : NNReal}, ∫ (x : ℝ), x - m₁ ∂ProbabilityTheory.gaussianReal m₁ v₁ = 0"
   },
@@ -1210,6 +1394,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "∫ (x - m₁)² ∂gaussianReal m₁ v₁ = v₁."
   },
   {
     "field": "argument_node.pretty",
@@ -1230,6 +1418,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "KL invariance under a measurable equivalence. For σ-finite measures P, Q on α and a measurable equivalence e : α ≃ᵐ β, klDivReal (P.map e) (Q.map e) = klDivReal P Q."
   },
   {
     "field": "argument_node.pretty",
@@ -1260,6 +1452,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "det C(S₁,S₂) = det S₁ / det S₂."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef → ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).det = S₁.det / S₂.det"
   },
@@ -1280,6 +1476,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "For a positive-definite matrix S, the functional-calculus square root has invertible determinant: (CFC.sqrt S).det ^ 2 = S.det > 0, so the sqrt is itself invertible."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ), S.PosDef → IsUnit (CFC.sqrt S).det"
   },
@@ -1298,6 +1498,86 @@
   {
     "field": "argument_node.decl_name",
     "value": "ProbabilityTheory.posDef_whitened"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hS₁"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "S₁.PosDef"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hS₂"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "S₂.PosDef"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ℝ-valued KL divergence. Returns 0 when P is not absolutely continuous with respect to Q (by convention; the ℝ≥0∞-valued klDiv returns ⊤ in that case)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [inst : MeasurableSpace α] → MeasureTheory.Measure α → MeasureTheory.Measure α → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The defining affine map z ↦ m + √S z of multivariateGaussian m S, as a measurable equivalence for positive-definite S (whose functional-calculus square root is invertible)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} →\n  [Fintype ι] →\n    [DecidableEq ι] → EuclideanSpace ℝ ι → {S : Matrix ι ι ℝ} → S.PosDef → EuclideanSpace ℝ ι ≃ᵐ EuclideanSpace ℝ ι"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toEuclideanCLE"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "An invertible matrix as a continuous linear equivalence on EuclideanSpace ℝ ι."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} →\n  [inst : Fintype ι] →\n    [inst_1 : DecidableEq ι] → (M : Matrix ι ι ℝ) → IsUnit M.det → EuclideanSpace ℝ ι ≃L[ℝ] EuclideanSpace ℝ ι"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toLpMeasurableEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The Euclidean identification toLp 2 : (ι → ℝ) → EuclideanSpace ℝ ι as a measurable equivalence, used to transport the tensorization of Measure.pi onto EuclideanSpace."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → [Fintype ι] → (ι → ℝ) ≃ᵐ EuclideanSpace ℝ ι"
   },
   {
     "field": "argument.accession",

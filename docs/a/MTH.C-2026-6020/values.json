@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Dirac's lemma, strong form: in a chordless-cycle-free adjacency structure, every vertex set is a clique or contains two nonadjacent simplicial vertices."
+  },
+  {
     "field": "claim.decl_name",
     "value": "HiddenChannelCapacity.dirac_strong"
   },

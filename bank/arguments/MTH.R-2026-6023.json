@@ -79,6 +79,29 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "decl_name": "MeasureTheory.baireMarkerBits",
+      "doc": "The marker bits: the indicator stream of the marker set.",
+      "kind": "def",
+      "pretty": "(ℕ → ℕ) → ℕ → Bool",
+      "role": "definition"
+    },
+    {
+      "decl_name": "MeasureTheory.baireMarkers",
+      "doc": "The marker sequence of `x : ℕ → ℕ`: the strictly increasing sequence\n`n + 1 + ∑_{k ≤ n} x k`, whose successive gaps encode `x`.",
+      "kind": "def",
+      "pretty": "(ℕ → ℕ) → ℕ → ℕ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "MeasureTheory.embedBaireReal",
+      "doc": "The embedding of Baire space into `ℝ`: marker bits into the base-3 expansion.",
+      "kind": "def",
+      "pretty": "(ℕ → ℕ) → ℝ",
+      "role": "definition"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -87,6 +110,7 @@
       "dictionary_leaves": [
         "MeasureTheory.embedBaireReal"
       ],
+      "doc": "**An analytic non-Borel subset of `ℝ`**: the image of the Baire-space witness under the\ncontinuous injection. Analyticity transfers along the continuous image; non-Borelness\ntransfers back along the injective preimage.",
       "is_root": true,
       "kind": "theorem",
       "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A",
@@ -98,6 +122,7 @@
       "decl_name": "MeasureTheory.exists_analyticSet_not_measurableSet",
       "depth": 1,
       "dictionary_leaves": [],
+      "doc": "**An analytic non-Borel subset of Baire space**: the projection of the diagonal witness.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A",
@@ -109,6 +134,7 @@
       "decl_name": "MeasureTheory.exists_closed_proj_not_measurableSet",
       "depth": 2,
       "dictionary_leaves": [],
+      "doc": "**A closed set with a non-Borel projection.** Diagonalize the universal closed set of\n`(ℕ → ℕ) × (ℕ → ℕ)`: were the projection Borel, its complement would be analytic, hence the\nprojection of a closed set, hence a section of the universal set — and evaluating that\nsection at its own parameter is contradictory.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}",
@@ -120,6 +146,7 @@
       "decl_name": "MeasureTheory.exists_closed_universal_sections",
       "depth": 3,
       "dictionary_leaves": [],
+      "doc": "**A universal closed set.** Every second-countable space `X` carries a closed subset of\n`X × (ℕ → ℕ)` whose sections run through all closed subsets of `X`: enumerate a countable\nbasis together with `∅`, and let the parameter select which basis elements to exclude.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (X : Type u_1) [inst : TopologicalSpace X] [SecondCountableTopology X],\n  ∃ S, IsClosed S ∧ ∀ (C : Set X), IsClosed C → ∃ y, {x | (x, y) ∈ S} = C",

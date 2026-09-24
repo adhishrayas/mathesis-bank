@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6015"
   },
   {
+    "field": "claim.doc",
+    "value": "If every candidate's loss is measurable and a.e. valued in [a, b] under Q, every training-generated trajectory is admissible for F, and the resulting uniform-deviation failure event is measurable, then on an i.i.d. panel of size n drawn from Q, measured cumulative empirical-loss progress exceeds population-loss progress by more than 2 · deltaFiniteExperts (card ι) n (b - a) δ with probability at most ENNReal.ofReal δ."
+  },
+  {
     "field": "claim.decl_name",
     "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
   },
@@ -50,6 +54,70 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "0 < n"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hn"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "a < b"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hab"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "0 < δ"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hδ0"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "δ ≤ 1"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hδ1"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "∀ (i : ι), Measurable (lo…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hmeas"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "∀ (i : ι), ∀ᵐ (z : Z) ∂Q,…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hbdd"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "∀ (t : Ωtrain), AuditCP.A…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hadm"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "MeasurableSet {p | ¬Audit…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hBad"
   },
   {
     "field": "argument_node.decl_name",
@@ -108,6 +176,86 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "Admissible"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditPotential"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "UniformDev"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cumCP"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "deltaFiniteExperts"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "populationLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
   },
@@ -172,6 +320,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Under the hypotheses of finite_experts_iid_uniformDev, the ENNReal-valued probability that the panel fails uniform deviation is at most ENNReal.ofReal δ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {Z : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Z] [inst_1 : Fintype ι] [Nonempty ι]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    (MeasureTheory.Measure.pi fun x => Q)\n                        {panel |\n                          ¬AuditCP.UniformDev Set.univ (fun i => AuditCP.empiricalLoss loss i panel)\n                              (fun i => AuditCP.populationLoss Q loss i)\n                              (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} ≤\n                      ENNReal.ofReal δ"
   },
@@ -210,6 +362,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "If every candidate's loss is measurable and a.e. valued in [a, b] under Q, then on an i.i.d. panel of size n drawn from Q, with probability at least 1 − δ the empirical loss empiricalLoss loss i panel and the population loss populationLoss Q loss i agree within deltaFiniteExperts (card ι) n (b - a) δ for every candidate i (hoeffding1963; cesabianchi2006)."
   },
   {
     "field": "argument_node.pretty",
@@ -252,6 +408,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "If each Y i j is μ-sub-Gaussian with proxy (L/2)² and, for each candidate i, independent across panel positions j, then with probability at least 1 − δ the panel means (∑ⱼ Y i j) / n all lie within deltaFiniteExperts (card ι) n L δ of 0 (hoeffding1963)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype ι] [Nonempty ι]\n  (μ : AuditCP.AuditSampleLaw Ω) [MeasureTheory.IsProbabilityMeasure μ] (n : ℕ),\n  0 < n →\n    ∀ (L : ℝ),\n      0 < L →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (Y : ι → Fin n → Ω → ℝ),\n                (∀ (i : ι) (j : Fin n), ProbabilityTheory.HasSubgaussianMGF (Y i j) ((‖L‖₊ / 2) ^ 2) μ) →\n                  (∀ (i : ι), ProbabilityTheory.iIndepFun (Y i) μ) →\n                    1 - δ ≤\n                      MeasureTheory.Measure.real μ\n                        {ω |\n                          AuditCP.UniformDev Set.univ (fun i => (∑ j, Y i j ω) / ↑n) (fun x => 0)\n                            (AuditCP.deltaFiniteExperts (Fintype.card ι) n L δ)}"
   },
@@ -278,6 +438,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "If every training-generated trajectory g t is admissible for F t, the uniform-deviation failure event is measurable, and its audit fiber has probability at most δ for μtrain-almost every training history, then measured cumulative compression progress exceeds true progress by more than 2Δ with probability at most δ under μtrain.prod μaudit."
   },
   {
     "field": "argument_node.pretty",
@@ -332,6 +496,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Under UniformDev F Ehat E Δ and Admissible g F, empirical cumulative compression progress is bounded by true cumulative progress plus 2Δ at every horizon T: cumCP Ehat g T ≤ cumCP E g T + 2Δ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} {F : AuditCP.AuditEnvelope ι} {Ehat E : AuditCP.AuditPotential ι} {Δ : ℝ},\n  AuditCP.UniformDev F Ehat E Δ →\n    ∀ {g : AuditCP.AuditTrajectory ι},\n      AuditCP.Admissible g F → ∀ (T : ℕ), AuditCP.cumCP Ehat g T ≤ AuditCP.cumCP E g T + 2 * Δ"
   },
@@ -376,6 +544,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Cumulative signed compression progress telescopes: cumCP E g T = E (g 0) - E (g T)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {ι : Type u_1} (E : AuditCP.AuditPotential ι) (g : AuditCP.AuditTrajectory ι) (T : ℕ),\n  AuditCP.cumCP E g T = E (g 0) - E (g T)"
   },
@@ -404,6 +576,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "If the event {p | Bad (Γ p.1) p.2} is measurable and its audit fiber {a | Bad (Γ t) a} has μaudit-probability at most δ for μtrain-almost every training history t, then its probability under the product law μtrain.prod μaudit is at most δ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {Ωtrain : Type u_1} {Ωaudit : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain]\n  [inst_1 : MeasurableSpace Ωaudit] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (μaudit : AuditCP.AuditSampleLaw Ωaudit) [MeasureTheory.IsProbabilityMeasure μaudit]\n  (Γ : Ωtrain → AuditCP.AuditEnvelope ι) (Bad : AuditCP.AuditEnvelope ι → Ωaudit → Prop) (δ : ENNReal),\n  MeasurableSet {p | Bad (Γ p.1) p.2} →\n    (∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | Bad (Γ t) a} ≤ δ) →\n      (MeasureTheory.Measure.prod μtrain μaudit) {p | Bad (Γ p.1) p.2} ≤ δ"
   },
@@ -418,6 +594,230 @@
   {
     "field": "argument_node.decl_name",
     "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hn"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "0 < n"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hab"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "a < b"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hδ0"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "0 < δ"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hδ1"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "δ ≤ 1"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hmeas"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "∀ (i : ι), Measurable (loss i)"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hbdd"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hadm"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hBad"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "MeasurableSet\n  {p |\n    ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2) (fun i => AuditCP.populationLoss Q loss i)\n        (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.Admissible"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Every stage of the trajectory g lies in the envelope F."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → AuditCP.AuditTrajectory ι → AuditCP.AuditEnvelope ι → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "B4 — AuditEnvelope ι is the type of subsets Set ι of the index ι."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "AuditCP.AuditIndex → Type u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditPotential"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "B2 — AuditPotential ι is the type of real-valued readings ι → ℝ of the index ι."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "AuditCP.AuditIndex → Type u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "B7 — AuditSampleLaw Ω is MeasureTheory.Measure Ω, a σ-additive probability law on the measurable space Ω."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(Ω : AuditCP.AuditIndex) → [MeasurableSpace Ω] → Type u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "B3 — AuditTrajectory ι is the type of stage-indexed selections ℕ → ι of the index ι."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "AuditCP.AuditIndex → Type u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The potentials Ehat and E agree to within Δ at every point of the envelope F."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → AuditCP.AuditEnvelope ι → AuditCP.AuditPotential ι → AuditCP.AuditPotential ι → ℝ → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.cumCP"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Cumulative signed compression progress of a potential E read along a trajectory g over T stages, ∑_{t < T} (E(g t) − E(g(t+1))) (schmidhuber1991; schmidhuber2010)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{ι : Type u_1} → AuditCP.AuditPotential ι → AuditCP.AuditTrajectory ι → ℕ → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.deltaFiniteExperts"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The finite-experts uniform-deviation radius, L·√(log(2N/δ)/(2n)), for N candidates, panel size n, loss range L, and failure probability δ (hoeffding1963)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℕ → ℕ → ℝ → ℝ → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.empiricalLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The empirical mean loss of candidate i on the panel, (∑ⱼ loss i (panel j)) / n."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{Z : Type u_1} → {ι : Type u_2} → {n : ℕ} → (ι → Z → ℝ) → ι → (Fin n → Z) → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.populationLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The population loss of candidate i under the law Q, ∫ loss i z ∂Q."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{Z : Type u_1} → {ι : Type u_2} → [inst : MeasurableSpace Z] → AuditCP.AuditSampleLaw Z → (ι → Z → ℝ) → ι → ℝ"
   },
   {
     "field": "argument.accession",

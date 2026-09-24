@@ -5,6 +5,7 @@
   "created_at": "2026-09-24T00:00:00Z",
   "decl_name": "InformationTheory.pinsker_proof",
   "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+  "doc": "**Pinsker's inequality** with the sharp constant.\n`tvDistReal P Q ≤ sqrt(klDivReal P Q / 2)` for probability measures `P ≪ Q` with\nfinite KL divergence.",
   "login": "Zetetic-Dhruv",
   "module": "ZPM.InformationTheory.Pinsker.General",
   "origin": "curated",

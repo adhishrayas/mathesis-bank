@@ -132,6 +132,13 @@
           "StructuralIgnorance.twistClass",
           "StructuralIgnorance.vcBounded"
         ],
+        "doc": "**d = 1 universality: every VC-1 class compresses at kernel size one, with\nno side information.** No finiteness, no distinguished member, no chain\nhypothesis. Twist the class by any member to place `∅` in it; there the VC\nbound makes co-member points comparable in the membership order, so every label\nset is a finite chain; anchor at its maximum, reconstruct with\n`interConvention`, and transport the scheme back with the same kernels.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.vcBounded 𝒜 1"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 → StructuralIgnorance.HasKernelScheme 𝒜 1",
@@ -146,6 +153,13 @@
           "StructuralIgnorance.SetShatters",
           "StructuralIgnorance.twistClass",
           "StructuralIgnorance.vcBounded"
+        ],
+        "doc": "VC bounds are twist-invariant (the direction needed for normalization).",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.vcBounded 𝒜 d"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -162,6 +176,13 @@
           "StructuralIgnorance.baseLabels",
           "StructuralIgnorance.twistClass"
         ],
+        "doc": "Shattering transports from the twisted class back to the original: the\nwitnesses untwist, and the patterns correspond through the involution\n`C ↦ C ∆ (B ∩ S₀)`.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.SetShatters (StructuralIgnorance.twistClass 𝒜 S₀) B"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)} {S₀ : Set α} {B : Finset α},\n  StructuralIgnorance.SetShatters (StructuralIgnorance.twistClass 𝒜 S₀) B → StructuralIgnorance.SetShatters 𝒜 B",
@@ -176,6 +197,21 @@
           "StructuralIgnorance.SetShatters",
           "StructuralIgnorance.memOrder",
           "StructuralIgnorance.vcBounded"
+        ],
+        "doc": "With the empty set in the class, a VC bound of one makes any two points of a\ncommon member comparable in the membership order: otherwise the four assembled\npatterns shatter the pair.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.vcBounded 𝒜 1"
+          },
+          {
+            "name": "hemp",
+            "pretty": "∅ ∈ 𝒜"
+          },
+          {
+            "name": "hab",
+            "pretty": "∃ S ∈ 𝒜, a ∈ S ∧ b ∈ S"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -193,6 +229,21 @@
           "StructuralIgnorance.interConvention",
           "StructuralIgnorance.memOrder"
         ],
+        "doc": "The anchor leg of the intersection convention: a maximum of the label set in\nthe membership order is a size-1 kernel. The upper inclusion comes from the\nrealizing member, the lower from maximality.",
+        "hypotheses": [
+          {
+            "name": "hAT",
+            "pretty": "StructuralIgnorance.IsSample 𝒜 A T"
+          },
+          {
+            "name": "hxT",
+            "pretty": "x ∈ T"
+          },
+          {
+            "name": "hmax",
+            "pretty": "∀ a ∈ T, StructuralIgnorance.memOrder 𝒜 a x"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)} {A T : Finset α},\n  StructuralIgnorance.IsSample 𝒜 A T →\n    ∀ {x : α},\n      x ∈ T →\n        (∀ a ∈ T, StructuralIgnorance.memOrder 𝒜 a x) →\n          StructuralIgnorance.IsKernel (StructuralIgnorance.interConvention 𝒜) 1 A T {x}",
@@ -205,6 +256,13 @@
         "depth": 2,
         "dictionary_leaves": [
           "StructuralIgnorance.IsSample"
+        ],
+        "doc": "Realizable label patterns are supported inside their window.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.IsSample 𝒜 A T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -219,6 +277,17 @@
         "dictionary_leaves": [
           "StructuralIgnorance.memOrder"
         ],
+        "doc": "A finite nonempty set on which the membership order is total has a maximum.",
+        "hypotheses": [
+          {
+            "name": "htot",
+            "pretty": "∀ a ∈ T, ∀ b ∈ T, StructuralIgnorance.memOrder 𝒜 a b ∨ StructuralIgnorance.memOrder 𝒜 b a"
+          },
+          {
+            "name": "hT",
+            "pretty": "T.Nonempty"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {T : Finset α},\n  (∀ a ∈ T, ∀ b ∈ T, StructuralIgnorance.memOrder 𝒜 a b ∨ StructuralIgnorance.memOrder 𝒜 b a) →\n    T.Nonempty → ∃ x ∈ T, ∀ a ∈ T, StructuralIgnorance.memOrder 𝒜 a x",
@@ -231,6 +300,16 @@
         "depth": 2,
         "dictionary_leaves": [
           "StructuralIgnorance.memOrder"
+        ],
+        "hypotheses": [
+          {
+            "name": "hab",
+            "pretty": "StructuralIgnorance.memOrder 𝒜 a b"
+          },
+          {
+            "name": "hbc",
+            "pretty": "StructuralIgnorance.memOrder 𝒜 b c"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -258,6 +337,13 @@
         "dictionary_leaves": [
           "StructuralIgnorance.twistClass"
         ],
+        "doc": "Twisting by a member places the empty set in the class.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "S₀ ∈ 𝒜"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {S₀ : Set α}, S₀ ∈ 𝒜 → ∅ ∈ StructuralIgnorance.twistClass 𝒜 S₀",
@@ -276,6 +362,13 @@
           "StructuralIgnorance.baseLabels",
           "StructuralIgnorance.twistClass",
           "StructuralIgnorance.twistConvention"
+        ],
+        "doc": "Kernel schemes transport back through a twist, with the same kernels.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.HasKernelScheme (StructuralIgnorance.twistClass 𝒜 S₀) k"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -313,6 +406,13 @@
           "StructuralIgnorance.IsSample",
           "StructuralIgnorance.baseLabels",
           "StructuralIgnorance.twistClass"
+        ],
+        "doc": "Realizability transports through the twist, with the label set twisted\ninside the window.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "StructuralIgnorance.IsSample 𝒜 A T"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

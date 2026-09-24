@@ -271,6 +271,7 @@
         "dictionary_leaves": [
           "KrappWirthSeparationMeasTarget"
         ],
+        "doc": "**The Krapp–Wirth measurable-target separation holds unconditionally**: the analytic\nnon-Borel witness discharges the hypothesis of\n`analytic_nonborel_set_gives_measTarget_separation`.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "KrappWirthSeparationMeasTarget",
@@ -298,6 +299,17 @@
           "zeroConcept",
           "zeroOneLoss"
         ],
+        "doc": "**Main separation theorem.** Given any analytic non-Borel set `A ⊆ ℝ`, the\nconcept class obtained by parameterising `singletonConcept` (plus `zeroConcept`) over\n`A` is a concrete witness that `WellBehavedVCMeasTarget` is strictly weaker than the\nKrapp-Wirth Borel condition. The class is constructed as `Set.range e` for an\nevaluation map `e : Bool × β → Concept ℝ Bool` built from a Polish parameterisation of\n`A`; post-construction, `Set.range e` equals `singletonClassOn (Set.range g)` where `g`\nrealises `A`.\n\nThe class satisfies:\n\n* `MeasurableHypotheses`: every individual hypothesis is Borel\n  (`singletonClassOn_measurable`).\n* `WellBehavedVCMeasTarget`: the bad event is analytic\n  (`planarWitnessEvent_analytic` lifted via `singleton_badEvent_eq_preimage_planar`),\n  hence `NullMeasurableSet` by the Choquet bridge.\n* NOT `KrappWirthWellBehaved`: the bad event is not Borel\n  (`singleton_badEvent_not_measurable`).\n\nThe separation is realised by passing through the standard Borel space ℝ as the\nparameter space; the construction reuses no problem-specific fact beyond the existence\nof an analytic non-Borel subset of ℝ (Souslin's classical result), supplied in\n`exists_measTarget_separation`. The witness shows that the measurable-target variant\nproved in this kernel is a genuine improvement over the existing literature, not a\nrestatement.",
+        "hypotheses": [
+          {
+            "name": "hA_an",
+            "pretty": "MeasureTheory.AnalyticSet A"
+          },
+          {
+            "name": "hA_non",
+            "pretty": "¬MeasurableSet A"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (A : Set ℝ), MeasureTheory.AnalyticSet A → ¬MeasurableSet A → KrappWirthSeparationMeasTarget",
@@ -313,6 +325,13 @@
           "planarWitnessEvent",
           "samplePair1ToPlane",
           "singletonBadEvent"
+        ],
+        "doc": "For `A` non-Borel, the singleton bad event is non-Borel. Combine\n`singleton_badEvent_eq_preimage_planar` with `planarWitnessEvent_not_measurable`: the\npreimage of a non-Borel set under a measurable *surjection* cannot itself be Borel.",
+        "hypotheses": [
+          {
+            "name": "hA_non",
+            "pretty": "¬MeasurableSet A"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -335,6 +354,7 @@
           "zeroConcept",
           "zeroOneLoss"
         ],
+        "doc": "The singleton bad event equals `samplePair1ToPlane ⁻¹' planarWitnessEvent`. The set\nequality that transports both analyticity and non-Borelness from the planar witness to\nthe learning-theoretic bad event.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (A : Set ℝ), singletonBadEvent A = samplePair1ToPlane ⁻¹' planarWitnessEvent A",
@@ -347,6 +367,13 @@
         "depth": 3,
         "dictionary_leaves": [
           "planarWitnessEvent"
+        ],
+        "doc": "For `A` non-Borel, `planarWitnessEvent A` is non-Borel. The proof picks some\n`a ∉ A` and shows the vertical section `y ↦ (a, y)` pulls the planar event back to `A`\nitself: if the planar event were Borel, its preimage under this measurable map would be\nBorel too, contradicting the hypothesis on `A`.",
+        "hypotheses": [
+          {
+            "name": "hA_non",
+            "pretty": "¬MeasurableSet A"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -401,6 +428,13 @@
           "paramBadEvent",
           "zeroOneLoss"
         ],
+        "doc": "Class-level corollary: every Borel-parameterized concept class with a measurable\nevaluation map satisfies `WellBehavedVCMeasTarget`. Composes\n`borel_param_nullMeasurableSet_bad_event` over all measurable targets `c`. The\nmeasurable-target variant of `WellBehavedVC` is what the kernel actually proves; the\nunrestricted variant remains open and is the subject of the Borel-analytic separation\nwitness in `Theorem/BorelAnalyticSeparation.lean`.",
+        "hypotheses": [
+          {
+            "name": "he",
+            "pretty": "Measurable fun p => e p.1 p.2"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) → WellBehavedVCMeasTarget X (Set.range e)",
@@ -417,6 +451,17 @@
           "GhostPairs",
           "paramBadEvent"
         ],
+        "doc": "Positive bridge. If a concept class is parameterized by a Borel measurable map\n`Θ → Concept X` from a standard Borel space `Θ`, then the symmetrization bad event is\nanalytic, hence `NullMeasurableSet`. The bad event is a Suslin projection of a Borel\nwitness set (the projection along `Θ` of `{(θ, p) | gap(eval θ, p) ≥ ε / 2}`), and\nprojections of Borel sets are analytic by definition. This is the entry point through\nwhich Borel parameterization implies the regularity required by the fundamental\ntheorem.",
+        "hypotheses": [
+          {
+            "name": "he",
+            "pretty": "Measurable fun p => e p.1 p.2"
+          },
+          {
+            "name": "hc",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool),\n      Measurable c →\n        ∀ (m : ℕ) (ε : ℝ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n          MeasureTheory.NullMeasurableSet (paramBadEvent e c m ε) (GhostPairMeasure D m)",
@@ -432,6 +477,17 @@
           "GhostPairs",
           "paramBadEvent",
           "paramWitnessSet"
+        ],
+        "doc": "The bad event (projection of witness set) is analytic.\nProjection of a Borel set from a StandardBorelSpace is analytic (Suslin).\nThis is the key step: existential quantification over parameters\nproduces an analytic (Σ₁¹) set, which may not be Borel.",
+        "hypotheses": [
+          {
+            "name": "he",
+            "pretty": "Measurable fun p => e p.1 p.2"
+          },
+          {
+            "name": "hc",
+            "pretty": "Measurable c"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -450,6 +506,17 @@
           "paramWitnessSet",
           "zeroOneLoss"
         ],
+        "doc": "The witness set {(θ, p) | ghost-gap ≥ ε/2} is MeasurableSet\nwhen the evaluation map e and target c are measurable.\nThis is the Borel half of the Borel-analytic bridge.",
+        "hypotheses": [
+          {
+            "name": "he",
+            "pretty": "Measurable fun p => e p.1 p.2"
+          },
+          {
+            "name": "hc",
+            "pretty": "Measurable c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {Θ : Type u_1} [inst_1 : MeasurableSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool), Measurable c → ∀ (m : ℕ) (ε : ℝ), MeasurableSet (paramWitnessSet e c m ε)",
@@ -463,6 +530,13 @@
         "dictionary_leaves": [
           "GhostPairMeasure"
         ],
+        "doc": "Analytic subsets of the ghost sample space `(Fin m → X) × (Fin m → X)` are\n`NullMeasurableSet` under the product probability measure. A specialisation of\n`analyticSet_nullMeasurableSet` from `PureMath/AnalyticMeasurability.lean` to the type\nthe symmetrization argument actually consumes.",
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} [inst : TopologicalSpace X] [inst_1 : MeasurableSpace X] [BorelSpace X] [PolishSpace X] {m : ℕ}\n  {s : Set ((Fin m → X) × (Fin m → X))},\n  MeasureTheory.AnalyticSet s →\n    ∀ (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n      MeasureTheory.NullMeasurableSet s (GhostPairMeasure D m)",
@@ -474,6 +548,13 @@
         "decl_name": "analyticSet_nullMeasurableSet",
         "depth": 5,
         "dictionary_leaves": [],
+        "doc": "Analytic sets are null-measurable for finite Borel measures on Polish spaces.\nFLT-facing alias of the ZPM-canonical `MeasureTheory.AnalyticSet.nullMeasurableSet`.",
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ",
@@ -485,6 +566,13 @@
         "decl_name": "MeasureTheory.AnalyticSet.nullMeasurableSet",
         "depth": 6,
         "dictionary_leaves": [],
+        "doc": "**Analytic sets are null-measurable.** For any finite Borel measure on\na Polish space, every analytic set is `NullMeasurableSet`. Proof inner-\napproximates the analytic set by compacts, takes the union of approximators\n(a Borel set), and shows the difference is contained in a Borel null set.\n\nThis is the abstract bridge that the entire Borel-analytic measurability\nlayer of downstream learning-theory kernels rests on.",
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ",
@@ -498,6 +586,17 @@
         "dictionary_leaves": [
           "MeasureTheory.compactCap"
         ],
+        "doc": "Inner regularity for analytic sets: any analytic subset of a Polish\nspace can be approximated from inside by a compact subset in measure, by\nany slack `ε > 0`. Specialisation of Choquet capacitability (Kechris 30.13)\nto the measure-as-capacity instance.",
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          },
+          {
+            "name": "a",
+            "pretty": "ε > 0"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → ∀ ε > 0, ∃ K, IsCompact K ∧ K ⊆ s ∧ μ.real s < μ.real K + ε",
@@ -510,6 +609,13 @@
         "depth": 8,
         "dictionary_leaves": [
           "MeasureTheory.compactCap"
+        ],
+        "doc": "For analytic sets, compact capacity equals measure.",
+        "hypotheses": [
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -537,6 +643,7 @@
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
         ],
+        "doc": "Every finite Borel measure on a Polish space is a Choquet capacity.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  (μ : MeasureTheory.Measure α) [MeasureTheory.IsFiniteMeasure μ], MeasureTheory.IsChoquetCapacity fun s => μ s",
@@ -551,6 +658,17 @@
           "Bnd",
           "Cyl",
           "MeasureTheory.IsChoquetCapacity"
+        ],
+        "doc": "**Choquet capacitability.** For analytic sets, capacity equals the\nsupremum over compact subsets (Kechris 30.13).",
+        "hypotheses": [
+          {
+            "name": "hcap",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "hs",
+            "pretty": "MeasureTheory.AnalyticSet s"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -580,6 +698,13 @@
           "Cyl",
           "choquetTruncate"
         ],
+        "doc": "The intersection of closures of cylinder images equals the compact image.\nKey lemma for the capacitability proof: uses truncation and sequential\ncompactness.",
+        "hypotheses": [
+          {
+            "name": "hf",
+            "pretty": "Continuous f"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [PolishSpace α] {f : (ℕ → ℕ) → α},\n  Continuous f → ∀ (N : ℕ → ℕ), ⋂ n, closure (f '' Cyl N n) = f '' Bnd N",
@@ -607,6 +732,16 @@
         "dictionary_leaves": [
           "Cyl",
           "choquetTruncate"
+        ],
+        "hypotheses": [
+          {
+            "name": "hg",
+            "pretty": "g ∈ Cyl N n"
+          },
+          {
+            "name": "a",
+            "pretty": "i ≤ n"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -674,6 +809,12 @@
         "dictionary_leaves": [
           "Cyl"
         ],
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ i ≤ n, N i = N' i"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (N N' : ℕ → ℕ) (n : ℕ), (∀ i ≤ n, N i = N' i) → Cyl N n = Cyl N' n",
@@ -686,6 +827,16 @@
         "depth": 10,
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "s ⊆ t"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -700,6 +851,16 @@
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
         ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "Monotone f"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap → ∀ (f : ℕ → Set α), Monotone f → cap (⋃ n, f n) = ⨆ n, cap (f n)",
@@ -712,6 +873,20 @@
         "depth": 10,
         "dictionary_leaves": [
           "MeasureTheory.IsChoquetCapacity"
+        ],
+        "hypotheses": [
+          {
+            "name": "self",
+            "pretty": "MeasureTheory.IsChoquetCapacity cap"
+          },
+          {
+            "name": "a",
+            "pretty": "Antitone f"
+          },
+          {
+            "name": "a",
+            "pretty": "∀ (n : ℕ), IsClosed (f n)"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -741,6 +916,7 @@
         "dictionary_leaves": [
           "MeasureTheory.embedBaireReal"
         ],
+        "doc": "**An analytic non-Borel subset of `ℝ`**: the image of the Baire-space witness under the\ncontinuous injection. Analyticity transfers along the continuous image; non-Borelness\ntransfers back along the injective preimage.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A",
@@ -752,6 +928,7 @@
         "decl_name": "MeasureTheory.exists_analyticSet_not_measurableSet",
         "depth": 2,
         "dictionary_leaves": [],
+        "doc": "**An analytic non-Borel subset of Baire space**: the projection of the diagonal witness.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A",
@@ -763,6 +940,7 @@
         "decl_name": "MeasureTheory.exists_closed_proj_not_measurableSet",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "**A closed set with a non-Borel projection.** Diagonalize the universal closed set of\n`(ℕ → ℕ) × (ℕ → ℕ)`: were the projection Borel, its complement would be analytic, hence the\nprojection of a closed set, hence a section of the universal set — and evaluating that\nsection at its own parameter is contradictory.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}",
@@ -774,6 +952,7 @@
         "decl_name": "MeasureTheory.exists_closed_universal_sections",
         "depth": 4,
         "dictionary_leaves": [],
+        "doc": "**A universal closed set.** Every second-countable space `X` carries a closed subset of\n`X × (ℕ → ℕ)` whose sections run through all closed subsets of `X`: enumerate a countable\nbasis together with `∅`, and let the parameter select which basis elements to exclude.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (X : Type u_1) [inst : TopologicalSpace X] [SecondCountableTopology X],\n  ∃ S, IsClosed S ∧ ∀ (C : Set X), IsClosed C → ∃ y, {x | (x, y) ∈ S} = C",

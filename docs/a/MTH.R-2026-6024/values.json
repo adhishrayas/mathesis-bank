@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6024"
   },
   {
+    "field": "claim.doc",
+    "value": "Pinsker's inequality with the sharp constant. tvDistReal P Q ≤ sqrt(klDivReal P Q / 2) for probability measures P ≪ Q with finite KL divergence."
+  },
+  {
     "field": "claim.decl_name",
     "value": "InformationTheory.pinsker_proof"
   },
@@ -50,6 +54,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "P.AbsolutelyContinuous Q"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hac"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "MeasureTheory.Integrable …"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h_int"
   },
   {
     "field": "argument_node.decl_name",
@@ -292,6 +312,30 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "klBin"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "klDivReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "tvDistReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "InformationTheory.pinsker_proof"
   },
@@ -348,6 +392,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Per-set squared bound. 2 (P(A) − Q(A))² ≤ klDivReal P Q for any measurable set A, given P ≪ Q and finite KL."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      ∀ (A : Set α), MeasurableSet A → 2 * (P.real A - Q.real A) ^ 2 ≤ InformationTheory.klDivReal P Q"
   },
@@ -382,6 +430,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Data processing inequality for indicators. For probability measures P ≪ Q with finite KL divergence and any measurable set A, the binary KL between the marginals on (A, Aᶜ) is bounded by the full KL: klBin(P(A), Q(A)) ≤ klDivReal P Q."
   },
   {
     "field": "argument_node.pretty",
@@ -420,6 +472,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Jensen on a subset. For a finite measure Q and a measurable set A with positive mass, if f and klFun ∘ f are integrable and f ≥ 0 almost everywhere, then Q(A) · klFun((1/Q(A)) · ∫_A f dQ) ≤ ∫_A klFun(f) dQ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] {Q : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure Q] (f : α → ℝ),\n  MeasureTheory.Integrable f Q →\n    MeasureTheory.Integrable (fun x => InformationTheory.klFun (f x)) Q →\n      (∀ᵐ (x : α) ∂Q, 0 ≤ f x) →\n        ∀ {A : Set α},\n          0 < Q.real A →\n            Q.real A * InformationTheory.klFun ((Q.real A)⁻¹ * ∫ (x : α) in A, f x ∂Q) ≤\n              ∫ (x : α) in A, InformationTheory.klFun (f x) ∂Q"
   },
@@ -434,6 +490,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Algebraic identity. The binary KL factors through klFun: klBin p q = q · klFun(p/q) + (1 − q) · klFun((1 − p)/(1 − q))."
   },
   {
     "field": "argument_node.pretty",
@@ -454,6 +514,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Binary Pinsker inequality. 2 (p − q)² ≤ klBin p q for p ∈ [0, 1], q ∈ (0, 1). Sharp constant 2."
   },
   {
     "field": "argument_node.pretty",
@@ -504,6 +568,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "2 (1 - q)² ≤ -log q for q ∈ (0, 1]. Substitute r = 1 - q into the previous."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (q : ℝ), 0 < q → q ≤ 1 → 2 * (1 - q) ^ 2 ≤ -Real.log q"
   },
@@ -522,6 +590,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "2 q² ≤ -log(1 - q) for q ∈ [0, 1)."
   },
   {
     "field": "argument_node.pretty",
@@ -548,6 +620,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "h(q) = -log(1-q) - 2 q² is monotone on [0, 1)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "MonotoneOn (fun q => -Real.log (1 - q) - 2 * q ^ 2) (Set.Ico 0 1)"
   },
@@ -568,6 +644,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Derivative of h(q) = -log(1-q) - 2 q² at q < 1."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ q < 1, HasDerivAt (fun q => -Real.log (1 - q) - 2 * q ^ 2) ((2 * q - 1) ^ 2 / (1 - q)) q"
   },
@@ -582,6 +662,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "g(q) = klBin p q − 2 (p − q)² is monotone on [p, 1)."
   },
   {
     "field": "argument_node.pretty",
@@ -616,6 +700,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "On [p, 1): derivative of g is nonnegative."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p q : ℝ), p ≤ q → 0 < q → q < 1 → 0 ≤ (q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))"
   },
@@ -634,6 +722,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Continuity of g on Ico p 1."
   },
   {
     "field": "argument_node.pretty",
@@ -664,6 +756,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Continuity of klBin p · on Ico p 1."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q) (Set.Ico p 1)"
   },
@@ -688,6 +784,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Boundary case: klBin 0 q = -log(1 - q)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (q : ℝ), InformationTheory.klBin 0 q = -Real.log (1 - q)"
   },
@@ -706,6 +806,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "klBin p p = 0 for p ∈ (0, 1)."
   },
   {
     "field": "argument_node.pretty",
@@ -728,6 +832,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Boundary case: klBin 1 q = -log q."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (q : ℝ), InformationTheory.klBin 1 q = -Real.log q"
   },
@@ -746,6 +854,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "g(q) = klBin p q − 2 (p − q)² is antitone on (0, p]."
   },
   {
     "field": "argument_node.pretty",
@@ -780,6 +892,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Factored derivative identity. Derivative of g(q) := klBin(p, q) − 2 (p − q)² has the factored form (q − p) · (1 − 2q)² / (q · (1 − q)), reducing the sign of the derivative to sign(q − p)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p q : ℝ),\n  0 < p →\n    p < 1 →\n      0 < q →\n        q < 1 →\n          HasDerivAt (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2)\n            ((q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))) q"
   },
@@ -812,6 +928,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Derivative of (p − q)² with respect to q."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p q : ℝ), HasDerivAt (fun q => (p - q) ^ 2) (-2 * (p - q)) q"
   },
@@ -826,6 +946,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "On (0, p]: derivative of g is nonpositive."
   },
   {
     "field": "argument_node.pretty",
@@ -848,6 +972,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The derivative factor (1 − 2q)² / (q (1 − q)) is nonnegative on (0, 1)."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (q : ℝ), 0 < q → q < 1 → 0 ≤ (1 - 2 * q) ^ 2 / (q * (1 - q))"
   },
@@ -866,6 +994,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Continuity of g on Ioc 0 p."
   },
   {
     "field": "argument_node.pretty",
@@ -896,6 +1028,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Continuity of fun q => (p - q)² on any set."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p : ℝ) (s : Set ℝ), ContinuousOn (fun q => (p - q) ^ 2) s"
   },
@@ -914,6 +1050,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Continuity of klBin p · on Ioc 0 p."
   },
   {
     "field": "argument_node.pretty",
@@ -938,6 +1078,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Derivative of klBin p · at a point q ∈ (0, 1) with p ∈ (0, 1)."
   },
   {
     "field": "argument_node.pretty",
@@ -972,6 +1116,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Expanded form: split into constants and q-dependent pieces. Used to compute the derivative via HasDerivAt in the next shard."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (p q : ℝ),\n  0 < p →\n    p < 1 →\n      0 < q →\n        q < 1 →\n          InformationTheory.klBin p q =\n            p * Real.log p - p * Real.log q + (1 - p) * Real.log (1 - p) - (1 - p) * Real.log (1 - q)"
   },
@@ -990,6 +1138,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "ℝ-valued KL is nonnegative for probability measures."
   },
   {
     "field": "argument_node.pretty",
@@ -1020,6 +1172,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "For probability measures with P ≪ Q, the ℝ-valued KL equals (Mathlib.klDiv P Q).toReal. Both measures have total mass 1, so the Mathlib correction term vanishes."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q → InformationTheory.klDivReal P Q = (InformationTheory.klDiv P Q).toReal"
   },
@@ -1048,12 +1204,80 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "The integrand log ((P.rnDeriv Q x).toReal) is definitionally Mathlib's log-likelihood ratio llr P Q x."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α),\n  (fun x => Real.log (P.rnDeriv Q x).toReal) = MeasureTheory.llr P Q"
   },
   {
     "field": "argument_node.decl_name",
     "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "hac"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "P.AbsolutelyContinuous Q"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "h_int"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "MeasureTheory.Integrable (MeasureTheory.llr P Q) P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Binary KL divergence between Bernoulli(p) and Bernoulli(q)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℝ → ℝ → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "ℝ-valued KL divergence. Returns 0 when P is not absolutely continuous with respect to Q (by convention; the ℝ≥0∞-valued klDiv returns ⊤ in that case)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [inst : MeasurableSpace α] → MeasureTheory.Measure α → MeasureTheory.Measure α → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.tvDistReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Total variation distance between two probability measures, metric form.Defined as the supremum of |P(A).toReal - Q(A).toReal| over measurable sets A."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} →\n  [inst : MeasurableSpace α] →\n    (P Q : MeasureTheory.Measure α) → [MeasureTheory.IsFiniteMeasure P] → [MeasureTheory.IsFiniteMeasure Q] → ℝ"
   },
   {
     "field": "argument.accession",

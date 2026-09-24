@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "If every candidate's loss is measurable and a.e. valued in [a, b] under Q, every training-generated trajectory is admissible for F, and the resulting uniform-deviation failure event is measurable, then on an i.i.d. panel of size n drawn from Q, measured cumulative empirical-loss progress exceeds population-loss progress by more than 2 · deltaFiniteExperts (card ι) n (b - a) δ with probability at most ENNReal.ofReal δ."
+  },
+  {
     "field": "claim.decl_name",
     "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
   },

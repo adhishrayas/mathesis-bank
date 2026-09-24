@@ -49,6 +49,17 @@
           "VCDim",
           "dualClass"
         ],
+        "doc": "**Assouad's lower bound.** For a finite-VC class,\n`⌊log₂ VCDim⌋ ≤ VCDim(dualClass)`: the exponential blow-up under dualization is *necessary*, not\nmerely permitted. Together with the proven upper bound `vcDim_dualClass_le`\n(`VCDim(dual) ≤ 2^(VCDim+1) − 1`) this sandwiches the dual VC dimension between `⌊log₂ d⌋` and\n`2^(d+1) − 1`.\n\nStated with `d := VCDim C` extracted as a natural number (finite by hypothesis). The proof picks a\nshattered set `T` with `2^(log₂ d) ≤ |T|` (which exists because `2^(log₂ d) ≤ d ≤ |T|` for the\nsupremal shattered set) and applies `pow_le_vcDim_imp_le_vcDim_dualClass`.",
+        "hypotheses": [
+          {
+            "name": "hd",
+            "pretty": "VCDim X C = ↑d"
+          },
+          {
+            "name": "hd0",
+            "pretty": "0 < d"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)",
@@ -67,6 +78,17 @@
           "dualClass",
           "evalConcept"
         ],
+        "doc": "**Assouad's lower construction.** If `C` shatters a set `T` of at least `2^k` points, then\n`dualClass C` shatters a set of `k` evaluation concepts, so `k ≤ VCDim(dualClass C)`.\n\nBitstrings index a `2^k`-subset of `T`; coordinate `j` is realized by a concept `c_j ∈ C` reading\noff the `j`-th bit, and the dual class shatters `{c_j}` because the evaluation point indexed by a\nbitstring `σ` realizes exactly the labelling `σ` of the `c_j`.",
+        "hypotheses": [
+          {
+            "name": "hT",
+            "pretty": "Shatters X C T"
+          },
+          {
+            "name": "hcard",
+            "pretty": "2 ^ k ≤ T.card"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {k : ℕ} (T : Finset X),\n  Shatters X C T → 2 ^ k ≤ T.card → ↑k ≤ VCDim (↑C) (dualClass C)",
@@ -83,6 +105,7 @@
           "dualClass",
           "evalConcept"
         ],
+        "doc": "Each evaluation concept belongs to the dual class.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (x : X), evalConcept C x ∈ dualClass C",

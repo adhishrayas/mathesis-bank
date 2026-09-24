@@ -206,6 +206,17 @@
           "ded'",
           "dedSet'"
         ],
+        "doc": "**No cardinal function strictly smaller than `ded` bounds the traces of a family of finite\nVC dimension.** For every infinite `κ` and every `lam < ded κ` there is a family of VC dimension\n`1` on a ground set of size exactly `κ` tracing more than `lam` sets. Together with\n`HasVCDimLE.mk_image_inter_le_ded`, which caps those traces at `ded #A`, this places `ded` at\nthe exact strength of the bound.\n\nThe conclusion cannot be strengthened to a family tracing exactly `ded κ` sets. Chernikov and\nShelah, *On the number of Dedekind cuts and two-cardinal models of dependent theories*, note\nafter their definition of `ded κ` that \"in general the supremum need not be attained\", so at\nsuch a `κ` no family attains it and quantifying below the supremum is the available form. At\n`κ = ℵ₀` the supremum is attained, by `mk_image_inter_range_cut_eq_ded`.",
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          },
+          {
+            "name": "h",
+            "pretty": "lam < ded κ"
+          }
+        ],
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {κ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ κ →\n    ∀ {lam : Cardinal.{u}},\n      lam < ded κ → ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ lam < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)",
@@ -249,6 +260,21 @@
           "padCuts",
           "padGround"
         ],
+        "doc": "The witness attached to a strictly dense subset: a family of VC dimension `1` on a ground\nset of size exactly `κ` whose traces are at least as many as the points of `J`.",
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          },
+          {
+            "name": "hEκ",
+            "pretty": "Cardinal.mk ↑E ≤ κ"
+          },
+          {
+            "name": "hE",
+            "pretty": "IsStrictlyDenseIn E"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ →\n    Cardinal.mk ↑E ≤ κ →\n      IsStrictlyDenseIn E →\n        ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ Cardinal.mk J ≤ Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)",
@@ -261,6 +287,20 @@
         "depth": 2,
         "dictionary_leaves": [
           "padGround"
+        ],
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          },
+          {
+            "name": "hEκ",
+            "pretty": "Cardinal.mk ↑E ≤ κ"
+          },
+          {
+            "name": "hP",
+            "pretty": "Cardinal.mk P = κ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -288,6 +328,21 @@
         "dictionary_leaves": [
           "padGround"
         ],
+        "doc": "A point of `E` strictly between `j` and `j'` separates the two traces: it lies in the trace\nat `j'` and, being above `j`, not in the trace at `j`.",
+        "hypotheses": [
+          {
+            "name": "heE",
+            "pretty": "e ∈ E"
+          },
+          {
+            "name": "hje",
+            "pretty": "j < e"
+          },
+          {
+            "name": "hej'",
+            "pretty": "e < j'"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {J P : Type u} [inst : LinearOrder J] {E : Set J} {j j' e : J},\n  e ∈ E → j < e → e < j' → padGround✝ E ∩ Sum.inl '' {a | a < j} ≠ padGround✝ E ∩ Sum.inl '' {a | a < j'}",
@@ -302,6 +357,13 @@
           "HasVCDimLE",
           "Shatters"
         ],
+        "doc": "A family linearly ordered by inclusion has VC dimension at most `1`. Shattering a two point\nset asks for a member meeting it in the first point alone and a member meeting it in the second\npoint alone; whichever of the two members is contained in the other already contains its own\npoint, so it meets the set in both. This is why the extremal families for `ded` are families of\ncuts: the number of cuts is exactly what a chain in a linear order can achieve.",
+        "hypotheses": [
+          {
+            "name": "h𝒜",
+            "pretty": "IsChain (fun x1 x2 => x1 ⊆ x2) 𝒜"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {α : Type u_2} {𝒜 : Set (Set α)}, IsChain (fun x1 x2 => x1 ⊆ x2) 𝒜 → HasVCDimLE 1 𝒜",
@@ -315,6 +377,13 @@
         "dictionary_leaves": [
           "ded",
           "ded'"
+        ],
+        "doc": "The convention question is empty at infinite cardinals: `ded` and `ded'` agree there. It is\nnot empty in general, by `ded'_one_lt_ded_one`.",
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -331,6 +400,13 @@
           "ded",
           "ded'"
         ],
+        "doc": "**The two readings of \"dense subset\" define the same cardinal function at every infinite\ncardinal.** Every bracketing witness is turned into a strict witness of at least its size by\n`mk_le_ded'_of_isDenseIn`, at the cost of a countable factor in the dense subset, which an\ninfinite `κ` absorbs.",
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ : Cardinal.{u}}, Cardinal.aleph0 ≤ κ → ded κ ≤ ded' κ",
@@ -346,6 +422,20 @@
           "ded'",
           "fatten",
           "fattenDense"
+        ],
+        "hypotheses": [
+          {
+            "name": "hκ",
+            "pretty": "Cardinal.aleph0 ≤ κ"
+          },
+          {
+            "name": "hEκ",
+            "pretty": "Cardinal.mk ↑E ≤ κ"
+          },
+          {
+            "name": "hE",
+            "pretty": "IsDenseIn E"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -388,6 +478,17 @@
           "ded'",
           "dedSet'"
         ],
+        "doc": "The defining property of `ded'`: a linear order with a strictly dense subset of size at most\n`κ` has at most `ded' κ` points.",
+        "hypotheses": [
+          {
+            "name": "hEκ",
+            "pretty": "Cardinal.mk ↑E ≤ κ"
+          },
+          {
+            "name": "hE",
+            "pretty": "IsStrictlyDenseIn E"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ ded' κ",
@@ -415,6 +516,12 @@
           "IsDenseIn",
           "IsStrictlyDenseIn",
           "dedSet'"
+        ],
+        "hypotheses": [
+          {
+            "name": "hc",
+            "pretty": "c ∈ dedSet'✝ κ"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -460,6 +567,12 @@
           "fatten",
           "fattenDense"
         ],
+        "hypotheses": [
+          {
+            "name": "hE",
+            "pretty": "IsDenseIn E"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → IsStrictlyDenseIn (fattenDense✝ E)",
@@ -474,6 +587,25 @@
           "IsDenseIn",
           "fatten"
         ],
+        "doc": "The heart of the comparison: in the blow-up, every pair is separated strictly by a point\nlying over `E`. The three cases of the bracketing witness `d` are `a < d < b`, where the fibre\nover `d` supplies the point; `d = a`, where the point is taken higher in the fibre over `a`; and\n`d = b`, where it is taken lower in the fibre over `b`.",
+        "hypotheses": [
+          {
+            "name": "hE",
+            "pretty": "IsDenseIn E"
+          },
+          {
+            "name": "hu",
+            "pretty": "u ∈ fatten✝ E"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ fatten✝ E"
+          },
+          {
+            "name": "huv",
+            "pretty": "u < v"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J},\n  IsDenseIn E →\n    ∀ {u v : Lex (J × ℚ)}, u ∈ fatten✝ E → v ∈ fatten✝ E → u < v → ∃ z ∈ E, ∃ r, u < toLex (z, r) ∧ toLex (z, r) < v",
@@ -486,6 +618,24 @@
         "depth": 6,
         "dictionary_leaves": [
           "fatten"
+        ],
+        "hypotheses": [
+          {
+            "name": "hu",
+            "pretty": "u ∈ fatten✝ E"
+          },
+          {
+            "name": "hv",
+            "pretty": "v ∈ fatten✝ E"
+          },
+          {
+            "name": "hfst",
+            "pretty": "(ofLex u).1 = (ofLex v).1"
+          },
+          {
+            "name": "hsnd",
+            "pretty": "(ofLex u).2 < (ofLex v).2"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -502,6 +652,13 @@
           "ded",
           "dedSet"
         ],
+        "doc": "The elimination rule for `ded`.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ c) → ded κ ≤ c",
@@ -517,6 +674,7 @@
           "ded",
           "ded'"
         ],
+        "doc": "Strict density is the stronger condition on the subset, so fewer orders are witnesses and\nthe supremum is no larger. This holds at every cardinal.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (κ : Cardinal.{u}), ded' κ ≤ ded κ",
@@ -531,6 +689,17 @@
           "IsDenseIn",
           "ded",
           "dedSet"
+        ],
+        "doc": "The defining property of `ded`, in the form used downstream: a linear order with a dense\nsubset of size at most `κ` has at most `ded κ` points.",
+        "hypotheses": [
+          {
+            "name": "hEκ",
+            "pretty": "Cardinal.mk ↑E ≤ κ"
+          },
+          {
+            "name": "hE",
+            "pretty": "IsDenseIn E"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -559,6 +728,12 @@
           "IsDenseIn",
           "dedSet"
         ],
+        "hypotheses": [
+          {
+            "name": "hc",
+            "pretty": "c ∈ dedSet✝ κ"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet✝ κ → c ≤ 2 ^ (κ + κ)",
@@ -572,6 +747,13 @@
         "dictionary_leaves": [
           "IsDenseIn",
           "cutCode"
+        ],
+        "doc": "A linear order with a dense subset `D` has at most `2 ^ #D * 2 ^ #D` points, since a point is\ndetermined by the pair of cuts it induces on `D`.",
+        "hypotheses": [
+          {
+            "name": "hE",
+            "pretty": "IsDenseIn E"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -587,6 +769,12 @@
           "IsDenseIn",
           "cutCode"
         ],
+        "hypotheses": [
+          {
+            "name": "hD",
+            "pretty": "IsDenseIn D"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → Function.Injective (cutCode✝ D)",
@@ -600,6 +788,16 @@
         "dictionary_leaves": [
           "IsDenseIn",
           "cutCode"
+        ],
+        "hypotheses": [
+          {
+            "name": "hD",
+            "pretty": "IsDenseIn D"
+          },
+          {
+            "name": "hxy",
+            "pretty": "x < y"
+          }
         ],
         "is_root": false,
         "kind": "theorem",
@@ -616,6 +814,13 @@
           "ded'",
           "dedSet'"
         ],
+        "doc": "The elimination rule for `ded'`.",
+        "hypotheses": [
+          {
+            "name": "h",
+            "pretty": "∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ c"
+          }
+        ],
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ c) →\n    ded' κ ≤ c",
@@ -629,6 +834,12 @@
         "dictionary_leaves": [
           "IsDenseIn",
           "IsStrictlyDenseIn"
+        ],
+        "hypotheses": [
+          {
+            "name": "hD",
+            "pretty": "IsStrictlyDenseIn D"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

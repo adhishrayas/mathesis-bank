@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "The full trace family cannot replace the determined traces in mk_determined_le_mk_shatters: the half-line cuts over ℚ trace continuum-many sets while shattering only countably many."
+  },
+  {
     "field": "claim.decl_name",
     "value": "not_mk_image_inter_le_mk_shatters"
   },

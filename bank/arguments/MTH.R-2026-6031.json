@@ -48,6 +48,58 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "decl_name": "ConceptClass",
+      "doc": "A concept class is a set of concepts. Used by every paradigm, complexity\nmeasure, and criterion.\n\nPrimary definition: Set of functions. Used for PAC/agnostic PAC where\nconcept classes are sets over which VC dimension, Rademacher complexity,\ncovering numbers, etc. are measured. Alternative definitions below for\ncontexts requiring decidability, enumerability, or measurability.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max v u)",
+      "role": "definition"
+    },
+    {
+      "decl_name": "FLT.Concept",
+      "doc": "A concept is a function from domain to label. This is the atomic unit that\nconcept classes collect and learners try to approximate.",
+      "kind": "def",
+      "pretty": "Type u → Type v → Type (max u v)",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters",
+      "doc": "A set S ⊆ X is shattered by concept class C if every labeling of S\nis realized by some concept in C.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → Finset X → Prop",
+      "role": "definition"
+    },
+    {
+      "decl_name": "VCDim",
+      "doc": "VC dimension of a concept class: the size of the largest shattered set.\nReturns ℕ∞ = WithTop ℕ.",
+      "kind": "def",
+      "pretty": "(X : Type u) → ConceptClass X Bool → WithTop ℕ",
+      "role": "definition"
+    },
+    {
+      "decl_name": "cubeBitSlice",
+      "doc": "The image of `{b : Fin n → Bool | b k = true}` under a cube embedding: the codewords whose\n`k`-th bit is set.",
+      "kind": "def",
+      "pretty": "{X : Type u} → {C : ConceptClass X Bool} → {n : ℕ} → {S : Finset ↑C} → ((Fin n → Bool) ↪ ↥S) → Fin n → Finset ↑C",
+      "role": "definition"
+    },
+    {
+      "decl_name": "cubeEmbedding",
+      "doc": "Embedding `(Fin n → Bool) ↪ ↥S` when `2 ^ n ≤ S.card`, via\n`(Fin n → Bool) ≃ Fin (2 ^ n) ↪ Fin S.card ≃ ↥S`.",
+      "kind": "def",
+      "pretty": "{X : Type u} → {C : ConceptClass X Bool} → {n : ℕ} → (S : Finset ↑C) → 2 ^ n ≤ S.card → (Fin n → Bool) ↪ ↥S",
+      "role": "definition"
+    },
+    {
+      "decl_name": "dualClass",
+      "doc": "The **dual concept class**: each point `x : X` gives the evaluation concept `c ↦ c x` on the new\ndomain `↥C`. The dual class collects these over all points.",
+      "kind": "def",
+      "pretty": "{X : Type u} → (C : ConceptClass X Bool) → ConceptClass (↑C) Bool",
+      "role": "definition"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -59,6 +111,13 @@
         "Shatters",
         "VCDim",
         "dualClass"
+      ],
+      "doc": "**Assouad's dual VC bound.** If `VCDim X C ≤ d`, then `VCDim(dualClass C) ≤ 2^(d+1) − 1`.",
+      "hypotheses": [
+        {
+          "name": "hd",
+          "pretty": "VCDim X C ≤ ↑d"
+        }
       ],
       "is_root": true,
       "kind": "theorem",
@@ -78,6 +137,17 @@
         "cubeEmbedding",
         "dualClass"
       ],
+      "doc": "**Assouad's coding lemma.** If the dual class shatters a set `S` of concepts with\n`2^(d+1) ≤ S.card`, then `C` shatters some set of `d + 1` points.\n\nIndex `2^(d+1)` of the shattered concepts by bitstrings; for each coordinate `k`, dual shattering\nrealizes the labelling \"is this codeword in the `k`-th bit slice\", which supplies a point `x k`\nreading off exactly that bit. These `d + 1` points are then shattered by `C`.",
+      "hypotheses": [
+        {
+          "name": "hS",
+          "pretty": "Shatters (↑C) (dualClass C) S"
+        },
+        {
+          "name": "hcard",
+          "pretty": "2 ^ (d + 1) ≤ S.card"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ} (S : Finset ↑C),\n  Shatters (↑C) (dualClass C) S → 2 ^ (d + 1) ≤ S.card → ∃ T, T.card = d + 1 ∧ Shatters X C T",
@@ -93,6 +163,7 @@
         "FLT.Concept",
         "cubeBitSlice"
       ],
+      "doc": "Codeword `(cube b).val` is in `cubeBitSlice cube k` iff `b k = true`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {n : ℕ} {S : Finset ↑C} (cube : (Fin n → Bool) ↪ ↥S) (b : Fin n → Bool)\n  (k : Fin n), ↑(cube b) ∈ cubeBitSlice✝ cube k ↔ b k = true",

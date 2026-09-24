@@ -36,6 +36,10 @@
     "value": "Yaël Dillies"
   },
   {
+    "field": "claim.doc",
+    "value": "The full trace family cannot replace the determined traces in mk_determined_le_mk_shatters: the half-line cuts over ℚ trace continuum-many sets while shattering only countably many."
+  },
+  {
     "field": "claim.decl_name",
     "value": "not_mk_image_inter_le_mk_shatters"
   },
@@ -78,6 +82,22 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cut"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
   },
   {
     "field": "argument_node.decl_name",
@@ -178,6 +198,38 @@
   {
     "field": "argument_node.decl_name",
     "value": "countable_setOf_shatters_range_cut"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A set family 𝒜 shatters a set A if all subsets of A can be obtained as the intersection of A with some element of the set family. We also say that A is traced by 𝒜."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{α : Type u_1} → [SemilatticeInf α] → Set α → α → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cut"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "ℝ → Set ℚ"
   },
   {
     "field": "argument.accession",

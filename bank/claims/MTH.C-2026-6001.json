@@ -5,6 +5,7 @@
   "created_at": "2026-09-24T00:00:00Z",
   "decl_name": "encard_image_inter_le_encard_shatters",
   "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+  "doc": "**Pajor's inequality**, with no finiteness assumptions: the traces of `𝒜` on `A` are at most\nas many as the subsets of `A` shattered by `𝒜`. For a finite trace family this is a descent on\nthe number of traces that never consumes the ground set; an infinite trace family forces\ninfinitely many shattered singletons, and both sides are `⊤`.\n\nDvir, Filmus and Moran, *A Sauer-Shelah-Perles Lemma for Lattices*, credit the Boolean\nlattice case to Pajor (*Sous-espaces `ℓ₁ⁿ` des espaces de Banach*, Travaux en Cours 16,\nHermann, Paris, 1985) and to Aharoni and Holzman, unpublished. Their Theorem 1.2 is the\nlattice form, for finite lattices with nonvanishing Möbius function: a family shatters at\nleast as many elements as it has members. Reading that for a family of traces on a ground\nset is the standard translation into the language of set families, and the statement here\ncarries no finiteness hypothesis, which theirs does.",
   "login": "Zetetic-Dhruv",
   "module": "FLT_Proofs.VCDimGeneralized.VCDim",
   "origin": "curated",

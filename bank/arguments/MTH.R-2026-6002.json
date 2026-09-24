@@ -255,6 +255,81 @@
       "via": "direct"
     }
   ],
+  "leaves": [
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "HasVCDimLE",
+      "doc": "A set family `𝒜` has VC dimension at most `d` if all the sets it shatters have size at most\n`d`.",
+      "kind": "def",
+      "pretty": "{α : Type u_1} → ℕ → Set (Set α) → Prop",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters",
+      "doc": "A set family `𝒜` shatters a set `A` if all subsets of `A` can be obtained as the intersection\nof `A` with some element of the set family. We also say that `A` is *traced* by `𝒜`.",
+      "kind": "def",
+      "pretty": "{α : Type u_1} → [SemilatticeInf α] → Set α → α → Prop",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters.exists_ge",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} [inst : SemilatticeInf α] {𝒜 : Set α} {A : α}, Shatters 𝒜 A → ∃ B ∈ 𝒜, A ≤ B",
+      "role": "cited"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters.mono",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} [inst : SemilatticeInf α] {𝒜 ℬ : Set α} {A : α}, 𝒜 ⊆ ℬ → Shatters 𝒜 A → Shatters ℬ A",
+      "role": "cited"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters.preimage_compl",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} [inst : BooleanAlgebra α] {𝒜 : Set α} {A : α}, Shatters 𝒜 A → Shatters ((fun x => xᶜ) ⁻¹' 𝒜) A",
+      "role": "cited"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "Shatters.subset",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A B : Set α}, A ⊆ B → Shatters 𝒜 B → Shatters 𝒜 A",
+      "role": "cited"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "shatters_bot",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} [inst : SemilatticeInf α] {𝒜 : Set α} [inst_1 : OrderBot α], Shatters 𝒜 ⊥ ↔ 𝒜.Nonempty",
+      "role": "cited"
+    },
+    {
+      "decl_name": "splitPoints",
+      "doc": "The elements of `A` at which `𝒜` splits: some member of `𝒜` contains them and some does\nnot. These are exactly the elements whose singleton `𝒜` shatters.",
+      "kind": "def",
+      "pretty": "{α : Type u_1} → Set (Set α) → Set α → Set α",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "vcGrowth",
+      "doc": "The growth of a set family is the maximum number of sets it cuts out from any set of size at\nmost `n`.",
+      "kind": "def",
+      "pretty": "{α : Type u_1} → ℕ → Set (Set α) → ℕ",
+      "role": "definition"
+    },
+    {
+      "author": "Yaël Dillies",
+      "decl_name": "vcGrowth_le_iff",
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} {n : ℕ} {𝒜 : Set (Set α)} {d : ℕ},\n  vcGrowth n 𝒜 ≤ d ↔ ∀ ⦃A : Set α⦄, A.Finite → A.ncard ≤ n → ((fun x => A ∩ x) '' 𝒜).ncard ≤ d",
+      "role": "cited"
+    }
+  ],
   "nodes": [
     {
       "citable": true,
@@ -263,6 +338,16 @@
       "dictionary_leaves": [
         "HasVCDimLE",
         "vcGrowth"
+      ],
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        },
+        {
+          "name": "hdn",
+          "pretty": "d ≤ n"
+        }
       ],
       "is_root": true,
       "kind": "theorem",
@@ -275,6 +360,16 @@
       "decl_name": "sum_choose_le_exp_pow",
       "depth": 1,
       "dictionary_leaves": [],
+      "hypotheses": [
+        {
+          "name": "hd",
+          "pretty": "0 < d"
+        },
+        {
+          "name": "hdm",
+          "pretty": "d ≤ m"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 / ↑d * ↑m) ^ d",
@@ -286,6 +381,17 @@
       "decl_name": "sum_choose_mul_pow_le_add_one_pow",
       "depth": 2,
       "dictionary_leaves": [],
+      "doc": "Truncating a binomial expansion at degree `d` can only decrease it, for `t ≥ 0`.",
+      "hypotheses": [
+        {
+          "name": "ht",
+          "pretty": "0 ≤ t"
+        },
+        {
+          "name": "hdm",
+          "pretty": "d ≤ m"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {m d : ℕ} {t : ℝ}, 0 ≤ t → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * t ^ i ≤ (1 + t) ^ m",
@@ -297,6 +403,21 @@
       "decl_name": "sum_choose_le_mul_sum_choose_mul_pow",
       "depth": 2,
       "dictionary_leaves": [],
+      "doc": "Undoing the weighting `t ^ i` costs a single factor `(m / d) ^ d`, since `t = d / m` and\neach `i` in range is at most `d`.",
+      "hypotheses": [
+        {
+          "name": "hd",
+          "pretty": "0 < ↑d"
+        },
+        {
+          "name": "hm",
+          "pretty": "0 < ↑m"
+        },
+        {
+          "name": "hdm",
+          "pretty": "↑d ≤ ↑m"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {m d : ℕ},\n  0 < ↑d →\n    0 < ↑m →\n      ↑d ≤ ↑m →\n        ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤\n          (↑m / ↑d) ^ d * ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * (↑d / ↑m) ^ i",
@@ -308,6 +429,13 @@
       "decl_name": "one_add_div_pow_le_exp_pow",
       "depth": 2,
       "dictionary_leaves": [],
+      "doc": "At `t = d / m`, the binomial base is bounded by `exp 1` raised to the degree.",
+      "hypotheses": [
+        {
+          "name": "hm",
+          "pretty": "0 < ↑m"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {m d : ℕ}, 0 < ↑m → (1 + ↑d / ↑m) ^ m ≤ Real.exp 1 ^ d",
@@ -321,6 +449,13 @@
       "dictionary_leaves": [
         "HasVCDimLE",
         "vcGrowth"
+      ],
+      "doc": "**The Sauer-Shelah inequality**, with the sum indexed by `Finset.range (d + 1)`.",
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -337,6 +472,12 @@
         "vcGrowth",
         "vcGrowth_le_iff"
       ],
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → vcGrowth n 𝒜 ≤ ∑ k ∈ Finset.Iic d, n.choose k",
@@ -351,6 +492,21 @@
         "HasVCDimLE",
         "Shatters"
       ],
+      "doc": "**The Sauer-Shelah inequality**: a family of VC dimension at most `d` traces at most\n`∑ k ≤ d, n.choose k` sets on any finite set of size at most `n`. The proof here derives it\nfrom Pajor's inequality.\n\nSimon, *A Guide to NIP Theories*, states the same bound as his Lemma 6.4, for the growth\nfunction of a class of VC dimension at most `k`, and records in the notes to that chapter\nthat the lemma is implicit in Vapnik and Chervonenkis (1971) and was rediscovered\nindependently by Shelah (1972) and by Sauer (1972). Dvir, Filmus and Moran state it in the\nintroduction to *A Sauer-Shelah-Perles Lemma for Lattices* and cite the same three sources.\nPerles is carried in the name they give the lemma; a publication of his is cited by neither\nsource.",
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        },
+        {
+          "name": "hA",
+          "pretty": "A.Finite"
+        },
+        {
+          "name": "hAn",
+          "pretty": "A.ncard ≤ n"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)} {A : Set α},\n  HasVCDimLE d 𝒜 → A.Finite → A.ncard ≤ n → ((fun x => A ∩ x) '' 𝒜).ncard ≤ ∑ k ∈ Finset.Iic d, n.choose k",
@@ -362,6 +518,12 @@
       "decl_name": "ncard_setOf_ncard_le",
       "depth": 4,
       "dictionary_leaves": [],
+      "hypotheses": [
+        {
+          "name": "hA",
+          "pretty": "A.Finite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {A : Set α},\n  A.Finite → ∀ (d : ℕ), {B | B ⊆ A ∧ B.ncard ≤ d}.ncard = ∑ k ∈ Finset.Iic d, A.ncard.choose k",
@@ -373,6 +535,12 @@
       "decl_name": "setOf_subset_and_ncard_le_zero",
       "depth": 5,
       "dictionary_leaves": [],
+      "hypotheses": [
+        {
+          "name": "hA",
+          "pretty": "A.Finite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {A : Set α}, A.Finite → {B | B ⊆ A ∧ B.ncard ≤ 0} = {∅}",
@@ -384,6 +552,7 @@
       "decl_name": "setOf_subset_and_ncard_le_succ",
       "depth": 5,
       "dictionary_leaves": [],
+      "doc": "The subsets of `A` of size at most `d + 1` split into those of size at most `d` and those of\nsize exactly `d + 1`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} (d : ℕ) (A : Set α),\n  {B | B ⊆ A ∧ B.ncard ≤ d + 1} = {B | B ⊆ A ∧ B.ncard ≤ d} ∪ {B | B ⊆ A ∧ B.ncard = d + 1}",
@@ -408,6 +577,13 @@
       "dictionary_leaves": [
         "Shatters"
       ],
+      "doc": "The `ncard` transfer of `encard_image_inter_le_encard_shatters`, for `A` finite. Internal:\nthe general statement is the `encard` one, which needs no hypothesis.",
+      "hypotheses": [
+        {
+          "name": "hA",
+          "pretty": "A.Finite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  A.Finite → ((fun x => A ∩ x) '' 𝒜).ncard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.ncard",
@@ -421,6 +597,7 @@
       "dictionary_leaves": [
         "Shatters"
       ],
+      "doc": "**Pajor's inequality**, with no finiteness assumptions: the traces of `𝒜` on `A` are at most\nas many as the subsets of `A` shattered by `𝒜`. For a finite trace family this is a descent on\nthe number of traces that never consumes the ground set; an infinite trace family forces\ninfinitely many shattered singletons, and both sides are `⊤`.\n\nDvir, Filmus and Moran, *A Sauer-Shelah-Perles Lemma for Lattices*, credit the Boolean\nlattice case to Pajor (*Sous-espaces `ℓ₁ⁿ` des espaces de Banach*, Travaux en Cours 16,\nHermann, Paris, 1985) and to Aharoni and Holzman, unpublished. Their Theorem 1.2 is the\nlattice form, for finite lattices with nonvanishing Möbius function: a family shatters at\nleast as many elements as it has members. Reading that for a family of traces on a ground\nset is the standard translation into the language of set families, and the statement here\ncarries no finiteness hypothesis, which theirs does.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard",
@@ -435,6 +612,16 @@
         "Shatters",
         "Shatters.mono",
         "shatters_bot"
+      ],
+      "hypotheses": [
+        {
+          "name": "a",
+          "pretty": "((fun x => A ∩ x) '' 𝒜).Finite"
+        },
+        {
+          "name": "a",
+          "pretty": "((fun x => A ∩ x) '' 𝒜).ncard ≤ N"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -458,6 +645,12 @@
       "decl_name": "trace_sep_disjoint",
       "depth": 7,
       "dictionary_leaves": [],
+      "hypotheses": [
+        {
+          "name": "hxA",
+          "pretty": "x ∈ A"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α} {x : α},\n  x ∈ A → Disjoint ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∉ C}) ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∈ C})",
@@ -472,6 +665,12 @@
         "Shatters",
         "Shatters.preimage_compl"
       ],
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B → x ∉ B",
@@ -484,6 +683,12 @@
       "depth": 7,
       "dictionary_leaves": [
         "Shatters"
+      ],
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -499,6 +704,17 @@
         "Shatters",
         "Shatters.exists_ge"
       ],
+      "doc": "A family whose members all avoid `x` shatters only sets avoiding `x`.",
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "∀ C ∈ 𝒜, x ∉ C"
+        },
+        {
+          "name": "hB",
+          "pretty": "Shatters 𝒜 B"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, (∀ C ∈ 𝒜, x ∉ C) → Shatters 𝒜 B → x ∉ B",
@@ -510,6 +726,7 @@
       "decl_name": "insert_injOn_notMem",
       "depth": 7,
       "dictionary_leaves": [],
+      "doc": "Inserting a fixed element is injective on the sets avoiding it: the element can be removed\nagain, recovering the argument.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} (x : α), Set.InjOn (insert x) {B | x ∉ B}",
@@ -521,6 +738,12 @@
       "decl_name": "exists_splitter",
       "depth": 7,
       "dictionary_leaves": [],
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "((fun x => A ∩ x) '' 𝒜).Nontrivial"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  ((fun x => A ∩ x) '' 𝒜).Nontrivial → ∃ x ∈ A, (∃ C ∈ 𝒜, x ∈ C) ∧ ∃ C ∈ 𝒜, x ∉ C",
@@ -532,6 +755,21 @@
       "decl_name": "exists_splitter_of_not_subset",
       "depth": 8,
       "dictionary_leaves": [],
+      "doc": "A point of `A` witnessing that one trace fails to contain another is a point at which `𝒜`\nsplits.",
+      "hypotheses": [
+        {
+          "name": "hC",
+          "pretty": "C ∈ 𝒜"
+        },
+        {
+          "name": "hC'",
+          "pretty": "C' ∈ 𝒜"
+        },
+        {
+          "name": "h",
+          "pretty": "¬A ∩ C ⊆ A ∩ C'"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A C C' : Set α},\n  C ∈ 𝒜 → C' ∈ 𝒜 → ¬A ∩ C ⊆ A ∩ C' → ∃ x ∈ A, (∃ D ∈ 𝒜, x ∈ D) ∧ ∃ D ∈ 𝒜, x ∉ D",
@@ -543,6 +781,13 @@
       "decl_name": "disjoint_image_insert",
       "depth": 7,
       "dictionary_leaves": [],
+      "doc": "A family whose members all avoid `x` is disjoint from any family of sets containing `x`.",
+      "hypotheses": [
+        {
+          "name": "h𝒮",
+          "pretty": "∀ B ∈ 𝒮, x ∉ B"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {x : α} {𝒮 𝒯 : Set (Set α)}, (∀ B ∈ 𝒮, x ∉ B) → Disjoint 𝒮 (insert x '' 𝒯)",
@@ -555,6 +800,17 @@
       "depth": 7,
       "dictionary_leaves": [
         "Shatters"
+      ],
+      "doc": "If `B` is shattered both by the members of `𝒜` avoiding `x` and by the members of `𝒜`\ncontaining `x`, then `𝒜` shatters `insert x B`. This is the exchange step in the proof of\nPajor's inequality.",
+      "hypotheses": [
+        {
+          "name": "h₀",
+          "pretty": "Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B"
+        },
+        {
+          "name": "h₁",
+          "pretty": "Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -570,6 +826,12 @@
         "Shatters",
         "splitPoints"
       ],
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "((fun x => A ∩ x) '' 𝒜).Infinite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).Infinite → {B | B ⊆ A ∧ Shatters 𝒜 B}.Infinite",
@@ -584,6 +846,7 @@
         "Shatters",
         "splitPoints"
       ],
+      "doc": "The singleton of a point at which `𝒜` splits is shattered by `𝒜`.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (fun x => {x}) '' splitPoints✝ 𝒜 A ⊆ {B | B ⊆ A ∧ Shatters 𝒜 B}",
@@ -610,6 +873,13 @@
       "dictionary_leaves": [
         "Shatters"
       ],
+      "doc": "`Shatters` read at `Set α`, as an introduction rule; the `∩`-shaped companion of\n`Shatters.of_forall_le`.",
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "∀ ⦃B : Set α⦄, B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (∀ ⦃B : Set α⦄, B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B) → Shatters 𝒜 A",
@@ -622,6 +892,17 @@
       "depth": 9,
       "dictionary_leaves": [
         "Shatters"
+      ],
+      "doc": "`Shatters` read at `Set α`, where `⊓` is `∩` and `≤` is `⊆`: every subset of `A` is the\nintersection of `A` with a member of `𝒜`. Definitionally the same statement, stated in the\nshape every use site wants, so that consumers obtain an `∩`-typed equation directly.",
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "Shatters 𝒜 A"
+        },
+        {
+          "name": "hB",
+          "pretty": "B ⊆ A"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -636,6 +917,13 @@
       "dictionary_leaves": [
         "splitPoints"
       ],
+      "doc": "A family splitting `A` at finitely many elements has finitely many traces on `A`.",
+      "hypotheses": [
+        {
+          "name": "h",
+          "pretty": "(splitPoints✝ 𝒜 A).Finite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (splitPoints✝ 𝒜 A).Finite → ((fun x => A ∩ x) '' 𝒜).Finite",
@@ -649,6 +937,7 @@
       "dictionary_leaves": [
         "splitPoints"
       ],
+      "doc": "A trace of `𝒜` on `A` is determined by its restriction to the elements at which `𝒜`\nsplits: elsewhere, membership in the trace is decided by `A` alone.",
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, Set.InjOn (fun x => x ∩ splitPoints✝ 𝒜 A) ((fun x => A ∩ x) '' 𝒜)",
@@ -660,6 +949,13 @@
       "decl_name": "finite_setOf_subset_and",
       "depth": 5,
       "dictionary_leaves": [],
+      "doc": "Any collection of subsets of a finite set is finite.",
+      "hypotheses": [
+        {
+          "name": "hA",
+          "pretty": "A.Finite"
+        }
+      ],
       "is_root": false,
       "kind": "theorem",
       "pretty": "∀ {α : Type u_1} {A : Set α}, A.Finite → ∀ (p : Set α → Prop), {B | B ⊆ A ∧ p B}.Finite",
@@ -673,6 +969,17 @@
       "dictionary_leaves": [
         "HasVCDimLE",
         "Shatters"
+      ],
+      "doc": "A family of VC dimension at most `d` shatters only sets of size at most `d`.",
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        },
+        {
+          "name": "hB",
+          "pretty": "Shatters 𝒜 B"
+        }
       ],
       "is_root": false,
       "kind": "theorem",
@@ -688,6 +995,17 @@
         "HasVCDimLE",
         "Shatters",
         "Shatters.subset"
+      ],
+      "doc": "A family of VC dimension at most `d` shatters only finite sets.",
+      "hypotheses": [
+        {
+          "name": "h𝒜",
+          "pretty": "HasVCDimLE d 𝒜"
+        },
+        {
+          "name": "hB",
+          "pretty": "Shatters 𝒜 B"
+        }
       ],
       "is_root": false,
       "kind": "theorem",

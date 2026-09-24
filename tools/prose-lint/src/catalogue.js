@@ -8,8 +8,10 @@ import { scanBanned, scanFirewall } from "./scan.js";
 /** The vocabulary rule, applied to catalogue entries and to value text. */
 export const PROSE_WORDS = /\b(this|here|we|our|you|your|welcome|platform|page|shows|allows|lets|helps)\b/i;
 
-/** The declared shapes. `lean-statement` and `citation` are the two exempt from
- * the four-word and vocabulary rules; every other shape stays constrained. */
+/** The declared shapes. `lean-statement`, `lean-term`, `docstring` and
+ * `citation` are exempt from the four-word and vocabulary rules — Lean, an
+ * author's own attributed words, and a citation are not the platform's prose;
+ * every other shape stays constrained. */
 export const SHAPES = new Set([
   "accession",
   "decl",
@@ -22,10 +24,12 @@ export const SHAPES = new Set([
   "enum",
   "em-dash",
   "lean-statement",
+  "lean-term",
+  "docstring",
   "citation",
 ]);
 
-export const EXEMPT_SHAPES = new Set(["lean-statement", "citation"]);
+export const EXEMPT_SHAPES = new Set(["lean-statement", "lean-term", "docstring", "citation"]);
 
 export function loadCatalogue(path) {
   const raw = readFileSync(path, "utf8");

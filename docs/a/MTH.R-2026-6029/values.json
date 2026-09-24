@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6029"
   },
   {
+    "field": "claim.doc",
+    "value": "Advice elimination (Ben-David & Dichterman 1998): If C is PAC-learnable with concept-dependent advice from a FINITE set A (with measurability regularity), then C is PAC-learnable without advice.Proof strategy: run the advice-augmented learner with each a ∈ A on a training portion of the sample, producing |A| candidate hypotheses. Use a validation portion to select the candidate with lowest empirical error. Union bound over |A| advice values + Hoeffding on validation controls total failure probability. Sample complexity: O(m_orig(ε/2, δ/(2|A|)) + log(|A|/δ)/ε²).The [Fintype A] constraint is essential: for infinite A, the theorem is false (no finite union bound). [Nonempty A] ensures the advice space is inhabited."
+  },
+  {
     "field": "claim.decl_name",
     "value": "advice_elimination"
   },
@@ -50,6 +54,14 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_hypothesis.label",
+    "value": "PACLearnableWithAdviceReg…"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "a"
   },
   {
     "field": "argument_node.decl_name",
@@ -138,6 +150,142 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AdviceEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "learn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "learnWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnableWithAdviceReg…"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bestAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitUsedEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "usedPrefix"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
   },
   {
     "field": "argument_node.decl_name",
@@ -260,6 +408,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Split D^{m₁+m₂} into D^{m₁} × D^{m₂} via splitUsedEquiv."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (m₁ m₂ : ℕ) (Success : Set ((Fin m₁ → X) × (Fin m₂ → X))),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (⇑(splitUsedEquiv✝ m₁ m₂) ⁻¹' Success) =\n      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) Success"
   },
@@ -316,6 +468,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "For a probability measure, μ(S) ≥ 1 - μ(Sᶜ), and hence μ(S) ≥ 1 - δ if μ(Sᶜ) ≤ δ."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ]\n  (S : Set Ω) (δ : ENNReal), μ Sᶜ ≤ δ → μ S ≥ 1 - δ"
   },
@@ -330,6 +486,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Sampling Nat.pair m₁ m₂ coordinates and taking the first m₁+m₂ gives the same measure as sampling m₁+m₂ coordinates directly. The extra junk coordinates integrate out via pi_cylinder_set_eq."
   },
   {
     "field": "argument_node.pretty",
@@ -354,6 +514,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Cylinder set measure on product: if an event depends only on the first coordinates (those satisfying predicate p), then its measure under D^ι equals D^{p}(event). Uses piEquivPiSubtypeProd: D^ι ≃ D^{p} × D^{¬p}, and (D^{p} × D^{¬p})(A × univ) = D^{p}(A) · D^{¬p}(univ) = D^{p}(A)."
   },
   {
     "field": "argument_node.pretty",
@@ -440,6 +604,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Upper-tail Hoeffding: for iid Bernoulli(p) draws, the empirical average overshoots the mean by ≥ t with probability ≤ exp(-2mt²).This is the mirror of hoeffding_one_sided (which bounds the lower tail). The proof uses the same sub-Gaussian machinery with Z_i = indicator(x_i) - p (instead of p - indicator(x_i))."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
   },
@@ -470,6 +638,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "One-sided Hoeffding: for iid Bernoulli(p) draws, the empirical average undershoots the mean by ≥ t with probability ≤ exp(-2mt²).Proof strategy (3 steps):1. MGF bound (Hoeffding's lemma): For X ∈ [0,1] with E[X] = p, E[exp(s(X-p))] ≤ exp(s²/8).Adapt from cosh_le_exp_sq_half infrastructure in Rademacher.lean.Key: convexity of exp on [0,1] gives E[exp(sX)] ≤ p·exp(s) + (1-p)·exp(0), then the s²/8 bound follows from ln(1 + x) ≤ x and Taylor expansion.  have mgf_bound : ∀ (s : ℝ), ∫ x, Real.exp (s * (indicator x - p)) ∂D ≤ Real.exp (s^2 / 8) := by ... 2. Product independence: E[exp(s·∑(X_i-p))] = ∏ E[exp(s(X_i-p))] ≤ exp(ms²/8).Uses MeasureTheory.Measure.pi independence structure.Needs: Measure.pi integral factorization for product of functions.MEASURABILITY: fun xs => Real.exp (s * ∑ i, f (xs i)) is measurable (composition of measurable functions).  have product_bound : ∀ (s : ℝ), ∫ xs, Real.exp (s * ∑ i, (indicator (xs i) - p)) ∂Measure.pi (fun _ => D) ≤ Real.exp (m * s^2 / 8) := by ... 3. Exponential Markov + optimize: P[∑(X_i-p) ≤ -mt] = P[exp(-s·∑(X_i-p)) ≥ exp(smt)] ≤ exp(-smt + ms²/8). Optimize over s: set s = 4t to get ≤ exp(-2mt²).Uses Markov's inequality in ENNReal form.CAST ISSUE: Markov gives ENNReal bound, need to convert exp(-2mt²) between ENNReal.ofReal and the measure value.  have markov_step : ∀ (s : ℝ) (hs : 0 < s), Measure.pi (fun _ => D) {xs | ∑ i, (indicator (xs i) - p) ≤ -(m : ℝ) * t} ≤ ENNReal.ofReal (Real.exp (-(s * m * t) + m * s^2 / 8)) := by ... have optimize : Real.exp (-(4*t * m * t) + m * (4*t)^2 / 8) = Real.exp (-2 * m * t^2) := by ring_nf CAST ISSUES to watch:m : ℕ needs cast to ℝ in the exponent: (m : ℝ)EmpiricalError returns ℝ, TrueErrorReal returns ℝ, good — no ENNReal gapThe measure value is ENNReal, the bound exp(-2mt²) is ℝ≥0∞ via ENNReal.ofRealReferences: SSBD Lemma B.3, Hoeffding (1963)"
   },
   {
     "field": "argument_node.pretty",
@@ -546,6 +718,286 @@
   {
     "field": "argument_node.decl_name",
     "value": "advice_elimination"
+  },
+  {
+    "field": "argument_hypothesis.name",
+    "value": "a"
+  },
+  {
+    "field": "argument_hypothesis.pretty",
+    "value": "PACLearnableWithAdviceRegular X C A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AdviceEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Joint measurability of a sample-dependent advice learner's evaluation map."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [MeasurableSpace X] → {A : Type u_1} → LearnerWithAdvice X Bool A → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A batch learner (PAC paradigm): takes a finite sample, returns a hypothesis."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The learning algorithm: given a sample, produce a hypothesis"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → BatchLearner X Y → {m : ℕ} → (Fin m → X × Y) → Concept X Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept class is a set of concepts. Used by every paradigm, complexity measure, and criterion.Primary definition: Set of functions. Used for PAC/agnostic PAC where concept classes are sets over which VC dimension, Rademacher complexity, covering numbers, etc. are measured. Alternative definitions below for contexts requiring decidability, enumerability, or measurability."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max v u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Empirical error: average loss on a finite sample."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → (Y : Type v) → Concept X Y → {m : ℕ} → (Fin m → X × Y) → LossFunction Y → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept is a function from domain to label. This is the atomic unit that concept classes collect and learners try to approximate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A learner augmented with advice."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type u_1 → Type (max (max u u_1) v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice.learnWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Advice-augmented learning: advice → sample → hypothesis"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → {A : Type u_1} → LearnerWithAdvice X Y A → A → {m : ℕ} → (Fin m → X × Y) → Concept X Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Every concept in C is a measurable function. Krapp-Wirth precondition: Γ(h) ∈ Σ_Z for all h ∈ H."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "PAC (Probably Approximately Correct) learning. The central definition of computational learning theory.Sample space: Fin m → X with i.i.d. product measure D^m. Labels: derived deterministically from target concept c (realizable case). Error: D-probability of disagreement between learner output and c."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnableWithAdviceRegular"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "PAC learnability with finite advice, plus measurability for holdout validation."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [MeasurableSpace X] → ConceptClass X Bool → (A : Type u_1) → [Fintype A] → [Nonempty A] → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "True error (0-1 loss, realizable case): D-probability of disagreement. This is what PACLearnable's success event measures."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [inst : MeasurableSpace X] → Concept X Bool → Concept X Bool → MeasureTheory.Measure X → ENNReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "True error in ℝ: for use in bounds involving subtraction/absolute value. COUNTER-1 of TrueError. The toReal bridge loses information when the measure is ⊤."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → [inst : MeasurableSpace X] → Concept X Bool → Concept X Bool → MeasureTheory.Measure X → ℝ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bestAdvice"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Choose the advice value with minimum validation empirical error."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} →\n  [MeasurableSpace X] →\n    {A : Type u_1} → [Fintype A] → [Nonempty A] → (A → Concept X Bool) → {m : ℕ} → (Fin m → X × Bool) → A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitUsedEquiv"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Split Fin (m₁ + m₂) → X into (Fin m₁ → X) × (Fin m₂ → X) measurably."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [inst : MeasurableSpace X] → (m₁ m₂ : ℕ) → (Fin (m₁ + m₂) → X) ≃ᵐ (Fin m₁ → X) × (Fin m₂ → X)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "usedPrefix"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Extract the first m₁ + m₂ coordinates from a sample of size Nat.pair m₁ m₂."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → [MeasurableSpace X] → (m₁ m₂ : ℕ) → (Fin (Nat.pair m₁ m₂) → X) → Fin (m₁ + m₂) → X"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The 0-1 loss for classification."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(Y : Type v) → [DecidableEq Y] → LossFunction Y"
   },
   {
     "field": "argument.accession",

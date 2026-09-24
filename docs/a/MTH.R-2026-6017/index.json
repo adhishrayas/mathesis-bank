@@ -61,6 +61,7 @@
           "AuditCP.AuditSealed",
           "AuditCP.equalPriorBayesError"
         ],
+        "doc": "F3 — `AuditSealed K ↔ ∀ s a a', equalPriorBayesError (K (s, a)) (K (s, a')) = 1/2`.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2",
@@ -75,6 +76,7 @@
           "AuditCP.equalPriorBayesError",
           "AuditCP.finiteTotalVariation"
         ],
+        "doc": "F3b — `equalPriorBayesError p q = 1/2 ↔ p = q`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y), AuditCP.equalPriorBayesError p q = 1 / 2 ↔ p = q",
@@ -89,6 +91,7 @@
           "AuditCP.finiteTotalVariation",
           "AuditCP.pmfMass"
         ],
+        "doc": "`finiteTotalVariation p q = 0 ↔ p = q`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y), AuditCP.finiteTotalVariation p q = 0 ↔ p = q",
@@ -104,6 +107,7 @@
           "AuditCP.finiteTotalVariation",
           "AuditCP.pmfMass"
         ],
+        "doc": "F3a — `equalPriorBayesError p q = (1 - finiteTotalVariation p q) / 2`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y),\n  AuditCP.equalPriorBayesError p q = (1 - AuditCP.finiteTotalVariation p q) / 2",
@@ -117,6 +121,7 @@
         "dictionary_leaves": [
           "AuditCP.pmfMass"
         ],
+        "doc": "On a finite type, the real point masses of `p` sum to `1`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ {Y : Type uY} [inst : Fintype Y] (p : PMF Y), ∑ y, AuditCP.pmfMass p y = 1",
@@ -128,6 +133,7 @@
         "decl_name": "AuditCP.min_eq_add_sub_abs_div_two",
         "depth": 3,
         "dictionary_leaves": [],
+        "doc": "`min x y = (x + y - |x - y|) / 2`.",
         "is_root": false,
         "kind": "theorem",
         "pretty": "∀ (x y : ℝ), min x y = (x + y - |x - y|) / 2",

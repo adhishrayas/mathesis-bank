@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Littlestone characterization: C is online-learnable iff LittlestoneDim(C) < ∞."
+  },
+  {
     "field": "claim.decl_name",
     "value": "littlestone_characterization"
   },

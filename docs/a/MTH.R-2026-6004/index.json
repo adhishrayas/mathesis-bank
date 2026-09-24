@@ -47,6 +47,7 @@
           "Shatters",
           "cut"
         ],
+        "doc": "The full trace family cannot replace the determined traces in\n`mk_determined_le_mk_shatters`: the half-line cuts over `ℚ` trace continuum-many sets while\nshattering only countably many.",
         "is_root": true,
         "kind": "theorem",
         "pretty": "¬Cardinal.mk ↑((fun x => Set.univ ∩ x) '' Set.range fun r => {q | ↑q < r}) ≤\n    Cardinal.mk ↑{B | B ⊆ Set.univ ∧ Shatters (Set.range fun r => {q | ↑q < r}) B}",
@@ -87,6 +88,12 @@
         "dictionary_leaves": [
           "Shatters",
           "cut"
+        ],
+        "hypotheses": [
+          {
+            "name": "hB",
+            "pretty": "Shatters (Set.range cut✝) B"
+          }
         ],
         "is_root": false,
         "kind": "theorem",

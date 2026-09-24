@@ -63,6 +63,9 @@ pub struct Claim {
     pub citation_name: String,
     pub login: String,
     pub arguments_count: i32,
+    /// The author's docstring on the claimed declaration, verbatim Markdown.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub doc: Option<String>,
 }
 
 /// An argument has no statement of its own: `root_*` is the DAG's single root.
@@ -110,6 +113,35 @@ pub struct NodeRow {
     pub depth: i32,
     pub topo: i32,
     pub dictionary_leaves: Vec<String>,
+    /// The author's docstring, verbatim Markdown, when the source has one.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub doc: Option<String>,
+    /// The Prop-typed binders of the statement, in order.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub hypotheses: Vec<Hypothesis>,
+}
+
+/// One hypothesis of a statement: the binder's name and its pretty-printed type.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Hypothesis {
+    pub name: String,
+    pub pretty: String,
+}
+
+/// A declaration the argument rests on without proving it: a definition, or a
+/// result by another author (`cited`). The argument's nodes name it among their
+/// `dictionary_leaves`.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LeafRow {
+    pub decl_name: String,
+    pub kind: String,
+    /// `definition` or `cited`.
+    pub role: String,
+    pub pretty: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub doc: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub author: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

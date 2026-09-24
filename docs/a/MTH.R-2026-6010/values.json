@@ -32,6 +32,10 @@
     "value": "MTH.R-2026-6010"
   },
   {
+    "field": "claim.doc",
+    "value": "Littlestone characterization: C is online-learnable iff LittlestoneDim(C) < ∞."
+  },
+  {
     "field": "claim.decl_name",
     "value": "littlestone_characterization"
   },
@@ -196,6 +200,150 @@
     "value": "theorem"
   },
   {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "inductive"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "isShattered"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "State"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "init"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mistakes"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "go"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "predict"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "update"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
     "field": "argument_node.decl_name",
     "value": "littlestone_characterization"
   },
@@ -234,6 +382,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Forward direction: OnlineLearnable → LittlestoneDim < ⊤"
   },
   {
     "field": "argument_node.pretty",
@@ -308,6 +460,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Core adversary lemma."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} (L : OnlineLearner X Bool) (s : L.State) {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n),\n  LTree.isShattered C T → Set.Nonempty C → ∃ seq, ∃ c ∈ C, L.mistakesFrom s c seq = n"
   },
@@ -358,6 +514,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Backward direction: LittlestoneDim < ⊤ → OnlineLearnable."
   },
   {
     "field": "argument_node.pretty",
@@ -436,6 +596,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "SOA mistakes from a given state are bounded by the Ldim of the version space. This is the core M-Potential argument."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {C : ConceptClass X Bool},\n  ∀ c ∈ C,\n    ∀ (history : List (X × Bool)),\n      (∀ p ∈ history, c p.1 = p.2) →\n        ∀ (d : ℕ),\n          LittlestoneDim X (versionSpace C history) ≤ ↑↑d →\n            LittlestoneDim X (versionSpace C history) < ⊤ → ∀ (seq : List X), (SOA X C).mistakesFrom history c seq ≤ d"
   },
@@ -512,6 +676,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Extending history restricts the version space."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {C : ConceptClass X Bool} {history : List (X × Bool)} {x : X} {y : Bool},\n  versionSpace C (history ++ [(x, y)]) ⊆ versionSpace C history"
   },
@@ -540,6 +708,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Target stays in version space."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {C : ConceptClass X Bool} {c : X → Bool},\n  c ∈ C → ∀ {history : List (X × Bool)}, (∀ p ∈ history, c p.1 = p.2) → c ∈ versionSpace C history"
   },
@@ -566,6 +738,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "On an SOA mistake, the Ldim of the version space strictly decreases."
   },
   {
     "field": "argument_node.pretty",
@@ -640,6 +816,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "SOA predicts the label whose side has higher Ldim."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} (C : ConceptClass X Bool) (history : List (X × Bool)) (x : X),\n  have V := versionSpace C history;\n  have b := (SOA X C).predict history x;\n  LittlestoneDim X {c | c ∈ V ∧ c x = b} ≥ LittlestoneDim X {c | c ∈ V ∧ c x = !b}"
   },
@@ -680,6 +860,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "When Ldim(V) = 0 (↑↑0), all concepts in V agree on every point. Key lemma for M-VersionSpaceCollapse."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {V : ConceptClass X Bool},\n  LittlestoneDim X V = ↑0 → Set.Nonempty V → ∀ (x : X) (c₁ c₂ : X → Bool), c₁ ∈ V → c₂ ∈ V → c₁ x = c₂ x"
   },
@@ -716,6 +900,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "Build a tree of depth k+1 from shattered subtrees on both sides. Parametrized over b : Bool so we don't need to case-split in the caller."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {V : ConceptClass X Bool} {x : X} {k : ℕ} {b : Bool},\n  (∃ Tb, LTree.isShattered {c | c ∈ V ∧ c x = b} Tb) →\n    (∃ Tnb, LTree.isShattered {c | c ∈ V ∧ c x = !b} Tnb) →\n      (∃ c ∈ V, c x = b) → (∃ c ∈ V, c x = !b) → LittlestoneDim X V ≥ ↑↑(k + 1)"
   },
@@ -750,6 +938,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "From Ldim ≥ d, extract a shattered tree of depth exactly d."
   },
   {
     "field": "argument_node.pretty",
@@ -800,6 +992,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "A truncated tree is shattered if the original is."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {X : Type} {C : ConceptClass X Bool} {m : ℕ} (T : LTree X m),\n  LTree.isShattered C T → ∀ {n : ℕ} (h : n ≤ m), LTree.isShattered C (LTree.truncate h T)"
   },
@@ -838,6 +1034,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Helper: shattering implies the concept class is nonempty."
   },
   {
     "field": "argument_node.pretty",
@@ -884,6 +1084,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "In WithBot (WithTop ℕ), a < ↑↑(n+1) → a ≤ ↑↑n. Reusable lattice fact."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ {a : WithBot (WithTop ℕ)} {n : ℕ}, a < ↑↑(n + 1) → a ≤ ↑↑n"
   },
@@ -898,6 +1102,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "SOA mistakesFrom cons: unfold one step using the interface."
   },
   {
     "field": "argument_node.pretty",
@@ -930,6 +1138,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Shattering is upward-monotone in the concept class."
   },
   {
     "field": "argument_node.pretty",
@@ -966,6 +1178,10 @@
   {
     "field": "argument_node.kind",
     "value": "theorem"
+  },
+  {
+    "field": "argument_node.doc",
+    "value": "Relate mistakesFrom to the original mistakes function."
   },
   {
     "field": "argument_node.pretty",
@@ -1020,6 +1236,10 @@
     "value": "theorem"
   },
   {
+    "field": "argument_node.doc",
+    "value": "SOA init state is empty history."
+  },
+  {
     "field": "argument_node.pretty",
     "value": "∀ (X : Type) (C : ConceptClass X Bool), (SOA X C).init = []"
   },
@@ -1042,6 +1262,290 @@
   {
     "field": "argument_node.decl_name",
     "value": "backward_direction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept class is a set of concepts. Used by every paradigm, complexity measure, and criterion.Primary definition: Set of functions. Used for PAC/agnostic PAC where concept classes are sets over which VC dimension, Rademacher complexity, covering numbers, etc. are measured. Alternative definitions below for contexts requiring decidability, enumerability, or measurability."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max v u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A concept is a function from domain to label. This is the atomic unit that concept classes collect and learners try to approximate."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max u v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "inductive"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "A complete binary Littlestone tree of depth n."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type → ℕ → Type"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Path-wise shattering for complete trees. Path B: leaf case requires C.Nonempty (NA₁₀)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type} → {n : ℕ} → ConceptClass X Bool → LTree X n → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.truncate"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Truncate a complete tree to a smaller depth."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type} → {n m : ℕ} → n ≤ m → LTree X m → LTree X n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Littlestone dimension: the maximum depth of a complete shattered tree. Path B: returns WithBot (WithTop ℕ) so Ldim(∅) = ⊥ (NA₁₀)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type) → ConceptClass X Bool → WithBot (WithTop ℕ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Mistake-bounded learning: the learner makes at most M mistakes on ANY sequence. No distribution assumption. Characterized by Littlestone dimension."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → (Y : Type v) → [DecidableEq Y] → ConceptClass X Y → ℕ → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Online learnable: there exists a finite mistake bound."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type u) → (Y : Type v) → [DecidableEq Y] → ConceptClass X Y → Prop"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "structure"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "An online learner: receives instances one at a time, makes predictions sequentially."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "Type u → Type v → Type (max (max 1 u) v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Internal state type"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → OnlineLearner X Y → Type"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Initial state"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → (self : OnlineLearner X Y) → self.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Helper: run an online learner on a sequence, counting mistakes."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → [DecidableEq Y] → OnlineLearner X Y → Concept X Y → List X → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes.go"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → [DecidableEq Y] → (L : OnlineLearner X Y) → Concept X Y → L.State → List X → ℕ → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Count mistakes starting from state s."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type} → (L : OnlineLearner X Bool) → L.State → (X → Bool) → List X → ℕ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Predict: given current state and new instance, output a prediction"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → (self : OnlineLearner X Y) → self.State → X → Y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Update: given current state, instance, and revealed true label, update state"
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type u} → {Y : Type v} → (self : OnlineLearner X Y) → self.State → X → Y → self.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "The Standard Optimal Algorithm (SOA)."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "(X : Type) → ConceptClass X Bool → OnlineLearner X Bool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "dictionary_constant.kind",
+    "value": "def"
+  },
+  {
+    "field": "dictionary_constant.doc",
+    "value": "Version space after observing a history."
+  },
+  {
+    "field": "dictionary_constant.pretty",
+    "value": "{X : Type} → ConceptClass X Bool → List (X × Bool) → ConceptClass X Bool"
   },
   {
     "field": "argument.accession",

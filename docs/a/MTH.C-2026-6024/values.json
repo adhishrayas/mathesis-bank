@@ -16,6 +16,10 @@
     "value": "2026-09-24T00:00:00Z"
   },
   {
+    "field": "claim.doc",
+    "value": "Pinsker's inequality with the sharp constant. tvDistReal P Q ≤ sqrt(klDivReal P Q / 2) for probability measures P ≪ Q with finite KL divergence."
+  },
+  {
     "field": "claim.decl_name",
     "value": "InformationTheory.pinsker_proof"
   },
