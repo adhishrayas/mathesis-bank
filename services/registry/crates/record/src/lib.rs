@@ -20,7 +20,7 @@ pub mod release;
 pub mod search;
 pub mod snapshot;
 
-use accession::{citation, Accession, Kind};
+use accession::{Accession, Kind, citation};
 use html::B;
 use jsonc::{canonical, canonical_line, ts};
 use search::BankRow;
@@ -54,7 +54,11 @@ pub enum GenError {
     #[error("registry: {file}{pointer} is not a record this tree can render")]
     RegistryInvalid { file: String, pointer: String },
     #[error("leak: {file}@{offset} carries `{term}`")]
-    LeakFound { file: String, offset: usize, term: String },
+    LeakFound {
+        file: String,
+        offset: usize,
+        term: String,
+    },
     #[error("about/body.html@{offset}: {reason}")]
     AboutBodyRejected { offset: usize, reason: String },
     #[error("the DOI index is shorter than the generation it would replace")]
@@ -150,7 +154,11 @@ impl Writer {
             let html = rel.ends_with(".html");
             if let Ok(text) = std::str::from_utf8(bytes) {
                 if let Some(h) = leak::scan(text, &self.local_terms, html) {
-                    return Err(GenError::LeakFound { file: rel.to_string(), offset: h.offset, term: h.term });
+                    return Err(GenError::LeakFound {
+                        file: rel.to_string(),
+                        offset: h.offset,
+                        term: h.term,
+                    });
                 }
             }
         }
@@ -163,7 +171,10 @@ impl Writer {
         h.update(bytes);
         self.files.insert(
             rel.to_string(),
-            FileDigest { sha256: format!("{:x}", h.finalize()), bytes: bytes.len() as u64 },
+            FileDigest {
+                sha256: format!("{:x}", h.finalize()),
+                bytes: bytes.len() as u64,
+            },
         );
         if rel.ends_with(".html") {
             self.pages += 1;
@@ -176,23 +187,28 @@ impl Writer {
     fn page(&mut self, rel: &str, page: &str, b: &B) -> Result<(), GenError> {
         let html = pages::with_base(&pages::shell(page, &b.s), &self.base_path);
         self.put(rel, html.as_bytes())?;
-        let values = rel.strip_suffix("index.html").map(|d| format!("{d}values.json")).unwrap_or_else(|| {
-            format!("{}.values.json", rel.trim_end_matches(".html"))
-        });
+        let values = rel
+            .strip_suffix("index.html")
+            .map(|d| format!("{d}values.json"))
+            .unwrap_or_else(|| format!("{}.values.json", rel.trim_end_matches(".html")));
         self.put(&values, b.values_json().as_bytes())
     }
 }
 
 // -------------------------------------------------------------------- the API
 
-
-
-
-
-pub fn generate_snapshot(s: &Snapshot, out: &Path, opts: &GenOpts) -> Result<RecordManifest, GenError> {
+pub fn generate_snapshot(
+    s: &Snapshot,
+    out: &Path,
+    opts: &GenOpts,
+) -> Result<RecordManifest, GenError> {
     guard_marker(out)?;
 
-    let live = if opts.atomic { release::live(out) } else { Some(out.to_path_buf()) };
+    let live = if opts.atomic {
+        release::live(out)
+    } else {
+        Some(out.to_path_buf())
+    };
     // The DOI index the live tree serves, read before anything is written: in
     // the non-atomic form the generation overwrites the tree it is compared
     // against, so the guard cannot read it afterwards.
@@ -226,7 +242,10 @@ pub fn generate_snapshot(s: &Snapshot, out: &Path, opts: &GenOpts) -> Result<Rec
                 if !drift.is_empty() {
                     return Err(GenError::Drift { files: drift });
                 }
-                return Ok(RecordManifest { release: PathBuf::new(), ..manifest });
+                return Ok(RecordManifest {
+                    release: PathBuf::new(),
+                    ..manifest
+                });
             }
             if opts.atomic {
                 release::swap(out, &target)?;
@@ -243,8 +262,6 @@ pub fn generate_snapshot(s: &Snapshot, out: &Path, opts: &GenOpts) -> Result<Rec
         }
     }
 }
-
-
 
 fn guard_marker(out: &Path) -> Result<(), GenError> {
     let mut here = Some(out.to_path_buf());
@@ -263,7 +280,9 @@ fn guard_marker(out: &Path) -> Result<(), GenError> {
 }
 
 fn diff(fresh: &Path, live: Option<&Path>) -> Result<Vec<String>, GenError> {
-    let Some(live) = live else { return Ok(vec!["<no live tree>".into()]) };
+    let Some(live) = live else {
+        return Ok(vec!["<no live tree>".into()]);
+    };
     let mut out = Vec::new();
     let a = walk(fresh)?;
     let b = walk(live)?;
@@ -336,8 +355,16 @@ fn render(
 
     // ---- the four nav pages, the three routes that are not nav items ----
     w.page("index.html", "posts", &pages::posts_page(s))?;
-    w.page("collection/claims/index.html", "collection", &pages::collection_page(s, "claims"))?;
-    w.page("collection/arguments/index.html", "collection", &pages::collection_page(s, "arguments"))?;
+    w.page(
+        "collection/claims/index.html",
+        "collection",
+        &pages::collection_page(s, "claims"),
+    )?;
+    w.page(
+        "collection/arguments/index.html",
+        "collection",
+        &pages::collection_page(s, "arguments"),
+    )?;
     w.page("about/index.html", "about", &pages::about_page(s))?;
 
     let not_found = pages::not_found_page();
@@ -345,7 +372,6 @@ fn render(
     // The same two documents under the directory form `webd` reads today, so
     // the error pages are served from the record rather than from a Go literal.
     w.page("404/index.html", "404", &not_found)?;
-
 
     // ---- one landing page and one manifest per accession ----
     let mut accessions: Vec<Accession> = Vec::new();
@@ -356,10 +382,15 @@ fn render(
         })?);
     }
     for a in &s.arguments {
-        accessions.push(a.argument.accession.parse().map_err(|_| GenError::RegistryInvalid {
-            file: "argument".into(),
-            pointer: format!("/{}/accession", a.argument.accession),
-        })?);
+        accessions.push(
+            a.argument
+                .accession
+                .parse()
+                .map_err(|_| GenError::RegistryInvalid {
+                    file: "argument".into(),
+                    pointer: format!("/{}/accession", a.argument.accession),
+                })?,
+        );
     }
     accessions.sort();
     let mut doi_index = String::new();
@@ -370,7 +401,10 @@ fn render(
             pointer: format!("/{key}"),
         })?;
         w.page(&format!("a/{key}/index.html"), "landing", &page)?;
-        w.put(&format!("a/{key}/index.json"), canonical(&manifest_for(s, acc))?.as_bytes())?;
+        w.put(
+            &format!("a/{key}/index.json"),
+            canonical(&manifest_for(s, acc))?.as_bytes(),
+        )?;
         doi_index.push_str(&canonical_line(&serde_json::json!({
             "doi": key,
             "kind": acc.kind.subject(),
@@ -384,7 +418,9 @@ fn render(
     // ---- the stream, paged, newest first ----
     let mut post_rows: Vec<serde_json::Value> = Vec::new();
     for p in &s.posts {
-        let Some(a) = s.argument(&p.argument_accession) else { continue };
+        let Some(a) = s.argument(&p.argument_accession) else {
+            continue;
+        };
         post_rows.push(serde_json::json!({
             "post_number": p.post_number,
             "claim": p.claim_accession,
@@ -417,15 +453,21 @@ fn render(
     if post_rows.is_empty() {
         w.put(
             "posts-0000.json",
-            canonical(&serde_json::json!({ "page": 0, "rows": [], "next_cursor": null, "total": 0 }))?.as_bytes(),
+            canonical(
+                &serde_json::json!({ "page": 0, "rows": [], "next_cursor": null, "total": 0 }),
+            )?
+            .as_bytes(),
         )?;
     }
     for p in &s.profiles {
-        let rows: Vec<&serde_json::Value> =
-            post_rows.iter().filter(|r| r["author_login"].as_str() == Some(p.login.as_str())).collect();
+        let rows: Vec<&serde_json::Value> = post_rows
+            .iter()
+            .filter(|r| r["author_login"].as_str() == Some(p.login.as_str()))
+            .collect();
         w.put(
             &format!("posts/by-profile/{}.json", p.login),
-            canonical(&serde_json::json!({ "login": p.login, "rows": rows, "total": rows.len() }))?.as_bytes(),
+            canonical(&serde_json::json!({ "login": p.login, "rows": rows, "total": rows.len() }))?
+                .as_bytes(),
         )?;
     }
 
@@ -433,12 +475,18 @@ fn render(
     let claims_rows = bank_rows(s, search::Bank::Claims);
     let arguments_rows = bank_rows(s, search::Bank::Arguments);
     for (bank, rows) in [("claims", &claims_rows), ("arguments", &arguments_rows)] {
-        let pages_of: Vec<&[BankRow]> = if rows.is_empty() { vec![&[]] } else { rows.chunks(20).collect() };
+        let pages_of: Vec<&[BankRow]> = if rows.is_empty() {
+            vec![&[]]
+        } else {
+            rows.chunks(20).collect()
+        };
         for (i, chunk) in pages_of.iter().enumerate() {
             let next = rows.get((i + 1) * 20).map(|_| {
                 let last = &chunk[chunk.len() - 1];
                 search::encode_cursor(
-                    chrono::DateTime::parse_from_rfc3339(&last.created_at).map(|t| t.timestamp()).unwrap_or(0),
+                    chrono::DateTime::parse_from_rfc3339(&last.created_at)
+                        .map(|t| t.timestamp())
+                        .unwrap_or(0),
                     &last.accession,
                 )
             });
@@ -465,7 +513,11 @@ fn render(
         )?);
         combobox.push(serde_json::json!({ "login": p.login, "citation_name": p.citation_name }));
         let claims: Vec<&model::Claim> = s.claims.iter().filter(|c| c.profile_id == p.id).collect();
-        let args: Vec<&ArgumentView> = s.arguments.iter().filter(|a| a.argument.profile_id == p.id).collect();
+        let args: Vec<&ArgumentView> = s
+            .arguments
+            .iter()
+            .filter(|a| a.argument.profile_id == p.id)
+            .collect();
         let mut dois: Vec<serde_json::Value> = Vec::new();
         for c in &claims {
             dois.push(serde_json::json!({
@@ -645,8 +697,11 @@ fn manifest_for(s: &Snapshot, acc: &Accession) -> serde_json::Value {
             let c = s.claim(&key).expect("a validated claim");
             let date = c.created_at.format("%Y-%m-%d").to_string();
             let cite = citation(&c.citation_name, &c.decl_name, acc, &s.site_base, &date);
-            let args: Vec<String> =
-                s.arguments_of(&key).iter().map(|a| a.argument.accession.clone()).collect();
+            let args: Vec<String> = s
+                .arguments_of(&key)
+                .iter()
+                .map(|a| a.argument.accession.clone())
+                .collect();
             serde_json::json!({
                 "schema": "mathesis/public-unit-manifest/v3",
                 "doi": key,
@@ -679,11 +734,24 @@ fn manifest_for(s: &Snapshot, acc: &Accession) -> serde_json::Value {
         }
         Kind::Argument => {
             let a = s.argument(&key).expect("a validated argument");
-            let root = a.nodes.iter().find(|n| n.is_root).expect("a validated root");
+            let root = a
+                .nodes
+                .iter()
+                .find(|n| n.is_root)
+                .expect("a validated root");
             let date = a.argument.created_at.format("%Y-%m-%d").to_string();
-            let cite =
-                citation(&a.argument.citation_name, &a.argument.root_decl_name, acc, &s.site_base, &date);
-            let post = s.posts.iter().find(|p| p.argument_accession == key).map(|p| p.post_number);
+            let cite = citation(
+                &a.argument.citation_name,
+                &a.argument.root_decl_name,
+                acc,
+                &s.site_base,
+                &date,
+            );
+            let post = s
+                .posts
+                .iter()
+                .find(|p| p.argument_accession == key)
+                .map(|p| p.post_number);
             serde_json::json!({
                 "schema": "mathesis/public-unit-manifest/v3",
                 "doi": key,

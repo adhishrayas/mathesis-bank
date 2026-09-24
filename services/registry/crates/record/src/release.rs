@@ -15,10 +15,19 @@ pub const KEEP: usize = 5;
 pub const MIN_AGE: Duration = Duration::from_secs(300);
 
 fn prefix(out: &Path) -> io::Result<(PathBuf, String)> {
-    let parent = out.parent().filter(|p| !p.as_os_str().is_empty()).unwrap_or(Path::new(".")).to_path_buf();
+    let parent = out
+        .parent()
+        .filter(|p| !p.as_os_str().is_empty())
+        .unwrap_or(Path::new("."))
+        .to_path_buf();
     let name = out
         .file_name()
-        .ok_or_else(|| io::Error::new(io::ErrorKind::InvalidInput, "the record path has no file name"))?
+        .ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidInput,
+                "the record path has no file name",
+            )
+        })?
         .to_string_lossy()
         .into_owned();
     Ok((parent, name))
@@ -78,7 +87,10 @@ pub fn live(out: &Path) -> Option<PathBuf> {
 /// it, which is atomic on a POSIX filesystem.
 pub fn swap(out: &Path, release: &Path) -> io::Result<()> {
     let (parent, name) = prefix(out)?;
-    let target = release.file_name().map(PathBuf::from).unwrap_or_else(|| release.to_path_buf());
+    let target = release
+        .file_name()
+        .map(PathBuf::from)
+        .unwrap_or_else(|| release.to_path_buf());
     let staged = parent.join(format!(".{name}.swap"));
     let _ = std::fs::remove_file(&staged);
     std::os::unix::fs::symlink(&target, &staged)?;
@@ -86,7 +98,10 @@ pub fn swap(out: &Path, release: &Path) -> io::Result<()> {
         let _ = std::fs::remove_file(&staged);
         return Err(io::Error::new(
             io::ErrorKind::AlreadyExists,
-            format!("{} is a directory, not the published symlink", out.display()),
+            format!(
+                "{} is a directory, not the published symlink",
+                out.display()
+            ),
         ));
     }
     std::fs::rename(&staged, out)
@@ -105,7 +120,10 @@ pub fn prune(out: &Path) -> io::Result<Vec<PathBuf>> {
         if current.as_deref() == Some(path.as_path()) {
             continue;
         }
-        let age = std::fs::metadata(&path).and_then(|m| m.modified()).ok().and_then(|m| now.duration_since(m).ok());
+        let age = std::fs::metadata(&path)
+            .and_then(|m| m.modified())
+            .ok()
+            .and_then(|m| now.duration_since(m).ok());
         if age.is_none_or(|a| a < MIN_AGE) {
             continue;
         }

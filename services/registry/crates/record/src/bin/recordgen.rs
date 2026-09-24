@@ -3,17 +3,23 @@
 //! Renders the verified record from the committed bank manifests. The output is
 //! a pure function of the bank, the About body and the generator version.
 
-use record::{generate_snapshot, GenOpts, Snapshot};
+use record::{GenOpts, Snapshot, generate_snapshot};
 use std::path::PathBuf;
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
     let mut bank: Option<PathBuf> = None;
     let mut out: Option<PathBuf> = None;
-    let mut opts = GenOpts { leak_scan: true, ..GenOpts::default() };
+    let mut opts = GenOpts {
+        leak_scan: true,
+        ..GenOpts::default()
+    };
     let mut args = std::env::args().skip(1);
     while let Some(a) = args.next() {
-        let mut next = |name: &str| args.next().unwrap_or_else(|| panic!("{name} needs a value"));
+        let mut next = |name: &str| {
+            args.next()
+                .unwrap_or_else(|| panic!("{name} needs a value"))
+        };
         match a.as_str() {
             "--bank" => bank = Some(next("--bank").into()),
             "--out" => out = Some(next("--out").into()),
@@ -29,7 +35,9 @@ fn main() -> ExitCode {
         }
     }
     let (Some(bank), Some(out)) = (bank, out) else {
-        eprintln!("usage: recordgen --bank <dir> --out <dir> [--site-base URL] [--base-path /p] [--about FILE] [--check]");
+        eprintln!(
+            "usage: recordgen --bank <dir> --out <dir> [--site-base URL] [--base-path /p] [--about FILE] [--check]"
+        );
         return ExitCode::from(2);
     };
     let snapshot = match Snapshot::from_dir(&bank, &opts) {

@@ -12,7 +12,6 @@
 //! a cursor is the opaque base64 of `(sort key, accession)` and the next page
 //! seeks past that value (R47).
 
-
 #[derive(Debug, thiserror::Error)]
 pub enum SearchError {
     #[error("io: {0}")]
@@ -136,7 +135,11 @@ fn bound_seconds(s: &str, end_of_day: bool) -> Result<i64, SearchError> {
     }
     let d = chrono::NaiveDate::parse_from_str(s, "%Y-%m-%d")
         .map_err(|_| SearchError::Malformed(format!("`{s}` is not a date")))?;
-    let t = if end_of_day { d.and_hms_opt(23, 59, 59) } else { d.and_hms_opt(0, 0, 0) };
+    let t = if end_of_day {
+        d.and_hms_opt(23, 59, 59)
+    } else {
+        d.and_hms_opt(0, 0, 0)
+    };
     Ok(t.expect("a valid civil time").and_utc().timestamp())
 }
 
@@ -156,7 +159,11 @@ const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
 fn b64(input: &[u8]) -> String {
     let mut out = String::with_capacity(input.len().div_ceil(3) * 4);
     for chunk in input.chunks(3) {
-        let b = [chunk[0], *chunk.get(1).unwrap_or(&0), *chunk.get(2).unwrap_or(&0)];
+        let b = [
+            chunk[0],
+            *chunk.get(1).unwrap_or(&0),
+            *chunk.get(2).unwrap_or(&0),
+        ];
         let n = ((b[0] as u32) << 16) | ((b[1] as u32) << 8) | b[2] as u32;
         let take = chunk.len() + 1;
         for i in 0..take {
@@ -190,7 +197,10 @@ pub fn decode_cursor(c: &str) -> Result<(i64, String), SearchError> {
     let raw = unb64(c).ok_or(SearchError::BadCursor)?;
     let s = String::from_utf8(raw).map_err(|_| SearchError::BadCursor)?;
     let (k, acc) = s.split_once(':').ok_or(SearchError::BadCursor)?;
-    Ok((k.parse().map_err(|_| SearchError::BadCursor)?, acc.to_string()))
+    Ok((
+        k.parse().map_err(|_| SearchError::BadCursor)?,
+        acc.to_string(),
+    ))
 }
 
 #[cfg(test)]
@@ -200,9 +210,15 @@ mod tests {
     #[test]
     fn a_cursor_round_trips_and_is_opaque_base64() {
         let c = encode_cursor(1_790_000_000, "MTH.R-2026-5007");
-        assert!(c.chars().all(|ch| ch.is_ascii_alphanumeric() || ch == '-' || ch == '_'));
+        assert!(
+            c.chars()
+                .all(|ch| ch.is_ascii_alphanumeric() || ch == '-' || ch == '_')
+        );
         assert!(!c.contains("MTH"));
-        assert_eq!(decode_cursor(&c).unwrap(), (1_790_000_000, "MTH.R-2026-5007".to_string()));
+        assert_eq!(
+            decode_cursor(&c).unwrap(),
+            (1_790_000_000, "MTH.R-2026-5007".to_string())
+        );
         assert!(matches!(decode_cursor("!!"), Err(SearchError::BadCursor)));
     }
 
