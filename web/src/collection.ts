@@ -16,7 +16,7 @@ import { mountExpanders } from "./record";
 import {
   bankPage,
   DEFAULT_DOI_PREFIX,
-  isAccession,
+  accessionPath,
   parseFilters,
   localSearch,
   toQuery,
@@ -170,9 +170,9 @@ export function mountCollection(root: ParentNode): void {
     return rows;
   };
   const run = async (filters: Filters): Promise<void> => {
-    const doi = filters.doi;
-    if (doi && isAccession(doi, doiPrefix)) {
-      window.location.assign(withBase(`/a/${doi.trim()}/`));
+    const target = filters.doi ? accessionPath(filters.doi, doiPrefix) : null;
+    if (target) {
+      window.location.assign(withBase(target));
       return;
     }
     const found = localSearch(await loadAll(), filters, bank);

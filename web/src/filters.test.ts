@@ -14,6 +14,7 @@ import {
   isAccession,
   parseFilters,
   localSearch,
+  accessionPath,
   toQuery,
   type Filters,
 } from "./filters";
@@ -103,6 +104,20 @@ describe("the generated pages the collection reads", () => {
   it("names a bank page the way the generator writes it", () => {
     expect(bankPage("claims", 0)).toBe("/collection/claims-0000.json");
     expect(bankPage("arguments", 12)).toBe("/collection/arguments-0012.json");
+  });
+});
+
+describe("the DOI box's destination", () => {
+  it("is rebuilt from a well-formed accession", () => {
+    expect(accessionPath("MTH.C-2026-6001")).toBe("/a/MTH.C-2026-6001/");
+    expect(accessionPath("  MTH.R-2026-006032 ")).toBe("/a/MTH.R-2026-006032/");
+    // the prefix as the generated site.json writes it, separator included
+    expect(accessionPath("MTH.C-2026-6010", "MTH.")).toBe("/a/MTH.C-2026-6010/");
+  });
+  it("is null for anything else, so nothing typed is ever navigated to", () => {
+    for (const bad of ["javascript:alert(1)", "MTH.C-2026-6001/../x", "MTH.X-2026-6001", "//evil.example/MTH.C-2026-6001", "OTH.C-2026-6001", ""]) {
+      expect(accessionPath(bad)).toBeNull();
+    }
   });
 });
 
