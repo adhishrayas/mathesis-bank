@@ -23,7 +23,9 @@
 #      are NOT in git; the fetch sha256-verifies every blob)
 #   3. run ci/verify.sh under MATHESIS_STRICT=1
 #      (independent kernel re-derivation of all Results; exits nonzero on fail)
-#   4. rebuild the published record from bank/ (bank/tools/build-site.sh: the
+#   4. re-derive every published argument in bank/ from its frozen export
+#      (bank/tools/verify-bank.sh, release bank-exports-v1), then
+#   5. rebuild the published record from bank/ (bank/tools/build-site.sh: the
 #      Rust generator and its tests, the client and its tests, the no-arbitrary-
 #      values lint and the prose lint), INV-2 lint, deploy Pages from that build.
 #
@@ -126,6 +128,19 @@ jobs:
           chmod +x ci/verify.sh
           ci/verify.sh "$RUNNER_TEMP/verification.json"
 
+      # ── The published bank: every argument re-derived from its frozen export ──
+      # verify-bank.sh fetches `<sha256>.export.gz` from the release, checks the
+      # decompressed bytes against the manifest's sha256, replays the export
+      # through the gate built above, and requires ADMITTED with exactly the
+      # manifest's axioms. Fails closed.
+      - name: Re-derive the published bank from its frozen exports
+        env:
+          BANK_EXPORT_STORE: gh:${{ github.repository }}@bank-exports-v1
+          BANK_EXPORTS_DIR: ${{ runner.temp }}/bank-exports
+          MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
+          GH_TOKEN: ${{ github.token }}
+        run: bank/tools/verify-bank.sh
+
       # ── The published record: rebuilt from the committed bank ────────────
       - uses: actions/setup-node@v4
         with:
@@ -133,6 +148,8 @@ jobs:
 
       - name: Rebuild the record from bank/ (generator, client, lints, prose lint)
         run: |
+          rustup toolchain install "$(sed -n 's/^channel = "\(.*\)"$/\1/p' services/registry/rust-toolchain.toml)" \
+            --profile minimal --component rustfmt --component clippy
           (cd web && npm ci --no-audit --no-fund)
           bank/tools/build-site.sh
 
