@@ -110,11 +110,11 @@ Rules that make this buildable and keep the two renderers identical:
 
 ## 2. Typography
 
-**Faces** (self-hosted woff2, subsetted, `font-display: swap`).
+**Faces.** Text is set in the system's Times; code is self-hosted woff2, subsetted, `font-display: swap`.
 
 | Role | Family | Files | Why |
 |---|---|---|---|
-| UI sans | **Inter** variable | `inter-var.woff2` (wght 400–700) | Tabular figures, tight metrics at 11–14px, clean at hairline density |
+| Text | **Times New Roman**, then Times, Liberation Serif, Nimbus Roman, TeX Gyre Termes, Tinos, `serif` (`--font-serif`) | none: a system face | The record reads as a book of arguments, not a console; the stack's later faces are Times's metric twins, so a machine without Times New Roman sets the same line lengths |
 | Code / Lean | **JuliaMono** | `julia-mono-400-latin.woff2`, `julia-mono-400-math.woff2`, `julia-mono-700-latin.woff2` | The only widely available mono with real coverage of Lean's operator/blackboard/script glyphs (`∀ ℕ ↔ ⊢ ≤ 𝓕 ⟨⟩ ↦ ⁻¹ ε`); no tofu, no mid-line metric change |
 
 G1 split (two `@font-face` blocks per weight):
@@ -125,23 +125,22 @@ G1 split (two `@font-face` blocks per weight):
 
 Bold JuliaMono ships latin only; no rendered statement uses bold (weight is never a semantic in a statement).
 
-Base features on `body`: `font-feature-settings: "cv05" 1, "ss03" 1, "tnum" 1, "zero" 1` (slashed zero and tabular
-figures everywhere — counts, hashes, dates and table numerals must align).
+Base features on `body`: none; Times New Roman's figures are already tabular, so dates and hashes align.
 Mono kills ligatures: `font-variant-ligatures: none; font-feature-settings: "calt" 0` — `->`, `<->`, `:=` must render
 as the characters Lean emitted.
 
-**UI scale** (Tailwind names redefined; density is the point).
+**UI scale** (Tailwind names redefined; about 1.2× the old sans scale, because Times's x-height is smaller).
 
 | Token | px / line-height | Use |
 |---|---|---|
-| `text-2xs` | 11 / 16 | facet chips, DAG node kind, table micro-meta, gutter numbers |
-| `text-xs` | 12 / 18 | control labels, `<dt>` terms, table headers |
-| `text-sm` | 13 / 20 | **UI default**: body, table cells, buttons, inputs, values |
-| `text-base` | 14 / 22 | `<dd>` values in the verification block, metric numbers |
-| `text-lg` | 16 / 24 | `<h2>` (`Note`, `DOIs`, `Arguments`), landing-page decl |
-| `text-xl` | 18 / 26 | profile login, section heads |
-| `text-2xl` | 22 / 28 | `<h1>` (`About`, `Claims`, `Arguments`, `Posts`, `Sign in`, `Not found`) |
-| `text-3xl` | 28 / 34 | reserved; unused in v0 |
+| `text-2xs` | 13 / 20 | facet chips, DAG node kind, table micro-meta, gutter numbers |
+| `text-xs` | 14 / 20 | control labels, `<dt>` terms, table headers |
+| `text-sm` | 16 / 24 | **UI default**: body, table cells, buttons, inputs, values |
+| `text-base` | 17 / 26 | `<dd>` values in the verification block, metric numbers |
+| `text-lg` | 19 / 28 | `<h2>` (`Note`, `DOIs`, `Arguments`), landing-page decl |
+| `text-xl` | 22 / 30 | profile login, section heads |
+| `text-2xl` | 27 / 34 | `<h1>` (`About`, `Claims`, `Arguments`, `Posts`, `Sign in`, `Not found`) |
+| `text-3xl` | 34 / 40 | reserved; unused in v0 |
 
 **Mono scale** (separate, because Lean glyphs are tall).
 
@@ -153,7 +152,7 @@ as the characters Lean emitted.
 | `text-code-lg` | 14 / 1.6 | claim statement on a landing page (region 1, unclamped) |
 
 Weights: 400 body, 500 labels/`<dt>`/table headers, 600 headings and the wordmark, 700 only inside `.record-prose`
-`<strong>`. Letter-spacing: `-0.011em` ≥16px, `0` at 13–14px, `+0.01em` at 11–12px, `+0.02em` on sha256 prefixes.
+`<strong>`. Letter-spacing: `0` for text, `+0.06em` on the uppercase terms, `+0.02em` on sha256 prefixes.
 
 ---
 
@@ -256,17 +255,18 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
 
 @theme {
   /* ---------- type ---------- */
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman", "Nimbus Roman No9 L",
+    "TeX Gyre Termes", Tinos, serif;
   --font-mono: "JuliaMono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --text-2xs: 0.6875rem;      --text-2xs--line-height: 1rem;
-  --text-xs: 0.75rem;         --text-xs--line-height: 1.125rem;
-  --text-sm: 0.8125rem;       --text-sm--line-height: 1.25rem;
-  --text-base: 0.875rem;      --text-base--line-height: 1.375rem;
-  --text-lg: 1rem;            --text-lg--line-height: 1.5rem;
-  --text-xl: 1.125rem;        --text-xl--line-height: 1.625rem;
-  --text-2xl: 1.375rem;       --text-2xl--line-height: 1.75rem;
-  --text-3xl: 1.75rem;        --text-3xl--line-height: 2.125rem;
+  --text-2xs: 0.8125rem;      --text-2xs--line-height: 1.25rem;
+  --text-xs: 0.875rem;        --text-xs--line-height: 1.25rem;
+  --text-sm: 1rem;            --text-sm--line-height: 1.5rem;
+  --text-base: 1.0625rem;     --text-base--line-height: 1.625rem;
+  --text-lg: 1.1875rem;       --text-lg--line-height: 1.75rem;
+  --text-xl: 1.375rem;        --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.6875rem;      --text-2xl--line-height: 2.125rem;
+  --text-3xl: 2.125rem;       --text-3xl--line-height: 2.5rem;
 
   --text-code-xs: 0.6875rem;  --text-code-xs--line-height: 1.5;
   --text-code-sm: 0.75rem;    --text-code-sm--line-height: 1.5;
@@ -380,8 +380,6 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
 
 @layer base {
   /* G1: JuliaMono split so a statement's first paint is not blocked by the math block */
-  @font-face { font-family:"Inter"; src:url("/assets/fonts/inter-var.woff2") format("woff2");
-    font-weight:400 700; font-style:normal; font-display:swap; }
 
   @font-face { font-family:"JuliaMono"; src:url("/assets/fonts/julia-mono-400-latin.woff2") format("woff2");
     font-weight:400; font-display:swap;
@@ -398,8 +396,7 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
   html { -webkit-text-size-adjust:100%; }
   body {
     margin:0; background:var(--color-bg); color:var(--color-text);
-    font-family:var(--font-sans); font-size:var(--text-sm); line-height:var(--text-sm--line-height);
-    font-feature-settings:"cv05" 1,"ss03" 1,"tnum" 1,"zero" 1;
+    font-family:var(--font-serif); font-size:var(--text-sm); line-height:var(--text-sm--line-height);
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   ::selection { background:var(--color-selection); }
@@ -410,7 +407,7 @@ ok #4ADE9B/#0E2A1E/#1D5238 · warn #E8B455/#2C2413/#54421C · err #FF9A90/#2C151
     box-shadow:0 0 0 2px var(--color-surface),0 0 0 4px var(--color-ring);
     border-radius:var(--radius-sm);
   }
-  h1,h2,h3 { margin:0; font-weight:600; color:var(--color-ink-800); letter-spacing:-.011em; }
+  h1,h2,h3 { margin:0; font-weight:600; color:var(--color-ink-800); }
   h1 { font-size:var(--text-2xl); line-height:var(--text-2xl--line-height); }
   h2 { font-size:var(--text-lg);  line-height:var(--text-lg--line-height); }
   h3 { font-size:var(--text-sm);  line-height:var(--text-sm--line-height); }
@@ -450,18 +447,18 @@ export default {
         "border-control":"var(--color-border-control)", link:"var(--color-link)",
       },
       fontFamily: {
-        sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],
+        serif: ['Times New Roman','Times','Liberation Serif','Nimbus Roman','Nimbus Roman No9 L','TeX Gyre Termes','Tinos','serif'],
         mono: ['JuliaMono','JetBrains Mono','ui-monospace','SFMono-Regular','Menlo','Consolas','monospace'],
       },
       fontSize: {
-        "2xs":["0.6875rem",{lineHeight:"1rem"}],
-        xs:["0.75rem",{lineHeight:"1.125rem"}],
-        sm:["0.8125rem",{lineHeight:"1.25rem"}],
-        base:["0.875rem",{lineHeight:"1.375rem"}],
-        lg:["1rem",{lineHeight:"1.5rem"}],
-        xl:["1.125rem",{lineHeight:"1.625rem"}],
-        "2xl":["1.375rem",{lineHeight:"1.75rem"}],
-        "3xl":["1.75rem",{lineHeight:"2.125rem"}],
+        "2xs":["0.8125rem",{lineHeight:"1.25rem"}],
+        xs:["0.875rem",{lineHeight:"1.25rem"}],
+        sm:["1rem",{lineHeight:"1.5rem"}],
+        base:["1.0625rem",{lineHeight:"1.625rem"}],
+        lg:["1.1875rem",{lineHeight:"1.75rem"}],
+        xl:["1.375rem",{lineHeight:"1.875rem"}],
+        "2xl":["1.6875rem",{lineHeight:"2.125rem"}],
+        "3xl":["2.125rem",{lineHeight:"2.5rem"}],
         "code-xs":["0.6875rem",{lineHeight:"1.5"}],
         "code-sm":["0.75rem",{lineHeight:"1.5"}],
         code:["0.8125rem",{lineHeight:"1.55"}],
@@ -639,10 +636,16 @@ States: default · `[data-focused]` (roving focus in the stream: `inset 2px 0 0 
 ### 7.7 `.mth-avatar`, editor chrome
 
 ```
-.mth-avatar   w-12 h-12 rounded-md border border-border object-cover bg-ink-100
+.mth-avatar   rounded-md border border-border object-cover bg-ink-100
+              --lg 64px (profile) · --sm 48px (a post's author) · --xs 24px (an author in a table)
               alt carries data-attr-value="alt" data-field="profile.citation_name"
-              src = /api/v1/avatar/{id}     (proxied, SPEC §11 — img-src 'self')
-              absent avatar → NO <img> at all; the identity grid collapses and reserves no gap
+              src = /avatars/{login}.{ext}, the record's own copy — no request leaves the site
+.mth-person   inline-flex gap-2: a photo (or glyph) and a name, one link — to /u/{login}/ for a
+              member, to https://github.com/{login} for a cited person who is not one
+.mth-glyph    the abstract avatar of a person the record holds no photo of: a 5×5 grid mirrored
+              left to right, from an FNV-1a hash of the GitHub login, in one of four tints
+              (--0 accent-500, --1 accent-800, --2 ink-600, --3 accent-300); aria-hidden, since
+              the name always stands beside it · --sm 20px · --xs 24px
 .mth-editor          border border-border rounded-lg overflow-hidden bg-surface
 .mth-editor__head    h-control-lg px-2.5 flex items-center justify-between border-b border-border bg-ink-50
 .mth-editor__mount   height: var(--h-editor)
@@ -827,8 +830,9 @@ ties by decl byte order) and the geometry lives in `--dag-*` tokens so CSS and g
 States: `Graph` · `List` · per-node collapsed/expanded · `Expand all` / `Collapse all` · node focused
 (inspector updates, incident edges hot) · **oversized** (`nodes > 400 || edges > 4000`: the `Graph` option renders
 `aria-disabled="true"` with its label unchanged and `List` is active) · **no-JS** (`List`, server-rendered, the
-authoritative form). Below `lg` `List` is forced. In the stream `List` is the default with node statements clamped to
-3 lines; on a landing page `Graph` is the default whenever it is offered.
+authoritative form). With scripts, `Graph` is the default wherever it is offered — in the stream, on a landing page
+and at every width, a narrow screen scrolling the graph in its viewport; `List` clamps node statements to 3 lines in the
+stream.
 Keyboard: `←`/`→` by depth, `↑`/`↓` by order, `Enter` moves focus to the inspector, `Esc` returns to the viewport.
 
 ### 7.14 `.mth-cite`, `.mth-copy`
@@ -938,7 +942,7 @@ attribution, the DOI and the citation.
 |---|---|---|---|---|
 | Nav | 4 links, horizontally scrollable, 16px gutter | inline | inline | inline |
 | Posts | 1 col, card padding 12px, claim clamp 12 | 1 col | 1 col, `max-w-stream` | `max-w-stream` |
-| Post DAG | `List` forced, nodes clamped | `List` forced | `List` default in stream / `Graph` default on landing when eligible | same |
+| Post DAG | `Graph` default, scrolled in its viewport | `Graph` default | `Graph` default wherever offered; `List` is the no-JS form | same |
 | Verification `<dl>` (record pages only) | 1 col | 2 col | 2 col | 2 col |
 | Collection | table scrolls-x with sticky `DOI`; filters stack 1-col | filters 2-col | filters inline row | `max-w-shell`, `Statement` widens |
 | Profile DOIs | scrolls-x (or `--stacked`) | scrolls-x | full | full |
@@ -996,7 +1000,7 @@ A post opens with its author, as a social feed does:
 ```
 AUTHOR  <header class="mth-post__author">   bottom hairline
   <a class="mth-author" href="/u/{login}/">
-    <img class="mth-avatar mth-avatar--sm">  40px; alt is the value profile.citation_name;
+    <img class="mth-avatar mth-avatar--sm">  48px; alt is the value profile.citation_name;
                                              src is the record's own copy, /avatars/{login}.{ext};
                                              absent avatar → no <img>
     {profile.citation_name}  600 weight      {profile.login}  muted, "@" by CSS
@@ -1007,7 +1011,8 @@ AUTHOR  <header class="mth-post__author">   bottom hairline
        .mth-more__menu  {Claim} {claim.accession} → /a/{claim.accession}
                         {Argument} {argument.accession} → /a/{argument.accession}
                                              (the two kind words are accession.kind values)
-  «Cites» {argument.cites}…                  full-width row, only when the argument cites premises
+  «Cites» .mth-person per cited person:      full-width row, only when the argument cites premises
+          .mth-glyph + {argument.cites} → https://github.com/{people.github}
                                              written by other authors
 </header>
 ```
@@ -1179,7 +1184,7 @@ All nine `Status` states, both verdict shapes and every `renderReason` template 
           AUTHOR    the author header, no ⋯ · the date is {claim.created_at}
           REGION 1  «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg · «Copy»
           REGION 2  <h2>«Arguments»</h2> + .mth-table
-                    th: «DOI» «Author» «Date»
+                    th: «DOI» «Author» «Date» — the author as .mth-person (24px photo, → /u/{login}/)
                     OMITTED ENTIRELY when there are no arguments — which is how an open seed claim renders
       then, below the card and outside it, <div class="mth-record">:
           «DOI» {accession} · «Cite» «Copy» «Copy BibTeX»    (baked)

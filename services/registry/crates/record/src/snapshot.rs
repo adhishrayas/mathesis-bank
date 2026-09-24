@@ -7,7 +7,7 @@
 //! further input class is the profile identity rows, which is why a rename
 //! enqueues a regeneration (SPEC.md §10).
 
-use crate::model::{Argument, Claim, Dictionary, EdgeRow, NodeRow, Post, Profile};
+use crate::model::{Argument, Claim, Dictionary, EdgeRow, NodeRow, Person, Post, Profile};
 use crate::{GenError, GenOpts};
 use accession::Accession;
 use serde::Deserialize;
@@ -32,6 +32,8 @@ pub struct Redirect {
 pub struct Snapshot {
     pub dictionary: Dictionary,
     pub profiles: Vec<Profile>,
+    /// The people arguments cite who are not profiles here, by cited name.
+    pub people: Vec<Person>,
     pub claims: Vec<Claim>,
     pub arguments: Vec<ArgumentView>,
     pub posts: Vec<Post>,
@@ -92,6 +94,14 @@ impl Snapshot {
         } = read(&bank.join("dictionary.json"))?;
         let mut profiles: Vec<Profile> = read(&bank.join("profiles.json"))?;
         profiles.sort_by(|a, b| a.login.cmp(&b.login));
+        // A bank that cites nobody has no people file.
+        let people_path = bank.join("people.json");
+        let mut people: Vec<Person> = if people_path.exists() {
+            read(&people_path)?
+        } else {
+            Vec::new()
+        };
+        people.sort_by(|a, b| a.name.cmp(&b.name));
 
         let mut claims: Vec<Claim> = Vec::new();
         for p in each(&bank.join("claims"))? {
@@ -124,6 +134,7 @@ impl Snapshot {
         let s = Snapshot {
             dictionary,
             profiles,
+            people,
             claims,
             arguments,
             posts,
@@ -226,6 +237,11 @@ impl Snapshot {
 
     pub fn argument(&self, acc: &str) -> Option<&ArgumentView> {
         self.arguments.iter().find(|a| a.argument.accession == acc)
+    }
+
+    /// The cited person a name refers to, when the bank records one.
+    pub fn person(&self, name: &str) -> Option<&Person> {
+        self.people.iter().find(|p| p.name == name)
     }
 
     pub fn profile(&self, id: Uuid) -> Option<&Profile> {

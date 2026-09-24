@@ -341,7 +341,27 @@
     border-radius: var(--radius-lg); background: var(--color-surface-2);
     border: 1px solid var(--color-border); object-fit: cover; flex: none;
   }
-  .mth-avatar--sm { width: var(--spacing-10); height: var(--spacing-10); border-radius: var(--radius-md); }
+  .mth-avatar--sm { width: var(--spacing-12); height: var(--spacing-12); border-radius: var(--radius-md); }
+  .mth-avatar--xs { width: var(--spacing-6); height: var(--spacing-6); border-radius: var(--radius-sm); }
+
+  /* A person: their photo (or glyph) and their name, one link. People are the
+     platform, so a name never stands bare where a profile exists. */
+  .mth-person { display: inline-flex; align-items: center; gap: var(--spacing-2); color: inherit; }
+  .mth-person > [data-value] { margin-inline-start: 0; }
+
+  /* The abstract avatar of a person the record holds no photo of: a mirrored
+     5×5 grid from their login, in one of four tints. */
+  .mth-glyph {
+    flex: none; display: block;
+    border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+    background: var(--color-surface-2);
+  }
+  .mth-glyph--sm { width: var(--spacing-5); height: var(--spacing-5); }
+  .mth-glyph--xs { width: var(--spacing-6); height: var(--spacing-6); }
+  .mth-glyph--0 { fill: var(--color-accent-500); }
+  .mth-glyph--1 { fill: var(--color-accent-800); }
+  .mth-glyph--2 { fill: var(--color-ink-600); }
+  .mth-glyph--3 { fill: var(--color-accent-300); }
   .mth-avatar--lg { width: var(--spacing-16); height: var(--spacing-16); }
 
   /* A post opens with its author, the way a social feed does. */

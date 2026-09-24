@@ -426,6 +426,58 @@ fn region_verification(b: &mut B, a: &ArgumentView, input: &Snapshot) {
     b.close("section");
 }
 
+/// A member as their photo and their name, linking to their profile; the name
+/// alone when the record holds no such profile.
+fn person_link(b: &mut B, input: &Snapshot, profile_id: uuid::Uuid, name: &str) {
+    let Some(p) = input.profile(profile_id) else {
+        b.val("span", "profile.citation_name", name, "");
+        return;
+    };
+    b.open(
+        "a",
+        &format!("class=\"mth-person\" href=\"/u/{}/\"", escape(&p.login)),
+    );
+    match &p.avatar {
+        Some(src) => b.raw(&format!(
+            "<img class=\"mth-avatar mth-avatar--xs\" src=\"{}\" width=\"24\" height=\"24\" \
+             data-attr-value=\"alt\" data-field=\"profile.citation_name\" alt=\"{}\">",
+            escape(src),
+            escape(&p.citation_name)
+        )),
+        None => b.raw(&glyph(&p.login, "mth-glyph--xs")),
+    };
+    b.val("span", "profile.citation_name", &p.citation_name, "");
+    b.close("a");
+}
+
+/// An abstract avatar for a person the record holds no photo of: a 5×5 grid,
+/// mirrored left to right, drawn from a hash of their GitHub login, in one of
+/// four tints. The same login always draws the same glyph. It is decorative —
+/// the person's name always stands beside it.
+fn glyph(login: &str, class: &str) -> String {
+    let mut h: u64 = 0xcbf2_9ce4_8422_2325;
+    for byte in login.to_lowercase().as_bytes() {
+        h ^= *byte as u64;
+        h = h.wrapping_mul(0x1000_0000_01b3);
+    }
+    let mut d = String::new();
+    for row in 0..5u64 {
+        for col in 0..3u64 {
+            if h >> (row * 3 + col) & 1 == 1 {
+                for x in if col == 2 { vec![2] } else { vec![col, 4 - col] } {
+                    d.push_str(&format!("M{x} {row}h1v1h-1z"));
+                }
+            }
+        }
+    }
+    format!(
+        "<svg class=\"mth-glyph mth-glyph--{tint} {class}\" viewBox=\"-0.5 -0.5 6 6\" \
+         shape-rendering=\"crispEdges\" aria-hidden=\"true\" focusable=\"false\">\
+         <path d=\"{d}\"/></svg>",
+        tint = (h >> 15) % 4,
+    )
+}
+
 /// The author, first: avatar, name and handle linking to the profile, then the
 /// profile's kind, the date, the ⋯ menu when `more` names records, and the
 /// authors of premises the argument cites.
@@ -448,7 +500,7 @@ fn region_author(
     );
     if let Some(src) = &p.avatar {
         b.raw(&format!(
-            "<img class=\"mth-avatar mth-avatar--sm\" src=\"{}\" width=\"40\" height=\"40\" \
+            "<img class=\"mth-avatar mth-avatar--sm\" src=\"{}\" width=\"48\" height=\"48\" \
              data-attr-value=\"alt\" data-field=\"profile.citation_name\" alt=\"{}\">",
             escape(src),
             escape(&p.citation_name)
@@ -487,7 +539,23 @@ fn region_author(
         b.open("span", "class=\"mth-author__cites\"");
         b.lab("span", "mth-kv__k", "cites");
         for name in cites {
-            b.val("span", "argument.cites", name, "");
+            match input.person(name) {
+                Some(person) => {
+                    b.open(
+                        "a",
+                        &format!(
+                            "class=\"mth-person\" href=\"https://github.com/{}\"",
+                            escape(&person.github)
+                        ),
+                    );
+                    b.raw(&glyph(&person.github, "mth-glyph--sm"));
+                    b.val("span", "argument.cites", name, "");
+                    b.close("a");
+                }
+                None => {
+                    b.val("span", "argument.cites", name, "");
+                }
+            }
         }
         b.close("span");
     }
@@ -1204,12 +1272,7 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
                     chip(&mut b, &arg.argument.accession, "argument.accession");
                     b.close("td");
                     b.open("td", "");
-                    b.val(
-                        "span",
-                        "profile.citation_name",
-                        &arg.argument.citation_name,
-                        "",
-                    );
+                    person_link(&mut b, input, arg.argument.profile_id, &arg.argument.citation_name);
                     b.close("td");
                     b.open("td", "");
                     b.val(

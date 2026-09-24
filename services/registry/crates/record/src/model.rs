@@ -20,6 +20,14 @@ pub struct Profile {
     pub avatar: Option<String>,
 }
 
+/// A person an argument cites who is not a profile on the record: their name as
+/// cited, and the GitHub login their name links to.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Person {
+    pub name: String,
+    pub github: String,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Dictionary {
     pub id: Uuid,

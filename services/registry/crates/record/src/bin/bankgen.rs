@@ -11,7 +11,7 @@
 //! the leaves a node stands on; Mathlib is the substrate and appears nowhere.
 
 use chrono::{DateTime, Utc};
-use record::model::{Argument, Claim, EdgeRow, NodeRow, Post, Profile};
+use record::model::{Argument, Claim, EdgeRow, NodeRow, Person, Post, Profile};
 use serde::Deserialize;
 use serde_json::json;
 use sha2::{Digest, Sha256};
@@ -28,6 +28,10 @@ struct Curation {
     dictionary: DictionaryIn,
     substrate: String,
     premise_authors: Vec<PremiseAuthor>,
+    /// Every person an argument cites, with the public profile their name links
+    /// to. A cited name without an entry here is refused.
+    #[serde(default)]
+    people: Vec<Person>,
     posts: Vec<PostIn>,
 }
 
@@ -360,6 +364,9 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
 
         let (nodes, edges, mut cites) = argument_dag(&g, &premise_of);
         cites.extend(post.cites.iter().cloned());
+        if let Some(name) = cites.iter().find(|n| !c.people.iter().any(|p| &p.name == *n)) {
+            return Err(format!("{decl}: cites {name}, who has no entry in `people`"));
+        }
         let root = nodes
             .iter()
             .find(|n| n.is_root)
@@ -438,6 +445,9 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         );
     }
     write_json(&out.join("posts.json"), &json!(posts))?;
+    let mut people = c.people.clone();
+    people.sort_by(|a, b| a.name.cmp(&b.name));
+    write_json(&out.join("people.json"), &json!(people))?;
     Ok(())
 }
 
