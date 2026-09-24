@@ -21,7 +21,7 @@ function runCli(args) {
 test("a clean tree exits 0 and writes the report", () => {
   const r = runCli([join(fixtures, "tree-clean")]);
   assert.equal(r.status, 0);
-  assert.match(r.stdout, /3 documents, \d+ labels, \d+ fields, 0 violations/);
+  assert.match(r.stdout, /4 documents, \d+ labels, \d+ fields, 0 violations/);
   assert.deepEqual(r.json.violations, []);
 });
 

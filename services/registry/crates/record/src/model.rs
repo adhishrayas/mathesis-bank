@@ -15,6 +15,9 @@ pub struct Profile {
     pub kind: Option<String>,
     pub is_owner: bool,
     pub created_at: DateTime<Utc>,
+    /// The record-relative path of the profile's avatar, when the record holds one.
+    #[serde(default)]
+    pub avatar: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

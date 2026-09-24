@@ -1,6 +1,8 @@
-//! Every generated page. A post shows the claim, its DAG, its verification, its
-//! attribution and its DOI, and nothing else: no description, gloss, comment,
-//! tag, score or reaction (SPEC.md §8.5).
+//! Every generated page. A post shows its author, the claim and its DAG, and
+//! nothing else: no description, gloss, comment, tag, score or reaction
+//! (SPEC.md §8.5). Verification is the baseline every post meets, so a post
+//! never states it; its ⋯ menu leads to the claim's and the argument's pages,
+//! where the DOI, the citation and a small verification section live.
 
 use crate::html::{B, EM_DASH, escape, label};
 use crate::jsonc::ts;
@@ -8,7 +10,7 @@ use crate::model::{Claim, NodeRow, Profile};
 use crate::snapshot::{ArgumentView, Snapshot};
 use accession::{Accession, citation};
 
-pub fn shell(page: &str, body: &str) -> String {
+pub fn shell(page: &str, body: &str, profile_href: Option<&str>) -> String {
     format!(
         "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n\
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\
@@ -17,26 +19,34 @@ pub fn shell(page: &str, body: &str) -> String {
 <body data-page=\"{page}\" data-base-href=\"/\">\n{nav}\n{body}\n</body>\n</html>\n",
         title = escape(label("mathesis")),
         page = page,
-        nav = nav(),
+        nav = nav(profile_href, page),
         body = body
     )
 }
 
 /// The nav is unconditional: four items, the same four labels and the same four
 /// targets on every generated page, so its bytes never vary.
-pub fn nav() -> String {
+pub fn nav(profile_href: Option<&str>, page: &str) -> String {
     let mut b = B::new();
     b.open("header", "class=\"mth-nav\"");
     b.open("a", "class=\"mth-nav__mark\" href=\"/\"");
     b.text(label("mathesis"));
     b.close("a");
     b.open("nav", "class=\"mth-nav__links\" aria-label=\"Mathesis\"");
-    for (key, href) in [
-        ("posts", "/"),
-        ("collection", "/collection/claims"),
-        ("about", "/about"),
-    ] {
-        b.open("a", &format!("class=\"mth-nav__link\" href=\"{href}\""));
+    let mut items: Vec<(&str, &str)> = vec![("posts", "/")];
+    if let Some(href) = profile_href {
+        items.push(("profile", href));
+    }
+    items.push(("collection", "/collection/claims"));
+    items.push(("about", "/about"));
+    for (key, href) in items {
+        let current = match (key, page) {
+            ("posts", "posts") | ("profile", "profile") | ("collection", "collection") | ("about", "about") => {
+                " aria-current=\"page\""
+            }
+            _ => "",
+        };
+        b.open("a", &format!("class=\"mth-nav__link\" href=\"{href}\"{current}"));
         b.text(label(key));
         b.close("a");
     }
@@ -70,10 +80,6 @@ fn chip(b: &mut B, acc: &str, field: &str) {
 /// Region 1 — the claim.
 fn region_claim(b: &mut B, claim: &Claim, clamp: bool) {
     b.open("section", "class=\"mth-post__claim\"");
-    b.open("div", "class=\"mth-kv\"");
-    b.lab("span", "mth-kv__k", "claim");
-    chip(b, &claim.accession, "claim.accession");
-    b.close("div");
     b.open("div", "class=\"mth-kv\"");
     b.lab("span", "mth-kv__k", "decl");
     b.val(
@@ -405,10 +411,11 @@ fn short(decl: &str) -> String {
     }
 }
 
-/// Region 3 — verification: seven rows, each a catalogue term and a data value.
+/// An argument's verification: seven rows, each a catalogue term and a data
+/// value, in the small section closing the argument's own page.
 fn region_verification(b: &mut B, a: &ArgumentView, input: &Snapshot) {
     b.open("section", "class=\"mth-verification\"");
-    b.lab("h2", "", "verification");
+    b.lab("h2", "mth-verification__title", "verification");
     b.open("dl", "class=\"mth-dl\"");
     b.row("replay", "replay_accepted", "accepted");
     if a.argument.axioms_reached.is_empty() {
@@ -452,59 +459,121 @@ fn region_verification(b: &mut B, a: &ArgumentView, input: &Snapshot) {
     b.close("section");
 }
 
-/// Region 4 — attribution. Nothing mutable appears here: the frozen
-/// `citation_name` and the stable `/p/<profile_id>` route only.
-fn region_attribution(
+/// The author, first: avatar, name and handle linking to the profile, then the
+/// profile's kind, the date, the ⋯ menu when `more` names records, and the
+/// authors of premises the argument cites.
+fn region_author(
     b: &mut B,
-    citation_name: &str,
-    cites: &[String],
-    source_url: Option<&str>,
-    when_key: &str,
+    input: &Snapshot,
+    profile_id: uuid::Uuid,
     when_field: &str,
     when: &str,
+    cites: &[String],
+    more: &[Record<'_>],
 ) {
-    b.open("section", "class=\"mth-attribution\"");
-    b.open("dl", "class=\"mth-dl\"");
-    b.lab("dt", "", "author");
-    b.open("dd", "");
-    b.val("span", "profile.citation_name", citation_name, "");
-    b.close("dd");
+    let Some(p) = input.profile(profile_id) else {
+        return;
+    };
+    b.open("header", "class=\"mth-post__author\"");
+    b.open(
+        "a",
+        &format!("class=\"mth-author\" href=\"/u/{}/\"", escape(&p.login)),
+    );
+    if let Some(src) = &p.avatar {
+        b.raw(&format!(
+            "<img class=\"mth-avatar mth-avatar--sm\" src=\"{}\" width=\"40\" height=\"40\" \
+             data-attr-value=\"alt\" data-field=\"profile.citation_name\" alt=\"{}\">",
+            escape(src),
+            escape(&p.citation_name)
+        ));
+    }
+    b.open("span", "class=\"mth-author__names\"");
+    b.val(
+        "span",
+        "profile.citation_name",
+        &p.citation_name,
+        "class=\"mth-author__name\"",
+    );
+    b.val(
+        "span",
+        "profile.login",
+        &p.login,
+        "class=\"mth-author__handle\"",
+    );
+    b.close("span");
+    b.close("a");
+    b.open("span", "class=\"mth-author__meta\"");
+    if let Some(kind) = &p.kind {
+        b.val(
+            "span",
+            "profile.kind",
+            kind,
+            "class=\"mth-status mth-status--neutral\"",
+        );
+    }
+    b.val("span", when_field, when, "class=\"mth-author__when\"");
+    b.close("span");
+    if !more.is_empty() {
+        more_menu(b, more);
+    }
     if !cites.is_empty() {
-        b.lab("dt", "", "cites");
-        b.open("dd", "");
+        b.open("span", "class=\"mth-author__cites\"");
+        b.lab("span", "mth-kv__k", "cites");
         for name in cites {
             b.val("span", "argument.cites", name, "");
         }
-        b.close("dd");
+        b.close("span");
     }
-    b.row(when_key, when_field, when);
-    if let Some(url) = source_url {
-        b.lab("dt", "", "source");
-        b.open("dd", "");
-        b.open(
-            "a",
-            &format!(
-                "class=\"mth-btn\" href=\"{}\" rel=\"noopener\"",
-                escape(url)
-            ),
-        );
-        b.text(label("open"));
-        b.close("a");
-        b.close("dd");
-    }
-    b.close("dl");
-    b.close("section");
+    b.close("header");
 }
 
-/// Region 5 — the DOI, with the baked citation strings.
+/// A record a post's ⋯ menu leads to: its `Accession kind` value, the field
+/// its accession is carried in, and the accession.
+struct Record<'a> {
+    kind: &'static str,
+    field: &'static str,
+    accession: &'a str,
+}
+
+/// The ⋯ menu: a disclosure whose items are the post's claim and argument, each
+/// linking to its page. It opens without scripts; the client closes it on an
+/// outside click or Escape.
+fn more_menu(b: &mut B, records: &[Record<'_>]) {
+    b.open("details", "class=\"mth-more\"");
+    b.open(
+        "summary",
+        &format!(
+            "class=\"mth-more__button\" aria-label=\"{}\"",
+            escape(label("dois"))
+        ),
+    );
+    b.raw(
+        "<svg class=\"mth-more__icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" \
+         focusable=\"false\"><circle cx=\"3\" cy=\"8\" r=\"1.5\"/><circle cx=\"8\" \
+         cy=\"8\" r=\"1.5\"/><circle cx=\"13\" cy=\"8\" r=\"1.5\"/></svg>",
+    );
+    b.close("summary");
+    b.open("div", "class=\"mth-more__menu\"");
+    for r in records {
+        b.open(
+            "a",
+            &format!("class=\"mth-more__item\" href=\"/a/{}\"", r.accession),
+        );
+        b.val("span", "accession.kind", r.kind, "class=\"mth-more__kind\"");
+        b.val("span", r.field, r.accession, "class=\"mth-mono\"");
+        b.close("a");
+    }
+    b.close("div");
+    b.close("details");
+}
+
+/// The DOI, with the baked citation strings, on the claim's and the argument's
+/// own pages.
 fn region_doi(b: &mut B, acc: &Accession, field: &str, text: &str, bibtex: &str) {
     b.open("section", "class=\"mth-doi\"");
     b.open("div", "class=\"mth-kv\"");
     b.lab("span", "mth-kv__k", "doi");
     b.val("span", field, &acc.to_string(), "class=\"mth-mono\"");
-    b.open("a", &format!("class=\"mth-btn\" href=\"/a/{acc}\""));
-    b.text(label("open"));
-    b.close("a");
     b.close("div");
     b.open(
         "div",
@@ -537,15 +606,6 @@ pub fn post_card(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool)
     let claim = input
         .claim(&a.argument.claim_accession)
         .expect("claim of a post");
-    let acc: Accession = a.argument.accession.parse().expect("argument accession");
-    let date = a.argument.created_at.format("%Y-%m-%d").to_string();
-    let c = citation(
-        &a.argument.citation_name,
-        &a.argument.root_decl_name,
-        &acc,
-        &input.site_base,
-        &date,
-    );
     b.open(
         "article",
         &format!(
@@ -554,19 +614,28 @@ pub fn post_card(b: &mut B, a: &ArgumentView, input: &Snapshot, in_stream: bool)
             escape(&a.argument.login)
         ),
     );
-    region_claim(b, claim, in_stream);
-    region_dag(b, a, input, in_stream);
-    region_verification(b, a, input);
-    region_attribution(
+    region_author(
         b,
-        &a.argument.citation_name,
-        &a.argument.cites,
-        a.argument.source_url.as_deref(),
-        "submitted",
+        input,
+        a.argument.profile_id,
         "argument.created_at",
         &ts(&a.argument.created_at),
+        &a.argument.cites,
+        &[
+            Record {
+                kind: "Claim",
+                field: "claim.accession",
+                accession: &claim.accession,
+            },
+            Record {
+                kind: "Argument",
+                field: "argument.accession",
+                accession: &a.argument.accession,
+            },
+        ],
     );
-    region_doi(b, &acc, "argument.accession", &c.text, &c.bibtex);
+    region_claim(b, claim, in_stream);
+    region_dag(b, a, input, in_stream);
     b.close("article");
 }
 
@@ -999,9 +1068,8 @@ struct DoiRow {
     /// The `Accession kind` value, `Claim` or `Argument` — the third of the
     /// three deliberately distinct `Kind` columns (SPEC.md §8).
     kind: &'static str,
-    axioms: Vec<String>,
     arguments: i32,
-    verified: String,
+    date: String,
 }
 
 pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
@@ -1022,20 +1090,26 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     );
 
     b.open("section", "class=\"mth-profile__identity\"");
-    b.open(
-        "img",
-        &format!(
-            "class=\"mth-avatar\" src=\"/api/v1/avatar/{}\" width=\"48\" height=\"48\" \
-         data-attr-value=\"alt\" data-field=\"profile.citation_name\" alt=\"{}\"",
-            p.id,
+    if let Some(src) = &p.avatar {
+        b.raw(&format!(
+            "<img class=\"mth-avatar mth-avatar--lg\" src=\"{}\" width=\"64\" height=\"64\" \
+             data-attr-value=\"alt\" data-field=\"profile.citation_name\" alt=\"{}\">",
+            escape(src),
             escape(&p.citation_name)
-        ),
+        ));
+    }
+    b.open("div", "class=\"mth-profile__who\"");
+    b.val(
+        "h1",
+        "profile.citation_name",
+        &p.citation_name,
+        "class=\"mth-profile__name\"",
     );
     b.val(
         "span",
         "profile.login",
         &p.login,
-        "class=\"mth-profile__login\"",
+        "class=\"mth-author__handle\"",
     );
     b.open("dl", "class=\"mth-dl\"");
     b.row(
@@ -1045,6 +1119,7 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     );
     b.row("joined", "profile.created_at", &ts(&p.created_at));
     b.close("dl");
+    b.close("div");
     b.open("div", "class=\"mth-kv\"");
     b.lab("span", "mth-kv__k", "claims");
     b.val(
@@ -1065,23 +1140,13 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     b.close("div");
     b.close("section");
 
-    b.open("section", "id=\"owner-tools\" hidden");
-    b.close("section");
-
     b.open("section", "class=\"mth-profile__dois\"");
     b.lab("h2", "", "dois");
     b.open("div", "class=\"mth-table-scroll\"");
     b.open("table", "class=\"mth-table\"");
     b.open("thead", "");
     b.open("tr", "");
-    for c in [
-        "doi",
-        "decl",
-        "accessionKind",
-        "axioms",
-        "arguments",
-        "verified",
-    ] {
+    for c in ["doi", "decl", "accessionKind", "arguments", "date"] {
         b.lab("th", "", c);
     }
     b.close("tr");
@@ -1093,9 +1158,8 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
             accession: c.accession.clone(),
             decl: c.decl_name.clone(),
             kind: "Claim",
-            axioms: input.claim_axioms(&c.accession),
             arguments: c.arguments_count,
-            verified: ts(&c.created_at),
+            date: ts(&c.created_at),
         });
     }
     for a in &args {
@@ -1103,18 +1167,13 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
             accession: a.argument.accession.clone(),
             decl: a.argument.root_decl_name.clone(),
             kind: "Argument",
-            axioms: a.argument.axioms_reached.clone(),
             arguments: 1,
-            verified: ts(&a.argument.created_at),
+            date: ts(&a.argument.created_at),
         });
     }
-    // Default `Verified` descending, ties broken by accession, so the table is
-    // a total order and two generations agree on it.
-    rows.sort_by(|x, y| {
-        y.verified
-            .cmp(&x.verified)
-            .then(x.accession.cmp(&y.accession))
-    });
+    // Newest first, ties broken by accession, so the table is a total order
+    // and two generations agree on it.
+    rows.sort_by(|x, y| y.date.cmp(&x.date).then(x.accession.cmp(&y.accession)));
     for r in rows {
         let claim = r.kind == "Claim";
         b.open("tr", "");
@@ -1141,21 +1200,6 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
         b.val("span", "accession.kind", r.kind, "");
         b.close("td");
         b.open("td", "");
-        if r.axioms.is_empty() {
-            // A claim nobody has proved has no manifest to show; an admitted
-            // argument with an empty one is axiom-free (SPEC.md §8.3).
-            if claim && r.arguments == 0 {
-                b.val("span", "null", EM_DASH, "");
-            } else {
-                b.val("span", "axiom_manifest", "free", "");
-            }
-        } else {
-            for ax in &r.axioms {
-                b.val("span", "axiom_manifest", ax, "class=\"mth-mono\"");
-            }
-        }
-        b.close("td");
-        b.open("td", "");
         b.val(
             "span",
             "claim.arguments_count",
@@ -1164,7 +1208,7 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
         );
         b.close("td");
         b.open("td", "");
-        b.val("span", "argument.created_at", &r.verified, "");
+        b.val("span", "argument.created_at", &r.date, "");
         b.close("td");
         b.close("tr");
     }
@@ -1174,7 +1218,7 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
     b.close("section");
 
     b.open("section", "class=\"mth-stream__list\"");
-    for a in args.iter().take(20) {
+    for a in &args {
         post_card(&mut b, a, input, true);
     }
     b.close("section");
@@ -1183,7 +1227,9 @@ pub fn profile_page(input: &Snapshot, p: &Profile) -> B {
 }
 
 /// A landing page: two regions, physically separated in the DOM, in storage and
-/// in mutability. `#record` is a pure function of immutable rows plus the pin.
+/// in mutability. `#record` is a pure function of immutable rows plus the pin:
+/// the post (or, for a claim, the claim and its arguments), then the DOI and the
+/// citation, then a small verification section.
 pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
     let a: Accession = acc.parse().ok()?;
     let mut b = B::new();
@@ -1193,12 +1239,27 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
         accession::Kind::Argument => {
             let view = input.argument(acc)?;
             owner_id = view.argument.profile_id.to_string();
+            let date = view.argument.created_at.format("%Y-%m-%d").to_string();
+            let c = citation(
+                &view.argument.citation_name,
+                &view.argument.root_decl_name,
+                &a,
+                &input.site_base,
+                &date,
+            );
             b.open(
                 "article",
                 &format!("class=\"landing\" data-accession=\"{acc}\" data-owner-profile-id=\"{owner_id}\""),
             );
-            b.open("section", "data-region=\"verified\" id=\"record\"");
+            b.open(
+                "section",
+                "data-region=\"verified\" id=\"record\" class=\"mth-landing__record\"",
+            );
             post_card(&mut b, view, input, false);
+            b.open("div", "class=\"mth-record\"");
+            region_doi(&mut b, &a, "argument.accession", &c.text, &c.bibtex);
+            region_verification(&mut b, view, input);
+            b.close("div");
             b.close("section");
         }
         accession::Kind::Claim => {
@@ -1218,34 +1279,26 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
             );
             b.open(
                 "section",
-                "data-region=\"verified\" id=\"record\" class=\"mth-post\"",
+                "data-region=\"verified\" id=\"record\" class=\"mth-landing__record\"",
             );
-            region_claim(&mut b, claim, false);
-            b.open("dl", "class=\"mth-dl\"");
-            b.row("library", "claim.module", &claim.module);
-            b.row(
-                "statementDigest",
-                "claim.statement_digest",
-                &claim.statement_digest[..12],
-            );
-            b.row(
-                "firstVerified",
+            b.open("div", "class=\"mth-post\"");
+            region_author(
+                &mut b,
+                input,
+                claim.profile_id,
                 "claim.first_verified",
                 &ts(&claim.created_at),
+                &[],
+                &[],
             );
-            b.row(
-                "arguments",
-                "claim.arguments_count",
-                &claim.arguments_count.to_string(),
-            );
-            b.close("dl");
+            region_claim(&mut b, claim, false);
             if claim.arguments_count > 0 {
                 b.lab("h2", "", "arguments");
                 b.open("div", "class=\"mth-table-scroll\"");
                 b.open("table", "class=\"mth-table\"");
                 b.open("thead", "");
                 b.open("tr", "");
-                for k in ["doi", "author", "axioms", "nodes", "verified"] {
+                for k in ["doi", "author", "nodes", "date"] {
                     b.lab("th", "", k);
                 }
                 b.close("tr");
@@ -1269,15 +1322,6 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
                     );
                     b.close("td");
                     b.open("td", "");
-                    if arg.argument.axioms_reached.is_empty() {
-                        b.val("span", "axiom_manifest", "free", "");
-                    } else {
-                        for ax in &arg.argument.axioms_reached {
-                            b.val("span", "axiom_manifest", ax, "class=\"mth-mono\"");
-                        }
-                    }
-                    b.close("td");
-                    b.open("td", "");
                     b.val(
                         "span",
                         "argument.node_count",
@@ -1299,16 +1343,26 @@ pub fn landing_page(input: &Snapshot, acc: &str) -> Option<B> {
                 b.close("table");
                 b.close("div");
             }
-            region_attribution(
-                &mut b,
-                &claim.citation_name,
-                &[],
-                None,
+            b.close("div");
+            b.open("div", "class=\"mth-record\"");
+            region_doi(&mut b, &a, "claim.accession", &c.text, &c.bibtex);
+            b.open("section", "class=\"mth-verification\"");
+            b.lab("h2", "mth-verification__title", "verification");
+            b.open("dl", "class=\"mth-dl\"");
+            b.row("library", "claim.module", &claim.module);
+            b.row(
+                "statementDigest",
+                "claim.statement_digest",
+                &claim.statement_digest[..12],
+            );
+            b.row(
                 "firstVerified",
                 "claim.first_verified",
                 &ts(&claim.created_at),
             );
-            region_doi(&mut b, &a, "claim.accession", &c.text, &c.bibtex);
+            b.close("dl");
+            b.close("section");
+            b.close("div");
             b.close("section");
         }
     }

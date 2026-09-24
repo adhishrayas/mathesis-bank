@@ -15,6 +15,7 @@ export type Shape =
   | "sha256-prefix"
   | "decl"
   | "login"
+  | "name"
   | "label"
   | "em-dash"
   | "lean-statement"
@@ -58,8 +59,8 @@ export const FIELDS: Field[] = [
   { field: "dictionary.label", shape: "label", source: "manifest" },
   { field: "dictionary.curation", shape: "enum", source: "manifest" },
   { field: "profile.login", shape: "login", source: "manifest" },
-  { field: "profile.citation_name", shape: "login", source: "manifest" },
-  { field: "argument.cites", shape: "login", source: "manifest" },
+  { field: "profile.citation_name", shape: "name", source: "manifest" },
+  { field: "argument.cites", shape: "name", source: "manifest" },
   { field: "profile.kind", shape: "enum", source: "manifest" },
   { field: "profile.created_at", shape: "timestamp", source: "manifest" },
   { field: "profile.claims_count", shape: "integer", source: "manifest" },

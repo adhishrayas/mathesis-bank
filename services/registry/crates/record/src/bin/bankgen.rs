@@ -249,6 +249,16 @@ fn argument_dag(
     (nodes, edges, cites)
 }
 
+/// The committed avatar of a profile (`bank/avatars/<login>.<ext>`), as the
+/// record-relative path the pages reference.
+fn avatar_of(bank: &Path, login: &str) -> Option<String> {
+    ["jpg", "png", "gif", "webp"]
+        .iter()
+        .map(|ext| format!("avatars/{login}.{ext}"))
+        .find(|rel| bank.join(rel).is_file())
+        .map(|rel| format!("/{rel}"))
+}
+
 fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<(), String> {
     let c: Curation = read_json(curation)?;
     let ns = Uuid::NAMESPACE_URL;
@@ -280,6 +290,7 @@ fn run(curation: &Path, graphs: &Path, verdicts: &Path, out: &Path) -> Result<()
         kind: Some(c.profile.kind.clone()),
         is_owner: true,
         created_at: c.published_at,
+        avatar: avatar_of(out, &c.profile.login),
     };
     write_json(&out.join("profiles.json"), &json!([profile]))?;
 

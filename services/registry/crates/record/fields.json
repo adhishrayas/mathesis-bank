@@ -141,12 +141,12 @@
   },
   {
     "field": "profile.citation_name",
-    "shape": "login",
+    "shape": "name",
     "source": "manifest"
   },
   {
     "field": "argument.cites",
-    "shape": "login",
+    "shape": "name",
     "source": "manifest"
   },
   {

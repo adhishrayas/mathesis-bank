@@ -664,11 +664,11 @@ statement read as the same object; only diagnostics carry colour.
 .mth-dl          grid grid-cols-[minmax(120px,160px)_minmax(0,1fr)] gap-x-4 gap-y-1.5 items-baseline
 .mth-dl > dt     .mth-term, pt-px
 .mth-dl > dd     m-0 .mth-value, min-w-0 break-words
-.mth-dl--2up     ≥1024: grid-cols-[term 1fr term 1fr]            (G6 — two pairs per row, stream only)
+.mth-dl--2up     ≥1024: grid-cols-[term 1fr term 1fr]            (G6 — unused since verification left the stream)
 @media (max-width:640px) { .mth-dl, .mth-dl--2up { grid-cols-1 } ; dd { mb-2 } }
 ```
 
-The Verification block is always seven `<dt>/<dd>` pairs (SPEC §8.5 region 3). `--2up` changes only how the same seven
+The Verification block is always seven `<dt>/<dd>` pairs, on an argument's own page only. `--2up` changes only how the same seven
 pairs wrap; it never merges a term into its value.
 
 ### 7.9 `.mth-table`
@@ -903,7 +903,7 @@ uncatalogued `aria-label` and is therefore unbuildable.
   style as well as colour (G7); in-prose links are underlined.
 * **Reduced motion** disables the page rule's animation and all transitions.
 * **No-JS:** every generated page renders its record fully without scripts — claim statement, every DAG node decl,
-  all seven verification rows, attribution and the DOI (`no_javascript_required`, SPEC §13). Disclosure, clamping and
+  the author, the ⋯ menu, and on a record page the DOI and all verification rows (`no_javascript_required`, SPEC §13). Disclosure, clamping and
   the login link all work without JS; only `Expand all`/`Collapse all`, the DAG `Graph` layout, search, paging and
   the IDE require it.
 
@@ -939,7 +939,7 @@ attribution, the DOI and the citation.
 | Nav | 4 links, horizontally scrollable, 16px gutter | inline | inline | inline |
 | Posts | 1 col, card padding 12px, claim clamp 12 | 1 col | 1 col, `max-w-stream` | `max-w-stream` |
 | Post DAG | `List` forced, nodes clamped | `List` forced | `List` default in stream / `Graph` default on landing when eligible | same |
-| Verification `<dl>` | 1 col | 2 col | 2 col (`--2up` in the stream) | `--2up` |
+| Verification `<dl>` (record pages only) | 1 col | 2 col | 2 col | 2 col |
 | Collection | table scrolls-x with sticky `DOI`; filters stack 1-col | filters 2-col | filters inline row | `max-w-shell`, `Statement` widens |
 | Profile DOIs | scrolls-x (or `--stacked`) | scrolls-x | full | full |
 | Submit | editor 45vh over infoview 30vh, stacked | stacked | split 60/40 | split 62/38, `max-w-shell` |
@@ -961,7 +961,10 @@ Shared chrome on **every** page, generated and SPA alike, byte-identical, no con
 ```
 <nav class="mth-nav">
   «Mathesis»                                → /posts       (wordmark + 16px decorative mark)
-  «Posts» «Profile» «Collection» «About»    → /posts /profile /collection/claims /about
+  «Posts» «Profile» «Collection» «About»    → / /u/{owner.login}/ /collection/claims /about
+                                             Posts is the landing page. Until sign-in exists, «Profile»
+                                             opens the profile the record is published under (the owner);
+                                             with sign-in it opens the signed-in user's own.
 </nav>                                        aria-current="page" on the active item
 <main class="mth-main" tabindex="-1"> … </main>
 ```
@@ -987,15 +990,37 @@ No footer. No `Sign in` in the nav. No session-dependent bytes anywhere in the n
 </main>
 ```
 
-#### The post card — five regions (shared by `/posts` and `/a/{MTH.R-…}`)
+#### The post card — the author, the claim, the argument (shared by `/`, `/u/{login}` and `/a/{MTH.R-…}`)
+
+A post opens with its author, as a social feed does:
+
+```
+AUTHOR  <header class="mth-post__author">   bottom hairline
+  <a class="mth-author" href="/u/{login}/">
+    <img class="mth-avatar mth-avatar--sm">  40px; alt is the value profile.citation_name;
+                                             src is the record's own copy, /avatars/{login}.{ext};
+                                             absent avatar → no <img>
+    {profile.citation_name}  600 weight      {profile.login}  muted, "@" by CSS
+  </a>
+  ml-auto: {profile.kind} .mth-status--neutral · {argument.created_at} tabular-nums, muted
+  ⋯  <details class="mth-more">              the post's one way to its records; opens without JS,
+       <summary aria-label="«DOIs»">          the client closes it on an outside click or Escape
+       .mth-more__menu  {Claim} {claim.accession} → /a/{claim.accession}
+                        {Argument} {argument.accession} → /a/{argument.accession}
+                                             (the two kind words are accession.kind values)
+  «Cites» {argument.cites}…                  full-width row, only when the argument cites premises
+                                             written by other authors
+</header>
+```
+
+Verification is the baseline every post meets, so a post never states it: no verification block, no DOI,
+no accession chip. The ⋯ menu leads to the claim's and the argument's pages (§12.4), where the DOI, the
+citation and a small verification section live. Two regions follow the header:
 
 ```
 REGION 1  .mth-card__region — Claim
-  head  flex items-center gap-2
-        «Claim»  .mth-term
-        <a class="mth-doi" href="/a/{claim.accession}">{claim.accession}</a>
-        «Copy»  .mth-copy   ml-auto   → {clipboard.state} = Copied for 2s
   meta  .mth-metric  «Decl» {claim.decl_name}    .mth-value--mono, CSS-truncated (G10)
+        «Copy»  .mth-copy   → {clipboard.state} = Copied for 2s
   body  stream:  .mth-lean-clamp--12 wrapper + <pre .mth-lean--claim data-field="claim.pretty">
                  + sibling .mth-lean-toggle  («Expand»/«Collapse»)        [§7.11]
         landing: no wrapper, no toggle, .mth-lean--lg
@@ -1035,38 +1060,16 @@ REGION 2  .mth-card__region — Argument DAG
         </div>
         <aside class="mth-dag-inspector mth-panel">  the focused node's List fields, nothing new
 
-REGION 3  .mth-card__region — Verification
-  <h3 class="mth-term">«Verification»</h3>
-  <dl class="mth-dl mth-dl--2up">        exactly SEVEN pairs, never compounded
-    «Replay»              {replay_accepted}          → .mth-status--ok   (accepted)
-    «Axioms»              {axiom_manifest}           → .mth-value--mono names, or «free» .mth-status--ok
-    «Statement identity»  {statement_identity}       → pass .mth-status--ok | not-applicable --neutral
-    «Substrate»           {substrate}                → .mth-value--mono
-    «Dictionary pin»      {dictionary.label}         → .mth-value--mono
-    «Frozen export»       {frozen_export.sha256_12}  → .mth-value--sha + «Copy»
-    «Verified»            {argument.created_at}      → .mth-value, tabular-nums
-  </dl>
-
-REGION 4  .mth-card__region — Attribution   (no avatar, no login, no Profile kind — SPEC §8.5 R17)
-  .mth-metric-row
-    «Author»    <a href="/p/{profile_id}">{profile.citation_name}</a>
-    «Submitted» {argument.created_at}
-
-REGION 5  .mth-card__region — DOI
-  flex items-center gap-2 flex-wrap
-    «DOI»  <span class="mth-doi mth-doi--lg">{argument.accession}</span>
-    ml-auto: «Open» .mth-btn--primary → /a/{argument.accession}
-             <details class="mth-cite"><summary>«Cite»</summary>
-               .mth-cite__text [data-citation-text] · hidden [data-citation-bibtex]
-               «Copy» · «Copy BibTeX»
-             </details>
 ```
+
+The verification block and the DOI with its citation moved to the record pages (§12.4); the attribution
+region was replaced by the author header.
 
 **States.** Loading (SPA paging) → the 2px page rule under the nav; no skeleton text (F3).
 Empty stream → empty `<ol>` and `{posts.total}` = `0`; no empty-state sentence, no illustration.
 Degraded → `.mth-degraded` inside the region that made the request, and nowhere else.
 
-### 12.2 PROFILE — `/u/{login}` (login-gated, generated)
+### 12.2 PROFILE — `/u/{login}` (generated; public until sign-in exists, then login-gated)
 
 ```
 <main class="mth-shell">    py-6, flex flex-col gap-6
@@ -1095,10 +1098,11 @@ Degraded → `.mth-degraded` inside the region that made the request, and nowher
     .mth-section-head  <h2 id="dois-h">«DOIs»</h2>  .mth-count {counts.dois}
     <div class="mth-table-scroll"><table class="mth-table" aria-labelledby="dois-h">   (G8)
       th: «DOI» --col-doi sticky · «Decl» 1fr/min --col-decl · «Accession kind» --col-kind
-          «Axioms» --col-axioms · «Arguments» --col-num (num) · «Verified» --col-date
-      each th = .mth-th-sort button + caret + aria-sort; default «Verified» desc
+          «Arguments» --col-num (num) · «Date» --col-date
+      default «Date» desc (newest first), ties by accession
       td: .mth-doi | .mth-td-mono truncated | «Claim»/«Argument» .mth-status--neutral
-          | names | «free» | «—» | .mth-td-num | tabular date
+          | .mth-td-num | tabular date
+      no verification column: a profile is a social surface
       row → /a/{accession}; roving tabindex, j/k/Enter
     </table></div>
 
@@ -1175,20 +1179,22 @@ All nine `Status` states, both verdict shapes and every `renderReason` template 
 
   <article class="landing" data-accession="{accession}" data-owner-profile-id="{…}">
 
-    <section data-region="verified" id="record" class="mth-card">     generated · immutable
-      • argument accession → the full post renderer, regions 1–5, unclamped, Graph default
-      • claim accession →
-          REGION 1  «Claim» chip · «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg
-          REGION 2  <dl class="mth-dl">
-                      «Library»           {claim.module}
-                      «Statement digest»  {statement_digest_12}  .mth-value--sha + «Copy»
-                      «First verified»    {claim.created_at}
-                      «Arguments»         {arguments_count}
-          REGION 3  <h2 id="args-h">«Arguments»</h2> + .mth-table aria-labelledby="args-h"
-                    th: «DOI» «Author» «Axioms» «Nodes» «Verified»
-                    OMITTED ENTIRELY when «Arguments» is 0 — which is how an open seed claim renders
-          REGION 4  Attribution: «Author» → /p/{profile_id} · «First verified»
-          REGION 5  «DOI» + «Open» + «Cite» / «Copy» / «Copy BibTeX»    (baked)
+    <section data-region="verified" id="record" class="mth-landing__record">   generated · immutable
+      • argument accession → the post card (author with ⋯, claim unclamped, DAG with Graph default)
+      • claim accession → a card:
+          AUTHOR    the author header, no ⋯ · the date is {claim.created_at}
+          REGION 1  «Decl» {claim.decl_name} · .mth-lean--claim .mth-lean--lg · «Copy»
+          REGION 2  <h2>«Arguments»</h2> + .mth-table
+                    th: «DOI» «Author» «Nodes» «Date»
+                    OMITTED ENTIRELY when there are no arguments — which is how an open seed claim renders
+      then, below the card and outside it, <div class="mth-record">:
+          «DOI» {accession} · «Cite» «Copy» «Copy BibTeX»    (baked)
+          <section class="mth-verification">   small: 2xs uppercase title, 2xs rows, muted, top hairline
+            argument: the seven pairs — «Replay» «Axioms» «Statement identity» «Substrate»
+                      «Dictionary pin» «Frozen export» «Verified»
+            claim:    «Library» {claim.module} · «Statement digest» {statement_digest_12}
+                      · «First verified» {claim.created_at}
+          </section>
     </section>
 
     <section data-region="author" id="authored"

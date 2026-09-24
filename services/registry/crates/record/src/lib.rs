@@ -142,6 +142,9 @@ pub struct RecordManifest {
 struct Writer {
     root: PathBuf,
     base_path: String,
+    /// The nav's `Profile` target: before sign-in exists, the profile the
+    /// record is published under.
+    profile_href: Option<String>,
     files: BTreeMap<String, FileDigest>,
     pages: usize,
     leak_scan: bool,
@@ -185,7 +188,10 @@ impl Writer {
     /// One page and the `{field,value}` array `prose-lint` checks its rendered
     /// values against, emitted by the same pass that rendered them (R40).
     fn page(&mut self, rel: &str, page: &str, b: &B) -> Result<(), GenError> {
-        let html = pages::with_base(&pages::shell(page, &b.s), &self.base_path);
+        let html = pages::with_base(
+            &pages::shell(page, &b.s, self.profile_href.as_deref()),
+            &self.base_path,
+        );
         self.put(rel, html.as_bytes())?;
         let values = rel
             .strip_suffix("index.html")
@@ -347,6 +353,12 @@ fn render(
     let mut w = Writer {
         root: root.to_path_buf(),
         base_path: opts.base_path.trim_end_matches('/').to_string(),
+        profile_href: s
+            .profiles
+            .iter()
+            .find(|p| p.is_owner)
+            .or(s.profiles.first())
+            .map(|p| format!("/u/{}/", p.login)),
         files: BTreeMap::new(),
         pages: 0,
         leak_scan: opts.leak_scan,
@@ -366,6 +378,13 @@ fn render(
         &pages::collection_page(s, "arguments"),
     )?;
     w.page("about/index.html", "about", &pages::about_page(s))?;
+    for p in &s.profiles {
+        w.page(
+            &format!("u/{}/index.html", p.login),
+            "profile",
+            &pages::profile_page(s, p),
+        )?;
+    }
 
     let not_found = pages::not_found_page();
     w.page("404.html", "404", &not_found)?;

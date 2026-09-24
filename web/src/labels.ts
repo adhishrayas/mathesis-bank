@@ -54,8 +54,8 @@ export const LABELS = {
   frozenExport: "Frozen export",
   verified: "Verified",
   firstVerified: "First verified",
-  submitted: "Submitted",
   joined: "Joined",
+  date: "Date",
 
   // controls
   search: "Search",
@@ -77,12 +77,10 @@ export const LABELS = {
   layout: "Layout",
   graph: "Graph",
   list: "List",
-  open: "Open",
   cite: "Cite",
   copy: "Copy",
   copyBibtex: "Copy BibTeX",
   cites: "Cites",
-  source: "Source",
 
   // sections and terms rendered as headings
   dictionaryLeaves: "Dictionary leaves",

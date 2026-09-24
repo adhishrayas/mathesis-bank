@@ -18,7 +18,8 @@ import { REPO_DIR } from "./sources";
 
 const SHAPES: Shape[] = [
   "enum", "accession", "timestamp", "integer", "sha256-prefix", "decl",
-  "login", "label", "em-dash", "lean-statement", "citation",
+  "login",
+  "name", "label", "em-dash", "lean-statement", "citation",
 ];
 
 const EXPORTED = join(REPO_DIR, "services", "registry", "crates", "record", "fields.json");

@@ -105,6 +105,28 @@ export function mountDag(root: ParentNode = document): void {
   }
 }
 
+// ------------------------------------------------------------- the ⋯ menu
+
+/** A post's ⋯ menu is a `<details>`, so it opens without this. Here, opening
+ * one closes the others, and a click outside it or Escape closes it. */
+export function mountMenus(root: Document = document): void {
+  const menus = (): HTMLDetailsElement[] => qsa<HTMLDetailsElement>("details.mth-more", root);
+  root.addEventListener("click", (ev) => {
+    const target = ev.target instanceof Node ? ev.target : null;
+    for (const menu of menus()) {
+      if (menu.open && !(target && menu.contains(target))) menu.open = false;
+    }
+  });
+  root.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Escape") return;
+    for (const menu of menus()) {
+      if (!menu.open) continue;
+      menu.open = false;
+      qs<HTMLElement>("summary", menu)?.focus();
+    }
+  });
+}
+
 // ---------------------------------------------------------------- the clamp
 
 /** The per-row `Expand`/`Collapse` of a clamped statement. The label swaps

@@ -1,7 +1,35 @@
 [
   {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "profile.login",
+    "value": "Zetetic-Dhruv"
+  },
+  {
+    "field": "profile.kind",
+    "value": "person"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Claim"
+  },
+  {
     "field": "claim.accession",
     "value": "MTH.C-2026-6013"
+  },
+  {
+    "field": "accession.kind",
+    "value": "Argument"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6013"
   },
   {
     "field": "claim.decl_name",
@@ -1600,6 +1628,10 @@
     "value": "MeasureTheory.continuous_embedBaireReal"
   },
   {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6013"
+  },
+  {
     "field": "replay_accepted",
     "value": "accepted"
   },
@@ -1634,17 +1666,5 @@
   {
     "field": "argument.created_at",
     "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "profile.citation_name",
-    "value": "Dhruv Gupta"
-  },
-  {
-    "field": "argument.created_at",
-    "value": "2026-09-24T00:00:00Z"
-  },
-  {
-    "field": "argument.accession",
-    "value": "MTH.R-2026-6013"
   }
 ]

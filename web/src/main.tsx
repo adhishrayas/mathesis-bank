@@ -2,7 +2,7 @@
 // file: the mounts add behaviour, never content.
 
 import "../tailwind.css";
-import { mountClipboard, mountDag, mountExpanders, mountKeyboard } from "./record";
+import { mountClipboard, mountDag, mountExpanders, mountKeyboard, mountMenus } from "./record";
 import { mountCollection } from "./collection";
 import { mountPostsFilter } from "./posts";
 import { mountTableSort } from "./table";
@@ -12,6 +12,7 @@ function boot(): void {
   mountDag(document);
   mountExpanders(document);
   mountKeyboard(document);
+  mountMenus(document);
   switch (document.body.getAttribute("data-page")) {
     case "posts":
       mountPostsFilter(document);
