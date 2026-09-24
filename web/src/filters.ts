@@ -129,6 +129,20 @@ export function bankPage(bank: Bank, page: number): string {
  * of the client, which is why `isAccession` takes it. */
 export const DEFAULT_DOI_PREFIX = "MTH";
 
+/** The landing path of a well-formed accession, or null. The path is rebuilt
+ * from the parsed parts, never from the typed text: the prefix is encoded, the
+ * kind is chosen by comparison and the digits are re-derived as numbers. */
+export function accessionPath(input: string, prefix: string = DEFAULT_DOI_PREFIX): string | null {
+  const m = /^([A-Z]+)\.(C|R)-([0-9]{4})-([0-9]{4,6})$/.exec(input.trim());
+  // `site.json` writes the prefix with its separator (`MTH.`); either form names it.
+  const want = prefix.endsWith(".") ? prefix.slice(0, -1) : prefix;
+  if (!m || m[1] !== want) return null;
+  const kind = m[2] === "C" ? "C" : "R";
+  const year = String(Number(m[3])).padStart(4, "0");
+  const serial = String(Number(m[4])).padStart((m[4] ?? "").length, "0");
+  return `/a/${encodeURIComponent(want)}.${kind}-${year}-${serial}/`;
+}
+
 /**
  * Whether a string is a well-formed accession of either kind — the DOI scheme
  * of SPEC.md §5, `<prefix>.C-YYYY-NNNN` and `<prefix>.R-YYYY-NNNN`.
@@ -139,6 +153,7 @@ export const DEFAULT_DOI_PREFIX = "MTH";
  * page; a malformed one never leaves the field.
  */
 export function isAccession(s: string, prefix: string = DEFAULT_DOI_PREFIX): boolean {
-  const p = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const bare = prefix.endsWith(".") ? prefix.slice(0, -1) : prefix;
+  const p = bare.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return new RegExp(`^${p}\\.(C|R)-[0-9]{4}-[0-9]{4,6}$`).test(s.trim());
 }
