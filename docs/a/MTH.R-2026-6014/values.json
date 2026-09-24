@@ -1,0 +1,3838 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6014"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "KWLock.ambainis_tower_locked"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (d : ℕ),\n  ¬∃ t,\n      KWLock.Realizes (KWLock.onesOf (KWLock.Fd 4 KWLock.fA (d + 1))) (KWLock.zerosOf (KWLock.Fd 4 KWLock.fA (d + 1)))\n        (KWLock.towerP 4 KWLock.fA KWLock.pA d) t"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "61"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "117"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "51"
+  },
+  {
+    "field": "argument.depth",
+    "value": "7"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ambainis_tower_locked"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "tower_good"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zerosOf_congr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "onesOf_congr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_rowConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cross_step_row"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cluster_linked_row"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_monoValid"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_distinct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairwise_disjoint_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_isPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rowSideSel_val"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rowSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_pairwise"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_colConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cross_step_col"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_point₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "colSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "partition_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "covers"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cluster_linked_col"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_compPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "linked_all_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_point"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "colSideSel_val"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_zerosOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_onesOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "contained"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rowc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "part"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dist"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "colc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Fd_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "comp_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "connected_not_protocoliza…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "row_side_invariant"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "col_side_invariant"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "leaves_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "follows_leaf_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pA_rowConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pA_mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pA_isPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pA_distinct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pA_colConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "linked_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "linked_mem_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fA_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_tower_locked"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d : ℕ),\n  ¬∃ t,\n      KWLock.Realizes (KWLock.onesOf (KWLock.Fd 4 KWLock.fA (d + 1))) (KWLock.zerosOf (KWLock.Fd 4 KWLock.fA (d + 1)))\n        (KWLock.towerP 4 KWLock.fA KWLock.pA d) t"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Fd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Lab"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Realizes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Sp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.fA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instFintypeSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.towerP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (k : ℕ) (f : (Fin k → Bool) → Bool) (P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))),\n  KWLock.TowerHyp k f P₀ →\n    ∀ (d : ℕ),\n      ¬∃ t,\n          KWLock.Realizes (KWLock.onesOf (KWLock.Fd k f (d + 1))) (KWLock.zerosOf (KWLock.Fd k f (d + 1)))\n            (KWLock.towerP k f P₀ d) t"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Fd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Lab"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Realizes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Sp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instFintypeSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.towerP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.vval"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_tower_locked"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (k : ℕ) (f : (Fin k → Bool) → Bool) (P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))),\n  KWLock.TowerHyp k f P₀ →\n    ∀ (d : ℕ),\n      KWLock.IsPartition (KWLock.onesOf (KWLock.Fd k f (d + 1))) (KWLock.zerosOf (KWLock.Fd k f (d + 1)))\n          (KWLock.towerP k f P₀ d) ∧\n        KWLock.MonoValid (KWLock.vval k d) (KWLock.vval k d) (KWLock.towerP k f P₀ d) ∧\n          KWLock.RowConnected (KWLock.towerP k f P₀ d) ∧\n            KWLock.ColConnected (KWLock.towerP k f P₀ d) ∧\n              ∃ r ∈ KWLock.towerP k f P₀ d, ∃ s ∈ KWLock.towerP k f P₀ d, r ≠ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Fd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Lab"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Sp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compFun"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instFintypeSp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.towerP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.vval"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Fd_onto"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.colc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.dist"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.onto"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.part"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.rowc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_monoValid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.onesOf_congr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.zerosOf_congr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.zerosOf_congr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type} [inst : Fintype α] {h₁ h₂ : α → Bool}, (∀ (x : α), h₁ x = h₂ x) → KWLock.zerosOf h₁ = KWLock.zerosOf h₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.onesOf_congr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type} [inst : Fintype α] {h₁ h₂ : α → Bool}, (∀ (x : α), h₁ x = h₂ x) → KWLock.onesOf h₁ = KWLock.onesOf h₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          KWLock.RowConnected Po →\n            (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n              (∀ (i : Fin k), KWLock.ColConnected (Q i)) → KWLock.RowConnected (KWLock.compPartition g Po Q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_all_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n          ∀ {Ro So : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n            Ro ∈ Po →\n              So ∈ Po →\n                KWLock.RowTouch Ro So →\n                  ∀ {q : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label → ∃ p ∈ Q So.label, KWLock.RowTouch (KWLock.compRect g Ro q) (KWLock.compRect g So p)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point₂"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n            (∀ (i : Fin k), KWLock.ColConnected (Q i)) →\n              ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n                Ro ∈ Po →\n                  ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label →\n                      q' ∈ Q Ro.label →\n                        Relation.ReflTransGen (KWLock.TStep KWLock.RowTouch (KWLock.compPartition g Po Q))\n                          (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_all_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n          Ro ∈ Po →\n            Ro.rows.Nonempty →\n              ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                q ∈ Q Ro.label →\n                  ∀ {v₀ : V Ro.label},\n                    v₀ ∈ KWLock.rowSideSel Ro.orient q →\n                      v₀ ∈ KWLock.rowSideSel Ro.orient q' →\n                        KWLock.RowTouch (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_monoValid"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))} (vκ : (i : Fin k) → V i → κ i → Bool),\n  (∀ (i : Fin k), KWLock.MonoValid (vκ i) (vκ i) (Q i)) →\n    KWLock.MonoValid (fun w s => vκ s.fst (w s.fst) s.snd) (fun w s => vκ s.fst (w s.fst) s.snd)\n      (KWLock.compPartition g Po Q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          (∃ r ∈ Po, ∃ s ∈ Po, r ≠ s) → ∃ r ∈ KWLock.compPartition g Po Q, ∃ s ∈ KWLock.compPartition g Po Q, r ≠ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compFun"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.disjoint"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pairwise_disjoint_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pairwise_disjoint_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {P : List (KWLock.KRect X Y ι)},\n  List.Pairwise (fun r s => ∀ (x : X) (y : Y), ¬(r.Cell x y ∧ s.Cell x y)) P →\n    ∀ {r s : KWLock.KRect X Y ι}, r ∈ P → s ∈ P → r ≠ s → ∀ (x : X) (y : Y), ¬(r.Cell x y ∧ s.Cell x y)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n          KWLock.IsPartition (KWLock.onesOf (KWLock.compFun g f)) (KWLock.zerosOf (KWLock.compFun g f))\n            (KWLock.compPartition g Po Q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compFun"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.covers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.disjoint"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_pairwise"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → Fintype (V i)] {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool)\n  {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows ⊆ KWLock.onesOf (g a) →\n    q.cols ⊆ KWLock.zerosOf (g a) → ∀ (o : Bool) {v : V a}, v ∈ KWLock.rowSideSel o q → g a v = o"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V κ : Fin k → Type} {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows.Nonempty ∧ q.cols.Nonempty → ∀ (o : Bool), (KWLock.rowSideSel o q).Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_pairwise"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  List.Pairwise (fun r s => ∀ (x y : Fin k → Bool), ¬(r.Cell x y ∧ s.Cell x y)) Po →\n    (∀ (i : Fin k), List.Pairwise (fun r s => ∀ (x y : V i), ¬(r.Cell x y ∧ s.Cell x y)) (Q i)) →\n      List.Pairwise (fun r s => ∀ (x y : (i : Fin k) → V i), ¬(r.Cell x y ∧ s.Cell x y)) (KWLock.compPartition g Po Q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_rows_compRect"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)}\n  {q : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)} {w : (i : Fin k) → V i},\n  w ∈ (KWLock.compRect g Ro q).rows ↔ KWLock.blockPat g w ∈ Ro.rows ∧ w Ro.label ∈ KWLock.rowSideSel Ro.orient q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rowSideSel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_monoValid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_pairwise"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.disjoint"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → List.Pairwise (fun r s => ∀ (x : X) (y : Y), ¬(r.Cell x y ∧ s.Cell x y)) P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          KWLock.ColConnected Po →\n            (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n              (∀ (i : Fin k), KWLock.ColConnected (Q i)) → KWLock.ColConnected (KWLock.compPartition g Po Q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_all_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n          ∀ {Ro So : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n            Ro ∈ Po →\n              So ∈ Po →\n                KWLock.ColTouch Ro So →\n                  ∀ {q : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label → ∃ p ∈ Q So.label, KWLock.ColTouch (KWLock.compRect g Ro q) (KWLock.compRect g So p)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point₂"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} (g : (i : Fin k) → V i → Bool),\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    ∀ (u : Fin k → Bool) {a₁ a₂ : Fin k},\n      a₁ ≠ a₂ →\n        ∀ (v₁ : V a₁) (v₂ : V a₂),\n          g a₁ v₁ = u a₁ → g a₂ v₂ = u a₂ → ∃ w, KWLock.blockPat g w = u ∧ w a₁ = v₁ ∧ w a₂ = v₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V κ : Fin k → Type} {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows.Nonempty ∧ q.cols.Nonempty → ∀ (o : Bool), (KWLock.colSideSel o q).Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → Fintype (V i)] {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool)\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) → ∀ (i : Fin k), Q i ≠ []"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.partition_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.partition_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → RX.Nonempty → CY.Nonempty → P ≠ []"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.covers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.covers"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → ∀ x ∈ RX, ∀ y ∈ CY, ∃ r ∈ P, r.Cell x y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.partition_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool)\n  {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) Po →\n      KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n        (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n          (∀ (i : Fin k), KWLock.RowConnected (Q i)) →\n            (∀ (i : Fin k), KWLock.ColConnected (Q i)) →\n              ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n                Ro ∈ Po →\n                  ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                    q ∈ Q Ro.label →\n                      q' ∈ Q Ro.label →\n                        Relation.ReflTransGen (KWLock.TStep KWLock.ColTouch (KWLock.compPartition g Po Q))\n                          (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_all_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_compPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))}\n  {r : KWLock.KRect ((i : Fin k) → V i) ((i : Fin k) → V i) ((i : Fin k) × κ i)},\n  r ∈ KWLock.compPartition g Po Q ↔ ∃ Ro ∈ Po, ∃ q ∈ Q Ro.label, r = KWLock.compRect g Ro q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_monoValid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_pairwise"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_all_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop) {P : List (KWLock.KRect X Y ι)}\n  {r s : KWLock.KRect X Y ι}, r ∈ P → Relation.ReflTransGen (KWLock.TStep T P) r s → s ∈ P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Po : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))}\n  {Q : (i : Fin k) → List (KWLock.KRect (V i) (V i) (κ i))},\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    KWLock.MonoValid (fun u i => u i) (fun u i => u i) Po →\n      (∀ (i : Fin k), KWLock.IsPartition (KWLock.onesOf (g i)) (KWLock.zerosOf (g i)) (Q i)) →\n        ∀ {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)},\n          Ro ∈ Po →\n            Ro.cols.Nonempty →\n              ∀ {q q' : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)},\n                q ∈ Q Ro.label →\n                  ∀ {v₀ : V Ro.label},\n                    v₀ ∈ KWLock.colSideSel Ro.orient q →\n                      v₀ ∈ KWLock.colSideSel Ro.orient q' →\n                        KWLock.ColTouch (KWLock.compRect g Ro q) (KWLock.compRect g Ro q')"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_cols_compRect"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → DecidableEq (V i)] [inst_1 : (i : Fin k) → Fintype (V i)]\n  {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool) {Ro : KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k)}\n  {q : KWLock.KRect (V Ro.label) (V Ro.label) (κ Ro.label)} {w : (i : Fin k) → V i},\n  w ∈ (KWLock.compRect g Ro q).cols ↔ KWLock.blockPat g w ∈ Ro.cols ∧ w Ro.label ∈ KWLock.colSideSel Ro.orient q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compRect"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_monoValid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_pairwise"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.exists_point"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} (g : (i : Fin k) → V i → Bool),\n  (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) →\n    ∀ (u : Fin k → Bool) (a : Fin k) (v : V a), g a v = u a → ∃ w, KWLock.blockPat g w = u ∧ w a = v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} [inst : (i : Fin k) → Fintype (V i)] {κ : Fin k → Type} (g : (i : Fin k) → V i → Bool)\n  {a : Fin k} {q : KWLock.KRect (V a) (V a) (κ a)},\n  q.rows ⊆ KWLock.onesOf (g a) →\n    q.cols ⊆ KWLock.zerosOf (g a) → ∀ (o : Bool) {v : V a}, v ∈ KWLock.colSideSel o q → g a v = !o"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.colSideSel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_zerosOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type} [inst : Fintype α] {h : α → Bool} {x : α}, x ∈ KWLock.zerosOf h ↔ h x = false"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.zerosOf_congr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.mem_onesOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type} [inst : Fintype α] {h : α → Bool} {x : α}, x ∈ KWLock.onesOf h ↔ h x = true"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.colSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_Q_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.onesOf_congr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.rowSideSel_val"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.contained"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → ∀ r ∈ P, r.rows ⊆ RX ∧ r.cols ⊆ CY"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_colTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_rowTouch_same"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.rowc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.RowConnected P₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.part"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.IsPartition (KWLock.onesOf f) (KWLock.zerosOf f) P₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → ∀ (b : Bool), ∃ u, f u = b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.MonoValid (fun u i => u i) (fun u i => u i) P₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.dist"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → ∃ r ∈ P₀, ∃ s ∈ P₀, r ≠ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.TowerHyp.colc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {f : (Fin k → Bool) → Bool} {P₀ : List (KWLock.KRect (Fin k → Bool) (Fin k → Bool) (Fin k))},\n  KWLock.TowerHyp k f P₀ → KWLock.ColConnected P₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Fd_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (k : ℕ) (f : (Fin k → Bool) → Bool),\n  (∀ (b : Bool), ∃ u, f u = b) → ∀ (d : ℕ) (b : Bool), ∃ w, KWLock.Fd k f (d + 1) w = b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Fd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Sp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_onto"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_good"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {k : ℕ} {V : Fin k → Type} (g : (i : Fin k) → V i → Bool) (f : (Fin k → Bool) → Bool),\n  (∀ (b : Bool), ∃ u, f u = b) →\n    (∀ (i : Fin k) (b : Bool), ∃ v, g i v = b) → ∀ (b : Bool), ∃ w, KWLock.compFun g f w = b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.blockPat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.compFun"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Fd_onto"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} [inst : DecidableEq X] [inst_1 : DecidableEq Y] {RX : Finset X} {CY : Finset Y}\n  {P : List (KWLock.KRect X Y ι)},\n  (∀ r ∈ P, r.rows.Nonempty ∧ r.cols.Nonempty) →\n    KWLock.RowConnected P → KWLock.ColConnected P → (∃ r ∈ P, ∃ s ∈ P, r ≠ s) → ¬∃ t, KWLock.Realizes RX CY P t"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.Follows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.leaves"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Realizes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Protocol.follows_leaf_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Protocol.leaves_ne_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.col_side_invariant"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.row_side_invariant"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.row_side_invariant"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} [inst : DecidableEq X] {P : List (KWLock.KRect X Y ι)} {RX A : Finset X},\n  (∀ p ∈ P, p.rows ⊆ RX ∩ A ∨ p.rows ⊆ RX \\ A) →\n    ∀ {p q : KWLock.KRect X Y ι},\n      Relation.ReflTransGen (KWLock.TStep KWLock.RowTouch P) p q → p.rows ⊆ RX ∩ A → q.rows ⊆ RX ∩ A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.col_side_invariant"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} [inst : DecidableEq Y] {P : List (KWLock.KRect X Y ι)} {CY B : Finset Y},\n  (∀ p ∈ P, p.cols ⊆ CY ∩ B ∨ p.cols ⊆ CY \\ B) →\n    ∀ {p q : KWLock.KRect X Y ι},\n      Relation.ReflTransGen (KWLock.TStep KWLock.ColTouch P) p q → p.cols ⊆ CY ∩ B → q.cols ⊆ CY ∩ B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Protocol.leaves_ne_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} (t : KWLock.Protocol X Y ι), t.leaves ≠ []"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.brecOn.go"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.leaves"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.Protocol.follows_leaf_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} [inst : DecidableEq X] [inst_1 : DecidableEq Y] {RX : Finset X} {CY : Finset Y}\n  (t : KWLock.Protocol X Y ι), KWLock.Protocol.Follows RX CY t → ∀ r ∈ t.leaves, r.rows ⊆ RX ∧ r.cols ⊆ CY"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.Follows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.brecOn.go"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.Protocol.leaves"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connected_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.IsPartition.nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {RX : Finset X} {CY : Finset Y} {P : List (KWLock.KRect X Y ι)},\n  KWLock.IsPartition RX CY P → ∀ r ∈ P, r.rows.Nonempty ∧ r.cols.Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cluster_linked_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.comp_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_col"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.cross_step_row"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.tower_not_protocolizable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KWLock.TowerHyp 4 KWLock.fA KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TowerHyp"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.fA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.fA_onto"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_distinct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_isPartition"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_tower_locked"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_rowConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KWLock.RowConnected KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqKRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableIsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableRowTouchOfDecidableEq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA3"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA4"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA5"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA6"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA7"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA8"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.RowTouch.symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.RowTouch.symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {r s : KWLock.KRect X Y ι}, KWLock.RowTouch r s → KWLock.RowTouch s r"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.RowTouch"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KWLock.MonoValid (fun u i => u i) (fun u i => u i) KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.label"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.orient"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.MonoValid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_isPartition"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KWLock.IsPartition (KWLock.onesOf KWLock.fA) (KWLock.zerosOf KWLock.fA) KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsPartition"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.Cell"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.rows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.fA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableCellOfDecidableEq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.onesOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.zerosOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_distinct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ r ∈ KWLock.pA, ∃ s ∈ KWLock.pA, r ≠ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqKRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_colConnected"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KWLock.ColConnected KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColConnected"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableColTouchOfDecidableEq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableEqKRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.instDecidableIsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.pA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA3"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA4"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA5"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA6"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA7"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.rA8"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ColTouch.symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop),\n  (∀ {r s : KWLock.KRect X Y ι}, T r s → T s r) →\n    ∀ {P w : List (KWLock.KRect X Y ι)},\n      w ≠ [] → KWLock.IsWalk T w → (∀ r ∈ w, r ∈ P) → (∀ r ∈ P, r ∈ w) → KWLock.ConnectedVia T P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ConnectedVia"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_mem_symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_rowConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop) {P : List (KWLock.KRect X Y ι)}\n  {a : KWLock.KRect X Y ι} {l : List (KWLock.KRect X Y ι)},\n  KWLock.IsWalk T (a :: l) → (∀ r ∈ a :: l, r ∈ P) → ∀ b ∈ a :: l, Relation.ReflTransGen (KWLock.TStep T P) a b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.IsWalk"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.linked_mem_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} (T : KWLock.KRect X Y ι → KWLock.KRect X Y ι → Prop),\n  (∀ {r s : KWLock.KRect X Y ι}, T r s → T s r) →\n    ∀ {P : List (KWLock.KRect X Y ι)} {r s : KWLock.KRect X Y ι},\n      r ∈ P → Relation.ReflTransGen (KWLock.TStep T P) r s → s ∈ P ∧ Relation.ReflTransGen (KWLock.TStep T P) s r"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.TStep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.connectedVia_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ColTouch.symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X Y ι : Type} {r s : KWLock.KRect X Y ι}, KWLock.ColTouch r s → KWLock.ColTouch s r"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.ColTouch"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.KRect.cols"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.pA_colConnected"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.fA_onto"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (b : Bool), ∃ u, KWLock.fA u = b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KWLock.fA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KWLock.ambainis_towerHyp"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "d7bd4a249109"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6014"
+  }
+]

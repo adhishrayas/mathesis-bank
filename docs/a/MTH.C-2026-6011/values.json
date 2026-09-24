@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6011"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), Set.Nonempty C → ↑(OptimalMistakeBound X C) = LittlestoneDim X C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "FLT_Proofs.Theorem.Online"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "3beeca7ea2fe"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6011"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "19"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6011"
+  }
+]

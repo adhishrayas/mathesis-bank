@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6027"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "vcDim_fundamental_theorem"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (VCDim X C < ⊤ ↔ PACLearnable X C) ∧\n    (VCDim X C < ⊤ ↔ ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "FLT_Proofs.Complexity.IndependentVC.FundamentalTheorem"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "5744d678f6dc"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6027"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "47"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6027"
+  }
+]

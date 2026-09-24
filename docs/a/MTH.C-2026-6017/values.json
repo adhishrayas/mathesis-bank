@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6017"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.auditSealed_iff_no_binary_decision_advantage"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "AuditCP.FiniteBlackwellDecision"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "739b86a5fd24"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6017"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "6"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6017"
+  }
+]

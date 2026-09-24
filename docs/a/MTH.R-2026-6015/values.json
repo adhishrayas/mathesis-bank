@@ -1,0 +1,458 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6015"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {Ωtrain : Type u_1} {Z : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain] [inst_1 : MeasurableSpace Z]\n  [inst_2 : Fintype ι] [Nonempty ι] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    ∀ (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι),\n                      (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n                        MeasurableSet\n                            {p |\n                              ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2)\n                                  (fun i => AuditCP.populationLoss Q loss i)\n                                  (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} →\n                          ∀ (T : ℕ),\n                            (MeasureTheory.Measure.prod μtrain (MeasureTheory.Measure.pi fun x => Q))\n                                {p |\n                                  AuditCP.cumCP (fun i => AuditCP.empiricalLoss loss i p.2) (g p.1) T >\n                                    AuditCP.cumCP (fun i => AuditCP.populationLoss Q loss i) (g p.1) T +\n                                      2 * AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ} ≤\n                              ENNReal.ofReal δ"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "8"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "7"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "10"
+  },
+  {
+    "field": "argument.depth",
+    "value": "3"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "auditBlind_finiteTrajecto…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_experts_iid_badEve…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_experts_iid_unifor…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_experts_subgaussia…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "auditBlind_randomTrajecto…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_audit_goodhart"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cumCP_telescope"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "auditBlind_randomClass_ba…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ωtrain : Type u_1} {Z : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain] [inst_1 : MeasurableSpace Z]\n  [inst_2 : Fintype ι] [Nonempty ι] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    ∀ (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι),\n                      (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n                        MeasurableSet\n                            {p |\n                              ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2)\n                                  (fun i => AuditCP.populationLoss Q loss i)\n                                  (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} →\n                          ∀ (T : ℕ),\n                            (MeasureTheory.Measure.prod μtrain (MeasureTheory.Measure.pi fun x => Q))\n                                {p |\n                                  AuditCP.cumCP (fun i => AuditCP.empiricalLoss loss i p.2) (g p.1) T >\n                                    AuditCP.cumCP (fun i => AuditCP.populationLoss Q loss i) (g p.1) T +\n                                      2 * AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ} ≤\n                              ENNReal.ofReal δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.Admissible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.cumCP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.deltaFiniteExperts"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.empiricalLoss"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.populationLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_badEvent_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_badEvent_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Z : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Z] [inst_1 : Fintype ι] [Nonempty ι]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    (MeasureTheory.Measure.pi fun x => Q)\n                        {panel |\n                          ¬AuditCP.UniformDev Set.univ (fun i => AuditCP.empiricalLoss loss i panel)\n                              (fun i => AuditCP.populationLoss Q loss i)\n                              (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} ≤\n                      ENNReal.ofReal δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.deltaFiniteExperts"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.empiricalLoss"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.populationLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_uniformDev"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_uniformDev"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Z : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Z] [inst_1 : Fintype ι] [Nonempty ι]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    1 - δ ≤\n                      (MeasureTheory.Measure.pi fun x => Q).real\n                        {panel |\n                          AuditCP.UniformDev Set.univ (fun i => AuditCP.empiricalLoss loss i panel)\n                            (fun i => AuditCP.populationLoss Q loss i)\n                            (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.deltaFiniteExperts"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.empiricalLoss"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.populationLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_subgaussian_uniformDev"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_badEvent_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_subgaussian_uniformDev"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ω : Type u_1} {ι : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype ι] [Nonempty ι]\n  (μ : AuditCP.AuditSampleLaw Ω) [MeasureTheory.IsProbabilityMeasure μ] (n : ℕ),\n  0 < n →\n    ∀ (L : ℝ),\n      0 < L →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (Y : ι → Fin n → Ω → ℝ),\n                (∀ (i : ι) (j : Fin n), ProbabilityTheory.HasSubgaussianMGF (Y i j) ((‖L‖₊ / 2) ^ 2) μ) →\n                  (∀ (i : ι), ProbabilityTheory.iIndepFun (Y i) μ) →\n                    1 - δ ≤\n                      MeasureTheory.Measure.real μ\n                        {ω |\n                          AuditCP.UniformDev Set.univ (fun i => (∑ j, Y i j ω) / ↑n) (fun x => 0)\n                            (AuditCP.deltaFiniteExperts (Fintype.card ι) n L δ)}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.deltaFiniteExperts"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_experts_iid_uniformDev"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ωtrain : Type u_1} {Ωaudit : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain]\n  [inst_1 : MeasurableSpace Ωaudit] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (μaudit : AuditCP.AuditSampleLaw Ωaudit) [MeasureTheory.IsProbabilityMeasure μaudit]\n  (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι)\n  (Ehat : Ωaudit → AuditCP.AuditPotential ι) (E : AuditCP.AuditPotential ι) (Δ : ℝ) (δ : ENNReal),\n  (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n    MeasurableSet {p | ¬AuditCP.UniformDev (F p.1) (Ehat p.2) E Δ} →\n      (∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | ¬AuditCP.UniformDev (F t) (Ehat a) E Δ} ≤ δ) →\n        ∀ (T : ℕ),\n          (MeasureTheory.Measure.prod μtrain μaudit)\n              {p | AuditCP.cumCP (Ehat p.2) (g p.1) T > AuditCP.cumCP E (g p.1) T + 2 * Δ} ≤\n            δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.Admissible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditPotential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.cumCP"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomClass_badEvent_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_audit_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_audit_goodhart"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {F : AuditCP.AuditEnvelope ι} {Ehat E : AuditCP.AuditPotential ι} {Δ : ℝ},\n  AuditCP.UniformDev F Ehat E Δ →\n    ∀ {g : AuditCP.AuditTrajectory ι},\n      AuditCP.Admissible g F → ∀ (T : ℕ), AuditCP.cumCP Ehat g T ≤ AuditCP.cumCP E g T + 2 * Δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.Admissible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditPotential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.UniformDev"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.cumCP"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.cumCP_telescope"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.cumCP_telescope"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (E : AuditCP.AuditPotential ι) (g : AuditCP.AuditTrajectory ι) (T : ℕ),\n  AuditCP.cumCP E g T = E (g 0) - E (g T)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditPotential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditTrajectory"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.cumCP"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finite_audit_goodhart"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomClass_badEvent_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ωtrain : Type u_1} {Ωaudit : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain]\n  [inst_1 : MeasurableSpace Ωaudit] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (μaudit : AuditCP.AuditSampleLaw Ωaudit) [MeasureTheory.IsProbabilityMeasure μaudit]\n  (Γ : Ωtrain → AuditCP.AuditEnvelope ι) (Bad : AuditCP.AuditEnvelope ι → Ωaudit → Prop) (δ : ENNReal),\n  MeasurableSet {p | Bad (Γ p.1) p.2} →\n    (∀ᵐ (t : Ωtrain) ∂μtrain, μaudit {a | Bad (Γ t) a} ≤ δ) →\n      (MeasureTheory.Measure.prod μtrain μaudit) {p | Bad (Γ p.1) p.2} ≤ δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSampleLaw"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditBlind_randomTrajectory_goodhart"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "823e9d21e1d7"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6015"
+  }
+]

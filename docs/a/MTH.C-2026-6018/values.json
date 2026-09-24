@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6018"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap →\n    ∀ {s : Set α}, MeasureTheory.AnalyticSet s → cap s = ⨆ K, ⨆ (_ : IsCompact K), ⨆ (_ : K ⊆ s), cap K"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "ZPM.MeasureTheory.ChoquetCapacity.Capacitability"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "1f2bb195896f"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6018"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "13"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6018"
+  }
+]

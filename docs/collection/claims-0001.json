@@ -1,0 +1,284 @@
+{
+  "bank": "claims",
+  "next_cursor": null,
+  "page": 1,
+  "rows": [
+    {
+      "accession": "MTH.C-2026-6021",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "HiddenChannelCapacity.lz_theorem_3_1",
+      "libraries": [
+        "ZPM.Measurements.HC.QJTTwoClique"
+      ],
+      "module": "ZPM.Measurements.HC.QJTTwoClique",
+      "nodes": 0,
+      "pretty": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        (HiddenChannelCapacity.trC ρAC ρCB = 1 ↔ ∃ ω, HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω) ∧\n          ∀ (ω : MState (a × c × b)),\n            HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω → ω = HiddenChannelCapacity.sigT ρAC ρCB"
+    },
+    {
+      "accession": "MTH.C-2026-6022",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "ProbabilityTheory.klDivReal_multivariateGaussian",
+      "libraries": [
+        "ZPM.InformationTheory.KullbackLeibler.Gaussian.ClosedForm"
+      ],
+      "module": "ZPM.InformationTheory.KullbackLeibler.Gaussian.ClosedForm",
+      "nodes": 0,
+      "pretty": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m₁ m₂ : EuclideanSpace ℝ ι) {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian m₁ S₁)\n          (ProbabilityTheory.multivariateGaussian m₂ S₂) =\n        1 / 2 *\n          (Real.log (S₂.det / S₁.det) + (S₂⁻¹ * S₁).trace + (m₁ - m₂).ofLp ⬝ᵥ S₂⁻¹.mulVec (m₁.ofLp - m₂.ofLp) -\n            ↑(Fintype.card ι))"
+    },
+    {
+      "accession": "MTH.C-2026-6023",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "MeasureTheory.exists_analyticSet_not_measurableSet_real",
+      "libraries": [
+        "ZPM.MeasureTheory.AnalyticMeasurability.NonBorelWitness"
+      ],
+      "module": "ZPM.MeasureTheory.AnalyticMeasurability.NonBorelWitness",
+      "nodes": 0,
+      "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+    },
+    {
+      "accession": "MTH.C-2026-6024",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "InformationTheory.pinsker_proof",
+      "libraries": [
+        "ZPM.InformationTheory.Pinsker.General"
+      ],
+      "module": "ZPM.InformationTheory.Pinsker.General",
+      "nodes": 0,
+      "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)"
+    },
+    {
+      "accession": "MTH.C-2026-6025",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one",
+      "libraries": [
+        "ZPM.Measurements.SI.DefectTwist.VCOne"
+      ],
+      "module": "ZPM.Measurements.SI.DefectTwist.VCOne",
+      "nodes": 0,
+      "pretty": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 → StructuralIgnorance.HasKernelScheme 𝒜 1"
+    },
+    {
+      "accession": "MTH.C-2026-6026",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "fundamental_theorem",
+      "libraries": [
+        "FLT_Proofs.Theorem.PAC"
+      ],
+      "module": "FLT_Proofs.Theorem.PAC",
+      "nodes": 0,
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (PACLearnable X C ↔ VCDim X C < ⊤) ∧\n    (VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k) ∧\n      (VCDim X C < ⊤ ↔\n          ∀ ε > 0,\n            ∃ m₀,\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε) ∧\n        (PACLearnable X C →\n            ∃ L mf,\n              (∀ (ε δ : ℝ),\n                  0 < ε →\n                    0 < δ →\n                      ∀ (D : MeasureTheory.Measure X),\n                        MeasureTheory.IsProbabilityMeasure D →\n                          ∀ c ∈ C,\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                              ENNReal.ofReal (1 - δ)) ∧\n                (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n                  ∀ (d : ℕ),\n                    VCDim X C = ↑d →\n                      ∀ (ε δ : ℝ),\n                        0 < ε →\n                          ε ≤ 1 / 4 →\n                            0 < δ →\n                              δ ≤ 1 →\n                                δ ≤ 1 / 7 →\n                                  1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ) ∧\n          (VCDim X C < ⊤ ↔ ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i)"
+    },
+    {
+      "accession": "MTH.C-2026-6027",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "vcDim_fundamental_theorem",
+      "libraries": [
+        "FLT_Proofs.Complexity.IndependentVC.FundamentalTheorem"
+      ],
+      "module": "FLT_Proofs.Complexity.IndependentVC.FundamentalTheorem",
+      "nodes": 0,
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (VCDim X C < ⊤ ↔ PACLearnable X C) ∧\n    (VCDim X C < ⊤ ↔ ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d)"
+    },
+    {
+      "accession": "MTH.C-2026-6028",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "online_strictly_stronger_pac",
+      "libraries": [
+        "FLT_Proofs.Theorem.Separation"
+      ],
+      "module": "FLT_Proofs.Theorem.Separation",
+      "nodes": 0,
+      "pretty": "(∀ (X : Type) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableConceptClass X C],\n    OnlineLearnable X Bool C → PACLearnable X C) ∧\n  ∃ X x C, PACLearnable X C ∧ ¬OnlineLearnable X Bool C"
+    },
+    {
+      "accession": "MTH.C-2026-6029",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "advice_elimination",
+      "libraries": [
+        "FLT_Proofs.Theorem.Extended"
+      ],
+      "module": "FLT_Proofs.Theorem.Extended",
+      "nodes": 0,
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C"
+    },
+    {
+      "accession": "MTH.C-2026-6030",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "FLT.Halfspace.vcDim_halfspace_eq",
+      "libraries": [
+        "FLT_Proofs.Complexity.IndependentVC.Halfspace"
+      ],
+      "module": "FLT_Proofs.Complexity.IndependentVC.Halfspace",
+      "nodes": 0,
+      "pretty": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n"
+    },
+    {
+      "accession": "MTH.C-2026-6031",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "vcDim_dualClass_le",
+      "libraries": [
+        "FLT_Proofs.Complexity.IndependentVC.DualBound"
+      ],
+      "module": "FLT_Proofs.Complexity.IndependentVC.DualBound",
+      "nodes": 0,
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C ≤ ↑d → VCDim (↑C) (dualClass C) ≤ ↑(2 ^ (d + 1) - 1)"
+    },
+    {
+      "accession": "MTH.C-2026-6032",
+      "arguments": 1,
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "axiom_free": false,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "bank": "claims",
+      "claim_accession": null,
+      "constants": 0,
+      "created_at": "2026-09-24T00:00:00Z",
+      "decl_name": "log₂_vcDim_le_vcDim_dualClass",
+      "libraries": [
+        "FLT_Proofs.Complexity.IndependentVC.CapacityClosures"
+      ],
+      "module": "FLT_Proofs.Complexity.IndependentVC.CapacityClosures",
+      "nodes": 0,
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)"
+    }
+  ],
+  "total": 32
+}

@@ -1,0 +1,1338 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6022"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m₁ m₂ : EuclideanSpace ℝ ι) {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian m₁ S₁)\n          (ProbabilityTheory.multivariateGaussian m₂ S₂) =\n        1 / 2 *\n          (Real.log (S₂.det / S₁.det) + (S₂⁻¹ * S₁).trace + (m₁ - m₂).ofLp ⬝ᵥ S₂⁻¹.mulVec (m₁.ofLp - m₂.ofLp) -\n            ↑(Fintype.card ι))"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "38"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "54"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "4"
+  },
+  {
+    "field": "argument.depth",
+    "value": "9"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_multivariateGau…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "posDef_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "conjTranspose_cfcSqrt_inv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "conjTranspose_cfcSqrt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cfcSqrt_inv_mul_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_multivariateGau…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "multivariateGaussian_eq_m…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "gaussianAffineEquiv_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "gaussianAffineEquiv_symm_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_multivariateGau…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "normSq_toEuclideanCLM_of_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_multivariateGaussian_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_multivariateGau…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "multivariateGaussian_diag…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_adjoint_toEuclidean…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_gaussianReal_ne_top"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_pi'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_pi'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_pi"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_prod"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_prod_same_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "llr_map_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rnDeriv_gaussianReal_ratio"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log_gaussianPDFReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "integral_sq_sub_const"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "integral_sub_mean_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "integral_sq_sub_mean_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_map_measurableE…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "det_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m₁ m₂ : EuclideanSpace ℝ ι) {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian m₁ S₁)\n          (ProbabilityTheory.multivariateGaussian m₂ S₂) =\n        1 / 2 *\n          (Real.log (S₂.det / S₁.det) + (S₂⁻¹ * S₁).trace + (m₁ - m₂).ofLp ⬝ᵥ S₂⁻¹.mulVec (m₁.ofLp - m₂.ofLp) -\n            ↑(Fintype.card ι))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.det_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.posDef_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.trace_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.trace_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).trace = (S₂⁻¹ * S₁).trace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.cfcSqrt_inv_mul_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt_inv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.posDef_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef → S₂.PosDef → ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).PosDef"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₂ : Matrix ι ι ℝ},\n  S₂.PosDef → ∀ (v : EuclideanSpace ℝ ι), ‖(Matrix.toEuclideanCLM (CFC.sqrt S₂)⁻¹) v‖ ^ 2 = v.ofLp ⬝ᵥ S₂⁻¹.mulVec v.ofLp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.cfcSqrt_inv_mul_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt_inv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt_inv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ),\n  (CFC.sqrt S)⁻¹.conjTranspose = (CFC.sqrt S)⁻¹"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.trace_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ), (CFC.sqrt S).conjTranspose = CFC.sqrt S"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.conjTranspose_cfcSqrt_inv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.trace_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.cfcSqrt_inv_mul_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S : Matrix ι ι ℝ},\n  S.PosDef → (CFC.sqrt S)⁻¹ * (CFC.sqrt S)⁻¹ = S⁻¹"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.trace_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m₁ m₂ : EuclideanSpace ℝ ι) (S₁ S₂ : Matrix ι ι ℝ),\n  S₂.PosDef →\n    InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian m₁ S₁)\n        (ProbabilityTheory.multivariateGaussian m₂ S₂) =\n      InformationTheory.klDivReal\n        (ProbabilityTheory.multivariateGaussian ((Matrix.toEuclideanCLM (CFC.sqrt S₂)⁻¹) (m₁ - m₂))\n          ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose))\n        (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_map_measurableEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_symm_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_eq_map_gaussianAffineEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_eq_map_gaussianAffineEquiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m : EuclideanSpace ℝ ι) {S : Matrix ι ι ℝ}\n  (hS : S.PosDef),\n  ProbabilityTheory.multivariateGaussian m S =\n    MeasureTheory.Measure.map (⇑(ProbabilityTheory.gaussianAffineEquiv m hS))\n      (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m : EuclideanSpace ℝ ι) {S : Matrix ι ι ℝ} (hS : S.PosDef)\n  (z : EuclideanSpace ℝ ι), (ProbabilityTheory.gaussianAffineEquiv m hS) z = m + (Matrix.toEuclideanCLM (CFC.sqrt S)) z"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toEuclideanCLE"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_eq_map_gaussianAffineEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_symm_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m : EuclideanSpace ℝ ι) {S : Matrix ι ι ℝ} (hS : S.PosDef)\n  (z : EuclideanSpace ℝ ι),\n  (ProbabilityTheory.gaussianAffineEquiv m hS).symm z = (Matrix.toEuclideanCLM (CFC.sqrt S)⁻¹) (z - m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toEuclideanCLE"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (w : EuclideanSpace ℝ ι) {C : Matrix ι ι ℝ},\n  C.PosDef →\n    InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian w C)\n        (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι)) =\n      1 / 2 * (-Real.log C.det + C.trace + ‖w‖ ^ 2 - ↑(Fintype.card ι))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toEuclideanCLE"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_map_measurableEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_multivariateGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_toEuclideanCLM_of_isometry"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_toEuclideanCLM_of_isometry"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {M : Matrix ι ι ℝ},\n  M.conjTranspose * M = 1 → ∀ (w : EuclideanSpace ℝ ι), ‖(Matrix.toEuclideanCLM M) w‖ ^ 2 = ‖w‖ ^ 2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_multivariateGaussian_affine"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (a μ : EuclideanSpace ℝ ι) (B S : Matrix ι ι ℝ),\n  S.PosSemidef →\n    MeasureTheory.Measure.map (fun x => a + (Matrix.toEuclideanCLM B) x) (ProbabilityTheory.multivariateGaussian μ S) =\n      ProbabilityTheory.multivariateGaussian (a + (Matrix.toEuclideanCLM B) μ) (B * S * B.conjTranspose)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (μ : EuclideanSpace ℝ ι) (d : ι → ℝ),\n  (∀ (i : ι), 0 < d i) →\n    InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian μ (Matrix.diagonal d))\n        (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι)) =\n      ∑ i, 1 / 2 * (-Real.log (d i) + d i + μ.ofLp i ^ 2 - 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProbabilityTheory.toLpMeasurableEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_map_measurableEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_gaussianReal_ne_top"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_diagonal_eq_map_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_diagonal_eq_map_pi"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (μ : EuclideanSpace ℝ ι) (d : ι → ℝ),\n  (∀ (i : ι), 0 ≤ d i) →\n    ProbabilityTheory.multivariateGaussian μ (Matrix.diagonal d) =\n      MeasureTheory.Measure.map (WithLp.toLp 2)\n        (MeasureTheory.Measure.pi fun i => ProbabilityTheory.gaussianReal (μ.ofLp i) (d i).toNNReal)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (a : EuclideanSpace ℝ ι) (B : Matrix ι ι ℝ),\n  MeasureTheory.Measure.map (fun z => a + (Matrix.toEuclideanCLM B) z)\n      (ProbabilityTheory.stdGaussian (EuclideanSpace ℝ ι)) =\n    ProbabilityTheory.multivariateGaussian a (B * B.conjTranspose)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.inner_adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_multivariateGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.multivariateGaussian_diagonal_eq_map_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.inner_adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (B : Matrix ι ι ℝ) (x y : EuclideanSpace ℝ ι),\n  inner ℝ ((ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM B)) x)\n      ((ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM B)) y) =\n    x.ofLp ⬝ᵥ (B * B.conjTranspose).mulVec y.ofLp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.map_stdGaussian_affine"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (B : Matrix ι ι ℝ),\n  ContinuousLinearMap.adjoint (Matrix.toEuclideanCLM B) = Matrix.toEuclideanCLM B.conjTranspose"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.inner_adjoint_toEuclideanCLM"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_cfcSqrt_inv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.normSq_toEuclideanCLM_of_isometry"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_gaussianReal_ne_top"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ m₂ : ℝ} {v₁ v₂ : NNReal},\n  v₁ ≠ 0 →\n    v₂ ≠ 0 → InformationTheory.klDiv (ProbabilityTheory.gaussianReal m₁ v₁) (ProbabilityTheory.gaussianReal m₂ v₂) ≠ ⊤"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.log_gaussianPDFReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.rnDeriv_gaussianReal_ratio"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_pi'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_3} [inst : Fintype ι] {X : ι → Type u_4} {mX : (i : ι) → MeasurableSpace (X i)}\n  (P Q : (i : ι) → MeasureTheory.Measure (X i)) [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (P i)]\n  [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (Q i)],\n  (∀ (i : ι), (P i).AbsolutelyContinuous (Q i)) →\n    (∀ (i : ι), InformationTheory.klDiv (P i) (Q i) ≠ ⊤) →\n      InformationTheory.klDivReal (MeasureTheory.Measure.pi P) (MeasureTheory.Measure.pi Q) =\n        ∑ i, InformationTheory.klDivReal (P i) (Q i)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_3} [inst : Fintype ι] {X : ι → Type u_4} {mX : (i : ι) → MeasurableSpace (X i)}\n  (P Q : (i : ι) → MeasureTheory.Measure (X i)) [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (P i)]\n  [∀ (i : ι), MeasureTheory.IsProbabilityMeasure (Q i)],\n  InformationTheory.klDiv (MeasureTheory.Measure.pi P) (MeasureTheory.Measure.pi Q) =\n    ∑ i, InformationTheory.klDiv (P i) (Q i)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {n : ℕ} {X : Fin n → Type u_3} {mX : (i : Fin n) → MeasurableSpace (X i)}\n  (P Q : (i : Fin n) → MeasureTheory.Measure (X i)) [∀ (i : Fin n), MeasureTheory.IsProbabilityMeasure (P i)]\n  [∀ (i : Fin n), MeasureTheory.IsProbabilityMeasure (Q i)],\n  InformationTheory.klDiv (MeasureTheory.Measure.pi P) (MeasureTheory.Measure.pi Q) =\n    ∑ i, InformationTheory.klDiv (P i) (Q i)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {β : Type u_2} {mα : MeasurableSpace α} {mβ : MeasurableSpace β} (μ μ' : MeasureTheory.Measure α)\n  (ν ν' : MeasureTheory.Measure β) [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsProbabilityMeasure μ']\n  [MeasureTheory.IsProbabilityMeasure ν] [MeasureTheory.IsProbabilityMeasure ν'],\n  InformationTheory.klDiv (μ.prod ν) (μ'.prod ν') = InformationTheory.klDiv μ μ' + InformationTheory.klDiv ν ν'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod_same_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod_same_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {β : Type u_2} {mα : MeasurableSpace α} {mβ : MeasurableSpace β} (μ : MeasureTheory.Measure α)\n  (ν ν' : MeasureTheory.Measure β) [MeasureTheory.IsProbabilityMeasure μ] [MeasureTheory.IsFiniteMeasure ν]\n  [MeasureTheory.IsFiniteMeasure ν'], InformationTheory.klDiv (μ.prod ν) (μ.prod ν') = InformationTheory.klDiv ν ν'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {β : Type u_2} [inst : MeasurableSpace α] [inst_1 : MeasurableSpace β] (e : α ≃ᵐ β)\n  (μ ν : MeasureTheory.Measure α) [MeasureTheory.IsFiniteMeasure μ] [MeasureTheory.IsFiniteMeasure ν],\n  InformationTheory.klDiv (MeasureTheory.Measure.map (⇑e) μ) (MeasureTheory.Measure.map (⇑e) ν) =\n    InformationTheory.klDiv μ ν"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.llr_map_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_prod_same_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.llr_map_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {β : Type u_2} [inst : MeasurableSpace α] [inst_1 : MeasurableSpace β] (e : α ≃ᵐ β)\n  (μ ν : MeasureTheory.Measure α) [MeasureTheory.SigmaFinite μ] [MeasureTheory.SigmaFinite ν],\n  (fun x => MeasureTheory.llr (MeasureTheory.Measure.map (⇑e) μ) (MeasureTheory.Measure.map (⇑e) ν) (e x)) =ᵐ[ν]\n    MeasureTheory.llr μ ν"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_map_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q → InformationTheory.klDivReal P Q = (InformationTheory.klDiv P Q).toReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_pi'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α),\n  (fun x => Real.log (P.rnDeriv Q x).toReal) = MeasureTheory.llr P Q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ m₂ : ℝ} {v₁ v₂ : NNReal},\n  v₁ ≠ 0 →\n    v₂ ≠ 0 →\n      InformationTheory.klDivReal (ProbabilityTheory.gaussianReal m₁ v₁) (ProbabilityTheory.gaussianReal m₂ v₂) =\n        1 / 2 * (Real.log (↑v₂ / ↑v₁) + (↑v₁ + (m₁ - m₂) ^ 2) / ↑v₂ - 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_const"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_mean_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.log_gaussianPDFReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.rnDeriv_gaussianReal_ratio"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.rnDeriv_gaussianReal_ratio"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ m₂ : ℝ} {v₁ v₂ : NNReal},\n  v₁ ≠ 0 →\n    v₂ ≠ 0 →\n      (ProbabilityTheory.gaussianReal m₁ v₁).rnDeriv (ProbabilityTheory.gaussianReal m₂ v₂) =ᵐ[MeasureTheory.volume]\n        fun x => ProbabilityTheory.gaussianPDF m₁ v₁ x / ProbabilityTheory.gaussianPDF m₂ v₂ x"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_gaussianReal_ne_top"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.log_gaussianPDFReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ : ℝ} {v₁ : NNReal},\n  v₁ ≠ 0 →\n    ∀ (x : ℝ),\n      Real.log (ProbabilityTheory.gaussianPDFReal m₁ v₁ x) =\n        -(1 / 2) * Real.log (2 * Real.pi * ↑v₁) - (x - m₁) ^ 2 / (2 * ↑v₁)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDiv_gaussianReal_ne_top"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_const"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ m₂ : ℝ} {v₁ : NNReal}, ∫ (x : ℝ), (x - m₂) ^ 2 ∂ProbabilityTheory.gaussianReal m₁ v₁ = ↑v₁ + (m₁ - m₂) ^ 2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_mean_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sub_mean_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sub_mean_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ : ℝ} {v₁ : NNReal}, ∫ (x : ℝ), x - m₁ ∂ProbabilityTheory.gaussianReal m₁ v₁ = 0"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_const"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_mean_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m₁ : ℝ} {v₁ : NNReal}, ∫ (x : ℝ), (x - m₁) ^ 2 ∂ProbabilityTheory.gaussianReal m₁ v₁ = ↑v₁"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integral_sq_sub_const"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_gaussianReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_map_measurableEquiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {β : Type u_2} [inst : MeasurableSpace α] [inst_1 : MeasurableSpace β] (e : α ≃ᵐ β)\n  (P Q : MeasureTheory.Measure α) [MeasureTheory.SigmaFinite P] [MeasureTheory.SigmaFinite Q],\n  InformationTheory.klDivReal (MeasureTheory.Measure.map (⇑e) P) (MeasureTheory.Measure.map (⇑e) Q) =\n    InformationTheory.klDivReal P Q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_diagonal_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_stdGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian_whiten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.det_whitened"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef → ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁ * ((CFC.sqrt S₂)⁻¹ * CFC.sqrt S₁).conjTranspose).det = S₁.det / S₂.det"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.isUnit_det_cfcSqrt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (S : Matrix ι ι ℝ), S.PosDef → IsUnit (CFC.sqrt S).det"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.det_whitened"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.gaussianAffineEquiv_symm_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProbabilityTheory.posDef_whitened"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "40c078c5fc77"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6022"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "field": "claim.accession",
+    "shape": "accession",
+    "source": "manifest"
+  },
+  {
+    "field": "note.updated_at",
+    "shape": "timestamp",
+    "source": "manifest"
+  },
+  {
+    "field": "verification.state",
+    "shape": "enum",
+    "source": "manifest"
+  },
+  {
+    "field": "clipboard.state",
+    "shape": "enum",
+    "source": "manifest"
+  }
+]

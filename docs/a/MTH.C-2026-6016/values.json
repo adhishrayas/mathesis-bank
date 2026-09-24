@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6016"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "AuditCP.FiniteBlackwell"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "54d616839f6a"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6016"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "5"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6016"
+  }
+]

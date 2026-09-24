@@ -1,0 +1,1566 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6021"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HiddenChannelCapacity.lz_theorem_3_1"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        (HiddenChannelCapacity.trC ρAC ρCB = 1 ↔ ∃ ω, HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω) ∧\n          ∀ (ω : MState (a × c × b)),\n            HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω → ω = HiddenChannelCapacity.sigT ρAC ρCB"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "38"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "53"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "16"
+  },
+  {
+    "field": "argument.depth",
+    "value": "6"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lz_theorem_3_1"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trC_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "qDivR_dpi_traceLeft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "qDivR_eq_toReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "toReal_bridge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "posDef_traceLeft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sigT_posDef"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "qDivR_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ker_le_of_posDef"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lem_3_2"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log_sigT"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trC_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_log_id"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_embedC"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_kron_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "traceRight_mul_kron_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_embedCB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "traceLeft_mul_one_kron"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_embedAC"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "traceAlong_duality"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_submatrix_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "traceRight_kron_one_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "margAC_eq_traceAlong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "assoc'_eq_relabel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_log_faithful"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "kleinTerm_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "kleinTerm_eq_zero_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "overlap_row_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "overlap_col_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log_eq_cfc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inner_cfc_cfc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_single_conj"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_single_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lz_theorem_3_1"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        (HiddenChannelCapacity.trC ρAC ρCB = 1 ↔ ∃ ω, HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω) ∧\n          ∀ (ω : MState (a × c × b)),\n            HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω → ω = HiddenChannelCapacity.sigT ρAC ρCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsMarkovCompletion"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        HiddenChannelCapacity.trC ρAC ρCB = 1 →\n          HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB (HiddenChannelCapacity.sigT ρAC ρCB)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsCompletion"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsMarkovCompletion"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.posDef_traceLeft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_dpi_traceLeft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lz_theorem_3_1"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        ∀ (ω : MState (a × c × b)),\n          HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω →\n            HiddenChannelCapacity.trC ρAC ρCB = 1 ∧ ω = HiddenChannelCapacity.sigT ρAC ρCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsCompletion"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsMarkovCompletion"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_posDef"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lz_theorem_3_1"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b] [Nonempty b]\n  {ρAC : MState (a × c)} {ρCB : MState (c × b)}, ρAC.m.PosDef → ρCB.m.PosDef → HiddenChannelCapacity.trC ρAC ρCB ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Fintype b] [inst_6 : DecidableEq b] {ρAC : MState (a × c)}\n  {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ∀ (ω : MState (a × c × b)),\n        0 ≤\n          HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margAC ω) ρAC +\n              HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margCB ω) ρCB -\n            HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margC ω) ρAC.traceLeft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.posDef_traceLeft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_dpi_traceLeft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_dpi_traceLeft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d₁ : Type u_5} {d₂ : Type u_6} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [inst_2 : Fintype d₂]\n  [inst_3 : DecidableEq d₂] (ρ σ : MState (d₁ × d₂)),\n  σ.m.PosDef →\n    σ.traceLeft.m.PosDef → HiddenChannelCapacity.qDivR ρ.traceLeft σ.traceLeft ≤ HiddenChannelCapacity.qDivR ρ σ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_eq_toReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_eq_toReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d},\n  σ.m.PosDef → HiddenChannelCapacity.qDivR ρ σ = 𝐃(ρ‖σ).toReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.toReal_bridge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_dpi_traceLeft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.toReal_bridge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {x : ENNReal} {r : ℝ}, x ≠ ⊤ → ↑x = ↑r → x.toReal = r"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_eq_toReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.posDef_traceLeft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d₁ : Type u_1} {d₂ : Type u_2} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [Nonempty d₁] [inst_3 : Fintype d₂]\n  [inst_4 : DecidableEq d₂] {σ : MState (d₁ × d₂)}, σ.m.PosDef → σ.traceLeft.m.PosDef"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_posDef"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)), (HiddenChannelCapacity.sigT ρAC ρCB).m.PosDef"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.TR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Tmat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] (ρ : MState d), HiddenChannelCapacity.qDivR ρ ρ = 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d},\n  σ.m.PosDef → 0 ≤ HiddenChannelCapacity.qDivR ρ σ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.ker_le_of_posDef"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.deltaR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.ker_le_of_posDef"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] {ρ σ : MState d}, σ.m.PosDef → (↑σ).ker ≤ (↑ρ).ker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.qDivR_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)) (ω : MState (a × c × b)),\n  HiddenChannelCapacity.qDivR ω (HiddenChannelCapacity.sigT ρAC ρCB) - Real.log (HiddenChannelCapacity.trC ρAC ρCB) =\n    qcmi ω +\n      (HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margAC ω) ρAC +\n          HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margCB ω) ρCB -\n        HiddenChannelCapacity.qDivR (HiddenChannelCapacity.margC ω) ρAC.traceLeft)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Tmat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.qDivR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedAC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.log_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.log_sigT"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] (ρAC : MState (a × c)) (ρCB : MState (c × b)),\n  (↑(HiddenChannelCapacity.sigT ρAC ρCB)).log =\n    Real.log (HiddenChannelCapacity.trC ρAC ρCB)⁻¹ • 1 + HiddenChannelCapacity.Tmat ρAC ρCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.TR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Tmat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.sigT"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exp_log_id"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.trC_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b] [Nonempty b]\n  (ρAC : MState (a × c)) (ρCB : MState (c × b)), 0 < HiddenChannelCapacity.trC ρAC ρCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.TR"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Tmat"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.trC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.log_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_posDef"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exp_log_id"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_4} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.exp.log = A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.log_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedC"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat c ℂ), inner ℝ (↑ω) (HiddenChannelCapacity.embedC L) = inner ℝ (↑(HiddenChannelCapacity.margC ω)) L"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_kron_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  HiddenChannelCapacity.margC ω = (HiddenChannelCapacity.margCB ω).traceRight"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.assoc'_eq_relabel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_kron_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d₁ : Type u_4} {d₂ : Type u_5} [inst : Fintype d₁] [inst_1 : DecidableEq d₁] [inst_2 : Fintype d₂]\n  [inst_3 : DecidableEq d₂] (X : MState (d₁ × d₂)) (L : HermitianMat d₁ ℂ),\n  inner ℝ (↑X) (L.kronecker 1) = inner ℝ (↑X.traceRight) L"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceRight_mul_kron_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceRight_mul_kron_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d₁ × d) (d₂ × d) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceRight (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1) = ρ.traceRight * M"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_kron_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedCB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat (c × b) ℂ),\n  inner ℝ (↑ω) (HiddenChannelCapacity.embedCB L) = inner ℝ (↑(HiddenChannelCapacity.margCB ω)) L"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedCB"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceLeft_mul_one_kron"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceLeft_mul_one_kron"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (ρ : Matrix (d × d₁) (d × d₂) R)\n  (M : Matrix d₂ d₃ R), Matrix.traceLeft (ρ * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) 1 M) = ρ.traceLeft * M"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedCB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedAC"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b))\n  (L : HermitianMat (a × c) ℂ),\n  inner ℝ (↑ω) (HiddenChannelCapacity.embedAC L) = inner ℝ (↑(HiddenChannelCapacity.margAC ω)) L"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.embedAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MState.traceAlong"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Matrix.embedAlong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margAC_eq_traceAlong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MState.traceAlong_duality"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.lem_3_2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MState.traceAlong_duality"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} {a : Type u_2} {b : Type u_3} [inst : Fintype d] [inst_1 : DecidableEq d] [inst_2 : Fintype a]\n  [inst_3 : DecidableEq a] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ρ : MState d) (e : d ≃ a × b)\n  (M : Matrix a a ℂ), (Matrix.embedAlong e M * ρ.m).trace = (M * (ρ.traceAlong e).m).trace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MState.traceAlong"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Matrix.embedAlong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceRight_kron_one_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.trace_submatrix_equiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedAC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.trace_submatrix_equiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {n : Type u_6} {m : Type u_7} [inst_1 : Fintype n] [inst_2 : Fintype m]\n  (A : Matrix m m R) (e : n ≃ m), (A.submatrix ⇑e ⇑e).trace = A.trace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MState.traceAlong_duality"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Matrix.traceRight_kron_one_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} [inst : NonAssocSemiring R] {d : Type u_2} {d₁ : Type u_3} {d₂ : Type u_4} {d₃ : Type u_5}\n  [inst_1 : Fintype d] [inst_2 : Fintype d₂] [inst_3 : DecidableEq d] (M : Matrix d₁ d₂ R)\n  (ρ : Matrix (d₂ × d) (d₃ × d) R),\n  Matrix.traceRight (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) M 1 * ρ) = M * ρ.traceRight"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MState.traceAlong_duality"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margAC_eq_traceAlong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  HiddenChannelCapacity.margAC ω = ω.traceAlong (Equiv.prodAssoc a c b).symm"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.margAC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MState.traceAlong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.assoc'_eq_relabel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_embedAC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.assoc'_eq_relabel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Fintype c]\n  [inst_3 : DecidableEq c] [inst_4 : Fintype b] [inst_5 : DecidableEq b] (ω : MState (a × c × b)),\n  ω.assoc' = ω.relabel (Equiv.prodAssoc a c b)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margAC_eq_traceAlong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.margC_eq_CBright"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (ρ σ : MState d),\n  σ.m.PosDef → inner ℝ (↑ρ) ((↑ρ).log - (↑σ).log) = 0 → ρ = σ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.kleinTerm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.inner_cfc_cfc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.log_eq_cfc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.overlap_col_sum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.overlap_row_sum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.kleinTerm_eq_zero_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.kleinTerm_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.markov_completion_eq_sigT"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sigT_markov_of_trC_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.kleinTerm_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {x y : ℝ}, 0 ≤ x → 0 < y → 0 ≤ HiddenChannelCapacity.kleinTerm x y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.kleinTerm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.kleinTerm_eq_zero_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {x y : ℝ}, 0 ≤ x → 0 < y → (HiddenChannelCapacity.kleinTerm x y = 0 ↔ x = y)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.kleinTerm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.overlap_row_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (i : d),\n  ∑ j, ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2 = 1"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.overlap_col_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (j : d),\n  ∑ i, ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2 = 1"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.log_eq_cfc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A : HermitianMat d ℂ), A.log = A.cfc Real.log"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.inner_cfc_cfc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (A B : HermitianMat d ℂ) (f g : ℝ → ℝ),\n  inner ℝ (A.cfc f) (B.cfc g) =\n    ∑ i,\n      ∑ j,\n        f (⋯.eigenvalues i) * g (⋯.eigenvalues j) *\n          ‖((↑⋯.eigenvectorUnitary).conjTranspose * ↑⋯.eigenvectorUnitary) i j‖ ^ 2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.trace_single_conj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.inner_log_faithful"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.trace_single_conj"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (C : Matrix d d ℂ) (i j : d),\n  (Matrix.single i i 1 * C * Matrix.single j j 1 * C.conjTranspose).trace = C i j * star (C i j)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.trace_single_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.inner_cfc_cfc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.trace_single_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : Type u_1} [inst : Fintype d] [inst_1 : DecidableEq d] (X : Matrix d d ℂ) (i : d),\n  (Matrix.single i i 1 * X).trace = X i i"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HermitianMat.trace_single_conj"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "90f091ee8510"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Alex Meiburg"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6021"
+  }
+]

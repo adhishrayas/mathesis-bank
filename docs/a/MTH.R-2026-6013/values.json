@@ -1,0 +1,1650 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6013"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "krappWirthSeparationMeasTarget_holds"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "42"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "42"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "32"
+  },
+  {
+    "field": "argument.depth",
+    "value": "11"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "krappWirthSeparationMeasT…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_giv…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_eq_pre…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "planarWitnessEvent_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "oneSidedGhostGap_mem_grid"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalError_mem_empErr…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_wellBehavedVC…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_nullMeasurabl…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_badEvent_anal…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "paramWitnessSet_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurabl…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurabl…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_isCompact_measureR…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compactCap_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compactCap_eq_iSup_isComp…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measure_isChoquetCapacity"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "monotone_cyl_split"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_mem_bnd"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_agree_on_cyl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isCompact_bnd"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bnd_subset_cyl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_succ_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_inter_eq_cyl_update"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_ext"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iUnion_nat"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "V_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_analyticSet_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_analyticSet_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_closed_proj_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_closed_universal_s…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_cantorFunction…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "krappWirthSeparationMeasTarget_holds"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (A : Set ℝ), MeasureTheory.AnalyticSet A → ¬MeasurableSet A → KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthSeparationMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthWellBehaved"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVCMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapGrid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapSup"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonBadEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonClassOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonConcept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroConcept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KrappWirthWellBehaved.V_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_wellBehavedVCMeasTarget"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "oneSidedGhostGap_mem_grid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "krappWirthSeparationMeasTarget_holds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (A : Set ℝ), ¬MeasurableSet A → ¬MeasurableSet (singletonBadEvent A)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "planarWitnessEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "samplePair1ToPlane"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonBadEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "planarWitnessEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_eq_preimage_planar"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_eq_preimage_planar"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (A : Set ℝ), singletonBadEvent A = samplePair1ToPlane ⁻¹' planarWitnessEvent A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "planarWitnessEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "samplePair1ToPlane"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonBadEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singletonConcept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroConcept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "planarWitnessEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (A : Set ℝ), ¬MeasurableSet A → ¬MeasurableSet (planarWitnessEvent A)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "planarWitnessEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_badEvent_not_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "oneSidedGhostGap_mem_grid"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (h c : Concept X Bool) (m : ℕ) (p : (Fin m → X) × (Fin m → X)),\n  oneSidedGhostGap h c m p ∈ ghostGapGrid m"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empErrGrid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ghostGapGrid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "oneSidedGhostGap"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalError_mem_empErrGrid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalError_mem_empErrGrid"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [MeasurableSpace X] (h : Concept X Bool) {m : ℕ} (S : Fin m → X × Bool),\n  EmpiricalError X Bool h S (zeroOneLoss Bool) ∈ empErrGrid m"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empErrGrid"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "oneSidedGhostGap_mem_grid"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_wellBehavedVCMeasTarget"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) → WellBehavedVCMeasTarget X (Set.range e)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVCMeasTarget"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramBadEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_nullMeasurableSet_bad_event"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_nullMeasurableSet_bad_event"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [inst_1 : TopologicalSpace X] [PolishSpace X] [BorelSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool),\n      Measurable c →\n        ∀ (m : ℕ) (ε : ℝ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n          MeasureTheory.NullMeasurableSet (paramBadEvent e c m ε) (GhostPairMeasure D m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairMeasure"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramBadEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet_ghostPairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_badEvent_analytic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_wellBehavedVCMeasTarget"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_badEvent_analytic"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : TopologicalSpace X] [inst_1 : MeasurableSpace X] [BorelSpace X] [PolishSpace X] {Θ : Type u_1}\n  [inst_4 : MeasurableSpace Θ] [StandardBorelSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool), Measurable c → ∀ (m : ℕ) (ε : ℝ), MeasureTheory.AnalyticSet (paramBadEvent e c m ε)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramBadEvent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramWitnessSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "paramWitnessSet_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_nullMeasurableSet_bad_event"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "paramWitnessSet_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] {Θ : Type u_1} [inst_1 : MeasurableSpace Θ] (e : Θ → Concept X Bool),\n  (Measurable fun p => e p.1 p.2) →\n    ∀ (c : Concept X Bool), Measurable c → ∀ (m : ℕ) (ε : ℝ), MeasurableSet (paramWitnessSet e c m ε)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "paramWitnessSet"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_badEvent_analytic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet_ghostPairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : TopologicalSpace X] [inst_1 : MeasurableSpace X] [BorelSpace X] [PolishSpace X] {m : ℕ}\n  {s : Set ((Fin m → X) × (Fin m → X))},\n  MeasureTheory.AnalyticSet s →\n    ∀ (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n      MeasureTheory.NullMeasurableSet s (GhostPairMeasure D m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GhostPairMeasure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "borel_param_nullMeasurableSet_bad_event"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet_ghostPairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.NullMeasurableSet s μ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.exists_isCompact_measureReal_gt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analyticSet_nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.exists_isCompact_measureReal_gt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → ∀ ε > 0, ∃ K, IsCompact K ∧ K ⊆ s ∧ μ.real s < μ.real K + ε"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.compactCap"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.compactCap_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.nullMeasurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.compactCap_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {μ : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure μ] {s : Set α},\n  MeasureTheory.AnalyticSet s → MeasureTheory.compactCap μ s = μ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.compactCap"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.measure_isChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compactCap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.exists_isCompact_measureReal_gt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compactCap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] (μ : MeasureTheory.Measure α) (s : Set α),\n  MeasureTheory.compactCap μ s = ⨆ K, ⨆ (_ : IsCompact K), ⨆ (_ : K ⊆ s), μ K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.compactCap"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.compactCap_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.measure_isChoquetCapacity"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  (μ : MeasureTheory.Measure α) [MeasureTheory.IsFiniteMeasure μ], MeasureTheory.IsChoquetCapacity fun s => μ s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.compactCap_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap →\n    ∀ {s : Set α}, MeasureTheory.AnalyticSet s → cap s = ⨆ K, ⨆ (_ : IsCompact K), ⨆ (_ : K ⊆ s), cap K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.iInter_closed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.iUnion_nat"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_ext"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_inter_eq_cyl_update"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_succ_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isCompact_bnd"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "monotone_cyl_split"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.compactCap_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "monotone_cyl_split"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ) (n : ℕ), Monotone fun k => Cyl N n ∩ {g | g (n + 1) ≤ k}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] [PolishSpace α] {f : (ℕ → ℕ) → α},\n  Continuous f → ∀ (N : ℕ → ℕ), ⋂ n, closure (f '' Cyl N n) = f '' Bnd N"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bnd_subset_cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isCompact_bnd"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_agree_on_cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_mem_bnd"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_mem_bnd"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N g : ℕ → ℕ), choquetTruncate N g ∈ Bnd N"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_agree_on_cyl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ) (n : ℕ), ∀ g ∈ Cyl N n, ∀ i ≤ n, choquetTruncate N g i = g i"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "choquetTruncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isCompact_bnd"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ), IsCompact (Bnd N)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bnd_subset_cyl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ) (n : ℕ), Bnd N ⊆ Cyl N n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Bnd"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iInter_closure_image_cyl_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_succ_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ) (n : ℕ), Cyl N n = ⋃ k, Cyl N n ∩ {g | g (n + 1) ≤ k}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_inter_eq_cyl_update"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N : ℕ → ℕ) (n k : ℕ), Cyl N n ∩ {g | g (n + 1) ≤ k} = Cyl (Function.update N (n + 1) k) (n + 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyl_ext"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (N N' : ℕ → ℕ) (n : ℕ), (∀ i ≤ n, N i = N' i) → Cyl N n = Cyl N' n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Cyl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap → ∀ {s t : Set α}, s ⊆ t → cap s ≤ cap t"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.iUnion_nat"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap → ∀ (f : ℕ → Set α), Monotone f → cap (⋃ n, f n) = ⨆ n, cap (f n)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.IsChoquetCapacity.iInter_closed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : TopologicalSpace α] {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap →\n    ∀ (f : ℕ → Set α), Antitone f → (∀ (n : ℕ), IsClosed (f n)) → cap (⋂ n, f n) = ⨅ n, cap (f n)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.IsChoquetCapacity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "KrappWirthWellBehaved.V_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : KrappWirthWellBehaved X C], KrappWirthV X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthV"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "KrappWirthWellBehaved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytic_nonborel_set_gives_measTarget_separation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "krappWirthSeparationMeasTarget_holds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_universal_sections"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_universal_sections"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u_1) [inst : TopologicalSpace X] [SecondCountableTopology X],\n  ∃ S, IsClosed S ∧ ∀ (C : Set X), IsClosed C → ∃ y, {x | (x, y) ∈ S} = C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Function.Injective MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Function.Injective MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (x : ℕ → ℕ), StrictMono (MeasureTheory.baireMarkers x)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_cantorFunction_oneThird"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_cantorFunction_oneThird"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous (Cardinal.cantorFunction (1 / 3))"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "142a3e7672c2"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6013"
+  }
+]

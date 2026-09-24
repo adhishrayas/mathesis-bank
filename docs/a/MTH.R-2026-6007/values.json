@@ -1,0 +1,1730 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6007"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HasVCDimLE.mk_image_inter_le_ded"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α} {d : ℕ},\n  HasVCDimLE d 𝒜 → A.Infinite → Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) ≤ ded (Cardinal.mk ↑A)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "41"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "60"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "13"
+  },
+  {
+    "field": "argument.depth",
+    "value": "11"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_Iio_lt_ord"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_e…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_ima…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_enc_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_sdiff_core_lt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_m…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_le_mk_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_eq_inter_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "val_of_mem_image_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ofLex_truncate_of_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_setOf_finite_ncard_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_of_mk_lt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lex_lt_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "le_mk_core_fiber"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_level"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_or"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "valIn_ne_valOut"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_minimal_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_mem_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isDenseIn_univ"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.mk_image_inter_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α} {d : ℕ},\n  HasVCDimLE d 𝒜 → A.Infinite → Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) ≤ ded (Cardinal.mk ↑A)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α},\n  A.Infinite →\n    ded (Cardinal.mk ↑A) < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) →\n      ∀ (n : ℕ), ∃ S ⊆ A, S.Finite ∧ S.ncard = n ∧ Shatters 𝒜 S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_minimal_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_Iio_lt_ord"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.mk_image_inter_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_Iio_lt_ord"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ν : Cardinal.{u}} (w : ν.ord.ToType), Cardinal.mk ↑(Set.Iio w) < ν"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {W : Type u} {e : W → α} [inst : LinearOrder W] [WellFoundedLT W] {μ θ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ μ →\n    Cardinal.mk W = μ →\n      Cardinal.aleph0 ≤ θ →\n        ded μ ≤ θ →\n          (∀ (w : W), Cardinal.mk ↑((fun x => e '' Set.Iic w ∩ x) '' 𝒜) ≤ θ) →\n            θ < Cardinal.mk ↑((fun x => Set.range e ∩ x) '' 𝒜) →\n              ∀ (n : ℕ), ∃ S, S.Finite ∧ S.ncard = n ∧ ∀ (σ : Set W), ∃ C ∈ 𝒜, ∀ x ∈ S, e x ∈ C ↔ x ∈ σ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_or"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_mk_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_sdiff_core_lt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), κ ≤ ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_mem_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {W : Type u} {e : W → α} [inst : LinearOrder W] (w : W),\n  Cardinal.mk ↑(truncate w '' enc✝ e '' 𝒜) = Cardinal.mk ↑((fun x => e '' Set.Iic w ∩ x) '' 𝒜)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_eq_inter_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_le_mk_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_enc_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_enc_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} {C C' : Set α} [inst : LinearOrder W] {w : W},\n  truncate w (enc✝ e C) = truncate w (enc✝ e C') ↔ ∀ v ≤ w, e v ∈ C ↔ e v ∈ C'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_sdiff_core_lt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam : Cardinal.{u}},\n  lam.IsRegular →\n    Cardinal.mk W < lam → (∀ (w : W), Cardinal.mk ↑(truncate w '' F) < lam) → Cardinal.mk ↑(F \\ core✝ lam F) < lam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_mk_enc_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {W : Type u} {e : W → α},\n  Cardinal.mk ↑((fun x => Set.range e ∩ x) '' 𝒜) ≤ Cardinal.mk ↑(enc✝ e '' 𝒜)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_eq_inter_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_le_mk_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_le_mk_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {β γ δ : Type u} {s : Set β} {f : β → γ} {g : β → δ},\n  (∀ x ∈ s, ∀ y ∈ s, g x = g y → f x = f y) → Cardinal.mk ↑(f '' s) ≤ Cardinal.mk ↑(g '' s)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_mk_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_eq_inter_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {C C' D : Set α}, D ∩ C = D ∩ C' ↔ ∀ a ∈ D, a ∈ C ↔ a ∈ C'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_mk_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_truncate_image_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} {C C' : Set α}, enc✝ e C = enc✝ e C' ↔ ∀ (w : W), e w ∈ C ↔ e w ∈ C'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_image_inter_range_le_mk_enc_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} {C C' : Set α} {w : W}, ofLex (enc✝ e C) w = ofLex (enc✝ e C') w ↔ (e w ∈ C ↔ e w ∈ C')"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "valIn_ne_valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_enc_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] [WellFoundedLT W] {F : Set (Lex (W → WithBot (ULift.{u, 0} Bool)))}\n  {μ lam : Cardinal.{u}},\n  Cardinal.aleph0 ≤ μ →\n    Cardinal.mk W = μ →\n      lam.IsRegular →\n        Cardinal.mk ↑(F \\ core✝ lam F) < lam →\n          ded μ < lam →\n            (∀ g ∈ F, ∀ (x : W), ofLex g x = valIn✝ ∨ ofLex g x = valOut✝) →\n              ∀ (n : ℕ) (w : W),\n                ∀ p ∈ bigAt✝ lam F w,\n                  ∃ S,\n                    S.Finite ∧\n                      S.ncard = n ∧\n                        (∀ x ∈ S, w < x) ∧\n                          ∀ (σ : Set W), ∃ g ∈ F, truncate w g = p ∧ ∀ x ∈ S, ofLex g x = valIn✝ ↔ x ∈ σ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_level"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_of_mk_lt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_setOf_finite_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ofLex_truncate_of_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "valIn_ne_valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "val_of_mem_image_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "val_of_mem_image_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {F : Set (Lex (W → WithBot (ULift.{u, 0} Bool)))}\n  {q : Lex (W → WithBot (ULift.{u, 0} Bool))} {x v : W},\n  (∀ g ∈ F, ∀ (y : W), ofLex g y = valIn✝ ∨ ofLex g y = valOut✝) →\n    q ∈ truncate v '' F → x ≤ v → ofLex q x = valIn✝ ∨ ofLex q x = valOut✝"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ofLex_truncate_of_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ofLex_truncate_of_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] {v : W}\n  {g : Lex (W → β)} {x : W}, x ≤ v → ofLex (truncate v g) x = ofLex g x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "val_of_mem_image_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_setOf_finite_ncard_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u}, Cardinal.aleph0 ≤ Cardinal.mk W → ∀ (n : ℕ), Cardinal.mk ↑{S | S.Finite ∧ S.ncard = n} ≤ Cardinal.mk W"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_of_mk_lt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam μ : Cardinal.{u}} {v w : W} {p : Lex (W → β)},\n  Cardinal.aleph0 ≤ μ → μ < Cardinal.mk ↑{q | q ∈ bigAt✝ lam F v ∧ truncate w q = p} → w < v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam μ : Cardinal.{u}} {w : W} {p : Lex (W → β)} [WellFoundedLT W],\n  lam.IsRegular →\n    Cardinal.mk ↑(F \\ core✝ lam F) < lam →\n      p ∈ bigAt✝ lam F w → ded (μ + Cardinal.mk W) < lam → μ < Cardinal.mk ↑{q | q ∈ big✝ lam F ∧ truncate w q = p}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "le_mk_core_fiber"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] (w v : W)\n  (b : Lex (W → β)), truncate w (truncate v b) = truncate (min w v) b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_of_mk_lt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] [WellFoundedLT W]\n  {𝒮 𝒟 : Set (Lex (W → β))} {κ : Cardinal.{u}},\n  (∀ f ∈ 𝒮, ∀ (w : W), truncate w f ∈ 𝒟) → Cardinal.mk ↑𝒟 ≤ κ → Cardinal.mk ↑𝒮 ≤ ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lex_lt_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] [WellFoundedLT W]\n  (w : W) (b : Lex (W → β)), truncate w b ≤ b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lex_lt_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] {a b : Lex (W → β)}\n  {w : W}, (∀ j < w, ofLex a j = ofLex b j) → ofLex a w < ofLex b w → a < truncate w b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lex_lt_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β] (w : W)\n  (b : Lex (W → β)) (v : W), ofLex (truncate w b) v = if v ≤ w then ofLex b v else ⊥"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ofLex_truncate_of_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_enc_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lex_lt_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] {a b : Lex (W → β)},\n  a < b ↔ ∃ i, (∀ j < i, ofLex a j = ofLex b j) ∧ ofLex a i < ofLex b i"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded_of_truncate_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "truncate_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "le_mk_core_fiber"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam : Cardinal.{u}} {w : W} {p : Lex (W → β)},\n  lam.IsRegular →\n    Cardinal.mk ↑(F \\ core✝ lam F) < lam →\n      p ∈ bigAt✝ lam F w → lam ≤ Cardinal.mk ↑{g | g ∈ core✝ lam F ∧ truncate w g = p}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "core"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "lt_mk_big_fiber"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_level"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {W : Type u} [inst : LinearOrder W] {β : Type u} [inst_1 : LinearOrder β] [inst_2 : OrderBot β]\n  {F : Set (Lex (W → β))} {lam μ : Cardinal.{u}} {w : W} {p : Lex (W → β)},\n  Cardinal.aleph0 ≤ μ →\n    Cardinal.mk W ≤ μ →\n      μ < Cardinal.mk ↑{q | q ∈ big✝ lam F ∧ truncate w q = p} →\n        ∃ v, μ < Cardinal.mk ↑{q | q ∈ bigAt✝ lam F v ∧ truncate w q = p}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "big"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bigAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_or"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} (C : Set α) (w : W), ofLex (enc✝ e C) w = valIn✝ ∨ ofLex (enc✝ e C) w = valOut✝"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} (C : Set α) (w : W), ofLex (enc✝ e C) w = valIn✝ ↔ e w ∈ C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "valIn_ne_valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple_of_enum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "valIn_ne_valOut"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "valIn✝ ≠ valOut✝"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatter_tuple"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α W : Type u} {e : W → α} {C : Set α} (w : W), ofLex (enc✝ e C) w = if e w ∈ C then valIn✝ else valOut✝"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "enc"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "valOut"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "enc_apply_eq_valIn_or"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_minimal_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α} {θ : Cardinal.{u}},\n  θ < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) →\n    ∃ B ⊆ A,\n      θ < Cardinal.mk ↑((fun x => B ∩ x) '' 𝒜) ∧\n        ∀ B' ⊆ A, Cardinal.mk ↑B' < Cardinal.mk ↑B → Cardinal.mk ↑((fun x => B' ∩ x) '' 𝒜) ≤ θ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ₁ κ₂ : Cardinal.{u}}, κ₁ ≤ κ₂ → ded κ₁ ≤ ded κ₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_mem_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shatters_of_ded_lt_mk_image_inter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_mem_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), κ ∈ dedSet✝ κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isDenseIn_univ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isDenseIn_univ"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} [inst : Preorder I], IsDenseIn Set.univ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_mem_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), BddAbove (dedSet✝ κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "self_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet✝ κ → c ≤ 2 ^ (κ + κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → Cardinal.mk J ≤ 2 ^ Cardinal.mk ↑E * 2 ^ Cardinal.mk ↑E"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → Function.Injective (cutCode✝ D)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → ∀ {x y : I}, x < y → cutCode✝ D x ≠ cutCode✝ D y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "7f14a7125689"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6007"
+  }
+]

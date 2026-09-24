@@ -1,0 +1,1238 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6008"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {κ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ κ →\n    ∀ {lam : Cardinal.{u}},\n      lam < ded κ → ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ lam < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "31"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "32"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "13"
+  },
+  {
+    "field": "argument.depth",
+    "value": "10"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_mem_dedSet'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_empty_p…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrict…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_padGround"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_padCuts"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_padCuts_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasVCDimLE_one_of_isChain"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_eq_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_mk_fatten"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fatten_bot_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet'_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_fattenDense_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fattenDense_code_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_fattenD…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_strictly_between_f…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_of_fatten_of_fst_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isDenseIn"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ κ →\n    ∀ {lam : Cardinal.{u}},\n      lam < ded κ → ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ lam < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_eq_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_mem_dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_mem_dedSet'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), 1 ∈ dedSet'✝ κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_empty_punit"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_empty_punit"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "IsStrictlyDenseIn ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_mem_dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ →\n    Cardinal.mk ↑E ≤ κ →\n      IsStrictlyDenseIn E →\n        ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ Cardinal.mk J ≤ Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padCuts"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padGround"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasVCDimLE_one_of_isChain"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_padCuts_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_padCuts"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_padGround"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_padGround"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J P : Type u} {E : Set J},\n  Cardinal.aleph0 ≤ κ → Cardinal.mk ↑E ≤ κ → Cardinal.mk P = κ → Cardinal.mk ↑(padGround✝ E) = κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padGround"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_padCuts"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (J P : Type u) [inst : LinearOrder J], IsChain (fun x1 x2 => x1 ⊆ x2) (padCuts✝ J P)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padCuts"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "inter_padCuts_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J P : Type u} [inst : LinearOrder J] {E : Set J} {j j' e : J},\n  e ∈ E → j < e → e < j' → padGround✝ E ∩ Sum.inl '' {a | a < j} ≠ padGround✝ E ∩ Sum.inl '' {a | a < j'}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "padGround"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasVCDimLE_one_of_isChain"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_2} {𝒜 : Set (Set α)}, IsChain (fun x1 x2 => x1 ⊆ x2) 𝒜 → HasVCDimLE 1 𝒜"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_family_of_isStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_eq_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}}, Cardinal.aleph0 ≤ κ → ded' κ = ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_smaller_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}}, Cardinal.aleph0 ≤ κ → ded κ ≤ ded' κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_eq_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ → Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ ded' κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_fattenDense_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_mk_fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_mk_fatten"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} (E : Set J), Cardinal.mk J ≤ Cardinal.mk ↑(fatten✝ E)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fatten_bot_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fatten_bot_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} (E : Set J), Function.Injective fun x => ⟨toLex (x, 0), ⋯⟩"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_mk_fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ ded' κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), BddAbove (dedSet'✝ κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet'_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet'_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet'✝ κ → c ≤ 2 ^ (κ + κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsStrictlyDenseIn.isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_fattenDense_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} (E : Set J), Cardinal.mk ↑(fattenDense✝ E) ≤ Cardinal.mk ↑E * Cardinal.aleph0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fattenDense_code_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fattenDense_code_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} (E : Set J), Function.Injective fun p => (⟨(ofLex ↑↑p).1, ⋯⟩, (ofLex ↑↑p).2)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_fattenDense_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_fattenDense"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → IsStrictlyDenseIn (fattenDense✝ E)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_strictly_between_fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded'_of_isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_strictly_between_fatten"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J},\n  IsDenseIn E →\n    ∀ {u v : Lex (J × ℚ)}, u ∈ fatten✝ E → v ∈ fatten✝ E → u < v → ∃ z ∈ E, ∃ r, u < toLex (z, r) ∧ toLex (z, r) < v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_of_fatten_of_fst_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isStrictlyDenseIn_fattenDense"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_of_fatten_of_fst_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} {E : Set J} {u v : Lex (J × ℚ)},\n  u ∈ fatten✝ E → v ∈ fatten✝ E → (ofLex u).1 = (ofLex v).1 → (ofLex u).2 < (ofLex v).2 → (ofLex u).1 ∈ E"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_strictly_between_fatten"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ c) → ded κ ≤ c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded_le_ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), ded' κ ≤ ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsStrictlyDenseIn.isDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_eq_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ ded κ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (κ : Cardinal.{u}), BddAbove (dedSet✝ κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mk_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet✝ κ → c ≤ 2 ^ (κ + κ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bddAbove_dedSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet'_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → Cardinal.mk J ≤ 2 ^ Cardinal.mk ↑E * 2 ^ Cardinal.mk ↑E"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → Function.Injective (cutCode✝ D)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsDenseIn.mk_le_two_pow_mul"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → ∀ {x y : I}, x < y → cutCode✝ D x ≠ cutCode✝ D y"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "cutCode"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cutCode_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ c) →\n    ded' κ ≤ c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ded'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dedSet'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "IsStrictlyDenseIn.isDenseIn"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {I : Type u_1} {D : Set I} [inst : Preorder I], IsStrictlyDenseIn D → IsDenseIn D"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsDenseIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsStrictlyDenseIn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ded'_le_ded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dedSet'_le"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "6089d733e525"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6008"
+  }
+]

@@ -1,0 +1,394 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6023"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "10"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "9"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "3"
+  },
+  {
+    "field": "argument.depth",
+    "value": "3"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_analyticSet_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_analyticSet_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_closed_proj_not_me…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_closed_universal_s…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_cantorFunction…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ D, IsClosed D ∧ ¬MeasurableSet {x | ∃ y, (x, y) ∈ D}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_universal_sections"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_universal_sections"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u_1) [inst : TopologicalSpace X] [SecondCountableTopology X],\n  ∃ S, IsClosed S ∧ ∀ (C : Set X), IsClosed C → ∃ y, {x | (x, y) ∈ S} = C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_closed_proj_not_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Function.Injective MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Function.Injective MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.embedBaireReal_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkers_strictMono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (x : ℕ → ℕ), StrictMono (MeasureTheory.baireMarkers x)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.baireMarkerBits_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_cantorFunction_oneThird"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.exists_analyticSet_not_measurableSet_real"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_cantorFunction_oneThird"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous (Cardinal.cantorFunction (1 / 3))"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_baireMarkerBits"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "Continuous MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkerBits"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.baireMarkers"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.continuous_embedBaireReal"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "17a477359fda"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6023"
+  }
+]

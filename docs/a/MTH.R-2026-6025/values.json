@@ -1,0 +1,666 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6025"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 → StructuralIgnorance.HasKernelScheme 𝒜 1"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "15"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "17"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "11"
+  },
+  {
+    "field": "argument.depth",
+    "value": "3"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasKernelScheme_one_of_vc…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcBounded_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "of_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "memOrder_total_of_vcBound…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isKernel_interConvention_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_memOrder_max_of_to…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "memOrder_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "memOrder_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empty_mem_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "of_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "set_symmDiff_inter_right"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finset_inter_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "twist"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "coe_baseLabels"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 → StructuralIgnorance.HasKernelScheme 𝒜 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.Convention"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.HasKernelScheme"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsKernel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.interConvention"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.vcBounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.empty_mem_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.exists_memOrder_max_of_total"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.isKernel_interConvention_anchor"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_total_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.vcBounded_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.vcBounded_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)} {d : ℕ},\n  StructuralIgnorance.vcBounded 𝒜 d →\n    ∀ (S₀ : Set α), StructuralIgnorance.vcBounded (StructuralIgnorance.twistClass 𝒜 S₀) d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.SetShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.vcBounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.SetShatters.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.SetShatters.of_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)} {S₀ : Set α} {B : Finset α},\n  StructuralIgnorance.SetShatters (StructuralIgnorance.twistClass 𝒜 S₀) B → StructuralIgnorance.SetShatters 𝒜 B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.SetShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.baseLabels"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.coe_baseLabels"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.vcBounded_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_total_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 →\n    ∅ ∈ 𝒜 →\n      ∀ {a b : α}, (∃ S ∈ 𝒜, a ∈ S ∧ b ∈ S) → StructuralIgnorance.memOrder 𝒜 a b ∨ StructuralIgnorance.memOrder 𝒜 b a"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.SetShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.vcBounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_refl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.isKernel_interConvention_anchor"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)} {A T : Finset α},\n  StructuralIgnorance.IsSample 𝒜 A T →\n    ∀ {x : α},\n      x ∈ T →\n        (∀ a ∈ T, StructuralIgnorance.memOrder 𝒜 a x) →\n          StructuralIgnorance.IsKernel (StructuralIgnorance.interConvention 𝒜) 1 A T {x}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsKernel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.interConvention"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.IsSample.subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.IsSample.subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A T : Finset α}, StructuralIgnorance.IsSample 𝒜 A T → T ⊆ A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.isKernel_interConvention_anchor"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.exists_memOrder_max_of_total"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {T : Finset α},\n  (∀ a ∈ T, ∀ b ∈ T, StructuralIgnorance.memOrder 𝒜 a b ∨ StructuralIgnorance.memOrder 𝒜 b a) →\n    T.Nonempty → ∃ x ∈ T, ∀ a ∈ T, StructuralIgnorance.memOrder 𝒜 a x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_refl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_trans"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {a b c : α},\n  StructuralIgnorance.memOrder 𝒜 a b → StructuralIgnorance.memOrder 𝒜 b c → StructuralIgnorance.memOrder 𝒜 a c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.exists_memOrder_max_of_total"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (𝒜 : Set (Set α)) (a : α), StructuralIgnorance.memOrder 𝒜 a a"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.memOrder"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.exists_memOrder_max_of_total"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.memOrder_total_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.empty_mem_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {S₀ : Set α}, S₀ ∈ 𝒜 → ∅ ∈ StructuralIgnorance.twistClass 𝒜 S₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)} {S₀ : Set α} {k : ℕ},\n  StructuralIgnorance.HasKernelScheme (StructuralIgnorance.twistClass 𝒜 S₀) k → StructuralIgnorance.HasKernelScheme 𝒜 k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.Convention"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.HasKernelScheme"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsKernel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.baseLabels"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistConvention"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.IsSample.twist"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.coe_baseLabels"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.finset_inter_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.set_symmDiff_inter_right"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.set_symmDiff_inter_right"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (s t u : Set α), symmDiff s t ∩ u = symmDiff (s ∩ u) (t ∩ u)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.finset_inter_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] (Z T F : Finset α), Z ∩ symmDiff T F = symmDiff (Z ∩ T) (Z ∩ F)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.IsSample.twist"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)} {A T : Finset α},\n  StructuralIgnorance.IsSample 𝒜 A T →\n    ∀ (S₀ : Set α),\n      StructuralIgnorance.IsSample (StructuralIgnorance.twistClass 𝒜 S₀) A\n        (symmDiff T (StructuralIgnorance.baseLabels S₀ A))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.IsSample"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.baseLabels"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.coe_baseLabels"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.coe_baseLabels"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (S₀ : Set α) (Z : Finset α), ↑(StructuralIgnorance.baseLabels S₀ Z) = ↑Z ∩ S₀"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "StructuralIgnorance.baseLabels"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.HasKernelScheme.of_twistClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.IsSample.twist"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "StructuralIgnorance.SetShatters.of_twistClass"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "1641f3634b64"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6025"
+  }
+]

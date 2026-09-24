@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6029"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "FLT_Proofs.Theorem.Extended"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "52b18e995d4a"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6029"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "12"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6029"
+  }
+]

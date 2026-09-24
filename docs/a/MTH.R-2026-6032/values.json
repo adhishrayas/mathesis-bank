@@ -1,0 +1,222 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6032"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "log₂_vcDim_le_vcDim_dualClass"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "3"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "2"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "6"
+  },
+  {
+    "field": "argument.depth",
+    "value": "2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log₂_vcDim_le_vcDim_dualC…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_le_vcDim_imp_le_vcDim…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "evalConcept_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log₂_vcDim_le_vcDim_dualClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dualClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_le_vcDim_imp_le_vcDim_dualClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_le_vcDim_imp_le_vcDim_dualClass"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {k : ℕ} (T : Finset X),\n  Shatters X C T → 2 ^ k ≤ T.card → ↑k ≤ VCDim (↑C) (dualClass C)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dualClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "evalConcept"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "evalConcept_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "log₂_vcDim_le_vcDim_dualClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "evalConcept_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) (x : X), evalConcept C x ∈ dualClass C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "dualClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "evalConcept"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_le_vcDim_imp_le_vcDim_dualClass"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "1bf2ca644dcd"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6032"
+  }
+]

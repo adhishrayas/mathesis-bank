@@ -1,0 +1,602 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6030"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_eq"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "14"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "13"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "9"
+  },
+  {
+    "field": "argument.depth",
+    "value": "4"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_halfspace_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_signClass_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finrank_coordSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "linearIndependent_coord"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "coord_single"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finiteDimensional_coordSp…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_halfspace_ge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weighted_single"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weighted_mem_coordSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "single_mem_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "card_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "single_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) ≤ ↑n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.finiteDimensional_coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.finrank_coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_signClass_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcDim_signClass_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (V : Submodule ℝ (X → ℝ)) [FiniteDimensional ℝ ↥V], VCDim X (signClass V) ≤ ↑(Module.finrank ℝ ↥V)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "evalAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.finrank_coordSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), Module.finrank ℝ ↥(FLT.Halfspace.coordSpace n) = n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.linearIndependent_coord"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.linearIndependent_coord"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), LinearIndependent ℝ (FLT.Halfspace.coord n)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.coord_single"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.finrank_coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.coord_single"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ) (i j : Fin n), FLT.Halfspace.coord n i (Pi.single j 1) = if i = j then 1 else 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.linearIndependent_coord"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.finiteDimensional_coordSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), FiniteDimensional ℝ ↥(FLT.Halfspace.coordSpace n)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_ge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), ↑n ≤ VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.basisPoints"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.card_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), Shatters (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) (FLT.Halfspace.basisPoints n)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.basisPoints"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "signClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.single_mem_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.weighted_mem_coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.weighted_single"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.weighted_single"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ) (w : Fin n → ℝ) (j : Fin n), ∑ i, w i * Pi.single j 1 i = w j"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.weighted_mem_coordSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ) (w : Fin n → ℝ), (fun x => ∑ i, w i * x i) ∈ FLT.Halfspace.coordSpace n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coord"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.coordSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.single_mem_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ) (i : Fin n), Pi.single i 1 ∈ FLT.Halfspace.basisPoints n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.shatters_basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.card_basisPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), (FLT.Halfspace.basisPoints n).card = n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Halfspace.basisPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.single_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.vcDim_halfspace_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.single_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n : ℕ), Function.Injective fun i => Pi.single i 1"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FLT.Halfspace.card_basisPoints"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "e70dfad48239"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6030"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6007"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HasVCDimLE.mk_image_inter_le_ded"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u} {𝒜 : Set (Set α)} {A : Set α} {d : ℕ},\n  HasVCDimLE d 𝒜 → A.Infinite → Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜) ≤ ded (Cardinal.mk ↑A)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "FLT_Proofs.VCDimGeneralized.VCDimDed"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "ca7e04b50bc8"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6007"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "41"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6007"
+  }
+]

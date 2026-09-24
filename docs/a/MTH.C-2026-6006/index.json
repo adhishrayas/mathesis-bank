@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6006"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6006, title={exists_hasNatarajanDimLE_not_hasDSDimLE}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6006}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6006}, year={2026} }",
+    "text": "Dhruv Gupta. exists_hasNatarajanDimLE_not_hasDSDimLE. Mathesis. MTH.C-2026-6006. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6006. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "exists_hasNatarajanDimLE_not_hasDSDimLE",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6006",
+  "is_open": false,
+  "kind": "claim",
+  "module": "FLT_Proofs.VCDimGeneralized.VCDimMulticlass",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "exists_hasNatarajanDimLE_not_hasDSDimLE"
+    ],
+    "pretty": "∃ 𝒞, HasNatarajanDimLE 1 𝒞 ∧ ¬HasDSDimLE 1 𝒞",
+    "type_sha256": "a719612d5cdf947835897c323b4b1c2826c3287d5207f0f46603c27082ce8977"
+  },
+  "verification": null,
+  "witness": null
+}

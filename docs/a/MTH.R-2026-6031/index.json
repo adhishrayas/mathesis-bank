@@ -1,0 +1,133 @@
+{
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.R-2026-6031, title={vcDim_dualClass_le}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.R-2026-6031}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6031}, year={2026} }",
+    "text": "Dhruv Gupta. vcDim_dualClass_le. Mathesis. MTH.R-2026-6031. https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6031. 2026-09-24."
+  },
+  "claim": "MTH.C-2026-6031",
+  "created": "2026-09-24T00:00:00Z",
+  "dag": {
+    "dictionary_leaves": [
+      "ConceptClass",
+      "FLT.Concept",
+      "Shatters",
+      "VCDim",
+      "cubeBitSlice",
+      "cubeEmbedding",
+      "dualClass"
+    ],
+    "edge_count": 2,
+    "edges": [
+      {
+        "used_by": "dualClass_shatters_imp_shatters",
+        "uses": "mem_cubeBitSlice_iff",
+        "via": "direct"
+      },
+      {
+        "used_by": "vcDim_dualClass_le",
+        "uses": "dualClass_shatters_imp_shatters",
+        "via": "direct"
+      }
+    ],
+    "node_count": 3,
+    "nodes": [
+      {
+        "citable": true,
+        "decl_name": "vcDim_dualClass_le",
+        "depth": 0,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "Shatters",
+          "VCDim",
+          "dualClass"
+        ],
+        "is_root": true,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C ≤ ↑d → VCDim (↑C) (dualClass C) ≤ ↑(2 ^ (d + 1) - 1)",
+        "topo": 0,
+        "type_sha256": "b05b78b9ee4b4d5905a0d9adec24826a1dc63d7eeb8be74435cd356b36fff0b8"
+      },
+      {
+        "citable": true,
+        "decl_name": "dualClass_shatters_imp_shatters",
+        "depth": 1,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "Shatters",
+          "cubeBitSlice",
+          "cubeEmbedding",
+          "dualClass"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ} (S : Finset ↑C),\n  Shatters (↑C) (dualClass C) S → 2 ^ (d + 1) ≤ S.card → ∃ T, T.card = d + 1 ∧ Shatters X C T",
+        "topo": 1,
+        "type_sha256": "2be8bd151a04f538b9068a169a3109dac61217346f21c9926e860b6a8fc420ee"
+      },
+      {
+        "citable": false,
+        "decl_name": "mem_cubeBitSlice_iff",
+        "depth": 2,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "cubeBitSlice"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {n : ℕ} {S : Finset ↑C} (cube : (Fin n → Bool) ↪ ↥S) (b : Fin n → Bool)\n  (k : Fin n), ↑(cube b) ∈ cubeBitSlice✝ cube k ↔ b k = true",
+        "topo": 2,
+        "type_sha256": "4fe8389c3e10270d4035ab21b9b34f7c8537bdb0d4933a784c46d9efe8767e87"
+      }
+    ]
+  },
+  "decl_name": "vcDim_dualClass_le",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.R-2026-6031",
+  "frozen_export": {
+    "bytes": 20601456,
+    "constants": 5366,
+    "path": "mathesis-exports/33eab9fb36ea478f53cce34a5302e3ba85f591b8157b1957588c647e23dabc6b.export",
+    "sha256": "33eab9fb36ea478f53cce34a5302e3ba85f591b8157b1957588c647e23dabc6b"
+  },
+  "is_open": false,
+  "kind": "argument",
+  "module": "FLT_Proofs.Complexity.IndependentVC.DualBound",
+  "post_number": 2,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "vcDim_dualClass_le",
+      "dualClass_shatters_imp_shatters",
+      "mem_cubeBitSlice_iff"
+    ],
+    "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C ≤ ↑d → VCDim (↑C) (dualClass C) ≤ ↑(2 ^ (d + 1) - 1)",
+    "type_sha256": "b05b78b9ee4b4d5905a0d9adec24826a1dc63d7eeb8be74435cd356b36fff0b8"
+  },
+  "verification": {
+    "gate_version": "mathesis-adjudicate@5a48a4dbbcb5",
+    "replay": "accepted",
+    "statement_identity": "not-applicable",
+    "substrate": "Lean 4 kernel v4.31.0",
+    "triviality": null
+  },
+  "witness": null
+}

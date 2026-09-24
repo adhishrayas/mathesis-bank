@@ -21,3 +21,10 @@ build/
 *.sqlite
 *.sqlite-journal
 mathesis.sqlite
+
+# The record's build: dependencies and intermediate assets (docs/ is the
+# committed output; bank/tools/build-site.sh regenerates it).
+node_modules/
+web/dist-assets/
+services/registry/target/
+.prose-lint.json

@@ -1,0 +1,382 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6006"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "exists_hasNatarajanDimLE_not_hasDSDimLE"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∃ 𝒞, HasNatarajanDimLE 1 𝒞 ∧ ¬HasDSDimLE 1 𝒞"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "8"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "7"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "9"
+  },
+  {
+    "field": "argument.depth",
+    "value": "2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_hasNatarajanDimLE_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_hasNatarajanDimL…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_realises"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_no_square"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nbr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dsShatters_univ"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_hasNatarajanDimLE_not_hasDSDimLE"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ 𝒞, HasNatarajanDimLE 1 𝒞 ∧ ¬HasDSDimLE 1 𝒞"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasDSDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasNatarajanDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_hasNatarajanDimLE_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_hasNatarajanDimLE_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "HasNatarajanDimLE 1 sixCycle✝"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasNatarajanDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_no_square"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_realises"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_hasNatarajanDimLE_not_hasDSDimLE"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_realises"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {P : Fin 2 → Set (Fin 6)},\n  PairShatters sixCycle✝ P →\n    pairSupport P = Set.univ → ∀ {y₀ y₁ : Fin 6}, y₀ ∈ P 0 → y₁ ∈ P 1 → sixCycleEdge✝ y₀ y₁ = true"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycleEdge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_hasNatarajanDimLE_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_no_square"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (a b c d : Fin 6),\n  sixCycleEdge✝ a c = true →\n    sixCycleEdge✝ a d = true → sixCycleEdge✝ b c = true → sixCycleEdge✝ b d = true → a = b ∨ c = d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycleEdge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_hasNatarajanDimLE_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "DSShatters sixCycle✝ Set.univ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "DSShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycleEdge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dsShatters_univ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nbr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_hasNatarajanDimLE_not_hasDSDimLE"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "sixCycle✝.Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycleEdge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_nbr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (c : Fin 2 → Fin 6),\n  sixCycleEdge✝ (c 0) (c 1) = true →\n    ∀ (i : Fin 2), ∃ c', sixCycleEdge✝ (c' 0) (c' 1) = true ∧ c' i ≠ c i ∧ ∀ (j : Fin 2), j ≠ i → c' j = c j"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "sixCycleEdge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dsShatters_univ"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)},\n  𝒞.Nonempty →\n    (Set.univ.restrict '' 𝒞).Finite →\n      (∀ c ∈ 𝒞, ∀ (i : X), ∃ c' ∈ 𝒞, c' i ≠ c i ∧ ∀ (j : X), j ≠ i → c' j = c j) → DSShatters 𝒞 Set.univ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "DSShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPseudoCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sixCycle_dsShatters"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "acba08a11007"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6006"
+  }
+]

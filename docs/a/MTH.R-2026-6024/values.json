@@ -1,0 +1,1094 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6024"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "31"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "38"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "3"
+  },
+  {
+    "field": "argument.depth",
+    "value": "7"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pinsker_proof"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "tvDistReal_set_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klFun_integral_ge_of_meas…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_eq_klFun_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "binary_pinsker"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "two_sq_le_neg_log"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "two_sq_le_neg_log_one_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "monotoneOn_h_zero"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasDerivAt_h_zero"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "monotoneOn_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "deriv_g_nonneg_of_ge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuousOn_g_Ico"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuousOn_klBin_Ico"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_zero_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_one_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "antitoneOn_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasDerivAt_sub_sq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "deriv_g_nonpos_of_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "deriv_factor_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuousOn_g_Ioc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuousOn_sub_sq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "continuousOn_klBin_Ioc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klBin_expand"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasureTheory.tvDistReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.tvDistReal_set_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasureTheory.tvDistReal_set_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsFiniteMeasure P]\n  [MeasureTheory.IsFiniteMeasure Q], {x | ∃ A, MeasurableSet A ∧ x = |(P A).toReal - (Q A).toReal|}.Nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      ∀ (A : Set α), MeasurableSet A → 2 * (P.real A - Q.real A) ^ 2 ≤ InformationTheory.klDivReal P Q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      ∀ (A : Set α), MeasurableSet A → InformationTheory.klBin (P.real A) (Q.real A) ≤ InformationTheory.klDivReal P Q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_eq_klFun_sum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klFun_integral_ge_of_measurableSet"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klFun_integral_ge_of_measurableSet"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] {Q : MeasureTheory.Measure α} [MeasureTheory.IsFiniteMeasure Q] (f : α → ℝ),\n  MeasureTheory.Integrable f Q →\n    MeasureTheory.Integrable (fun x => InformationTheory.klFun (f x)) Q →\n      (∀ᵐ (x : α) ∂Q, 0 ≤ f x) →\n        ∀ {A : Set α},\n          0 < Q.real A →\n            Q.real A * InformationTheory.klFun ((Q.real A)⁻¹ * ∫ (x : α) in A, f x ∂Q) ≤\n              ∫ (x : α) in A, InformationTheory.klFun (f x) ∂Q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_eq_klFun_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ),\n  0 < q →\n    q < 1 →\n      InformationTheory.klBin p q =\n        q * InformationTheory.klFun (p / q) + (1 - q) * InformationTheory.klFun ((1 - p) / (1 - q))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ), 0 ≤ p → p ≤ 1 → 0 < q → q < 1 → 2 * (p - q) ^ 2 ≤ InformationTheory.klBin p q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.antitoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_one_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_zero_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log_one_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (q : ℝ), 0 < q → q ≤ 1 → 2 * (1 - q) ^ 2 ≤ -Real.log q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log_one_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log_one_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (q : ℝ), 0 ≤ q → q < 1 → 2 * q ^ 2 ≤ -Real.log (1 - q)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_h_zero"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_h_zero"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "MonotoneOn (fun q => -Real.log (1 - q) - 2 * q ^ 2) (Set.Ico 0 1)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_h_zero"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_le_neg_log_one_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_h_zero"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ q < 1, HasDerivAt (fun q => -Real.log (1 - q) - 2 * q ^ 2) ((2 * q - 1) ^ 2 / (1 - q)) q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_h_zero"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → MonotoneOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ico p 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ico"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonneg_of_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonneg_of_ge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ), p ≤ q → 0 < q → q < 1 → 0 ≤ (q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_factor_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ico"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ico p 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ico"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_sub_sq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ico"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q) (Set.Ico p 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ico"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_zero_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (q : ℝ), InformationTheory.klBin 0 q = -Real.log (1 - q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → InformationTheory.klBin p p = 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_one_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (q : ℝ), InformationTheory.klBin 1 q = -Real.log q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.antitoneOn_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → AntitoneOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ioc 0 p)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ioc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonpos_of_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.binary_pinsker"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ),\n  0 < p →\n    p < 1 →\n      0 < q →\n        q < 1 →\n          HasDerivAt (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2)\n            ((q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q))) q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_sub_sq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.antitoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.monotoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_sub_sq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ), HasDerivAt (fun q => (p - q) ^ 2) (-2 * (p - q)) q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonpos_of_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ), q ≤ p → 0 < q → q < 1 → (q - p) * (1 - 2 * q) ^ 2 / (q * (1 - q)) ≤ 0"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_factor_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.antitoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_factor_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (q : ℝ), 0 < q → q < 1 → 0 ≤ (1 - 2 * q) ^ 2 / (q * (1 - q))"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonneg_of_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.deriv_g_nonpos_of_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ioc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q - 2 * (p - q) ^ 2) (Set.Ioc 0 p)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ioc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_sub_sq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.antitoneOn_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_sub_sq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ) (s : Set ℝ), ContinuousOn (fun q => (p - q) ^ 2) s"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ico"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ioc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ioc"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p : ℝ), 0 < p → p < 1 → ContinuousOn (fun q => InformationTheory.klBin p q) (Set.Ioc 0 p)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_g_Ioc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ),\n  0 < p → p < 1 → 0 < q → q < 1 → HasDerivAt (fun q => InformationTheory.klBin p q) ((q - p) / (q * (1 - q))) q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_expand"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ico"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.continuousOn_klBin_Ioc"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_expand"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (p q : ℝ),\n  0 < p →\n    p < 1 →\n      0 < q →\n        q < 1 →\n          InformationTheory.klBin p q =\n            p * Real.log p - p * Real.log q + (1 - p) * Real.log (1 - p) - (1 - p) * Real.log (1 - q)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klBin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.hasDerivAt_klBin_q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q], 0 ≤ InformationTheory.klDivReal P Q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.two_sq_sub_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α) [MeasureTheory.IsProbabilityMeasure P]\n  [MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q → InformationTheory.klDivReal P Q = (InformationTheory.klDiv P Q).toReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "InformationTheory.klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klBin_le_klDivReal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.integrand_eq_llr"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α),\n  (fun x => Real.log (P.rnDeriv Q x).toReal) = MeasureTheory.llr P Q"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "InformationTheory.klDivReal_eq_toReal_klDiv"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "6e4db0a56fec"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6024"
+  }
+]

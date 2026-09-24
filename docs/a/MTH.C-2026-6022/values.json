@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6022"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "ProbabilityTheory.klDivReal_multivariateGaussian"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (m₁ m₂ : EuclideanSpace ℝ ι) {S₁ S₂ : Matrix ι ι ℝ},\n  S₁.PosDef →\n    S₂.PosDef →\n      InformationTheory.klDivReal (ProbabilityTheory.multivariateGaussian m₁ S₁)\n          (ProbabilityTheory.multivariateGaussian m₂ S₂) =\n        1 / 2 *\n          (Real.log (S₂.det / S₁.det) + (S₂⁻¹ * S₁).trace + (m₁ - m₂).ofLp ⬝ᵥ S₂⁻¹.mulVec (m₁.ofLp - m₂.ofLp) -\n            ↑(Fintype.card ι))"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "ZPM.InformationTheory.KullbackLeibler.Gaussian.ClosedForm"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "4fa2e8b7b96b"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6022"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "38"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6022"
+  }
+]

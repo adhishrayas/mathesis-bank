@@ -1,0 +1,115 @@
+{
+  "next_cursor": null,
+  "page": 1,
+  "rows": [
+    {
+      "argument": "MTH.R-2026-6021",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6021",
+      "post_number": 12,
+      "post_url": "/a/MTH.R-2026-6021",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6022",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6022",
+      "post_number": 11,
+      "post_url": "/a/MTH.R-2026-6022",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6023",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6023",
+      "post_number": 10,
+      "post_url": "/a/MTH.R-2026-6023",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6024",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6024",
+      "post_number": 9,
+      "post_url": "/a/MTH.R-2026-6024",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6025",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6025",
+      "post_number": 8,
+      "post_url": "/a/MTH.R-2026-6025",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6026",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6026",
+      "post_number": 7,
+      "post_url": "/a/MTH.R-2026-6026",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6027",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6027",
+      "post_number": 6,
+      "post_url": "/a/MTH.R-2026-6027",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6028",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6028",
+      "post_number": 5,
+      "post_url": "/a/MTH.R-2026-6028",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6029",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6029",
+      "post_number": 4,
+      "post_url": "/a/MTH.R-2026-6029",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6030",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6030",
+      "post_number": 3,
+      "post_url": "/a/MTH.R-2026-6030",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6031",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6031",
+      "post_number": 2,
+      "post_url": "/a/MTH.R-2026-6031",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "argument": "MTH.R-2026-6032",
+      "author": "Dhruv Gupta",
+      "author_login": "Zetetic-Dhruv",
+      "claim": "MTH.C-2026-6032",
+      "post_number": 1,
+      "post_url": "/a/MTH.R-2026-6032",
+      "published_at": "2026-09-24T00:00:00Z"
+    }
+  ],
+  "total": 32
+}

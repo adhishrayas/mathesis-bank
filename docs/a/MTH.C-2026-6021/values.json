@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6021"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HiddenChannelCapacity.lz_theorem_3_1"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {a : Type u_1} {c : Type u_2} {b : Type u_3} [inst : Fintype a] [inst_1 : DecidableEq a] [inst_2 : Nonempty a]\n  [inst_3 : Fintype c] [inst_4 : DecidableEq c] [inst_5 : Nonempty c] [inst_6 : Fintype b] [inst_7 : DecidableEq b]\n  [inst_8 : Nonempty b] {ρAC : MState (a × c)} {ρCB : MState (c × b)},\n  ρAC.m.PosDef →\n    ρCB.m.PosDef →\n      ρAC.traceLeft = ρCB.traceRight →\n        (HiddenChannelCapacity.trC ρAC ρCB = 1 ↔ ∃ ω, HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω) ∧\n          ∀ (ω : MState (a × c × b)),\n            HiddenChannelCapacity.IsMarkovCompletion ρAC ρCB ω → ω = HiddenChannelCapacity.sigT ρAC ρCB"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "ZPM.Measurements.HC.QJTTwoClique"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "0064e98c1438"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6021"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "38"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6021"
+  }
+]

@@ -1,0 +1,286 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6017"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.auditSealed_iff_no_binary_decision_advantage"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "6"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "5"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "5"
+  },
+  {
+    "field": "argument.depth",
+    "value": "3"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "auditSealed_iff_no_binary…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "equalPriorBayesError_eq_h…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finiteTotalVariation_eq_z…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "equalPriorBayesError_eq_h…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_pmfMass_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "min_eq_add_sub_abs_div_two"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditSealed_iff_no_binary_decision_advantage"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditChannel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSealed"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.equalPriorBayesError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y), AuditCP.equalPriorBayesError p q = 1 / 2 ↔ p = q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.equalPriorBayesError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.finiteTotalVariation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_one_sub_tv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finiteTotalVariation_eq_zero_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditSealed_iff_no_binary_decision_advantage"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.finiteTotalVariation_eq_zero_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y), AuditCP.finiteTotalVariation p q = 0 ↔ p = q"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.finiteTotalVariation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.pmfMass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_one_sub_tv"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type uY} [inst : Fintype Y] (p q : PMF Y),\n  AuditCP.equalPriorBayesError p q = (1 - AuditCP.finiteTotalVariation p q) / 2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.equalPriorBayesError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.finiteTotalVariation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.pmfMass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.min_eq_add_sub_abs_div_two"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.sum_pmfMass_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.sum_pmfMass_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type uY} [inst : Fintype Y] (p : PMF Y), ∑ y, AuditCP.pmfMass p y = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.pmfMass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_one_sub_tv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.min_eq_add_sub_abs_div_two"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (x y : ℝ), min x y = (x + y - |x - y|) / 2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.equalPriorBayesError_eq_half_one_sub_tv"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "2b5c97530787"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6017"
+  }
+]

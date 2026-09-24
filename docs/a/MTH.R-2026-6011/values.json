@@ -1,0 +1,1146 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6011"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), Set.Nonempty C → ↑(OptimalMistakeBound X C) = LittlestoneDim X C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "19"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "26"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "19"
+  },
+  {
+    "field": "argument.depth",
+    "value": "6"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "versionSpace_append"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "target_in_versionSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_m…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_predict_spec"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_zero_all_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_branch_lower_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shattered_of_ldim_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isShattered_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "WithBot_WithTop_lt_succ_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_mistakesFrom_cons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isShattered_mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), Set.Nonempty C → ↑(OptimalMistakeBound X C) = LittlestoneDim X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OptimalMistakeBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), LittlestoneDim X C < ⊤ → OnlineLearnable X Bool C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool},\n  ∀ c ∈ C,\n    ∀ (history : List (X × Bool)),\n      (∀ p ∈ history, c p.1 = p.2) →\n        ∀ (d : ℕ),\n          LittlestoneDim X (versionSpace C history) ≤ ↑↑d →\n            LittlestoneDim X (versionSpace C history) < ⊤ → ∀ (seq : List X), (SOA X C).mistakesFrom history c seq ≤ d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_mistakesFrom_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "WithBot_WithTop_lt_succ_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "target_in_versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "versionSpace_append"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "versionSpace_append"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {history : List (X × Bool)} {x : X} {y : Bool},\n  versionSpace C (history ++ [(x, y)]) ⊆ versionSpace C history"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "target_in_versionSpace"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {c : X → Bool},\n  c ∈ C → ∀ {history : List (X × Bool)}, (∀ p ∈ history, c p.1 = p.2) → c ∈ versionSpace C history"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {history : List (X × Bool)} {x : X} {c : X → Bool},\n  c ∈ versionSpace C history →\n    (SOA X C).predict history x ≠ c x →\n      LittlestoneDim X (versionSpace C history) < ⊤ →\n        LittlestoneDim X (versionSpace C (history ++ [(x, c x)])) < LittlestoneDim X (versionSpace C history)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shattered_of_ldim_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_branch_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_zero_all_agree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_predict_spec"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_predict_spec"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} (C : ConceptClass X Bool) (history : List (X × Bool)) (x : X),\n  have V := versionSpace C history;\n  have b := (SOA X C).predict history x;\n  LittlestoneDim X {c | c ∈ V ∧ c x = b} ≥ LittlestoneDim X {c | c ∈ V ∧ c x = !b}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "versionSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_zero_all_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {V : ConceptClass X Bool},\n  LittlestoneDim X V = ↑0 → Set.Nonempty V → ∀ (x : X) (c₁ c₂ : X → Bool), c₁ ∈ V → c₂ ∈ V → c₁ x = c₂ x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_branch_lower_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {V : ConceptClass X Bool} {x : X} {k : ℕ} {b : Bool},\n  (∃ Tb, LTree.isShattered {c | c ∈ V ∧ c x = b} Tb) →\n    (∃ Tnb, LTree.isShattered {c | c ∈ V ∧ c x = !b} Tnb) →\n      (∃ c ∈ V, c x = b) → (∃ c ∈ V, c x = !b) → LittlestoneDim X V ≥ ↑↑(k + 1)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shattered_of_ldim_ge"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {d : ℕ}, LittlestoneDim X C ≥ ↑↑d → ∃ T, LTree.isShattered C T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.truncate"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_truncate"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {m : ℕ} (T : LTree X m),\n  LTree.isShattered C T → ∀ {n : ℕ} (h : n ≤ m), LTree.isShattered C (LTree.truncate h T)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shattered_of_ldim_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "WithBot_WithTop_lt_succ_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {a : WithBot (WithTop ℕ)} {n : ℕ}, a < ↑↑(n + 1) → a ≤ ↑↑n"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_mistakesFrom_cons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool) (history : List (X × Bool)) (c : X → Bool) (x : X) (xs : List X),\n  (SOA X C).mistakesFrom history c (x :: xs) =\n    (if (SOA X C).predict history x ≠ c x then 1 else 0) + (SOA X C).mistakesFrom (history ++ [(x, c x)]) c xs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {n : ℕ} (T : LTree X n) {C C' : ConceptClass X Bool},\n  C ⊆ C' → LTree.isShattered C T → LTree.isShattered C' T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "soa_mistakes_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n),\n  LTree.isShattered C T → ∀ {M : ℕ}, MistakeBounded X Bool C M → n ≤ M"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} (L : OnlineLearner X Bool) (c : X → Bool) (seq : List X), L.mistakesFrom L.init c seq = L.mistakes c seq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes.go"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} (L : OnlineLearner X Bool) (s : L.State) {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n),\n  LTree.isShattered C T → Set.Nonempty C → ∃ seq, ∃ c ∈ C, L.mistakesFrom s c seq = n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n), LTree.isShattered C T → Set.Nonempty C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.isShattered_truncate"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_shattered_of_ldim_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_strict_decrease_on_mistake"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "SOA_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), (SOA X C).init = []"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SOA"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "backward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "optimal_mistake_bound_eq_ldim"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "5fe03070080b"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6011"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6020"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "ZPM.Measurements.HC.Dirac"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "e606da67595a"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6020"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "21"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6020"
+  }
+]

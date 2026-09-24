@@ -1,0 +1,708 @@
+{
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.R-2026-6008, title={no_smaller_bound}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.R-2026-6008}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6008}, year={2026} }",
+    "text": "Dhruv Gupta. no_smaller_bound. Mathesis. MTH.R-2026-6008. https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6008. 2026-09-24."
+  },
+  "claim": "MTH.C-2026-6008",
+  "created": "2026-09-24T00:00:00Z",
+  "dag": {
+    "dictionary_leaves": [
+      "HasVCDimLE",
+      "IsDenseIn",
+      "IsStrictlyDenseIn",
+      "Shatters",
+      "cutCode",
+      "ded",
+      "ded'",
+      "dedSet",
+      "dedSet'",
+      "fatten",
+      "fattenDense",
+      "padCuts",
+      "padGround"
+    ],
+    "edge_count": 32,
+    "edges": [
+      {
+        "used_by": "IsDenseIn.mk_le_two_pow_mul",
+        "uses": "cutCode_injective",
+        "via": "direct"
+      },
+      {
+        "used_by": "bddAbove_dedSet",
+        "uses": "dedSet_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "bddAbove_dedSet'",
+        "uses": "dedSet'_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "cutCode_injective",
+        "uses": "cutCode_ne",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded'_eq_ded",
+        "uses": "ded'_le_ded",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded'_eq_ded",
+        "uses": "ded_le_ded'",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded'_le_ded",
+        "uses": "IsStrictlyDenseIn.isDenseIn",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded'_le_ded",
+        "uses": "ded'_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded'_le_ded",
+        "uses": "mk_le_ded",
+        "via": "direct"
+      },
+      {
+        "used_by": "dedSet'_le",
+        "uses": "IsStrictlyDenseIn.isDenseIn",
+        "via": "direct"
+      },
+      {
+        "used_by": "dedSet'_le",
+        "uses": "dedSet_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "dedSet_le",
+        "uses": "IsDenseIn.mk_le_two_pow_mul",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded_le_ded'",
+        "uses": "ded_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "ded_le_ded'",
+        "uses": "mk_le_ded'_of_isDenseIn",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_family_of_isStrictlyDenseIn",
+        "uses": "hasVCDimLE_one_of_isChain",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_family_of_isStrictlyDenseIn",
+        "uses": "inter_padCuts_ne",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_family_of_isStrictlyDenseIn",
+        "uses": "isChain_padCuts",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_family_of_isStrictlyDenseIn",
+        "uses": "mk_padGround",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_strictly_between_fatten",
+        "uses": "mem_of_fatten_of_fst_eq",
+        "via": "direct"
+      },
+      {
+        "used_by": "isStrictlyDenseIn_fattenDense",
+        "uses": "exists_strictly_between_fatten",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_fattenDense_le",
+        "uses": "fattenDense_code_injective",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded",
+        "uses": "bddAbove_dedSet",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded'",
+        "uses": "bddAbove_dedSet'",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded'_of_isDenseIn",
+        "uses": "isStrictlyDenseIn_fattenDense",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded'_of_isDenseIn",
+        "uses": "mk_fattenDense_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded'_of_isDenseIn",
+        "uses": "mk_le_ded'",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_ded'_of_isDenseIn",
+        "uses": "mk_le_mk_fatten",
+        "via": "direct"
+      },
+      {
+        "used_by": "mk_le_mk_fatten",
+        "uses": "fatten_bot_injective",
+        "via": "direct"
+      },
+      {
+        "used_by": "no_smaller_bound",
+        "uses": "ded'_eq_ded",
+        "via": "direct"
+      },
+      {
+        "used_by": "no_smaller_bound",
+        "uses": "exists_family_of_isStrictlyDenseIn",
+        "via": "direct"
+      },
+      {
+        "used_by": "no_smaller_bound",
+        "uses": "one_mem_dedSet'",
+        "via": "direct"
+      },
+      {
+        "used_by": "one_mem_dedSet'",
+        "uses": "isStrictlyDenseIn_empty_punit",
+        "via": "direct"
+      }
+    ],
+    "node_count": 31,
+    "nodes": [
+      {
+        "citable": true,
+        "decl_name": "no_smaller_bound",
+        "depth": 0,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "IsStrictlyDenseIn",
+          "ded",
+          "ded'",
+          "dedSet'"
+        ],
+        "is_root": true,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ κ →\n    ∀ {lam : Cardinal.{u}},\n      lam < ded κ → ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ lam < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)",
+        "topo": 0,
+        "type_sha256": "59307ceaafab5f75045d72ad12f22161bfd9d2ff54fc1c5426803ab687c3c00a"
+      },
+      {
+        "citable": false,
+        "decl_name": "one_mem_dedSet'",
+        "depth": 1,
+        "dictionary_leaves": [
+          "IsStrictlyDenseIn",
+          "dedSet'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (κ : Cardinal.{u}), 1 ∈ dedSet'✝ κ",
+        "topo": 1,
+        "type_sha256": "265556936c786242753b053aed02f77375df6e8fe19699a62f6cfc042ae2331c"
+      },
+      {
+        "citable": false,
+        "decl_name": "isStrictlyDenseIn_empty_punit",
+        "depth": 2,
+        "dictionary_leaves": [
+          "IsStrictlyDenseIn"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "IsStrictlyDenseIn ∅",
+        "topo": 2,
+        "type_sha256": "d800ecf8203ecb24198b91388d2e453cfd09164bb56a25aca1a11bac8ddec58b"
+      },
+      {
+        "citable": false,
+        "decl_name": "exists_family_of_isStrictlyDenseIn",
+        "depth": 1,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "IsStrictlyDenseIn",
+          "padCuts",
+          "padGround"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ →\n    Cardinal.mk ↑E ≤ κ →\n      IsStrictlyDenseIn E →\n        ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ Cardinal.mk J ≤ Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)",
+        "topo": 3,
+        "type_sha256": "87a117ed814600450c25336f6f6748ad172c0cda788945844fd438e69108d067"
+      },
+      {
+        "citable": false,
+        "decl_name": "mk_padGround",
+        "depth": 2,
+        "dictionary_leaves": [
+          "padGround"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}} {J P : Type u} {E : Set J},\n  Cardinal.aleph0 ≤ κ → Cardinal.mk ↑E ≤ κ → Cardinal.mk P = κ → Cardinal.mk ↑(padGround✝ E) = κ",
+        "topo": 4,
+        "type_sha256": "a4729a4b7e38110998526865841827b22b34feecd9ba7b29b8f3f77b53026be4"
+      },
+      {
+        "citable": false,
+        "decl_name": "isChain_padCuts",
+        "depth": 2,
+        "dictionary_leaves": [
+          "padCuts"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (J P : Type u) [inst : LinearOrder J], IsChain (fun x1 x2 => x1 ⊆ x2) (padCuts✝ J P)",
+        "topo": 5,
+        "type_sha256": "154a235da9e2bfbc7074fa9f614cf57181743630aea2c0f5baa2ef42dbec1d79"
+      },
+      {
+        "citable": false,
+        "decl_name": "inter_padCuts_ne",
+        "depth": 2,
+        "dictionary_leaves": [
+          "padGround"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J P : Type u} [inst : LinearOrder J] {E : Set J} {j j' e : J},\n  e ∈ E → j < e → e < j' → padGround✝ E ∩ Sum.inl '' {a | a < j} ≠ padGround✝ E ∩ Sum.inl '' {a | a < j'}",
+        "topo": 6,
+        "type_sha256": "fa6f16476b7fb71a81f40f1982cb6c386c4d0e518bf386c072531f002b8f4ccb"
+      },
+      {
+        "citable": true,
+        "decl_name": "hasVCDimLE_one_of_isChain",
+        "depth": 2,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_2} {𝒜 : Set (Set α)}, IsChain (fun x1 x2 => x1 ⊆ x2) 𝒜 → HasVCDimLE 1 𝒜",
+        "topo": 7,
+        "type_sha256": "d1a14bde0543b411b3475ce05e77102e48b818b319b85f3eba745413171cb764"
+      },
+      {
+        "citable": true,
+        "decl_name": "ded'_eq_ded",
+        "depth": 1,
+        "dictionary_leaves": [
+          "ded",
+          "ded'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}}, Cardinal.aleph0 ≤ κ → ded' κ = ded κ",
+        "topo": 8,
+        "type_sha256": "8cbd64207b49821d23579bb5fb24b4a54bea99a37975716eac9603684810f221"
+      },
+      {
+        "citable": true,
+        "decl_name": "ded_le_ded'",
+        "depth": 2,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "ded",
+          "ded'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}}, Cardinal.aleph0 ≤ κ → ded κ ≤ ded' κ",
+        "topo": 9,
+        "type_sha256": "85f65b4707ca314da394b61c3c428ec3609cc0fdd28359113d27feb90eb589de"
+      },
+      {
+        "citable": false,
+        "decl_name": "mk_le_ded'_of_isDenseIn",
+        "depth": 3,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "ded'",
+          "fatten",
+          "fattenDense"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.aleph0 ≤ κ → Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ ded' κ",
+        "topo": 10,
+        "type_sha256": "474b3f568e0373ef955abeb596268c81cb37c2351c6157b32ead317dd7433de2"
+      },
+      {
+        "citable": false,
+        "decl_name": "mk_le_mk_fatten",
+        "depth": 4,
+        "dictionary_leaves": [
+          "fatten"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} (E : Set J), Cardinal.mk J ≤ Cardinal.mk ↑(fatten✝ E)",
+        "topo": 11,
+        "type_sha256": "74b0758e8eed619393bc39cba624ad9d41516f46ab3b426bdab6cbcfc50bdaae"
+      },
+      {
+        "citable": false,
+        "decl_name": "fatten_bot_injective",
+        "depth": 5,
+        "dictionary_leaves": [
+          "fatten"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} (E : Set J), Function.Injective fun x => ⟨toLex (x, 0), ⋯⟩",
+        "topo": 12,
+        "type_sha256": "f299ab41be23a65cbe5c7cbcf32b1821decfe8dccb74510626c64fbe3992d8d7"
+      },
+      {
+        "citable": true,
+        "decl_name": "mk_le_ded'",
+        "depth": 4,
+        "dictionary_leaves": [
+          "IsStrictlyDenseIn",
+          "ded'",
+          "dedSet'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ ded' κ",
+        "topo": 13,
+        "type_sha256": "ab68087ce1d45bb24adf7f68ccaef13c3eee1608aaa331449ecbdf7149d95c35"
+      },
+      {
+        "citable": false,
+        "decl_name": "bddAbove_dedSet'",
+        "depth": 5,
+        "dictionary_leaves": [
+          "dedSet'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (κ : Cardinal.{u}), BddAbove (dedSet'✝ κ)",
+        "topo": 14,
+        "type_sha256": "374942d4a5859eaade7a54bb68c467e2c4b498873bc2521a9e413a6c1891aa68"
+      },
+      {
+        "citable": false,
+        "decl_name": "dedSet'_le",
+        "depth": 6,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "IsStrictlyDenseIn",
+          "dedSet'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet'✝ κ → c ≤ 2 ^ (κ + κ)",
+        "topo": 15,
+        "type_sha256": "e9d27727e01e65aaa7d2e10d7a347b43b33029f38604ae44a338155d8b401fa8"
+      },
+      {
+        "citable": false,
+        "decl_name": "mk_fattenDense_le",
+        "depth": 4,
+        "dictionary_leaves": [
+          "fatten",
+          "fattenDense"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} (E : Set J), Cardinal.mk ↑(fattenDense✝ E) ≤ Cardinal.mk ↑E * Cardinal.aleph0",
+        "topo": 16,
+        "type_sha256": "fbed9813d1283a79bf9a7c9599dd411d9d3655139939efc99ddcfe2fb1709d86"
+      },
+      {
+        "citable": false,
+        "decl_name": "fattenDense_code_injective",
+        "depth": 5,
+        "dictionary_leaves": [
+          "fatten",
+          "fattenDense"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} (E : Set J), Function.Injective fun p => (⟨(ofLex ↑↑p).1, ⋯⟩, (ofLex ↑↑p).2)",
+        "topo": 17,
+        "type_sha256": "ebf224954a6417b7bbd9a35ba1c7d69d31d878af3eaabffe2a05316bd7568073"
+      },
+      {
+        "citable": false,
+        "decl_name": "isStrictlyDenseIn_fattenDense",
+        "depth": 4,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "IsStrictlyDenseIn",
+          "fatten",
+          "fattenDense"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → IsStrictlyDenseIn (fattenDense✝ E)",
+        "topo": 18,
+        "type_sha256": "26e3aaf4b9342a41f00133cecd7732b9369dd2661208f672387f21c63651d36a"
+      },
+      {
+        "citable": false,
+        "decl_name": "exists_strictly_between_fatten",
+        "depth": 5,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "fatten"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J},\n  IsDenseIn E →\n    ∀ {u v : Lex (J × ℚ)}, u ∈ fatten✝ E → v ∈ fatten✝ E → u < v → ∃ z ∈ E, ∃ r, u < toLex (z, r) ∧ toLex (z, r) < v",
+        "topo": 19,
+        "type_sha256": "a9891ed14290b9f4e82966a6ddf598599e75164e326cf4249052b5705d586550"
+      },
+      {
+        "citable": false,
+        "decl_name": "mem_of_fatten_of_fst_eq",
+        "depth": 6,
+        "dictionary_leaves": [
+          "fatten"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} {E : Set J} {u v : Lex (J × ℚ)},\n  u ∈ fatten✝ E → v ∈ fatten✝ E → (ofLex u).1 = (ofLex v).1 → (ofLex u).2 < (ofLex v).2 → (ofLex u).1 ∈ E",
+        "topo": 20,
+        "type_sha256": "71fe3d3f8a8413dc139bf3aeae277402a91252c1477dc5cf8882cd3b74ee9bb7"
+      },
+      {
+        "citable": true,
+        "decl_name": "ded_le",
+        "depth": 3,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "ded",
+          "dedSet"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ c) → ded κ ≤ c",
+        "topo": 21,
+        "type_sha256": "f377ad44e99a975e1babf400411cb8fb57948cbe782af2a8fc239d63955396da"
+      },
+      {
+        "citable": true,
+        "decl_name": "ded'_le_ded",
+        "depth": 2,
+        "dictionary_leaves": [
+          "IsStrictlyDenseIn",
+          "ded",
+          "ded'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (κ : Cardinal.{u}), ded' κ ≤ ded κ",
+        "topo": 22,
+        "type_sha256": "4a95a9774997652c4a193af825285741c0ee7281a258f25ae3c11228f1640825"
+      },
+      {
+        "citable": true,
+        "decl_name": "mk_le_ded",
+        "depth": 3,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "ded",
+          "dedSet"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ : Cardinal.{u}} {J : Type u} [inst : LinearOrder J] {E : Set J},\n  Cardinal.mk ↑E ≤ κ → IsDenseIn E → Cardinal.mk J ≤ ded κ",
+        "topo": 23,
+        "type_sha256": "659c79e96abd4964148dd3120fc0efd9c0de37297ccc1af0112e2154dfd782e5"
+      },
+      {
+        "citable": false,
+        "decl_name": "bddAbove_dedSet",
+        "depth": 4,
+        "dictionary_leaves": [
+          "dedSet"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (κ : Cardinal.{u}), BddAbove (dedSet✝ κ)",
+        "topo": 24,
+        "type_sha256": "47d10bb2494a3edcb21e49acbd4ffe457bb8ec33c4280194f7e3220a126b6b64"
+      },
+      {
+        "citable": false,
+        "decl_name": "dedSet_le",
+        "depth": 7,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "dedSet"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ c : Cardinal.{u}}, c ∈ dedSet✝ κ → c ≤ 2 ^ (κ + κ)",
+        "topo": 25,
+        "type_sha256": "10441f08d1e31bd2c5549bc71c6aeb549c2e73796f9671f0fc64058127d4a741"
+      },
+      {
+        "citable": true,
+        "decl_name": "IsDenseIn.mk_le_two_pow_mul",
+        "depth": 8,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "cutCode"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {J : Type u} [inst : LinearOrder J] {E : Set J}, IsDenseIn E → Cardinal.mk J ≤ 2 ^ Cardinal.mk ↑E * 2 ^ Cardinal.mk ↑E",
+        "topo": 26,
+        "type_sha256": "bd381baa366a47dd03a414ffd78be8ad1b828e0d59efb5af91565b9387692167"
+      },
+      {
+        "citable": false,
+        "decl_name": "cutCode_injective",
+        "depth": 9,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "cutCode"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → Function.Injective (cutCode✝ D)",
+        "topo": 27,
+        "type_sha256": "2fb6c54ed036a1514303b6e9648ab1b400309888cf375ca885cb616819f0d058"
+      },
+      {
+        "citable": false,
+        "decl_name": "cutCode_ne",
+        "depth": 10,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "cutCode"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {I : Type u_1} {D : Set I} [inst : LinearOrder I], IsDenseIn D → ∀ {x y : I}, x < y → cutCode✝ D x ≠ cutCode✝ D y",
+        "topo": 28,
+        "type_sha256": "4a4c221bdeb4f514ad9d7755913b64a2c1344ca8afa2b9bd9a644f59df7e0e0c"
+      },
+      {
+        "citable": true,
+        "decl_name": "ded'_le",
+        "depth": 3,
+        "dictionary_leaves": [
+          "IsStrictlyDenseIn",
+          "ded'",
+          "dedSet'"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {κ c : Cardinal.{u}},\n  (∀ (J : Type u) (x : LinearOrder J) (E : Set J), Cardinal.mk ↑E ≤ κ → IsStrictlyDenseIn E → Cardinal.mk J ≤ c) →\n    ded' κ ≤ c",
+        "topo": 29,
+        "type_sha256": "5f860d84b60867b65321b432521d7fa0d6af537ca126342d3ff2a954a94a3b33"
+      },
+      {
+        "citable": true,
+        "decl_name": "IsStrictlyDenseIn.isDenseIn",
+        "depth": 7,
+        "dictionary_leaves": [
+          "IsDenseIn",
+          "IsStrictlyDenseIn"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {I : Type u_1} {D : Set I} [inst : Preorder I], IsStrictlyDenseIn D → IsDenseIn D",
+        "topo": 30,
+        "type_sha256": "6d813be588cbd84fe709a2b3fe09c6e443b3b5a9baec2ac7e8ccf46c016e03d2"
+      }
+    ]
+  },
+  "decl_name": "no_smaller_bound",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.R-2026-6008",
+  "frozen_export": {
+    "bytes": 55295126,
+    "constants": 14357,
+    "path": "mathesis-exports/6089d733e5252060a4e39156947669a8efea9d39e3e0830207176e0c7c9f01d0.export",
+    "sha256": "6089d733e5252060a4e39156947669a8efea9d39e3e0830207176e0c7c9f01d0"
+  },
+  "is_open": false,
+  "kind": "argument",
+  "module": "FLT_Proofs.VCDimGeneralized.VCDimDed",
+  "post_number": 25,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "no_smaller_bound",
+      "one_mem_dedSet'",
+      "isStrictlyDenseIn_empty_punit",
+      "exists_family_of_isStrictlyDenseIn",
+      "mk_padGround",
+      "isChain_padCuts",
+      "inter_padCuts_ne",
+      "hasVCDimLE_one_of_isChain",
+      "ded'_eq_ded",
+      "ded_le_ded'",
+      "mk_le_ded'_of_isDenseIn",
+      "mk_le_mk_fatten",
+      "fatten_bot_injective",
+      "mk_le_ded'",
+      "bddAbove_dedSet'",
+      "dedSet'_le",
+      "mk_fattenDense_le",
+      "fattenDense_code_injective",
+      "isStrictlyDenseIn_fattenDense",
+      "exists_strictly_between_fatten",
+      "mem_of_fatten_of_fst_eq",
+      "ded_le",
+      "ded'_le_ded",
+      "mk_le_ded",
+      "bddAbove_dedSet",
+      "dedSet_le",
+      "IsDenseIn.mk_le_two_pow_mul",
+      "cutCode_injective",
+      "cutCode_ne",
+      "ded'_le",
+      "IsStrictlyDenseIn.isDenseIn"
+    ],
+    "pretty": "∀ {κ : Cardinal.{u}},\n  Cardinal.aleph0 ≤ κ →\n    ∀ {lam : Cardinal.{u}},\n      lam < ded κ → ∃ α 𝒜 A, Cardinal.mk ↑A = κ ∧ HasVCDimLE 1 𝒜 ∧ lam < Cardinal.mk ↑((fun x => A ∩ x) '' 𝒜)",
+    "type_sha256": "59307ceaafab5f75045d72ad12f22161bfd9d2ff54fc1c5426803ab687c3c00a"
+  },
+  "verification": {
+    "gate_version": "mathesis-adjudicate@5a48a4dbbcb5",
+    "replay": "accepted",
+    "statement_identity": "not-applicable",
+    "substrate": "Lean 4 kernel v4.31.0",
+    "triviality": null
+  },
+  "witness": null
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6024"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "InformationTheory.pinsker_proof"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "ZPM.InformationTheory.Pinsker.General"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "19e1fb4bee5e"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6024"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "31"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6024"
+  }
+]

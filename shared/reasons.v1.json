@@ -1,0 +1,565 @@
+{
+  "version": 1,
+  "stages": ["precheck", "build", "export", "replay", "axioms", "statement", "triviality", "closure", "assemble", "degraded", "infra"],
+  "precedence": ["infra", "replay", "axioms", "statement", "triviality", "closure", "assemble"],
+  "reasons": [
+    {
+      "code": "SOURCE_TOO_LARGE",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["bytes", "limit"],
+      "message_template": "Source is {bytes} bytes; the limit is {limit}."
+    },
+    {
+      "code": "SOURCE_NOT_UTF8",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["offset"],
+      "message_template": "Source is not UTF-8 at byte {offset}."
+    },
+    {
+      "code": "PRELUDE_MODIFIED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": [],
+      "message_template": "Line 1 must be the prelude import of the dictionary module."
+    },
+    {
+      "code": "NAMESPACE_MODIFIED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["line"],
+      "message_template": "The Submission namespace wrapper is altered at line {line}."
+    },
+    {
+      "code": "EXTRA_IMPORT",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["line"],
+      "message_template": "An import outside the prelude appears at line {line}."
+    },
+    {
+      "code": "CLAIM_DECL_INVALID",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["decl"],
+      "message_template": "The designated name {decl} is not a valid declaration name."
+    },
+    {
+      "code": "CLAIM_NOT_DECLARED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["decl"],
+      "message_template": "The buffer declares no theorem named {decl}."
+    },
+    {
+      "code": "CLAIM_DECL_MISMATCH",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["required"],
+      "message_template": "The designated claim must be declared as {required}."
+    },
+    {
+      "code": "PROVES_DOI_INVALID",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["doi"],
+      "message_template": "The accession {doi} is not a well-formed claim accession."
+    },
+    {
+      "code": "PROVES_DOI_UNKNOWN",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["doi"],
+      "message_template": "No claim carries the accession {doi}."
+    },
+    {
+      "code": "PROVES_DOI_NO_REFERENCE",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["doi"],
+      "message_template": "The claim {doi} carries no reference export."
+    },
+    {
+      "code": "DICT_PIN_STALE",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["active"],
+      "message_template": "The submitted pin is not the active pin {active}."
+    },
+    {
+      "code": "PROFILE_KIND_UNSET",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": [],
+      "message_template": "The submitting profile has declared no profile kind."
+    },
+    {
+      "code": "IDE_SESSION_REQUIRED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": [],
+      "message_template": "A submission carries no editor session identifier."
+    },
+    {
+      "code": "IDE_SESSION_UNKNOWN",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["session"],
+      "message_template": "The editor session {session} does not exist."
+    },
+    {
+      "code": "IDE_SESSION_NOT_OWNED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["session"],
+      "message_template": "The editor session {session} belongs to another profile."
+    },
+    {
+      "code": "IDE_BUFFER_MISMATCH",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "gateway",
+      "params": ["ide_sha256", "buffer_sha256"],
+      "message_template": "Editor buffer {ide_sha256} differs from submitted buffer {buffer_sha256}."
+    },
+    {
+      "code": "RATE_LIMITED",
+      "stage": "precheck",
+      "terminal_state": "rejected",
+      "retryable": true,
+      "producer": "gateway",
+      "params": ["retry_after_s"],
+      "message_template": "Too many in-flight verifications; retry after {retry_after_s} seconds."
+    },
+    {
+      "code": "BUILD_FAILED",
+      "stage": "build",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["exit_code"],
+      "message_template": "Elaboration exited {exit_code}; the compiler output is the reason."
+    },
+    {
+      "code": "BUILD_TIMEOUT",
+      "stage": "build",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["seconds"],
+      "message_template": "Elaboration exceeded {seconds} seconds."
+    },
+    {
+      "code": "BUILD_OOM",
+      "stage": "build",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["limit"],
+      "message_template": "Elaboration exceeded the memory limit {limit}."
+    },
+    {
+      "code": "EXPORT_FAILED",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["exit_code"],
+      "message_template": "The exporter exited {exit_code}."
+    },
+    {
+      "code": "EXPORT_PANIC",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": [],
+      "message_template": "The exporter reported a panic or an internal error."
+    },
+    {
+      "code": "EXPORT_EMPTY",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": [],
+      "message_template": "The exporter produced an empty export."
+    },
+    {
+      "code": "EXPORT_TOO_LARGE",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["bytes", "limit"],
+      "message_template": "The export is {bytes} bytes; the limit is {limit}."
+    },
+    {
+      "code": "EXPORT_TIMEOUT",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["seconds"],
+      "message_template": "The exporter exceeded {seconds} seconds."
+    },
+    {
+      "code": "EXPORT_MALFORMED",
+      "stage": "export",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["detail"],
+      "message_template": "The export could not be parsed: {detail}."
+    },
+    {
+      "code": "REPLAY_REJECTED",
+      "stage": "replay",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["detail"],
+      "message_template": "Kernel replay rejected the export: {detail}."
+    },
+    {
+      "code": "ILLEGAL_AXIOM",
+      "stage": "axioms",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["axiom"],
+      "message_template": "The closure reaches the axiom {axiom}, outside the whitelist."
+    },
+    {
+      "code": "AXIOM_SPOOFED",
+      "stage": "axioms",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["axiom"],
+      "message_template": "The axiom {axiom} does not carry its kernel type."
+    },
+    {
+      "code": "TRUSTED_CONSTANT_REDEFINED",
+      "stage": "axioms",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The trusted constant {constant} is redefined by the export."
+    },
+    {
+      "code": "STATEMENT_IDENTITY_FAILED",
+      "stage": "statement",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["detail"],
+      "message_template": "Statement identity failed: {detail}."
+    },
+    {
+      "code": "TARGET_ABSENT",
+      "stage": "statement",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["decl"],
+      "message_template": "The reference target {decl} is absent from the export."
+    },
+    {
+      "code": "CLAIM_TRIVIAL",
+      "stage": "triviality",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["detail"],
+      "message_template": "The designated claim is degenerate: {detail}."
+    },
+    {
+      "code": "CONSTANT_NOT_IN_DICTIONARY",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant", "module"],
+      "message_template": "The constant {constant} of module {module} is not a dictionary entry."
+    },
+    {
+      "code": "DICTIONARY_CONSTANT_REDEFINED",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The dictionary constant {constant} is redefined by the export."
+    },
+    {
+      "code": "BASE_CONSTANT_REDEFINED",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The base constant {constant} is redeclared by the export."
+    },
+    {
+      "code": "NEW_AXIOM",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The export declares a new axiom {constant}."
+    },
+    {
+      "code": "NEW_DEFINITION",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The export declares a new definition {constant}."
+    },
+    {
+      "code": "NEW_OPAQUE",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The export declares a new opaque constant {constant}."
+    },
+    {
+      "code": "NEW_INDUCTIVE",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The export declares a new inductive type {constant}."
+    },
+    {
+      "code": "NEW_QUOT",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The export declares a new quotient constant {constant}."
+    },
+    {
+      "code": "DECLARATION_OUTSIDE_SUBMISSION",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The declaration {constant} lies outside the Submission namespace."
+    },
+    {
+      "code": "PRIVATE_DEF_IN_STATEMENT",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The claim statement rests on the private helper {constant}."
+    },
+    {
+      "code": "CLAIM_NOT_A_THEOREM",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["kind"],
+      "message_template": "The designated claim is a {kind}, not a theorem."
+    },
+    {
+      "code": "CLAIM_ABSENT",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["decl"],
+      "message_template": "The designated claim {decl} is absent from the export."
+    },
+    {
+      "code": "DAG_CYCLE",
+      "stage": "closure",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["names"],
+      "message_template": "The sub-argument graph carries a cycle through {names}."
+    },
+    {
+      "code": "RENDER_MISSING_STATEMENT",
+      "stage": "assemble",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["decl"],
+      "message_template": "The renderer emitted no statement for {decl}."
+    },
+    {
+      "code": "DICTIONARY_DIVERGENCE",
+      "stage": "assemble",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["constant"],
+      "message_template": "The constant {constant} diverges from the pinned dictionary."
+    },
+    {
+      "code": "CLAIM_DIGEST_MISMATCH",
+      "stage": "assemble",
+      "terminal_state": "rejected",
+      "retryable": false,
+      "producer": "serve",
+      "params": ["claim_accession", "required_decl_name"],
+      "message_template": "The statement is already claim {claim_accession}; declare {required_decl_name}."
+    },
+    {
+      "code": "REGISTRY_UNAVAILABLE",
+      "stage": "degraded",
+      "terminal_state": null,
+      "retryable": true,
+      "producer": null,
+      "params": [],
+      "message_template": "The registry did not answer."
+    },
+    {
+      "code": "INFRA_TRUST_BASE_EMPTY",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": false,
+      "producer": "adjudicate",
+      "params": ["path"],
+      "message_template": "The trusted base {path} is absent or empty."
+    },
+    {
+      "code": "INFRA_REPORT_EXIT_MISMATCH",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": false,
+      "producer": "runner",
+      "params": ["exit_code", "verdict"],
+      "message_template": "Exit {exit_code} disagrees with the posted verdict {verdict}."
+    },
+    {
+      "code": "INFRA_REFERENCE_FETCH_FAILED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "adjudicate",
+      "params": ["sha256"],
+      "message_template": "The reference blob {sha256} could not be fetched."
+    },
+    {
+      "code": "INFRA_BLOB_UPLOAD_FAILED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "adjudicate",
+      "params": ["sha256"],
+      "message_template": "The export blob {sha256} could not be stored."
+    },
+    {
+      "code": "INFRA_COLLECTOR_POST_FAILED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "adjudicate",
+      "params": ["status"],
+      "message_template": "The collector answered {status}."
+    },
+    {
+      "code": "INFRA_RENDER_FAILED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "adjudicate",
+      "params": ["exit_code"],
+      "message_template": "The renderer exited {exit_code}."
+    },
+    {
+      "code": "INFRA_JOB_DEADLINE",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "runner",
+      "params": ["job"],
+      "message_template": "The job {job} passed its active deadline."
+    },
+    {
+      "code": "INFRA_NODE_EVICTED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "runner",
+      "params": ["job"],
+      "message_template": "The job {job} was evicted from its node."
+    },
+    {
+      "code": "INFRA_QUOTA_EXCEEDED",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "runner",
+      "params": ["namespace"],
+      "message_template": "The namespace {namespace} quota refused the job."
+    },
+    {
+      "code": "INFRA_IMAGE_PULL",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "runner",
+      "params": ["image"],
+      "message_template": "The image {image} could not be pulled."
+    },
+    {
+      "code": "INFRA_PVC_UNBOUND",
+      "stage": "infra",
+      "terminal_state": "failed",
+      "retryable": true,
+      "producer": "runner",
+      "params": ["pvc"],
+      "message_template": "The volume claim {pvc} stayed unbound."
+    }
+  ]
+}

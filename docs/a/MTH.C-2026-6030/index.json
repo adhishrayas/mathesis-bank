@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6030"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6030, title={FLT.Halfspace.vcDim_halfspace_eq}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6030}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6030}, year={2026} }",
+    "text": "Dhruv Gupta. FLT.Halfspace.vcDim_halfspace_eq. Mathesis. MTH.C-2026-6030. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6030. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "FLT.Halfspace.vcDim_halfspace_eq",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6030",
+  "is_open": false,
+  "kind": "claim",
+  "module": "FLT_Proofs.Complexity.IndependentVC.Halfspace",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "FLT.Halfspace.vcDim_halfspace_eq"
+    ],
+    "pretty": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n",
+    "type_sha256": "3b727d2bae543ba3e15242bdc5cbedf2dc615b2bd290a1b6d8303bb44a8f7791"
+  },
+  "verification": null,
+  "witness": null
+}
