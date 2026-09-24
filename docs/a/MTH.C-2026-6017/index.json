@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6017"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6017, title={AuditCP.auditSealed_iff_no_binary_decision_advantage}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6017}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6017}, year={2026} }",
+    "text": "Dhruv Gupta. AuditCP.auditSealed_iff_no_binary_decision_advantage. Mathesis. MTH.C-2026-6017. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6017. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "AuditCP.auditSealed_iff_no_binary_decision_advantage",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6017",
+  "is_open": false,
+  "kind": "claim",
+  "module": "AuditCP.FiniteBlackwellDecision",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "AuditCP.auditSealed_iff_no_binary_decision_advantage"
+    ],
+    "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2",
+    "type_sha256": "739b86a5fd24ee63d00453da98949316b6166241cc6bb334697af311e66a471f"
+  },
+  "verification": null,
+  "witness": null
+}

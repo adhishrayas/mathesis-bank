@@ -1,0 +1,302 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6016"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "5"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "4"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "8"
+  },
+  {
+    "field": "argument.depth",
+    "value": "2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "blackwellEquivalent_publi…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "publicOnly_blackwellBelow…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learner_blackwellBelow_pu…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pmf_map_publicTag_injecti…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "auditSealed_iff_factorsTh…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditChannel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSealed"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.BlackwellBelow"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.BlackwellEquivalent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.learnerExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.publicOnlyExperiment"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.learner_blackwellBelow_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.publicOnly_blackwellBelow_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.publicOnly_blackwellBelow_learner"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow AuditCP.publicOnlyExperiment (AuditCP.learnerExperiment K)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditChannel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.BlackwellBelow"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.learnerExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.publicOnlyExperiment"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.learner_blackwellBelow_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellBelow (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditChannel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSealed"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.BlackwellBelow"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.FactorsThroughPublic"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.learnerExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.publicOnlyExperiment"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditSealed_iff_factorsThroughPublic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.pmf_map_publicTag_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.pmf_map_publicTag_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {Y : Type uY} (s : S), Function.Injective fun p => PMF.map (fun y => (s, y)) p"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.learner_blackwellBelow_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.auditSealed_iff_factorsThroughPublic"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ AuditCP.FactorsThroughPublic K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditChannel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditExperiment"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.AuditSealed"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AuditCP.FactorsThroughPublic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "AuditCP.learner_blackwellBelow_publicOnly_iff_auditSealed"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "304b019f2077"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6016"
+  }
+]

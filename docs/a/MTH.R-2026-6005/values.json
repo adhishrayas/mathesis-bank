@@ -1,0 +1,1230 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6005"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "encard_image_restrict_le_encard_pairCubes"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (𝒞 : Set (X → Y)) (S : Set X), (S.restrict '' 𝒞).encard ≤ (pairCubes 𝒞 S).encard"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "28"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "47"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "7"
+  },
+  {
+    "field": "argument.depth",
+    "value": "6"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_restrict_le_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_inf…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_right_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_apply_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_right_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_restrict_sep_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_restrict_s…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_isPairPattern"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isPairPattern_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_empty_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_eq_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel_at"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_of_subsingle…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "const_empty_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_const_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_restrict_le_encard_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (𝒞 : Set (X → Y)) (S : Set X), (S.restrict '' 𝒞).encard ≤ (pairCubes 𝒞 S).encard"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_infinite_image_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_infinite_image_restrict"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X}, (S.restrict '' 𝒞).Infinite → (pairCubes 𝒞 S).Infinite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_restrict_le_encard_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_right_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (z : X) (u : Y), Function.Injective (singCube✝ z u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_apply_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_infinite_image_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_apply_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (z : X) (u v : Y), singCube✝ z u v z = pairOf✝ u v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {u v : Y} {z : X},\n  z ∈ S → (∃ c ∈ 𝒞, c z = u) → (∃ c ∈ 𝒞, c z = v) → singCube✝ z u v ∈ pairCubes 𝒞 S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "const_empty_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_infinite_image_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {u v : Y} (z : X), u ≠ v → pairSupport (singCube✝ z u v) = {z}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_const_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_pairCubes_of_infinite_image_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (S : Set X) (N : ℕ) (𝒞 : Set (X → Y)),\n  (S.restrict '' 𝒞).Finite →\n    (S.restrict '' 𝒞).ncard ≤ N → ∃ φ, Set.MapsTo φ (S.restrict '' 𝒞) (pairCubes 𝒞 S) ∧ Set.InjOn φ (S.restrict '' 𝒞)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_of_subsingleton"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel_at"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_eq_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_restrict_sep_lt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_restrict_le_encard_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_right_injective"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type u_2} (u : Y), Function.Injective (pairOf✝ u)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_restrict_sep_lt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {x : X} {u : Y},\n  x ∈ S →\n    ∀ {c : X → Y},\n      c ∈ 𝒞 → c x ≠ u → (S.restrict '' 𝒞).Finite → (S.restrict '' {d | d ∈ 𝒞 ∧ d x = u}).ncard < (S.restrict '' 𝒞).ncard"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_restrict_sep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_restrict_sep"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {x : X} {u v : Y},\n  x ∈ S → u ≠ v → Disjoint (S.restrict '' {d | d ∈ 𝒞 ∧ d x = u}) (S.restrict '' {d | d ∈ 𝒞 ∧ d x = v})"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_restrict_sep_lt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X} {P : X → Set Y} {x : X} {u v : Y},\n  x ∈ S →\n    P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = u} S →\n      P ∈ pairCubes {c | c ∈ 𝒞 ∧ c x = v} S → graft P x (pairOf✝ u v) ∈ pairCubes 𝒞 S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "PairShatters.mono"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel_at"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_empty_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isPairPattern_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_isPairPattern"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {S : Set X} {P : X → Set Y} {x : X},\n  x ∈ S → pairSupport P ⊆ S → ∀ (s : Set Y), pairSupport (graft P x s) ⊆ S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {P : X → Set Y} {x : X} {a b : Y},\n  P x = ∅ →\n    PairShatters {c | c ∈ 𝒞 ∧ c x = a} P → PairShatters {c | c ∈ 𝒞 ∧ c x = b} P → PairShatters 𝒞 (graft P x {a, b})"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (P : X → Set Y) (x : X) {s : Set Y},\n  s.Nonempty → pairSupport (graft P x s) = insert x (pairSupport P)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_isPairPattern"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type u_2} (u v : Y), pairOf✝ u v = ∅ ∨ (pairOf✝ u v).encard = 2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type u_2} {u v : Y}, u = v → pairOf✝ u v = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_isPairPattern"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_right_injective"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Y : Type u_2} {u v : Y}, u ≠ v → pairOf✝ u v = {u, v}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairOf_isPairPattern"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isPairPattern_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y},\n  IsPairPattern P → ∀ (x : X) {s : Set Y}, s = ∅ ∨ s.encard = 2 → IsPairPattern (graft P x s)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_empty_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y} {x : X}, P x = ∅ → graft P x ∅ = P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "PairShatters.mono"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 𝒟 : Set (X → Y)} {P : X → Set Y}, 𝒞 ⊆ 𝒟 → PairShatters 𝒞 P → PairShatters 𝒟 P"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_eq_graft"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {P P' : X → Set Y} {x : X},\n  P x = ∅ → P' x = ∅ → ∀ {s s' : Set Y}, graft P x s = graft P' x s' → P = P' ∧ s = s'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} (P : X → Set Y) (x : X) (s : Set Y), graft P x s x = s"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_empty_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_eq_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isPairPattern_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_apply_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_of_ne"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {x z : X} (P : X → Set Y) (s : Set Y), z ≠ x → graft P x s z = P z"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_empty_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "graft_eq_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isPairPattern_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairShatters_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_graft_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel_at"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y} {x : X} {u : Y},\n  u ∈ P x → ∃ τ, τ x = u ∧ ∀ ⦃z : X⦄, z ∈ pairSupport P → τ z ∈ P z"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_pairCubes_graft_pairOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {P : X → Set Y} {B : Set X} {σ : X → Y},\n  (∀ ⦃z : X⦄, z ∈ B → z ∈ pairSupport P → σ z ∈ P z) → ∃ τ, (∀ ⦃z : X⦄, z ∈ pairSupport P → τ z ∈ P z) ∧ Set.EqOn τ σ B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_sel_at"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_of_subsingleton"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} {S : Set X},\n  (S.restrict '' 𝒞).Subsingleton → ∃ φ, Set.MapsTo φ (S.restrict '' 𝒞) (pairCubes 𝒞 S) ∧ Set.InjOn φ (S.restrict '' 𝒞)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "const_empty_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "const_empty_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2} {𝒞 : Set (X → Y)} (S : Set X), 𝒞.Nonempty → (fun x => ∅) ∈ pairCubes 𝒞 S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsPairPattern"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PairShatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairCubes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_const_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_injOn_of_subsingleton"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singCube_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_const_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} {Y : Type u_2}, (pairSupport fun x => ∅) = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pairSupport"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "const_empty_mem_pairCubes"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pairSupport_singCube"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "fd764e365885"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6005"
+  }
+]

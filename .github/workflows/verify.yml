@@ -1,4 +1,4 @@
-# Mathesis — site build + STRICT re-derivation verification (public repo)
+# Mathesis — record build + STRICT re-derivation verification (public repo)
 #
 # This file IS the workflow. There is no copy of it under ci/ any more.
 #
@@ -21,9 +21,11 @@
 #   2. fetch the frozen .export blobs by sha256 from object storage
 #      (ci/fetch_exports.sh — they exceed GitHub's 100 MB/file limit, so they
 #      are NOT in git; the fetch sha256-verifies every blob)
-#   3. regenerate the site + run ci/verify.sh under MATHESIS_STRICT=1
+#   3. run ci/verify.sh under MATHESIS_STRICT=1
 #      (independent kernel re-derivation of all Results; exits nonzero on fail)
-#   4. INV-2 lint, refresh docs/, deploy Pages.
+#   4. rebuild the published record from bank/ (bank/tools/build-site.sh: the
+#      Rust generator and its tests, the client and its tests, the no-arbitrary-
+#      values lint and the prose lint), INV-2 lint, deploy Pages from that build.
 #
 # GATE SOURCE (backend-gate/): the ~8 Lean files of the re-derivation gate,
 # vendored from the private backend so the public CI can build the verifier
@@ -109,9 +111,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash ci/fetch_exports.sh
 
-      - name: Regenerate the site
-        run: python3 site/generate.py
-
       # ── THE gate: strict independent re-derivation ───────────────────────
       # verify.sh exits nonzero when _verify_check.py reports ok:false, which
       # under MATHESIS_STRICT includes "the gate/blobs were absent so nothing
@@ -125,11 +124,20 @@ jobs:
           MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
         run: |
           chmod +x ci/verify.sh
-          ci/verify.sh docs/verification.json
+          ci/verify.sh "$RUNNER_TEMP/verification.json"
 
-      # INV-1 (house-vocabulary firewall) is enforced locally before publication
-      # by site/generate.py (term list from a local, uncommitted file). CI does
-      # not re-list the terms here.
+      # ── The published record: rebuilt from the committed bank ────────────
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Rebuild the record from bank/ (generator, client, lints, prose lint)
+        run: |
+          (cd web && npm ci --no-audit --no-fund)
+          bank/tools/build-site.sh
+
+      - name: Report drift between the committed docs/ and this build
+        run: git status --porcelain -- docs | head -50
 
       - name: INV-2 no-ranking lint (no 'featured'/'top'/star markup)
         run: |
@@ -139,28 +147,11 @@ jobs:
             echo "INV-2 lint: clean."
           fi
 
-      # Publication is main-only. Everything above this point is a CHECK and is safe to run on any
-      # ref; everything from here down WRITES — to the repository, and to the live public site.
-      #
-      # `workflow_dispatch: {}` accepts any ref, so without this condition dispatching verify on a
-      # branch to see whether it passes would commit that branch's docs/ and deploy it to Pages.
-      # The branch would be published before review, and before the INV-1 firewall scan, which is
-      # not run in CI at all — the term list is local and uncommitted, so a branch reaching the
-      # live site this way would never have been scanned by anything.
-      - name: Commit refreshed docs/
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config user.name  "verify-bot"
-          git config user.email "verify-bot@users.noreply.github.com"
-          git add docs/
-          git commit -m "ci: rebuild site + refresh verification.json [skip ci]" || echo "no change"
-          git push || echo "nothing to push"
-
       - name: Upload verification artifact
         uses: actions/upload-artifact@v4
         with:
           name: verification
-          path: docs/verification.json
+          path: ${{ runner.temp }}/verification.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

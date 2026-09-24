@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6015"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "AuditCP.auditBlind_finiteTrajectory_goodhart"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {Ωtrain : Type u_1} {Z : Type u_2} {ι : Type u_3} [inst : MeasurableSpace Ωtrain] [inst_1 : MeasurableSpace Z]\n  [inst_2 : Fintype ι] [Nonempty ι] (μtrain : AuditCP.AuditSampleLaw Ωtrain) [MeasureTheory.IsProbabilityMeasure μtrain]\n  (Q : AuditCP.AuditSampleLaw Z) [MeasureTheory.IsProbabilityMeasure Q] (n : ℕ),\n  0 < n →\n    ∀ (a b : ℝ),\n      a < b →\n        ∀ (δ : ℝ),\n          0 < δ →\n            δ ≤ 1 →\n              ∀ (loss : ι → Z → ℝ),\n                (∀ (i : ι), Measurable (loss i)) →\n                  (∀ (i : ι), ∀ᵐ (z : Z) ∂Q, loss i z ∈ Set.Icc a b) →\n                    ∀ (F : Ωtrain → AuditCP.AuditEnvelope ι) (g : Ωtrain → AuditCP.AuditTrajectory ι),\n                      (∀ (t : Ωtrain), AuditCP.Admissible (g t) (F t)) →\n                        MeasurableSet\n                            {p |\n                              ¬AuditCP.UniformDev (F p.1) (fun i => AuditCP.empiricalLoss loss i p.2)\n                                  (fun i => AuditCP.populationLoss Q loss i)\n                                  (AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ)} →\n                          ∀ (T : ℕ),\n                            (MeasureTheory.Measure.prod μtrain (MeasureTheory.Measure.pi fun x => Q))\n                                {p |\n                                  AuditCP.cumCP (fun i => AuditCP.empiricalLoss loss i p.2) (g p.1) T >\n                                    AuditCP.cumCP (fun i => AuditCP.populationLoss Q loss i) (g p.1) T +\n                                      2 * AuditCP.deltaFiniteExperts (Fintype.card ι) n (b - a) δ} ≤\n                              ENNReal.ofReal δ"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "AuditCP.StructuralAudit"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "3b7d52c7568c"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6015"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "8"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6015"
+  }
+]

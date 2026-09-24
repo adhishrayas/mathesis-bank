@@ -1,0 +1,1023 @@
+{
+  "argument": {
+    "accession": "MTH.R-2026-6027",
+    "axiom_free": false,
+    "axioms_reached": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "citation_name": "Dhruv Gupta",
+    "cites": [
+      "Yaël Dillies"
+    ],
+    "claim_accession": "MTH.C-2026-6027",
+    "created_at": "2026-09-24T00:00:00Z",
+    "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+    "edge_count": 49,
+    "export_bytes": 317802589,
+    "export_constants": 49285,
+    "export_sha256": "2ee3cd9399231f9d2e56c113a4972f014adc854be5a1e00c725dddbcb89296fd",
+    "libraries_used": [
+      "FLT_Proofs"
+    ],
+    "login": "Zetetic-Dhruv",
+    "node_count": 47,
+    "private_helpers": [
+      "uc_bad_event_le_delta_proved",
+      "growth_function_le_two_pow",
+      "nfl_counting_core",
+      "per_sample_labeling_bound",
+      "restrictionSet_ncard_le_two_pow",
+      "growthFunction_eq"
+    ],
+    "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
+    "replay_detail": "lean kernel accepts",
+    "root_decl_name": "vcDim_fundamental_theorem",
+    "root_module": "FLT_Proofs.Complexity.IndependentVC.FundamentalTheorem",
+    "root_pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (VCDim X C < ⊤ ↔ PACLearnable X C) ∧\n    (VCDim X C < ⊤ ↔ ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d)",
+    "source_url": null,
+    "statement_identity": "not-applicable",
+    "submission_id": "fb951fcd-3c12-521c-b5c1-376db0699cca",
+    "substrate": "Lean 4 kernel v4.31.0"
+  },
+  "edges": [
+    {
+      "used_by": "MeasurableConceptClass.hWB",
+      "uses": "MeasurableConceptClass.wellBehaved",
+      "via": "direct"
+    },
+    {
+      "used_by": "MeasurableConceptClass.hc_meas",
+      "uses": "MeasurableConceptClass.all_measurable",
+      "via": "direct"
+    },
+    {
+      "used_by": "MeasurableConceptClass.hmeas_C",
+      "uses": "MeasurableConceptClass.mem_measurable",
+      "via": "direct"
+    },
+    {
+      "used_by": "double_sample_pattern_bound",
+      "uses": "exchangeability_chain_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "exchangeability_chain_bound",
+      "uses": "finite_exchangeability_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "exchangeability_chain_bound",
+      "uses": "rademacher_mgf_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "exchangeability_chain_bound",
+      "uses": "restriction_pattern_count",
+      "via": "direct"
+    },
+    {
+      "used_by": "exchangeability_chain_bound",
+      "uses": "zeroOneLoss.congr_simp",
+      "via": "direct"
+    },
+    {
+      "used_by": "growthFunction_ge_two_pow_of_shatters",
+      "uses": "restrictionSet_eq_univ_of_shatters",
+      "via": "direct"
+    },
+    {
+      "used_by": "growthFunction_ge_two_pow_of_shatters",
+      "uses": "restrictionSet_ncard_le_growthFunction",
+      "via": "direct"
+    },
+    {
+      "used_by": "growth_exp_le_delta",
+      "uses": "growth_function_le_two_pow",
+      "via": "direct"
+    },
+    {
+      "used_by": "growth_exp_le_delta",
+      "uses": "pow_mul_exp_neg_le_factorial_div",
+      "via": "direct"
+    },
+    {
+      "used_by": "growth_exp_le_delta",
+      "uses": "sum_choose_le_exp_pow",
+      "via": "direct"
+    },
+    {
+      "used_by": "nfl_counting_core",
+      "uses": "per_sample_labeling_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "pac_imp_vcdim_finite",
+      "uses": "vcdim_infinite_not_pac",
+      "via": "direct"
+    },
+    {
+      "used_by": "rademacher_mgf_bound",
+      "uses": "cosh_le_exp_sq_half",
+      "via": "direct"
+    },
+    {
+      "used_by": "restrictionSet_ncard_le_growthFunction",
+      "uses": "growthFunction_eq",
+      "via": "direct"
+    },
+    {
+      "used_by": "restrictionSet_ncard_le_growthFunction",
+      "uses": "restrictionSet_ncard_le_two_pow",
+      "via": "direct"
+    },
+    {
+      "used_by": "symmetrization_step",
+      "uses": "hoeffding_one_sided",
+      "via": "direct"
+    },
+    {
+      "used_by": "symmetrization_step_lower",
+      "uses": "hoeffding_one_sided_upper",
+      "via": "direct"
+    },
+    {
+      "used_by": "symmetrization_uc_bound",
+      "uses": "double_sample_pattern_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "symmetrization_uc_bound",
+      "uses": "symmetrization_step",
+      "via": "direct"
+    },
+    {
+      "used_by": "symmetrization_uc_bound",
+      "uses": "symmetrization_step_lower",
+      "via": "direct"
+    },
+    {
+      "used_by": "two_pow_le_growthFunction_of_top",
+      "uses": "growthFunction_ge_two_pow_of_shatters",
+      "via": "direct"
+    },
+    {
+      "used_by": "two_pow_le_growthFunction_of_top",
+      "uses": "shatters_of_subset",
+      "via": "direct"
+    },
+    {
+      "used_by": "uc_bad_event_le_delta_proved",
+      "uses": "growth_exp_le_delta",
+      "via": "direct"
+    },
+    {
+      "used_by": "uc_bad_event_le_delta_proved",
+      "uses": "symmetrization_uc_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "uc_imp_pac",
+      "uses": "BatchLearner.output_in_H",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_finite_imp_growth_poly",
+      "uses": "vcdim_finite_imp_growth_bounded",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_fundamental_theorem",
+      "uses": "vcDim_lt_top_iff_growth_poly",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_fundamental_theorem",
+      "uses": "vcDim_lt_top_iff_pacLearnable",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_lt_top_iff_growth_poly",
+      "uses": "vcDim_finite_imp_growth_poly",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_lt_top_iff_growth_poly",
+      "uses": "vcDim_lt_top_of_growth_poly",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_lt_top_iff_pacLearnable",
+      "uses": "vc_characterization",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_lt_top_of_growth_poly",
+      "uses": "no_eventually_two_pow_le_poly",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcDim_lt_top_of_growth_poly",
+      "uses": "two_pow_le_growthFunction_of_top",
+      "via": "direct"
+    },
+    {
+      "used_by": "vc_characterization",
+      "uses": "pac_imp_vcdim_finite",
+      "via": "direct"
+    },
+    {
+      "used_by": "vc_characterization",
+      "uses": "vcdim_finite_imp_pac",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_pac",
+      "uses": "MeasurableConceptClass.hWB",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_pac",
+      "uses": "MeasurableConceptClass.hc_meas",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_pac",
+      "uses": "MeasurableConceptClass.hmeas_C",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_pac",
+      "uses": "uc_imp_pac",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_pac",
+      "uses": "vcdim_finite_imp_uc'",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_uc'",
+      "uses": "hoeffding_one_sided",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_uc'",
+      "uses": "hoeffding_one_sided_upper",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_uc'",
+      "uses": "uc_bad_event_le_delta_proved",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_finite_imp_uc'",
+      "uses": "vcdim_finite_imp_growth_bounded",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_infinite_not_pac",
+      "uses": "nfl_counting_core",
+      "via": "direct"
+    },
+    {
+      "used_by": "vcdim_infinite_not_pac",
+      "uses": "uniformMeasure_isProbability",
+      "via": "direct"
+    }
+  ],
+  "nodes": [
+    {
+      "citable": true,
+      "decl_name": "vcDim_fundamental_theorem",
+      "depth": 0,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "MeasurableConceptClass",
+        "PACLearnable",
+        "VCDim"
+      ],
+      "is_root": true,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (VCDim X C < ⊤ ↔ PACLearnable X C) ∧\n    (VCDim X C < ⊤ ↔ ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d)",
+      "topo": 0,
+      "type_sha256": "5744d678f6dca44423f6bf0a7fa5b14f5a6a6d495a398b99befe9fb88d0347e0"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcDim_lt_top_iff_pacLearnable",
+      "depth": 1,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "MeasurableConceptClass",
+        "PACLearnable",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C], VCDim X C < ⊤ ↔ PACLearnable X C",
+      "topo": 1,
+      "type_sha256": "6349f0214561f01b920e58ef554c4a36835747dcd9670e5c99b781e7105f5d90"
+    },
+    {
+      "citable": true,
+      "decl_name": "vc_characterization",
+      "depth": 2,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "MeasurableConceptClass",
+        "PACLearnable",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C], PACLearnable X C ↔ VCDim X C < ⊤",
+      "topo": 2,
+      "type_sha256": "76db33d09863df12fedf0c68635a8db576af0cbe232b7bfccdd96f287ab19473"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcdim_finite_imp_pac",
+      "depth": 3,
+      "dictionary_leaves": [
+        "BatchLearner",
+        "BatchLearner.learn",
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableConceptClass",
+        "PACLearnable",
+        "VCDim",
+        "WellBehavedVC"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ → ∀ [MeasurableConceptClass X C], PACLearnable X C",
+      "topo": 3,
+      "type_sha256": "18f1df727fd64661f84aa9d6431ce63f85a1d4ae66b7bec42ccf86cf959c30cf"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcdim_finite_imp_uc'",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "GrowthFunction",
+        "HasUniformConvergence",
+        "HypothesisSpace",
+        "TrueErrorReal",
+        "VCDim",
+        "WellBehavedVC",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    (∀ h ∈ C, Measurable h) → (∀ (c : Concept X Bool), Measurable c) → WellBehavedVC X C → HasUniformConvergence X C",
+      "topo": 4,
+      "type_sha256": "5ef5380af08d538f7a56218496d5b9b7445b9c1977844d2bc22eb93fac7a5065"
+    },
+    {
+      "citable": false,
+      "decl_name": "uc_bad_event_le_delta_proved",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "GrowthFunction",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε δ : ℝ),\n            0 < ε →\n              0 < δ →\n                δ < 1 →\n                  ∀ (v : ℕ),\n                    0 < v →\n                      (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                        (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                          MeasureTheory.NullMeasurableSet\n                              {p |\n                                ∃ h ∈ C,\n                                  EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                      EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                                    ε / 2}\n                              ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs |\n                                  ∃ h ∈ C,\n                                    |TrueErrorReal X h c D -\n                                          EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                                      ε} ≤\n                              ENNReal.ofReal δ",
+      "topo": 5,
+      "type_sha256": "cab407b430e1ad8fa6d77a8fafe1311ac49e079b838454c5d53fbaf2c4375306"
+    },
+    {
+      "citable": true,
+      "decl_name": "symmetrization_uc_bound",
+      "depth": 6,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "GrowthFunction",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                MeasureTheory.NullMeasurableSet\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2}\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ h ∈ C,\n                          |TrueErrorReal X h c D -\n                                EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            ε} ≤\n                    ENNReal.ofReal (4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))",
+      "topo": 6,
+      "type_sha256": "d8ae9a5b1a4f0553efb3ecdb04e41f5e2e37f79b0926d950ca302b0112e063ec"
+    },
+    {
+      "citable": true,
+      "decl_name": "symmetrization_step_lower",
+      "depth": 7,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) - TrueErrorReal X h c D ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}",
+      "topo": 7,
+      "type_sha256": "e5fe1a3babe38cf1d677d7160159f7a927e242df6c0cfdf42d03e90b853c5a4a"
+    },
+    {
+      "citable": true,
+      "decl_name": "symmetrization_step",
+      "depth": 7,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        TrueErrorReal X h c D - EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}",
+      "topo": 8,
+      "type_sha256": "84ff535d06e64f3783bda2a135f92f8c0a8417855ad96586f1a378713a96c9b2"
+    },
+    {
+      "citable": true,
+      "decl_name": "double_sample_pattern_bound",
+      "depth": 7,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "GrowthFunction",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              MeasureTheory.NullMeasurableSet\n                  {p |\n                    ∃ h ∈ C,\n                      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                        ε / 2}\n                  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2} ≤\n                  ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))",
+      "topo": 9,
+      "type_sha256": "b4fcbda980a4bc691f8388de5abdee53b388d320eee34a64db41016fe74311f5"
+    },
+    {
+      "citable": true,
+      "decl_name": "exchangeability_chain_bound",
+      "depth": 8,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "GrowthFunction",
+        "SignVector",
+        "boolToSign",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              ε ≤ 2 →\n                Set.Nonempty C →\n                  MeasureTheory.NullMeasurableSet\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}\n                      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                    have μ := MeasureTheory.Measure.pi fun x => D;\n                    (μ.prod μ)\n                        {p |\n                          ∃ h ∈ C,\n                            EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                              ε / 2} ≤\n                      ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))",
+      "topo": 10,
+      "type_sha256": "03a526dfca41400567f3c70f10c6f4c921b1c5f528fee5efe2c45217bd3e4bd1"
+    },
+    {
+      "citable": true,
+      "decl_name": "zeroOneLoss.congr_simp",
+      "depth": 9,
+      "dictionary_leaves": [
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (Y : Type v) {inst : DecidableEq Y} [inst_1 : DecidableEq Y] (a a_1 : Y),\n  a = a_1 → ∀ (a_2 a_3 : Y), a_2 = a_3 → zeroOneLoss Y a a_2 = zeroOneLoss Y a_1 a_3",
+      "topo": 11,
+      "type_sha256": "3a8141213a543d3afbde529a841db48b71bcddfbc194787148957be2ccc9c682"
+    },
+    {
+      "citable": true,
+      "decl_name": "restriction_pattern_count",
+      "depth": 9,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "GrowthFunction"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [MeasurableSpace X] [Infinite X] (C : ConceptClass X Bool) (c : Concept X Bool) (n : ℕ) (z : Fin n → X),\n  {p | ∃ h ∈ C, ∀ (i : Fin n), p i = decide (h (z i) ≠ c (z i))}.ncard ≤ GrowthFunction X C n",
+      "topo": 12,
+      "type_sha256": "64d4b22af12c34efea39b91f6db571c640f7f1532e67ab0af90fa6e253d22acd"
+    },
+    {
+      "citable": true,
+      "decl_name": "rademacher_mgf_bound",
+      "depth": 9,
+      "dictionary_leaves": [
+        "SignVector",
+        "boolToSign"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {m : ℕ},\n  0 < m →\n    ∀ (a : Fin m → ℝ) (c : ℝ),\n      0 ≤ c →\n        (∀ (i : Fin m), |a i| ≤ c) →\n          ∀ (t : ℝ),\n            0 ≤ t →\n              1 / ↑(Fintype.card (SignVector m)) * ∑ σ, Real.exp (t * (1 / ↑m * ∑ i, a i * boolToSign (σ i))) ≤\n                Real.exp (t ^ 2 * c ^ 2 / (2 * ↑m))",
+      "topo": 13,
+      "type_sha256": "e718ac2a54d22460f1932b93dd63edb7cf0b245d1f86379781ddcbc876374136"
+    },
+    {
+      "citable": true,
+      "decl_name": "cosh_le_exp_sq_half",
+      "depth": 10,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (x : ℝ), Real.cosh x ≤ Real.exp (x ^ 2 / 2)",
+      "topo": 14,
+      "type_sha256": "d21bddf2bf99814b003eb28d6887ab77b8364ecaab1961739dfafebd06c14f0c"
+    },
+    {
+      "citable": true,
+      "decl_name": "finite_exchangeability_bound",
+      "depth": 9,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {Ω : Type u_1} {G : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype G] [Nonempty G]\n  {ν : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure ν] (T : G → Ω → Ω) (S : Set Ω),\n  (∀ (g : G), MeasureTheory.MeasurePreserving (T g) ν ν) →\n    MeasureTheory.NullMeasurableSet S ν →\n      ∀ (B : ENNReal), (∀ (z : Ω), ∑ g, (T g ⁻¹' S).indicator 1 z ≤ B * ↑(Fintype.card G)) → ν S ≤ B",
+      "topo": 15,
+      "type_sha256": "a6a43f94d057edcb36bae1dc0d9ae155d65a8d2d0490971985cfe8c4631cff0c"
+    },
+    {
+      "citable": true,
+      "decl_name": "growth_exp_le_delta",
+      "depth": 6,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [MeasurableSpace X] (C : ConceptClass X Bool) (v : ℕ),\n  0 < v →\n    ∀ (m : ℕ),\n      0 < m →\n        ∀ (ε δ : ℝ),\n          0 < ε →\n            0 < δ →\n              δ < 1 →\n                (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                  (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                    4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)) ≤ δ ∧ 2 * Real.log 2 ≤ ↑m * ε ^ 2",
+      "topo": 16,
+      "type_sha256": "7c7d85c19afd51d9763f837e6ca4a5fb7473ab08d8c892797710127622427caf"
+    },
+    {
+      "citable": true,
+      "decl_name": "sum_choose_le_exp_pow",
+      "depth": 7,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 * ↑m / ↑d) ^ d",
+      "topo": 17,
+      "type_sha256": "8da0c5466b166c58bd1bccf8b7433827a8be14214a4736ec7f926d50e85875dc"
+    },
+    {
+      "citable": true,
+      "decl_name": "pow_mul_exp_neg_le_factorial_div",
+      "depth": 7,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {d : ℕ} {t : ℝ}, 0 < t → t ^ d * Real.exp (-t) ≤ ↑(d + 1).factorial / t",
+      "topo": 18,
+      "type_sha256": "f0df91dd5f82ea19ea084580aa0b5baeacf55f0a25fbd5ba9126f23881a47843"
+    },
+    {
+      "citable": false,
+      "decl_name": "growth_function_le_two_pow",
+      "depth": 7,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "GrowthFunction"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (n : ℕ), GrowthFunction X C n ≤ 2 ^ n",
+      "topo": 19,
+      "type_sha256": "179952e5b487194325ce04a84e5524bc5a7b5a57845edb27365aefa19344b2e7"
+    },
+    {
+      "citable": true,
+      "decl_name": "hoeffding_one_sided_upper",
+      "depth": 8,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))",
+      "topo": 20,
+      "type_sha256": "7e61dd5ebe2b7e62d6ff56ef390262ba26789a96257b592928283e9a71f6521d"
+    },
+    {
+      "citable": true,
+      "decl_name": "hoeffding_one_sided",
+      "depth": 8,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))",
+      "topo": 21,
+      "type_sha256": "c811825452a7d725c8080c7624a34da23b0cc7a5bbc5bf9f64bc383da6d8d09e"
+    },
+    {
+      "citable": true,
+      "decl_name": "uc_imp_pac",
+      "depth": 4,
+      "dictionary_leaves": [
+        "BatchLearner",
+        "BatchLearner.learn",
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "HasUniformConvergence",
+        "HypothesisSpace",
+        "IsConsistentWith",
+        "PACLearnable",
+        "TrueError",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  Set.Nonempty C → HasUniformConvergence X C → PACLearnable X C",
+      "topo": 22,
+      "type_sha256": "a92c1514dd6ffb9b53edc83a961159d2959ccb45ec8eb1e6b87737f0efae515c"
+    },
+    {
+      "citable": true,
+      "decl_name": "BatchLearner.output_in_H",
+      "depth": 5,
+      "dictionary_leaves": [
+        "BatchLearner",
+        "BatchLearner.hypotheses",
+        "BatchLearner.learn",
+        "FLT.Concept",
+        "HypothesisSpace"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {Y : Type v} (self : BatchLearner X Y) {m : ℕ} (S : Fin m → X × Y), self.learn S ∈ self.hypotheses",
+      "topo": 23,
+      "type_sha256": "6544a4ae1172e1b091ddef7faf97d1f62694d1b5e553eefb850169499939bc2c"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.hmeas_C",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableConceptClass"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C],\n  ∀ c ∈ C, Measurable c",
+      "topo": 24,
+      "type_sha256": "f7ed88df9a5c50e43dceeadeb1bb8def695a81c8b8e6a0afa2a554fd39d4a66e"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.mem_measurable",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableConceptClass"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  ∀ h ∈ C, Measurable h",
+      "topo": 25,
+      "type_sha256": "d87f202e9473b12bc20fe4b55d426433d69320cf82455c91257e112c1ed022c5"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.hc_meas",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableConceptClass"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c",
+      "topo": 26,
+      "type_sha256": "e59121b262f24b5930026106add996cb24a618680ed28231bafd212dfcef501c"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.all_measurable",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableConceptClass"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {inst : MeasurableSpace X} (C : ConceptClass X Bool) [self : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c",
+      "topo": 27,
+      "type_sha256": "b9c2ff79ab4e8cd268c8c220fd9919aad50f68a98daf099f593aef048d32173c"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.hWB",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "MeasurableConceptClass",
+        "WellBehavedVC"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C], WellBehavedVC X C",
+      "topo": 28,
+      "type_sha256": "6a34f8e643e1eb2fba6c54e662393e271074093abb12a1fbaf464980934c15bc"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableConceptClass.wellBehaved",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "MeasurableConceptClass",
+        "WellBehavedVC"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  WellBehavedVC X C",
+      "topo": 29,
+      "type_sha256": "41b08a115e678da8e2139510b28d12ab542e8eb9fc8ce6a579e7063e65ef08fa"
+    },
+    {
+      "citable": true,
+      "decl_name": "pac_imp_vcdim_finite",
+      "depth": 3,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "PACLearnable",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  PACLearnable X C → VCDim X C < ⊤",
+      "topo": 30,
+      "type_sha256": "df5d013f60136375e5a81aee5310dfb2f843475cc7697bd43dab1f7c018e815a"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcdim_infinite_not_pac",
+      "depth": 4,
+      "dictionary_leaves": [
+        "BatchLearner",
+        "BatchLearner.learn",
+        "ConceptClass",
+        "FLT.Concept",
+        "PACLearnable",
+        "Shatters",
+        "VCDim",
+        "uniformMeasure"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  VCDim X C = ⊤ → ¬PACLearnable X C",
+      "topo": 31,
+      "type_sha256": "62f38e07dc77d157d8c1f4649310b671de306f3a69ccfd7ce3625f2a6383736c"
+    },
+    {
+      "citable": true,
+      "decl_name": "uniformMeasure_isProbability",
+      "depth": 5,
+      "dictionary_leaves": [
+        "uniformMeasure"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [inst_1 : Fintype X] [MeasurableSingletonClass X] (hne : Nonempty X),\n  0 < Fintype.card X → MeasureTheory.IsProbabilityMeasure (uniformMeasure X hne)",
+      "topo": 32,
+      "type_sha256": "1a294867877cb74d9de4e1f56ba256408408bb753422417d0066667474355fe4"
+    },
+    {
+      "citable": false,
+      "decl_name": "nfl_counting_core",
+      "depth": 5,
+      "dictionary_leaves": [
+        "BatchLearner",
+        "BatchLearner.learn",
+        "ConceptClass",
+        "FLT.Concept",
+        "Shatters"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {T : Finset X},\n  Shatters X C T →\n    ∀ {m : ℕ},\n      2 * m < T.card →\n        ∀ (L : BatchLearner X Bool),\n          ∃ f₀,\n            ∃ c₀ ∈ C,\n              (∀ (t : ↥T), c₀ ↑t = f₀ t) ∧\n                2 * {xs | {t | c₀ ↑t ≠ L.learn (fun i => (↑(xs i), c₀ ↑(xs i))) ↑t}.card * 4 ≤ T.card}.card ≤\n                  Fintype.card (Fin m → ↥T)",
+      "topo": 33,
+      "type_sha256": "bf4b90f86faf9bc4fe0c19b3aa46e244fa5495e7b10437662d150e3d167095c5"
+    },
+    {
+      "citable": false,
+      "decl_name": "per_sample_labeling_bound",
+      "depth": 6,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {α : Type u_1} [inst : Fintype α] [inst_1 : DecidableEq α] (m : ℕ),\n  2 * m < Fintype.card α →\n    ∀ (xs : Fin m → α) (output : (α → Bool) → α → Bool),\n      (∀ (f f' : α → Bool), (∀ (i : Fin m), f (xs i) = f' (xs i)) → output f = output f') →\n        2 * {f | {t | f t ≠ output f t}.card * 4 ≤ Fintype.card α}.card ≤ Fintype.card (α → Bool)",
+      "topo": 34,
+      "type_sha256": "14739d35588969269ca30b60170b73d006d88352bcb08607aad3356283ec3f9a"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcDim_lt_top_iff_growth_poly",
+      "depth": 1,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool},\n  VCDim X C < ⊤ ↔ ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d",
+      "topo": 35,
+      "type_sha256": "4cfcdd0ae0f545466f6b5c7fedc9df6c8b4595a5c800680583e976b986ab6172"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcDim_lt_top_of_growth_poly",
+      "depth": 2,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} (K : ℝ) (d : ℕ),\n  (∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d) → VCDim X C < ⊤",
+      "topo": 36,
+      "type_sha256": "fc3163aeed51384e49411e2ab9ddb4af6a0b87b10c7f5653899d8e0bf7f234ab"
+    },
+    {
+      "citable": true,
+      "decl_name": "two_pow_le_growthFunction_of_top",
+      "depth": 3,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "Shatters",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool}, VCDim X C = ⊤ → ∀ (m : ℕ), 2 ^ m ≤ GrowthFunction X C m",
+      "topo": 37,
+      "type_sha256": "07bfbef0526e7daf5cbd005fab5c81b067eb4758139a609afee5bab1a674c1f0"
+    },
+    {
+      "citable": true,
+      "decl_name": "shatters_of_subset",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "Shatters"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {S T : Finset X}, Shatters X C S → T ⊆ S → Shatters X C T",
+      "topo": 38,
+      "type_sha256": "d00d204d0fbc072df944da4b11e0a962e7b6a2da9896fa84c815992a23d66c84"
+    },
+    {
+      "citable": true,
+      "decl_name": "growthFunction_ge_two_pow_of_shatters",
+      "depth": 4,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "Shatters",
+        "restrictionSet"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {S : Finset X}, Shatters X C S → 2 ^ S.card ≤ GrowthFunction X C S.card",
+      "topo": 39,
+      "type_sha256": "61bc9677a844995e586d7de83bb26669ebccf73d8e7735ee06894e95d90e6c7d"
+    },
+    {
+      "citable": true,
+      "decl_name": "restrictionSet_ncard_le_growthFunction",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "restrictionSet"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) {S : Finset X} {m : ℕ},\n  S.card = m → (restrictionSet C S).ncard ≤ GrowthFunction X C m",
+      "topo": 40,
+      "type_sha256": "2bad11904e4bba586ae8b547854c4097286dbba03df4ba06d1fa54ffbc4d6bb3"
+    },
+    {
+      "citable": false,
+      "decl_name": "restrictionSet_ncard_le_two_pow",
+      "depth": 6,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "restrictionSet"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (S : Finset X), (restrictionSet C S).ncard ≤ 2 ^ S.card",
+      "topo": 41,
+      "type_sha256": "8888dd6109b8d2470112dc9576d643d52d404194dcfe3349e0adac9efde0f744"
+    },
+    {
+      "citable": false,
+      "decl_name": "growthFunction_eq",
+      "depth": 6,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "restrictionSet"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (m : ℕ),\n  GrowthFunction X C m = sSup (Set.range fun S => (restrictionSet C ↑S).ncard)",
+      "topo": 42,
+      "type_sha256": "1a63cb82dc111e6b37ed1120390c419580d8a1b16d1df0d94e6a509806038cfa"
+    },
+    {
+      "citable": true,
+      "decl_name": "restrictionSet_eq_univ_of_shatters",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "Shatters",
+        "restrictionSet"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {S : Finset X}, Shatters X C S → restrictionSet C S = Set.univ",
+      "topo": 43,
+      "type_sha256": "c1bce851c5bbe32741db84a1b5cd823ae02c7ae319e11658683fc171d474dc00"
+    },
+    {
+      "citable": true,
+      "decl_name": "no_eventually_two_pow_le_poly",
+      "depth": 3,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (K : ℝ) (d : ℕ), (∀ᶠ (m : ℕ) in Filter.atTop, 2 ^ m ≤ K * ↑m ^ d) → False",
+      "topo": 44,
+      "type_sha256": "2d039af22997ee9f50e7e2914a22a6f205e8e052e1a1de2f64365b6c5e4d813a"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcDim_finite_imp_growth_poly",
+      "depth": 2,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "GrowthFunction",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {C : ConceptClass X Bool},\n  VCDim X C < ⊤ → ∃ K d, ∀ᶠ (m : ℕ) in Filter.atTop, ↑(GrowthFunction X C m) ≤ K * ↑m ^ d",
+      "topo": 45,
+      "type_sha256": "09573e927d6e06b22f41638e04f8cc12496f0b9b32d897c46057e2a65da6db5a"
+    },
+    {
+      "citable": true,
+      "decl_name": "vcdim_finite_imp_growth_bounded",
+      "depth": 5,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "GrowthFunction",
+        "Shatters",
+        "VCDim"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) (C : ConceptClass X Bool),\n  VCDim X C < ⊤ → ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i",
+      "topo": 46,
+      "type_sha256": "406dc0b6cb7abef03840efc2425b7678156db05b4502c0dbba2bfa5e5de243f4"
+    }
+  ]
+}

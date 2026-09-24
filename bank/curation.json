@@ -1,0 +1,201 @@
+{
+ "year": 2026,
+ "published_at": "2026-09-24T00:00:00Z",
+ "profile": {
+  "login": "Zetetic-Dhruv",
+  "citation_name": "Dhruv Gupta",
+  "display_name": "Dhruv Gupta",
+  "github_user_id": 268465982,
+  "github_type": "User",
+  "kind": "person"
+ },
+ "dictionary": {
+  "label": "design-lab@5802df4",
+  "toolchain": "leanprover/lean4:v4.31.0",
+  "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+  "source_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+  "module_roots": [
+   "FLT_Proofs",
+   "ZPM",
+   "AuditCP"
+  ],
+  "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+  "curation": "initial"
+ },
+ "substrate": "Lean 4 kernel v4.31.0",
+ "premise_authors": [
+  {
+   "author": "Yaël Dillies",
+   "modules": [
+    "FLT_Proofs.VCDimGeneralized.SetBasic",
+    "FLT_Proofs.VCDimGeneralized.SetCard"
+   ],
+   "decls": [
+    "Shatters",
+    "Shatters.mono",
+    "Shatters.anti",
+    "Shatters.exists_ge",
+    "Shatters.of_forall_le",
+    "Shatters.nonempty",
+    "Shatters.le_iff",
+    "shatters_iff_image_inf_eq_Iic",
+    "Shatters.univ",
+    "shatters_bot",
+    "shatters_top",
+    "Shatters.preimage_compl",
+    "shatters_preimage_compl",
+    "shatters_image_compl",
+    "Shatters.subset",
+    "shatters_iff_le_ncard_image_inter",
+    "bddAbove_range",
+    "finite_image_inter",
+    "vcGrowth",
+    "vcGrowth_le_iff",
+    "vcGrowth_lt_iff",
+    "ncard_image_inter_le_vcGrowth",
+    "vcGrowth_mono",
+    "vcGrowth_union_le",
+    "vcGrowth_image2_inter_le",
+    "HasVCDimLE",
+    "HasVCDimLE.anti",
+    "HasVCDimLE.mono",
+    "vcGrowth_le_iff'",
+    "vcGrowth_lt_iff'",
+    "hasVCDimLE_iff_vcGrowth"
+   ]
+  }
+ ],
+ "posts": [
+  {
+   "decl": "encard_image_inter_le_encard_shatters",
+   "serial": 6001
+  },
+  {
+   "decl": "HasVCDimLE.vcGrowth_le_exp",
+   "serial": 6002
+  },
+  {
+   "decl": "mk_determined_le_mk_shatters",
+   "serial": 6003
+  },
+  {
+   "decl": "not_mk_image_inter_le_mk_shatters",
+   "serial": 6004
+  },
+  {
+   "decl": "encard_image_restrict_le_encard_pairCubes",
+   "serial": 6005
+  },
+  {
+   "decl": "exists_hasNatarajanDimLE_not_hasDSDimLE",
+   "serial": 6006
+  },
+  {
+   "decl": "HasVCDimLE.mk_image_inter_le_ded",
+   "serial": 6007
+  },
+  {
+   "decl": "no_smaller_bound",
+   "serial": 6008
+  },
+  {
+   "decl": "fundamental_vc_compression_with_info",
+   "serial": 6009
+  },
+  {
+   "decl": "littlestone_characterization",
+   "serial": 6010
+  },
+  {
+   "decl": "optimal_mistake_bound_eq_ldim",
+   "serial": 6011
+  },
+  {
+   "decl": "universal_imp_pac",
+   "serial": 6012
+  },
+  {
+   "decl": "krappWirthSeparationMeasTarget_holds",
+   "serial": 6013
+  },
+  {
+   "decl": "KWLock.ambainis_tower_locked",
+   "serial": 6014
+  },
+  {
+   "decl": "AuditCP.auditBlind_finiteTrajectory_goodhart",
+   "serial": 6015
+  },
+  {
+   "decl": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed",
+   "serial": 6016
+  },
+  {
+   "decl": "AuditCP.auditSealed_iff_no_binary_decision_advantage",
+   "serial": 6017
+  },
+  {
+   "decl": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact",
+   "serial": 6018
+  },
+  {
+   "decl": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues",
+   "serial": 6019
+  },
+  {
+   "decl": "HiddenChannelCapacity.dirac_strong",
+   "serial": 6020
+  },
+  {
+   "decl": "HiddenChannelCapacity.lz_theorem_3_1",
+   "serial": 6021,
+   "cites": [
+    "Alex Meiburg"
+   ]
+  },
+  {
+   "decl": "ProbabilityTheory.klDivReal_multivariateGaussian",
+   "serial": 6022
+  },
+  {
+   "decl": "MeasureTheory.exists_analyticSet_not_measurableSet_real",
+   "serial": 6023
+  },
+  {
+   "decl": "InformationTheory.pinsker_proof",
+   "serial": 6024
+  },
+  {
+   "decl": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one",
+   "serial": 6025
+  },
+  {
+   "decl": "fundamental_theorem",
+   "serial": 6026
+  },
+  {
+   "decl": "vcDim_fundamental_theorem",
+   "serial": 6027
+  },
+  {
+   "decl": "online_strictly_stronger_pac",
+   "serial": 6028
+  },
+  {
+   "decl": "advice_elimination",
+   "serial": 6029
+  },
+  {
+   "decl": "FLT.Halfspace.vcDim_halfspace_eq",
+   "serial": 6030
+  },
+  {
+   "decl": "vcDim_dualClass_le",
+   "serial": 6031
+  },
+  {
+   "decl": "log₂_vcDim_le_vcDim_dualClass",
+   "serial": 6032
+  }
+ ]
+}

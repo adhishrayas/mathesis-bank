@@ -1,0 +1,914 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6020"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "21"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "33"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "7"
+  },
+  {
+    "field": "argument.depth",
+    "value": "3"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dirac_strong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sep_clique_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mod_succ_cases"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "getLast_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "length_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_extend"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_min_path"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_connector"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "erase_separates"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_drop"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_take"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "head_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "gcast_list"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symm'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SimpIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableAdj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_min_path"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_refl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ {QA QB : ι → Prop} {x y : ι},\n      x ≠ y →\n        ¬HiddenChannelCapacity.Adj 𝒞 x y →\n          ¬QB x →\n            ¬QB y →\n              (∀ (v : ι), QA v → QB v → False) →\n                (∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v) →\n                  ∀ (pA : List ι),\n                    List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA →\n                      pA.Nodup →\n                        pA.head? = some x →\n                          pA.getLast? = some y →\n                            (∀ v ∈ pA, v = x ∨ v = y ∨ QA v) →\n                              (∀ (q : List ι),\n                                  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                      q.Nodup ∧\n                                        q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n                                    pA.length ≤ q.length) →\n                                ∀ (pB : List ι),\n                                  List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB →\n                                    pB.Nodup →\n                                      pB.head? = some x →\n                                        pB.getLast? = some y →\n                                          (∀ v ∈ pB, v = x ∨ v = y ∨ QB v) →\n                                            (∀ (q : List ι),\n                                                (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                                    q.Nodup ∧\n                                                      q.head? = some x ∧\n                                                        q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n                                                  pB.length ≤ q.length) →\n                                              False"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getLast_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y : ι} {p : List ι},\n  List.IsChain (HiddenChannelCapacity.Adj 𝒞) p →\n    p.head? = some x →\n      p.getLast? = some y →\n        (∀ v ∈ p, v = x ∨ v = y ∨ Q v) →\n          (∀ (q : List ι),\n              (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                  q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n                p.length ≤ q.length) →\n            p.Nodup →\n              ∀ {i j : ℕ} (hi : i < p.length) (hj : j < p.length), i + 2 ≤ j → ¬HiddenChannelCapacity.Adj 𝒞 p[i] p[j]"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n i : ℕ), i < n → (i + 1) % n = i + 1 ∧ i + 1 < n ∨ (i + 1) % n = 0 ∧ i + 1 = n"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getLast_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {p : List ι} {y : ι}, p.getLast? = some y → ∀ (h0 : 0 < p.length), p[p.length - 1] = y"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι) (h0 : 0 < l.length) (i : ℕ)\n  (h : i < (HiddenChannelCapacity.cyclePairs l).length),\n  (HiddenChannelCapacity.cyclePairs l)[i] = {l[i], l[(i + 1) % l.length]}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι), (HiddenChannelCapacity.cyclePairs l).length = l.length"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v w → HiddenChannelCapacity.ReachOn 𝒞 P u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u : ι}, P u → HiddenChannelCapacity.ReachOn 𝒞 P u u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι} {p : List ι},\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p → p.head? = some u → v ∈ p → HiddenChannelCapacity.ReachOn 𝒞 P u v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.Adj 𝒞 v w → P w → HiddenChannelCapacity.ReachOn 𝒞 P u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_min_path"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {Q : List ι → Prop}, (∃ p, Q p) → ∃ p, Q p ∧ ∀ (q : List ι), Q q → p.length ≤ q.length"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y u₁ u₂ : ι},\n  x ≠ y →\n    HiddenChannelCapacity.Adj 𝒞 x u₁ →\n      HiddenChannelCapacity.Adj 𝒞 y u₂ →\n        HiddenChannelCapacity.ReachOn 𝒞 Q u₁ u₂ →\n          ¬Q x →\n            ¬Q y →\n              ∃ p,\n                List.IsChain (HiddenChannelCapacity.Adj 𝒞) p ∧\n                  p.Nodup ∧ p.head? = some x ∧ p.getLast? = some y ∧ ∀ v ∈ p, v = x ∨ v = y ∨ Q v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {S Sep : Finset ι} {a b x : ι},\n  x ≠ a →\n    (∀ (u : ι),\n        u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u) →\n      ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b →\n        ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep.erase x) a b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.gcast_list"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} (p : List ι),\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p →\n    ∀ {u v : ι}, p.head? = some u → p.getLast? = some v → HiddenChannelCapacity.ReachOn 𝒞 P u v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.drop n p)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.take n p)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {p : List ι} {x : ι}, p.head? = some x → ∀ (h0 : 0 < p.length), p[0] = x"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.gcast_list"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (l : List ι) {s t : ℕ} (hs : s < l.length) (ht : t < l.length), s = t → l[s] = l[t]"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {u v : ι}, HiddenChannelCapacity.Adj 𝒞 u v → HiddenChannelCapacity.Adj 𝒞 v u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "20e38a6b8d2b"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6020"
+  }
+]

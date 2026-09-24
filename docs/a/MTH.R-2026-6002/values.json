@@ -1,0 +1,1234 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6002"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_exp"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → d ≤ n → ↑(vcGrowth n 𝒜) ≤ (Real.exp 1 / ↑d * ↑n) ^ d"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "35"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "39"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "10"
+  },
+  {
+    "field": "argument.depth",
+    "value": "9"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcGrowth_le_exp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_mul_pow_le_add…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_mul_sum_cho…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_add_div_pow_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcGrowth_le_sum_range"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcGrowth_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_setOf_ncard_le_s…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le_ncar…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_inter_le_enc…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_union"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_disjoint"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_ri…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_le…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_forall_notMem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "insert_injOn_notMem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter_of_not_su…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_insert"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "insert"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_setOf_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_image_splitPoin…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_singleton"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "of_forall_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_inter_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_image_inter_of_fin…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "injOn_inter_splitPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_setOf_subset_and"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_le_of_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_of_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_exp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → d ≤ n → ↑(vcGrowth n 𝒜) ≤ (Real.exp 1 / ↑d * ↑n) ^ d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "vcGrowth"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_sum_range"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 / ↑d * ↑m) ^ d"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_add_div_pow_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_mul_sum_choose_mul_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_mul_pow_le_add_one_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_exp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_mul_pow_le_add_one_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m d : ℕ} {t : ℝ}, 0 ≤ t → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * t ^ i ≤ (1 + t) ^ m"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_mul_sum_choose_mul_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m d : ℕ},\n  0 < ↑d →\n    0 < ↑m →\n      ↑d ≤ ↑m →\n        ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤\n          (↑m / ↑d) ^ d * ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * (↑d / ↑m) ^ i"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "one_add_div_pow_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m d : ℕ}, 0 < ↑m → (1 + ↑d / ↑m) ^ m ≤ Real.exp 1 ^ d"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_sum_range"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → vcGrowth n 𝒜 ≤ ∑ k ∈ Finset.range (d + 1), n.choose k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "vcGrowth"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_exp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → vcGrowth n 𝒜 ≤ ∑ k ∈ Finset.Iic d, n.choose k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "vcGrowth"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "vcGrowth_le_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le_sum_range"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)} {A : Set α},\n  HasVCDimLE d 𝒜 → A.Finite → A.ncard ≤ n → ((fun x => A ∩ x) '' 𝒜).ncard ≤ ∑ k ∈ Finset.Iic d, n.choose k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_le_of_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_setOf_subset_and"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le_ncard_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.vcGrowth_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {A : Set α},\n  A.Finite → ∀ (d : ℕ), {B | B ⊆ A ∧ B.ncard ≤ d}.ncard = ∑ k ∈ Finset.Iic d, A.ncard.choose k"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_setOf_ncard_le_setOf_ncard_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_setOf_subset_and"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le_succ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le_zero"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le_zero"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {A : Set α}, A.Finite → {B | B ⊆ A ∧ B.ncard ≤ 0} = {∅}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "setOf_subset_and_ncard_le_succ"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (d : ℕ) (A : Set α),\n  {B | B ⊆ A ∧ B.ncard ≤ d + 1} = {B | B ⊆ A ∧ B.ncard ≤ d} ∪ {B | B ⊆ A ∧ B.ncard = d + 1}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_setOf_ncard_le_setOf_ncard_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (d : ℕ) (A : Set α), Disjoint {B | B ⊆ A ∧ B.ncard ≤ d} {B | B ⊆ A ∧ B.ncard = d + 1}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le_ncard_setOf_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  A.Finite → ((fun x => A ∩ x) '' 𝒜).ncard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.ncard"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_inter_le_encard_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_setOf_subset_and"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_inter_le_encard_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le_ncard_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {A : Set α} (N : ℕ) (𝒜 : Set (Set α)),\n  ((fun x => A ∩ x) '' 𝒜).Finite →\n    ((fun x => A ∩ x) '' 𝒜).ncard ≤ N → ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters.mono"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "shatters_bot"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.insert"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_insert"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "insert_injOn_notMem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_right"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_disjoint"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_union"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_inter_le_encard_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_union"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α} {x : α},\n  (fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∉ C} ∪ (fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∈ C} = (fun x => A ∩ x) '' 𝒜"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trace_sep_disjoint"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α} {x : α},\n  x ∈ A → Disjoint ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∉ C}) ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∈ C})"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_right"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B → x ∉ B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters.preimage_compl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_forall_notMem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_left"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B → x ∉ B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_forall_notMem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_forall_notMem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, (∀ C ∈ 𝒜, x ∉ C) → Shatters 𝒜 B → x ∉ B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters.exists_ge"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_left"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "notMem_of_shatters_sep_right"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "insert_injOn_notMem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} (x : α), Set.InjOn (insert x) {B | x ∉ B}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  ((fun x => A ∩ x) '' 𝒜).Nontrivial → ∃ x ∈ A, (∃ C ∈ 𝒜, x ∈ C) ∧ ∃ C ∈ 𝒜, x ∉ C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter_of_not_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter_of_not_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A C C' : Set α},\n  C ∈ 𝒜 → C' ∈ 𝒜 → ¬A ∩ C ⊆ A ∩ C' → ∃ x ∈ A, (∃ D ∈ 𝒜, x ∈ D) ∧ ∃ D ∈ 𝒜, x ∉ D"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_splitter"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disjoint_image_insert"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {x : α} {𝒮 𝒯 : Set (Set α)}, (∀ B ∈ 𝒮, x ∉ B) → Disjoint 𝒮 (insert x '' 𝒯)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.insert"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α},\n  Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B → Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B → Shatters 𝒜 (insert x B)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.exists_inter_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.of_forall_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pajor_encard_aux"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_setOf_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).Infinite → {B | B ⊆ A ∧ Shatters 𝒜 B}.Infinite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_image_inter_of_finite_splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_image_splitPoints_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encard_image_inter_le_encard_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_image_splitPoints_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (fun x => {x}) '' splitPoints✝ 𝒜 A ⊆ {B | B ⊆ A ∧ Shatters 𝒜 B}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_singleton"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_singleton"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {x : α}, Shatters 𝒜 {x} ↔ (∃ C ∈ 𝒜, x ∈ C) ∧ ∃ C ∈ 𝒜, x ∉ C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.exists_inter_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.of_forall_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "singleton_image_splitPoints_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.of_forall_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (∀ ⦃B : Set α⦄, B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B) → Shatters 𝒜 A"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.insert"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_singleton"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.exists_inter_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A B : Set α}, Shatters 𝒜 A → B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "Shatters.insert"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_singleton"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_image_inter_of_finite_splitPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (splitPoints✝ 𝒜 A).Finite → ((fun x => A ∩ x) '' 𝒜).Finite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "injOn_inter_splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "infinite_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "injOn_inter_splitPoints"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, Set.InjOn (fun x => x ∩ splitPoints✝ 𝒜 A) ((fun x => A ∩ x) '' 𝒜)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_image_inter_of_finite_splitPoints"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_setOf_subset_and"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {A : Set α}, A.Finite → ∀ (p : Set α → Prop), {B | B ⊆ A ∧ p B}.Finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_image_inter_le_ncard_setOf_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_setOf_ncard_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_le_of_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {d : ℕ} {𝒜 : Set (Set α)} {B : Set α}, HasVCDimLE d 𝒜 → Shatters 𝒜 B → B.ncard ≤ d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.finite_of_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_image_inter_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.finite_of_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} {d : ℕ} {𝒜 : Set (Set α)} {B : Set α}, HasVCDimLE d 𝒜 → Shatters 𝒜 B → B.Finite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasVCDimLE"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters.subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HasVCDimLE.ncard_le_of_shatters"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "600ed63e389a"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6002"
+  }
+]

@@ -1,0 +1,288 @@
+{
+  "argument": {
+    "accession": "MTH.R-2026-6029",
+    "axiom_free": false,
+    "axioms_reached": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "citation_name": "Dhruv Gupta",
+    "cites": [],
+    "claim_accession": "MTH.C-2026-6029",
+    "created_at": "2026-09-24T00:00:00Z",
+    "dictionary_id": "962259c4-e734-538d-84a2-0f86495b0f2d",
+    "edge_count": 11,
+    "export_bytes": 310975763,
+    "export_constants": 48927,
+    "export_sha256": "d4155a9f10077e8b47b038e3cee82b9542d3192568f4f372cc32bb7907c9273b",
+    "libraries_used": [
+      "FLT_Proofs"
+    ],
+    "login": "Zetetic-Dhruv",
+    "node_count": 12,
+    "private_helpers": [
+      "used_sample_split_measure",
+      "trueErrorReal_le_of_bestAdvice",
+      "prob_ge_one_sub_compl",
+      "nat_pair_sample_marginal",
+      "pi_cylinder_set_eq",
+      "learnWithAdvice_measurable_fixed",
+      "finite_validation_family_bound"
+    ],
+    "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
+    "replay_detail": "lean kernel accepts",
+    "root_decl_name": "advice_elimination",
+    "root_module": "FLT_Proofs.Theorem.Extended",
+    "root_pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C",
+    "source_url": null,
+    "statement_identity": "not-applicable",
+    "submission_id": "de1a2b4a-b374-5755-ae55-b5e6e6fe93a2",
+    "substrate": "Lean 4 kernel v4.31.0"
+  },
+  "edges": [
+    {
+      "used_by": "advice_elimination",
+      "uses": "MeasurableHypotheses.mem_measurable",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "bestAdvice.congr_simp",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "finite_validation_family_bound",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "learnWithAdvice_measurable_fixed",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "nat_pair_sample_marginal",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "prob_ge_one_sub_compl",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "trueErrorReal_le_of_bestAdvice",
+      "via": "direct"
+    },
+    {
+      "used_by": "advice_elimination",
+      "uses": "used_sample_split_measure",
+      "via": "direct"
+    },
+    {
+      "used_by": "finite_validation_family_bound",
+      "uses": "hoeffding_one_sided",
+      "via": "direct"
+    },
+    {
+      "used_by": "finite_validation_family_bound",
+      "uses": "hoeffding_one_sided_upper",
+      "via": "direct"
+    },
+    {
+      "used_by": "nat_pair_sample_marginal",
+      "uses": "pi_cylinder_set_eq",
+      "via": "direct"
+    }
+  ],
+  "nodes": [
+    {
+      "citable": true,
+      "decl_name": "advice_elimination",
+      "depth": 0,
+      "dictionary_leaves": [
+        "AdviceEvalMeasurable",
+        "BatchLearner",
+        "BatchLearner.learn",
+        "ConceptClass",
+        "EmpiricalError",
+        "FLT.Concept",
+        "LearnerWithAdvice",
+        "LearnerWithAdvice.learnWithAdvice",
+        "MeasurableHypotheses",
+        "PACLearnable",
+        "PACLearnableWithAdviceRegular",
+        "TrueError",
+        "TrueErrorReal",
+        "bestAdvice",
+        "splitUsedEquiv",
+        "usedPrefix",
+        "zeroOneLoss"
+      ],
+      "is_root": true,
+      "kind": "theorem",
+      "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C",
+      "topo": 0,
+      "type_sha256": "52b18e995d4a67390abd7f9c82b5ac8a5bd9ead0235270fb1a82ecde85f24af4"
+    },
+    {
+      "citable": false,
+      "decl_name": "used_sample_split_measure",
+      "depth": 1,
+      "dictionary_leaves": [
+        "splitUsedEquiv"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (m₁ m₂ : ℕ) (Success : Set ((Fin m₁ → X) × (Fin m₂ → X))),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (⇑(splitUsedEquiv✝ m₁ m₂) ⁻¹' Success) =\n      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) Success",
+      "topo": 1,
+      "type_sha256": "c5614b05a6d05331d744ed245cd9df262beb9bd6357da8b0a0d57fbd946bdc69"
+    },
+    {
+      "citable": false,
+      "decl_name": "trueErrorReal_le_of_bestAdvice",
+      "depth": 1,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "bestAdvice",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] [inst_2 : Nonempty A]\n  (cand : A → Concept X Bool) (c : Concept X Bool) (D : MeasureTheory.Measure X) {m : ℕ} (Sval : Fin m → X × Bool)\n  (η τ : ℝ),\n  0 ≤ η →\n    (∀ (a : A), |TrueErrorReal X (cand a) c D - EmpiricalError X Bool (cand a) Sval (zeroOneLoss Bool)| ≤ η) →\n      ∀ (aStar : A),\n        TrueErrorReal X (cand aStar) c D ≤ τ → TrueErrorReal X (cand (bestAdvice cand Sval)) c D ≤ τ + 2 * η",
+      "topo": 2,
+      "type_sha256": "ad25fff78aa6593c398a035bf0b0eb6b0e34dda86034f5acfc92ad229e49753b"
+    },
+    {
+      "citable": false,
+      "decl_name": "prob_ge_one_sub_compl",
+      "depth": 1,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ]\n  (S : Set Ω) (δ : ENNReal), μ Sᶜ ≤ δ → μ S ≥ 1 - δ",
+      "topo": 3,
+      "type_sha256": "7770f23b40b7335cffb1c4b822d9d1cedce204288cff57061be37dae5ff81b58"
+    },
+    {
+      "citable": false,
+      "decl_name": "nat_pair_sample_marginal",
+      "depth": 1,
+      "dictionary_leaves": [
+        "usedPrefix"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  [MeasureTheory.SigmaFinite D] (m₁ m₂ : ℕ) (Success : Set (Fin (m₁ + m₂) → X)),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (usedPrefix✝ m₁ m₂ ⁻¹' Success) =\n      (MeasureTheory.Measure.pi fun x => D) Success",
+      "topo": 4,
+      "type_sha256": "35ea81a1beba17a9e2072e2de13ca55f43a17b92ad920c17dec04cbae90512fa"
+    },
+    {
+      "citable": false,
+      "decl_name": "pi_cylinder_set_eq",
+      "depth": 2,
+      "dictionary_leaves": [],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {ι : Type u_1} [inst : Fintype ι] [DecidableEq ι] {X : Type u} [inst_2 : MeasurableSpace X]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] [MeasureTheory.SigmaFinite D] (p : ι → Prop)\n  [inst_5 : DecidablePred p] (S : Set ({ i // p i } → X)),\n  MeasurableSet S →\n    (MeasureTheory.Measure.pi fun x => D) {xs | (fun i => xs ↑i) ∈ S} = (MeasureTheory.Measure.pi fun x => D) S",
+      "topo": 5,
+      "type_sha256": "b8bced38a42c8f7969a53b5bc271ace392fe5eb909ab7131af05f23e65bf67b0"
+    },
+    {
+      "citable": false,
+      "decl_name": "learnWithAdvice_measurable_fixed",
+      "depth": 1,
+      "dictionary_leaves": [
+        "AdviceEvalMeasurable",
+        "LearnerWithAdvice",
+        "LearnerWithAdvice.learnWithAdvice"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} (LA : LearnerWithAdvice X Bool A),\n  AdviceEvalMeasurable LA → ∀ (a : A) {m : ℕ} (S : Fin m → X × Bool), Measurable (LA.learnWithAdvice a S)",
+      "topo": 6,
+      "type_sha256": "bbc93c46182bcdce7a4cf720821a09a4c197953e134e36a1a52f7d56ad16d95b"
+    },
+    {
+      "citable": false,
+      "decl_name": "finite_validation_family_bound",
+      "depth": 1,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (cand : A → Concept X Bool),\n      (∀ (a : A), Measurable (cand a)) →\n        ∀ (m : ℕ),\n          0 < m →\n            ∀ (η : ℝ),\n              0 < η →\n                η ≤ 1 →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ a,\n                          |TrueErrorReal X (cand a) c D -\n                                EmpiricalError X Bool (cand a) (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            η} ≤\n                    ENNReal.ofReal (↑(Fintype.card A) * 2 * Real.exp (-2 * ↑m * η ^ 2))",
+      "topo": 7,
+      "type_sha256": "6211d65ae02a76af8c81c2ada80f18ac38e767b0cb57743bb944c2b96c959958"
+    },
+    {
+      "citable": true,
+      "decl_name": "hoeffding_one_sided_upper",
+      "depth": 2,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))",
+      "topo": 8,
+      "type_sha256": "7e61dd5ebe2b7e62d6ff56ef390262ba26789a96257b592928283e9a71f6521d"
+    },
+    {
+      "citable": true,
+      "decl_name": "hoeffding_one_sided",
+      "depth": 2,
+      "dictionary_leaves": [
+        "EmpiricalError",
+        "FLT.Concept",
+        "TrueErrorReal",
+        "zeroOneLoss"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))",
+      "topo": 9,
+      "type_sha256": "c811825452a7d725c8080c7624a34da23b0cc7a5bbc5bf9f64bc383da6d8d09e"
+    },
+    {
+      "citable": true,
+      "decl_name": "bestAdvice.congr_simp",
+      "depth": 1,
+      "dictionary_leaves": [
+        "FLT.Concept",
+        "bestAdvice"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] [inst_2 : Nonempty A]\n  (cand cand_1 : A → Concept X Bool),\n  cand = cand_1 →\n    ∀ {m : ℕ} (Sval Sval_1 : Fin m → X × Bool), Sval = Sval_1 → bestAdvice cand Sval = bestAdvice cand_1 Sval_1",
+      "topo": 10,
+      "type_sha256": "dff25ac6bce8dd96b54b0031976adff3d2a9f6ab855c815f1fcc32db5a414545"
+    },
+    {
+      "citable": true,
+      "decl_name": "MeasurableHypotheses.mem_measurable",
+      "depth": 1,
+      "dictionary_leaves": [
+        "ConceptClass",
+        "FLT.Concept",
+        "MeasurableHypotheses"
+      ],
+      "is_root": false,
+      "kind": "theorem",
+      "pretty": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableHypotheses X C],\n  ∀ h ∈ C, Measurable h",
+      "topo": 11,
+      "type_sha256": "e5eedba136dd4ac1eb6ca0dd775c612d354e4dc38d2389a7d97b8ee6319c02a9"
+    }
+  ]
+}

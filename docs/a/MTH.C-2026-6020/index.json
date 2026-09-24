@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6020"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6020, title={HiddenChannelCapacity.dirac_strong}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6020}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6020}, year={2026} }",
+    "text": "Dhruv Gupta. HiddenChannelCapacity.dirac_strong. Mathesis. MTH.C-2026-6020. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6020. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "HiddenChannelCapacity.dirac_strong",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6020",
+  "is_open": false,
+  "kind": "claim",
+  "module": "ZPM.Measurements.HC.Dirac",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "HiddenChannelCapacity.dirac_strong"
+    ],
+    "pretty": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w",
+    "type_sha256": "e606da67595acdb92273a5b55db3824678cb71ec36cfe6a1c3d49eb883fe779f"
+  },
+  "verification": null,
+  "witness": null
+}

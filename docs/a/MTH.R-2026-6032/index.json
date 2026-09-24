@@ -1,0 +1,133 @@
+{
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.R-2026-6032, title={log₂_vcDim_le_vcDim_dualClass}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.R-2026-6032}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6032}, year={2026} }",
+    "text": "Dhruv Gupta. log₂_vcDim_le_vcDim_dualClass. Mathesis. MTH.R-2026-6032. https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6032. 2026-09-24."
+  },
+  "claim": "MTH.C-2026-6032",
+  "created": "2026-09-24T00:00:00Z",
+  "dag": {
+    "dictionary_leaves": [
+      "ConceptClass",
+      "FLT.Concept",
+      "Shatters",
+      "VCDim",
+      "dualClass",
+      "evalConcept"
+    ],
+    "edge_count": 2,
+    "edges": [
+      {
+        "used_by": "log₂_vcDim_le_vcDim_dualClass",
+        "uses": "pow_le_vcDim_imp_le_vcDim_dualClass",
+        "via": "direct"
+      },
+      {
+        "used_by": "pow_le_vcDim_imp_le_vcDim_dualClass",
+        "uses": "evalConcept_mem",
+        "via": "direct"
+      }
+    ],
+    "node_count": 3,
+    "nodes": [
+      {
+        "citable": true,
+        "decl_name": "log₂_vcDim_le_vcDim_dualClass",
+        "depth": 0,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "Shatters",
+          "VCDim",
+          "dualClass"
+        ],
+        "is_root": true,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)",
+        "topo": 0,
+        "type_sha256": "b9a2d70951054cb7c319ecc3f01734479a10fa50d34dbe22e4e3f498de534a99"
+      },
+      {
+        "citable": true,
+        "decl_name": "pow_le_vcDim_imp_le_vcDim_dualClass",
+        "depth": 1,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "Shatters",
+          "VCDim",
+          "dualClass",
+          "evalConcept"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {k : ℕ} (T : Finset X),\n  Shatters X C T → 2 ^ k ≤ T.card → ↑k ≤ VCDim (↑C) (dualClass C)",
+        "topo": 1,
+        "type_sha256": "104a873af0943cb2ec634812407f35e929ecb68a6de3a7764e7a0740cdb1ebf3"
+      },
+      {
+        "citable": true,
+        "decl_name": "evalConcept_mem",
+        "depth": 2,
+        "dictionary_leaves": [
+          "ConceptClass",
+          "FLT.Concept",
+          "dualClass",
+          "evalConcept"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {X : Type u} (C : ConceptClass X Bool) (x : X), evalConcept C x ∈ dualClass C",
+        "topo": 2,
+        "type_sha256": "92494b21c703d25baa99acfcba1e5bd1e025cfd069a0eabd57d081f58e92caa0"
+      }
+    ]
+  },
+  "decl_name": "log₂_vcDim_le_vcDim_dualClass",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.R-2026-6032",
+  "frozen_export": {
+    "bytes": 21323321,
+    "constants": 5564,
+    "path": "mathesis-exports/1bf2ca644dcd7e34e0e71ce87c098f0b79201ada915a8a10a6034abcfe9acc68.export",
+    "sha256": "1bf2ca644dcd7e34e0e71ce87c098f0b79201ada915a8a10a6034abcfe9acc68"
+  },
+  "is_open": false,
+  "kind": "argument",
+  "module": "FLT_Proofs.Complexity.IndependentVC.CapacityClosures",
+  "post_number": 1,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "log₂_vcDim_le_vcDim_dualClass",
+      "pow_le_vcDim_imp_le_vcDim_dualClass",
+      "evalConcept_mem"
+    ],
+    "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)",
+    "type_sha256": "b9a2d70951054cb7c319ecc3f01734479a10fa50d34dbe22e4e3f498de534a99"
+  },
+  "verification": {
+    "gate_version": "mathesis-adjudicate@5a48a4dbbcb5",
+    "replay": "accepted",
+    "statement_identity": "not-applicable",
+    "substrate": "Lean 4 kernel v4.31.0",
+    "triviality": null
+  },
+  "witness": null
+}

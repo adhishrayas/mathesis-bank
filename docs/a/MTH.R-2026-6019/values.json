@@ -1,0 +1,4254 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6019"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.Acyclic 𝒞 ↔\n    ∀ (fam : List (HiddenChannelCapacity.LocalStruct ι fun x => ZMod 2)),\n      List.map (fun x => x.team) fam = 𝒞.toList →\n        HiddenChannelCapacity.Consistent fam → (∀ L ∈ fam, L.rel.Nonempty) → HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "91"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "149"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "43"
+  },
+  {
+    "field": "argument.depth",
+    "value": "10"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "acyclic_iff_forall_consis…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rip_iff_ripCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "famCover_eq_listCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "glues_of_rip"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "projS_joinFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "team_subset_famCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "projS_image_restrict₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_joinFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_restrict_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "imarg_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "glues_of_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_perm_map_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "consistent_of_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_consistent_not_glu…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shared_nonempty_of_earFree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_shared"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "dirac_strong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sep_clique_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "getLast_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_extend"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_min_path"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_connector"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "erase_separates"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_drop"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "isChain_take"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "head_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "gcast_list"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symm'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_earFree_core_chain"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "clean_system_of_uncovered…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSum_eq_empty_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "erase_union_erase"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "covered_of_card_le_two"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_coverU"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "clean_system_of_chordless…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pair_eq_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "getElem_ne_next"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cyclePairs_ne_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mod_succ_cases"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "length_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adj_or_eq_of_cohosted"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "capstone_of_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "clean_system_obstruction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "affine_obstruction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "not_glues_affFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "parityOn_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "consistent_affFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "imarg_affLocal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "wsum_restrict₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSum_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_singletons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_append"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_snd_pin"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_fst_pin"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "wsum_restrict"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_snd_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_fst_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_affLocal_rel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_parity_solution"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "xorSumL_cons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "transform_bookkeeping"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmDiff_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "parityOn_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zmod2_add_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "acyclic_iff_grahamReducib…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "grahamN_of_ripCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exists_ripCover_of_grahamN"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "listCover_eq_coverU"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.Acyclic 𝒞 ↔\n    ∀ (fam : List (HiddenChannelCapacity.LocalStruct ι fun x => ZMod 2)),\n      List.map (fun x => x.team) fam = 𝒞.toList →\n        HiddenChannelCapacity.Consistent fam → (∀ L ∈ fam, L.rel.Nonempty) → HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Acyclic"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.decidableAcyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_consistent_not_glues_of_not_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [(i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.Consistent fam →\n    (List.map (fun x => x.team) fam).Nodup →\n      HiddenChannelCapacity.Acyclic (List.map (fun x => x.team) fam).toFinset → HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Acyclic"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIPCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.consistent_of_perm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_perm_map_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_perm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_rip"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.rip_iff_ripCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.rip_iff_ripCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam ↔ HiddenChannelCapacity.RIPCover (List.map (fun x => x.team) fam)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIPCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.famCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.famCover_eq_listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.famCover_eq_listCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {X : ι → Type u_2} [inst : DecidableEq ι] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.famCover fam = HiddenChannelCapacity.listCover (List.map (fun x => x.team) fam)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.famCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.rip_iff_ripCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_rip"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [(i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam → HiddenChannelCapacity.Consistent fam → HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.joinFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.projS"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [inst_3 : (i : ι) → Fintype (X i)] [∀ (i : ι), Nonempty (X i)] (fam : List (HiddenChannelCapacity.LocalStruct ι X)),\n  HiddenChannelCapacity.RIP fam →\n    HiddenChannelCapacity.Consistent fam →\n      ∀ L ∈ fam, HiddenChannelCapacity.projS (HiddenChannelCapacity.joinFam fam) L.team = L.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIP"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.famCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.joinFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.projS"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg_image"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_restrict_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_image_restrict₂"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.team_subset_famCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_rip"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.team_subset_famCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} {fam : List (HiddenChannelCapacity.LocalStruct ι X)}\n  {L : HiddenChannelCapacity.LocalStruct ι X}, L ∈ fam → L.team ⊆ HiddenChannelCapacity.famCover fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.famCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_image_restrict₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {X : ι → Type u_2} [inst : (i : ι) → DecidableEq (X i)] (κ : Finset ((i : ι) → X i)) {S T : Finset ι}\n  (hST : S ⊆ T), Finset.image (Finset.restrict₂ hST) (HiddenChannelCapacity.projS κ T) = HiddenChannelCapacity.projS κ S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.projS"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_joinFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)] [inst_2 : Fintype ι]\n  [inst_3 : (i : ι) → Fintype (X i)] {fam : List (HiddenChannelCapacity.LocalStruct ι X)} {f : (i : ι) → X i},\n  f ∈ HiddenChannelCapacity.joinFam fam ↔ ∀ L ∈ fam, L.team.restrict f ∈ L.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_restrict_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {X : ι → Type u_2} [∀ (i : ι), Nonempty (X i)] (T : Finset ι) (g : (i : ↥T) → X ↑i),\n  ∃ f, T.restrict f = g"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg_image"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {X : ι → Type u_2} [inst : (i : ι) → DecidableEq (X i)] (L : HiddenChannelCapacity.LocalStruct ι X)\n  {S T : Finset ι} (hS : S ⊆ T) (hT : T ⊆ L.team), Finset.image (Finset.restrict₂ hS) (L.imarg hT) = L.imarg ⋯"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.projS_joinFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {X : ι → Type u_2} [inst : (i : ι) → DecidableEq (X i)] [inst_1 : Fintype ι] [(i : ι) → Fintype (X i)]\n  {fam fam' : List (HiddenChannelCapacity.LocalStruct ι X)},\n  fam'.Perm fam → HiddenChannelCapacity.Glues fam' → HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.projS"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_perm_map_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_3} {β : Type u_4} {g : α → β} {σ : List β} {l : List α},\n  σ.Perm (List.map g l) → ∃ l', l'.Perm l ∧ List.map g l' = σ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.consistent_of_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {X : ι → Type u_2} [inst_1 : (i : ι) → DecidableEq (X i)]\n  {fam fam' : List (HiddenChannelCapacity.LocalStruct ι X)},\n  fam'.Perm fam → HiddenChannelCapacity.Consistent fam → HiddenChannelCapacity.Consistent fam'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.glues_of_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_consistent_not_glues_of_not_acyclic"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  ¬HiddenChannelCapacity.Acyclic 𝒞 →\n    ∃ fam,\n      List.map (fun x => x.team) fam = 𝒞.toList ∧\n        HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Acyclic"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.EarFree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamReducible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_grahamReducible"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.EarFree 𝒞 → ¬HiddenChannelCapacity.Conformal 𝒞 ∨ ∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Conformal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.EarFree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SimpIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.shared_nonempty_of_earFree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_consistent_not_glues_of_not_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.shared_nonempty_of_earFree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  HiddenChannelCapacity.EarFree 𝒞 → (HiddenChannelCapacity.shared 𝒞).Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.EarFree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  HiddenChannelCapacity.Conformal 𝒞 →\n    ∀ {v : ι},\n      v ∈ HiddenChannelCapacity.shared 𝒞 →\n        (∀ x ∈ HiddenChannelCapacity.shared 𝒞,\n            ∀ y ∈ HiddenChannelCapacity.shared 𝒞,\n              HiddenChannelCapacity.Adj 𝒞 v x →\n                HiddenChannelCapacity.Adj 𝒞 v y → x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) →\n          ∃ T ∈ 𝒞, HiddenChannelCapacity.IsEarOf 𝒞 T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Conformal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Covered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsClique"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableAdj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {T : Finset ι},\n  T ∈ 𝒞 → T ∩ HiddenChannelCapacity.coverU (𝒞.erase T) = T ∩ HiddenChannelCapacity.shared 𝒞"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.shared_nonempty_of_earFree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_shared"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {v : ι},\n  v ∈ HiddenChannelCapacity.shared 𝒞 ↔ ∃ T ∈ 𝒞, ∃ T' ∈ 𝒞, T ≠ T' ∧ v ∈ T ∧ v ∈ T'"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ (S : Finset ι),\n      (∀ x ∈ S, ∀ y ∈ S, x ≠ y → HiddenChannelCapacity.Adj 𝒞 x y) ∨\n        ∃ u w,\n          HiddenChannelCapacity.SimpIn 𝒞 S u ∧\n            HiddenChannelCapacity.SimpIn 𝒞 S w ∧ u ≠ w ∧ ¬HiddenChannelCapacity.Adj 𝒞 u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SimpIn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableAdj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_min_path"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_refl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.earFree_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  (¬∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞 l) →\n    ∀ {QA QB : ι → Prop} {x y : ι},\n      x ≠ y →\n        ¬HiddenChannelCapacity.Adj 𝒞 x y →\n          ¬QB x →\n            ¬QB y →\n              (∀ (v : ι), QA v → QB v → False) →\n                (∀ (u v : ι), QA u → QB v → ¬HiddenChannelCapacity.Adj 𝒞 u v) →\n                  ∀ (pA : List ι),\n                    List.IsChain (HiddenChannelCapacity.Adj 𝒞) pA →\n                      pA.Nodup →\n                        pA.head? = some x →\n                          pA.getLast? = some y →\n                            (∀ v ∈ pA, v = x ∨ v = y ∨ QA v) →\n                              (∀ (q : List ι),\n                                  (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                      q.Nodup ∧\n                                        q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QA v) →\n                                    pA.length ≤ q.length) →\n                                ∀ (pB : List ι),\n                                  List.IsChain (HiddenChannelCapacity.Adj 𝒞) pB →\n                                    pB.Nodup →\n                                      pB.head? = some x →\n                                        pB.getLast? = some y →\n                                          (∀ v ∈ pB, v = x ∨ v = y ∨ QB v) →\n                                            (∀ (q : List ι),\n                                                (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                                                    q.Nodup ∧\n                                                      q.head? = some x ∧\n                                                        q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ QB v) →\n                                                  pB.length ≤ q.length) →\n                                              False"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getLast_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y : ι} {p : List ι},\n  List.IsChain (HiddenChannelCapacity.Adj 𝒞) p →\n    p.head? = some x →\n      p.getLast? = some y →\n        (∀ v ∈ p, v = x ∨ v = y ∨ Q v) →\n          (∀ (q : List ι),\n              (List.IsChain (HiddenChannelCapacity.Adj 𝒞) q ∧\n                  q.Nodup ∧ q.head? = some x ∧ q.getLast? = some y ∧ ∀ v ∈ q, v = x ∨ v = y ∨ Q v) →\n                p.length ≤ q.length) →\n            p.Nodup →\n              ∀ {i j : ℕ} (hi : i < p.length) (hj : j < p.length), i + 2 ≤ j → ¬HiddenChannelCapacity.Adj 𝒞 p[i] p[j]"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getLast_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {p : List ι} {y : ι}, p.getLast? = some y → ∀ (h0 : 0 < p.length), p[p.length - 1] = y"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v w → HiddenChannelCapacity.ReachOn 𝒞 P u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.ReachOn 𝒞 P v u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_refl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u : ι}, P u → HiddenChannelCapacity.ReachOn 𝒞 P u u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v : ι} {p : List ι},\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p → p.head? = some u → v ∈ p → HiddenChannelCapacity.ReachOn 𝒞 P u v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} {u v w : ι},\n  HiddenChannelCapacity.ReachOn 𝒞 P u v → HiddenChannelCapacity.Adj 𝒞 v w → P w → HiddenChannelCapacity.ReachOn 𝒞 P u w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_min_path"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {Q : List ι → Prop}, (∃ p, Q p) → ∃ p, Q p ∧ ∀ (q : List ι), Q q → p.length ≤ q.length"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {Q : ι → Prop} {x y u₁ u₂ : ι},\n  x ≠ y →\n    HiddenChannelCapacity.Adj 𝒞 x u₁ →\n      HiddenChannelCapacity.Adj 𝒞 y u₂ →\n        HiddenChannelCapacity.ReachOn 𝒞 Q u₁ u₂ →\n          ¬Q x →\n            ¬Q y →\n              ∃ p,\n                List.IsChain (HiddenChannelCapacity.Adj 𝒞) p ∧\n                  p.Nodup ∧ p.head? = some x ∧ p.getLast? = some y ∧ ∀ v ∈ p, v = x ∨ v = y ∨ Q v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {S Sep : Finset ι} {a b x : ι},\n  x ≠ a →\n    (∀ (u : ι),\n        u ∈ S \\ Sep ∧ HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a u → ¬HiddenChannelCapacity.Adj 𝒞 x u) →\n      ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep) a b →\n        ¬HiddenChannelCapacity.ReachOn 𝒞 (fun v => v ∈ S \\ Sep.erase x) a b"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.gcast_list"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {P : ι → Prop} (p : List ι),\n  HiddenChannelCapacity.IsWalkOn 𝒞 P p →\n    ∀ {u v : ι}, p.head? = some u → p.getLast? = some v → HiddenChannelCapacity.ReachOn 𝒞 P u v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsWalkOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ReachOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.dirac_strong"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_extend"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_trans"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_drop"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.drop n p)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isChain_take"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {R : ι → ι → Prop} {p : List ι}, List.IsChain R p → ∀ (n : ℕ), List.IsChain R (List.take n p)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.no_chord_of_minimal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_mem_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_of_walk"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.head_getElem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {p : List ι} {x : ι}, p.head? = some x → ∀ (h0 : 0 < p.length), p[0] = x"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.gcast_list"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (l : List ι) {s t : ℕ} (hs : s < l.length) (ht : t < l.length), s = t → l[s] = l[t]"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.Adj.symm'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} {𝒞 : Finset (Finset ι)} {u v : ι}, HiddenChannelCapacity.Adj 𝒞 u v → HiddenChannelCapacity.Adj 𝒞 v u"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_separates"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_connector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.isEarOf_of_simplicial"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.reachOn_symm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 : Finset (Finset ι)),\n  ¬HiddenChannelCapacity.GrahamReducible 𝒞 →\n    (∀ 𝒞' ⊆ 𝒞,\n        HiddenChannelCapacity.EarFree 𝒞' →\n          ¬HiddenChannelCapacity.Conformal 𝒞' ∨ ∃ l, HiddenChannelCapacity.IsChordlessCycle 𝒞' l) →\n      ∃ fam,\n        List.map (fun x => x.team) fam = 𝒞.toList ∧\n          HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Conformal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.EarFree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamReducible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_earFree_core_chain"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_consistent_not_glues_of_not_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_earFree_core_chain"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  ¬HiddenChannelCapacity.GrahamReducible 𝒞 →\n    ∃ 𝒞' ⊆ 𝒞,\n      HiddenChannelCapacity.EarFree 𝒞' ∧ ∀ w ⊆ HiddenChannelCapacity.coverU 𝒞', (∃ V ∈ 𝒞, w ⊆ V) → ∃ W ∈ 𝒞', w ⊆ W"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.EarFree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamN"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamReducible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.decidableIsEarOf"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  𝒞.Nonempty →\n    ¬HiddenChannelCapacity.Conformal 𝒞 →\n      ∃ 𝒲,\n        𝒲.Nonempty ∧\n          (∀ w ∈ 𝒲, w ≠ ∅) ∧\n            (∀ w ∈ 𝒲, ∃ T ∈ 𝒞, w ⊆ T) ∧\n              (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) ∧ HiddenChannelCapacity.xorSum 𝒲 = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Conformal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Covered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsClique"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableCovered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.instDecidableIsClique"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.covered_of_card_le_two"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_union_erase"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSum_eq_empty_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSum_eq_empty_iff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {D : Finset (Finset ι)},\n  HiddenChannelCapacity.xorSum D = ∅ ↔ ∀ (i : ι), ¬Odd {x ∈ D | i ∈ x}.card"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {D : Finset (Finset ι)} {i : ι},\n  i ∈ HiddenChannelCapacity.xorSum D ↔ Odd {x ∈ D | i ∈ x}.card"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSum_eq_empty_iff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.erase_union_erase"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {K : Finset ι} {i j : ι}, i ≠ j → K.erase i ∪ K.erase j = K"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.covered_of_card_le_two"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)},\n  𝒞.Nonempty →\n    ∀ {K : Finset ι},\n      K ⊆ HiddenChannelCapacity.coverU 𝒞 →\n        HiddenChannelCapacity.IsClique 𝒞 K → K.card ≤ 2 → HiddenChannelCapacity.Covered 𝒞 K"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Covered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsClique"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_coverU"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {v : ι},\n  v ∈ HiddenChannelCapacity.coverU 𝒞 ↔ ∃ T ∈ 𝒞, v ∈ T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.bndry_eq_inter_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.covered_of_card_le_two"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_shared"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {l : List ι},\n  HiddenChannelCapacity.IsChordlessCycle 𝒞 l →\n    ∃ 𝒲,\n      𝒲.Nonempty ∧\n        (∀ w ∈ 𝒲, w ≠ ∅) ∧\n          (∀ w ∈ 𝒲, ∃ T ∈ 𝒞, w ⊆ T) ∧\n            (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) ∧ HiddenChannelCapacity.xorSum 𝒲 = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.cyclePairs_ne_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι),\n  l.Nodup → 2 ≤ l.length → HiddenChannelCapacity.xorSumL (HiddenChannelCapacity.cyclePairs l) = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_ne_next"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.pair_eq_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_perm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l₁ l₂ : List (Finset ι)),\n  l₁.length = l₂.length →\n    HiddenChannelCapacity.xorSumL (List.zipWith (fun x1 x2 => symmDiff x1 x2) l₁ l₂) =\n      symmDiff (HiddenChannelCapacity.xorSumL l₁) (HiddenChannelCapacity.xorSumL l₂)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_perm"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {l₁ l₂ : List (Finset ι)},\n  l₁.Perm l₂ → HiddenChannelCapacity.xorSumL l₁ = HiddenChannelCapacity.xorSumL l₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.pair_eq_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {a b : ι}, a ≠ b → {a, b} = symmDiff {a} {b}"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_ne_next"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (l : List ι), l.Nodup → ∀ (h2 : 2 ≤ l.length) (i : ℕ) (hi : i < l.length), l[i] ≠ l[(i + 1) % l.length]"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι),\n  l.Nodup → 3 ≤ l.length → (HiddenChannelCapacity.cyclePairs l).Nodup"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.cyclePairs_ne_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {l : List ι},\n  0 < l.length → ∀ {w : Finset ι}, w ∈ HiddenChannelCapacity.cyclePairs l → w ≠ ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {𝒞 : Finset (Finset ι)} {l : List ι},\n  HiddenChannelCapacity.IsChordlessCycle 𝒞 l →\n    ∀ V ∈ 𝒞,\n      ∀ w₁ ∈ HiddenChannelCapacity.cyclePairs l, ∀ w₂ ∈ HiddenChannelCapacity.cyclePairs l, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsChordlessCycle"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.adj_or_eq_of_cohosted"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mod_succ_cases"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (n i : ℕ), i < n → (i + 1) % n = i + 1 ∧ i + 1 < n ∨ (i + 1) % n = 0 ∧ i + 1 = n"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_ne_next"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι) (h0 : 0 < l.length) (i : ℕ)\n  (h : i < (HiddenChannelCapacity.cyclePairs l).length),\n  (HiddenChannelCapacity.cyclePairs l)[i] = {l[i], l[(i + 1) % l.length]}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.cyclePairs_ne_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.length_cyclePairs"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List ι), (HiddenChannelCapacity.cyclePairs l).length = l.length"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.cyclePairs_ne_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.getElem_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.nodup_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sep_clique_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cyclePairs"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.adj_or_eq_of_cohosted"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [DecidableEq ι] {𝒞 : Finset (Finset ι)} {V : Finset ι},\n  V ∈ 𝒞 → ∀ {u v : ι}, u ∈ V → v ∈ V → HiddenChannelCapacity.Adj 𝒞 u v ∨ u = v"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Adj"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 𝒞' : Finset (Finset ι)),\n  𝒞' ⊆ 𝒞 →\n    (∀ w ⊆ HiddenChannelCapacity.coverU 𝒞', (∃ V ∈ 𝒞, w ⊆ V) → ∃ W ∈ 𝒞', w ⊆ W) →\n      ∀ (𝒲 : Finset (Finset ι)),\n        𝒲.Nonempty →\n          (∀ w ∈ 𝒲, w ≠ ∅) →\n            (∀ w ∈ 𝒲, ∃ T ∈ 𝒞', w ⊆ T) →\n              (∀ V ∈ 𝒞', ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) →\n                HiddenChannelCapacity.xorSum 𝒲 = ∅ →\n                  ∃ fam,\n                    List.map (fun x => x.team) fam = 𝒞.toList ∧\n                      HiddenChannelCapacity.Consistent fam ∧\n                        (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_dichotomy"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_obstruction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] (𝒞 𝒲 : Finset (Finset ι)),\n  𝒲.Nonempty →\n    (∀ w ∈ 𝒲, w ≠ ∅) →\n      (∀ w ∈ 𝒲, ∃ V ∈ 𝒞, w ⊆ V) →\n        (∀ V ∈ 𝒞, ∀ w₁ ∈ 𝒲, ∀ w₂ ∈ 𝒲, w₁ ⊆ V → w₂ ⊆ V → w₁ = w₂) →\n          HiddenChannelCapacity.xorSum 𝒲 = ∅ →\n            ∃ fam,\n              List.map (fun x => x.team) fam = 𝒞.toList ∧\n                HiddenChannelCapacity.Consistent fam ∧ (∀ L ∈ fam, L.rel.Nonempty) ∧ ¬HiddenChannelCapacity.Glues fam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ClosedAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affine_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.capstone_of_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affine_obstruction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] {teams : List (Finset ι)} {𝒲 : Finset (Finset ι)}\n  {c : Finset ι → ZMod 2},\n  teams ≠ [] →\n    (∀ V ∈ teams, HiddenChannelCapacity.ClosedAt 𝒲 V) →\n      (∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V) →\n        ∀ D ⊆ 𝒲,\n          HiddenChannelCapacity.xorSum D = ∅ →\n            ∑ w ∈ D, c w = 1 →\n              (∀ w ∈ D, ∃ V ∈ teams, w ⊆ V) →\n                HiddenChannelCapacity.Consistent (HiddenChannelCapacity.affFam teams 𝒲 c) ∧\n                  (∀ L ∈ HiddenChannelCapacity.affFam teams 𝒲 c, L.rel.Nonempty) ∧\n                    ¬HiddenChannelCapacity.Glues (HiddenChannelCapacity.affFam teams 𝒲 c)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ClosedAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.consistent_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] [inst_1 : Fintype ι] {teams : List (Finset ι)} {𝒲 : Finset (Finset ι)}\n  {c : Finset ι → ZMod 2},\n  teams ≠ [] →\n    (∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V) →\n      ∀ D ⊆ 𝒲,\n        HiddenChannelCapacity.xorSum D = ∅ →\n          ∑ w ∈ D, c w = 1 →\n            (∀ w ∈ D, ∃ V ∈ teams, w ⊆ V) → ¬HiddenChannelCapacity.Glues (HiddenChannelCapacity.affFam teams 𝒲 c)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Glues"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.projS"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_affLocal_rel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affine_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (D : Finset (Finset ι)) (f : ι → ZMod 2),\n  HiddenChannelCapacity.parityOn (HiddenChannelCapacity.xorSum D) f = ∑ w ∈ D, HiddenChannelCapacity.parityOn w f"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.consistent_affFam"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {teams : List (Finset ι)} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  (∀ V ∈ teams, HiddenChannelCapacity.ClosedAt 𝒲 V) →\n    (∀ V ∈ teams, HiddenChannelCapacity.CoherentAt 𝒲 c V) →\n      HiddenChannelCapacity.Consistent (HiddenChannelCapacity.affFam teams 𝒲 c)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ClosedAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Consistent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affFam"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affine_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V S : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2} (hS : S ⊆ V),\n  HiddenChannelCapacity.ClosedAt 𝒲 V →\n    HiddenChannelCapacity.CoherentAt 𝒲 c V →\n      (HiddenChannelCapacity.affLocal V 𝒲 c).imarg hS = (HiddenChannelCapacity.affLocal S 𝒲 c).rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ClosedAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.imarg"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.hostedList"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_affLocal_rel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict₂"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.consistent_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict₂"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V S w : Finset ι} (hS : S ⊆ V),\n  w ⊆ S → ∀ (F : ↥V → ZMod 2), HiddenChannelCapacity.wsum S w (Finset.restrict₂ hS F) = HiddenChannelCapacity.wsum V w F"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V S : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.ClosedAt 𝒲 V →\n    HiddenChannelCapacity.CoherentAt 𝒲 c V →\n      ∀ (g₀ : ι → ZMod 2),\n        (∀ w ∈ 𝒲, w ⊆ S → HiddenChannelCapacity.parityOn w g₀ = c w) →\n          HiddenChannelCapacity.SysCoherent\n            (HiddenChannelCapacity.hostedList✝ V 𝒲 c ++ List.map (fun i => ({i}, g₀ i)) S.toList)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.ClosedAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SysCoherent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.hostedList"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_fst_pair"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_fst_pin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_snd_pair"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_snd_pin"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_append"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_singletons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSum_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.zmod2_add_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSum_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 D : Finset (Finset ι)},\n  D ⊆ {x ∈ 𝒲 | x ⊆ V} → HiddenChannelCapacity.xorSum D ⊆ V"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_singletons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {l : List ι},\n  l.Nodup → HiddenChannelCapacity.xorSumL (List.map (fun x => {x}) l) = l.toFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_append"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (a b : List (Finset ι)),\n  HiddenChannelCapacity.xorSumL (a ++ b) = symmDiff (HiddenChannelCapacity.xorSumL a) (HiddenChannelCapacity.xorSumL b)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_nil"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_nil"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι], HiddenChannelCapacity.xorSumL [] = ∅"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_append"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_snd_pin"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (g₀ : ι → ZMod 2) (l : List ι), List.map Prod.snd (List.map (fun i => ({i}, g₀ i)) l) = List.map g₀ l"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_fst_pin"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (g₀ : ι → ZMod 2) (l : List ι),\n  List.map Prod.fst (List.map (fun i => ({i}, g₀ i)) l) = List.map (fun x => {x}) l"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.CoherentAt 𝒲 c V → (HiddenChannelCapacity.affLocal V 𝒲 c).rel.Nonempty"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.hostedList"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_affLocal_rel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affine_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V w : Finset ι},\n  w ⊆ V → ∀ (f : ι → ZMod 2), HiddenChannelCapacity.wsum V w (V.restrict f) = HiddenChannelCapacity.parityOn w f"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.wsum_restrict₂"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2},\n  HiddenChannelCapacity.CoherentAt 𝒲 c V → HiddenChannelCapacity.SysCoherent (HiddenChannelCapacity.hostedList✝ V 𝒲 c)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.CoherentAt"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SysCoherent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.hostedList"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_fst_pair"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_snd_pair"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {l : List (Finset ι)},\n  l.Nodup → HiddenChannelCapacity.xorSumL l = HiddenChannelCapacity.xorSum l.toFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSum"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_chordlessCycle"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_snd_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (c : Finset ι → ZMod 2) (l : List (Finset ι)),\n  List.map Prod.snd (List.map (fun w => (w, c w)) l) = List.map c l"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.map_fst_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} (c : Finset ι → ZMod 2) (l : List (Finset ι)), List.map Prod.fst (List.map (fun w => (w, c w)) l) = l"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_hostedList"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.mem_affLocal_rel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] {V : Finset ι} {𝒲 : Finset (Finset ι)} {c : Finset ι → ZMod 2}\n  {F : ↥V → ZMod 2},\n  F ∈ (HiddenChannelCapacity.affLocal V 𝒲 c).rel ↔ ∀ w ∈ 𝒲, w ⊆ V → HiddenChannelCapacity.wsum V w F = c w"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.rel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.LocalStruct.team"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.affLocal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.wsum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.not_glues_affFam"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (L : List (Finset ι × ZMod 2)),\n  HiddenChannelCapacity.SysCoherent L → ∃ f, ∀ p ∈ L, HiddenChannelCapacity.parityOn p.1 f = p.2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.SysCoherent"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.transform_bookkeeping"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.zmod2_add_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.affLocal_nonempty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.imarg_affLocal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_cons"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (w : Finset ι) (l : List (Finset ι)),\n  HiddenChannelCapacity.xorSumL (w :: l) = symmDiff w (HiddenChannelCapacity.xorSumL l)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_append"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_eq_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_perm"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_singletons"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.transform_bookkeeping"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (x : ι) (w₀ : Finset ι) (c₀ : ZMod 2) (sub : List (Finset ι × ZMod 2)),\n  HiddenChannelCapacity.xorSumL\n        (List.map Prod.fst (List.map (fun p => if x ∈ p.1 then (symmDiff p.1 w₀, p.2 + c₀) else p) sub)) =\n      symmDiff (HiddenChannelCapacity.xorSumL (List.map Prod.fst sub))\n        (if List.countP (fun p => decide (x ∈ p.1)) sub % 2 = 1 then w₀ else ∅) ∧\n    (List.map Prod.snd (List.map (fun p => if x ∈ p.1 then (symmDiff p.1 w₀, p.2 + c₀) else p) sub)).sum =\n      (List.map Prod.snd sub).sum + if List.countP (fun p => decide (x ∈ p.1)) sub % 2 = 1 then c₀ else 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.xorSumL"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.zmod2_add_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.symmDiff_empty"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (a : Finset ι), symmDiff a ∅ = a"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_obstruction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.clean_system_of_uncovered_clique"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.transform_bookkeeping"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.xorSumL_zipWith_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_symmDiff"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (w w' : Finset ι) (f : ι → ZMod 2),\n  HiddenChannelCapacity.parityOn (symmDiff w w') f =\n    HiddenChannelCapacity.parityOn w f + HiddenChannelCapacity.parityOn w' f"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.parityOn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.zmod2_add_self"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_xorSum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.zmod2_add_self"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (a : ZMod 2), a + a = 0"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_parity_solution"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.parityOn_symmDiff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.sysCoherent_pinned"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.transform_bookkeeping"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_grahamReducible"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.Acyclic 𝒞 ↔ HiddenChannelCapacity.GrahamReducible 𝒞"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.Acyclic"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamN"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamReducible"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIPCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_ripCover_of_grahamN"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.grahamN_of_ripCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_consistent_not_glues_of_not_acyclic"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.grahamN_of_ripCover"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (order : List (Finset ι)),\n  order.Nodup → HiddenChannelCapacity.RIPCover order → HiddenChannelCapacity.GrahamN order.length order.toFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamN"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIPCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.listCover_eq_coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_grahamReducible"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_ripCover_of_grahamN"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (n : ℕ) (𝒞 : Finset (Finset ι)),\n  HiddenChannelCapacity.GrahamN n 𝒞 → ∃ order, order.Nodup ∧ order.toFinset = 𝒞 ∧ HiddenChannelCapacity.RIPCover order"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.GrahamN"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.IsEarOf"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.RIPCover"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.listCover_eq_coverU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.acyclic_iff_grahamReducible"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.listCover_eq_coverU"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : DecidableEq ι] (l : List (Finset ι)),\n  HiddenChannelCapacity.listCover l = HiddenChannelCapacity.coverU l.toFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.coverU"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HiddenChannelCapacity.listCover"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.exists_ripCover_of_grahamN"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "HiddenChannelCapacity.grahamN_of_ripCover"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "787331969522"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6019"
+  }
+]

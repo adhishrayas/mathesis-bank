@@ -1,0 +1,586 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6029"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "12"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "11"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "17"
+  },
+  {
+    "field": "argument.depth",
+    "value": "2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "used_sample_split_measure"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_le_of_bestA…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "prob_ge_one_sub_compl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nat_pair_sample_marginal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pi_cylinder_set_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learnWithAdvice_measurabl…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_validation_family_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (A : Type u_1)\n  [inst_2 : Fintype A] [inst_3 : Nonempty A], PACLearnableWithAdviceRegular X C A → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AdviceEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice.learnWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnableWithAdviceRegular"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bestAdvice"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitUsedEquiv"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "usedPrefix"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableHypotheses.mem_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bestAdvice.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_validation_family_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learnWithAdvice_measurable_fixed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nat_pair_sample_marginal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "prob_ge_one_sub_compl"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_le_of_bestAdvice"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "used_sample_split_measure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "used_sample_split_measure"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (m₁ m₂ : ℕ) (Success : Set ((Fin m₁ → X) × (Fin m₂ → X))),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (⇑(splitUsedEquiv✝ m₁ m₂) ⁻¹' Success) =\n      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) Success"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "splitUsedEquiv"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_le_of_bestAdvice"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] [inst_2 : Nonempty A]\n  (cand : A → Concept X Bool) (c : Concept X Bool) (D : MeasureTheory.Measure X) {m : ℕ} (Sval : Fin m → X × Bool)\n  (η τ : ℝ),\n  0 ≤ η →\n    (∀ (a : A), |TrueErrorReal X (cand a) c D - EmpiricalError X Bool (cand a) Sval (zeroOneLoss Bool)| ≤ η) →\n      ∀ (aStar : A),\n        TrueErrorReal X (cand aStar) c D ≤ τ → TrueErrorReal X (cand (bestAdvice cand Sval)) c D ≤ τ + 2 * η"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bestAdvice"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "prob_ge_one_sub_compl"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ]\n  (S : Set Ω) (δ : ENNReal), μ Sᶜ ≤ δ → μ S ≥ 1 - δ"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nat_pair_sample_marginal"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  [MeasureTheory.SigmaFinite D] (m₁ m₂ : ℕ) (Success : Set (Fin (m₁ + m₂) → X)),\n  MeasurableSet Success →\n    (MeasureTheory.Measure.pi fun x => D) (usedPrefix✝ m₁ m₂ ⁻¹' Success) =\n      (MeasureTheory.Measure.pi fun x => D) Success"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "usedPrefix"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pi_cylinder_set_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pi_cylinder_set_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [inst : Fintype ι] [DecidableEq ι] {X : Type u} [inst_2 : MeasurableSpace X]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] [MeasureTheory.SigmaFinite D] (p : ι → Prop)\n  [inst_5 : DecidablePred p] (S : Set ({ i // p i } → X)),\n  MeasurableSet S →\n    (MeasureTheory.Measure.pi fun x => D) {xs | (fun i => xs ↑i) ∈ S} = (MeasureTheory.Measure.pi fun x => D) S"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nat_pair_sample_marginal"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learnWithAdvice_measurable_fixed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} (LA : LearnerWithAdvice X Bool A),\n  AdviceEvalMeasurable LA → ∀ (a : A) {m : ℕ} (S : Fin m → X × Bool), Measurable (LA.learnWithAdvice a S)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "AdviceEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnerWithAdvice.learnWithAdvice"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_validation_family_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (cand : A → Concept X Bool),\n      (∀ (a : A), Measurable (cand a)) →\n        ∀ (m : ℕ),\n          0 < m →\n            ∀ (η : ℝ),\n              0 < η →\n                η ≤ 1 →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ a,\n                          |TrueErrorReal X (cand a) c D -\n                                EmpiricalError X Bool (cand a) (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            η} ≤\n                    ENNReal.ofReal (↑(Fintype.card A) * 2 * Real.exp (-2 * ↑m * η ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_validation_family_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_validation_family_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "bestAdvice.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] {A : Type u_1} [inst_1 : Fintype A] [inst_2 : Nonempty A]\n  (cand cand_1 : A → Concept X Bool),\n  cand = cand_1 →\n    ∀ {m : ℕ} (Sval Sval_1 : Fin m → X × Bool), Sval = Sval_1 → bestAdvice cand Sval = bestAdvice cand_1 Sval_1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "bestAdvice"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableHypotheses.mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableHypotheses X C],\n  ∀ h ∈ C, Measurable h"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "advice_elimination"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "d4155a9f1007"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6029"
+  }
+]

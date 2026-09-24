@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6026"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6026, title={fundamental_theorem}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6026}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6026}, year={2026} }",
+    "text": "Dhruv Gupta. fundamental_theorem. Mathesis. MTH.C-2026-6026. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6026. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "fundamental_theorem",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6026",
+  "is_open": false,
+  "kind": "claim",
+  "module": "FLT_Proofs.Theorem.PAC",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "fundamental_theorem"
+    ],
+    "pretty": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (PACLearnable X C ↔ VCDim X C < ⊤) ∧\n    (VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k) ∧\n      (VCDim X C < ⊤ ↔\n          ∀ ε > 0,\n            ∃ m₀,\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε) ∧\n        (PACLearnable X C →\n            ∃ L mf,\n              (∀ (ε δ : ℝ),\n                  0 < ε →\n                    0 < δ →\n                      ∀ (D : MeasureTheory.Measure X),\n                        MeasureTheory.IsProbabilityMeasure D →\n                          ∀ c ∈ C,\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                              ENNReal.ofReal (1 - δ)) ∧\n                (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n                  ∀ (d : ℕ),\n                    VCDim X C = ↑d →\n                      ∀ (ε δ : ℝ),\n                        0 < ε →\n                          ε ≤ 1 / 4 →\n                            0 < δ →\n                              δ ≤ 1 →\n                                δ ≤ 1 / 7 →\n                                  1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ) ∧\n          (VCDim X C < ⊤ ↔ ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i)",
+    "type_sha256": "87aca8d1df2556a6e57cace340d83a3b4a8e597169b40430ce3963009357b6e8"
+  },
+  "verification": null,
+  "witness": null
+}

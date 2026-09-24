@@ -1,0 +1,74 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6026"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (PACLearnable X C ↔ VCDim X C < ⊤) ∧\n    (VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k) ∧\n      (VCDim X C < ⊤ ↔\n          ∀ ε > 0,\n            ∃ m₀,\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε) ∧\n        (PACLearnable X C →\n            ∃ L mf,\n              (∀ (ε δ : ℝ),\n                  0 < ε →\n                    0 < δ →\n                      ∀ (D : MeasureTheory.Measure X),\n                        MeasureTheory.IsProbabilityMeasure D →\n                          ∀ c ∈ C,\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                              ENNReal.ofReal (1 - δ)) ∧\n                (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n                  ∀ (d : ℕ),\n                    VCDim X C = ↑d →\n                      ∀ (ε δ : ℝ),\n                        0 < ε →\n                          ε ≤ 1 / 4 →\n                            0 < δ →\n                              δ ≤ 1 →\n                                δ ≤ 1 / 7 →\n                                  1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ) ∧\n          (VCDim X C < ⊤ ↔ ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "claim.module",
+    "value": "FLT_Proofs.Theorem.PAC"
+  },
+  {
+    "field": "claim.statement_digest",
+    "value": "87aca8d1df25"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.arguments_count",
+    "value": "1"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6026"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "argument.node_count",
+    "value": "118"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "claim.first_verified",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6026"
+  }
+]

@@ -1,0 +1,5930 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6026"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (PACLearnable X C ↔ VCDim X C < ⊤) ∧\n    (VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k) ∧\n      (VCDim X C < ⊤ ↔\n          ∀ ε > 0,\n            ∃ m₀,\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε) ∧\n        (PACLearnable X C →\n            ∃ L mf,\n              (∀ (ε δ : ℝ),\n                  0 < ε →\n                    0 < δ →\n                      ∀ (D : MeasureTheory.Measure X),\n                        MeasureTheory.IsProbabilityMeasure D →\n                          ∀ c ∈ C,\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                              ENNReal.ofReal (1 - δ)) ∧\n                (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n                  ∀ (d : ℕ),\n                    VCDim X C = ↑d →\n                      ∀ (ε δ : ℝ),\n                        0 < ε →\n                          ε ≤ 1 / 4 →\n                            0 < δ →\n                              δ ≤ 1 →\n                                δ ≤ 1 / 7 →\n                                  1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ) ∧\n          (VCDim X C < ⊤ ↔ ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i)"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "118"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "161"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "71"
+  },
+  {
+    "field": "argument.depth",
+    "value": "10"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vc_characterization"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_san…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_upper_o…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_b…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_lower_bound_member"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_bounded_imp_vcdim_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compressio…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_compress…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_f…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportError_eq_boolTestE…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disagreementFamily_boolVC…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "labeledSampleOfFinset_eq_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessXCoords_enco…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessLabel_eq_on_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weight_le_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_weight_eq_pow_hitCount"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "potential_one_step_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "best_response_payoff_weig…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "potential_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weights_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuInit_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hitRate_from_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuHitCount_eq_sum_indica…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hypothesisEnvelope_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "output_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support_gives_row…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportAgreement_eq_one_s…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_extend_false"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "prob_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "prob_sum_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finalizeIncidenceScheme"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_empir…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_eq_boolTes…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "agreeTests_boolVCDim_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset_compressi…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_beats_poly_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "succ_le_two_pow_compressi…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_with_info_inject…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "correct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_small"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademach…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_concepts_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_q…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_restrictions_le_sum…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_massart_lemma"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_mul_sup'_le_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherComplexity_le_o…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytical_log_sqrt_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_b…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_pro…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bou…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bou…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bo…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factor…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "output_in_H"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComple…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_other"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_involutive"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_boolToSign"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_injectiv…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_all_labe…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_mul_abs_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "corr_eq_one_of_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_infinite_not_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uniformMeasure_isProbabil…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nfl_counting_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "per_sample_labeling_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hmeas_C"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hc_meas"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "all_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hWB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "wellBehaved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  (PACLearnable X C ↔ VCDim X C < ⊤) ∧\n    (VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k) ∧\n      (VCDim X C < ⊤ ↔\n          ∀ ε > 0,\n            ∃ m₀,\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε) ∧\n        (PACLearnable X C →\n            ∃ L mf,\n              (∀ (ε δ : ℝ),\n                  0 < ε →\n                    0 < δ →\n                      ∀ (D : MeasureTheory.Measure X),\n                        MeasureTheory.IsProbabilityMeasure D →\n                          ∀ c ∈ C,\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                              ENNReal.ofReal (1 - δ)) ∧\n                (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n                  ∀ (d : ℕ),\n                    VCDim X C = ↑d →\n                      ∀ (ε δ : ℝ),\n                        0 < ε →\n                          ε ≤ 1 / 4 →\n                            0 < δ →\n                              δ ≤ 1 →\n                                δ ≤ 1 / 7 →\n                                  1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ) ∧\n          (VCDim X C < ⊤ ↔ ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SampleComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_bounded_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vc_characterization"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vc_characterization"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C], PACLearnable X C ↔ VCDim X C < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ → ∀ [MeasurableConceptClass X C], PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vc_characterization"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  PACLearnable X C →\n    ∃ L mf,\n      (∀ (ε δ : ℝ),\n          0 < ε →\n            0 < δ →\n              ∀ (D : MeasureTheory.Measure X),\n                MeasureTheory.IsProbabilityMeasure D →\n                  ∀ c ∈ C,\n                    (MeasureTheory.Measure.pi fun x => D)\n                        {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                      ENNReal.ofReal (1 - δ)) ∧\n        (∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ) ∧\n          ∀ (d : ℕ),\n            VCDim X C = ↑d →\n              ∀ (ε δ : ℝ),\n                0 < ε →\n                  ε ≤ 1 / 4 →\n                    0 < δ →\n                      δ ≤ 1 → δ ≤ 1 / 7 → 1 ≤ d → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ ∧ ⌈(↑d - 1) / 2⌉₊ ≤ mf ε δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SampleComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_upper_of_pac_witness"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_upper_of_pac_witness"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) (L : BatchLearner X Bool) (mf : ℝ → ℝ → ℕ),\n  (∀ (ε δ : ℝ),\n      0 < ε →\n        0 < δ →\n          ∀ (D : MeasureTheory.Measure X),\n            MeasureTheory.IsProbabilityMeasure D →\n              ∀ c ∈ C,\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                  ENNReal.ofReal (1 - δ)) →\n    ∀ (ε δ : ℝ), 0 < ε → 0 < δ → SampleComplexity X C ε δ ≤ mf ε δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SampleComplexity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool) (d : ℕ),\n  VCDim X C = ↑d →\n    ∀ (ε δ : ℝ),\n      0 < ε →\n        ε ≤ 1 / 4 →\n          0 < δ →\n            δ ≤ 1 →\n              δ ≤ 1 / 7 →\n                1 ≤ d →\n                  (∀ h ∈ C, Measurable h) →\n                    (∀ (c : Concept X Bool), Measurable c) →\n                      WellBehavedVC X C → ⌈(↑d - 1) / 2⌉₊ ≤ SampleComplexity X C ε δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SampleComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_lower_bound_member"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_lower_bound_member"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool) (d : ℕ),\n  VCDim X C = ↑d →\n    ∀ (ε δ : ℝ),\n      0 < ε →\n        ε ≤ 1 / 4 →\n          0 < δ →\n            δ ≤ 1 →\n              δ ≤ 1 / 7 →\n                1 ≤ d →\n                  ∀\n                    m ∈\n                      {m |\n                        ∃ L,\n                          ∀ (D : MeasureTheory.Measure X),\n                            MeasureTheory.IsProbabilityMeasure D →\n                              ∀ c ∈ C,\n                                (MeasureTheory.Measure.pi fun x => D)\n                                    {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal ε} ≥\n                                  ENNReal.ofReal (1 - δ)},\n                    ⌈(↑d - 1) / 2⌉₊ ≤ m"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformMeasure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nfl_counting_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uniformMeasure_isProbability"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_bounded_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool),\n  (∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i) → VCDim X C < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool), VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression_with_info"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool), VCDim X C < ⊤ ↔ ∃ k cs, CompressionSchemeWithInfo.size cs = k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_compression_with_info"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool), VCDim X C < ⊤ → ∃ k cs, CompressionSchemeWithInfo.size cs = k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.info_finite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.sampleBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool), Set.Nonempty C → VCDim X C < ⊤ → ∃ _L, True"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Finset.boolVCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "disagreementFamily"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disagreementFamily_boolVCDim_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportError_eq_boolTestExpectation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportError_eq_boolTestExpectation"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (Y : Finset X) (q : FinitePMF ↥Y) (h c : X → Bool),\n  supportError Y q h c = boolTestExpectation q fun y => decide (h ↑y ≠ c ↑y)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "disagreementFamily_boolVCDim_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : DecidableEq X] (C : ConceptClass X Bool) (c : X → Bool) (Y : Finset X) {d : ℕ},\n  VCDim X C ≤ ↑d → (disagreementFamily✝ C c Y).boolVCDim ≤ d"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Finset.boolVCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolFamilyToFinsetFamily"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "disagreementFamily"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool),\n  Set.Nonempty C →\n    ∀ (L : ProperFiniteSupportLearner X C), VCDim X C < ⊤ → ∀ (_K : ℕ), ∃ k cs, CompressionSchemeWithInfo.size cs = k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Finset.boolVCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IncidenceInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.sampleBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "agreeTest"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "agreeTests"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boundedSubsamples"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessLabel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessXCoords"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "encodeWitnessInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "hypothesisEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "pointSupport"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformPMF"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "agreeTests_boolVCDim_le"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_eq_boolTestExpectation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encodeWitnessInfo.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finalizeIncidenceScheme"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support_gives_row_response"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hypothesisEnvelope_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : DecidableEq X] (learn : {m : ℕ} → (Fin m → X × Bool) → X → Bool) (kernel : Finset (X × Bool))\n  (c : X → Bool) (K : ℕ) (W : Finset X) (h : X → Bool),\n  kernel.card ≤ K →\n    (∀ x ∈ W, (x, c x) ∈ kernel) →\n      (∀ p ∈ kernel, p.2 = c p.1) →\n        learn (labeledSampleOfFinset c W) = h →\n          ∀ (x : X),\n            have info := encodeWitnessInfo kernel c K W;\n            have blockXCoords := decodeWitnessXCoords kernel info;\n            have blockLabel := decodeWitnessLabel kernel;\n            learn (labeledSampleOfFinset blockLabel blockXCoords) x = h x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessLabel"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessXCoords"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "encodeWitnessInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessLabel_eq_on_encoded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessXCoords_encode_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "labeledSampleOfFinset_eq_of_eq_on_support"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "labeledSampleOfFinset_eq_of_eq_on_support"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [DecidableEq X] {ℓ₁ ℓ₂ : X → Bool} {Z : Finset X},\n  (∀ x ∈ Z, ℓ₁ x = ℓ₂ x) → labeledSampleOfFinset ℓ₁ Z = labeledSampleOfFinset ℓ₂ Z"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessXCoords_encode_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : DecidableEq X] (kernel : Finset (X × Bool)) (c : X → Bool) {K : ℕ} (W : Finset X),\n  kernel.card ≤ K → (∀ x ∈ W, (x, c x) ∈ kernel) → decodeWitnessXCoords kernel (encodeWitnessInfo kernel c K W) = W"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessXCoords"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "encodeWitnessInfo"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "decodeWitnessLabel_eq_on_encoded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : DecidableEq X] (kernel : Finset (X × Bool)) (c : X → Bool) (W : Finset X),\n  (∀ x ∈ W, (x, c x) ∈ kernel) → (∀ p ∈ kernel, p.2 = c p.1) → ∀ x ∈ W, decodeWitnessLabel kernel x = c x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "decodeWitnessLabel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "roundtrip_blockHyp_eq_rep"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [Nonempty R] [Nonempty C] [DecidableEq R]\n  [DecidableEq C] (M : R → C → Bool) (v ε : ℝ),\n  0 < ε →\n    (∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) →\n      ∃ p, ∀ (c : C), v - ε ≤ boolGamePayoff M p c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuHitCount"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformPMF"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hitRate_from_potential"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_weight_eq_pow_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weight_le_potential"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weight_le_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {C : Type u_1} [inst : Fintype C] (cfg : MWUConfig C) (c : C), cfg.weights c ≤ cfg.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.weights_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_weight_eq_pow_hitCount"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool) (η : ℝ)\n  (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) (T : ℕ)\n  (c : C), (mwuConfig M η hη1 v hrow T).weights c = (1 - η) ^ mwuHitCount✝ M η hη1 v hrow T c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuHitCount"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRun"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuUpdateWeights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.mk.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.weights_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.mk.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {C : Type u_1} [inst : Fintype C] (weights weights_1 : C → ℝ) (e_weights : weights = weights_1)\n  (weights_pos : ∀ (c : C), 0 < weights c),\n  { weights := weights, weights_pos := weights_pos } = { weights := weights_1, weights_pos := ⋯ }"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_weight_eq_pow_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool)\n  (η : ℝ),\n  0 ≤ η →\n    ∀ (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0)\n      (T : ℕ), (mwuConfig M η hη1 v hrow T).potential ≤ ↑(Fintype.card C) * (1 - η * v) ^ T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRun"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuUpdateWeights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuInit_potential"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuUpdateWeights.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "potential_one_step_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "potential_one_step_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [Fintype R] [inst : Fintype C] [inst_1 : Nonempty C] (M : R → C → Bool) (η : ℝ),\n  0 ≤ η →\n    ∀ (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0)\n      (cfg : MWUConfig C), (mwuUpdateWeights M η hη1 cfg ⋯.choose).potential ≤ cfg.potential * (1 - η * v)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuUpdateWeights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "best_response_payoff_weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "best_response_payoff_weights"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [Fintype R] [inst : Fintype C] [inst_1 : Nonempty C] (M : R → C → Bool) (v : ℝ)\n  (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) (cfg : MWUConfig C),\n  v * cfg.potential ≤ ∑ c, cfg.weights c * if M ⋯.choose c = true then 1 else 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.potential_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "potential_one_step_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.potential_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {C : Type u_1} [inst : Fintype C] [Nonempty C] (cfg : MWUConfig C), 0 < cfg.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.weights_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "best_response_payoff_weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.weights_pos"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {C : Type u_1} [inst : Fintype C] (self : MWUConfig C) (c : C), 0 < self.weights c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MWUConfig.potential_pos"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_weight_eq_pow_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "weight_le_potential"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuUpdateWeights.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {C : Type u_1} [inst : Fintype C] {R : Type u_2} (M M_1 : R → C → Bool),\n  M = M_1 →\n    ∀ (η η_1 : ℝ) (e_η : η = η_1) (hη1 : η < 1) (cfg cfg_1 : MWUConfig C),\n      cfg = cfg_1 → ∀ (r r_1 : R), r = r_1 → mwuUpdateWeights M η hη1 cfg r = mwuUpdateWeights M_1 η_1 ⋯ cfg_1 r_1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuUpdateWeights"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuInit_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (C : Type u_1) [inst : Fintype C], (mwuInit C).potential = ↑(Fintype.card C)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.potential"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.weights"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuInit"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [Fintype R] [inst : Fintype C] [Nonempty C] (M : R → C → Bool) (v : ℝ),\n  (∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) → v ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformPMF"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_potential_T_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hitRate_from_potential"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {N H T : ℕ} {η v ε : ℝ},\n  0 < ↑N →\n    0 < η →\n      η < 1 →\n        v ≤ 1 →\n          0 < T → (1 - η) ^ H ≤ ↑N * (1 - η * v) ^ T → η ≤ ε / 4 → Real.log ↑N / (η * ↑T) ≤ ε / 4 → v - ε ≤ ↑H / ↑T"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] (M : R → C → Bool) (p : FinitePMF R) (c : C),\n  0 ≤ boolGamePayoff M p c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_hitCount"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] [inst_3 : DecidableEq R]\n  (M : R → C → Bool) (η : ℝ) (hη1 : η < 1) (v : ℝ)\n  (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) {T : ℕ} (hT : 0 < T) (c : C),\n  boolGamePayoff M (empiricalPMF hT (mwuRows M η hη1 v hrow T)) c = ↑(mwuHitCount✝ M η hη1 v hrow T c) / ↑T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuHitCount"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRows"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuHitCount_eq_sum_indicator"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwu_approx_minimax"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mwuHitCount_eq_sum_indicator"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : Fintype C] [inst_2 : Nonempty C] (M : R → C → Bool) (η : ℝ)\n  (hη1 : η < 1) (v : ℝ) (hrow : ∀ (q : FinitePMF C), ∃ r, v ≤ ∑ c, q.prob c * if M r c = true then 1 else 0) (T : ℕ)\n  (c : C), ↑(mwuHitCount✝ M η hη1 v hrow T c) = ∑ t, if M (mwuRows M η hη1 v hrow T t) c = true then 1 else 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MWUConfig.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuConfig"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuHitCount"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRows"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mwuRun"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} {C : Type u_2} [inst : Fintype R] [inst_1 : DecidableEq R] {T : ℕ} (hT : 0 < T) (rs : Fin T → R)\n  (M : R → C → Bool) (c : C), boolGamePayoff M (empiricalPMF hT rs) c = (∑ t, if M (rs t) c = true then 1 else 0) / ↑T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_empirical_eq_hitCount"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hypothesisEnvelope_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} (L : ProperFiniteSupportLearner X C) (c : X → Bool) (Y : Finset X),\n  ∀ h ∈ hypothesisEnvelope L c Y, h ∈ C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.sampleBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boundedSubsamples"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "hypothesisEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProperFiniteSupportLearner.output_mem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProperFiniteSupportLearner.output_mem"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} (self : ProperFiniteSupportLearner X C) {m : ℕ} (S : Fin m → X × Bool),\n  self.learn S ∈ C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.learn"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hypothesisEnvelope_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support_gives_row_response"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} (L : ProperFiniteSupportLearner X C),\n  ∀ c ∈ C,\n    ∀ (Y : Finset X) [Nonempty ↥Y] (HY : Finset (X → Bool)),\n      HY = hypothesisEnvelope L c Y →\n        ∀ (q : FinitePMF ↥Y), ∃ h, 2 / 3 ≤ ∑ y, q.prob y * if decide (↑h ↑y = c ↑y) = true then 1 else 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.sampleBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boundedSubsamples"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "hypothesisEnvelope"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProperFiniteSupportLearner.good_on_support"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportAgreement_eq_one_sub_supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportAgreement_eq_one_sub_supportError"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (Y : Finset X) (q : FinitePMF ↥Y) (h c : X → Bool),\n  (∑ y, q.prob y * if h ↑y = c ↑y then 1 else 0) = 1 - supportError Y q h c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support_gives_row_response"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ProperFiniteSupportLearner.good_on_support"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} (self : ProperFiniteSupportLearner X C),\n  ∀ c ∈ C,\n    ∀ (Y : Finset X) (q : FinitePMF ↥Y),\n      ∃ Z ⊆ Y, Z.card ≤ self.sampleBound ∧ supportError Y q (self.learn (labeledSampleOfFinset c Z)) c ≤ 1 / 3"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ProperFiniteSupportLearner.sampleBound"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "labeledSampleOfFinset"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "good_on_support_gives_row_response"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d : ℕ) (ε : ℝ),\n  0 < ε →\n    ∃ T,\n      ∃ (hT : 0 < T),\n        ∀ {H : Type u_1} [inst : Fintype H] [inst_1 : DecidableEq H] (A : Finset (H → Bool)),\n          A.boolVCDim ≤ d →\n            ∀ (μ : FinitePMF H),\n              ∃ hs, ∀ a ∈ A, |boolTestExpectation μ a - boolTestExpectation (empiricalPMF hT hs) a| ≤ ε"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Finset.boolVCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolFamilyToFinsetFamily"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "extendBool"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "liftClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_extend_false"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_extend_false"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] [DecidableEq H] [inst_2 : MeasurableSpace H] [MeasurableSingletonClass H]\n  (μ : FinitePMF H) (a : H → Bool),\n  TrueErrorReal (H ⊕ ℕ) (extendBool✝ a) (fun x => false) (PMF.map Sum.inl (FinitePMF.toPMF✝ μ)).toMeasure =\n    boolTestExpectation μ a"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.toPMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "extendBool"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] (μ : FinitePMF H) (f : H → Bool), 0 ≤ boolTestExpectation μ f"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] (μ : FinitePMF H) (f : H → Bool), boolTestExpectation μ f ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] (self : FinitePMF H) (h : H), 0 ≤ self.prob h"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_extend_false"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "FinitePMF.prob_sum_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] (self : FinitePMF H), ∑ h, self.prob h = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "minimax_value_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "supportAgreement_eq_one_sub_supportError"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "trueErrorReal_extend_false"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finalizeIncidenceScheme"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} (T K : ℕ)\n  (compressCore : {m : ℕ} → (Fin m → X × Bool) → Finset (X × Bool) × IncidenceInfo T K)\n  (blockHyp : Finset (X × Bool) → IncidenceInfo T K → Fin T → X → Bool)\n  (rowHyp : {m : ℕ} → (S : Fin m → X × Bool) → (∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) → Fin T → X → Bool),\n  0 < T →\n    (∀ {m : ℕ} (S : Fin m → X × Bool), (compressCore S).1.card ≤ K) →\n      (∀ {m : ℕ} (S : Fin m → X × Bool), ↑(compressCore S).1 ⊆ Set.range S) →\n        (∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m) (t : Fin T),\n            blockHyp (compressCore S).1 (compressCore S).2 t (S i).1 = rowHyp S hreal t (S i).1) →\n          (∀ {m : ℕ} (S : Fin m → X × Bool) (hreal : ∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) (i : Fin m),\n              (∑ t, if rowHyp S hreal t (S i).1 = (S i).2 then 1 else 0) / ↑T > 1 / 2) →\n            ∃ k cs, CompressionSchemeWithInfo.size cs = k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IncidenceInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mkIncidenceSchemeOfMajority"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "encodeWitnessInfo.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : DecidableEq X} [inst_1 : DecidableEq X] (kernel kernel_1 : Finset (X × Bool)),\n  kernel = kernel_1 →\n    ∀ (c c_1 : X → Bool),\n      c = c_1 →\n        ∀ (K : ℕ) (W W_1 : Finset X), W = W_1 → encodeWitnessInfo kernel c K W = encodeWitnessInfo kernel_1 c_1 K W_1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "encodeWitnessInfo"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolTestExpectation_empirical_eq_avg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {H : Type u_1} [inst : Fintype H] [inst_1 : DecidableEq H] {T : ℕ} (hT : 0 < T) (hs : Fin T → H) (f : H → Bool),\n  boolTestExpectation (empiricalPMF hT hs) f = (∑ t, if f (hs t) = true then 1 else 0) / ↑T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "empiricalPMF"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_proper_finite_support_learner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolGamePayoff_eq_boolTestExpectation"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {R : Type u_1} [inst : Fintype R] [DecidableEq R] {C : Type u_2} (M : R → C → Bool) (p : FinitePMF R) (c : C),\n  boolGamePayoff M p c = boolTestExpectation p fun r => M r c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FinitePMF.prob"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolGamePayoff"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolTestExpectation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "agreeTests_boolVCDim_le"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [DecidableEq X] (C : ConceptClass X Bool) (c : X → Bool) (Y : Finset X) (HY : Finset (X → Bool)),\n  (∀ h ∈ HY, h ∈ C) → ∀ {d : ℕ}, VCDim X C ≤ ↑d → (agreeTests c Y HY).boolVCDim ≤ 2 ^ (d + 1) - 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Finset.boolVCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "agreeTest"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "agreeTests"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolFamilyToFinsetFamily"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "moran_yehudayoff_forward_construction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool), (∃ k cs, cs.size = k) → VCDim X C < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.compress"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.info_finite"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.kernelSize"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.size"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.compress_small"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.compress_sub"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_with_info_injective_on_labelings"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_beats_poly_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_vc_compression_with_info"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {S T : Finset X}, T ⊆ S → Shatters X C S → Shatters X C T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_beats_poly_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (s : ℕ), (s + 1) ^ 2 * (4 * (s + 1) ^ 2) ^ s < 2 ^ (2 * (s + 1) * (s + 1))"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "succ_le_two_pow_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "succ_le_two_pow_compression"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (k : ℕ), k + 1 ≤ 2 ^ k"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_beats_poly_compression"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_with_info_injective_on_labelings"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {n : ℕ} {C : ConceptClass X Bool} (cs : CompressionSchemeWithInfo X Bool C) (pts : Fin n → X),\n  Function.Injective pts →\n    ∀ (f g : Fin n → Bool),\n      (∃ c ∈ C, ∀ (i : Fin n), c (pts i) = f i) →\n        (∃ c ∈ C, ∀ (i : Fin n), c (pts i) = g i) →\n          ((cs.compress fun i => (pts i, f i)) = cs.compress fun i => (pts i, g i)) → f = g"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.compress"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.reconstruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.correct"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.correct"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  (∃ c ∈ C, ∀ (i : Fin m), c (S i).1 = (S i).2) →\n    ∀ (i : Fin m), self.reconstruct (self.compress S).1 (self.compress S).2 (S i).1 = (S i).2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.compress"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.reconstruct"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compress_with_info_injective_on_labelings"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.compress_sub"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  ↑(self.compress S).1 ⊆ Set.range S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.compress"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "CompressionSchemeWithInfo.compress_small"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {Y : Type v} {C : ConceptClass X Y} (self : CompressionSchemeWithInfo X Y C) {m : ℕ} (S : Fin m → X × Y),\n  (self.compress S).1.card ≤ self.kernelSize"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.Info"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.compress"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "CompressionSchemeWithInfo.kernelSize"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "compression_with_info_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool)\n  [MeasurableConceptClass X C],\n  PACLearnable X C ↔\n    ∀ ε > 0,\n      ∃ m₀,\n        ∀ (D : MeasureTheory.Measure X),\n          MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    ∀ ε > 0,\n      ∃ m₀,\n        ∀ (D : MeasureTheory.Measure X),\n          MeasureTheory.IsProbabilityMeasure D → ∀ m ≥ m₀, RademacherComplexity X C D m < ε"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytical_log_sqrt_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_inv_sqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_inv_sqrt"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) (D : MeasureTheory.Measure X),\n  VCDim X C = ↑0 →\n    ∀ (m : ℕ),\n      0 < m →\n        ∀ [MeasureTheory.IsProbabilityMeasure (MeasureTheory.Measure.pi fun x => D)],\n          RademacherComplexity X C D m ≤ 1 / √↑m"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_concepts_agree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_concepts_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool),\n  VCDim X C = ↑0 → ∀ (h₁ h₂ : Concept X Bool), h₁ ∈ C → h₂ ∈ C → ∀ (x : X), h₁ x = h₂ x"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_inv_sqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) (D : MeasureTheory.Measure X) (m : ℕ),\n  0 < m →\n    ∀ (d : ℕ),\n      VCDim X C = ↑d →\n        0 < d →\n          d ≤ m →\n            ∀ [MeasureTheory.IsProbabilityMeasure (MeasureTheory.Measure.pi fun x => D)],\n              RademacherComplexity X C D m ≤ √(2 * ↑d * Real.log (Real.exp 1 * ↑m / ↑d) / ↑m)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_massart_lemma"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_restrictions_le_sum_choose_set"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ncard_restrictions_le_sum_choose_set"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) (S : Finset X) (d : ℕ),\n  VCDim X C = ↑d → {f | ∃ c ∈ C, ∀ (x : ↥S), c ↑x = f x}.ncard ≤ ∑ i ∈ Finset.range (d + 1), S.card.choose i"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_massart_lemma"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ},\n  0 < m →\n    ∀ {N : ℕ} (hN : 0 < N) (Z : Fin N → SignVector m → ℝ) (σ_param : ℝ),\n      0 < σ_param →\n        (∀ (j : Fin N) (t : ℝ),\n            0 ≤ t →\n              1 / ↑(Fintype.card (SignVector m)) * ∑ sv, Real.exp (t * Z j sv) ≤ Real.exp (t ^ 2 * σ_param ^ 2 / 2)) →\n          (1 / ↑(Fintype.card (SignVector m)) * ∑ sv, Finset.univ.sup' ⋯ fun j => Z j sv) ≤ σ_param * √(2 * Real.log ↑N)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_mul_sup'_le_sum"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exp_mul_sup'_le_sum"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {ι : Type u_1} [DecidableEq ι] (s : Finset ι) (hs : s.Nonempty) (f : ι → ℝ) (t : ℝ),\n  0 ≤ t → Real.exp (t * s.sup' hs f) ≤ ∑ i ∈ s, Real.exp (t * f i)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_massart_lemma"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) (D : MeasureTheory.Measure X) (m : ℕ),\n  0 < m → ∀ [MeasureTheory.IsProbabilityMeasure (MeasureTheory.Measure.pi fun x => D)], RademacherComplexity X C D m ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "analytical_log_sqrt_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d m : ℕ) (ε : ℝ),\n  0 < ε →\n    ε ≤ 1 → 0 < d → d ≤ m → ⌈32 * (↑d + 1) / ε ^ 4⌉₊ + 1 ≤ m → 2 * ↑d * Real.log (Real.exp 1 * ↑m / ↑d) / ↑m < ε ^ 2"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_rademacher_vanishing"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    (∀ h ∈ C, Measurable h) → (∀ (c : Concept X Bool), Measurable c) → WellBehavedVC X C → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    (∀ h ∈ C, Measurable h) → (∀ (c : Concept X Bool), Measurable c) → WellBehavedVC X C → HasUniformConvergence X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasUniformConvergence"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_bounded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool),\n  VCDim X C < ⊤ → ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε δ : ℝ),\n            0 < ε →\n              0 < δ →\n                δ < 1 →\n                  ∀ (v : ℕ),\n                    0 < v →\n                      (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                        (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                          MeasureTheory.NullMeasurableSet\n                              {p |\n                                ∃ h ∈ C,\n                                  EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                      EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                                    ε / 2}\n                              ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs |\n                                  ∃ h ∈ C,\n                                    |TrueErrorReal X h c D -\n                                          EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                                      ε} ≤\n                              ENNReal.ofReal δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                MeasureTheory.NullMeasurableSet\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2}\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ h ∈ C,\n                          |TrueErrorReal X h c D -\n                                EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            ε} ≤\n                    ENNReal.ofReal (4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) - TrueErrorReal X h c D ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        TrueErrorReal X h c D - EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              MeasureTheory.NullMeasurableSet\n                  {p |\n                    ∃ h ∈ C,\n                      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                        ε / 2}\n                  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2} ≤\n                  ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              ε ≤ 2 →\n                Set.Nonempty C →\n                  MeasureTheory.NullMeasurableSet\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}\n                      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                    have μ := MeasureTheory.Measure.pi fun x => D;\n                    (μ.prod μ)\n                        {p |\n                          ∃ h ∈ C,\n                            EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                              ε / 2} ≤\n                      ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zeroOneLoss.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zeroOneLoss.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (Y : Type v) {inst : DecidableEq Y} [inst_1 : DecidableEq Y] (a a_1 : Y),\n  a = a_1 → ∀ (a_2 a_3 : Y), a_2 = a_3 → zeroOneLoss Y a a_2 = zeroOneLoss Y a_1 a_3"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [MeasurableSpace X] [Infinite X] (C : ConceptClass X Bool) (c : Concept X Bool) (n : ℕ) (z : Fin n → X),\n  {p | ∃ h ∈ C, ∀ (i : Fin n), p i = decide (h (z i) ≠ c (z i))}.ncard ≤ GrowthFunction X C n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ},\n  0 < m →\n    ∀ (a : Fin m → ℝ) (c : ℝ),\n      0 ≤ c →\n        (∀ (i : Fin m), |a i| ≤ c) →\n          ∀ (t : ℝ),\n            0 ≤ t →\n              1 / ↑(Fintype.card (SignVector m)) * ∑ σ, Real.exp (t * (1 / ↑m * ∑ i, a i * boolToSign (σ i))) ≤\n                Real.exp (t ^ 2 * c ^ 2 / (2 * ↑m))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (x : ℝ), Real.cosh x ≤ Real.exp (x ^ 2 / 2)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ω : Type u_1} {G : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype G] [Nonempty G]\n  {ν : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure ν] (T : G → Ω → Ω) (S : Set Ω),\n  (∀ (g : G), MeasureTheory.MeasurePreserving (T g) ν ν) →\n    MeasureTheory.NullMeasurableSet S ν →\n      ∀ (B : ENNReal), (∀ (z : Ω), ∑ g, (T g ⁻¹' S).indicator 1 z ≤ B * ↑(Fintype.card G)) → ν S ≤ B"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [MeasurableSpace X] (C : ConceptClass X Bool) (v : ℕ),\n  0 < v →\n    ∀ (m : ℕ),\n      0 < m →\n        ∀ (ε δ : ℝ),\n          0 < ε →\n            0 < δ →\n              δ < 1 →\n                (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                  (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                    4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)) ≤ δ ∧ 2 * Real.log 2 ≤ ↑m * ε ^ 2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factorial_div"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_support_vc_approx"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 * ↑m / ↑d) ^ d"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factorial_div"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : ℕ} {t : ℝ}, 0 < t → t ^ d * Real.exp (-t) ≤ ↑(d + 1).factorial / t"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) (n : ℕ), GrowthFunction X C n ≤ 2 ^ n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  Set.Nonempty C → HasUniformConvergence X C → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasUniformConvergence"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsConsistentWith"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "BatchLearner.output_in_H"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sample_complexity_lower_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "BatchLearner.output_in_H"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {Y : Type v} (self : BatchLearner X Y) {m : ℕ} (S : Fin m → X × Y), self.learn S ∈ self.hypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.hypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool) (T : Finset X),\n  Shatters X C T →\n    ∀ (m : ℕ),\n      0 < m → 4 * m ^ 2 + 1 ≤ T.card → ∃ D, MeasureTheory.IsProbabilityMeasure D ∧ 1 / 2 ≤ RademacherComplexity X C D m"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "RademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformMeasure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_injective_in_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uniformMeasure_isProbability"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool) {m : ℕ}, 0 < m → ∀ (xs : Fin m → X), EmpiricalRademacherComplexity X C xs ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) {m : ℕ}, m ≠ 0 → ∀ (xs : Fin m → X), 0 ≤ EmpiricalRademacherComplexity X C xs"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_inv_sqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ} (i : Fin m) (f : SignVector m → ℝ),\n  (∀ (σ σ' : SignVector m), (∀ (k : Fin m), k ≠ i → σ k = σ' k) → f σ = f σ') → ∑ σ, boolToSign (σ i) * f σ = 0"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "flipAt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_involutive"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_other"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_zero_rademacher_le_inv_sqrt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_other"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ} (i : Fin m) (σ : SignVector m) (k : Fin m), k ≠ i → flipAt✝ i σ k = σ k"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "flipAt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_involutive"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ} (i : Fin m), Function.Involutive (flipAt✝ i)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "flipAt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "flipAt_boolToSign"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ} (i : Fin m) (σ : SignVector m), boolToSign (flipAt✝ i σ i) = -boolToSign (σ i)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "flipAt"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_boolToSign_cancel"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_injective_in_shattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [DecidableEq X] (C : ConceptClass X Bool) {m : ℕ},\n  0 < m →\n    ∀ (T : Finset X),\n      Shatters X C T →\n        ∀ (xs : Fin m → X), Function.Injective xs → (∀ (i : Fin m), xs i ∈ T) → EmpiricalRademacherComplexity X C xs = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_all_labelings"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_subset"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) (T S : Finset X), S ⊆ T → Shatters X C T → Shatters X C S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_injective_in_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_all_labelings"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) {m : ℕ},\n  0 < m →\n    ∀ (xs : Fin m → X),\n      (∀ (σ : SignVector m), ∃ h ∈ C, ∀ (i : Fin m), h (xs i) = σ i) → EmpiricalRademacherComplexity X C xs = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalRademacherComplexity"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "corr_eq_one_of_agree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_injective_in_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {m : ℕ},\n  0 < m → ∀ (h : Concept X Bool) (σ : SignVector m) (xs : Fin m → X), |rademacherCorrelation h σ xs| ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_mul_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_all_labelings"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_nonneg"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empiricalRademacherComplexity_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_mul_abs_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (b₁ b₂ : Bool), |boolToSign b₁ * boolToSign b₂| ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacherCorrelation_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_le_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (b : Bool), |boolToSign b| ≤ 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_eq_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_mul_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_eq_one"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (b : Bool), |boolToSign b| = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boolToSign_abs_le_one"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_bounds_rademacher_quantitative"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "corr_eq_one_of_agree"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {m : ℕ},\n  0 < m →\n    ∀ (h : Concept X Bool) (σ : SignVector m) (xs : Fin m → X),\n      (∀ (i : Fin m), h (xs i) = σ i) → rademacherCorrelation h σ xs = 1"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "rademacherCorrelation"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "empRad_eq_one_of_all_labelings"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  PACLearnable X C → VCDim X C < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_infinite_not_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vc_characterization"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_infinite_not_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [MeasurableSingletonClass X] (C : ConceptClass X Bool),\n  VCDim X C = ⊤ → ¬PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformMeasure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nfl_counting_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uniformMeasure_isProbability"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_imp_vcdim_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uniformMeasure_isProbability"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] [inst_1 : Fintype X] [MeasurableSingletonClass X] (hne : Nonempty X),\n  0 < Fintype.card X → MeasureTheory.IsProbabilityMeasure (uniformMeasure X hne)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "uniformMeasure"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_lower_bound_member"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_lower_bound_on_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_infinite_not_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nfl_counting_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {T : Finset X},\n  Shatters X C T →\n    ∀ {m : ℕ},\n      2 * m < T.card →\n        ∀ (L : BatchLearner X Bool),\n          ∃ f₀,\n            ∃ c₀ ∈ C,\n              (∀ (t : ↥T), c₀ ↑t = f₀ t) ∧\n                2 * {xs | {t | c₀ ↑t ≠ L.learn (fun i => (↑(xs i), c₀ ↑(xs i))) ↑t}.card * 4 ≤ T.card}.card ≤\n                  Fintype.card (Fin m → ↥T)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "per_sample_labeling_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_lower_bound_member"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_infinite_not_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "per_sample_labeling_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {α : Type u_1} [inst : Fintype α] [inst_1 : DecidableEq α] (m : ℕ),\n  2 * m < Fintype.card α →\n    ∀ (xs : Fin m → α) (output : (α → Bool) → α → Bool),\n      (∀ (f f' : α → Bool), (∀ (i : Fin m), f (xs i) = f' (xs i)) → output f = output f') →\n        2 * {f | {t | f t ≠ output f t}.card * 4 ≤ Fintype.card α}.card ≤ Fintype.card (α → Bool)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nfl_counting_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C],\n  ∀ c ∈ C, Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.mem_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  ∀ h ∈ C, Measurable h"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.all_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.all_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} (C : ConceptClass X Bool) [self : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C], WellBehavedVC X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.wellBehaved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "fundamental_rademacher"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_sample_complexity_sandwich"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.wellBehaved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  WellBehavedVC X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "1595fb15a896"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6026"
+  }
+]

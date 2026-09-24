@@ -1,0 +1,742 @@
+{
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.R-2026-6002, title={HasVCDimLE.vcGrowth_le_exp}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.R-2026-6002}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6002}, year={2026} }",
+    "text": "Dhruv Gupta. HasVCDimLE.vcGrowth_le_exp. Mathesis. MTH.R-2026-6002. https://noumenal-ai.github.io/mathesis-bank/d/MTH.R-2026-6002. 2026-09-24."
+  },
+  "claim": "MTH.C-2026-6002",
+  "created": "2026-09-24T00:00:00Z",
+  "dag": {
+    "dictionary_leaves": [
+      "HasVCDimLE",
+      "Shatters",
+      "Shatters.exists_ge",
+      "Shatters.mono",
+      "Shatters.preimage_compl",
+      "Shatters.subset",
+      "shatters_bot",
+      "splitPoints",
+      "vcGrowth",
+      "vcGrowth_le_iff"
+    ],
+    "edge_count": 39,
+    "edges": [
+      {
+        "used_by": "HasVCDimLE.ncard_image_inter_le",
+        "uses": "HasVCDimLE.ncard_le_of_shatters",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.ncard_image_inter_le",
+        "uses": "finite_setOf_subset_and",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.ncard_image_inter_le",
+        "uses": "ncard_image_inter_le_ncard_setOf_shatters",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.ncard_image_inter_le",
+        "uses": "ncard_setOf_ncard_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.ncard_le_of_shatters",
+        "uses": "HasVCDimLE.finite_of_shatters",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.vcGrowth_le",
+        "uses": "HasVCDimLE.ncard_image_inter_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.vcGrowth_le_exp",
+        "uses": "HasVCDimLE.vcGrowth_le_sum_range",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.vcGrowth_le_exp",
+        "uses": "sum_choose_le_exp_pow",
+        "via": "direct"
+      },
+      {
+        "used_by": "HasVCDimLE.vcGrowth_le_sum_range",
+        "uses": "HasVCDimLE.vcGrowth_le",
+        "via": "direct"
+      },
+      {
+        "used_by": "Shatters.insert",
+        "uses": "Shatters.exists_inter_eq",
+        "via": "direct"
+      },
+      {
+        "used_by": "Shatters.insert",
+        "uses": "Shatters.of_forall_subset",
+        "via": "direct"
+      },
+      {
+        "used_by": "encard_image_inter_le_encard_shatters",
+        "uses": "infinite_setOf_shatters",
+        "via": "direct"
+      },
+      {
+        "used_by": "encard_image_inter_le_encard_shatters",
+        "uses": "pajor_encard_aux",
+        "via": "direct"
+      },
+      {
+        "used_by": "exists_splitter",
+        "uses": "exists_splitter_of_not_subset",
+        "via": "direct"
+      },
+      {
+        "used_by": "finite_image_inter_of_finite_splitPoints",
+        "uses": "injOn_inter_splitPoints",
+        "via": "direct"
+      },
+      {
+        "used_by": "infinite_setOf_shatters",
+        "uses": "finite_image_inter_of_finite_splitPoints",
+        "via": "direct"
+      },
+      {
+        "used_by": "infinite_setOf_shatters",
+        "uses": "singleton_image_splitPoints_subset",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_image_inter_le_ncard_setOf_shatters",
+        "uses": "encard_image_inter_le_encard_shatters",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_image_inter_le_ncard_setOf_shatters",
+        "uses": "finite_setOf_subset_and",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_setOf_ncard_le",
+        "uses": "disjoint_setOf_ncard_le_setOf_ncard_eq",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_setOf_ncard_le",
+        "uses": "finite_setOf_subset_and",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_setOf_ncard_le",
+        "uses": "setOf_subset_and_ncard_le_succ",
+        "via": "direct"
+      },
+      {
+        "used_by": "ncard_setOf_ncard_le",
+        "uses": "setOf_subset_and_ncard_le_zero",
+        "via": "direct"
+      },
+      {
+        "used_by": "notMem_of_shatters_sep_left",
+        "uses": "notMem_of_forall_notMem",
+        "via": "direct"
+      },
+      {
+        "used_by": "notMem_of_shatters_sep_right",
+        "uses": "notMem_of_forall_notMem",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "Shatters.insert",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "disjoint_image_insert",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "exists_splitter",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "insert_injOn_notMem",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "notMem_of_shatters_sep_left",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "notMem_of_shatters_sep_right",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "trace_sep_disjoint",
+        "via": "direct"
+      },
+      {
+        "used_by": "pajor_encard_aux",
+        "uses": "trace_sep_union",
+        "via": "direct"
+      },
+      {
+        "used_by": "shatters_singleton",
+        "uses": "Shatters.exists_inter_eq",
+        "via": "direct"
+      },
+      {
+        "used_by": "shatters_singleton",
+        "uses": "Shatters.of_forall_subset",
+        "via": "direct"
+      },
+      {
+        "used_by": "singleton_image_splitPoints_subset",
+        "uses": "shatters_singleton",
+        "via": "direct"
+      },
+      {
+        "used_by": "sum_choose_le_exp_pow",
+        "uses": "one_add_div_pow_le_exp_pow",
+        "via": "direct"
+      },
+      {
+        "used_by": "sum_choose_le_exp_pow",
+        "uses": "sum_choose_le_mul_sum_choose_mul_pow",
+        "via": "direct"
+      },
+      {
+        "used_by": "sum_choose_le_exp_pow",
+        "uses": "sum_choose_mul_pow_le_add_one_pow",
+        "via": "direct"
+      }
+    ],
+    "node_count": 35,
+    "nodes": [
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.vcGrowth_le_exp",
+        "depth": 0,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "vcGrowth"
+        ],
+        "is_root": true,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → d ≤ n → ↑(vcGrowth n 𝒜) ≤ (Real.exp 1 / ↑d * ↑n) ^ d",
+        "topo": 0,
+        "type_sha256": "a5fe126e5cef7d4b177045266b5d2d950687516c61088d45ac2d9984d1771d44"
+      },
+      {
+        "citable": false,
+        "decl_name": "sum_choose_le_exp_pow",
+        "depth": 1,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 / ↑d * ↑m) ^ d",
+        "topo": 1,
+        "type_sha256": "556ba84807bf0da6c1b0fb1693d6e9471052f75639af790e19f5d4b6c2801d7f"
+      },
+      {
+        "citable": false,
+        "decl_name": "sum_choose_mul_pow_le_add_one_pow",
+        "depth": 2,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {m d : ℕ} {t : ℝ}, 0 ≤ t → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * t ^ i ≤ (1 + t) ^ m",
+        "topo": 2,
+        "type_sha256": "8f6784dfeb2425d47375330ccc3de29847a6b93453cf99a5db52c9c4bfb45bfa"
+      },
+      {
+        "citable": false,
+        "decl_name": "sum_choose_le_mul_sum_choose_mul_pow",
+        "depth": 2,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {m d : ℕ},\n  0 < ↑d →\n    0 < ↑m →\n      ↑d ≤ ↑m →\n        ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤\n          (↑m / ↑d) ^ d * ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) * (↑d / ↑m) ^ i",
+        "topo": 3,
+        "type_sha256": "063ac17fe94ae8fa4aae3e187a5a401c63ab2b3571422936b7d69b3b3bd313c5"
+      },
+      {
+        "citable": false,
+        "decl_name": "one_add_div_pow_le_exp_pow",
+        "depth": 2,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {m d : ℕ}, 0 < ↑m → (1 + ↑d / ↑m) ^ m ≤ Real.exp 1 ^ d",
+        "topo": 4,
+        "type_sha256": "8a064e826e4594ca86eee1077847e1b33866258ee00832db15cad3c3ae33ed00"
+      },
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.vcGrowth_le_sum_range",
+        "depth": 1,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "vcGrowth"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → vcGrowth n 𝒜 ≤ ∑ k ∈ Finset.range (d + 1), n.choose k",
+        "topo": 5,
+        "type_sha256": "bd0ab963ec9fa29566f97f15331552e50f65aad79091d26560b5980495296d18"
+      },
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.vcGrowth_le",
+        "depth": 2,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "vcGrowth",
+          "vcGrowth_le_iff"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → vcGrowth n 𝒜 ≤ ∑ k ∈ Finset.Iic d, n.choose k",
+        "topo": 6,
+        "type_sha256": "9288533c64ccf1616e0c6c70e8d6771883add756410d1031f27f69ed44bde298"
+      },
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.ncard_image_inter_le",
+        "depth": 3,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)} {A : Set α},\n  HasVCDimLE d 𝒜 → A.Finite → A.ncard ≤ n → ((fun x => A ∩ x) '' 𝒜).ncard ≤ ∑ k ∈ Finset.Iic d, n.choose k",
+        "topo": 7,
+        "type_sha256": "65c52353910d3fdf909cabc2402c1c68af46a8f2aa05b0efb4679b2b8df1897e"
+      },
+      {
+        "citable": false,
+        "decl_name": "ncard_setOf_ncard_le",
+        "depth": 4,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {A : Set α},\n  A.Finite → ∀ (d : ℕ), {B | B ⊆ A ∧ B.ncard ≤ d}.ncard = ∑ k ∈ Finset.Iic d, A.ncard.choose k",
+        "topo": 8,
+        "type_sha256": "a926554442694cd2ae815562fdc5d16811649986439df49adda6e9eded0a597b"
+      },
+      {
+        "citable": false,
+        "decl_name": "setOf_subset_and_ncard_le_zero",
+        "depth": 5,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {A : Set α}, A.Finite → {B | B ⊆ A ∧ B.ncard ≤ 0} = {∅}",
+        "topo": 9,
+        "type_sha256": "363368c63ae4721d209f15f2b89352c2859843e7f5aacbeb6e9cf9172c053684"
+      },
+      {
+        "citable": false,
+        "decl_name": "setOf_subset_and_ncard_le_succ",
+        "depth": 5,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} (d : ℕ) (A : Set α),\n  {B | B ⊆ A ∧ B.ncard ≤ d + 1} = {B | B ⊆ A ∧ B.ncard ≤ d} ∪ {B | B ⊆ A ∧ B.ncard = d + 1}",
+        "topo": 10,
+        "type_sha256": "53a9364771bc84c8951b64d6e3b362f86ad1be5c17c2398c2a1d178625a75269"
+      },
+      {
+        "citable": false,
+        "decl_name": "disjoint_setOf_ncard_le_setOf_ncard_eq",
+        "depth": 5,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} (d : ℕ) (A : Set α), Disjoint {B | B ⊆ A ∧ B.ncard ≤ d} {B | B ⊆ A ∧ B.ncard = d + 1}",
+        "topo": 11,
+        "type_sha256": "5fe2cd64ae7a4f16bbab6afdce02d23c20228ad8e2724bd14d543fe039eef73b"
+      },
+      {
+        "citable": false,
+        "decl_name": "ncard_image_inter_le_ncard_setOf_shatters",
+        "depth": 4,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  A.Finite → ((fun x => A ∩ x) '' 𝒜).ncard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.ncard",
+        "topo": 12,
+        "type_sha256": "c0a8fa32c7c91ad35c63afc08b0a73e9c09109c3f080608bed03f987079d01be"
+      },
+      {
+        "citable": true,
+        "decl_name": "encard_image_inter_le_encard_shatters",
+        "depth": 5,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard",
+        "topo": 13,
+        "type_sha256": "3cdd55e82875f6a90abe9ace7c3141acc05e28c021e23cf60ff49d29bc235859"
+      },
+      {
+        "citable": false,
+        "decl_name": "pajor_encard_aux",
+        "depth": 6,
+        "dictionary_leaves": [
+          "Shatters",
+          "Shatters.mono",
+          "shatters_bot"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {A : Set α} (N : ℕ) (𝒜 : Set (Set α)),\n  ((fun x => A ∩ x) '' 𝒜).Finite →\n    ((fun x => A ∩ x) '' 𝒜).ncard ≤ N → ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard",
+        "topo": 14,
+        "type_sha256": "d06096c13ea0bb1be8c522633bee77338e1039d7d6b23e5dfbb6567978093c4e"
+      },
+      {
+        "citable": false,
+        "decl_name": "trace_sep_union",
+        "depth": 7,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α} {x : α},\n  (fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∉ C} ∪ (fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∈ C} = (fun x => A ∩ x) '' 𝒜",
+        "topo": 15,
+        "type_sha256": "75117f3fb72607fc5d187967cdd57cce008ef5acdf01bda15cd5514e786dd8fb"
+      },
+      {
+        "citable": false,
+        "decl_name": "trace_sep_disjoint",
+        "depth": 7,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α} {x : α},\n  x ∈ A → Disjoint ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∉ C}) ((fun x => A ∩ x) '' {C | C ∈ 𝒜 ∧ x ∈ C})",
+        "topo": 16,
+        "type_sha256": "a35f853da08102fd045e134530fe94d7346d2bbab5b2d16ff7b17a8090982ce7"
+      },
+      {
+        "citable": false,
+        "decl_name": "notMem_of_shatters_sep_right",
+        "depth": 7,
+        "dictionary_leaves": [
+          "Shatters",
+          "Shatters.preimage_compl"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B → x ∉ B",
+        "topo": 17,
+        "type_sha256": "3789081f0f7c1c35c39e9188b4ed5bf4f0cefdfc4ee6c6c833d0e3b808d74447"
+      },
+      {
+        "citable": false,
+        "decl_name": "notMem_of_shatters_sep_left",
+        "depth": 7,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B → x ∉ B",
+        "topo": 18,
+        "type_sha256": "88194a6ba106f21354a533f4e9c9407c72c81e8cbff5c75872ce341f759bd2ca"
+      },
+      {
+        "citable": false,
+        "decl_name": "notMem_of_forall_notMem",
+        "depth": 8,
+        "dictionary_leaves": [
+          "Shatters",
+          "Shatters.exists_ge"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α}, (∀ C ∈ 𝒜, x ∉ C) → Shatters 𝒜 B → x ∉ B",
+        "topo": 19,
+        "type_sha256": "0a89bd943b1677673d2db3904eaf34824a227ca23d5ad89c6f74b04b178874e7"
+      },
+      {
+        "citable": false,
+        "decl_name": "insert_injOn_notMem",
+        "depth": 7,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} (x : α), Set.InjOn (insert x) {B | x ∉ B}",
+        "topo": 20,
+        "type_sha256": "b2b630597e87b3aa8c5a6a08c7cc3f1b731cf5c07269bd280771327d1d539fbb"
+      },
+      {
+        "citable": false,
+        "decl_name": "exists_splitter",
+        "depth": 7,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α},\n  ((fun x => A ∩ x) '' 𝒜).Nontrivial → ∃ x ∈ A, (∃ C ∈ 𝒜, x ∈ C) ∧ ∃ C ∈ 𝒜, x ∉ C",
+        "topo": 21,
+        "type_sha256": "bf128b9ae6e42421468be1de4c47974493ab34a4df400255fa46cd873680099a"
+      },
+      {
+        "citable": false,
+        "decl_name": "exists_splitter_of_not_subset",
+        "depth": 8,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A C C' : Set α},\n  C ∈ 𝒜 → C' ∈ 𝒜 → ¬A ∩ C ⊆ A ∩ C' → ∃ x ∈ A, (∃ D ∈ 𝒜, x ∈ D) ∧ ∃ D ∈ 𝒜, x ∉ D",
+        "topo": 22,
+        "type_sha256": "db76368f8fa8e4773199534767058383ba18d4192d44d14118accf802ebf00f6"
+      },
+      {
+        "citable": false,
+        "decl_name": "disjoint_image_insert",
+        "depth": 7,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {x : α} {𝒮 𝒯 : Set (Set α)}, (∀ B ∈ 𝒮, x ∉ B) → Disjoint 𝒮 (insert x '' 𝒯)",
+        "topo": 23,
+        "type_sha256": "4d3f54756b3b15242c1216f9b37781d7f52dede3f0062e32bae5c671d1751102"
+      },
+      {
+        "citable": true,
+        "decl_name": "Shatters.insert",
+        "depth": 7,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {B : Set α} {x : α},\n  Shatters {C | C ∈ 𝒜 ∧ x ∉ C} B → Shatters {C | C ∈ 𝒜 ∧ x ∈ C} B → Shatters 𝒜 (insert x B)",
+        "topo": 24,
+        "type_sha256": "401f0506870bd69e6d357c3cd0d657b783e64d214834032417427ce4b41d4d7f"
+      },
+      {
+        "citable": true,
+        "decl_name": "infinite_setOf_shatters",
+        "depth": 6,
+        "dictionary_leaves": [
+          "Shatters",
+          "splitPoints"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).Infinite → {B | B ⊆ A ∧ Shatters 𝒜 B}.Infinite",
+        "topo": 25,
+        "type_sha256": "a8f0a1f0677ffa65048f23a336815f7841f9792c50e87817b7a3a61a25ba07e0"
+      },
+      {
+        "citable": false,
+        "decl_name": "singleton_image_splitPoints_subset",
+        "depth": 7,
+        "dictionary_leaves": [
+          "Shatters",
+          "splitPoints"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (fun x => {x}) '' splitPoints✝ 𝒜 A ⊆ {B | B ⊆ A ∧ Shatters 𝒜 B}",
+        "topo": 26,
+        "type_sha256": "34be113f8b8d7fb954dfdfdb273bf6eb177e8acd07aa961c13701b124df00c28"
+      },
+      {
+        "citable": true,
+        "decl_name": "shatters_singleton",
+        "depth": 8,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {x : α}, Shatters 𝒜 {x} ↔ (∃ C ∈ 𝒜, x ∈ C) ∧ ∃ C ∈ 𝒜, x ∉ C",
+        "topo": 27,
+        "type_sha256": "49f83bc12d8704c3518f41a47136a3bd9b62f67ffb83b49aee2bd7d54406cc87"
+      },
+      {
+        "citable": true,
+        "decl_name": "Shatters.of_forall_subset",
+        "depth": 9,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (∀ ⦃B : Set α⦄, B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B) → Shatters 𝒜 A",
+        "topo": 28,
+        "type_sha256": "8c5b8cc4ee2ba20223898f9552071b6e167fe58e276b007f72724df6fa6ef6ca"
+      },
+      {
+        "citable": true,
+        "decl_name": "Shatters.exists_inter_eq",
+        "depth": 9,
+        "dictionary_leaves": [
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A B : Set α}, Shatters 𝒜 A → B ⊆ A → ∃ C ∈ 𝒜, A ∩ C = B",
+        "topo": 29,
+        "type_sha256": "1bebaf911524687843be8f681ce03cb0a85d61b6fe13aa65ee349d470b477b0c"
+      },
+      {
+        "citable": false,
+        "decl_name": "finite_image_inter_of_finite_splitPoints",
+        "depth": 7,
+        "dictionary_leaves": [
+          "splitPoints"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, (splitPoints✝ 𝒜 A).Finite → ((fun x => A ∩ x) '' 𝒜).Finite",
+        "topo": 30,
+        "type_sha256": "655c42d84356a56134664c07865e77670d49e07485b4fc81af59b7b97ceef7a9"
+      },
+      {
+        "citable": false,
+        "decl_name": "injOn_inter_splitPoints",
+        "depth": 8,
+        "dictionary_leaves": [
+          "splitPoints"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, Set.InjOn (fun x => x ∩ splitPoints✝ 𝒜 A) ((fun x => A ∩ x) '' 𝒜)",
+        "topo": 31,
+        "type_sha256": "7c48b7e83714d0b40558d0de2a5c3d847b0aafaa31501fa1a2a55063fb1fce86"
+      },
+      {
+        "citable": false,
+        "decl_name": "finite_setOf_subset_and",
+        "depth": 5,
+        "dictionary_leaves": [],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {A : Set α}, A.Finite → ∀ (p : Set α → Prop), {B | B ⊆ A ∧ p B}.Finite",
+        "topo": 32,
+        "type_sha256": "cde031be3f7036ceaed3ee561d327831d01066d72162aedc0a7a74cae413b3b3"
+      },
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.ncard_le_of_shatters",
+        "depth": 4,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "Shatters"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {d : ℕ} {𝒜 : Set (Set α)} {B : Set α}, HasVCDimLE d 𝒜 → Shatters 𝒜 B → B.ncard ≤ d",
+        "topo": 33,
+        "type_sha256": "06c9ecd896ccbf9c8640572e99b14dc1455ef004454be69eaf47ce8c2d08601b"
+      },
+      {
+        "citable": true,
+        "decl_name": "HasVCDimLE.finite_of_shatters",
+        "depth": 5,
+        "dictionary_leaves": [
+          "HasVCDimLE",
+          "Shatters",
+          "Shatters.subset"
+        ],
+        "is_root": false,
+        "kind": "theorem",
+        "pretty": "∀ {α : Type u_1} {d : ℕ} {𝒜 : Set (Set α)} {B : Set α}, HasVCDimLE d 𝒜 → Shatters 𝒜 B → B.Finite",
+        "topo": 34,
+        "type_sha256": "189e907ae0277f6fbb2b869ad168325c36eda1e4ee6dd2d5c7e0593b420438ab"
+      }
+    ]
+  },
+  "decl_name": "HasVCDimLE.vcGrowth_le_exp",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.R-2026-6002",
+  "frozen_export": {
+    "bytes": 67911353,
+    "constants": 16516,
+    "path": "mathesis-exports/600ed63e389add0b27b0d261a868acb0e9e46dd20eb42c6c08bf60720e3b3e05.export",
+    "sha256": "600ed63e389add0b27b0d261a868acb0e9e46dd20eb42c6c08bf60720e3b3e05"
+  },
+  "is_open": false,
+  "kind": "argument",
+  "module": "FLT_Proofs.VCDimGeneralized.VCDim",
+  "post_number": 31,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "HasVCDimLE.vcGrowth_le_exp",
+      "sum_choose_le_exp_pow",
+      "sum_choose_mul_pow_le_add_one_pow",
+      "sum_choose_le_mul_sum_choose_mul_pow",
+      "one_add_div_pow_le_exp_pow",
+      "HasVCDimLE.vcGrowth_le_sum_range",
+      "HasVCDimLE.vcGrowth_le",
+      "HasVCDimLE.ncard_image_inter_le",
+      "ncard_setOf_ncard_le",
+      "setOf_subset_and_ncard_le_zero",
+      "setOf_subset_and_ncard_le_succ",
+      "disjoint_setOf_ncard_le_setOf_ncard_eq",
+      "ncard_image_inter_le_ncard_setOf_shatters",
+      "encard_image_inter_le_encard_shatters",
+      "pajor_encard_aux",
+      "trace_sep_union",
+      "trace_sep_disjoint",
+      "notMem_of_shatters_sep_right",
+      "notMem_of_shatters_sep_left",
+      "notMem_of_forall_notMem",
+      "insert_injOn_notMem",
+      "exists_splitter",
+      "exists_splitter_of_not_subset",
+      "disjoint_image_insert",
+      "Shatters.insert",
+      "infinite_setOf_shatters",
+      "singleton_image_splitPoints_subset",
+      "shatters_singleton",
+      "Shatters.of_forall_subset",
+      "Shatters.exists_inter_eq",
+      "finite_image_inter_of_finite_splitPoints",
+      "injOn_inter_splitPoints",
+      "finite_setOf_subset_and",
+      "HasVCDimLE.ncard_le_of_shatters",
+      "HasVCDimLE.finite_of_shatters"
+    ],
+    "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → d ≤ n → ↑(vcGrowth n 𝒜) ≤ (Real.exp 1 / ↑d * ↑n) ^ d",
+    "type_sha256": "a5fe126e5cef7d4b177045266b5d2d950687516c61088d45ac2d9984d1771d44"
+  },
+  "verification": {
+    "gate_version": "mathesis-adjudicate@5a48a4dbbcb5",
+    "replay": "accepted",
+    "statement_identity": "not-applicable",
+    "substrate": "Lean 4 kernel v4.31.0",
+    "triviality": null
+  },
+  "witness": null
+}

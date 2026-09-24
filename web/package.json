@@ -1,0 +1,28 @@
+{
+  "name": "mathesis-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Mathesis client: the record pages\u2019 stylesheet and behaviour",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "labels:export": "node scripts/export-labels.mjs",
+    "fields:export": "node scripts/export-fields.mjs",
+    "lint:labels": "vitest run src/labels.test.ts",
+    "lint:no-arbitrary": "node scripts/no-arbitrary-values.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/node": "^22.20.4",
+    "jsdom": "^29.1.1",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
+  }
+}

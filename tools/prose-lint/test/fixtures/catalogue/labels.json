@@ -1,0 +1,17 @@
+{
+  "labels": {
+    "posts": "Posts",
+    "claim": "Claim",
+    "note": "Note",
+    "updated": "Updated",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "reload": "Reload"
+  },
+  "values": [
+    "received",
+    "Copied",
+    "—"
+  ]
+}

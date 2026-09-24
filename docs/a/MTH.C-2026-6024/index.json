@@ -1,0 +1,46 @@
+{
+  "arguments": [
+    "MTH.R-2026-6024"
+  ],
+  "arguments_count": 1,
+  "attribution": {
+    "citation_name": "Dhruv Gupta",
+    "profile_path": "/p/4571f84a-7314-5307-b61c-95010a1333a9"
+  },
+  "axiom_manifest": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "citation": {
+    "bibtex": "@misc{MTH.C-2026-6024, title={InformationTheory.pinsker_proof}, author={Dhruv Gupta}, howpublished={Mathesis}, note={MTH.C-2026-6024}, url={https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6024}, year={2026} }",
+    "text": "Dhruv Gupta. InformationTheory.pinsker_proof. Mathesis. MTH.C-2026-6024. https://noumenal-ai.github.io/mathesis-bank/d/MTH.C-2026-6024. 2026-09-24."
+  },
+  "created": "2026-09-24T00:00:00Z",
+  "decl_name": "InformationTheory.pinsker_proof",
+  "dictionary": {
+    "blueprint_url": "https://zetetic-dhruv.github.io/formal-learning-theory-kernel/",
+    "curation": "initial",
+    "export_sha256": "",
+    "flt_rev": "5802df4719c971f788d07c500cb3cfef4f7482e9",
+    "label": "design-lab@5802df4",
+    "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "toolchain": "leanprover/lean4:v4.31.0"
+  },
+  "doi": "MTH.C-2026-6024",
+  "is_open": false,
+  "kind": "claim",
+  "module": "ZPM.InformationTheory.Pinsker.General",
+  "origin": "curated",
+  "post_number": null,
+  "schema": "mathesis/public-unit-manifest/v3",
+  "statement": {
+    "decl_names": [
+      "InformationTheory.pinsker_proof"
+    ],
+    "pretty": "∀ {α : Type u_1} [inst : MeasurableSpace α] (P Q : MeasureTheory.Measure α)\n  [inst_1 : MeasureTheory.IsProbabilityMeasure P] [inst_2 : MeasureTheory.IsProbabilityMeasure Q],\n  P.AbsolutelyContinuous Q →\n    MeasureTheory.Integrable (MeasureTheory.llr P Q) P →\n      MeasureTheory.tvDistReal P Q ≤ √(InformationTheory.klDivReal P Q / 2)",
+    "type_sha256": "19e1fb4bee5ea3a5172137dae67e191623820544fcb9669b80a3ba7d4a91dd16"
+  },
+  "verification": null,
+  "witness": null
+}

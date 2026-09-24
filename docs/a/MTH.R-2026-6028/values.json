@@ -1,0 +1,2186 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6028"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "online_strictly_stronger_pac"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "(∀ (X : Type) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableConceptClass X C],\n    OnlineLearnable X Bool C → PACLearnable X C) ∧\n  ∃ X x C, PACLearnable X C ∧ ¬OnlineLearnable X Bool C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "44"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "46"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "36"
+  },
+  {
+    "field": "argument.depth",
+    "value": "9"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_strictly_stronger_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_threshold_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_not_shatter_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_threshold_top"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_shattered_all_d…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "thresholdTree_shattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_le_of_mistake_bound…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFromU_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_from_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_restrict"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_b…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_pro…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bou…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bou…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bo…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factor…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "output_in_H"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hmeas_C"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hc_meas"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "all_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hWB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "wellBehaved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_strictly_stronger_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "(∀ (X : Type) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableConceptClass X C],\n    OnlineLearnable X Bool C → PACLearnable X C) ∧\n  ∃ X x C, PACLearnable X C ∧ ¬OnlineLearnable X Bool C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∃ X x C, PACLearnable X C ∧ ¬OnlineLearnable X Bool C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_threshold_top"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_threshold_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_strictly_stronger_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_threshold_finite"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "VCDim ℕ thresholdClass✝ < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_not_shatter_pair"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_not_shatter_pair"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {S : Finset ℕ}, 2 ≤ S.card → ¬Shatters ℕ thresholdClass✝ S"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_threshold_finite"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_threshold_top"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "LittlestoneDim ℕ thresholdClass✝ = ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_shattered_all_depths"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_shattered_all_depths"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d : ℕ), ∃ T, LTree.isShattered thresholdClass✝ T"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdTree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "thresholdTree_shattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "ldim_threshold_top"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "thresholdTree_shattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (lo d : ℕ) (C : ConceptClass ℕ Bool),\n  (∀ (n : ℕ), lo ≤ n → n < lo + 2 ^ d → (fun x => decide (x ≤ n)) ∈ C) → LTree.isShattered C (thresholdTree✝ lo d)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "thresholdTree"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "threshold_shattered_all_depths"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type) (C : ConceptClass X Bool), OnlineLearnable X Bool C → LittlestoneDim X C < ⊤"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LittlestoneDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFrom_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} (L : OnlineLearner X Bool) (c : X → Bool) (seq : List X), L.mistakesFrom L.init c seq = L.mistakes c seq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes.go"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_core"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} (L : OnlineLearner X Bool) (s : L.State) {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n),\n  LTree.isShattered C T → Set.Nonempty C → ∃ seq, ∃ c ∈ C, L.mistakesFrom s c seq = n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakesFrom"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "LTree.nonempty_of_isShattered"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type} {C : ConceptClass X Bool} {n : ℕ} (T : LTree X n), LTree.isShattered C T → Set.Nonempty C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LTree.isShattered"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "forward_direction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  OnlineLearnable X Bool C → ∀ [MeasurableConceptClass X C], PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_le_of_mistake_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_strictly_stronger_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_le_of_mistake_bounded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {M : ℕ}, MistakeBounded X Bool C M → VCDim X C ≤ ↑M"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MistakeBounded"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mistakesFromU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_from_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFromU_init_eq"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mistakesFromU_init_eq"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (L : OnlineLearner X Bool) (c : X → Bool) (seq : List X),\n  mistakesFromU✝ L L.init c seq = L.mistakes c seq"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.init"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.mistakes.go"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mistakesFromU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_le_of_mistake_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_from_shatters"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (L : OnlineLearner X Bool) (s : L.State) {C : ConceptClass X Bool} {S : Finset X},\n  Shatters X C S → ∃ seq, ∃ c ∈ C, mistakesFromU✝ L s c seq = S.card"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.State"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.predict"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "OnlineLearner.update"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "mistakesFromU"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_restrict"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_le_of_mistake_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "shatters_restrict"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {C : ConceptClass X Bool} {S : Finset X},\n  Shatters X C S → ∀ {x : X}, x ∈ S → ∀ (b : Bool), Shatters X {c | c ∈ C ∧ c x = b} (S.erase x)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "adversary_from_shatters"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    (∀ h ∈ C, Measurable h) → (∀ (c : Concept X Bool), Measurable c) → WellBehavedVC X C → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pac_not_implies_online"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  VCDim X C < ⊤ →\n    (∀ h ∈ C, Measurable h) → (∀ (c : Concept X Bool), Measurable c) → WellBehavedVC X C → HasUniformConvergence X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasUniformConvergence"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_bounded"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_growth_bounded"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) (C : ConceptClass X Bool),\n  VCDim X C < ⊤ → ∃ d, ∀ (m : ℕ), d ≤ m → GrowthFunction X C m ≤ ∑ i ∈ Finset.range (d + 1), m.choose i"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "Shatters"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "VCDim"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε δ : ℝ),\n            0 < ε →\n              0 < δ →\n                δ < 1 →\n                  ∀ (v : ℕ),\n                    0 < v →\n                      (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                        (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                          MeasureTheory.NullMeasurableSet\n                              {p |\n                                ∃ h ∈ C,\n                                  EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                      EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                                    ε / 2}\n                              ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                            (MeasureTheory.Measure.pi fun x => D)\n                                {xs |\n                                  ∃ h ∈ C,\n                                    |TrueErrorReal X h c D -\n                                          EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                                      ε} ≤\n                              ENNReal.ofReal δ"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                MeasureTheory.NullMeasurableSet\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2}\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                  (MeasureTheory.Measure.pi fun x => D)\n                      {xs |\n                        ∃ h ∈ C,\n                          |TrueErrorReal X h c D -\n                                EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool)| ≥\n                            ε} ≤\n                    ENNReal.ofReal (4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) - TrueErrorReal X h c D ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              2 * Real.log 2 ≤ ↑m * ε ^ 2 →\n                (MeasureTheory.Measure.pi fun x => D)\n                    {xs |\n                      ∃ h ∈ C,\n                        TrueErrorReal X h c D - EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥\n                          ε} ≤\n                  2 *\n                    ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              MeasureTheory.NullMeasurableSet\n                  {p |\n                    ∃ h ∈ C,\n                      EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                          EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                        ε / 2}\n                  ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D))\n                    {p |\n                      ∃ h ∈ C,\n                        EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                            EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                          ε / 2} ≤\n                  ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_uc_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] [Infinite X] (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D] (C : ConceptClass X Bool) (c : Concept X Bool),\n  (∀ h ∈ C, Measurable h) →\n    Measurable c →\n      ∀ (m : ℕ),\n        0 < m →\n          ∀ (ε : ℝ),\n            0 < ε →\n              ε ≤ 2 →\n                Set.Nonempty C →\n                  MeasureTheory.NullMeasurableSet\n                      {p |\n                        ∃ h ∈ C,\n                          EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                              EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                            ε / 2}\n                      ((MeasureTheory.Measure.pi fun x => D).prod (MeasureTheory.Measure.pi fun x => D)) →\n                    have μ := MeasureTheory.Measure.pi fun x => D;\n                    (μ.prod μ)\n                        {p |\n                          ∃ h ∈ C,\n                            EmpiricalError X Bool h (fun i => (p.2 i, c (p.2 i))) (zeroOneLoss Bool) -\n                                EmpiricalError X Bool h (fun i => (p.1 i, c (p.1 i))) (zeroOneLoss Bool) ≥\n                              ε / 2} ≤\n                      ENNReal.ofReal (↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zeroOneLoss.congr_simp"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "double_sample_pattern_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "zeroOneLoss.congr_simp"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (Y : Type v) {inst : DecidableEq Y} [inst_1 : DecidableEq Y] (a a_1 : Y),\n  a = a_1 → ∀ (a_2 a_3 : Y), a_2 = a_3 → zeroOneLoss Y a a_2 = zeroOneLoss Y a_1 a_3"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "restriction_pattern_count"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [MeasurableSpace X] [Infinite X] (C : ConceptClass X Bool) (c : Concept X Bool) (n : ℕ) (z : Fin n → X),\n  {p | ∃ h ∈ C, ∀ (i : Fin n), p i = decide (h (z i) ≠ c (z i))}.ncard ≤ GrowthFunction X C n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {m : ℕ},\n  0 < m →\n    ∀ (a : Fin m → ℝ) (c : ℝ),\n      0 ≤ c →\n        (∀ (i : Fin m), |a i| ≤ c) →\n          ∀ (t : ℝ),\n            0 ≤ t →\n              1 / ↑(Fintype.card (SignVector m)) * ∑ σ, Real.exp (t * (1 / ↑m * ∑ i, a i * boolToSign (σ i))) ≤\n                Real.exp (t ^ 2 * c ^ 2 / (2 * ↑m))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "SignVector"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boolToSign"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "cosh_le_exp_sq_half"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (x : ℝ), Real.cosh x ≤ Real.exp (x ^ 2 / 2)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "rademacher_mgf_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "finite_exchangeability_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ω : Type u_1} {G : Type u_2} [inst : MeasurableSpace Ω] [inst_1 : Fintype G] [Nonempty G]\n  {ν : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure ν] (T : G → Ω → Ω) (S : Set Ω),\n  (∀ (g : G), MeasureTheory.MeasurePreserving (T g) ν ν) →\n    MeasureTheory.NullMeasurableSet S ν →\n      ∀ (B : ENNReal), (∀ (z : Ω), ∑ g, (T g ⁻¹' S).indicator 1 z ≤ B * ↑(Fintype.card G)) → ν S ≤ B"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "exchangeability_chain_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [MeasurableSpace X] (C : ConceptClass X Bool) (v : ℕ),\n  0 < v →\n    ∀ (m : ℕ),\n      0 < m →\n        ∀ (ε δ : ℝ),\n          0 < ε →\n            0 < δ →\n              δ < 1 →\n                (∀ (n : ℕ), v ≤ n → GrowthFunction X C n ≤ ∑ i ∈ Finset.range (v + 1), n.choose i) →\n                  (16 * Real.exp 1 * (↑v + 1) / ε ^ 2) ^ (v + 1) / δ ≤ ↑m →\n                    4 * ↑(GrowthFunction X C (2 * m)) * Real.exp (-(↑m * ε ^ 2 / 8)) ≤ δ ∧ 2 * Real.log 2 ≤ ↑m * ε ^ 2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factorial_div"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_bad_event_le_delta_proved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "sum_choose_le_exp_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (d m : ℕ), 0 < d → d ≤ m → ∑ i ∈ Finset.range (d + 1), ↑(m.choose i) ≤ (Real.exp 1 * ↑m / ↑d) ^ d"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "pow_mul_exp_neg_le_factorial_div"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {d : ℕ} {t : ℝ}, 0 < t → t ^ d * Real.exp (-t) ≤ ↑(d + 1).factorial / t"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_function_le_two_pow"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} (C : ConceptClass X Bool) (n : ℕ), GrowthFunction X C n ≤ 2 ^ n"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "GrowthFunction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "growth_exp_le_delta"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided_upper"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≥ TrueErrorReal X h c D + t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step_lower"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "hoeffding_one_sided"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (h c : Concept X Bool) (m : ℕ),\n  0 < m →\n    ∀ (t : ℝ),\n      0 < t →\n        t ≤ 1 →\n          MeasurableSet {x | h x ≠ c x} →\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs |\n                  EmpiricalError X Bool h (fun i => (xs i, c (xs i))) (zeroOneLoss Bool) ≤ TrueErrorReal X h c D - t} ≤\n              ENNReal.ofReal (Real.exp (-2 * ↑m * t ^ 2))"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "symmetrization_step"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool),\n  Set.Nonempty C → HasUniformConvergence X C → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "EmpiricalError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HasUniformConvergence"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "IsConsistentWith"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueError"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "TrueErrorReal"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "zeroOneLoss"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "BatchLearner.output_in_H"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "vcdim_finite_imp_pac_via_uc'"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "BatchLearner.output_in_H"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {Y : Type v} (self : BatchLearner X Y) {m : ℕ} (S : Fin m → X × Y), self.learn S ∈ self.hypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.hypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "HypothesisSpace"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "uc_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C],\n  ∀ c ∈ C, Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.mem_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  ∀ h ∈ C, Measurable h"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hmeas_C"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.all_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.all_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} (C : ConceptClass X Bool) [self : MeasurableConceptClass X C]\n  (c : Concept X Bool), Measurable c"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hc_meas"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) [h : MeasurableConceptClass X C], WellBehavedVC X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.wellBehaved"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "online_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.wellBehaved"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableConceptClass X C],\n  WellBehavedVC X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "WellBehavedVC"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableConceptClass.hWB"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "5835f1632641"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.cites",
+    "value": "Yaël Dillies"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6028"
+  }
+]

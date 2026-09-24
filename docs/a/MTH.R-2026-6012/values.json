@@ -1,0 +1,830 @@
+[
+  {
+    "field": "claim.accession",
+    "value": "MTH.C-2026-6012"
+  },
+  {
+    "field": "claim.decl_name",
+    "value": "universal_imp_pac"
+  },
+  {
+    "field": "claim.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C],\n  (∀ (L : BatchLearner X Bool), LearnEvalMeasurable L) → UniversalLearnable X C → PACLearnable X C"
+  },
+  {
+    "field": "clipboard.state",
+    "value": ""
+  },
+  {
+    "field": "argument.node_count",
+    "value": "15"
+  },
+  {
+    "field": "argument.edge_count",
+    "value": "22"
+  },
+  {
+    "field": "argument.dictionary_leaves",
+    "value": "12"
+  },
+  {
+    "field": "argument.depth",
+    "value": "4"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "universal_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepSet_goodBlockEvents"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepFun_block_extract"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_tw…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measurableSet_goodBlock_A"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_block_extract_eq_pi"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "block_extract_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "chebyshev_seven_twelfths_…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_o…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "majority_error_le_seven_r…"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learn_measurable_fixed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "eval_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "universal_imp_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C],\n  (∀ (L : BatchLearner X Bool), LearnEvalMeasurable L) → UniversalLearnable X C → PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "UniversalLearnable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableHypotheses.mem_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ (X : Type u) [inst : MeasurableSpace X] (C : ConceptClass X Bool) [MeasurableHypotheses X C] (L : BatchLearner X Bool)\n  [MeasurableBatchLearner X L] (rate : ℕ → ℝ),\n  (∀ ε > 0, ∃ m₀, ∀ m ≥ m₀, rate m < ε) →\n    (∀ (D : MeasureTheory.Measure X),\n        MeasureTheory.IsProbabilityMeasure D →\n          ∀ c ∈ C,\n            ∀ (m : ℕ),\n              (MeasureTheory.Measure.pi fun x => D)\n                  {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n                ENNReal.ofReal (2 / 3)) →\n      PACLearnable X C"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "PACLearnable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boosted_majority"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableHypotheses.mem_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_of_good_blocks"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "chebyshev_seven_twelfths_bound"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepSet_goodBlockEvents"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "universal_imp_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepSet_goodBlockEvents"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (k n : ℕ),\n      ProbabilityTheory.iIndepSet (goodBlockEvent✝ L D c rate k n) (MeasureTheory.Measure.pi fun x => D)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepFun_block_extract"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measurableSet_goodBlock_A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepFun_block_extract"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (D : MeasureTheory.Measure X)\n  [MeasureTheory.IsProbabilityMeasure D],\n  ProbabilityTheory.iIndepFun (fun j ω => block_extract k m ω j) (MeasureTheory.Measure.pi fun x => D)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepSet_goodBlockEvents"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (C : ConceptClass X Bool) (L : BatchLearner X Bool)\n  [MeasurableBatchLearner X L] (rate : ℕ → ℝ),\n  (∀ (D : MeasureTheory.Measure X),\n      MeasureTheory.IsProbabilityMeasure D →\n        ∀ c ∈ C,\n          ∀ (m : ℕ),\n            (MeasureTheory.Measure.pi fun x => D)\n                {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate m)} ≥\n              ENNReal.ofReal (2 / 3)) →\n    ∀ (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D],\n      ∀ c ∈ C,\n        Measurable c →\n          ∀ (k n : ℕ) (j : Fin k),\n            (MeasureTheory.Measure.pi fun x => D) (goodBlockEvent✝ L D c rate k n j) ≥ ENNReal.ofReal (2 / 3)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "block_extract_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_block_extract_eq_pi"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measurableSet_goodBlock_A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measurableSet_goodBlock_A"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c →\n    ∀ (rate : ℕ → ℝ) (n : ℕ),\n      MeasurableSet {xs | D {x | L.learn (fun i => (xs i, c (xs i))) x ≠ c x} ≤ ENNReal.ofReal (rate n)}"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "iIndepSet_goodBlockEvents"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "map_block_extract_eq_pi"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (k n : ℕ) (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (j : Fin k),\n  MeasureTheory.Measure.map (fun ω => block_extract k n ω j) (MeasureTheory.Measure.pi fun x => D) =\n    MeasureTheory.Measure.pi fun x => D"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L]\n  (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] (c : Concept X Bool),\n  Measurable c → ∀ (rate : ℕ → ℝ) (k n : ℕ) (j : Fin k), MeasurableSet (goodBlockEvent✝ L D c rate k n j)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "block_extract_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "block_extract_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u_1} [inst : MeasurableSpace X] (k m : ℕ) (j : Fin k), Measurable fun ω => block_extract k m ω j"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "chebyshev_seven_twelfths_bound"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {Ω : Type u_1} [inst : MeasurableSpace Ω] {μ : MeasureTheory.Measure Ω} [MeasureTheory.IsProbabilityMeasure μ] {k : ℕ}\n  {δ : ℝ},\n  0 < δ →\n    36 / δ ≤ ↑k →\n      ∀ (events : Fin k → Set Ω),\n        (∀ (j : Fin k), MeasurableSet (events j)) →\n          ProbabilityTheory.iIndepSet (fun j => events j) μ →\n            (∀ (j : Fin k), μ (events j) ≥ ENNReal.ofReal (2 / 3)) →\n              μ {ω | 7 * k ≤ 12 * {j | ω ∈ events j}.card} ≥ ENNReal.ofReal (1 - δ)"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_of_good_blocks"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D]\n  (c : Concept X Bool),\n  Measurable c →\n    ∀ (L : BatchLearner X Bool) [MeasurableBatchLearner X L] (rate : ℕ → ℝ) (k n : ℕ) (ω : Fin (k * n) → X),\n      0 < k →\n        7 * k ≤ 12 * {j | ω ∈ goodBlockEvent✝ L D c rate k n j}.card →\n          D\n              {x |\n                (boosted_majority✝ k fun j =>\n                    L.learn (fun i => (block_extract k n ω j i, c (block_extract k n ω j i))) x) ≠\n                  c x} ≤\n            ENNReal.ofReal (7 * max (rate n) 0)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "block_extract"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boosted_majority"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "goodBlockEvent"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learn_measurable_fixed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "majority_error_le_seven_rate_of_good_fraction"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "majority_error_le_seven_rate_of_good_fraction"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (D : MeasureTheory.Measure X) [MeasureTheory.IsProbabilityMeasure D] {k : ℕ},\n  0 < k →\n    ∀ (c : Concept X Bool),\n      Measurable c →\n        ∀ (hs : Fin k → Concept X Bool),\n          (∀ (j : Fin k), Measurable (hs j)) →\n            ∀ (good : Finset (Fin k)),\n              7 * k ≤ 12 * good.card →\n                ∀ (ρ : ℝ),\n                  0 ≤ ρ →\n                    (∀ j ∈ good, D {x | hs j x ≠ c x} ≤ ENNReal.ofReal ρ) →\n                      D {x | (boosted_majority✝ k fun j => hs j x) ≠ c x} ≤ ENNReal.ofReal (7 * ρ)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "boosted_majority"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_of_good_blocks"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learn_measurable_fixed"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} [inst : MeasurableSpace X] (L : BatchLearner X Bool) [MeasurableBatchLearner X L] {m : ℕ}\n  (S : Fin m → X × Bool), Measurable (L.learn S)"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "LearnEvalMeasurable"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_of_good_blocks"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableBatchLearner.eval_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {L : BatchLearner X Bool} [self : MeasurableBatchLearner X L] (m : ℕ),\n  Measurable fun p => L.learn p.1 p.2"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "BatchLearner.learn"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableBatchLearner"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boosted_sample_error_le_of_good_blocks"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_measurable"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "goodBlockEvent_prob_ge_two_thirds"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "learn_measurable_fixed"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "measurableSet_goodBlock_A"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "MeasurableHypotheses.mem_measurable"
+  },
+  {
+    "field": "argument_node.kind",
+    "value": "theorem"
+  },
+  {
+    "field": "argument_node.pretty",
+    "value": "∀ {X : Type u} {inst : MeasurableSpace X} {C : ConceptClass X Bool} [self : MeasurableHypotheses X C],\n  ∀ h ∈ C, Measurable h"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "ConceptClass"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "FLT.Concept"
+  },
+  {
+    "field": "dictionary_constant.name",
+    "value": "MeasurableHypotheses"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "boost_two_thirds_to_pac"
+  },
+  {
+    "field": "argument_node.decl_name",
+    "value": "universal_imp_pac"
+  },
+  {
+    "field": "replay_accepted",
+    "value": "accepted"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Classical.choice"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "Quot.sound"
+  },
+  {
+    "field": "axiom_manifest",
+    "value": "propext"
+  },
+  {
+    "field": "statement_identity",
+    "value": "not-applicable"
+  },
+  {
+    "field": "substrate",
+    "value": "Lean 4 kernel v4.31.0"
+  },
+  {
+    "field": "dictionary.label",
+    "value": "design-lab@5802df4 · initial"
+  },
+  {
+    "field": "argument.export_sha256",
+    "value": "ba68a04fbf8b"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "profile.citation_name",
+    "value": "Dhruv Gupta"
+  },
+  {
+    "field": "argument.created_at",
+    "value": "2026-09-24T00:00:00Z"
+  },
+  {
+    "field": "argument.accession",
+    "value": "MTH.R-2026-6012"
+  }
+]

@@ -1,0 +1,783 @@
+{
+  "citation_name": "Dhruv Gupta",
+  "counts": {
+    "arguments": 32,
+    "claims": 32,
+    "dois": 64,
+    "posts": 32
+  },
+  "created_at": "2026-09-24T00:00:00Z",
+  "dois": [
+    {
+      "accession": "MTH.C-2026-6001",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "encard_image_inter_le_encard_shatters",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6002",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HasVCDimLE.vcGrowth_le_exp",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6003",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "mk_determined_le_mk_shatters",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6004",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "not_mk_image_inter_le_mk_shatters",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6005",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "encard_image_restrict_le_encard_pairCubes",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6006",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "exists_hasNatarajanDimLE_not_hasDSDimLE",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6007",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HasVCDimLE.mk_image_inter_le_ded",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6008",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "no_smaller_bound",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6009",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "fundamental_vc_compression_with_info",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6010",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "littlestone_characterization",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6011",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "optimal_mistake_bound_eq_ldim",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6012",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "universal_imp_pac",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6013",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "krappWirthSeparationMeasTarget_holds",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6014",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "KWLock.ambainis_tower_locked",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6015",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.auditBlind_finiteTrajectory_goodhart",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6016",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6017",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.auditSealed_iff_no_binary_decision_advantage",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6018",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6019",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6020",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.dirac_strong",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6021",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.lz_theorem_3_1",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6022",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "ProbabilityTheory.klDivReal_multivariateGaussian",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6023",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "MeasureTheory.exists_analyticSet_not_measurableSet_real",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6024",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "InformationTheory.pinsker_proof",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6025",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6026",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "fundamental_theorem",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6027",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "vcDim_fundamental_theorem",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6028",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "online_strictly_stronger_pac",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6029",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "advice_elimination",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6030",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "FLT.Halfspace.vcDim_halfspace_eq",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6031",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "vcDim_dualClass_le",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.C-2026-6032",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "log₂_vcDim_le_vcDim_dualClass",
+      "kind": "claim",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6001",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "encard_image_inter_le_encard_shatters",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6002",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HasVCDimLE.vcGrowth_le_exp",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6003",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "mk_determined_le_mk_shatters",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6004",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "not_mk_image_inter_le_mk_shatters",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6005",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "encard_image_restrict_le_encard_pairCubes",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6006",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "exists_hasNatarajanDimLE_not_hasDSDimLE",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6007",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HasVCDimLE.mk_image_inter_le_ded",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6008",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "no_smaller_bound",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6009",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "fundamental_vc_compression_with_info",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6010",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "littlestone_characterization",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6011",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "optimal_mistake_bound_eq_ldim",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6012",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "universal_imp_pac",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6013",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "krappWirthSeparationMeasTarget_holds",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6014",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "KWLock.ambainis_tower_locked",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6015",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.auditBlind_finiteTrajectory_goodhart",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6016",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.blackwellEquivalent_publicOnly_iff_auditSealed",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6017",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "AuditCP.auditSealed_iff_no_binary_decision_advantage",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6018",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "MeasureTheory.AnalyticSet.cap_eq_iSup_isCompact",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6019",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.acyclic_iff_forall_consistent_glues",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6020",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.dirac_strong",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6021",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "HiddenChannelCapacity.lz_theorem_3_1",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6022",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "ProbabilityTheory.klDivReal_multivariateGaussian",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6023",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "MeasureTheory.exists_analyticSet_not_measurableSet_real",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6024",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "InformationTheory.pinsker_proof",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6025",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "StructuralIgnorance.hasKernelScheme_one_of_vcBounded_one",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6026",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "fundamental_theorem",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6027",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "vcDim_fundamental_theorem",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6028",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "online_strictly_stronger_pac",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6029",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "advice_elimination",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6030",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "FLT.Halfspace.vcDim_halfspace_eq",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6031",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "vcDim_dualClass_le",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    },
+    {
+      "accession": "MTH.R-2026-6032",
+      "arguments": 1,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "decl_name": "log₂_vcDim_le_vcDim_dualClass",
+      "kind": "argument",
+      "verified": "2026-09-24T00:00:00Z"
+    }
+  ],
+  "kind": "person",
+  "login": "Zetetic-Dhruv",
+  "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9"
+}
