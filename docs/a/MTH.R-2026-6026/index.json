@@ -4015,6 +4015,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "Fundamental theorem of statistical learning (5-way equivalence, BP₅).",
   "doi": "MTH.R-2026-6026",
   "frozen_export": {
     "bytes": 326462257,
@@ -4026,7 +4027,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Theorem.PAC",
   "post_number": 7,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "fundamental_theorem",

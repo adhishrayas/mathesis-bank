@@ -955,6 +955,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**Closed form of the multivariate Gaussian KL divergence** (M3b). For positive-definite\ncovariances `S₁, S₂`,\n`KL(N(m₁,S₁) ‖ N(m₂,S₂)) = ½ ( log(det S₂ / det S₁) + tr(S₂⁻¹ S₁) + ⟪m₁-m₂, S₂⁻¹(m₁-m₂)⟫ - d )`.\n\nThe whitening reduction (`klDivReal_multivariateGaussian_whiten`) sends the pair to a KL against\nthe standard Gaussian (`klDivReal_multivariateGaussian_stdGaussian`); the three scalar invariants\nof the whitened covariance (`det_whitened`, `trace_whitened`, `normSq_cfcSqrt_inv_apply`) then\nidentify the arguments.",
   "doi": "MTH.R-2026-6022",
   "frozen_export": {
     "bytes": 418289463,
@@ -966,7 +967,7 @@
   "kind": "argument",
   "module": "ZPM.InformationTheory.KullbackLeibler.Gaussian.ClosedForm",
   "post_number": 11,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "ProbabilityTheory.klDivReal_multivariateGaussian",

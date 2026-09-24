@@ -537,6 +537,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "Universal learnable → PAC learnable.\nProof sketch: UniversalLearnable gives learner L with rate → 0 and Pr[error ≤ rate(m)] ≥ 2/3.\nTwo components:\n1. Event containment: rate(m) < ε ⟹ {error ≤ rate(m)} ⊆ {error ≤ ε} (monotonicity).\n2. Confidence boosting: 2/3 → 1-δ via median-of-means (Γ₆₇, sorry'd in boost_two_thirds_to_pac).\nRoutes through boost_two_thirds_to_pac which encapsulates the Chernoff-based boosting.",
   "doi": "MTH.R-2026-6012",
   "frozen_export": {
     "bytes": 195885423,
@@ -548,7 +549,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Theorem.Separation",
   "post_number": 21,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "universal_imp_pac",

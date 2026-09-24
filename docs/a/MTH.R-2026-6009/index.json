@@ -2255,6 +2255,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": null,
   "doi": "MTH.R-2026-6009",
   "frozen_export": {
     "bytes": 321082072,
@@ -2266,7 +2267,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.Complexity.Compression",
   "post_number": 24,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "fundamental_vc_compression_with_info",

@@ -80,6 +80,7 @@ export const LABELS = {
   copy: "Copy",
   copyBibtex: "Copy BibTeX",
   cites: "Cites",
+  discuss: "Discuss",
 
   // sections and terms rendered as headings
 

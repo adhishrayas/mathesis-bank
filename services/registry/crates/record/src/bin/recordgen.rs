@@ -26,6 +26,7 @@ fn main() -> ExitCode {
             "--site-base" => opts.site_base = next("--site-base"),
             "--base-path" => opts.base_path = next("--base-path"),
             "--about" => opts.about_body = Some(next("--about").into()),
+            "--forum-base" => opts.forum_base = Some(next("--forum-base")),
             "--check" => opts.check = true,
             "--no-leak-scan" => opts.leak_scan = false,
             other => {
@@ -36,7 +37,7 @@ fn main() -> ExitCode {
     }
     let (Some(bank), Some(out)) = (bank, out) else {
         eprintln!(
-            "usage: recordgen --bank <dir> --out <dir> [--site-base URL] [--base-path /p] [--about FILE] [--check]"
+            "usage: recordgen --bank <dir> --out <dir> [--site-base URL] [--base-path /p] [--about FILE] [--forum-base URL] [--check]"
         );
         return ExitCode::from(2);
     };

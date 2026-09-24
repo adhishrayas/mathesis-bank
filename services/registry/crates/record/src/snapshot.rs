@@ -44,6 +44,8 @@ pub struct Snapshot {
     /// The verbatim bytes of the git-tracked `about/body.html`, already scanned.
     pub about_body: String,
     pub site_base: String,
+    /// Where each post's discussion page lives (`GenOpts::forum_base`).
+    pub forum_base: Option<String>,
 }
 
 fn invalid(file: &str, pointer: String) -> GenError {
@@ -149,6 +151,7 @@ impl Snapshot {
             redirects: Vec::new(),
             about_body,
             site_base: opts.site_base.clone(),
+            forum_base: opts.forum_base.clone(),
         };
         s.validate()?;
         Ok(s)

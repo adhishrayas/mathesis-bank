@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 # Rebuild the published record from the committed bank: the generator, the
 # client assets, the checks, and the rendered tree in docs/.
-#   bank/tools/build-site.sh [--site-base URL] [--base-path /p]
+#   bank/tools/build-site.sh [--site-base URL] [--base-path /p] [--forum-base URL]
 set -euo pipefail
 here="$(cd "$(dirname "$0")/../.." && pwd)"
 site_base="https://noumenal-ai.github.io/mathesis-bank"
 base_path="/mathesis-bank"
+forum_base="https://noumenal-ai.github.io/mathesis-forum"
 while [ $# -gt 0 ]; do
   case "$1" in
     --site-base) site_base="$2"; shift 2 ;;
     --base-path) base_path="$2"; shift 2 ;;
+    --forum-base) forum_base="$2"; shift 2 ;;
     *) echo "build-site: unknown argument $1" >&2; exit 2 ;;
   esac
 done
@@ -29,7 +31,8 @@ npx vitest run --reporter=dot
 npm run --silent lint:no-arbitrary
 cd "$here"
 rm -rf docs
-"$bin/recordgen" --bank bank --out docs --site-base "$site_base" --base-path "$base_path" --about about/body.html
+"$bin/recordgen" --bank bank --out docs --site-base "$site_base" --base-path "$base_path" \
+  --forum-base "$forum_base" --about about/body.html
 cp -R web/dist-assets/assets docs/assets
 [ -d bank/avatars ] && cp -R bank/avatars docs/avatars
 touch docs/.nojekyll

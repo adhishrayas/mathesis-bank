@@ -1002,6 +1002,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**The two-clique quantum junction tree theorem** (Lauritzen–Zwiernik,\narXiv:2605.19453, Theorem 3.1): over the acyclic two-clique base, the base's compatibility\ndatum decides base-side reconstruction. For strictly positive consistent marginals, a\nquantum Markov completion exists iff `Tr T(R) = 1`; the completion is then unique and equals\nthe normalized logarithmic candidate `σ(R) = T(R)/Tr T(R)`. Together with\n`trC_le_one` (the trace bound) this is the full theorem.",
   "doi": "MTH.R-2026-6021",
   "frozen_export": {
     "bytes": 531161901,
@@ -1013,7 +1014,7 @@
   "kind": "argument",
   "module": "ZPM.Measurements.HC.QJTTwoClique",
   "post_number": 12,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "HiddenChannelCapacity.lz_theorem_3_1",

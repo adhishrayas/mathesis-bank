@@ -1186,6 +1186,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**Shelah's `ded` bound on the traces of a family of finite VC dimension.** On an infinite\nground set a family of finite VC dimension traces at most `ded #A` sets, and by\n`mk_image_inter_range_cut_eq_ded` the bound is attained. The infiniteness of `A` is not\ndecorative: see `exists_finite_ground_hasVCDimLE_not_mk_image_inter_le_ded`.",
   "doi": "MTH.R-2026-6007",
   "frozen_export": {
     "bytes": 37009227,
@@ -1197,7 +1198,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.VCDimGeneralized.VCDimDed",
   "post_number": 26,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "HasVCDimLE.mk_image_inter_le_ded",

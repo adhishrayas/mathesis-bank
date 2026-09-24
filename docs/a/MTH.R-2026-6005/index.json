@@ -862,6 +862,7 @@
     "mathlib_rev": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
     "toolchain": "leanprover/lean4:v4.31.0"
   },
+  "doc": "**Pajor's inequality for multiclass concept classes**, with no hypotheses on the domain, the\nlabel type or the family: the traces of `𝒞` on `S` are at most as many as the pair-cubes of `𝒞`\nsupported inside `S`.\n\nThe count runs on a split of the family at a point where two traces differ, taking one branch\nper realised value with no residual bucket. A cube of a branch never constrains the split point,\nso a cube pair-shattered by `μ` branches is counted `μ` times on the left and supplies\n`1 + μ.choose 2` cubes on the right, which closes the accounting because `μ ≤ 1 + μ.choose 2`\nfor `μ ≥ 1`, with equality exactly at `μ ∈ {1, 2}`. An infinite trace family forces infinitely\nmany one-point cubes and both sides are `⊤`.\n\nAt `Y = Bool` this specialises to `encard_image_inter_le_encard_shatters`, which is\n`encard_image_inter_le_encard_shatters_of_multiclass` below. The pair-cube is Natarajan's\nshattering witness for spaces of functions, from p. 81 of *On learning sets and functions*; see\nthe module docstring.",
   "doi": "MTH.R-2026-6005",
   "frozen_export": {
     "bytes": 27433023,
@@ -873,7 +874,7 @@
   "kind": "argument",
   "module": "FLT_Proofs.VCDimGeneralized.VCDimMulticlass",
   "post_number": 28,
-  "schema": "mathesis/public-unit-manifest/v3",
+  "schema": "mathesis/public-unit-manifest/v4",
   "statement": {
     "decl_names": [
       "encard_image_restrict_le_encard_pairCubes",
