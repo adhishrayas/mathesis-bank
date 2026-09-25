@@ -280,12 +280,36 @@ def fetch(name: str, cache: Path) -> bool:
     return subprocess.run(cmd, capture_output=True).returncode == 0 and dest.is_file()
 
 
+def build_gate(exe: Path) -> bool:
+    """Build the adjudicator from the source in backend-gate/. Returns whether `exe` now exists.
+
+    Doing this here is the difference between "clone and run the program" and "clone, read an
+    error, go and read a second set of instructions, then run the program". It is a real build —
+    it downloads a Lean toolchain the first time and takes a few minutes — so it announces itself
+    and streams the output rather than hanging silently.
+
+    No prebuilt binary is shipped instead, deliberately: a committed executable is an opaque blob
+    nobody can rebuild and compare, and this repository's whole claim is that you do not have to
+    take its word for anything.
+    """
+    pkg = ROOT / "backend-gate"
+    if shutil.which("lake") is None:
+        return False
+    print(f"  the gate is not built — building it from {pkg.name}/ (this takes a few minutes)\n")
+    rc = subprocess.run(["lake", "build", "mathesis-adjudicate"], cwd=pkg).returncode
+    print()
+    return rc == 0 and exe.is_file() and os.access(exe, os.X_OK)
+
+
 def leg_rederive(only: str | None) -> int:
     """Replay each frozen export through the Lean kernel and compare it to its manifest."""
     exe = Path(os.environ.get(
         "MATHESIS_ADJUDICATE", ROOT / "backend-gate" / ".lake" / "build" / "bin" / "mathesis-adjudicate"))
-    if not exe.is_file() or not os.access(exe, os.X_OK):
-        fail("re-derivation", f"the gate is not built at {exe} — run: cd backend-gate && lake build mathesis-adjudicate")
+    if not (exe.is_file() and os.access(exe, os.X_OK)) and not build_gate(exe):
+        fail("re-derivation",
+             f"the gate is not built at {exe}, and building it here did not produce it. "
+             "It needs a Lean toolchain: install elan (https://github.com/leanprover/elan), "
+             "then `cd backend-gate && lake build mathesis-adjudicate`")
         return 0
     init = Path(os.environ.get("MATHESIS_INIT_EXPORT", ROOT / "backend-gate" / "init.export"))
     if not init.is_file() or not init.stat().st_size:

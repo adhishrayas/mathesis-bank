@@ -15,7 +15,7 @@
     "accession": {
       "type": "string",
       "pattern": "^MTH\\.[CR]-[0-9]{4}-[0-9]{4,6}$",
-      "description": "MTH.C for a claim, MTH.R for an argument. The public sequence is 6xxx; the 1xxx band is the internal corpus and must never appear here \u2014 the renderer fails its build on it (services/registry/crates/record/src/leak.rs)."
+      "description": "MTH.C for a claim, MTH.R for an argument. The public sequence is 6xxx; the 1xxx band is the internal corpus and must never appear here."
     },
     "sha256": {
       "type": "string",

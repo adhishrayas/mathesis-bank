@@ -1,6 +1,0 @@
-[
-  {
-    "field": "claim.pretty",
-    "value": "theorem FLT.Foundations.EMX.monoComp_iff_card_le_aleph {X : Type u} (F : Set (Set X)) :\n    FLT.Foundations.EMX.MonoComp F ↔ Cardinal.mk F ≤ Cardinal.aleph0"
-  }
-]

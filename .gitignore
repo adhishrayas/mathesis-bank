@@ -3,28 +3,19 @@ __pycache__/
 .DS_Store
 .firewall-terms
 
-# Lean build output (backend-gate is committed as SOURCE only; CI builds it)
+# Lean build output. backend-gate/ is committed as SOURCE only, and building it is the first
+# thing `bin/mathesis verify` does — a prebuilt binary in the tree would be an opaque blob
+# nobody can rebuild and compare, which undercuts the one claim this repository makes.
 .lake/
-# frozen export blobs live in object storage, never in git (>100 MB)
-registry/_shared/exports/*.export
 
-# Generated reference artifacts: deploy/builder/make-mathlib-export.sh writes a multi-hundred-MB
-# mathlib.export here. Like the blobs above it belongs in object storage, pinned by the sha256
-# recorded in `environments.mathlib_reference_sha256` — never in git.
-# (backend-gate/init.export is the exception and stays tracked: it is under 1 MB and the gate's
-# fallback resolution path reads it straight out of the checkout.)
-build/
-
-# The serving database is a PROJECTION of this tree, never a source of truth — rebuild it with
-# `python3 backend/reproject.py --db <path>`. Committing one would invite reading it as the
-# record, which is the whole thing the projection design refuses.
-*.sqlite
-*.sqlite-journal
-mathesis.sqlite
-
-# The record's build: dependencies and intermediate assets (docs/ is the
-# committed output; bank/tools/build-site.sh regenerates it).
-node_modules/
-web/dist-assets/
-services/registry/target/
-.prose-lint.json
+# The frozen exports. They are ~615 MB compressed across 32 records, far past what git should
+# carry, so they live on the bank-exports-v1 release and are fetched by sha256. That is safe
+# precisely because they are content-addressed: the bytes are re-hashed after download and a
+# mismatch fails before the kernel is ever started. Point BANK_EXPORT_STORE at a local directory
+# to verify with no network at all.
+*.export
+*.export.gz
+# backend-gate/init.export is the exception and stays TRACKED: it is the trusted logical core
+# every replay is checked against, it is under 1 MB, and a reference you have to download is a
+# reference you have to trust somebody about.
+!backend-gate/init.export
