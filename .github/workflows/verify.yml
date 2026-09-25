@@ -105,6 +105,22 @@ jobs:
           elan default "$(tr -d '[:space:]' < lean-toolchain)"
           echo "LEAN_SYSROOT=$(lean --print-prefix)" >> "$GITHUB_ENV"
 
+      # The gate's regression tests export their fixtures, so they need lean4export's
+      # executable; the gate build compiles only its Export library. Same build as deposit.yml.
+      - name: Build lean4export
+        run: |
+          L4E_PKG="$GITHUB_WORKSPACE/backend-gate/.lake/packages/lean4export"
+          TC="$(tr -d '[:space:]' < backend-gate/lean-toolchain)"
+          ( cd "$L4E_PKG" && elan run "$TC" lake build ) || { echo "FATAL: lean4export build failed"; exit 1; }
+          L4E="$(find "$L4E_PKG/.lake" -type f -name lean4export -perm -u+x 2>/dev/null | head -n1)"
+          test -x "$L4E" || { echo "FATAL: lean4export exe not found after build"; exit 1; }
+          echo "LEAN4EXPORT=$L4E" >> "$GITHUB_ENV"
+
+      # A candidate that redefines a kernel built-in (a prelude `Nat.gcd` proving 2 + 2 = 5) must
+      # be rejected, and honest proofs through the built-ins admitted. Init-only fixtures.
+      - name: Gate regression tests (kernel built-ins)
+        run: bash ci/test_gate_builtins.sh
+
       # ── Frozen export blobs (content-addressed, not in git) ──────────────
       - name: Fetch frozen exports (sha256-verified)
         env:

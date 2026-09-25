@@ -217,6 +217,7 @@ def run_rederivation(results):
         # Real shape (verified against the built mathesis-adjudicate exe):
         #   {"export": str, "constants": int, "permitted": [str, ...],
         #    "replay": {"accepted": bool, "detail": str},
+        #    "kernel_builtins": "pass"|"not-checked"|<reason>,
         #    "targets": [{"decl": str, "axiom_audit": "pass"|"fail",
         #                 "axioms_reached": [str, ...],
         #                 "illegal_axiom": str|null}, ...],
@@ -231,6 +232,11 @@ def run_rederivation(results):
         # rejected the export's replay outright, nothing decoded from that
         # batch can be trusted, whatever individual axiom_audits claim.
         whole_replay_accepted = bool((fresh.get("replay") or {}).get("accepted"))
+        # `kernel_builtins` is whole-invocation too: an export carrying a non-genuine kernel
+        # built-in (the kernel trusts those by name) poisons every target in it, whatever each
+        # target's own axiom_audit says. Absent from gates that predate the leg.
+        builtins = fresh.get("kernel_builtins")
+        builtins_failed = builtins not in (None, "pass", "not-checked")
         targets_by_decl = {}
         for t in (fresh.get("targets") or []):
             if isinstance(t, dict) and t.get("decl"):
@@ -249,6 +255,8 @@ def run_rederivation(results):
                 reasons = []
                 if not whole_replay_accepted:
                     reasons.append("whole-export replay not accepted by the Lean kernel")
+                if builtins_failed:
+                    reasons.append(f"kernel built-in check failed: {builtins}")
                 if target.get("axiom_audit") != "pass":
                     reasons.append(f"axiom_audit={target.get('axiom_audit')!r} (want 'pass')")
                 if target.get("illegal_axiom"):

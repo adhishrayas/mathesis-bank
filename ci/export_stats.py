@@ -37,8 +37,8 @@ discriminator used below.
 
 An `inductive` record is the reason a naive line count understates the truth: it bundles the
 inductive type with its constructors and recursors, each of which is a separate constant the
-trusted-redefinition check can match against. Counting records instead of constants reports 31
-for `init.export`, whose documented content is **59 constants** — and 59 is what this produces,
+trusted-redefinition check can match against. Counting records instead of constants reports 457
+for `init.export`, whose documented content is **563 constants** — and 563 is what this produces,
 which is the regression test for this file (`--self-test`).
 """
 
@@ -152,7 +152,7 @@ def main() -> int:
     ap.add_argument("export", nargs="?", help="path to a .export file")
     ap.add_argument("--json", action="store_true", help="machine-readable output")
     ap.add_argument("--self-test", action="store_true",
-                    help="assert init.export measures 59 constants (its documented content)")
+                    help="assert init.export measures 563 constants (its documented content)")
     args = ap.parse_args()
 
     if args.self_test:
@@ -162,8 +162,8 @@ def main() -> int:
             print(f"FATAL: {init} absent")
             return 2
         st = measure(init)
-        ok = st["constants"] == 59
-        print(f"  init.export constants = {st['constants']} (expected 59): "
+        ok = st["constants"] == 563
+        print(f"  init.export constants = {st['constants']} (expected 563): "
               f"{'PASS' if ok else 'FAIL'}")
         if not ok:
             print("  the counter disagrees with init.export.README.md — one of them is wrong")

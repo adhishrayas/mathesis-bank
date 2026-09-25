@@ -304,6 +304,7 @@ Output schema (one line, compact JSON):
  "replay": {"accepted": <bool>, "detail": <string>},
  "permitted": ["propext", "Classical.choice", "Quot.sound"],
  "statement_identity": "pass"|"fail"|"not-applicable"|"<reason string>",
+ "kernel_builtins": "pass"|"not-checked"|"<reason string>",
  "targets": [{"decl": <string>, "axiom_audit": "pass"|"fail",
               "illegal_axiom": <string|null>, "axioms_reached": [<string>, ...]}, ...],
  "verdict": "ADMITTED"|"REJECTED"}
@@ -334,15 +335,15 @@ def main (args : List String) : IO UInt32 := do
   -- trusted constant (fake `Iff`/`Eq`/`False`) diverges → rejected. When MATHESIS_INIT_EXPORT is set
   -- the redefinition check is active (production gates set it); when absent it is skipped (the axiom
   -- type-binding stays active, and the deposit build-barrier also blocks the attack structurally).
-  let trusted : Name → Option ConstantInfo ← do
+  let (trusted, trustedActive) : (Name → Option ConstantInfo) × Bool ← do
     match ← IO.getEnv "MATHESIS_INIT_EXPORT" with
     | some p =>
       let tEnv ← loadFrozenText (← IO.FS.readFile p)
       IO.eprintln s!"trusted init.export loaded: {tEnv.constMap.size} constants"
-      pure (fun n => tEnv.constMap[n]?)
+      pure ((fun n => tEnv.constMap[n]?), true)
     | none =>
-      IO.eprintln "note: MATHESIS_INIT_EXPORT not set; trusted-redefinition check DISABLED (type-binding active)"
-      pure (fun _ => none)
+      IO.eprintln "note: MATHESIS_INIT_EXPORT not set; trusted-redefinition and kernel built-in checks DISABLED (type-binding active)"
+      pure ((fun _ => none), false)
   match parseArgs args with
   | .error msg =>
     IO.eprintln msg
@@ -354,10 +355,15 @@ def main (args : List String) : IO UInt32 := do
     let (accepted, detail) ← replayLean candidate
     let audits := targets.map (auditTarget candidate permittedTypes trusted)
     let allPass := audits.all (·.pass)
+    -- Kernel built-ins leg, in every mode: each one the candidate carries must be the genuine one.
+    -- The kernel uses them by name without checking them, and the axiom walk never reaches them.
+    let builtinsResult : Except String Unit :=
+      if trustedActive then checkBuiltins candidate trusted else .ok ()
     -- Statement-identity leg (the UK-i definition-smuggling defense): runs ONLY when a reference is
-    -- supplied. When present it re-uses the proven-sound `checkProof` primitive over R-vs-candidate;
-    -- `primitive := #[]` (kernel built-ins are seeded by `checkStatement` itself in the general
-    -- form; matching the reference-pattern harness). Its `statement` leg gates admission here.
+    -- supplied. When present it re-uses the proven-sound `checkProof` primitive over R-vs-candidate.
+    -- `primitive := #[]`: the kernel built-ins are checked above, against the trusted copy rather
+    -- than against the reference, whose frozen export need not carry them. Its `statement` leg
+    -- gates admission here.
     let (statementResult, statementJson) ←
       match reference? with
       | none =>
@@ -370,7 +376,8 @@ def main (args : List String) : IO UInt32 := do
         | .pass       => pure (LegResult.pass, Json.str "pass")
         | .fail reason => pure (LegResult.fail reason, Json.str reason)
     let statementOk := statementResult.ok
-    let verdictOk := accepted && allPass && statementOk
+    let builtinsOk := builtinsResult matches .ok _
+    let verdictOk := accepted && allPass && statementOk && builtinsOk
     let json := Json.mkObj [
       ("export", Json.str path),
       ("reference", match reference? with | some r => Json.str r | none => Json.null),
@@ -378,6 +385,9 @@ def main (args : List String) : IO UInt32 := do
       ("replay", Json.mkObj [("accepted", Json.bool accepted), ("detail", Json.str detail)]),
       ("permitted", Json.arr (permittedAxiomStrings.map Json.str)),
       ("statement_identity", statementJson),
+      ("kernel_builtins", Json.str (match builtinsResult with
+        | .ok _ => if trustedActive then "pass" else "not-checked"
+        | .error e => e)),
       ("targets", Json.arr (audits.map targetAuditToJson)),
       ("verdict", Json.str (if verdictOk then "ADMITTED" else "REJECTED"))
     ]

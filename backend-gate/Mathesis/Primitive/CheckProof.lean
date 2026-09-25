@@ -137,6 +137,11 @@ namespace Statement
 structure Ctx where
   reference : ExportedEnv
   candidate : ExportedEnv
+  /-- The targets, whose statements `checkStatement` has already compared. One reached again
+  through another statement is walked by its type only: its proof is the candidate's to supply,
+  so comparing the whole constant would reject every honest proof of a target that another
+  target's statement depends on (leanprover/comparator#64). -/
+  targets : Std.HashSet Name := {}
 
 structure St where
   worklist : Array Name
@@ -157,12 +162,17 @@ partial def loop : M Unit := do
       | throw s!"constant absent from reference: '{target}'"
     let some candConst := (← read).candidate.constMap[target]?
       | throw s!"constant absent from candidate: '{target}'"
-    if refConst != candConst then
-      throw s!"constant diverges between reference and candidate: '{target}'"
-    -- shallow: statement identity is about types + definition bodies, never proof terms.
-    runForUsedConsts candConst (deep := false) fun n => do
-      if !(← get).checked.contains n then
-        modify fun s => { s with worklist := s.worklist.push n }
+    if (← read).targets.contains target then
+      for n in candConst.type.getUsedConstants ++ collectProjTypes candConst.type #[] do
+        if !(← get).checked.contains n then
+          modify fun s => { s with worklist := s.worklist.push n }
+    else
+      if refConst != candConst then
+        throw s!"constant diverges between reference and candidate: '{target}'"
+      -- shallow: statement identity is about types + definition bodies, never proof terms.
+      runForUsedConsts candConst (deep := false) fun n => do
+        if !(← get).checked.contains n then
+          modify fun s => { s with worklist := s.worklist.push n }
     modify fun s => { s with checked := s.checked.insert target }
     loop
 
@@ -186,8 +196,10 @@ def checkStatement (reference candidate : ExportedEnv) (targets primitive : Arra
       | _, _ => throw s!"target kind differs between reference and candidate: '{target}'"
     if refVal != candVal then
       throw s!"target statement differs between reference and candidate: '{target}'"
-    worklist := worklist ++ refVal.type.getUsedConstants
-  Statement.loop.run { reference, candidate } |>.run' { worklist, checked := {} }
+    -- `getUsedConstants` omits the structure named by a `.proj` node (leanprover/comparator#68).
+    worklist := worklist ++ refVal.type.getUsedConstants ++ collectProjTypes refVal.type #[]
+  Statement.loop.run { reference, candidate, targets := Std.HashSet.ofArray targets }
+    |>.run' { worklist, checked := {} }
 
 /-! ### Leg 1b — axiom closure (generalized `Comparator.checkAxioms`) -/
 
@@ -271,16 +283,75 @@ def checkAxioms (candidate : ExportedEnv) (targets permitted : Array Name)
   Axioms.loop.run { candidate, permitted := Std.HashSet.ofArray permitted, permittedTypes, trusted }
     |>.run' { worklist, checked := {} }
 
+/-! ### Leg 1b′ — kernel built-ins -/
+
+/-- The constants the v4.31 kernel treats specially by NAME (`src/kernel/type_checker.cpp`,
+`inductive.cpp`, `quot.cpp`, and the literal types `Nat`/`String`). The kernel trusts whatever
+declaration of these names the candidate carries: it computes `Nat.gcd` on literals natively
+whatever the definition says, and expands a string literal into `String.ofList`/`List.cons`/
+`Char.ofNat` terms that appear nowhere in the candidate. A redefinition is therefore invisible to
+the axiom walk, which follows only constants named in terms: a `prelude` candidate importing just
+`Init.Prelude` and `Init.Core` redefines `Nat.gcd` and proves `2 + 2 = 5`, every other leg passing. -/
+def kernelBuiltins : Array Name := #[
+  ``Nat, ``Nat.zero, ``Nat.succ,
+  ``Nat.add, ``Nat.sub, ``Nat.mul, ``Nat.pow, ``Nat.gcd, ``Nat.div, ``Nat.mod,
+  ``Nat.beq, ``Nat.ble, ``Nat.land, ``Nat.lor, ``Nat.xor, ``Nat.shiftLeft, ``Nat.shiftRight,
+  ``String, ``String.ofList, ``Char, ``Char.ofNat, ``List, ``List.nil, ``List.cons,
+  ``Bool, ``Bool.true, ``eagerReduce, ``Lean.reduceBool, ``Lean.reduceNat,
+  ``Quot, ``Quot.mk, ``Quot.lift, ``Quot.ind]
+
+/-- The kind of a constant: a built-in must keep its kind as well as its type and value. -/
+def kindTag : ConstantInfo → Nat
+  | .axiomInfo .. => 0 | .defnInfo .. => 1 | .thmInfo .. => 2 | .opaqueInfo .. => 3
+  | .quotInfo .. => 4 | .inductInfo .. => 5 | .ctorInfo .. => 6 | .recInfo .. => 7
+
+/-- **Kernel built-ins.** Every kernel built-in the candidate carries, and every constant reached
+from its type or definition, must match the trusted copy. The closure matters: a candidate can keep
+`Nat.gcd`'s own term byte-identical and redefine an auxiliary that term names. Theorems are
+compared by statement only (`trustedMatches`). A reached constant the trusted copy lacks fails
+closed. -/
+def checkBuiltins (candidate : ExportedEnv) (trusted : Name → Option ConstantInfo) :
+    Except String Unit := do
+  let mut worklist := kernelBuiltins.filter (candidate.constMap.contains ·)
+  let mut checked : Std.HashSet Name := {}
+  while !worklist.isEmpty do
+    let n := worklist.back!
+    worklist := worklist.pop
+    if checked.contains n then continue
+    checked := checked.insert n
+    let some info := candidate.constMap[n]?
+      | throw s!"constant absent from candidate: '{n}'"
+    let some genuine := trusted n
+      | throw s!"kernel built-in closure reaches '{n}', which the trusted init.export does not hold"
+    if kindTag info != kindTag genuine || !trustedMatches info genuine then
+      throw s!"kernel built-in redefined: '{n}' (candidate's declaration differs from the trusted init.export copy)"
+    let ((), next) := (runForUsedConsts info (deep := false) fun m =>
+      modify (·.push m) : StateM (Array Name) Unit).run #[]
+    worklist := worklist ++ next.filter (!checked.contains ·)
+
 /-! ### Leg 1c — kernel replay -/
 
 /-- Replay the candidate's constant map through the built-in Lean kernel (the gating kernel), from
 source, via `Lean4Checker`'s `Environment.replay'`. Adding `Quot` primitives is done by the kernel
-when it processes them, so they are erased from the replay map (as in `Comparator.Main.runKernel`). -/
+when it processes them, so they are erased from the replay map (as in `Comparator.Main.runKernel`).
+The erased constants are therefore never checked: each one the candidate carries must then equal
+the kernel's own, or it went into the verdict unchecked (leanprover/comparator#71). -/
 def replayLean (candidate : ExportedEnv) : IO (Bool × String) := do
   try
     let env ← mkEmptyEnvironment
-    let constMap := candidate.constMap.erase ``Quot.mk |>.erase ``Quot.lift |>.erase ``Quot.ind
-    discard <| env.replay' constMap
+    let quotAux := [``Quot.mk, ``Quot.lift, ``Quot.ind]
+    let constMap := quotAux.foldl (init := candidate.constMap) (·.erase ·)
+    let env' ← env.replay' constMap
+    -- Looked up in the kernel environment: on one rebuilt from it, `Environment.find?` sees
+    -- only imported constants, so it would miss every replayed one.
+    let kenv := env'.toKernelEnv
+    for n in ``Quot :: quotAux do
+      if let some info := candidate.constMap[n]? then
+        match kenv.find? n with
+        | none => return (false, s!"quotient constant never checked by the kernel: '{n}'")
+        | some info' =>
+          if info != info' then
+            return (false, s!"quotient constant differs from the kernel's: '{n}'")
     return (true, "lean kernel accepts")
   catch e =>
     return (false, toString e)
@@ -309,10 +380,13 @@ def checkProof (reference candidate : ExportedEnv)
     match checkStatement reference candidate targets primitive with
     | .ok _ => .pass
     | .error e => .fail e
+  -- The built-ins need the trusted base; without one (`fun _ => none`) they go unchecked, as the
+  -- trusted-redefinition check does.
   let «axioms» : LegResult :=
-    match checkAxioms candidate targets permitted permittedTypes trusted with
-    | .ok _ => .pass
-    | .error e => .fail e
+    match checkAxioms candidate targets permitted permittedTypes trusted,
+        (if (trusted ``Nat).isSome then checkBuiltins candidate trusted else .ok ()) with
+    | .ok _, .ok _ => .pass
+    | .error e, _ | _, .error e => .fail e
   let mut outcomes : Array KernelOutcome := #[]
   for k in kernels do
     let (accepted, detail) ← k.replay candidate
