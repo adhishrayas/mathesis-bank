@@ -1,0 +1,407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://noumenal-ai.github.io/mathesis-bank/schema/bank-manifest.v1.schema.json",
+  "title": "Mathesis bank manifest, v1",
+  "description": "The shape of a record in bank/claims/ and bank/arguments/. Derived from the 64 manifests present when this was written, not from an intended design: a field is required here iff every one of them carries it. The two shapes differ in an awkward way that is described rather than corrected \u2014 a claim is a flat object, an argument is wrapped in a single `argument` key \u2014 because changing either would rewrite accessions that are already published under a permanent serial.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/claimFile"
+    },
+    {
+      "$ref": "#/$defs/argumentFile"
+    }
+  ],
+  "$defs": {
+    "accession": {
+      "type": "string",
+      "pattern": "^MTH\\.[CR]-[0-9]{4}-[0-9]{4,6}$",
+      "description": "MTH.C for a claim, MTH.R for an argument. The public sequence is 6xxx; the 1xxx band is the internal corpus and must never appear here \u2014 the renderer fails its build on it (services/registry/crates/record/src/leak.rs)."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "declName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claimFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accession",
+        "arguments_count",
+        "citation_name",
+        "created_at",
+        "decl_name",
+        "dictionary_id",
+        "login",
+        "module",
+        "origin",
+        "pretty",
+        "profile_id",
+        "reference_sha256",
+        "statement_digest"
+      ],
+      "properties": {
+        "accession": {
+          "$ref": "#/$defs/accession",
+          "pattern": "^MTH\\.C-[0-9]{4}-[0-9]{4,6}$"
+        },
+        "arguments_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "citation_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "decl_name": {
+          "$ref": "#/$defs/declName"
+        },
+        "dictionary_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "doc": {
+          "type": "string",
+          "description": "The statement's docstring. Absent on 2 of 32 \u2014 a record may carry no prose."
+        },
+        "login": {
+          "type": "string",
+          "minLength": 1
+        },
+        "module": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "curated"
+          ]
+        },
+        "pretty": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The Lean statement as pretty-printed by the environment that built it. Rendered verbatim; never rewritten."
+        },
+        "profile_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "reference_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "The frozen reference export a discharging argument is checked against."
+        },
+        "statement_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "argumentFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "argument",
+        "nodes",
+        "edges",
+        "leaves"
+      ],
+      "description": "An argument file is the record plus its solution graph. The graph is what `nodes`/`edges`/`leaves` hold, and `argument.node_count` / `edge_count` are counts OF it \u2014 a mismatch there is a manifest disagreeing with itself.",
+      "properties": {
+        "argument": {
+          "$ref": "#/$defs/argument"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edge"
+          }
+        },
+        "leaves": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/leaf"
+          }
+        }
+      }
+    },
+    "argument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accession",
+        "axiom_free",
+        "axioms_reached",
+        "citation_name",
+        "cites",
+        "claim_accession",
+        "created_at",
+        "dictionary_id",
+        "edge_count",
+        "export_bytes",
+        "export_constants",
+        "export_sha256",
+        "libraries_used",
+        "login",
+        "node_count",
+        "private_helpers",
+        "profile_id",
+        "replay_detail",
+        "root_decl_name",
+        "root_module",
+        "root_pretty",
+        "source_url",
+        "statement_identity",
+        "submission_id",
+        "substrate"
+      ],
+      "properties": {
+        "accession": {
+          "$ref": "#/$defs/accession",
+          "pattern": "^MTH\\.R-[0-9]{4}-[0-9]{4,6}$"
+        },
+        "axiom_free": {
+          "type": "boolean"
+        },
+        "axioms_reached": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "The axiom closure the adjudicator reached, VERBATIM from its report. bank/tools/verify-bank.sh requires exact set equality against a fresh replay \u2014 not subset-of-whitelist \u2014 so a manifest claiming fewer axioms than the proof uses fails."
+        },
+        "citation_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim_accession": {
+          "$ref": "#/$defs/accession",
+          "pattern": "^MTH\\.C-[0-9]{4}-[0-9]{4,6}$"
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "dictionary_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "edge_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "export_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "export_constants": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "export_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "Names the evidence: <sha>.export.gz on the bank-exports-v1 release. The blob is re-hashed after download, so this is the trust boundary, not the filename."
+        },
+        "libraries_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "login": {
+          "type": "string",
+          "minLength": 1
+        },
+        "node_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "private_helpers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profile_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "replay_detail": {
+          "type": "string"
+        },
+        "root_decl_name": {
+          "$ref": "#/$defs/declName"
+        },
+        "root_module": {
+          "type": "string",
+          "minLength": 1
+        },
+        "root_pretty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Null on every record so far. Typed as nullable rather than dropped: a record whose source is published should be able to say so."
+        },
+        "statement_identity": {
+          "type": "string"
+        },
+        "submission_id": {
+          "$ref": "#/$defs/uuid"
+        },
+        "substrate": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "citable",
+        "decl_name",
+        "depth",
+        "dictionary_leaves",
+        "is_root",
+        "kind",
+        "pretty",
+        "topo",
+        "type_sha256"
+      ],
+      "description": "A step in the argument. `doc` and `hypotheses` are present on some but not all.",
+      "properties": {
+        "citable": {
+          "type": "boolean"
+        },
+        "decl_name": {
+          "$ref": "#/$defs/declName"
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dictionary_leaves": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "doc": {
+          "type": "string"
+        },
+        "hypotheses": {
+          "type": "array"
+        },
+        "is_root": {
+          "type": "boolean"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "theorem"
+          ]
+        },
+        "pretty": {
+          "type": "string"
+        },
+        "topo": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "type_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "used_by",
+        "uses",
+        "via"
+      ],
+      "properties": {
+        "used_by": {
+          "$ref": "#/$defs/declName"
+        },
+        "uses": {
+          "$ref": "#/$defs/declName"
+        },
+        "via": {
+          "type": "string",
+          "enum": [
+            "direct"
+          ]
+        }
+      }
+    },
+    "leaf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decl_name",
+        "kind",
+        "pretty",
+        "role"
+      ],
+      "description": "Something the argument rests on rather than proves: a dictionary definition, or a cited result. `author` credits a cited leaf to whoever proved it.",
+      "properties": {
+        "author": {
+          "type": "string"
+        },
+        "decl_name": {
+          "$ref": "#/$defs/declName"
+        },
+        "doc": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "def",
+            "theorem",
+            "structure",
+            "inductive"
+          ]
+        },
+        "pretty": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "definition",
+            "cited"
+          ]
+        }
+      }
+    }
+  }
+}
