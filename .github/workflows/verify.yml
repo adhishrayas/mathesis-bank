@@ -59,6 +59,18 @@ jobs:
         working-directory: backend-gate
         run: lake build mathesis-adjudicate
 
+      # Exported to $GITHUB_ENV rather than set on one step, because BOTH the built-ins
+      # regression and `bin/mathesis verify` need it. Reducing this workflow set it on the verify
+      # step alone, and the regression test — which requires it — died on its first line with
+      # "MATHESIS_ADJUDICATE: the gate binary". The `test -x` is the point of the step: a path
+      # that does not exist would otherwise surface much later, as a verifier that checked
+      # nothing.
+      - name: Locate the gate binary
+        run: |
+          BIN="$GITHUB_WORKSPACE/backend-gate/.lake/build/bin/mathesis-adjudicate"
+          test -x "$BIN" || { echo "FATAL: gate exe not built at $BIN"; ls -R backend-gate/.lake/build/bin || true; exit 1; }
+          echo "MATHESIS_ADJUDICATE=$BIN" >> "$GITHUB_ENV"
+
       # The exe calls Lean.findSysroot at startup and shells out to `lean`. lean-action pins the
       # toolchain per project, not globally, so invoking the exe from the repo root otherwise
       # hits "no default toolchain configured".
@@ -77,7 +89,9 @@ jobs:
           ( cd "$PKG" && elan run "$TC" lake build ) || { echo "FATAL: lean4export build failed"; exit 1; }
           BIN="$(find "$PKG/.lake" -type f -name lean4export -perm -u+x | head -n1)"
           test -n "$BIN" || { echo "FATAL: lean4export exe not found"; exit 1; }
-          echo "MATHESIS_LEAN4EXPORT=$BIN" >> "$GITHUB_ENV"
+          # LEAN4EXPORT, which is the name ci/test_gate_builtins.sh reads. Spelled
+          # MATHESIS_LEAN4EXPORT here at first, which set a variable nothing looks at.
+          echo "LEAN4EXPORT=$BIN" >> "$GITHUB_ENV"
 
       # Does the verifier still catch the attack it was written for? A candidate redefining
       # `Nat.gcd` once proved `2 + 2 = 5` and was ADMITTED, with the trusted export loaded. This
@@ -89,7 +103,6 @@ jobs:
       # ── the record ───────────────────────────────────────────────────────────────────────
       - name: Re-derive every record
         env:
-          MATHESIS_ADJUDICATE: ${{ github.workspace }}/backend-gate/.lake/build/bin/mathesis-adjudicate
           BANK_EXPORT_STORE: gh:${{ github.repository }}@bank-exports-v1
           GH_TOKEN: ${{ github.token }}
         run: bin/mathesis verify
