@@ -1,0 +1,23 @@
+name = "gatebuiltins"
+version = "0.1.0"
+
+[[lean_lib]]
+name = "GcdRef"
+
+[[lean_lib]]
+name = "GcdCand"
+
+[[lean_lib]]
+name = "CharRef"
+
+[[lean_lib]]
+name = "CharCand"
+
+[[lean_lib]]
+name = "Honest"
+
+[[lean_lib]]
+name = "HoleRef"
+
+[[lean_lib]]
+name = "HoleCand"

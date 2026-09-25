@@ -11,7 +11,7 @@ registry/_shared/exports/*.export
 # Generated reference artifacts: deploy/builder/make-mathlib-export.sh writes a multi-hundred-MB
 # mathlib.export here. Like the blobs above it belongs in object storage, pinned by the sha256
 # recorded in `environments.mathlib_reference_sha256` — never in git.
-# (backend-gate/init.export is the exception and stays tracked: it is 50 KB and the gate's
+# (backend-gate/init.export is the exception and stays tracked: it is under 1 MB and the gate's
 # fallback resolution path reads it straight out of the checkout.)
 build/
 
