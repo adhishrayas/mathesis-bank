@@ -1,58 +1,34 @@
-# Mathesis — record build + STRICT re-derivation verification (public repo)
+# Mathesis — re-derive the record.
 #
-# This file IS the workflow. There is no copy of it under ci/ any more.
+# This repository holds the record and the program that checks it. This workflow is that program,
+# run on a clean machine on every push and once a week, so the claim "every record re-derives from
+# its own evidence" is not something you have to take on trust or run yourself first.
 #
-# One lived there, with a header saying to copy it here, because pushing under
-# .github/workflows/ was believed to need a token with `workflow` scope. That
-# restriction applies to OAuth/HTTPS pushes; over SSH an ordinary key works.
-#
-# The copy was not free. It lost MATHESIS_INIT_EXPORT at 5415289 and stayed wrong
-# for several commits while this file was right, so following its own "copy me"
-# instruction would have switched off the redefinition check in the running
-# workflow — silently, since an unset reference disables that check and still
-# reports rederive_status=ran. ci/_verify_check.py now fails closed on it.
-#
-# Post-F6 hardening. The "Verify" check no longer re-reads the manifest's own
-# recorded verdict/axioms — it RE-DERIVES each result from its frozen export
-# through the Lean kernel gate `mathesis-adjudicate`, and fails CLOSED
-# (MATHESIS_STRICT=1) if the gate or a blob is missing. Flow per run:
-#   1. build the gate from vendored source in backend-gate/  (Lean-core only,
-#      NO Mathlib — ~2-3 min, GitHub-cached; from-clean build verified locally)
-#   2. fetch the frozen .export blobs by sha256 from object storage
-#      (ci/fetch_exports.sh — they exceed GitHub's 100 MB/file limit, so they
-#      are NOT in git; the fetch sha256-verifies every blob)
-#   3. run ci/verify.sh under MATHESIS_STRICT=1
-#      (independent kernel re-derivation of all Results; exits nonzero on fail)
-#   4. re-derive every published argument in bank/ from its frozen export
-#      (bank/tools/verify-bank.sh, release bank-exports-v1), then
-#   5. rebuild the published record from bank/ (bank/tools/build-site.sh: the
-#      Rust generator and its tests, the client and its tests, the no-arbitrary-
-#      values lint and the prose lint), INV-2 lint, deploy Pages from that build.
-#
-# GATE SOURCE (backend-gate/): the ~8 Lean files of the re-derivation gate,
-# vendored from the private backend so the public CI can build the verifier
-# from auditable source (see deploy/DEPLOY_P0.md for the vendoring step and the
-# prebuilt-binary alternative).
+# It builds nothing else. There is no site to render and nothing to deploy — those moved out when
+# the repository was reduced to the record and its verifier. If you are looking for the thing that
+# publishes the website, it is not here, and that is the point.
 name: verify
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 6 * * 1'   # weekly re-verify
+    # Weekly. A record that stopped re-deriving would otherwise only surface when someone
+    # happened to look, which for an archive could be years.
+    - cron: '0 6 * * 1'
 
+# Read-only. This workflow publishes nothing, so it needs nothing.
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: verify-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-and-verify:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,19 +37,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install jsonschema
+      # The one dependency, and only for the schema leg. bin/mathesis fails closed without it
+      # rather than skipping that check.
+      - run: pip install jsonschema
 
-      # ── Re-derivation gate (finding F6 fix) ──────────────────────────────
-      # Build mathesis-adjudicate from the vendored gate source. Lean-core only
-      # (no Mathlib require anywhere in the closure — verified), so this is a
-      # small, ~2 min build, NOT a Mathlib compile.
-      #
-      # use-github-cache is DISABLED deliberately: a cached .lake from an earlier
-      # commit restored a STALE exe (lake saw it up-to-date and skipped the
-      # rebuild), so a source change to the gate silently ran the OLD binary and
-      # every definition mismatched. A clean build each run is cheap and correct.
-      - name: Build re-derivation gate (mathesis-adjudicate)
+      # ── the verifier itself ──────────────────────────────────────────────────────────────
+      # use-github-cache is off deliberately: a cached .lake once restored a STALE exe, so a
+      # change to the gate silently ran the old binary and nothing noticed. A clean build each
+      # run is ~2 minutes and correct.
+      - name: Build the gate
         uses: leanprover/lean-action@v1
         with:
           lake-package-directory: backend-gate
@@ -81,129 +53,56 @@ jobs:
           test: false
           lint: false
 
-      # lean-action runs a bare `lake build` (default targets only). The exe is a
-      # default_target in backend-gate/lakefile.lean, but build this explicitly too so
-      # the binary is guaranteed present regardless of lean-action's build semantics.
+      # lean-action runs a bare `lake build` (default targets). The exe is a default_target, but
+      # ask for it by name so its presence does not depend on lean-action's build semantics.
       - name: Build the gate executable
         working-directory: backend-gate
         run: lake build mathesis-adjudicate
 
+      # Exported to $GITHUB_ENV rather than set on one step, because BOTH the built-ins
+      # regression and `bin/mathesis verify` need it. Reducing this workflow set it on the verify
+      # step alone, and the regression test — which requires it — died on its first line with
+      # "MATHESIS_ADJUDICATE: the gate binary". The `test -x` is the point of the step: a path
+      # that does not exist would otherwise surface much later, as a verifier that checked
+      # nothing.
       - name: Locate the gate binary
         run: |
           BIN="$GITHUB_WORKSPACE/backend-gate/.lake/build/bin/mathesis-adjudicate"
           test -x "$BIN" || { echo "FATAL: gate exe not built at $BIN"; ls -R backend-gate/.lake/build/bin || true; exit 1; }
           echo "MATHESIS_ADJUDICATE=$BIN" >> "$GITHUB_ENV"
 
-      # The gate exe calls Lean.findSysroot at startup (shells out to `lean` via
-      # elan). lean-action pins the toolchain per-project, not globally, so the exe
-      # — invoked by the Python verifier from the repo root — otherwise hits
-      # "no default toolchain configured". Set a global default AND export
-      # LEAN_SYSROOT (findSysroot honors it) so the exe resolves it either way.
-      - name: Configure Lean toolchain for the gate exe
+      # The exe calls Lean.findSysroot at startup and shells out to `lean`. lean-action pins the
+      # toolchain per project, not globally, so invoking the exe from the repo root otherwise
+      # hits "no default toolchain configured".
+      - name: Make the toolchain resolvable from the repo root
         working-directory: backend-gate
         run: |
           elan default "$(tr -d '[:space:]' < lean-toolchain)"
           echo "LEAN_SYSROOT=$(lean --print-prefix)" >> "$GITHUB_ENV"
 
-      # The gate's regression tests export their fixtures, so they need lean4export's
-      # executable; the gate build compiles only its Export library. Same build as deposit.yml.
-      - name: Build lean4export
+      # The fixtures export their own candidates, so they need lean4export's EXECUTABLE; the gate
+      # build compiles only its Export library.
+      - name: Build lean4export, for the gate's regression tests
         run: |
-          L4E_PKG="$GITHUB_WORKSPACE/backend-gate/.lake/packages/lean4export"
+          PKG="$GITHUB_WORKSPACE/backend-gate/.lake/packages/lean4export"
           TC="$(tr -d '[:space:]' < backend-gate/lean-toolchain)"
-          ( cd "$L4E_PKG" && elan run "$TC" lake build ) || { echo "FATAL: lean4export build failed"; exit 1; }
-          L4E="$(find "$L4E_PKG/.lake" -type f -name lean4export -perm -u+x 2>/dev/null | head -n1)"
-          test -x "$L4E" || { echo "FATAL: lean4export exe not found after build"; exit 1; }
-          echo "LEAN4EXPORT=$L4E" >> "$GITHUB_ENV"
+          ( cd "$PKG" && elan run "$TC" lake build ) || { echo "FATAL: lean4export build failed"; exit 1; }
+          BIN="$(find "$PKG/.lake" -type f -name lean4export -perm -u+x | head -n1)"
+          test -n "$BIN" || { echo "FATAL: lean4export exe not found"; exit 1; }
+          # LEAN4EXPORT, which is the name ci/test_gate_builtins.sh reads. Spelled
+          # MATHESIS_LEAN4EXPORT here at first, which set a variable nothing looks at.
+          echo "LEAN4EXPORT=$BIN" >> "$GITHUB_ENV"
 
-      # A candidate that redefines a kernel built-in (a prelude `Nat.gcd` proving 2 + 2 = 5) must
-      # be rejected, and honest proofs through the built-ins admitted. Init-only fixtures.
-      - name: Gate regression tests (kernel built-ins)
+      # Does the verifier still catch the attack it was written for? A candidate redefining
+      # `Nat.gcd` once proved `2 + 2 = 5` and was ADMITTED, with the trusted export loaded. This
+      # runs before the record is checked, because a verifier that has stopped checking would
+      # otherwise report 32 clean re-derivations.
+      - name: The gate still catches a forged kernel built-in
         run: bash ci/test_gate_builtins.sh
 
-      # ── Frozen export blobs (content-addressed, not in git) ──────────────
-      - name: Fetch frozen exports (sha256-verified)
-        env:
-          MATHESIS_EXPORT_STORE: gh:${{ github.repository }}@exports-v1
-          MATHESIS_EXPORTS_DIR: ${{ github.workspace }}/registry/_shared/exports
-          GH_TOKEN: ${{ github.token }}
-        run: bash ci/fetch_exports.sh
-
-      # ── THE gate: strict independent re-derivation ───────────────────────
-      # verify.sh exits nonzero when _verify_check.py reports ok:false, which
-      # under MATHESIS_STRICT includes "the gate/blobs were absent so nothing
-      # was actually re-derived" — no silent green.
-      - name: Verify (strict re-derivation against frozen exports)
-        env:
-          MATHESIS_STRICT: '1'
-          MATHESIS_EXPORTS_DIR: ${{ github.workspace }}/registry/_shared/exports
-          # Trusted logical-core reference: the gate rejects any candidate that
-          # redefines a trusted constant (fake Iff/Eq/False). Bundled + auditable.
-          MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
-        run: |
-          chmod +x ci/verify.sh
-          ci/verify.sh "$RUNNER_TEMP/verification.json"
-
-      # ── The published bank: every argument re-derived from its frozen export ──
-      # verify-bank.sh fetches `<sha256>.export.gz` from the release, checks the
-      # decompressed bytes against the manifest's sha256, replays the export
-      # through the gate built above, and requires ADMITTED with exactly the
-      # manifest's axioms. Fails closed.
-      - name: Re-derive the published bank from its frozen exports
+      # ── the record ───────────────────────────────────────────────────────────────────────
+      - name: Re-derive every record
         env:
           BANK_EXPORT_STORE: gh:${{ github.repository }}@bank-exports-v1
-          BANK_EXPORTS_DIR: ${{ runner.temp }}/bank-exports
-          MATHESIS_INIT_EXPORT: ${{ github.workspace }}/backend-gate/init.export
           GH_TOKEN: ${{ github.token }}
-        run: bank/tools/verify-bank.sh
-
-      # ── The published record: rebuilt from the committed bank ────────────
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Rebuild the record from bank/ (generator, client, lints, prose lint)
-        run: |
-          rustup toolchain install "$(sed -n 's/^channel = "\(.*\)"$/\1/p' services/registry/rust-toolchain.toml)" \
-            --profile minimal --component rustfmt --component clippy
-          (cd web && npm ci --no-audit --no-fund)
-          bank/tools/build-site.sh
-
-      - name: Report drift between the committed docs/ and this build
-        run: git status --porcelain -- docs | head -50
-
-      - name: INV-2 no-ranking lint (no 'featured'/'top'/star markup)
-        run: |
-          if grep -rInE '(class="(featured|top|ranked)"|★|⭐)' docs/ ; then
-            echo "FATAL: INV-2 importance-signal markup found in docs/"; exit 1
-          else
-            echo "INV-2 lint: clean."
-          fi
-
-      - name: Upload verification artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: verification
-          path: ${{ runner.temp }}/verification.json
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
-  deploy:
-    needs: build-and-verify
-    # Same reason as the commit step above. A dispatch on a branch should tell you whether the
-    # branch verifies, not replace the published bank with it.
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: bin/mathesis verify

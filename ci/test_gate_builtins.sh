@@ -14,9 +14,10 @@
 #   CharCand  (prelude, Char.ofNat returns Box, proves False)         ADMITTED
 #   HoleCand  (a target reached from another target's statement)      REJECTED
 #
-# The first two are false theorems admitted; the third is an honest proof refused. Deposits could
-# not reach the first two (ci/parse_deposit.py admits no `prelude` line), so nothing banked is
-# affected, but the gate must not rest on the parser.
+# The first two are false theorems admitted; the third is an honest proof refused. Nothing banked
+# is affected: the intake path that accepts deposits admits no `prelude` line, so neither
+# candidate could ever have been submitted. That is exactly why this test exists anyway — the
+# gate must not rest on a check that lives somewhere else and can be changed without it.
 #
 # Real binaries and real fixtures (ci/fixtures/gate-builtins, Init only, no Mathlib): what is
 # under test is the gate's verdict on candidates the kernel itself accepts.

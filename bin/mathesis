@@ -1,152 +1,405 @@
-#!/usr/bin/env bash
-# ---------------------------------------------------------------------------
-# mathesis — verify a banked accession by RE-DERIVING its proof through the
-# Lean 4 kernel. This is the "independently checkable" promise made concrete:
-# it does not trust any field the bank records about itself; it fetches the
-# frozen proof export (content-addressed, sha256-verified) and replays it.
+#!/usr/bin/env python3
+"""mathesis — read the record, and check it.
+
+    mathesis list                    every record
+    mathesis show MTH.R-2026-6001    one record, and the claim it discharges
+    mathesis search shatter          over declaration names, statements and docstrings
+    mathesis verify                  re-derive every record from its frozen export
+    mathesis verify MTH.R-2026-6001  one record
+
+The repository holds the record and this program. Nothing here renders a website, deploys
+anything, or accepts a deposit — the point is that you can read this file, decide whether it
+checks what you care about, and run it.
+
+WHAT `verify` CHECKS, IN ORDER. Each leg can fail on its own, and a failure of any one is a
+failure overall. Nothing is skipped silently: a leg that cannot run is an error, not a pass.
+
+  1. schema        every manifest matches schema/bank-manifest.v1.schema.json
+  2. crosslinks    every argument names a claim that exists, and vice versa
+  3. coverage      the number of records re-derived equals the number present
+  4. re-derivation for each argument: fetch <export_sha256>.export.gz, check the decompressed
+                   bytes hash to that sha256, replay the export through the Lean kernel via
+                   `mathesis-adjudicate`, and require ADMITTED, an accepted replay, no
+                   triviality flag, and EXACTLY the axioms the manifest claims
+
+Leg 4 is the one that matters and the one to read the source of: `backend-gate/`. Legs 1–3 catch
+a manifest that lies about its own shape or about what else exists; leg 4 catches a manifest that
+lies about mathematics.
+
+WHAT IT DOES NOT CHECK. That the prose in `doc` describes the theorem. That the person credited
+proved it. That the statement is interesting, or true of anything outside Lean. `curation.json`,
+`posts.json`, `profiles.json`, `people.json` and `dictionary.json` are records of who published
+what, and nothing here re-derives them.
+
+THE EVIDENCE IS NOT IN THIS REPOSITORY. The frozen exports are ~615 MB compressed, past what git
+should carry, and live on the `bank-exports-v1` release. They are named by their own sha256 and
+re-hashed after download, so fetching them from anywhere is safe: point BANK_EXPORT_STORE at a
+local directory and this runs with no network at all.
+
+    MATHESIS_ADJUDICATE   the gate binary; default backend-gate/.lake/build/bin/mathesis-adjudicate
+    MATHESIS_INIT_EXPORT  the trusted logical core; default backend-gate/init.export
+    BANK_EXPORT_STORE     gh:owner/repo@tag | https://base/url | /local/dir
+    BANK_EXPORTS_DIR      download cache; default ${TMPDIR}/mathesis-bank-exports
+"""
+from __future__ import annotations
+
+import gzip
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+
+def repo_root() -> Path:
+    """The nearest ancestor holding the record and the verifier.
+
+    Both, not either: a directory with `bank/` alone might be anyone's, and one with
+    `backend-gate/` alone cannot tell you what it is verifying.
+    """
+    here = Path(__file__).resolve().parent
+    for d in (here, *here.parents):
+        if (d / "bank" / "arguments").is_dir() and (d / "backend-gate").is_dir():
+            return d
+    sys.exit("not inside a mathesis checkout (looked for bank/arguments/ and backend-gate/)")
+
+
+ROOT = repo_root()
+ARGUMENTS = ROOT / "bank" / "arguments"
+CLAIMS = ROOT / "bank" / "claims"
+SCHEMA = ROOT / "schema" / "bank-manifest.v1.schema.json"
+
+
+def load(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def arguments() -> list[dict]:
+    return [load(p)["argument"] for p in sorted(ARGUMENTS.glob("*.json"))]
+
+
+def claims() -> list[dict]:
+    return [load(p) for p in sorted(CLAIMS.glob("*.json"))]
+
+
+def find(accession: str) -> tuple[str, dict] | None:
+    p = ARGUMENTS / f"{accession}.json"
+    if p.is_file():
+        return "argument", load(p)["argument"]
+    p = CLAIMS / f"{accession}.json"
+    if p.is_file():
+        return "claim", load(p)
+    return None
+
+
+# ---------------------------------------------------------------------------------------------
+# Reading
 #
-#   mathesis check <ACCESSION> [<ACCESSION> ...]   verify specific accession(s)
-#   mathesis check --all                           verify every result
-#   mathesis build                                 build the kernel gate exe
-#   mathesis help
-#
-# Exit code IS the verdict: 0 = every requested accession ADMITTED, non-zero
-# otherwise. A green run means an independent machine re-derived the proof.
-#
-# Requirements: git checkout of the bank (for the manifests), the built gate
-# exe (`mathesis build` produces it), python3, and network access to the
-# export store (default: the public GitHub release) unless the blob is already
-# present under registry/_shared/exports.
-# ---------------------------------------------------------------------------
-set -euo pipefail
+# These compute the view each time from the files on disk. There is no index in this repository
+# and deliberately so: an index is a second copy of the truth, and the first thing to go stale.
+# ---------------------------------------------------------------------------------------------
 
-# Repo root = nearest ancestor containing registry/ and backend-gate/.
-find_root() {
-  local d; d="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-  while [ "$d" != "/" ]; do
-    if [ -d "$d/registry" ] && [ -d "$d/backend-gate" ]; then echo "$d"; return 0; fi
-    d="$(dirname "$d")"
-  done
-  echo "FATAL: could not locate the bank root (a dir containing registry/ and backend-gate/)" >&2
-  return 1
-}
-ROOT="$(find_root)"
-PY="${PYTHON:-python3}"
-EXE="${MATHESIS_ADJUDICATE:-$ROOT/backend-gate/.lake/build/bin/mathesis-adjudicate}"
 
-# The gate exe shells out to `lean` at runtime (to resolve its sysroot and import
-# the trusted Init base env). Make sure `lean` is on PATH; if not, recover it from
-# LEAN_SYSROOT or elan, else fail with a clear instruction rather than a cryptic
-# "could not execute external process 'lean'".
-ensure_lean() {
-  command -v lean >/dev/null 2>&1 && return 0
-  if [ -n "${LEAN_SYSROOT:-}" ] && [ -x "$LEAN_SYSROOT/bin/lean" ]; then PATH="$LEAN_SYSROOT/bin:$PATH"; return 0; fi
-  if command -v elan >/dev/null 2>&1; then
-    local lb; lb="$(dirname "$(elan which lean 2>/dev/null || true)")"
-    [ -n "$lb" ] && [ -x "$lb/lean" ] && { PATH="$lb:$PATH"; return 0; }
-  fi
-  echo "FATAL: 'lean' is not on PATH. Install the Lean toolchain (https://leanprover-community.github.io/get_started.html) or set LEAN_SYSROOT." >&2
-  return 2
-}
-export MATHESIS_EXPORT_STORE="${MATHESIS_EXPORT_STORE:-gh:noumenal-ai/mathesis-bank@exports-v1}"
-export MATHESIS_EXPORTS_DIR="${MATHESIS_EXPORTS_DIR:-$ROOT/registry/_shared/exports}"
-
-# Trusted logical-core reference. Both CI workflows set this, and without it the
-# gate DISABLES its trusted-redefinition check (fake `Iff`/`Eq`/`False`) and only
-# prints a note — so a CLI run that omitted it was silently weaker than the CI run
-# it is meant to reproduce. Set only when the file is actually present: the gate
-# reads the path unconditionally, so a bogus one would crash it.
-if [ -z "${MATHESIS_INIT_EXPORT:-}" ] && [ -f "$ROOT/backend-gate/init.export" ]; then
-  export MATHESIS_INIT_EXPORT="$ROOT/backend-gate/init.export"
-fi
-
-usage() { sed -n '2,16p' "${BASH_SOURCE[0]}" | sed 's/^# \{0,1\}//'; }
-
-manifest_for() {  # <ACCESSION> -> path or empty
-  local acc="$1" bank
-  for bank in results claims dictionary; do
-    local p="$ROOT/registry/$bank/$acc/manifest.json"
-    [ -f "$p" ] && { echo "$p"; return 0; }
-  done
-  return 1
-}
-
-cmd_build() {
-  command -v lake >/dev/null 2>&1 || { echo "FATAL: 'lake' not on PATH — install the Lean toolchain (elan) first." >&2; exit 2; }
-  echo "building the kernel gate (backend-gate) ..."
-  ( cd "$ROOT/backend-gate" && lake build mathesis-adjudicate )
-  test -x "$EXE" || { echo "FATAL: build finished but exe not at $EXE" >&2; exit 2; }
-  echo "gate exe: $EXE"
-}
-
-check_one() {  # <ACCESSION> -> 0 admitted / 1 rejected / 2 error
-  local acc="$1"
-  local mf; mf="$(manifest_for "$acc")" || { echo "  ✗ $acc — no such accession in this checkout" >&2; return 2; }
-  # sha256 of the frozen export + the target declarations, straight from the manifest.
-  local sha decls
-  sha="$("$PY" -c 'import json,sys;print((json.load(open(sys.argv[1])).get("frozen_export") or {}).get("sha256") or "")' "$mf")"
-  [ -n "$sha" ] || { echo "  ✗ $acc — manifest carries no frozen_export.sha256 (nothing to re-derive)" >&2; return 2; }
-  local decls_arr=()
-  while IFS= read -r d; do [ -n "$d" ] && decls_arr+=("$d"); done < <(
-    "$PY" -c 'import json,sys;[print(x) for x in ((json.load(open(sys.argv[1])).get("statement") or {}).get("decl_names") or [])]' "$mf")
-  [ "${#decls_arr[@]}" -gt 0 ] || { echo "  ✗ $acc — manifest names no decls to check" >&2; return 2; }
-
-  test -x "$EXE" || { echo "FATAL: gate exe not built. Run: mathesis build" >&2; exit 2; }
-  ensure_lean || exit 2
-
-  local blob="$MATHESIS_EXPORTS_DIR/$sha.export"
-  if [ ! -f "$blob" ]; then
-    echo "  fetching frozen export $sha (sha256-verified after download) ..."
-    bash "$ROOT/ci/fetch_exports.sh" "$sha" >/dev/null || { echo "  ✗ $acc — could not fetch/verify the frozen export" >&2; return 2; }
-  fi
-
-  # Keep the gate's stderr instead of discarding it: it carries both the
-  # "trusted-redefinition check DISABLED" warning and, on a non-ADMITTED
-  # verdict, the actual diagnosis. Silently dropping it made a weakened check
-  # and a real rejection look identical.
-  local out errf
-  errf="$(mktemp)"
-  out="$("$EXE" "$blob" -- "${decls_arr[@]}" 2>"$errf")" || true
-  if grep -q 'trusted-redefinition check DISABLED' "$errf" 2>/dev/null; then
-    echo "  ! $acc — trusted-redefinition check DISABLED (no backend-gate/init.export here);" >&2
-    echo "      this run is weaker than CI's. Axiom type-binding is still active." >&2
-  fi
-  local verdict
-  verdict="$("$PY" -c 'import json,sys;print(json.load(sys.stdin).get("verdict","?"))' <<<"$out" 2>/dev/null || echo '?')"
-  if [ "$verdict" = "ADMITTED" ]; then
-    rm -f "$errf"
-    echo "  ✓ $acc  ADMITTED  ($(printf '%s ' "${decls_arr[@]}")— kernel re-derived)"
+def cmd_list(argv: list[str]) -> int:
+    want_claims = "--claims" in argv
+    want_args = "--arguments" in argv or not want_claims
+    if want_claims and not want_args:
+        for c in claims():
+            print(f"{c['accession']}  {c['decl_name']}")
+        return 0
+    for a in arguments():
+        ax = ", ".join(a["axioms_reached"]) or "none"
+        print(f"{a['accession']}  {a['root_decl_name']}")
+        print(f"{'':17s}claim {a['claim_accession']}  axioms: {ax}")
     return 0
-  fi
-  echo "  ✗ $acc  $verdict"
-  if [ -s "$errf" ]; then
-    sed 's/^/      /' "$errf" >&2
-  fi
-  rm -f "$errf"
-  return 1
-}
 
-cmd_check() {
-  local accs=()
-  if [ "${1:-}" = "--all" ]; then
-    while IFS= read -r a; do accs+=("$a"); done < <(ls "$ROOT/registry/results" 2>/dev/null | sort)
-  else
-    accs=("$@")
-  fi
-  [ "${#accs[@]}" -gt 0 ] || { echo "usage: mathesis check <ACCESSION> [...] | --all" >&2; exit 2; }
-  local fail=0 n=0
-  for a in "${accs[@]}"; do
-    n=$((n+1))
-    check_one "$a" || fail=1
-  done
-  echo ""
-  if [ "$fail" -eq 0 ]; then echo "all $n accession(s) ADMITTED — independently re-derived through the kernel."; else echo "one or more accessions did not re-derive; see above."; fi
-  return "$fail"
-}
 
-case "${1:-help}" in
-  check) shift; cmd_check "$@";;
-  build) cmd_build;;
-  help|-h|--help) usage;;
-  *) echo "unknown command: $1" >&2; usage; exit 2;;
-esac
+def cmd_show(argv: list[str]) -> int:
+    if not argv:
+        return usage("show needs an accession, e.g. MTH.R-2026-6001")
+    hit = find(argv[0])
+    if hit is None:
+        print(f"no record {argv[0]}", file=sys.stderr)
+        return 1
+    kind, rec = hit
+    if kind == "claim":
+        print(f"{rec['accession']}  (claim)")
+        print(f"  declaration  {rec['decl_name']}")
+        print(f"  module       {rec['module']}")
+        print(f"  credited     {rec['citation_name']} (@{rec['login']})")
+        print(f"  arguments    {rec['arguments_count']}")
+        print(f"  reference    {rec['reference_sha256']}")
+        print(f"\n{rec['pretty']}")
+        if rec.get("doc"):
+            print(f"\n{rec['doc']}")
+        return 0
+    print(f"{rec['accession']}  (argument)")
+    print(f"  declaration  {rec['root_decl_name']}")
+    print(f"  module       {rec['root_module']}")
+    print(f"  discharges   {rec['claim_accession']}")
+    print(f"  credited     {rec['citation_name']} (@{rec['login']})")
+    if rec["cites"]:
+        print(f"  cites        {', '.join(rec['cites'])}")
+    print(f"  axioms       {', '.join(rec['axioms_reached']) or 'none'}")
+    print(f"  evidence     {rec['export_sha256']}")
+    print(f"               {rec['export_bytes']:,} bytes, {rec['export_constants']:,} constants")
+    print(f"  graph        {rec['node_count']} steps, {rec['edge_count']} edges")
+    print(f"\n{rec['root_pretty']}")
+    claim = find(rec["claim_accession"])
+    if claim and claim[1].get("doc"):
+        print(f"\n{claim[1]['doc']}")
+    return 0
+
+
+def cmd_search(argv: list[str]) -> int:
+    if not argv:
+        return usage("search needs some text")
+    needle = " ".join(argv).lower()
+    hits = 0
+    for c in claims():
+        hay = " ".join(str(c.get(k, "")) for k in ("decl_name", "pretty", "doc", "module"))
+        if needle in hay.lower():
+            hits += 1
+            print(f"{c['accession']}  {c['decl_name']}")
+    for a in arguments():
+        hay = " ".join(str(a.get(k, "")) for k in ("root_decl_name", "root_pretty", "root_module"))
+        if needle in hay.lower():
+            hits += 1
+            print(f"{a['accession']}  {a['root_decl_name']}")
+    if not hits:
+        print(f"nothing matches {' '.join(argv)!r}", file=sys.stderr)
+        return 1
+    return 0
+
+
+# ---------------------------------------------------------------------------------------------
+# Checking
+# ---------------------------------------------------------------------------------------------
+
+FAILURES: list[str] = []
+
+
+def fail(what: str, detail: str) -> None:
+    FAILURES.append(f"{what}: {detail}")
+    print(f"  FAIL  {what}  {detail}")
+
+
+def leg_schema() -> None:
+    """Every manifest matches the published schema.
+
+    Fails closed when `jsonschema` is missing rather than skipping: a verifier that quietly
+    checks less than it says is the failure mode this whole repository exists to avoid.
+    """
+    try:
+        from jsonschema import Draft202012Validator
+    except ImportError:
+        fail("schema", "python package `jsonschema` is not installed (pip install jsonschema)")
+        return
+    schema = load(SCHEMA)
+    # Validate each file against the branch its directory says it is, rather than against the
+    # top-level `oneOf`. The schema keeps the oneOf so an outside consumer can hand it any
+    # manifest, but here it only produces the wrong branch's complaint: a malformed argument
+    # came back as "'argument', 'edges', 'leaves', 'nodes' were unexpected", which is the CLAIM
+    # branch objecting to an argument file and says nothing about what is actually wrong.
+    branches = {
+        CLAIMS: {"$defs": schema["$defs"], "$ref": "#/$defs/claimFile"},
+        ARGUMENTS: {"$defs": schema["$defs"], "$ref": "#/$defs/argumentFile"},
+    }
+    bad = 0
+    for directory, sub in branches.items():
+        validator = Draft202012Validator(sub)
+        for path in sorted(directory.glob("*.json")):
+            errors = sorted(validator.iter_errors(load(path)), key=lambda e: list(e.path))
+            if errors:
+                bad += 1
+                where = "/".join(str(x) for x in errors[0].path) or "(root)"
+                fail("schema", f"{path.name} at {where}: {errors[0].message[:100]}")
+    if not bad:
+        print(f"  ok    schema        {len(list(CLAIMS.glob('*.json'))) + len(list(ARGUMENTS.glob('*.json')))} manifests")
+
+
+def leg_crosslinks() -> None:
+    """Every argument names a claim that exists, and every claim is accounted for."""
+    claim_by = {c["accession"]: c for c in claims()}
+    args = arguments()
+    for a in args:
+        if a["claim_accession"] not in claim_by:
+            fail("crosslinks", f"{a['accession']} discharges {a['claim_accession']}, which does not exist")
+    counted: dict[str, int] = {}
+    for a in args:
+        counted[a["claim_accession"]] = counted.get(a["claim_accession"], 0) + 1
+    for acc, c in claim_by.items():
+        if c["arguments_count"] != counted.get(acc, 0):
+            fail("crosslinks", f"{acc} says arguments_count={c['arguments_count']}, {counted.get(acc, 0)} argument(s) name it")
+    if not FAILURES:
+        print(f"  ok    crosslinks    {len(args)} arguments, {len(claim_by)} claims")
+
+
+def leg_coverage(rederived: int, present: int) -> None:
+    """The count re-derived equals the count present.
+
+    Without this a run that quietly verified none of them reports no failures and exits 0, which
+    is indistinguishable from a clean pass — the same shape as an absent binary reading as
+    success.
+    """
+    if rederived != present:
+        fail("coverage", f"{rederived} of {present} arguments were re-derived")
+    else:
+        print(f"  ok    coverage      {rederived}/{present} re-derived")
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(8 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def fetch(name: str, cache: Path) -> bool:
+    """Put `name` in the cache. Returns False if it could not be got."""
+    dest = cache / name
+    if dest.is_file() and dest.stat().st_size:
+        return True
+    store = os.environ.get("BANK_EXPORT_STORE", "gh:noumenal-ai/mathesis-bank@bank-exports-v1")
+    cache.mkdir(parents=True, exist_ok=True)
+    if store.startswith("gh:"):
+        spec = store[3:]
+        repo, _, tag = spec.partition("@")
+        cmd = ["gh", "release", "download", tag, "-R", repo, "-p", name, "-D", str(cache), "--clobber"]
+    elif store.startswith(("http://", "https://")):
+        cmd = ["curl", "-fsSL", "-o", str(dest), f"{store.rstrip('/')}/{name}"]
+    else:
+        src = Path(store) / name
+        if not src.is_file():
+            return False
+        shutil.copyfile(src, dest)
+        return True
+    return subprocess.run(cmd, capture_output=True).returncode == 0 and dest.is_file()
+
+
+def build_gate(exe: Path) -> bool:
+    """Build the adjudicator from the source in backend-gate/. Returns whether `exe` now exists.
+
+    Doing this here is the difference between "clone and run the program" and "clone, read an
+    error, go and read a second set of instructions, then run the program". It is a real build —
+    it downloads a Lean toolchain the first time and takes a few minutes — so it announces itself
+    and streams the output rather than hanging silently.
+
+    No prebuilt binary is shipped instead, deliberately: a committed executable is an opaque blob
+    nobody can rebuild and compare, and this repository's whole claim is that you do not have to
+    take its word for anything.
+    """
+    pkg = ROOT / "backend-gate"
+    if shutil.which("lake") is None:
+        return False
+    print(f"  the gate is not built — building it from {pkg.name}/ (this takes a few minutes)\n")
+    rc = subprocess.run(["lake", "build", "mathesis-adjudicate"], cwd=pkg).returncode
+    print()
+    return rc == 0 and exe.is_file() and os.access(exe, os.X_OK)
+
+
+def leg_rederive(only: str | None) -> int:
+    """Replay each frozen export through the Lean kernel and compare it to its manifest."""
+    exe = Path(os.environ.get(
+        "MATHESIS_ADJUDICATE", ROOT / "backend-gate" / ".lake" / "build" / "bin" / "mathesis-adjudicate"))
+    if not (exe.is_file() and os.access(exe, os.X_OK)) and not build_gate(exe):
+        fail("re-derivation",
+             f"the gate is not built at {exe}, and building it here did not produce it. "
+             "It needs a Lean toolchain: install elan (https://github.com/leanprover/elan), "
+             "then `cd backend-gate && lake build mathesis-adjudicate`")
+        return 0
+    init = Path(os.environ.get("MATHESIS_INIT_EXPORT", ROOT / "backend-gate" / "init.export"))
+    if not init.is_file() or not init.stat().st_size:
+        fail("re-derivation", f"the trusted logical core is missing or empty at {init}")
+        return 0
+    cache = Path(os.environ.get("BANK_EXPORTS_DIR", Path(os.environ.get("TMPDIR", "/tmp")) / "mathesis-bank-exports"))
+
+    done = 0
+    for a in arguments():
+        if only and a["accession"] != only:
+            continue
+        acc, sha, decl = a["accession"], a["export_sha256"], a["root_decl_name"]
+        name = f"{sha}.export.gz"
+        if not fetch(name, cache):
+            fail(acc, f"{name} is not in the store")
+            continue
+        blob = cache / name
+        raw = cache / f"{sha}.export"
+        with gzip.open(blob, "rb") as src, raw.open("wb") as dst:
+            shutil.copyfileobj(src, dst)
+        got = sha256_file(raw)
+        if got != sha:
+            # Before the kernel ever sees it. A substituted blob is caught by arithmetic, not by
+            # trusting whoever served it.
+            fail(acc, f"evidence hashes to {got[:16]}…, manifest says {sha[:16]}…")
+            raw.unlink(missing_ok=True)
+            continue
+        env = {**os.environ, "MATHESIS_INIT_EXPORT": str(init)}
+        proc = subprocess.run([str(exe), str(raw), "--", decl], capture_output=True, text=True, env=env)
+        raw.unlink(missing_ok=True)
+        try:
+            verdict = json.loads(proc.stdout)
+        except json.JSONDecodeError:
+            fail(acc, f"the gate produced no verdict (exit {proc.returncode}): {proc.stderr.strip()[:90]}")
+            continue
+        target = next((t for t in verdict.get("targets", []) if t.get("decl") == decl), None)
+        if verdict.get("verdict") != "ADMITTED":
+            fail(acc, f"verdict {verdict.get('verdict')}")
+        elif not (verdict.get("replay") or {}).get("accepted"):
+            fail(acc, "the kernel did not accept the replay")
+        elif target is None:
+            fail(acc, f"the export does not contain {decl}")
+        elif target.get("triviality") is not None:
+            fail(acc, f"flagged trivial: {target['triviality']}")
+        elif sorted(target.get("axioms_reached") or []) != sorted(a["axioms_reached"]):
+            # Exact equality, not subset. A manifest claiming FEWER axioms than the proof uses is
+            # the interesting lie, and a whitelist check would pass it.
+            fail(acc, f"axioms {sorted(target.get('axioms_reached') or [])} != manifest {sorted(a['axioms_reached'])}")
+        else:
+            print(f"  ok    {acc}  {decl}")
+        done += 1
+    return done
+
+
+def cmd_verify(argv: list[str]) -> int:
+    only = next((a for a in argv if not a.startswith("-")), None)
+    if only and find(only) is None:
+        print(f"no record {only}", file=sys.stderr)
+        return 1
+    present = len([a for a in arguments() if not only or a["accession"] == only])
+    print(f"verifying {present} argument(s) from {ROOT}\n")
+    leg_schema()
+    leg_crosslinks()
+    done = leg_rederive(only)
+    leg_coverage(done, present)
+    print()
+    if FAILURES:
+        print(f"{len(FAILURES)} failure(s):")
+        for f in FAILURES:
+            print(f"  - {f}")
+        return 1
+    print("every record re-derives from its own evidence.")
+    return 0
+
+
+def usage(message: str = "") -> int:
+    if message:
+        print(message, file=sys.stderr)
+    print(__doc__.split("WHAT `verify` CHECKS")[0].rstrip(), file=sys.stderr)
+    return 2
+
+
+def main(argv: list[str]) -> int:
+    if not argv or argv[0] in ("-h", "--help", "help"):
+        return usage()
+    command, rest = argv[0], argv[1:]
+    return {
+        "list": cmd_list, "show": cmd_show, "search": cmd_search, "verify": cmd_verify,
+    }.get(command, lambda _: usage(f"unknown command {command!r}"))(rest)
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
