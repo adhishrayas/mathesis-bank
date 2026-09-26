@@ -159,15 +159,68 @@ def degenerateProp (concl : Expr) : Option String :=
     | (``HEq, #[_, a, _, b]) => if a == b then some "conclusion is a reflexive `HEq a a`" else none
     | _ => none
 
+/-- Unfold the HEAD of an application once, through a definition the candidate itself carries.
+`none` when the head is not a constant, or not a definition, or absent. -/
+def unfoldHeadOnce (constMap : Std.HashMap Name ConstantInfo) (e : Expr) : Option Expr :=
+  match e.getAppFn with
+  | .const n us =>
+    match constMap[n]? with
+    | some (.defnInfo dv) =>
+      some ((dv.value.instantiateLevelParams dv.levelParams us).beta e.getAppArgs)
+    | _ => none
+  | _ => none
+
+/-- Degeneracy of a conclusion, allowing the HEAD to be unfolded through the candidate's own
+definitions.
+
+WHY THE HEAD AND ONLY THE HEAD
+
+`trivialityOf` used to test the conclusion exactly as written, so a name was enough to hide
+behind:
+
+    def Disguised : Prop := True
+    theorem rh : Disguised := trivial
+
+`stripForalls` gives the constant `Disguised`, which is not `True`, so nothing was flagged and
+the deposit routed straight to publication as a clean result. Measured on that deposit before
+this change: `triviality: null`.
+
+Unfolding the head fixes that and cannot make the check less conservative, because a conclusion
+that unfolds to `True` is trivial under any reading — it is `True` with a name on it.
+
+The arguments are deliberately NOT unfolded. This check exists to catch vacuity, not to decide
+definitional equality, and the note above commits to leaving `2 + 2 = 4` alone. Unfolding
+arguments would turn every `myFour = 4` into a reflexive equality and start flagging arithmetic
+identities as vacuous — a different check, and a worse one.
+
+`fuel` bounds it. Each step substitutes a definition body, so a chain of aliases is followed and
+a pathological one is not. -/
+partial def degenerateUnfolding (constMap : Std.HashMap Name ConstantInfo) (fuel : Nat)
+    (unfolded : Bool) (e : Expr) : Option String :=
+  let concl := stripForalls e
+  match degenerateProp concl with
+  | some r => some (if unfolded then r ++ " (after unfolding the submission's own definitions)" else r)
+  | none =>
+    if fuel = 0 then none
+    else match unfoldHeadOnce constMap concl with
+      | some e' => degenerateUnfolding constMap (fuel - 1) true e'
+      | none => none
+
 /-- Syntactic triviality of a target: for a theorem, a degenerate conclusion (after stripping the
-`∀`-binders); for a definition, a body that is constantly `True` (a vacuous predicate). -/
-def trivialityOf (info : ConstantInfo) : Option String :=
+`∀`-binders and unfolding the submission's own definitions at the head); for a definition, a body
+that is constantly `True` (a vacuous predicate), under the same unfolding. -/
+def trivialityOf (constMap : Std.HashMap Name ConstantInfo) (info : ConstantInfo) : Option String :=
   match info with
-  | .thmInfo tv => degenerateProp (stripForalls tv.type)
+  | .thmInfo tv => degenerateUnfolding constMap 6 false tv.type
   | .defnInfo dv =>
-      if (stripLambdas dv.value).isConstOf ``True then
+      let body := stripLambdas dv.value
+      if body.isConstOf ``True then
         some "definition body is constantly `True` (vacuous predicate)"
-      else none
+      else
+        -- The same disguise one level down: `def Robust := fun _ => Disguised`.
+        match degenerateUnfolding constMap 6 false body with
+        | some _ => some "definition body is constantly `True` (vacuous predicate, after unfolding the submission's own definitions)"
+        | none => none
   | _ => none
 
 /-! ### Per-target audit -/
@@ -249,7 +302,7 @@ def auditTarget (candidate : ExportedEnv) (permittedTypes : Std.HashMap Name Con
   { decl,
     kind := match info? with | some i => kindString i | none => "absent",
     pass, illegalAxiom, axiomsReached := reached,
-    triviality := info?.bind trivialityOf,
+    triviality := info?.bind (trivialityOf candidate.constMap),
     statement }
 
 /-- Extract the illegal-axiom name from a `checkAxioms` error string, if the failure was in fact an
