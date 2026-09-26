@@ -59,19 +59,33 @@ cannot run is an error, not a pass.
 
 | | |
 |---|---|
-| **schema** | every manifest matches `schema/bank-manifest.v1.schema.json` |
-| **crosslinks** | every argument names a claim that exists, and every claim its argument |
+| **schema** | every file matches `schema/bank-manifest.v2.schema.json` |
+| **crosslinks** | every argument names a claim that exists, every relation names two that do and a profile that does, and every topic a claim is filed under is one that exists |
+| **dependencies** | a declaration name the record publishes means **one** statement: an argument's root carries the statement digest of the claim it discharges, and any step naming another claim's declaration carries that claim's digest too |
 | **coverage** | the number re-derived equals the number present — "31 of 32 clean" must not print as "clean" |
 | **re-derivation** | fetch `<export_sha256>.export.gz`, check the decompressed bytes against that sha256, replay through `mathesis-adjudicate`, and require ADMITTED, an accepted replay, no triviality flag, and **exactly** the axioms the manifest claims |
 
-The last is the one that matters, and `backend-gate/` is the source to read. The first three
+The last is the one that matters, and `backend-gate/` is the source to read. The first four
 catch a manifest that lies about its own shape or about what else exists; the last catches one
 that lies about mathematics.
+
+**Dependencies are derived, never stored.** Where an argument's graph contains another claim's
+root declaration under that claim's statement digest, the argument depends on it, and
+`mathesis show` says so — computed each time from the graphs. Nothing writes it into a file. The
+hand-kept list this replaced recorded two such edges where the record holds six, which is what a
+second copy of the truth tends to be worth.
 
 **What it does not check.** That the prose describes the theorem. That the person credited
 proved it. That the statement is interesting, or true of anything outside Lean.
 `curation.json`, `posts.json`, `profiles.json`, `people.json` and `dictionary.json` record who
 published what; nothing here re-derives them.
+
+**And it cannot check the relations.** `bank/relations.json` says that one result generalises
+another, or shows where it stops. No kernel settles that. `verify` confirms only that a relation
+points at claims that exist and carries a profile that exists; whether it is *true* is somebody's
+reading of the mathematics. Each is stored with a name and a date against it, and `mathesis show`
+prints them apart from everything else, because telling what was checked from what was asserted
+is the whole point of reading this repository rather than taking its word.
 
 ## Layout
 
@@ -79,6 +93,8 @@ published what; nothing here re-derives them.
 |---|---|
 | `bank/claims/`, `bank/arguments/` | the record: 32 claims and the 32 arguments that discharge them |
 | `bank/curation.json`, `dictionary.json`, `posts.json`, `profiles.json`, `people.json` | the rest of the record, and its authorship |
+| `bank/relations.json` | how a curator says two claims stand to each other — assertions, attributed and dated |
+| `bank/topics.json` | editorial groupings. Nine of the 32 claims are classified; an unclassified record is not an error |
 | `bank/avatars/` | committed, so no page has to make a third-party request |
 | `bank/tools/verify-bank.sh` | the re-derivation leg on its own, if you would rather run it directly |
 | `backend-gate/` | the Lean adjudicator, and `init.export`, the trusted logical core every replay is checked against |
@@ -86,7 +102,7 @@ published what; nothing here re-derives them.
 | `bin/mathesis` | the program above |
 | `ci/test_gate_builtins.sh`, `ci/fixtures/` | the regression test below |
 | `ci/export_stats.py` | how `init.export`'s constant count is checked (`--self-test`) |
-| `schema/bank-manifest.v1.schema.json` | the schema for the manifests in `bank/` |
+| `schema/bank-manifest.v2.schema.json` | the schema for everything in `bank/` that `verify` validates |
 | `shared/reasons.v1.json` | the verdict vocabulary, for reading a rejection |
 
 ## Why the gate ships with a test that tries to break it

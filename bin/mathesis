@@ -14,22 +14,39 @@ checks what you care about, and run it.
 WHAT `verify` CHECKS, IN ORDER. Each leg can fail on its own, and a failure of any one is a
 failure overall. Nothing is skipped silently: a leg that cannot run is an error, not a pass.
 
-  1. schema        every manifest matches schema/bank-manifest.v1.schema.json
-  2. crosslinks    every argument names a claim that exists, and vice versa
-  3. coverage      the number of records re-derived equals the number present
-  4. re-derivation for each argument: fetch <export_sha256>.export.gz, check the decompressed
+  1. schema        every manifest matches schema/bank-manifest.v2.schema.json
+  2. crosslinks    every argument names a claim that exists, every relation names two that do,
+                   and every topic a claim carries is a topic that exists
+  3. dependencies  a declaration name published by the record means ONE statement: an argument's
+                   root carries its own claim's statement digest, and any node naming another
+                   claim's declaration carries that claim's digest too
+  4. coverage      the number of records re-derived equals the number present
+  5. re-derivation for each argument: fetch <export_sha256>.export.gz, check the decompressed
                    bytes hash to that sha256, replay the export through the Lean kernel via
                    `mathesis-adjudicate`, and require ADMITTED, an accepted replay, no
                    triviality flag, and EXACTLY the axioms the manifest claims
 
-Leg 4 is the one that matters and the one to read the source of: `backend-gate/`. Legs 1–3 catch
-a manifest that lies about its own shape or about what else exists; leg 4 catches a manifest that
+Leg 5 is the one that matters and the one to read the source of: `backend-gate/`. Legs 1–4 catch
+a manifest that lies about its own shape or about what else exists; leg 5 catches a manifest that
 lies about mathematics.
+
+DEPENDENCIES ARE DERIVED, NEVER STORED. Where an argument's graph contains another claim's root
+declaration under that claim's statement digest, the argument depends on it — and `show` says so,
+computed from the graphs. Nothing writes it into a manifest. The hand-maintained list this
+replaced recorded two such edges where the record actually holds six, which is what a second copy
+of the truth is worth.
 
 WHAT IT DOES NOT CHECK. That the prose in `doc` describes the theorem. That the person credited
 proved it. That the statement is interesting, or true of anything outside Lean. `curation.json`,
-`posts.json`, `profiles.json`, `people.json` and `dictionary.json` are records of who published
-what, and nothing here re-derives them.
+`posts.json`, `people.json` and `dictionary.json` are records of who published what, and nothing
+here re-derives them.
+
+AND IT CANNOT CHECK THE RELATIONS. `bank/relations.json` holds assertions — that one result
+generalises another, or shows where it stops. No kernel settles those. What the crosslinks leg
+verifies is only that a relation points at claims that exist and carries a profile that exists;
+whether it is TRUE is somebody's reading of the mathematics, which is why each one is stored with
+a name and a date against it. The distinction between that and a replayed proof is the point of
+this repository, so it is kept visible rather than smoothed over.
 
 THE EVIDENCE IS NOT IN THIS REPOSITORY. The frozen exports are ~615 MB compressed, past what git
 should carry, and live on the `bank-exports-v1` release. They are named by their own sha256 and
@@ -69,7 +86,10 @@ def repo_root() -> Path:
 ROOT = repo_root()
 ARGUMENTS = ROOT / "bank" / "arguments"
 CLAIMS = ROOT / "bank" / "claims"
-SCHEMA = ROOT / "schema" / "bank-manifest.v1.schema.json"
+SCHEMA = ROOT / "schema" / "bank-manifest.v2.schema.json"
+RELATIONS = ROOT / "bank" / "relations.json"
+TOPICS = ROOT / "bank" / "topics.json"
+PROFILES = ROOT / "bank" / "profiles.json"
 
 
 def load(path: Path) -> dict:
@@ -82,6 +102,50 @@ def arguments() -> list[dict]:
 
 def claims() -> list[dict]:
     return [load(p) for p in sorted(CLAIMS.glob("*.json"))]
+
+
+def argument_files() -> list[dict]:
+    """Whole argument files, graph included.
+
+    `arguments()` above unwraps the `argument` key and drops `nodes`/`edges`/`leaves` with it,
+    which is right for every caller that wants the record. The dependency leg wants the graph.
+    """
+    return [load(p) for p in sorted(ARGUMENTS.glob("*.json"))]
+
+
+def sidecar(path: Path) -> list[dict]:
+    """A top-level list file, or an empty one if it is absent.
+
+    Absent is legitimate — a record with no relations asserted about it is the normal starting
+    state — so this does not fail. A file that exists but is malformed still raises.
+    """
+    return load(path) if path.is_file() else []
+
+
+def derived_dependencies() -> dict[str, list[str]]:
+    """Which claims each argument depends on, computed from the graphs.
+
+    An argument depends on a claim when its own graph contains a node carrying that claim's
+    declaration name under that claim's statement digest. The digest is what makes it a
+    dependency rather than a coincidence: a name alone would also match a different statement
+    that happened to be called the same thing.
+
+    Deliberately not stored anywhere. See the note at the top of this file.
+    """
+    by_decl = {c["decl_name"]: c for c in claims()}
+    out: dict[str, list[str]] = {}
+    for doc in argument_files():
+        arg = doc["argument"]
+        deps = []
+        for n in doc["nodes"]:
+            c = by_decl.get(n["decl_name"])
+            if c is None or c["accession"] == arg["claim_accession"]:
+                continue
+            if n["type_sha256"] == c["statement_digest"]:
+                deps.append(c["accession"])
+        if deps:
+            out[arg["accession"]] = sorted(set(deps))
+    return out
 
 
 def find(accession: str) -> tuple[str, dict] | None:
@@ -116,6 +180,38 @@ def cmd_list(argv: list[str]) -> int:
     return 0
 
 
+def topic_name(topic_id: str) -> str:
+    for x in sidecar(TOPICS):
+        if x["id"] == topic_id:
+            return f"{x['name']} ({topic_id})"
+    return topic_id
+
+
+def show_assertions(claim_accession: str) -> None:
+    """Relations touching this claim, labelled as the assertions they are.
+
+    Printed apart from everything above them, and with a name against each, because nothing here
+    was checked by a kernel: somebody read both results and said how they stand. A reader should
+    not have to work out which lines of this output are of that kind.
+    """
+    rels = [r for r in sidecar(RELATIONS)
+            if claim_accession in (r["from"], r["to"])]
+    if not rels:
+        return
+    by_id = {x["id"]: x for x in sidecar(PROFILES)}
+    print("  asserted     not checked by anything — read them as somebody's opinion")
+    for r in sorted(rels, key=lambda r: (r["from"], r["kind"], r["to"])):
+        verb = r["kind"].replace("_", " ")
+        if r["from"] == claim_accession:
+            line = f"this {verb} {r['to']}"
+        else:
+            line = f"{r['from']} {verb} this"
+        who = by_id.get(r["asserted_by"], {}).get("citation_name", r["asserted_by"])
+        print(f"{'':15s}{line}  — {who}, {r['asserted_at'][:10]}")
+        if r.get("note"):
+            print(f"{'':17s}{r['note']}")
+
+
 def cmd_show(argv: list[str]) -> int:
     if not argv:
         return usage("show needs an accession, e.g. MTH.R-2026-6001")
@@ -129,8 +225,16 @@ def cmd_show(argv: list[str]) -> int:
         print(f"  declaration  {rec['decl_name']}")
         print(f"  module       {rec['module']}")
         print(f"  credited     {rec['citation_name']} (@{rec['login']})")
+        if rec.get("topic"):
+            print(f"  topic        {topic_name(rec['topic'])}")
         print(f"  arguments    {rec['arguments_count']}")
         print(f"  reference    {rec['reference_sha256']}")
+        built_on_by = sorted(a for a, deps in derived_dependencies().items()
+                             if rec["accession"] in deps)
+        if built_on_by:
+            print(f"  built on by  {', '.join(built_on_by)}")
+            print(f"{'':15s}derived from the argument graphs, not stored")
+        show_assertions(rec["accession"])
         print(f"\n{rec['pretty']}")
         if rec.get("doc"):
             print(f"\n{rec['doc']}")
@@ -146,6 +250,11 @@ def cmd_show(argv: list[str]) -> int:
     print(f"  evidence     {rec['export_sha256']}")
     print(f"               {rec['export_bytes']:,} bytes, {rec['export_constants']:,} constants")
     print(f"  graph        {rec['node_count']} steps, {rec['edge_count']} edges")
+    deps = derived_dependencies().get(rec["accession"], [])
+    if deps:
+        print(f"  builds on    {', '.join(deps)}")
+        print(f"{'':15s}derived from this argument's graph, not stored")
+    show_assertions(rec["claim_accession"])
     print(f"\n{rec['root_pretty']}")
     claim = find(rec["claim_accession"])
     if claim and claim[1].get("doc"):
@@ -207,21 +316,45 @@ def leg_schema() -> None:
         CLAIMS: {"$defs": schema["$defs"], "$ref": "#/$defs/claimFile"},
         ARGUMENTS: {"$defs": schema["$defs"], "$ref": "#/$defs/argumentFile"},
     }
+    # The sidecar files are validated the same way, by name rather than by directory. They were
+    # left out of the first version of this leg and a `builds_on` relation — a kind the schema
+    # does not allow, because a dependency is derived rather than asserted — went in without
+    # complaint. A schema nothing is validated against is decoration.
+    files = {
+        RELATIONS: {"$defs": schema["$defs"], "$ref": "#/$defs/relationsFile"},
+        TOPICS: {"$defs": schema["$defs"], "$ref": "#/$defs/topicsFile"},
+    }
     bad = 0
+    checked = 0
     for directory, sub in branches.items():
         validator = Draft202012Validator(sub)
         for path in sorted(directory.glob("*.json")):
+            checked += 1
             errors = sorted(validator.iter_errors(load(path)), key=lambda e: list(e.path))
             if errors:
                 bad += 1
                 where = "/".join(str(x) for x in errors[0].path) or "(root)"
                 fail("schema", f"{path.name} at {where}: {errors[0].message[:100]}")
+    for path, sub in files.items():
+        if not path.is_file():
+            continue
+        checked += 1
+        errors = sorted(Draft202012Validator(sub).iter_errors(load(path)), key=lambda e: list(e.path))
+        if errors:
+            bad += 1
+            where = "/".join(str(x) for x in errors[0].path) or "(root)"
+            fail("schema", f"{path.name} at {where}: {errors[0].message[:100]}")
     if not bad:
-        print(f"  ok    schema        {len(list(CLAIMS.glob('*.json'))) + len(list(ARGUMENTS.glob('*.json')))} manifests")
+        print(f"  ok    schema        {checked} files")
 
 
 def leg_crosslinks() -> None:
-    """Every argument names a claim that exists, and every claim is accounted for."""
+    """Everything that names something else names something that is there.
+
+    Extended past claim<->argument to cover the two sidecar files, because a relation pointing at
+    an accession that does not exist, or a claim filed under a topic nobody defined, is the same
+    class of mistake and was previously caught by nothing at all.
+    """
     claim_by = {c["accession"]: c for c in claims()}
     args = arguments()
     for a in args:
@@ -233,8 +366,66 @@ def leg_crosslinks() -> None:
     for acc, c in claim_by.items():
         if c["arguments_count"] != counted.get(acc, 0):
             fail("crosslinks", f"{acc} says arguments_count={c['arguments_count']}, {counted.get(acc, 0)} argument(s) name it")
+
+    topic_ids = {x["id"] for x in sidecar(TOPICS)}
+    for c in claim_by.values():
+        if c.get("topic") and c["topic"] not in topic_ids:
+            fail("crosslinks", f"{c['accession']} is filed under topic {c['topic']!r}, which bank/topics.json does not define")
+
+    profile_ids = {x["id"] for x in sidecar(PROFILES)}
+    seen: set[tuple[str, str, str]] = set()
+    rels = sidecar(RELATIONS)
+    for r in rels:
+        for end in ("from", "to"):
+            if r[end] not in claim_by:
+                fail("crosslinks", f"relation {r['from']} {r['kind']} {r['to']} names {r[end]}, which does not exist")
+        if r["from"] == r["to"]:
+            fail("crosslinks", f"relation {r['from']} {r['kind']} itself")
+        if r["asserted_by"] not in profile_ids:
+            fail("crosslinks", f"relation {r['from']} {r['kind']} {r['to']} is asserted by {r['asserted_by']}, which bank/profiles.json does not define")
+        key = (r["from"], r["kind"], r["to"])
+        if key in seen:
+            fail("crosslinks", f"relation {r['from']} {r['kind']} {r['to']} is asserted twice")
+        seen.add(key)
+
     if not FAILURES:
-        print(f"  ok    crosslinks    {len(args)} arguments, {len(claim_by)} claims")
+        print(f"  ok    crosslinks    {len(args)} arguments, {len(claim_by)} claims, {len(rels)} relations")
+
+
+def leg_dependencies() -> None:
+    """A declaration name the record publishes means one statement.
+
+    Two checks of the same idea, both keyed on the statement digest rather than the name:
+
+      * an argument's root node carries the statement digest of the claim it discharges, so the
+        graph proves what the claim publishes and not something else filed under it;
+      * a node naming another claim's declaration carries that claim's digest, which is what
+        makes it a dependency rather than a collision.
+
+    The second is what `show` reports as `builds on`. Neither is stored: both are recomputed from
+    the files every run, so there is nothing here that can be edited into agreement.
+    """
+    by_decl = {c["decl_name"]: c for c in claims()}
+    claim_by = {c["accession"]: c for c in claims()}
+    edges = roots = 0
+    for doc in argument_files():
+        arg = doc["argument"]
+        own = claim_by.get(arg["claim_accession"])
+        for n in doc["nodes"]:
+            if n.get("is_root") and own is not None:
+                roots += 1
+                if n["type_sha256"] != own["statement_digest"]:
+                    fail("dependencies", f"{arg['accession']} proves a statement its claim {own['accession']} does not publish")
+                continue
+            c = by_decl.get(n["decl_name"])
+            if c is None or c["accession"] == arg["claim_accession"]:
+                continue
+            if n["type_sha256"] == c["statement_digest"]:
+                edges += 1
+            else:
+                fail("dependencies", f"{arg['accession']} has a step `{n['decl_name']}` whose statement differs from {c['accession']}, which publishes that name")
+    if not FAILURES:
+        print(f"  ok    dependencies  {roots} roots match their claim, {edges} derived")
 
 
 def leg_coverage(rederived: int, present: int) -> None:
@@ -373,6 +564,7 @@ def cmd_verify(argv: list[str]) -> int:
     print(f"verifying {present} argument(s) from {ROOT}\n")
     leg_schema()
     leg_crosslinks()
+    leg_dependencies()
     done = leg_rederive(only)
     leg_coverage(done, present)
     print()

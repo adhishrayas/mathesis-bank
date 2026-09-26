@@ -12,5 +12,6 @@
   "pretty": "∃ 𝒞, HasNatarajanDimLE 1 𝒞 ∧ ¬HasDSDimLE 1 𝒞",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "acba08a110077b07a0bec6e68a036da4e4b3257b65dc823543b4a9bcaae1cfbd",
-  "statement_digest": "a719612d5cdf947835897c323b4b1c2826c3287d5207f0f46603c27082ce8977"
+  "statement_digest": "a719612d5cdf947835897c323b4b1c2826c3287d5207f0f46603c27082ce8977",
+  "topic": "multiclass"
 }

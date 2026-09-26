@@ -12,5 +12,6 @@
   "pretty": "¬Cardinal.mk ↑((fun x => Set.univ ∩ x) '' Set.range fun r => {q | ↑q < r}) ≤\n    Cardinal.mk ↑{B | B ⊆ Set.univ ∧ Shatters (Set.range fun r => {q | ↑q < r}) B}",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "ace4eebd4529f68428a1a380812b3489443b477e7d8a62228156b9980534ba8f",
-  "statement_digest": "f4acdbbf80ec41638e4ff67bf0a19f28a7312580f711601873a61c6419d7b870"
+  "statement_digest": "f4acdbbf80ec41638e4ff67bf0a19f28a7312580f711601873a61c6419d7b870",
+  "topic": "traces"
 }

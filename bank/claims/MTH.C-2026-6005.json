@@ -12,5 +12,6 @@
   "pretty": "∀ {X : Type u_1} {Y : Type u_2} (𝒞 : Set (X → Y)) (S : Set X), (S.restrict '' 𝒞).encard ≤ (pairCubes 𝒞 S).encard",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "fd764e365885ba281f6a57a0cea938f4814e00aebef196fc6d26cfd2d533fd71",
-  "statement_digest": "ee80b2b451a97d647500c937822715ba027e42463fd164000994237172d476d8"
+  "statement_digest": "ee80b2b451a97d647500c937822715ba027e42463fd164000994237172d476d8",
+  "topic": "multiclass"
 }

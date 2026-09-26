@@ -1,16 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://noumenal-ai.github.io/mathesis-bank/schema/bank-manifest.v1.schema.json",
-  "title": "Mathesis bank manifest, v1",
-  "description": "The shape of a record in bank/claims/ and bank/arguments/. Derived from the 64 manifests present when this was written, not from an intended design: a field is required here iff every one of them carries it. The two shapes differ in an awkward way that is described rather than corrected \u2014 a claim is a flat object, an argument is wrapped in a single `argument` key \u2014 because changing either would rewrite accessions that are already published under a permanent serial.",
-  "oneOf": [
-    {
-      "$ref": "#/$defs/claimFile"
-    },
-    {
-      "$ref": "#/$defs/argumentFile"
-    }
-  ],
+  "$id": "https://raw.githubusercontent.com/noumenal-ai/mathesis-bank/main/schema/bank-manifest.v2.schema.json",
+  "title": "Mathesis bank manifest, v2",
+  "description": "The shape of a record in bank/claims/ and bank/arguments/, and of the two files that say how records stand to each other: bank/relations.json and bank/topics.json. Derived from the manifests present when this was written, not from an intended design: a field is required here iff every one of them carries it. The two record shapes differ in an awkward way that is described rather than corrected \u2014 a claim is a flat object, an argument is wrapped in a single `argument` key \u2014 because changing either would rewrite accessions that are already published under a permanent serial.\n\nRELATIONS AND TOPICS ARE ASSERTIONS. No kernel checks them. They are kept in their own files, attributed and dated, so that a reader can tell them apart from what a replay establishes \u2014 which is the whole reason this repository is worth reading. The one relation that IS derivable is deliberately absent: where an argument's graph contains another claim's root declaration under the same statement digest, that is a dependency, and `bin/mathesis` computes it. A stored copy would be a second and worse source for something already true.",
   "$defs": {
     "accession": {
       "type": "string",
@@ -32,6 +24,11 @@
     "declName": {
       "type": "string",
       "minLength": 1
+    },
+    "topicId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{1,30}$",
+      "description": "A slug, not the UUIDv5 used for `dictionary_id` and `profile_id`. Those are derived from a label that can change; a topic id is a permanent handle that a URL carries, and reads better in one. The inconsistency is deliberate."
     },
     "claimFile": {
       "type": "object",
@@ -88,8 +85,10 @@
         "origin": {
           "type": "string",
           "enum": [
-            "curated"
-          ]
+            "curated",
+            "deposited"
+          ],
+          "description": "`curated` is hand-entered in bank/curation.json; `deposited` arrived through the deposit system. Every record so far is curated. `deposited` is defined ahead of its first use, on the same reasoning as `source_url` being nullable: the distinction has to exist in the schema before the record that needs it, not be bolted on once one arrives."
         },
         "pretty": {
           "type": "string",
@@ -105,6 +104,10 @@
         },
         "statement_digest": {
           "$ref": "#/$defs/sha256"
+        },
+        "topic": {
+          "$ref": "#/$defs/topicId",
+          "description": "Absent on 23 of 32: the corpus has been classified only as far as its first nine accessions. An unclassified record is not an error, and guessing a topic to fill the field would be worse than leaving it empty."
         }
       }
     },
@@ -402,6 +405,101 @@
           ]
         }
       }
+    },
+    "relationsFile": {
+      "type": "array",
+      "description": "bank/relations.json. How a curator says two claims stand to each other. `builds_on` is not a kind here and must not become one \u2014 see the note at the top of this file.",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asserted_at",
+        "asserted_by",
+        "from",
+        "kind",
+        "to"
+      ],
+      "description": "An assertion about two claims, carrying who made it. `from` and `to` are claims, never arguments: the relation is between what was claimed, not between two particular proofs of it.",
+      "properties": {
+        "asserted_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "asserted_by": {
+          "$ref": "#/$defs/uuid",
+          "description": "The profile making the assertion. A relation is somebody's reading of the mathematics rather than an output of the adjudicator, and it carries a name for exactly that reason."
+        },
+        "from": {
+          "$ref": "#/$defs/accession",
+          "pattern": "^MTH\\.C-[0-9]{4}-[0-9]{4,6}$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "generalises",
+            "limits",
+            "shares_definitions_with"
+          ],
+          "description": "The three that no machine can settle. `generalises`: the source specialises to the target. `limits`: the source shows the target cannot be strengthened in some direction. `shares_definitions_with`: they are built on the same definitions and neither implies the other."
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One line a reader can act on. Optional \u2014 the relation stands without it, and an empty note is worse than none."
+        },
+        "to": {
+          "$ref": "#/$defs/accession",
+          "pattern": "^MTH\\.C-[0-9]{4}-[0-9]{4,6}$"
+        }
+      }
+    },
+    "topicsFile": {
+      "type": "array",
+      "description": "bank/topics.json. Editorial groupings with no mechanical meaning at all: a topic is where a curator thinks a result belongs.",
+      "items": {
+        "$ref": "#/$defs/topic"
+      }
+    },
+    "topic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "blurb",
+        "id",
+        "name"
+      ],
+      "properties": {
+        "blurb": {
+          "type": "string",
+          "minLength": 1,
+          "description": "One sentence, for someone deciding whether to read on."
+        },
+        "id": {
+          "$ref": "#/$defs/topicId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
-  }
+  },
+  "anyOf": [
+    {
+      "$ref": "#/$defs/claimFile"
+    },
+    {
+      "$ref": "#/$defs/argumentFile"
+    },
+    {
+      "$ref": "#/$defs/relationsFile"
+    },
+    {
+      "$ref": "#/$defs/topicsFile"
+    }
+  ],
+  "$comment": "anyOf rather than oneOf: an empty relations file and an empty topics file are both `[]` and match two branches, which oneOf rejects. The object branches cannot both match \u2014 their required sets are disjoint and additionalProperties is false \u2014 so nothing is lost. bin/mathesis does not rely on this: it validates each file against the branch its directory names, because the top-level alternation only ever produces the wrong branch's complaint."
 }
