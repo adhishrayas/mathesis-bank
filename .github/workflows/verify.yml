@@ -100,6 +100,14 @@ jobs:
       - name: The gate still catches a forged kernel built-in
         run: bash ci/test_gate_builtins.sh
 
+      # A vacuous statement wearing a name. `theorem rh : Disguised` where `Disguised := True`
+      # passed as clean, because the flag tested the conclusion exactly as written — so the one
+      # check that routes a possibly mis-claimed result to a human could be stepped around with
+      # a definition. Runs here, beside the built-ins regression, for the same reason: both are
+      # about the gate still meaning what it says before the record is re-derived against it.
+      - name: The gate still flags a vacuous statement
+        run: bash ci/test_gate_triviality.sh
+
       # ── the record ───────────────────────────────────────────────────────────────────────
       - name: Re-derive every record
         env:
