@@ -12,5 +12,6 @@
   "pretty": "∀ {α : Type u_1} {𝒜 : Set (Set α)} {A : Set α}, ((fun x => A ∩ x) '' 𝒜).encard ≤ {B | B ⊆ A ∧ Shatters 𝒜 B}.encard",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "5a0bbcf25324a332b04efe463b32f4d351577425a2bfb5ac8e2a0ff357833c5a",
-  "statement_digest": "3cdd55e82875f6a90abe9ace7c3141acc05e28c021e23cf60ff49d29bc235859"
+  "statement_digest": "3cdd55e82875f6a90abe9ace7c3141acc05e28c021e23cf60ff49d29bc235859",
+  "topic": "traces"
 }

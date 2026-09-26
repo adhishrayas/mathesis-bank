@@ -11,5 +11,6 @@
   "pretty": "∀ {α : Type u_1} {n d : ℕ} {𝒜 : Set (Set α)}, HasVCDimLE d 𝒜 → d ≤ n → ↑(vcGrowth n 𝒜) ≤ (Real.exp 1 / ↑d * ↑n) ^ d",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "600ed63e389add0b27b0d261a868acb0e9e46dd20eb42c6c08bf60720e3b3e05",
-  "statement_digest": "a5fe126e5cef7d4b177045266b5d2d950687516c61088d45ac2d9984d1771d44"
+  "statement_digest": "a5fe126e5cef7d4b177045266b5d2d950687516c61088d45ac2d9984d1771d44",
+  "topic": "traces"
 }

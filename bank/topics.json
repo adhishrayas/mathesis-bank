@@ -1,0 +1,22 @@
+[
+  {
+    "blurb": "On infinite ground sets, the exact bound on traces is Dedekind's ded.",
+    "id": "cardinal-bounds",
+    "name": "Cardinal bounds"
+  },
+  {
+    "blurb": "Finite VC dimension is the same as compressibility with side information.",
+    "id": "compression",
+    "name": "Compression"
+  },
+  {
+    "blurb": "Pajor's inequality beyond two labels, and where Natarajan and DS dimension part ways.",
+    "id": "multiclass",
+    "name": "Multiclass dimensions"
+  },
+  {
+    "blurb": "How many sets a family can cut out, and how many it shatters.",
+    "id": "traces",
+    "name": "Traces and shattering"
+  }
+]
