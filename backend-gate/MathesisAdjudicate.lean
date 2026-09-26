@@ -173,7 +173,8 @@ def trivialityOf (info : ConstantInfo) : Option String :=
 /-! ### Per-target audit -/
 
 /-- One target's audit result: the gate decision (`checkAxioms`), the informative axiom traversal
-(`collectAxioms`), the constant's `kind`, and a syntactic `triviality` flag. -/
+(`collectAxioms`), the constant's `kind`, a syntactic `triviality` flag, and the statement the
+kernel actually checked. -/
 structure TargetAudit where
   decl : Name
   kind : String
@@ -181,13 +182,64 @@ structure TargetAudit where
   illegalAxiom : Option String
   axiomsReached : Array Name
   triviality : Option String
+  statement : Option String
+
+/-! ### The statement the kernel checked
+
+WHY THIS IS HERE AND NOT IN THE GRAPH EXPORTER
+
+The record publishes a rendering of each result's statement, and a reader takes that rendering to
+be what was proved. Nothing made that true. The digest the record carries is the sha256 of a
+string produced by pretty-printing in an environment that IMPORTS the author's own module — so
+the author's `notation` and `@[app_unexpander]` declarations are live while their own theorem is
+rendered, and they choose the words. `theorem rh : Disguised := trivial` with
+`notation "RiemannHypothesis" => Disguised` renders as `RiemannHypothesis`.
+
+This renders from `candidate.constMap[decl].type`: the exact `Expr` the kernel replayed. Two
+properties follow, and both matter.
+
+It cannot carry the author's notation, because it does not load the author's module — it renders
+in an empty environment, where no delaborator, notation or unexpander has been registered by
+anyone. Notation lives in syntax extensions, which a kernel export does not contain.
+
+And it is reproducible by a stranger. `bin/mathesis verify` re-runs this binary over the
+published blob, so a record whose statement disagrees with the term is detectable by anybody,
+not just by us at publication time. That is the difference between a convention and a check.
+
+The environment is empty on purpose rather than for economy: a constant needs no definition to
+be printed (`Nat → Not True` renders fine where `Nat` is undefined), and an empty one is the
+only environment whose rendering is a function of the term alone. -/
+def canonicalPPOptions : Options :=
+  let o := Options.empty
+  -- Notation off: this is the field the author would otherwise control.
+  let o := o.setBool `pp.notation false
+  -- Full names, so `Foo.bar` and a locally-opened `bar` cannot read as the same thing.
+  let o := o.setBool `pp.fullNames true
+  let o := o.setBool `pp.proofs false
+  o.set `format.width (100 : Nat)
+
+/-- The target's type, rendered from the replayed term. `none` when the target is absent from the
+candidate (already a rejection) or when the printer fails — never a guess, and never fatal: this
+is evidence for the record, not a leg of the gate. -/
+def renderStatement (candidate : ExportedEnv) (decl : Name) : IO (Option String) := do
+  match candidate.constMap[decl]? with
+  | none => return none
+  | some info =>
+    try
+      let env ← mkEmptyEnvironment
+      let (fmt, _) ← (Lean.PrettyPrinter.ppExpr info.type).toIO
+        { fileName := "<adjudicate>", fileMap := default, options := canonicalPPOptions }
+        { env := env }
+      return some (toString fmt)
+    catch _ =>
+      return none
 
 /-- Run the gate decision + informative traversal + kind/triviality for one target against
 `candidate`, using the hard-coded `permittedAxioms`. `pass`/`illegalAxiom` are decided SOLELY by
 `checkAxioms`; `triviality` is emitted for the CI to route to review but NEVER affects `pass` (a
 trivial theorem is valid, just mis-claimed). -/
 def auditTarget (candidate : ExportedEnv) (permittedTypes : Std.HashMap Name ConstantInfo)
-    (trusted : Name → Option ConstantInfo) (decl : Name) : TargetAudit :=
+    (trusted : Name → Option ConstantInfo) (statement : Option String) (decl : Name) : TargetAudit :=
   let info? := candidate.constMap[decl]?
   let (pass, illegalAxiom) :=
     match checkAxioms candidate #[decl] permittedAxioms permittedTypes trusted with
@@ -197,7 +249,8 @@ def auditTarget (candidate : ExportedEnv) (permittedTypes : Std.HashMap Name Con
   { decl,
     kind := match info? with | some i => kindString i | none => "absent",
     pass, illegalAxiom, axiomsReached := reached,
-    triviality := info?.bind trivialityOf }
+    triviality := info?.bind trivialityOf,
+    statement }
 
 /-- Extract the illegal-axiom name from a `checkAxioms` error string, if the failure was in fact an
 "illegal axiom reached" error (as opposed to some other failure like an absent constant). The error
@@ -251,7 +304,10 @@ def targetAuditToJson (t : TargetAudit) : Json :=
     -- redefinitions until now.
     ("failure", match t.illegalAxiom with | some e => Json.str e | none => Json.null),
     ("axioms_reached", Json.arr (t.axiomsReached.map (Json.str ·.toString))),
-    ("triviality", match t.triviality with | some r => Json.str r | none => Json.null)
+    ("triviality", match t.triviality with | some r => Json.str r | none => Json.null),
+    -- The statement the kernel checked, rendered from the replayed term rather than from the
+    -- author's environment. See `renderStatement`.
+    ("statement", match t.statement with | some s => Json.str s | none => Json.null)
   ]
 
 /-! ### Argv parsing -/
@@ -306,7 +362,8 @@ Output schema (one line, compact JSON):
  "statement_identity": "pass"|"fail"|"not-applicable"|"<reason string>",
  "kernel_builtins": "pass"|"not-checked"|"<reason string>",
  "targets": [{"decl": <string>, "axiom_audit": "pass"|"fail",
-              "illegal_axiom": <string|null>, "axioms_reached": [<string>, ...]}, ...],
+              "illegal_axiom": <string|null>, "axioms_reached": [<string>, ...],
+              "statement": <string|null>}, ...],
  "verdict": "ADMITTED"|"REJECTED"}
 ```
 
@@ -353,7 +410,9 @@ def main (args : List String) : IO UInt32 := do
     let text ← IO.FS.readFile path
     let candidate ← loadFrozenText text
     let (accepted, detail) ← replayLean candidate
-    let audits := targets.map (auditTarget candidate permittedTypes trusted)
+    let mut audits : Array TargetAudit := #[]
+    for d in targets do
+      audits := audits.push (auditTarget candidate permittedTypes trusted (← renderStatement candidate d) d)
     let allPass := audits.all (·.pass)
     -- Kernel built-ins leg, in every mode: each one the candidate carries must be the genuine one.
     -- The kernel uses them by name without checking them, and the axiom walk never reaches them.
