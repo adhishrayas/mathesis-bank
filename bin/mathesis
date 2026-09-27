@@ -522,6 +522,47 @@ def build_gate(exe: Path) -> bool:
     return rc == 0 and exe.is_file() and os.access(exe, os.X_OK)
 
 
+def statement_mismatch(claim: dict | None, target: dict) -> str | None:
+    """Does the claim publish the statement the kernel actually checked? None if it does.
+
+    THE HOLE THIS CLOSES
+
+    A record publishes a rendering of its statement and a reader takes that to be what was
+    proved. For the first 32 records nothing made that true. `statement_digest` was the sha256
+    of `pretty`, produced by pretty-printing in an environment that IMPORTS the author's own
+    module — so their `notation` and `@[app_unexpander]` declarations were live while their own
+    theorem was rendered, and they chose the words. `theorem rh : Disguised := trivial` with
+    `notation "RiemannHypothesis" => Disguised` renders as `RiemannHypothesis`, and the axiom
+    audit, the replay and the triviality flag all pass, because all of them are about the term
+    and none of them is about the words.
+
+    The adjudicator renders each target from the exact `Expr` the kernel replayed, in an empty
+    environment where nobody has registered a delaborator. Notation lives in syntax extensions,
+    which a kernel export does not contain. So that string is a function of the term alone, and
+    THIS is what makes it a check: the gate runs again here, over the published blob, on a
+    stranger's machine. A record whose statement disagrees with its term is detectable by
+    anybody rather than only by us at publication time.
+
+    Gated on `statement_source`, which is absent on the 32 records that predate it. Their graphs
+    and verdicts no longer exist on disk, so they cannot be regenerated to acquire the binding,
+    and failing them here would report an honest corpus as broken. What they get instead is a
+    record that does not claim the guarantee.
+    """
+    if claim is None or claim.get("statement_source") != "kernel":
+        return None
+    got = target.get("statement")
+    if not isinstance(got, str) or not got.strip():
+        # The record says its digest is the kernel's rendering and the gate produced none. Either
+        # the record is wrong or the gate is older than the record; both mean the claim it makes
+        # about itself is unsupported, which is the thing this leg exists to refuse.
+        return f"claims statement_source=kernel, but the gate rendered no statement for {target.get('decl')}"
+    digest = hashlib.sha256(got.encode("utf-8")).hexdigest()
+    if digest != claim["statement_digest"]:
+        return (f"the statement the kernel checked digests to {digest[:16]}…, "
+                f"but {claim['accession']} publishes {claim['statement_digest'][:16]}…")
+    return None
+
+
 def leg_rederive(only: str | None) -> int:
     """Replay each frozen export through the Lean kernel and compare it to its manifest."""
     exe = Path(os.environ.get(
@@ -537,6 +578,8 @@ def leg_rederive(only: str | None) -> int:
         fail("re-derivation", f"the trusted logical core is missing or empty at {init}")
         return 0
     cache = Path(os.environ.get("BANK_EXPORTS_DIR", Path(os.environ.get("TMPDIR", "/tmp")) / "mathesis-bank-exports"))
+
+    claim_by = {c["accession"]: c for c in claims()}
 
     done = 0
     for a in arguments():
@@ -579,6 +622,8 @@ def leg_rederive(only: str | None) -> int:
             # Exact equality, not subset. A manifest claiming FEWER axioms than the proof uses is
             # the interesting lie, and a whitelist check would pass it.
             fail(acc, f"axioms {sorted(target.get('axioms_reached') or [])} != manifest {sorted(a['axioms_reached'])}")
+        elif (bad := statement_mismatch(claim_by.get(a["claim_accession"]), target)):
+            fail(acc, bad)
         else:
             print(f"  ok    {acc}  {decl}")
         done += 1
