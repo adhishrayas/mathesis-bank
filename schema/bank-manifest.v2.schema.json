@@ -103,7 +103,15 @@
           "description": "The frozen reference export a discharging argument is checked against."
         },
         "statement_digest": {
-          "$ref": "#/$defs/sha256"
+          "$ref": "#/$defs/sha256",
+          "description": "The sha256 of the statement this claim publishes. What it is the digest OF depends on `statement_source`: with `kernel`, of the adjudicator's rendering of the replayed term, which `bin/mathesis verify` re-derives from the frozen export and compares; absent, of `pretty`, which came from an environment that imported the author's own module and is therefore a digest of a rendering nobody outside can reproduce."
+        },
+        "statement_source": {
+          "type": "string",
+          "enum": [
+            "kernel"
+          ],
+          "description": "Present and `kernel` when `statement_digest` is the digest of the statement the ADJUDICATOR rendered from the term the kernel replayed, in an empty environment with `pp.notation false` and `pp.fullNames true`. That rendering is a function of the verified term alone, so a stranger re-running the gate over the frozen export gets the same string and the same digest \u2014 which is what makes the published statement a check rather than a convention.\n\nAbsent on all 32 records published before it existed. For those, `statement_digest` is the digest of `pretty`, rendered in an environment that imports the author's module, where the author's `notation` and `@[app_unexpander]` declarations are live while their own theorem is printed. `theorem rh : Disguised := trivial` with `notation \"RiemannHypothesis\" => Disguised` renders as `RiemannHypothesis`, and every mechanical check still passes. That is tolerable for a corpus one curator wrote and not for a deposit, so it is the deposited records that carry this field first.\n\nOptional rather than required because the curated graphs and verdicts no longer exist on disk: those 32 records cannot be regenerated to acquire it, and a required field would make the corpus unverifiable against its own schema."
         },
         "topic": {
           "$ref": "#/$defs/topicId",

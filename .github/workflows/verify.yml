@@ -108,6 +108,15 @@ jobs:
       - name: The gate still flags a vacuous statement
         run: bash ci/test_gate_triviality.sh
 
+      # The other half of "the record says what was proved". The two above keep the gate
+      # meaning what it says about the TERM; this one is about the WORDS. Every check in the
+      # re-derivation leg — verdict, replay, target presence, triviality, axioms — is a
+      # statement about the term, so a record could publish any rendering it liked and pass.
+      # Runs here for the same reason as its neighbours: before the record is re-derived
+      # against a verifier that might have stopped checking.
+      - name: A record publishes the statement the kernel checked
+        run: python3 ci/test_statement_binding.py
+
       # ── the record ───────────────────────────────────────────────────────────────────────
       - name: Re-derive every record
         env:
