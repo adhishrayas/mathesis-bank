@@ -1,5 +1,15 @@
 [
   {
+    "blurb": "Capacitability, a non-Borel witness, and the separation it settles.",
+    "id": "analytic-sets",
+    "name": "Analytic sets"
+  },
+  {
+    "blurb": "What an audit can learn from a learner it cannot see inside.",
+    "id": "auditing",
+    "name": "Auditing"
+  },
+  {
     "blurb": "On infinite ground sets, the exact bound on traces is Dedekind's ded.",
     "id": "cardinal-bounds",
     "name": "Cardinal bounds"
@@ -10,13 +20,38 @@
     "name": "Compression"
   },
   {
+    "blurb": "When local consistency forces a global structure, over acyclic bases both classical and quantum.",
+    "id": "graphical-models",
+    "name": "Graphical models"
+  },
+  {
+    "blurb": "Pinsker's inequality with the sharp constant, and the Gaussian divergence in closed form.",
+    "id": "information-theory",
+    "name": "Information theory"
+  },
+  {
     "blurb": "Pajor's inequality beyond two labels, and where Natarajan and DS dimension part ways.",
     "id": "multiclass",
     "name": "Multiclass dimensions"
   },
   {
+    "blurb": "Littlestone dimension, the optimal mistake bound, and where online learning sits relative to PAC.",
+    "id": "online-learning",
+    "name": "Online learning"
+  },
+  {
+    "blurb": "The fundamental theorem of statistical learning, and what can be removed from a learner without losing it.",
+    "id": "pac-learning",
+    "name": "PAC learnability"
+  },
+  {
     "blurb": "How many sets a family can cut out, and how many it shatters.",
     "id": "traces",
     "name": "Traces and shattering"
+  },
+  {
+    "blurb": "Computed exactly for halfspaces, and bounded in both directions for a dual class.",
+    "id": "vc-dimension",
+    "name": "VC dimension"
   }
 ]

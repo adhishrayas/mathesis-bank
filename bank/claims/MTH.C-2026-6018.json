@@ -12,5 +12,6 @@
   "pretty": "∀ {α : Type u_1} [inst : TopologicalSpace α] [inst_1 : MeasurableSpace α] [BorelSpace α] [PolishSpace α]\n  {cap : Set α → ENNReal},\n  MeasureTheory.IsChoquetCapacity cap →\n    ∀ {s : Set α}, MeasureTheory.AnalyticSet s → cap s = ⨆ K, ⨆ (_ : IsCompact K), ⨆ (_ : K ⊆ s), cap K",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "ca3c5a9d0ba4ab92eaf833ea0e9303140855b9c2e416c013aefaa18957634ea8",
-  "statement_digest": "1f2bb195896fd902f209311df39c5656573e56c30f91d792304dab9eff0f8f10"
+  "statement_digest": "1f2bb195896fd902f209311df39c5656573e56c30f91d792304dab9eff0f8f10",
+  "topic": "analytic-sets"
 }

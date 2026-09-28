@@ -12,5 +12,6 @@
   "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [inst : Fintype Y] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.AuditSealed K ↔ ∀ (s : S) (a a' : A), AuditCP.equalPriorBayesError (K (s, a)) (K (s, a')) = 1 / 2",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "2b5c97530787847ce816eb2172bbceed21d2ba929af273ff55aa462b7260d54e",
-  "statement_digest": "739b86a5fd24ee63d00453da98949316b6166241cc6bb334697af311e66a471f"
+  "statement_digest": "739b86a5fd24ee63d00453da98949316b6166241cc6bb334697af311e66a471f",
+  "topic": "auditing"
 }
