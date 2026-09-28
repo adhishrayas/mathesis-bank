@@ -12,5 +12,6 @@
   "pretty": "∀ {X : Type u} {C : ConceptClass X Bool} {d : ℕ}, VCDim X C = ↑d → 0 < d → ↑(Nat.log 2 d) ≤ VCDim (↑C) (dualClass C)",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "1bf2ca644dcd7e34e0e71ce87c098f0b79201ada915a8a10a6034abcfe9acc68",
-  "statement_digest": "b9a2d70951054cb7c319ecc3f01734479a10fa50d34dbe22e4e3f498de534a99"
+  "statement_digest": "b9a2d70951054cb7c319ecc3f01734479a10fa50d34dbe22e4e3f498de534a99",
+  "topic": "vc-dimension"
 }

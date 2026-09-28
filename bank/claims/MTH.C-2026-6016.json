@@ -12,5 +12,6 @@
   "pretty": "∀ {S : Type uS} {A : Type uA} {Y : Type uY} [Nonempty A] (K : AuditCP.AuditChannel S A Y),\n  AuditCP.BlackwellEquivalent (AuditCP.learnerExperiment K) AuditCP.publicOnlyExperiment ↔ AuditCP.AuditSealed K",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "304b019f2077d6ac4e495026b3c28bf129b502fba9fee004084d5a3731b4dd60",
-  "statement_digest": "54d616839f6a2ebc276904c6bef648d1b07b55a5ba49aae3b798b91be8617076"
+  "statement_digest": "54d616839f6a2ebc276904c6bef648d1b07b55a5ba49aae3b798b91be8617076",
+  "topic": "auditing"
 }

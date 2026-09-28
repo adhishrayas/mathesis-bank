@@ -12,5 +12,6 @@
   "pretty": "∀ (X : Type) (C : ConceptClass X Bool), Set.Nonempty C → ↑(OptimalMistakeBound X C) = LittlestoneDim X C",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "5fe03070080b4bf109f377a55325df6855c4c44bdb1a1354f912d4785332326d",
-  "statement_digest": "3beeca7ea2febc784cce481f84a06b1bbd53aca02487999c100ee2d19ac381b7"
+  "statement_digest": "3beeca7ea2febc784cce481f84a06b1bbd53aca02487999c100ee2d19ac381b7",
+  "topic": "online-learning"
 }
