@@ -48,6 +48,11 @@
         "reference_sha256",
         "statement_digest"
       ],
+      "dependentRequired": {
+        "retracted_at": ["retracted_by", "retraction_reason"],
+        "retracted_by": ["retracted_at", "retraction_reason"],
+        "retraction_reason": ["retracted_at", "retracted_by"]
+      },
       "properties": {
         "accession": {
           "$ref": "#/$defs/accession",
@@ -105,6 +110,19 @@
         "statement_digest": {
           "$ref": "#/$defs/sha256",
           "description": "The sha256 of the statement this claim publishes. What it is the digest OF depends on `statement_source`: with `kernel`, of the adjudicator's rendering of the replayed term, which `bin/mathesis verify` re-derives from the frozen export and compares; absent, of `pretty`, which came from an environment that imported the author's own module and is therefore a digest of a rendering nobody outside can reproduce."
+        },
+        "retracted_at": {
+          "$ref": "#/$defs/timestamp",
+          "description": "When a maintainer withdrew this record from use. Absent on a record in good standing, which is every record so far.\n\nA RETRACTED RECORD IS NOT DELETED AND STILL VERIFIES. Nothing about the mathematics changed: the kernel accepted that replay, and `bin/mathesis verify` re-derives a retracted record exactly as it does any other. What is withdrawn is the RECOMMENDATION \u2014 a statement that misleads, a depositor who asked, a record superseded by a better one. Deleting it instead would break every citation of the accession and fail the crosslinks leg, and an accession scheme whose whole purpose is that a citation resolves should not answer one with a 404.\n\nNot a relation. `relations.json` holds the three things no machine can settle, and those are assertions about STATEMENTS \u2014 what generalises what. A retraction is about a RECORD'S STANDING, which is a different kind of claim about a different kind of object."
+        },
+        "retracted_by": {
+          "$ref": "#/$defs/uuid",
+          "description": "The profile of whoever withdrew it. A retraction is an assertion by a person and carries their name for the same reason a relation does."
+        },
+        "retraction_reason": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Why, in a sentence a reader can act on. Required alongside the other two: a record marked withdrawn without a reason tells a reader that something is wrong and not what, which is worse than either leaving it alone or removing it."
         },
         "statement_source": {
           "type": "string",

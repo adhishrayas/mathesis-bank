@@ -583,6 +583,48 @@ def statement_mismatch(claim: dict | None, target: dict) -> str | None:
     return None
 
 
+def retracted() -> list[dict]:
+    """Records a maintainer has withdrawn from use, in accession order."""
+    return sorted(
+        (c for c in claims() if c.get("retracted_at")),
+        key=lambda c: c["accession"],
+    )
+
+
+def leg_standing() -> None:
+    """Report withdrawn records, and arguments that lean on one.
+
+    NOT A FAILURE, either way. A retracted record still re-derives — the kernel accepted that
+    replay and nothing about the mathematics changed — so failing it would be reporting a
+    verifier disagreement that does not exist. And failing an argument that cites one would let
+    a single retraction cascade into a corpus that will not verify, which is a strong reason not
+    to retract anything and therefore the wrong incentive.
+
+    What a run must not do is stay silent. `verify` ending in "no failures" over a corpus
+    containing withdrawn records reads as "all of this stands", and the one thing a retraction
+    exists to say is that some of it does not.
+    """
+    out = retracted()
+    if not out:
+        return
+    print()
+    print(f"  {len(out)} withdrawn record(s) — still verified, not recommended:")
+    for c in out:
+        print(f"    {c['accession']}  {c['retraction_reason']}")
+
+    # An argument whose graph names a withdrawn claim's declaration under that claim's statement
+    # digest depends on it — the same derivation leg_dependencies makes, applied to standing.
+    by_digest = {c["statement_digest"]: c for c in out}
+    for doc in argument_files():
+        arg = doc["argument"]
+        for n in doc["nodes"]:
+            if n.get("is_root"):
+                continue
+            hit = by_digest.get(n["type_sha256"])
+            if hit is not None:
+                print(f"    {arg['accession']} has a step from {hit['accession']}, which is withdrawn")
+
+
 def leg_rederive(only: str | None) -> int:
     """Replay each frozen export through the Lean kernel and compare it to its manifest."""
     exe = Path(os.environ.get(
@@ -663,6 +705,7 @@ def cmd_verify(argv: list[str]) -> int:
     leg_dependencies()
     done = leg_rederive(only)
     leg_coverage(done, present)
+    leg_standing()
     print()
     if FAILURES:
         print(f"{len(FAILURES)} failure(s):")
