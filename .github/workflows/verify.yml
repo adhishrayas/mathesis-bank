@@ -117,6 +117,12 @@ jobs:
       - name: A record publishes the statement the kernel checked
         run: python3 ci/test_statement_binding.py
 
+      # Withdrawing a record without deleting it. Deleting one fails the crosslinks leg, so the
+      # only coherent withdrawal is a mark — and a mark nothing reports is a record that still
+      # reads as standing.
+      - name: A withdrawn record is marked, not deleted
+        run: python3 ci/test_retraction.py
+
       # ── the record ───────────────────────────────────────────────────────────────────────
       - name: Re-derive every record
         env:
