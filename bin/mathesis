@@ -479,11 +479,25 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def fetch(name: str, cache: Path) -> bool:
-    """Put `name` in the cache. Returns False if it could not be got."""
+def fetch(name: str, cache: Path) -> str | None:
+    """Put `name` in the cache. Returns None on success, or why it could not be got.
+
+    THE REASON MATTERS, AND IT USED TO BE THROWN AWAY.
+
+    This returned a bare bool and ran the downloader with `capture_output=True`, so a timeout, a
+    rate limit, a full disk and a genuinely absent asset were the same answer — and the caller
+    reported all four as "<name> is not in the store". That sentence says the bank is missing the
+    evidence for a record, which reads to any reader as the record being unverifiable.
+
+    Measured on 2026-09-28: a re-derivation reported MTH.R-2026-6022's export "is not in the
+    store" while the asset was in the release, 64 MB of it, and `--audit` said the release and
+    the record agreed. The download had failed; the corpus was fine. That is the same shape as a
+    runner exhausting its disk and surfacing as "reject — submission.lean failed to build".
+
+    So the downloader's own stderr comes back, and the caller prints it."""
     dest = cache / name
     if dest.is_file() and dest.stat().st_size:
-        return True
+        return None
     store = os.environ.get("BANK_EXPORT_STORE", "gh:noumenal-ai/mathesis-bank@bank-exports-v1")
     cache.mkdir(parents=True, exist_ok=True)
     if store.startswith("gh:"):
@@ -495,10 +509,16 @@ def fetch(name: str, cache: Path) -> bool:
     else:
         src = Path(store) / name
         if not src.is_file():
-            return False
+            return f"{src} does not exist"
         shutil.copyfile(src, dest)
-        return True
-    return subprocess.run(cmd, capture_output=True).returncode == 0 and dest.is_file()
+        return None
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    if proc.returncode == 0 and dest.is_file():
+        return None
+    # The downloader's last line, which distinguishes "no such asset" from every other way a
+    # 645 MB pull over 33 assets can fail.
+    why = (proc.stderr or proc.stdout or "").strip().splitlines()
+    return why[-1][:120] if why else f"{cmd[0]} exited {proc.returncode} and wrote no reason"
 
 
 def build_gate(exe: Path) -> bool:
@@ -587,8 +607,9 @@ def leg_rederive(only: str | None) -> int:
             continue
         acc, sha, decl = a["accession"], a["export_sha256"], a["root_decl_name"]
         name = f"{sha}.export.gz"
-        if not fetch(name, cache):
-            fail(acc, f"{name} is not in the store")
+        why = fetch(name, cache)
+        if why is not None:
+            fail(acc, f"{name} did not arrive: {why}")
             continue
         blob = cache / name
         raw = cache / f"{sha}.export"
