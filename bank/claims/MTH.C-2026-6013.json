@@ -12,5 +12,6 @@
   "pretty": "KrappWirthSeparationMeasTarget",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "142a3e7672c216f7d6429271e10534c8441d97afd285635750cb940b8737a5c9",
-  "statement_digest": "9ca5c4fd0e9cbffe12fd8a0254357b95e905cf57ba4475e281b53e2ae48723d1"
+  "statement_digest": "9ca5c4fd0e9cbffe12fd8a0254357b95e905cf57ba4475e281b53e2ae48723d1",
+  "topic": "analytic-sets"
 }

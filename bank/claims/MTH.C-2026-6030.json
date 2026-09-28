@@ -12,5 +12,6 @@
   "pretty": "∀ (n : ℕ), VCDim (Fin n → ℝ) (signClass (FLT.Halfspace.coordSpace n)) = ↑n",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "e70dfad48239bb13b2daee585c4e3d24c702b757b804044ef83abfe94a630745",
-  "statement_digest": "3b727d2bae543ba3e15242bdc5cbedf2dc615b2bd290a1b6d8303bb44a8f7791"
+  "statement_digest": "3b727d2bae543ba3e15242bdc5cbedf2dc615b2bd290a1b6d8303bb44a8f7791",
+  "topic": "vc-dimension"
 }

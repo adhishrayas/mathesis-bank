@@ -12,5 +12,6 @@
   "pretty": "∀ {α : Type u_1} [inst : DecidableEq α] {𝒜 : Set (Set α)},\n  StructuralIgnorance.vcBounded 𝒜 1 → StructuralIgnorance.HasKernelScheme 𝒜 1",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "1641f3634b64c7596491cb30ef559471caf482307da1c9dfeff75173440ad077",
-  "statement_digest": "6f00e0db8508b3920cb330e210ef6ed0976367e4600819d7a085d3a13863b980"
+  "statement_digest": "6f00e0db8508b3920cb330e210ef6ed0976367e4600819d7a085d3a13863b980",
+  "topic": "compression"
 }
