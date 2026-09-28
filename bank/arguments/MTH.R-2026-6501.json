@@ -21,7 +21,7 @@
     "root_decl_name": "second_probe",
     "root_module": "Submission",
     "root_pretty": "(n : Nat) → @Eq Nat (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) n 0) n",
-    "source_url": "https://mathesis-663h7nueyq-uc.a.run.app/deposits/3",
+    "source_url": "https://mathesis.noumenal.world/deposits/3",
     "statement_identity": "not-applicable",
     "submission_id": "ba7b3efc-7aef-5964-8be0-11975b236b09",
     "substrate": "Lean 4 kernel v4.31.0"
