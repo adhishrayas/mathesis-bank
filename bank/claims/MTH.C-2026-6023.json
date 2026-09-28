@@ -12,5 +12,6 @@
   "pretty": "∃ A, MeasureTheory.AnalyticSet A ∧ ¬MeasurableSet A",
   "profile_id": "4571f84a-7314-5307-b61c-95010a1333a9",
   "reference_sha256": "17a477359fda9c6f939b5e72e053cd51897e4b5ad9cf80f7570cb729520d557f",
-  "statement_digest": "b7b3031e029277d4483eaf4dea2d56af35b02a453f3d88ae90b2ab5046927d07"
+  "statement_digest": "b7b3031e029277d4483eaf4dea2d56af35b02a453f3d88ae90b2ab5046927d07",
+  "topic": "analytic-sets"
 }
