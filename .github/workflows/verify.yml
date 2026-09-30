@@ -1,4 +1,4 @@
-# Mathesis — re-derive the record.
+# Stet — re-derive the record.
 #
 # This repository holds the record and the program that checks it. This workflow is that program,
 # run on a clean machine on every push and once a week, so the claim "every record re-derives from

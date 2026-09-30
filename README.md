@@ -1,4 +1,4 @@
-# Mathesis
+# Stet
 
 A record of machine-checked theorems, and the program that checks it.
 
