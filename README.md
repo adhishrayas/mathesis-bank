@@ -125,6 +125,30 @@ in a confined container, adjudicates it with the same gate committed here, and w
 in. What lands here is the outcome, and the point of `bin/mathesis verify` is that you do not
 have to believe any of that to check it.
 
+## Withdrawing a record
+
+By editing one file, in a pull request, like anything else here.
+
+A record is withdrawn by adding three fields to its claim — `retracted_at`, `retracted_by` and
+`retraction_reason` — which the schema requires together, because a record marked withdrawn
+without a reason tells a reader that something is wrong and not what.
+
+Nothing else changes. `posts.json` keeps its post, because the record *was* published;
+`profiles.json` and `dictionary.json` are untouched. There is no tooling for it and that is
+deliberate: it is one field on one file, it is rare, and it is a judgement rather than a
+derivation.
+
+**The record is not deleted and still verifies.** The kernel accepted that replay and nothing
+about the mathematics changed, so `bin/mathesis verify` re-derives a withdrawn record exactly as
+it does any other. What is withdrawn is the recommendation. Deleting it instead would fail the
+crosslinks leg — the section above lists that as a way to break the verifier deliberately — and
+an accession scheme whose whole point is that a citation resolves should not answer one with a
+404.
+
+`verify` lists withdrawn records at the end of a run, and names any argument with a step whose
+statement digest belongs to one. Neither is a failure: failing would let a single retraction
+cascade into a corpus that will not verify, which is a reason not to retract anything.
+
 ## Licence
 
 See [LICENSE](LICENSE).

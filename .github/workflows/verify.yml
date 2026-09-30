@@ -117,6 +117,18 @@ jobs:
       - name: A record publishes the statement the kernel checked
         run: python3 ci/test_statement_binding.py
 
+      # A blob that does not arrive must say why. The old message said the bank was missing the
+      # evidence for a record, which is a claim about the corpus that a failed download is in no
+      # position to make.
+      - name: A missing export says why it is missing
+        run: python3 ci/test_fetch_reporting.py
+
+      # Withdrawing a record without deleting it. Deleting one fails the crosslinks leg, so the
+      # only coherent withdrawal is a mark — and a mark nothing reports is a record that still
+      # reads as standing.
+      - name: A withdrawn record is marked, not deleted
+        run: python3 ci/test_retraction.py
+
       # ── the record ───────────────────────────────────────────────────────────────────────
       - name: Re-derive every record
         env:
