@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/noumenal-ai/mathesis-bank/main/schema/bank-manifest.v2.schema.json",
-  "title": "Mathesis bank manifest, v2",
+  "title": "Stet bank manifest, v2",
   "description": "The shape of a record in bank/claims/ and bank/arguments/, and of the two files that say how records stand to each other: bank/relations.json and bank/topics.json. Derived from the manifests present when this was written, not from an intended design: a field is required here iff every one of them carries it. The two record shapes differ in an awkward way that is described rather than corrected \u2014 a claim is a flat object, an argument is wrapped in a single `argument` key \u2014 because changing either would rewrite accessions that are already published under a permanent serial.\n\nRELATIONS AND TOPICS ARE ASSERTIONS. No kernel checks them. They are kept in their own files, attributed and dated, so that a reader can tell them apart from what a replay establishes \u2014 which is the whole reason this repository is worth reading. The one relation that IS derivable is deliberately absent: where an argument's graph contains another claim's root declaration under the same statement digest, that is a dependency, and `bin/mathesis` computes it. A stored copy would be a second and worse source for something already true.",
   "$defs": {
     "accession": {
